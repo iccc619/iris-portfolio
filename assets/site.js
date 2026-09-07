@@ -489,6 +489,244 @@ function render60BPM(p,projects){
 }
 
 
+
+function renderEtherealRealm(p,projects){
+  const A="/public/projects/ethereal-realm";
+  const enc=s=>s.split("/").map(encodeURIComponent).join("/");
+  const img=(src,alt,cls="")=>`<img class="${cls}" src="${A}/${enc(src)}" alt="${esc(alt)}" loading="lazy">`;
+  const frame=(name,alt="Realm app interface")=>img(`app/App Frames/${name}`,alt,"er-phone-img");
+  const next=projects[(projects.indexOf(p)+1)%projects.length];
+
+  const members=[
+    ["AeRi","Leader · Lead Rapper","Daffodil","character/aeri.png","character/aeri_intro.svg"],
+    ["Lin","Main Vocalist","Lavender","character/lin.png","character/lin_intro.svg"],
+    ["Shira","Main Rapper","Cherry Pink","character/shira.png","character/shira_intro.svg"],
+    ["JinSoo","Main Dancer","Sky Blue","character/jinsoo.png","character/jinsoo_intro.svg"],
+    ["Navi","Center · Visual","Silver","character/navi.png","character/navi_intro.svg"]
+  ];
+  const appFrames=[
+    "APP_ETH_RR_ForYou.png","APP_ETH_RealsRealm_Realm.png","APP_ETH_Shop_Photocards.png",
+    "APP_ETH_Shop_Product_PC.png","APP_ETH_Shop_ShoppingCart.png","APP_ETH_Album_Home.png",
+    "APP_ETH_Album_Cards_01.png","APP_ETH_Album_Player.png","APP_ETH_Profile_Posts.png"
+  ];
+
+  document.body.classList.add("compact-brand","project-ethereal");
+  document.documentElement.style.setProperty("--project-accent","#6044FF");
+  document.title="EtheReal / Realm — Iris Wang";
+  document.body.insertAdjacentHTML("afterbegin",header()+`<div class="reading-progress er-progress" id="progress"></div>`);
+
+  document.querySelector("#project-root").innerHTML=`
+  <article class="er">
+    <nav class="er-rail" aria-label="EtheReal sections">
+      ${["World","Identity","Members","Album","Campaign","Realm","UX","Interface","Prototype"].map((x,i)=>`<a href="#er-${i+1}" data-label="${x}"><i></i><span>${String(i+1).padStart(2,"0")}</span></a>`).join("")}
+    </nav>
+
+    <section class="er-hero" id="er-1">
+      ${img("svg/hero.svg","EtheReal identity hero","er-hero-art")}
+      <div class="er-hero-glow"></div>
+      <div class="shell er-hero-copy">
+        <span class="er-meta">Brand identity · AI-assisted art direction · UI/UX · 2024</span>
+        <h1>ETHEREAL</h1>
+        <p>A virtual K-pop girl group living entirely in a pixelated world — and Realm, the digital home built to bring that world closer to its fandom.</p>
+        <div class="er-hero-tags"><span>Branding</span><span>Art Direction</span><span>App Design</span><span>Promotion</span></div>
+      </div>
+    </section>
+
+    <section class="er-intro" id="er-2">
+      <div class="shell er-intro-grid">
+        <div>
+          <span class="er-meta">02 — Brand world</span>
+          <h2>Between the screen<br>and reality.</h2>
+        </div>
+        <div class="er-intro-copy">
+          <p>EtheReal is a K-pop virtual girl group produced by RR Official. Five members exist only in the digital world, each with distinct personalities, talents and cultural backgrounds.</p>
+          <p>The identity uses pixelation, brackets and a star-like favicon to frame EtheReal as a world outside reality: brief, luminous appearances that disappear when the screen turns off.</p>
+          <p class="er-ai-note"><b>AI-assisted image making</b><br>Character and atmospheric static imagery were generated with AI as part of the world-building process. Identity systems, compositions, Realm UX/UI and promotional materials were designed and developed by Iris Wang.</p>
+        </div>
+      </div>
+
+      <div class="er-type-band">
+        <div class="shell">
+          <div class="er-type-row"><span>Pixeloid Sans</span><strong class="er-pixel">ETHEREAL</strong><small>Brand display</small></div>
+          <div class="er-type-row"><span>TT Octosquares</span><strong class="er-octo">ELECTRONIC BUTTERFLY</strong><small>Album display</small></div>
+        </div>
+      </div>
+
+      <div class="shell er-colours">
+        <div style="--c:#1B03A3"><b>Neon Blue</b><span>#1B03A3</span></div>
+        <div style="--c:#01060A"><b>Ultra Black</b><span>#01060A</span></div>
+        <div style="--c:#7DF9FF"><b>Electric Blue</b><span>#7DF9FF</span></div>
+        <div style="--c:#FF7AAD"><b>Butterfly Pink</b><span>#FF7AAD</span></div>
+      </div>
+    </section>
+
+    <section class="er-members" id="er-3">
+      <div class="shell">
+        <div class="er-head"><span class="er-meta">03 — Members</span><h2>Five signals.<br>One realm.</h2></div>
+        <div class="er-member-grid">
+          ${members.map((m,i)=>`<article class="er-member" style="--i:${i}">
+            <div class="er-member-portrait">${img(m[3],`${m[0]} character`)}</div>
+            <div class="er-member-name">${img(m[4],`${m[0]} name graphic`)}</div>
+            <div class="er-member-meta"><b>${m[0]}</b><span>${m[1]}</span><em>${m[2]}</em></div>
+          </article>`).join("")}
+        </div>
+      </div>
+    </section>
+
+    <section class="er-album" id="er-4">
+      <div class="shell er-album-copy">
+        <span class="er-meta">04 — 1st Mini Album</span>
+        ${img("svg/electronic butterfly.svg","Electronic Butterfly title","er-album-logo")}
+        <p>The album concept comes from the Chinese term “电子蝴蝶”: electronic butterflies whose wings are heart-stirring on screen, yet become untouchable once the device is switched off — as if the dream ends.</p>
+      </div>
+      <div class="er-static-strip">
+        ${[1,2,3,4,5,6].map((n,i)=>img(`ai statics/static_${n}.${n===1?"png":"jpg"}`,`AI-assisted EtheReal atmosphere ${n}`,i%2?"er-static-tall":"")).join("")}
+      </div>
+      <div class="shell er-album-mockups">
+        ${["Album Mockup Dark Op1.png","Album Mockup Dark Op2.png","Album Mockup Light Op1.png","Album Mockup Light Op2.png"].map(f=>img(`promotion/${f}`,"Electronic Butterfly album mockup")).join("")}
+      </div>
+    </section>
+
+    <section class="er-campaign" id="er-5">
+      <div class="shell">
+        <div class="er-head"><span class="er-meta">05 — Promotion system</span><h2>Designed to<br>appear everywhere.</h2></div>
+        <div class="er-tracklist">
+          ${["Launch Tracklist_1080x1080.png","Launch Tracklist_1080x10802.png","Launch Tracklist_1080x10803.png","Launch Tracklist_1080x10804.png"].map(f=>img(`promotion/${f}`,"Electronic Butterfly track list")).join("")}
+        </div>
+        <div class="er-social-grid">
+          <div class="wide">${img("promotion/YT Banner.png","EtheReal YouTube banner")}</div>
+          ${["IG Profile-01.png","IG Profile-02.png","IG Profile-03.png","Instagram Post_Debut Live Show_03.png","Instagram Post_Promotion Schedule_02.png","YT Highlight Medley Thumbnail.png"].map(f=>img(`promotion/${f}`,"EtheReal promotional design")).join("")}
+        </div>
+      </div>
+      <div class="er-video-band">
+        <video autoplay muted loop playsinline preload="metadata"><source src="${A}/web-video/Highlight%20Medley.mp4" type="video/mp4"></video>
+        <div class="shell"><span>Highlight Medley / moving identity</span></div>
+      </div>
+    </section>
+
+    <section class="er-realm" id="er-6">
+      <div class="shell er-realm-intro">
+        <div>
+          <span class="er-meta">06 — Realm App</span>
+          ${img("svg/Realm App.svg","Realm app logo","er-realm-logo")}
+        </div>
+        <div>
+          <h2>The ultimate home<br>for the fans.</h2>
+          <p>Realm brings EtheReal’s social posts, merchandise, album collection and artist-to-fan communication into one mobile experience. It is designed for fans who want an immediate, deeper connection to the group and to one another.</p>
+        </div>
+      </div>
+      <div class="er-app-marquee" aria-label="Realm final interface preview">
+        <div class="er-app-track">
+          ${[...appFrames,...appFrames].map((f,i)=>`<div class="er-phone" ${i>=appFrames.length?'aria-hidden="true"':''}>${frame(f)}</div>`).join("")}
+        </div>
+      </div>
+    </section>
+
+    <section class="er-ux" id="er-7">
+      <div class="shell">
+        <div class="er-head er-head-ux"><span class="er-meta">07 — UX process</span><h2>From fandom needs<br>to a connected system.</h2></div>
+        <div class="er-persona">
+          <div class="er-persona-title"><span>Target audience</span><strong>HAZEL, REALS</strong><small>21 · Seoul · University student</small></div>
+          <div class="er-persona-copy"><p>A new K-pop fan fascinated by EtheReal who wants immediate updates, access to member content, live interaction, albums and collectible cards — without fragmenting the experience across multiple platforms.</p></div>
+          <div class="er-needs"><span>Updates immediately</span><span>Member materials</span><span>Chat + live</span><span>Albums + cards</span></div>
+        </div>
+
+        <div class="er-ia">
+          <span class="er-meta">Information architecture</span>
+          <div class="er-ia-root">HOME</div>
+          <div class="er-ia-line"></div>
+          <div class="er-ia-nodes"><span>REAL'S REALM<br><small>Social community</small></span><span>SHOP<br><small>Merchandise</small></span><span>ALBUM<br><small>Music + cards</small></span><span>CHAT<br><small>Message + live</small></span><span>PROFILE<br><small>ReaLv + settings</small></span></div>
+        </div>
+
+        <div class="er-wireframe">
+          <div class="er-wire-copy"><span class="er-meta">Wireframe → final UI</span><h3>Home as a living dashboard.</h3><p>News, check-in, schedule and shortcuts establish the home screen as the app’s daily entry point. The structure then expands into community, commerce, collection and direct communication.</p></div>
+          <div class="er-wire-visual">
+            <div class="er-wire-phone"><span>9:41</span><i></i><i></i><i></i><i></i><b>HOME / WIREFRAME</b></div>
+            <div class="er-arrow">→</div>
+            <div class="er-final-phone">${frame("APP_ETH_RR_ForYou.png","Realm final social interface")}</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="er-interface" id="er-8">
+      <div class="shell">
+        <div class="er-head"><span class="er-meta">08 — Interface flows</span><h2>One app.<br>Multiple relationships.</h2></div>
+        <div class="er-flow er-flow-social">
+          <div class="er-flow-copy"><b>01 / Social community</b><h3>Realm + For You</h3><p>Member posts and fan posts coexist in a social feed, with comments and translation supporting an international fandom.</p></div>
+          <div class="er-flow-phones">${frame("APP_ETH_RealsRealm_Realm.png")}${frame("APP_ETH_RR_ForYou.png")}${frame("APP_ETH_Profile_Comments.png")}</div>
+        </div>
+        <div class="er-flow er-flow-shop">
+          <div class="er-flow-copy"><b>02 / Shopping flow</b><h3>Discover → product → cart → order</h3><p>Merchandise, albums and photo cards move through a connected purchasing flow with order-state feedback.</p></div>
+          <div class="er-flow-phones">${frame("APP_ETH_Shop_Photocards.png")}${frame("APP_ETH_Shop_Product_PC.png")}${frame("APP_ETH_Shop_ShoppingCart.png")}${frame("APP_ETH_Shop_MyOrders.png")}</div>
+        </div>
+        <div class="er-flow er-flow-album">
+          <div class="er-flow-copy"><b>03 / Album collection</b><h3>Music becomes collectible.</h3><p>Album playback, music video and digital photo cards extend the release beyond a conventional streaming screen.</p></div>
+          <div class="er-flow-phones">${frame("APP_ETH_Album_Home.png")}${frame("APP_ETH_Album_Cards_01.png")}${frame("APP_ETH_Album_Cards_03.png")}${frame("APP_ETH_Album_Player.png")}</div>
+        </div>
+        <div class="er-flow er-flow-profile">
+          <div class="er-flow-copy"><b>04 / Profile + ReaLv</b><h3>Participation has a visible rhythm.</h3><p>ReaLv reflects purchase and app activity, while profile settings, posts and comments give fans a persistent identity inside the community.</p></div>
+          <div class="er-flow-phones">${frame("APP_ETH_Profile_Posts.png")}${frame("APP_ETH_Profile_Comments.png")}${frame("APP_ETH_Profile_Settings.png")}</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="er-prototype" id="er-9">
+      <div class="shell er-prototype-copy">
+        <span class="er-meta">09 — Final prototype</span>
+        <h2>A complete route<br>through Realm.</h2>
+        <p>The final prototype links onboarding and the home experience to social community, shop, album, communication and profile flows — demonstrating the app as one connected fan ecosystem rather than a set of isolated screens.</p>
+        <a class="er-proto-link" href="https://www.figma.com/proto/d1Gr3gDRCKigTX1UVpodvi/ETHEREAL-Branding-2024--Community-?node-id=1593-54443&t=fZNlTHgpmb8kezNI-1" target="_blank" rel="noreferrer">Open interactive prototype ↗</a>
+      </div>
+      <div class="er-prototype-stage">
+        ${frame("APP_ETH_RR_ForYou.png")}${frame("APP_ETH_Shop_Product_PC.png")}${frame("APP_ETH_Album_Player.png")}${frame("APP_ETH_Profile_Posts.png")}
+      </div>
+    </section>
+
+    <section class="er-finale">
+      <video autoplay muted loop playsinline preload="metadata"><source src="${A}/web-video/Digit%20Wings.mp4" type="video/mp4"></video>
+      <div class="er-finale-shade"></div>
+      <div class="shell"><span>WHEN THE SCREEN GOES DARK,</span><strong>THE DREAM DISAPPEARS.</strong></div>
+    </section>
+
+    <a class="next-project er-next" href="/work/${next.slug}/"><span class="meta-mono">Next project</span><br>${esc(next.title)} →</a>
+  </article>`;
+
+  document.body.insertAdjacentHTML("beforeend",footer());
+  const progress=document.querySelector("#progress");
+  addEventListener("scroll",()=>{
+    const h=document.documentElement.scrollHeight-innerHeight;
+    progress.style.width=`${h?scrollY/h*100:0}%`;
+  },{passive:true});
+
+  const rail=[...document.querySelectorAll(".er-rail a")];
+  const sections=rail.map(a=>document.querySelector(a.getAttribute("href")));
+  const obs=new IntersectionObserver(es=>es.forEach(e=>{
+    if(e.isIntersecting){
+      const i=sections.indexOf(e.target);
+      rail.forEach((a,j)=>a.classList.toggle("active",i===j));
+    }
+  }),{rootMargin:"-42% 0px -48% 0px"});
+  sections.forEach(s=>s&&obs.observe(s));
+
+  const track=document.querySelector(".er-app-track");
+  if(track && innerWidth>760 && !matchMedia("(prefers-reduced-motion: reduce)").matches){
+    let x=0,raf,paused=false;
+    const move=()=>{
+      if(!paused){
+        x-=.45;
+        const half=track.scrollWidth/2;
+        if(-x>=half)x=0;
+        track.style.transform=`translate3d(${x}px,0,0)`;
+      }
+      raf=requestAnimationFrame(move);
+    };
+    raf=requestAnimationFrame(move);
+    track.addEventListener("mouseenter",()=>paused=true);
+    track.addEventListener("mouseleave",()=>paused=false);
+  }
+}
+
 async function renderProject(){
   const projects=await getProjects();
   const slug=location.pathname.split("/").filter(Boolean).pop();
@@ -499,6 +737,7 @@ async function renderProject(){
   }
 
   if(p.slug==="60-bpm"){ render60BPM(p,projects); return; }
+  if(p.slug==="ethereal-realm"){ renderEtherealRealm(p,projects); return; }
 
   document.body.classList.add("compact-brand");
   document.documentElement.style.setProperty("--project-accent",p.accent);
