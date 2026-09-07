@@ -503,6 +503,14 @@ function renderEtherealRealm(p,projects){
     const list=[...urls,fallback].map(u=>u.replace(/"/g,"&quot;")).join("|");
     return `<img class="${cls}" src="${first}" data-fallbacks="${list}" alt="${esc(alt)}" loading="lazy">`;
   };
+  const appFolderImg=(folder,name,alt,cls="")=>img(`app/${folder}/${name}`,alt,cls);
+  const flowFrames=(folder,names,altPrefix="Realm app flow")=>names.map((name,i)=>appFolderImg(folder,name,`${altPrefix} ${i+1}`,"er4-flow-frame")).join("");
+  const svgAsset=(candidates,alt,cls="")=>{
+    const urls=candidates.map(s=>`${A}/${enc(`svg/${s}`)}`);
+    const first=urls.shift()||"";
+    const list=urls.map(u=>u.replace(/"/g,"&quot;")).join("|");
+    return `<img class="${cls}" src="${first}" data-fallbacks="${list}" alt="${esc(alt)}" loading="lazy">`;
+  };
   const next=projects[(projects.indexOf(p)+1)%projects.length];
 
   const members=[
@@ -513,7 +521,7 @@ function renderEtherealRealm(p,projects){
     {n:"Navi",native:"『나비 / 娜比 / ナビ』",role:"Center · Visual",dob:"Debut date",mbti:"INTJ",nationality:"Virtual",colour:"Silver",emojiSvg:"Navi.svg",interest:"Composing · writing beats",fact:"Speaks three languages and has high affinity.",img:"navi.png",intro:"navi_intro.svg",swatch:"#C6C5C6"}
   ];
 
-  document.body.classList.add("compact-brand","project-ethereal","ethereal-v2","ethereal-v3");
+  document.body.classList.add("compact-brand","project-ethereal","ethereal-v2","ethereal-v3","ethereal-v4","ethereal-v5","ethereal-v6","ethereal-v7");
   document.documentElement.style.setProperty("--project-accent","#6044FF");
   document.title="EtheReal / Realm — Iris Wang";
   document.body.insertAdjacentHTML("afterbegin",header()+`<div class="reading-progress er2-progress" id="progress"></div>`);
@@ -540,7 +548,7 @@ function renderEtherealRealm(p,projects){
       <div class="shell er2-world-grid">
         <div class="er2-heading-block">
           <span class="er2-label">02 — Brand world</span>
-          <div class="er3-world-star" role="img" aria-label="EtheReal pixel star logo"></div>
+          ${img("svg/hero.svg","EtheReal hero identity mark","er5-world-hero")}
         </div>
         <div class="er2-world-copy">
           <p>EtheReal is a K-pop virtual girl group produced by RR Official. Five members appear only in the digital world, each with distinct personalities, specialties and cultural backgrounds.</p>
@@ -562,11 +570,9 @@ function renderEtherealRealm(p,projects){
         </div>
       </div>
 
-      <div class="shell er2-palette">
-        <div style="--c:#1B03A3"><b>Neon Blue</b><span>#1B03A3</span></div>
-        <div class="dark" style="--c:#01060A"><b>Ultra Black</b><span>#01060A</span></div>
-        <div class="light" style="--c:#7DF9FF"><b>Electric Blue</b><span>#7DF9FF</span></div>
-        <div class="light" style="--c:#FF7AAD"><b>Butterfly Pink</b><span>#FF7AAD</span></div>
+      <div class="shell er5-colour-svg-display">
+        ${svgAsset(["colour_01.svg","Colour_01.svg","colour 01.svg"],"EtheReal brand colour system 01","er5-colour-svg")}
+        ${svgAsset(["colour_02.svg","Colour_02.svg","colour 02.svg"],"EtheReal brand colour system 02","er5-colour-svg")}
       </div>
     </section>
 
@@ -574,7 +580,7 @@ function renderEtherealRealm(p,projects){
       <div class="shell">
         <div class="er2-section-head">
           <span class="er2-label">03 — Members</span>
-          <h2>Five signals.<br>One realm.</h2>
+          <h2>Five signals. One realm.</h2>
           <p>EtheReal is composed of five members from multicultural backgrounds, one of whom is fully virtual. Hover or focus a member to reveal the profile system.</p>
         </div>
         <div class="er2-member-grid">
@@ -592,7 +598,7 @@ function renderEtherealRealm(p,projects){
       <div class="shell er2-album-intro er3-album-intro">
         <span class="er2-label">04 — 1st Mini Album</span>
         ${img("svg/electronic butterfly.svg","Electronic Butterfly","er2-album-logo")}
-        <p>The central concept of <i>Electronic Butterfly</i> comes from the Chinese term “电子蝴蝶”. EtheReal are imagined as electronic butterflies: emotionally vivid while moving across a screen, yet untouchable once the device is switched off — as if the dream has ended.</p>
+        <p>The central concept of Electronic Butterfly stems from a Chinese term “电子蝴蝶“. It reveals the instantaneous nature of all idols’ appearance, that once the screen is turned off, they are untouchable most of the time. This leads to the main idea of the album that compares EtheReal to electronic butterflies, whose fluttered wings is heart-stirring for all fans, yet can never be found once all phones are shut down, as if the dream ends.</p>
       </div>
 
       <div class="er2-static-flow" aria-label="AI-assisted visual-world imagery">
@@ -614,11 +620,11 @@ function renderEtherealRealm(p,projects){
       <div class="shell">
         <div class="er2-section-head">
           <span class="er2-label">05 — Promotion system</span>
-          <h2>Designed to<br>appear everywhere.</h2>
+          <h2>Welcome to EtheReal's Realm!</h2>
           <p>The campaign translates the pixel-and-butterfly system across track-list graphics, social media, YouTube, teasers and launch communication.</p>
         </div>
         <div class="er2-youtube">
-          <div><span class="er2-label">YouTube channel</span><h3 class="er2-octo">WELCOME TO ETHEREAL'S YOUTUBE CHANNEL</h3></div>
+          <div><span class="er2-label">YouTube channel</span><h3>EtheReal on YouTube</h3></div>
           <a href="https://www.youtube.com/@EtheReal-itsreal" target="_blank" rel="noreferrer">Visit @EtheReal-itsreal ↗</a>
         </div>
       </div>
@@ -635,40 +641,30 @@ function renderEtherealRealm(p,projects){
           ${img("app/App Icon.png","Realm app icon")}
           <div><span class="er2-label">06 — Realm App</span><strong class="er2-pixel">REALM</strong></div>
         </div>
-        <div><h2>The ultimate home<br>for the fans.</h2><p>Realm gathers social posts, merchandise, album collection and artist-to-fan communication into one mobile experience. Unlike a single-purpose fan network, the concept connects fan community, member interaction, commerce and collection inside one branded system.</p></div>
+        <div><h2>The ultimate home for the fans.</h2><p>Realm gathers social posts, merchandise, album collection and artist-to-fan communication into one mobile experience. Unlike a single-purpose fan network, the concept connects fan community, member interaction, commerce and collection inside one branded system.</p></div>
       </div>
 
-      <div class="er3-realm-flow" aria-label="Realm interface flow">
-        <div class="er3-realm-track">
-          ${["APP_ETH_RR_ForYou.png","APP_ETH_RealsRealm_Realm.png","APP_ETH_Shop_Photocards.png","APP_ETH_Shop_Product_PC.png","APP_ETH_Shop_ShoppingCart.png","APP_ETH_Album_Home.png","APP_ETH_Album_Cards_01.png","APP_ETH_Album_Player.png","APP_ETH_Profile_Posts.png",
-             "APP_ETH_RR_ForYou.png","APP_ETH_RealsRealm_Realm.png","APP_ETH_Shop_Photocards.png","APP_ETH_Shop_Product_PC.png","APP_ETH_Shop_ShoppingCart.png","APP_ETH_Album_Home.png","APP_ETH_Album_Cards_01.png","APP_ETH_Album_Player.png","APP_ETH_Profile_Posts.png"].map((f,i)=>frame(f,"Realm interface frame",i>=9?"dup":"")).join("")}
-        </div>
-      </div>
+      
     </section>
 
     <section class="er2-system er3-system" id="er2-7">
-      <div class="shell er3-persona-shell">
-        <div class="er2-system-head">
-          <span class="er2-label">07 — UI process</span>
-          <h2>From fandom needs to a connected system.</h2>
-        </div>
-
-        <div class="er2-persona er3-persona">
-          <div class="er2-persona-id"><span>Target audience</span><strong>HAZEL, REALS</strong><small>21 · Korea · University student</small></div>
-          <div class="er2-persona-about"><b>About</b><p>Hazel is a university student in Seoul who has recently become a fan of EtheReal. She wants immediate updates and a closer connection to members even though she cannot meet the virtual group in reality.</p></div>
-          <div class="er2-persona-cards">
-            <div><b>Wants</b><span>Immediate updates</span><span>Member content</span><span>Chat + live</span><span>Albums + cards</span></div>
-            <div><b>Challenges</b><span>New to K-pop processes</span><span>Hesitant to post publicly</span></div>
-          </div>
-          <div class="er2-traits"><span>Introvert</span><i style="--p:72%"></i><span>Extrovert</span><span>Intuitive</span><i style="--p:65%"></i><span>Sensing</span><span>Thinking</span><i style="--p:61%"></i><span>Feeling</span><span>Judging</span><i style="--p:68%"></i><span>Perceiving</span></div>
-        </div>
-      </div>
-
       <div class="er3-dark-process">
         <div class="shell">
-          <div class="er2-app-colour">
+          <div class="er2-app-colour er5-app-colour er6-app-colour">
             <span class="er2-label">App colour</span>
-            <div class="er2-app-swatch"><i></i><strong>#6044FF</strong><p>Light Neon Blue is a lighter extension of the brand Neon Blue, designed to stand out against Realm's ultra-black interface.</p></div>
+
+            <div class="er6-app-colour-svg">
+              ${svgAsset(
+                [
+                  "app colour.svg",
+                  "App Colour.svg",
+                  "app_colour.svg",
+                  "App_Colour.svg"
+                ],
+                "Realm app colour system",
+                "er6-app-colour-img"
+              )}
+            </div>
           </div>
 
           <div class="er2-ia">
@@ -677,20 +673,142 @@ function renderEtherealRealm(p,projects){
             <div class="nodes"><div><b>REAL'S REALM</b><small>Social community</small></div><div><b>SHOP</b><small>Merchandise</small></div><div><b>ALBUM</b><small>Music + cards</small></div><div><b>CHAT</b><small>Message + live</small></div><div><b>PROFILE</b><small>ReaLv + settings</small></div></div>
           </div>
 
-          <div class="er2-components">
-            <div class="copy"><span class="er2-label">Navigation + element pattern</span><h3>A repeatable interface language.</h3><p>Selected navigation states use violet while outline, icon and online states separate content types without leaving the black visual system.</p></div>
-            <div class="demo">
-              <div class="nav"><span class="on">✦<small>Realm</small></span><span>▱<small>Shop</small></span><span>▣<small>Album</small></span><span>♡<small>ERealm</small></span><span>○<small>Profile</small></span></div>
-              <div class="patterns"><i>Without outline</i><i>Grey outline</i><i>Profile + icon</i><i class="online">Member online</i></div>
-            </div>
-          </div>
+          <div class="shell er5-navigation er6-navigation er7-navigation">
 
-          <div class="er3-homepage">
-            <div class="er3-home-copy"><span class="er2-label">Home page</span><h3>Home as a living dashboard.</h3><p>Latest news, check-in, D-day and daily schedule are organised as the app's daily entry point. The three frames below follow the home-page progression from structure to resolved interface.</p></div>
-            <div class="er3-home-frames">
-              ${homeAsset(["Home Page 01.png","Home Page_01.png","Homepage 01.png","Homepage_01.png","1.png"],"Realm home page frame 1")}
-              ${homeAsset(["Home Page 02.png","Home Page_02.png","Homepage 02.png","Homepage_02.png","2.png"],"Realm home page frame 2")}
-              ${homeAsset(["Home Page 03.png","Home Page_03.png","Homepage 03.png","Homepage_03.png","3.png"],"Realm home page frame 3")}
+      <div class="er5-nav-copy">
+        <span class="er2-label">Navigation</span>
+        
+
+        <p>
+          Five persistent destinations create a consistent navigation
+          system across Realm, connecting community, shopping, albums,
+          EtheReal and the user's profile.
+        </p>
+      </div>
+
+      <div class="er8-nav-showcase">
+
+        <div class="er8-nav-item">
+          <div class="er8-nav-icon-wrap">
+            ${img("svg/rrealm_white.svg","Realm navigation default","er8-nav-icon er8-nav-default")}
+            ${img("svg/rrealm.svg","Realm navigation hover","er8-nav-icon er8-nav-hover")}
+          </div>
+          <span>RRealm</span>
+        </div>
+
+        <div class="er8-nav-item">
+          <div class="er8-nav-icon-wrap">
+            ${img("svg/shop_white.svg","Shop navigation default","er8-nav-icon er8-nav-default")}
+            ${img("svg/shop.svg","Shop navigation hover","er8-nav-icon er8-nav-hover")}
+          </div>
+          <span>Shop</span>
+        </div>
+
+        <div class="er8-nav-item">
+          <div class="er8-nav-icon-wrap">
+            ${img("svg/album_white.svg","Album navigation default","er8-nav-icon er8-nav-default")}
+            ${img("svg/album.svg","Album navigation hover","er8-nav-icon er8-nav-hover")}
+          </div>
+          <span>Album</span>
+        </div>
+
+        <div class="er8-nav-item">
+          <div class="er8-nav-icon-wrap">
+            ${img("svg/erealM_white.svg","EtheReal navigation default","er8-nav-icon er8-nav-default")}
+            ${img("svg/erealM.svg","EtheReal navigation hover","er8-nav-icon er8-nav-hover")}
+          </div>
+          <span>ERealM</span>
+        </div>
+
+        <div class="er8-nav-item">
+          <div class="er8-nav-icon-wrap">
+            ${img("svg/profile_white.svg","Profile navigation default","er8-nav-icon er8-nav-default")}
+            ${img("svg/profile.svg","Profile navigation hover","er8-nav-icon er8-nav-hover")}
+          </div>
+          <span>Profile</span>
+        </div>
+
+      </div>
+
+    </div>
+
+    </div>
+
+    <div class="shell er3-homepage er5-homepage er6-homepage">
+            <div class="er5-home-title">
+              <span class="er2-label">Home page</span>
+              
+            </div>
+
+            <div class="er6-home-diagram">
+
+              <div class="er6-info-box er6-wireframe-label">
+                Wireframe
+              </div>
+
+              <div class="er6-home-phone">
+                ${appFolderImg(
+                  "homepage",
+                  "APP_ETH_Home_01.png",
+                  "Realm home wireframe",
+                  "er6-home-img"
+                )}
+              </div>
+
+              <div class="er6-home-arrow">→</div>
+
+              <div class="er6-home-phone">
+                ${appFolderImg(
+                  "homepage",
+                  "APP_ETH_Home.png",
+                  "Realm home interface",
+                  "er6-home-img"
+                )}
+              </div>
+
+              <div class="er6-home-actions">
+                <div class="er6-info-box">
+                  <b>Swipe</b>
+                  <small>To next panel</small>
+                </div>
+
+                <div class="er6-info-box">
+                  <b>Click</b>
+                  <small>To check in</small>
+                </div>
+              </div>
+
+              <div class="er6-home-phone">
+                ${appFolderImg(
+                  "homepage",
+                  "APP_ETH_Home-1.png",
+                  "Realm checked state",
+                  "er6-home-img"
+                )}
+              </div>
+
+              <div class="er6-home-features">
+                <div class="er6-info-box">
+                  <b>Chat box</b>
+                  <small>A shortcut to Message page</small>
+                </div>
+
+                <div class="er6-info-box">
+                  <b>Information Panel</b>
+                  <small>Latest news updated for users</small>
+                </div>
+
+                <div class="er6-info-box">
+                  <b>D-day</b>
+                  <small>Count of checked days</small>
+                </div>
+
+                <div class="er6-info-box">
+                  <b>Schedule</b>
+                  <small>EtheReal's daily activities</small>
+                </div>
+              </div>
+
             </div>
           </div>
         </div>
@@ -701,7 +819,7 @@ function renderEtherealRealm(p,projects){
       <div class="shell">
         <div class="er2-section-head">
           <span class="er2-label">08 — Interface flows</span>
-          <h2>One app.<br>Multiple relationships.</h2>
+          <h2>One app. Multiple relationships.</h2>
           <p>Final frames are grouped by task so the progression from feed interaction to commerce, collection and profile management remains visible.</p>
         </div>
 
@@ -724,6 +842,60 @@ function renderEtherealRealm(p,projects){
           <div class="copy"><span>04 / Profile + ReaLv</span><h3>Participation has a visible rhythm.</h3><p>ReaLv represents purchase and app activity, while posts, comments and settings give each fan a persistent identity.</p><b>Profile → comments → settings</b></div>
           <div class="phones">${frame("APP_ETH_Profile_Posts.png")}${frame("APP_ETH_Profile_Comments.png")}${frame("APP_ETH_Profile_Settings.png")}</div>
         </article>
+
+        <article class="er2-flow er6-realm-flow">
+          <div class="copy">
+            <span>05 / Realm communication</span>
+
+            <h3>
+              Messages, subscription and live.
+            </h3>
+
+            <p>
+              Realm extends the fan relationship through member profiles,
+              subscription states, direct chat and live communication.
+            </p>
+          </div>
+
+          <div class="phones er6-realm-flow-phones">
+
+            ${appFolderImg(
+              "realm flow",
+              "APP_ETH_ER_01.png",
+              "Realm communication frame 1",
+              "er4-flow-frame"
+            )}
+
+            ${appFolderImg(
+              "realm flow",
+              "APP_ETH_ER_02.png",
+              "Realm communication frame 2",
+              "er4-flow-frame"
+            )}
+
+            ${appFolderImg(
+              "realm flow",
+              "APP_ETH_ER_Chat_02.png",
+              "Realm chat interface",
+              "er4-flow-frame"
+            )}
+
+            ${appFolderImg(
+              "realm flow",
+              "APP_ETH_ER_Chat_Navi.png",
+              "Navi chat interface",
+              "er4-flow-frame"
+            )}
+
+            ${appFolderImg(
+              "realm flow",
+              "APP_ETH_ER_Chat_Live.png",
+              "Realm live interface",
+              "er4-flow-frame"
+            )}
+
+          </div>
+        </article>
       </div>
     </section>
 
@@ -734,17 +906,90 @@ function renderEtherealRealm(p,projects){
         <p>The final prototype links onboarding and home to community, shop, album, communication and profile flows as one connected fan ecosystem.</p>
         <a href="https://www.figma.com/proto/d1Gr3gDRCKigTX1UVpodvi/ETHEREAL-Branding-2024--Community-?node-id=1593-54443&t=fZNlTHgpmb8kezNI-1" target="_blank" rel="noreferrer">Open interactive prototype ↗</a>
       </div>
-      <div class="er3-final-flow" aria-label="Realm final prototype flow">
-        <div class="er3-final-track">
-          ${["APP_ETH_RR_ForYou.png","APP_ETH_RealsRealm_Realm.png","APP_ETH_Shop_Photocards.png","APP_ETH_Shop_Product_PC.png","APP_ETH_Shop_ShoppingCart.png","APP_ETH_Album_Home.png","APP_ETH_Album_Cards_01.png","APP_ETH_Album_Player.png","APP_ETH_Profile_Posts.png","APP_ETH_Profile_Comments.png","APP_ETH_Profile_Settings.png",
-             "APP_ETH_RR_ForYou.png","APP_ETH_RealsRealm_Realm.png","APP_ETH_Shop_Photocards.png","APP_ETH_Shop_Product_PC.png","APP_ETH_Shop_ShoppingCart.png","APP_ETH_Album_Home.png","APP_ETH_Album_Cards_01.png","APP_ETH_Album_Player.png","APP_ETH_Profile_Posts.png","APP_ETH_Profile_Comments.png","APP_ETH_Profile_Settings.png"].map((f,i)=>frame(f,"Realm prototype screen",i>=11?"dup":"")).join("")}
+            </div>
+    
+
+      <div class="shell er7-prototype-animation">
+
+        <div class="er7-prototype-animation-heading">
+          
+          
         </div>
+
+        <div class="er7-animation-track">
+
+          ${appFolderImg(
+            "animation flow_01",
+            "APP_ETH_Intro.png",
+            "Realm prototype frame",
+            "er7-animation-frame"
+          )}
+
+          ${appFolderImg(
+            "animation flow_01",
+            "APP_ETH_Login.png",
+            "Realm prototype frame",
+            "er7-animation-frame"
+          )}
+
+          ${appFolderImg(
+            "animation flow_01",
+            "APP_ETH_Home.png",
+            "Realm prototype frame",
+            "er7-animation-frame"
+          )}
+
+          ${appFolderImg(
+            "animation flow_01",
+            "APP_ETH_Profile_Posts.png",
+            "Realm prototype frame",
+            "er7-animation-frame"
+          )}
+
+          ${appFolderImg(
+            "animation flow_01",
+            "APP_ETH_ER_Chat_Navi.png",
+            "Realm prototype frame",
+            "er7-animation-frame"
+          )}
+
+          ${appFolderImg(
+            "animation flow_01",
+            "APP_ETH_EtheRealRealm_Sub.png",
+            "Realm subscription prototype frame",
+            "er7-animation-frame"
+          )}
+
+          ${appFolderImg(
+            "animation flow_01",
+            "APP_ETH_Album_Cards_02.png",
+            "Realm album prototype frame",
+            "er7-animation-frame"
+          )}
+
+          ${appFolderImg(
+            "animation flow_01",
+            "APP_ETH_Album_Player.png",
+            "Realm album player prototype frame",
+            "er7-animation-frame"
+          )}
+
+          ${appFolderImg(
+            "animation flow_01",
+            "APP_ETH_Shop_Album.png",
+            "Realm shop prototype frame",
+            "er7-animation-frame"
+          )}
+
+        </div>
+
       </div>
+
     </section>
 
     <section class="er2-finale">
-      <div class="er2-finale-bg">${img("promotion/Launch Tracklist_1080x10804.png","Electronic Butterfly track list")}</div>
-      <div class="shell"><span>WHEN THE SCREEN GOES DARK</span><strong>THE DREAM<br>DISAPPEARS.</strong></div>
+      <div class="er2-finale-bg">${img("pattern/Screenshot 2024-07-16 at 5.10.44 pm 3.jpeg","EtheReal pattern artwork")}</div>
+      <div class="shell er-final-background"><span>WHEN THE SCREEN GOES DARK</span><strong>THE DREAM<br>DISAPPEARS.</strong></div>
     </section>
 
     <a class="next-project er2-next" href="/work/${next.slug}/"><span class="meta-mono">Next project</span><br>${esc(next.title)} →</a>
@@ -811,7 +1056,7 @@ function renderEtherealRealm(p,projects){
     requestAnimationFrame(tick);
   };
   startLoop(document.querySelector(".er3-realm-track"),.42);
-  startLoop(document.querySelector(".er3-final-track"),.32);
+  
 
   document.querySelectorAll(".er2-motion-pair video").forEach(v=>{
     v.muted=true;

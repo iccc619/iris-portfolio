@@ -3234,3 +3234,3323 @@ body[data-page="work"] .page-intro{
   .ethereal-v3 .er2-app-colour{grid-template-columns:1fr}
   .ethereal-v3 .er3-home-frames{grid-template-columns:1fr}
 }
+
+
+/* =========================================================
+   ETHEREAL / REALM v4 — typography, colour, flow refinement
+   ========================================================= */
+.ethereal-v4 .er2{--electric:#7DF9FF}
+.ethereal-v4 .er2::selection,
+.ethereal-v4 .er2 *::selection{background:var(--electric);color:#01060A}
+
+/* ETHEREAL stays pixelated; all section labels/headings use the portfolio's original font */
+.ethereal-v4 .er2-hero h1.er2-pixel{
+  font-family:"ER Pixel",sans-serif!important;
+  font-weight:700!important;
+  letter-spacing:-.045em!important;
+}
+.ethereal-v4 .er2-label,
+.ethereal-v4 .er2-kicker{
+  font-family:var(--body)!important;
+  font-weight:600!important;
+  letter-spacing:.06em!important;
+  color:var(--electric)!important;
+}
+.ethereal-v4 .er2 a:hover,
+.ethereal-v4 .er2-flow .copy>span,
+.ethereal-v4 .er2-flow .copy>b,
+.ethereal-v4 .er2-subhead span{color:var(--electric)!important}
+
+/* slogans: one line, reduced scale */
+.ethereal-v4 .er2-section-head h2,
+.ethereal-v4 .er2-realm-header h2,
+.ethereal-v4 .er2-system-head h2,
+.ethereal-v4 .er2-proto-copy h2{
+  font-size:clamp(2rem,3.4vw,4.1rem)!important;
+  white-space:nowrap;
+}
+.ethereal-v4 .er2-section-head>p{margin-top:0}
+
+/* section 02 exact star_blue.svg */
+.ethereal-v4 .er4-world-star{
+  width:min(20vw,220px);
+  height:auto;
+  margin-top:34px;
+}
+.ethereal-v4 .er2-world-grid{grid-template-columns:.72fr 1.28fr}
+.ethereal-v4 .er2-world-copy{padding-top:24px}
+
+/* typeface specimens smaller */
+.ethereal-v4 .er2-type-card{min-height:96px}
+.ethereal-v4 .er2-type-card>strong{
+  font-size:clamp(1.6rem,2.9vw,3.7rem)!important;
+}
+.ethereal-v4 .er2-type-card>span,
+.ethereal-v4 .er2-type-card>em{font-size:8px}
+
+/* colour specs: HEX + CMYK + RGB */
+.ethereal-v4 .er2-palette div{height:170px}
+.ethereal-v4 .er2-palette span{
+  line-height:1.6;
+  font-size:8px;
+}
+
+/* members */
+.ethereal-v4 .er2-member-basic b,
+.ethereal-v4 .er2-member-basic span,
+.ethereal-v4 .er2-member-basic i{
+  font-family:var(--body)!important;
+}
+.ethereal-v4 .er2-member-basic b{font-size:16px}
+.ethereal-v4 .er3-member-emoji{width:70px;height:70px}
+
+/* section 04: label left, logo/body centered, smaller body, less bottom whitespace */
+.ethereal-v4 .er2-album{
+  padding-top:105px;
+  padding-bottom:115px;
+}
+.ethereal-v4 .er3-album-intro .er2-label{align-self:flex-start!important}
+.ethereal-v4 .er3-album-intro .er2-album-logo{
+  width:min(66vw,650px)!important;
+  margin-top:16px!important;
+  margin-bottom:22px!important;
+}
+.ethereal-v4 .er3-album-intro p{
+  color:rgba(247,247,251,.62);
+  font-size:clamp(13px,1vw,16px)!important;
+  line-height:1.55!important;
+  max-width:68ch!important;
+}
+.ethereal-v4 .er2-static-flow{
+  margin-top:48px;
+  padding:18px 0 28px;
+}
+.ethereal-v4 .er2-static-track{gap:14px}
+.ethereal-v4 .er2-static-track img{
+  width:clamp(250px,23vw,390px)!important;
+  height:clamp(270px,26vw,430px)!important;
+}
+.ethereal-v4 .er2-album-outcomes{margin-top:58px}
+
+/* promotion */
+.ethereal-v4 .er2-campaign .er2-section-head h2{
+  max-width:none!important;
+  white-space:nowrap;
+}
+.ethereal-v4 .er2-youtube{
+  margin-top:28px;
+  padding-block:24px;
+}
+.ethereal-v4 .er2-youtube h3{
+  font-family:var(--display)!important;
+  font-size:clamp(1.25rem,1.7vw,2rem)!important;
+  white-space:nowrap;
+  margin-top:12px;
+}
+.ethereal-v4 .er2-motion-pair{gap:12px}
+.ethereal-v4 .er2-motion-pair figure{
+  border:0!important;
+  background:transparent!important;
+}
+.ethereal-v4 .er2-motion-pair video{
+  object-fit:contain!important;
+  background:transparent;
+}
+
+/* first animation flow: only app/animation flow_01; top/bottom aligned, more gap + light border */
+.ethereal-v4 .er4-animation-flow{
+  margin-top:60px;
+  padding:20px 0 32px;
+}
+.ethereal-v4 .er4-animation-track{
+  gap:24px!important;
+  align-items:stretch!important;
+}
+.ethereal-v4 .er4-animation-track img{
+  width:clamp(180px,15vw,245px)!important;
+  height:clamp(390px,33vw,535px)!important;
+  object-fit:cover!important;
+  object-position:top center!important;
+  border:1px solid rgba(220,220,224,.42)!important;
+  border-radius:20px!important;
+  background:#090b10;
+}
+
+/* Realm text smaller */
+.ethereal-v4 .er2-realm-header h2{
+  font-size:clamp(2rem,3vw,3.6rem)!important;
+}
+.ethereal-v4 .er2-realm-header p{
+  font-size:12px!important;
+  line-height:1.55!important;
+  max-width:58ch!important;
+}
+.ethereal-v4 .er2-realm-brand strong{font-size:clamp(1.8rem,2.8vw,3.1rem)!important}
+
+/* target audience: gradient bridge + left about / right traits and wants/challenges */
+.ethereal-v4 .er3-persona-shell{
+  background:
+    linear-gradient(180deg,rgba(1,6,10,.06) 0%,rgba(243,242,247,1) 18%,rgba(243,242,247,1) 82%,rgba(1,6,10,.08) 100%);
+  padding-top:64px;
+  padding-bottom:58px;
+}
+.ethereal-v4 .er4-persona{
+  display:grid!important;
+  grid-template-columns:.86fr 1.35fr!important;
+  gap:48px!important;
+  align-items:start;
+  padding-top:34px!important;
+}
+.ethereal-v4 .er4-persona-left{display:grid;gap:24px}
+.ethereal-v4 .er2-persona-id strong{
+  font-family:var(--body)!important;
+  font-size:clamp(1.9rem,2.7vw,3rem)!important;
+  letter-spacing:-.04em;
+  text-transform:none;
+}
+.ethereal-v4 .er2-persona-about>b,
+.ethereal-v4 .er2-persona-cards b{
+  font-family:var(--body)!important;
+  color:#08090d!important;
+  text-transform:none!important;
+  font-size:12px!important;
+  letter-spacing:0!important;
+}
+.ethereal-v4 .er4-persona-right{display:grid;gap:22px}
+.ethereal-v4 .er4-persona-right .er2-traits{grid-column:auto!important}
+.ethereal-v4 .er4-persona-right .er2-persona-cards{
+  grid-column:auto!important;
+  grid-template-columns:1fr 1fr!important;
+}
+.ethereal-v4 .er2-traits{font-family:var(--body)!important;text-transform:none!important}
+
+/* all process bold nouns normal text font */
+.ethereal-v4 .er3-dark-process b,
+.ethereal-v4 .er3-dark-process strong,
+.ethereal-v4 .er2-ia .root,
+.ethereal-v4 .er2-ia .nodes b,
+.ethereal-v4 .er2-components .nav small,
+.ethereal-v4 .er2-components .patterns i{
+  font-family:var(--body)!important;
+}
+
+/* homepage exact three assets + arrows */
+.ethereal-v4 .er3-home-frames.er4-home-flow{
+  display:grid!important;
+  grid-template-columns:1fr auto 1fr auto 1fr!important;
+  gap:18px!important;
+  align-items:center!important;
+}
+.ethereal-v4 .er4-app-frame,
+.ethereal-v4 .er2-flow .phones img,
+.ethereal-v4 .er4-flow-frame{
+  border:1px solid rgba(220,220,224,.42)!important;
+  background:#090b10;
+}
+.ethereal-v4 .er4-app-frame{
+  width:100%;
+  max-height:680px;
+  object-fit:contain;
+}
+.ethereal-v4 .er4-flow-arrow{
+  color:var(--electric);
+  font:400 clamp(1.2rem,2vw,2rem) var(--body);
+  flex:none;
+}
+
+/* Figma-style arrow flows for all app flow sections */
+.ethereal-v4 .er2-flow .phones{
+  gap:12px!important;
+}
+.ethereal-v4 .er2-flow .phones img{
+  border-radius:22px!important;
+}
+.ethereal-v4 .er2-flow .copy h3,
+.ethereal-v4 .er2-flow .copy>b,
+.ethereal-v4 .er2-flow .copy>span{
+  font-family:var(--body)!important;
+}
+.ethereal-v4 .er2-flow .copy h3{
+  font-size:clamp(1.45rem,2vw,2.3rem)!important;
+}
+
+/* final flow uses app/realm flow assets */
+.ethereal-v4 .er4-realm-final-flow{
+  overflow-x:auto;
+  overflow-y:hidden;
+  margin-top:62px;
+  padding:28px 0 40px;
+}
+.ethereal-v4 .er4-realm-final-track{
+  width:max-content;
+  display:flex;
+  align-items:center;
+  gap:14px;
+  padding-inline:4vw;
+}
+.ethereal-v4 .er4-realm-final-track img{
+  width:clamp(165px,14vw,220px);
+  height:clamp(355px,30vw,475px);
+  object-fit:cover;
+  object-position:top center;
+  border:1px solid rgba(220,220,224,.48);
+  border-radius:20px;
+  flex:none;
+}
+
+/* last banner uses pattern-folder image */
+.ethereal-v4 .er2-finale-bg img{
+  object-fit:cover;
+  filter:brightness(.42) saturate(.85);
+}
+
+/* Electric blue highlight details */
+.ethereal-v4 .er2-subhead span,
+.ethereal-v4 .er2-youtube a:hover,
+.ethereal-v4 .er2-proto-copy a:hover{color:var(--electric)}
+.ethereal-v4 .er2-youtube a:hover{
+  background:var(--electric);
+  color:#01060A!important;
+}
+
+@media(max-width:1100px){
+  .ethereal-v4 .er2-section-head h2,
+  .ethereal-v4 .er2-realm-header h2,
+  .ethereal-v4 .er2-system-head h2,
+  .ethereal-v4 .er2-proto-copy h2{white-space:normal}
+  .ethereal-v4 .er4-persona{grid-template-columns:1fr!important}
+}
+@media(max-width:760px){
+  .ethereal-v4 .er3-home-frames.er4-home-flow{
+    grid-template-columns:1fr!important;
+  }
+  .ethereal-v4 .er3-home-frames .er4-flow-arrow{
+    transform:rotate(90deg);
+    justify-self:center;
+  }
+}
+
+
+/* =========================================================
+   ETHEREAL / REALM v5 — app-system refinement
+   ========================================================= */
+.ethereal-v5 .er2{
+  --app-accent:#60EEFF;
+}
+
+/* Promotion section fully black */
+.ethereal-v5 .er2-campaign{
+  background:#01060A!important;
+}
+
+/* Section 02: hero.svg on left */
+.ethereal-v5 .er5-world-hero{
+  width:min(28vw,360px);
+  height:auto;
+  margin-top:34px;
+  object-fit:contain;
+}
+.ethereal-v5 .er4-world-star{display:none!important}
+
+/* Concept colour system now uses the authored SVGs */
+.ethereal-v5 .er2-palette{display:none!important}
+.ethereal-v5 .er5-colour-svg-display{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:18px;
+  padding-top:36px;
+}
+.ethereal-v5 .er5-colour-svg{
+  width:100%;
+  height:auto;
+  border:1px solid rgba(255,255,255,.08);
+}
+
+/* Album application: subtle motion + hover enlargement */
+@keyframes er5AlbumFloat{
+  0%,100%{transform:translateY(0) scale(1.13)}
+  50%{transform:translateY(-7px) scale(1.13)}
+}
+.ethereal-v5 .er2-album-pair img{
+  animation:er5AlbumFloat 7s ease-in-out infinite;
+  transition:transform .45s var(--ease),filter .45s var(--ease);
+}
+.ethereal-v5 .er2-album-pair img:nth-child(2){animation-delay:-3.5s}
+.ethereal-v5 .er2-album-pair img:hover{
+  animation-play-state:paused;
+  transform:scale(1.2)!important;
+  filter:brightness(1.05);
+}
+
+/* App accent switches to Light Neon Blue */
+.ethereal-v5 .er3-dark-process .er2-label,
+.ethereal-v5 .er2-flow .copy>span,
+.ethereal-v5 .er2-flow .copy>b,
+.ethereal-v5 .er5-home-arrow,
+.ethereal-v5 .er5-home-interactions b,
+.ethereal-v5 .er2-proto-copy a:hover{
+  color:var(--app-accent)!important;
+}
+.ethereal-v5 .er2-ia .root{
+  background:var(--app-accent)!important;
+  color:#01060A!important;
+}
+.ethereal-v5 .er2-ia .stem,
+.ethereal-v5 .er2-ia .nodes:before{background:var(--app-accent)!important}
+
+/* Target audience becomes dark and bridges upper/lower sections */
+.ethereal-v5 .er3-persona-shell{
+  background:
+    radial-gradient(circle at 18% 20%,rgba(96,238,255,.08),transparent 28%),
+    radial-gradient(circle at 82% 70%,rgba(96,68,255,.12),transparent 30%),
+    linear-gradient(180deg,#050814 0%,#08101a 55%,#01060A 100%)!important;
+  color:#f7f7fb!important;
+  padding-top:70px!important;
+  padding-bottom:70px!important;
+}
+.ethereal-v5 .er3-persona-shell .er2-system-head{
+  border-color:rgba(96,238,255,.16)!important;
+}
+.ethereal-v5 .er3-persona-shell .er2-label{color:var(--app-accent)!important}
+.ethereal-v5 .er2-persona-id strong,
+.ethereal-v5 .er2-persona-about>b,
+.ethereal-v5 .er2-persona-cards b{color:#fff!important}
+.ethereal-v5 .er2-persona-id small,
+.ethereal-v5 .er2-persona-about p,
+.ethereal-v5 .er2-persona-cards span,
+.ethereal-v5 .er2-traits{color:rgba(247,247,251,.68)!important}
+.ethereal-v5 .er2-persona-cards>div{border-color:rgba(255,255,255,.12)!important}
+.ethereal-v5 .er2-persona-cards span{border-color:rgba(255,255,255,.09)!important}
+.ethereal-v5 .er2-traits i{
+  background:linear-gradient(90deg,var(--app-accent) var(--p),rgba(255,255,255,.12) var(--p))!important;
+}
+
+/* App colour authored SVG */
+.ethereal-v5 .er5-app-colour{
+  grid-template-columns:.6fr 2fr!important;
+  align-items:start;
+}
+.ethereal-v5 .er5-app-colour-svg{
+  display:flex;
+  justify-content:flex-start;
+}
+.ethereal-v5 .er5-app-colour-img{
+  width:min(100%,760px);
+  height:auto;
+  border:1px solid rgba(255,255,255,.08);
+}
+
+/* Navigation only */
+.ethereal-v5 .er2-components{display:none!important}
+.ethereal-v5 .er5-navigation{
+  display:grid;
+  grid-template-columns:.75fr 1.45fr;
+  gap:7vw;
+  align-items:center;
+  padding:72px 0;
+  border-bottom:1px solid rgba(96,238,255,.15);
+}
+.ethereal-v5 .er5-nav-copy h3{
+  margin:20px 0 18px;
+  font-family:var(--display)!important;
+  font-size:clamp(1.8rem,2.5vw,3rem)!important;
+}
+.ethereal-v5 .er5-nav-copy p{
+  max-width:44ch;
+  margin:0;
+  color:rgba(255,255,255,.6);
+  font-size:12px;
+  line-height:1.55;
+}
+.ethereal-v5 .er5-nav-signs{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:16px;
+}
+.ethereal-v5 .er5-nav-svg{
+  width:100%;
+  height:auto;
+  border:1px solid rgba(220,220,224,.28);
+  background:#05070b;
+}
+
+/* No arrows between normal app frames */
+.ethereal-v5 .er2-flow .er4-flow-arrow,
+.ethereal-v5 .er4-realm-final-track .er4-flow-arrow{display:none!important}
+
+/* Home page diagram closely follows the provided Figma presentation */
+.ethereal-v5 .er5-homepage{
+  padding-top:76px!important;
+  border-top:1px solid rgba(96,238,255,.15);
+}
+.ethereal-v5 .er5-home-title{
+  display:grid;
+  grid-template-columns:.6fr 2fr;
+  gap:20px;
+  align-items:end;
+  margin-bottom:46px;
+}
+.ethereal-v5 .er5-home-title h3{
+  margin:0;
+  font-family:var(--display)!important;
+  font-size:clamp(1.9rem,2.6vw,3.2rem)!important;
+}
+.ethereal-v5 .er5-home-diagram{
+  display:grid;
+  grid-template-columns:140px minmax(180px,1fr) 52px minmax(180px,1fr) 130px minmax(180px,1fr) minmax(210px,.9fr);
+  gap:18px;
+  align-items:center;
+  min-height:640px;
+}
+.ethereal-v5 .er5-wireframe-tag{
+  background:#6044FF;
+  color:#fff;
+  padding:20px 14px;
+  border-radius:8px;
+  text-align:center;
+  font:600 13px var(--body);
+}
+.ethereal-v5 .er5-home-phone{
+  align-self:center;
+}
+.ethereal-v5 .er5-home-img{
+  width:100%;
+  height:auto;
+  max-height:610px;
+  object-fit:contain;
+  border:1px solid rgba(220,220,224,.45);
+  border-radius:26px;
+  background:#07090d;
+}
+.ethereal-v5 .er5-home-arrow{
+  font-size:34px;
+  text-align:center;
+}
+.ethereal-v5 .er5-home-interactions{
+  display:grid;
+  gap:110px;
+}
+.ethereal-v5 .er5-home-interactions span,
+.ethereal-v5 .er5-home-features span{
+  border:1px solid #6044FF;
+  border-radius:8px;
+  padding:14px 12px;
+  text-align:center;
+  background:rgba(96,68,255,.09);
+}
+.ethereal-v5 .er5-home-interactions b,
+.ethereal-v5 .er5-home-features b{
+  display:block;
+  font-family:var(--body)!important;
+  font-size:13px;
+  margin-bottom:5px;
+}
+.ethereal-v5 .er5-home-interactions small,
+.ethereal-v5 .er5-home-features small{
+  display:block;
+  color:rgba(255,255,255,.64);
+  font-size:9px;
+  line-height:1.35;
+}
+.ethereal-v5 .er5-home-features{
+  display:grid;
+  gap:12px;
+}
+.ethereal-v5 .er5-home-features span{
+  background:#6044FF;
+  color:#fff;
+  border-color:#6044FF;
+}
+.ethereal-v5 .er5-home-features b{color:#fff!important}
+
+/* app frames: grey border */
+.ethereal-v5 .er2-flow .phones img,
+.ethereal-v5 .er4-realm-final-track img{
+  border:1px solid rgba(220,220,224,.44)!important;
+}
+
+/* final flow uses Realm assets, no arrows */
+.ethereal-v5 .er4-realm-final-track{gap:20px!important}
+
+/* Keep motion videos borderless */
+.ethereal-v5 .er2-motion-pair figure,
+.ethereal-v5 .er2-motion-pair video{border:0!important}
+
+/* mobile */
+@media(max-width:1100px){
+  .ethereal-v5 .er5-home-diagram{
+    grid-template-columns:1fr 1fr;
+    min-height:0;
+  }
+  .ethereal-v5 .er5-wireframe-tag,
+  .ethereal-v5 .er5-home-arrow,
+  .ethereal-v5 .er5-home-interactions{display:none}
+  .ethereal-v5 .er5-home-features{grid-column:1/-1;grid-template-columns:1fr 1fr}
+  .ethereal-v5 .er5-navigation{grid-template-columns:1fr}
+}
+@media(max-width:700px){
+  .ethereal-v5 .er5-colour-svg-display{grid-template-columns:1fr}
+  .ethereal-v5 .er5-nav-signs{grid-template-columns:1fr}
+  .ethereal-v5 .er5-home-diagram{grid-template-columns:1fr}
+  .ethereal-v5 .er5-home-features{grid-template-columns:1fr}
+}
+@media(prefers-reduced-motion:reduce){
+  .ethereal-v5 .er2-album-pair img{animation:none!important}
+}
+
+
+/* =========================================================
+   ETHEREAL REALM — V6
+   ========================================================= */
+
+
+/* Entire portfolio: avoid one-word paragraph widows */
+p {
+  text-wrap: pretty;
+}
+
+
+/* ---------------------------------------------------------
+   BRAND COLOUR SVGs
+   one above the other
+   --------------------------------------------------------- */
+
+.ethereal-v6 .er5-colour-svg-display {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 22px !important;
+}
+
+.ethereal-v6 .er5-colour-svg {
+  width: 100% !important;
+  height: auto !important;
+  object-fit: contain;
+}
+
+
+/* ---------------------------------------------------------
+   PROCESS START
+   Target Audience removed
+   --------------------------------------------------------- */
+
+.ethereal-v6 .er3-dark-process {
+  padding-top: 76px !important;
+}
+
+
+/* ---------------------------------------------------------
+   APP COLOUR
+   larger + aligned to right content edge
+   --------------------------------------------------------- */
+
+.ethereal-v6 .er6-app-colour {
+  grid-template-columns: .52fr 2.48fr !important;
+  gap: 40px !important;
+  align-items: start !important;
+}
+
+.ethereal-v6 .er6-app-colour-svg {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.ethereal-v6 .er6-app-colour-img {
+  width: min(100%, 1040px) !important;
+  max-width: none !important;
+  height: auto !important;
+  object-fit: contain;
+  margin-left: auto;
+}
+
+
+/* ---------------------------------------------------------
+   INFORMATION ARCHITECTURE
+   app accent = #60EEFF
+   --------------------------------------------------------- */
+
+.ethereal-v6 .er2-ia .root {
+  background: #60EEFF !important;
+  color: #01060A !important;
+}
+
+.ethereal-v6 .er2-ia .stem,
+.ethereal-v6 .er2-ia .nodes::before {
+  background: #60EEFF !important;
+}
+
+.ethereal-v6 .er2-ia .nodes div {
+  border-color: rgba(96, 238, 255, .25) !important;
+}
+
+
+/* ---------------------------------------------------------
+   NAVIGATION
+   exact authored SVGs
+   --------------------------------------------------------- */
+
+.ethereal-v6 .er6-navigation {
+  display: grid !important;
+  grid-template-columns: .62fr 1.78fr !important;
+  gap: 7vw !important;
+  align-items: center;
+  padding: 78px 0 !important;
+  border-bottom: 1px solid rgba(96,238,255,.16);
+}
+
+.ethereal-v6 .er6-nav-signs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 26px;
+}
+
+.ethereal-v6 .er6-nav-svg {
+  width: 100% !important;
+  height: auto !important;
+  object-fit: contain;
+  display: block;
+  border: 1px solid rgba(220,220,224,.25);
+  background: #01060A;
+}
+
+
+/* ---------------------------------------------------------
+   HOMEPAGE DIAGRAM
+   --------------------------------------------------------- */
+
+.ethereal-v6 .er6-home-diagram {
+
+  display: grid;
+
+  grid-template-columns:
+    120px
+    minmax(190px, 1fr)
+    52px
+    minmax(190px, 1fr)
+    130px
+    minmax(190px, 1fr)
+    minmax(215px, .95fr);
+
+  gap: 24px;
+
+  align-items: center;
+
+  min-height: 650px;
+}
+
+
+/* Same visual language as IA: square / technical */
+.ethereal-v6 .er6-info-box {
+
+  border: 1px solid rgba(96,238,255,.7);
+
+  border-radius: 0;
+
+  background: transparent;
+
+  color: #F7F7FB;
+
+  padding: 15px 13px;
+
+  text-align: center;
+}
+
+.ethereal-v6 .er6-info-box b {
+
+  display: block;
+
+  font-family: var(--body) !important;
+
+  font-size: 12px;
+
+  color: #60EEFF;
+
+  margin-bottom: 5px;
+}
+
+.ethereal-v6 .er6-info-box small {
+
+  display: block;
+
+  font-size: 9px;
+
+  line-height: 1.35;
+
+  color: rgba(247,247,251,.62);
+}
+
+.ethereal-v6 .er6-wireframe-label {
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.ethereal-v6 .er6-home-img {
+
+  width: 100%;
+
+  max-height: 620px;
+
+  object-fit: contain;
+
+  border: 1px solid rgba(220,220,224,.48);
+
+  border-radius: 22px;
+
+  background: #07090D;
+}
+
+.ethereal-v6 .er6-home-arrow {
+
+  font-size: 32px;
+
+  color: #60EEFF;
+
+  text-align: center;
+}
+
+.ethereal-v6 .er6-home-actions {
+
+  display: grid;
+
+  gap: 118px;
+}
+
+.ethereal-v6 .er6-home-features {
+
+  display: grid;
+
+  gap: 14px;
+}
+
+
+/* ---------------------------------------------------------
+   FOLLOWING APP FLOWS
+   larger gaps
+   all frames same top/bottom height
+   --------------------------------------------------------- */
+
+.ethereal-v6 .er2-flow {
+
+  grid-template-columns: .68fr 1.62fr !important;
+}
+
+.ethereal-v6 .er2-flow .phones,
+.ethereal-v6 .er6-realm-flow-phones {
+
+  gap: 26px !important;
+
+  align-items: stretch !important;
+
+  justify-content: center;
+}
+
+.ethereal-v6 .er2-flow .phones img,
+.ethereal-v6 .er6-realm-flow-phones img {
+
+  flex: none;
+
+  width: auto !important;
+
+  height: clamp(360px, 31vw, 500px) !important;
+
+  object-fit: contain !important;
+
+  object-position: top center !important;
+
+  border: 1px solid rgba(220,220,224,.48) !important;
+
+  border-radius: 18px !important;
+
+  transform: none !important;
+
+  background: #05070B;
+}
+
+.ethereal-v6 .er2-flow .phones img {
+  max-width: 24% !important;
+}
+
+.ethereal-v6 .er2-flow .phones.four img {
+  max-width: 21% !important;
+}
+
+.ethereal-v6 .er6-realm-flow-phones img {
+  max-width: 18% !important;
+}
+
+
+/* ---------------------------------------------------------
+   REALM COMMUNICATION FLOW
+   appears before prototype
+   --------------------------------------------------------- */
+
+.ethereal-v6 .er6-realm-flow {
+
+  border-bottom: 1px solid rgba(96,238,255,.16);
+}
+
+
+/* ---------------------------------------------------------
+   PROTOTYPE
+   purple → Light Neon Blue gradient
+   --------------------------------------------------------- */
+
+.ethereal-v6 .er3-prototype {
+
+  background:
+
+    radial-gradient(
+      circle at 82% 24%,
+      rgba(96,238,255,.96) 0%,
+      rgba(96,238,255,.36) 20%,
+      transparent 48%
+    ),
+
+    linear-gradient(
+      135deg,
+      #1B03A3 0%,
+      #6044FF 48%,
+      #60EEFF 135%
+    ) !important;
+}
+
+.ethereal-v6 .er3-prototype .er2-proto-copy p {
+
+  color: rgba(255,255,255,.76);
+}
+
+
+/* Old duplicated prototype phone track */
+.ethereal-v6 .er3-final-flow,
+.ethereal-v6 .er4-realm-final-flow {
+
+  display: none !important;
+}
+
+
+/* ---------------------------------------------------------
+   Responsive
+   --------------------------------------------------------- */
+
+@media (max-width: 1100px) {
+
+  .ethereal-v6 .er6-app-colour,
+  .ethereal-v6 .er6-navigation {
+
+    grid-template-columns: 1fr !important;
+  }
+
+  .ethereal-v6 .er6-nav-signs {
+
+    grid-template-columns: 1fr;
+  }
+
+  .ethereal-v6 .er6-home-diagram {
+
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .ethereal-v6 .er6-home-arrow,
+  .ethereal-v6 .er6-home-actions {
+
+    display: none;
+  }
+}
+
+
+
+/* =========================================================
+   ETHEREAL REALM V7
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   APP SECTION ACCENT
+   Purple from this point onward.
+   --------------------------------------------------------- */
+
+.ethereal-v7 #er2-6,
+.ethereal-v7 #er2-7,
+.ethereal-v7 #er2-8,
+.ethereal-v7 #er2-9,
+.ethereal-v7 .er3-prototype {
+
+  --er-app-accent: #6044FF;
+}
+
+
+/* small labels */
+
+.ethereal-v7 #er2-6 .er2-label,
+.ethereal-v7 #er2-7 .er2-label,
+.ethereal-v7 #er2-8 .er2-label,
+.ethereal-v7 #er2-9 .er2-label {
+
+  color: #6044FF !important;
+}
+
+
+/* IA */
+
+.ethereal-v7 .er2-ia .root {
+
+  background: #6044FF !important;
+
+  color: white !important;
+}
+
+.ethereal-v7 .er2-ia .stem,
+.ethereal-v7 .er2-ia .nodes::before {
+
+  background: #6044FF !important;
+}
+
+.ethereal-v7 .er2-ia .nodes div {
+
+  border-color: rgba(96, 68, 255, .42) !important;
+}
+
+
+/* ---------------------------------------------------------
+   NAVIGATION
+   --------------------------------------------------------- */
+
+.ethereal-v7 .er7-navigation {
+
+  border-bottom:
+    1px solid rgba(96,68,255,.22);
+}
+
+.ethereal-v7 .er7-nav-signs {
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0,1fr));
+
+  gap: 34px;
+
+  align-items: center;
+}
+
+.ethereal-v7 .er7-nav-sign {
+
+  margin: 0;
+
+  padding: 0;
+
+  background: transparent;
+}
+
+.ethereal-v7 .er7-nav-sign img {
+
+  display: block;
+
+  width: 100%;
+
+  height: auto;
+
+  object-fit: contain;
+
+  border: 0;
+}
+
+
+/* ---------------------------------------------------------
+   HOME PAGE
+   --------------------------------------------------------- */
+
+/* remove large title */
+
+.ethereal-v7 .er7-home-title {
+
+  margin-bottom: 42px;
+}
+
+.ethereal-v7 .er7-home-title h3 {
+
+  display: none;
+}
+
+
+/* purple annotation language */
+
+.ethereal-v7 .er6-info-box {
+
+  border-color:
+    rgba(96,68,255,.78) !important;
+}
+
+.ethereal-v7 .er6-info-box b {
+
+  color: #6044FF !important;
+}
+
+
+/* wireframe = filled app colour */
+
+.ethereal-v7 .er6-wireframe-label {
+
+  background: #6044FF !important;
+
+  border-color: #6044FF !important;
+
+  color: #fff !important;
+
+  font-weight: 600;
+}
+
+
+/* arrow */
+
+.ethereal-v7 .er6-home-arrow {
+
+  color: #6044FF !important;
+}
+
+
+/*
+  IMPORTANT:
+  the three homepage PNGs already contain their own
+  phone outlines. Do not add another border.
+*/
+
+.ethereal-v7 .er6-home-img {
+
+  width: 100% !important;
+
+  height: auto !important;
+
+  max-height: none !important;
+
+  aspect-ratio: auto !important;
+
+  object-fit: contain !important;
+
+  border: 0 !important;
+
+  border-radius: 0 !important;
+
+  background: transparent !important;
+}
+
+
+/* ---------------------------------------------------------
+   ALL APP PHONE FRAMES
+   FIX VERTICAL STRETCH
+   --------------------------------------------------------- */
+
+/*
+  v6 forced every phone to a shared fixed height.
+  That distorted tall/narrow screenshots.
+
+  V7 lets the source image control its own ratio.
+*/
+
+.ethereal-v7 .er2-flow .phones {
+
+  display: flex !important;
+
+  gap: 42px !important;
+
+  align-items: flex-start !important;
+
+  justify-content: center !important;
+}
+
+.ethereal-v7 .er2-flow .phones img {
+
+  display: block !important;
+
+  width: auto !important;
+
+  height: auto !important;
+
+  max-height: 540px !important;
+
+  max-width: 23% !important;
+
+  aspect-ratio: auto !important;
+
+  object-fit: contain !important;
+
+  align-self: flex-start !important;
+
+  flex: 0 1 auto !important;
+
+  transform: none !important;
+}
+
+
+/* four-frame flows */
+
+.ethereal-v7 .er2-flow .phones.four {
+
+  gap: 34px !important;
+}
+
+.ethereal-v7 .er2-flow .phones.four img {
+
+  max-width: 21% !important;
+}
+
+
+/* Realm flow */
+
+.ethereal-v7 .er6-realm-flow-phones {
+
+  display: flex !important;
+
+  gap: 34px !important;
+
+  align-items: flex-start !important;
+
+  justify-content: center;
+}
+
+.ethereal-v7 .er6-realm-flow-phones img {
+
+  width: auto !important;
+
+  height: auto !important;
+
+  max-height: 520px !important;
+
+  max-width: 18% !important;
+
+  aspect-ratio: auto !important;
+
+  object-fit: contain !important;
+
+  align-self: flex-start !important;
+}
+
+
+/* ---------------------------------------------------------
+   PROTOTYPE
+   BLACK — no obvious gradient
+   --------------------------------------------------------- */
+
+.ethereal-v7 .er3-prototype {
+
+  background: #01060A !important;
+
+  color: #F7F7FB;
+}
+
+
+/* remove inherited cyan/purple glow */
+
+.ethereal-v7 .er3-prototype::before,
+.ethereal-v7 .er3-prototype::after {
+
+  display: none !important;
+}
+
+
+/* ---------------------------------------------------------
+   PROTOTYPE ANIMATION FLOW
+   --------------------------------------------------------- */
+
+.ethereal-v7 .er7-prototype-animation {
+
+  padding-top: 80px;
+
+  padding-bottom: 90px;
+
+  overflow: hidden;
+}
+
+.ethereal-v7
+.er7-prototype-animation-heading {
+
+  margin-bottom: 44px;
+}
+
+.ethereal-v7
+.er7-prototype-animation-heading h3 {
+
+  margin: 10px 0 0;
+
+  font-family: var(--body) !important;
+
+  font-size:
+    clamp(28px,3.1vw,48px);
+
+  line-height: 1;
+}
+
+
+/* moving prototype frames */
+
+.ethereal-v7 .er7-animation-track {
+
+  display: flex;
+
+  width: max-content;
+
+  gap: 34px;
+
+  align-items: flex-start;
+
+  animation:
+    er7RealmPrototypeFlow
+    28s
+    linear
+    infinite;
+}
+
+.ethereal-v7 .er7-animation-frame {
+
+  display: block;
+
+  width: auto !important;
+
+  height: 480px !important;
+
+  object-fit: contain !important;
+
+  flex: none;
+
+  border:
+    1px solid rgba(220,220,224,.42);
+
+  border-radius: 18px;
+}
+
+.ethereal-v7
+.er7-animation-track:hover {
+
+  animation-play-state: paused;
+}
+
+
+@keyframes er7RealmPrototypeFlow {
+
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-35%);
+  }
+}
+
+
+/* ---------------------------------------------------------
+   FINAL BANNER
+   Pattern image rather than flat panel
+   --------------------------------------------------------- */
+
+.ethereal-v7 .er3-final-banner,
+.ethereal-v7 .er2-final-banner,
+.ethereal-v7 .er-project-end {
+
+  position: relative;
+
+  background-color: #05040A !important;
+
+  background-image:
+    linear-gradient(
+      rgba(1,6,10,.22),
+      rgba(1,6,10,.56)
+    ),
+    url("/public/projects/ethereal-realm/pattern/Screenshot%202024-07-16%20at%205.10.44%E2%80%AFpm%203.jpeg") !important;
+
+  background-size: cover !important;
+
+  background-position: center !important;
+
+  background-repeat: no-repeat !important;
+}
+
+
+/* ---------------------------------------------------------
+   Responsive
+   --------------------------------------------------------- */
+
+@media (max-width: 1050px) {
+
+  .ethereal-v7 .er7-nav-signs {
+
+    grid-template-columns: 1fr;
+  }
+
+  .ethereal-v7 .er2-flow .phones {
+
+    gap: 22px !important;
+  }
+
+  .ethereal-v7 .er2-flow .phones img {
+
+    max-height: 440px !important;
+  }
+
+}
+
+
+@media (max-width: 760px) {
+
+  .ethereal-v7 .er2-flow .phones,
+  .ethereal-v7 .er6-realm-flow-phones {
+
+    overflow-x: auto;
+
+    justify-content: flex-start !important;
+
+    padding-bottom: 18px;
+  }
+
+  .ethereal-v7 .er2-flow .phones img,
+  .ethereal-v7 .er6-realm-flow-phones img {
+
+    max-width: none !important;
+
+    height: 420px !important;
+
+    width: auto !important;
+  }
+
+}
+
+
+
+/* ETHEREAL V7.1 ASSET FIX */
+
+.ethereal-v7 .er7-nav-sign .er7-nav-svg,
+.ethereal-v7 .er7-nav-sign img {
+  display:block !important;
+  width:100% !important;
+  height:auto !important;
+  max-width:none !important;
+  max-height:none !important;
+  object-fit:contain !important;
+  border:0 !important;
+  border-radius:0 !important;
+  background:transparent !important;
+}
+
+/* prototype frames: preserve original screenshot ratio */
+.ethereal-v7 .er7-animation-frame {
+  width:auto !important;
+  height:480px !important;
+  max-width:none !important;
+  aspect-ratio:auto !important;
+  object-fit:contain !important;
+  object-position:center !important;
+  flex:none !important;
+}
+
+/* final banner pattern */
+.ethereal-v7 .er3-final-banner,
+.ethereal-v7 .er2-final-banner,
+.ethereal-v7 .er-project-end {
+  background-image:
+    linear-gradient(
+      rgba(1,6,10,.10),
+      rgba(1,6,10,.38)
+    ),
+    url("/public/projects/ethereal-realm/pattern/Screenshot%202024-07-16%20at%205.10.44%E2%80%AFpm%203.jpeg") !important;
+  background-size:cover !important;
+  background-position:center !important;
+  background-repeat:no-repeat !important;
+}
+
+
+
+/* =========================================================
+   ETHEREAL — REAL NAVIGATION SVG FIX
+   ========================================================= */
+
+.ethereal-v7 .er8-nav-showcase {
+  display:grid;
+  grid-template-columns:repeat(5,minmax(0,1fr));
+  gap:18px;
+  width:100%;
+  align-items:stretch;
+}
+
+.ethereal-v7 .er8-nav-item {
+  min-height:180px;
+
+  display:flex;
+  flex-direction:column;
+
+  align-items:center;
+  justify-content:center;
+
+  gap:24px;
+
+  padding:30px 16px;
+
+  border:1px solid rgba(96,68,255,.38);
+
+  background:#01060A;
+}
+
+.ethereal-v7 .er8-nav-icon {
+  display:block !important;
+
+  width:100% !important;
+  max-width:92px !important;
+
+  height:92px !important;
+
+  object-fit:contain !important;
+
+  border:0 !important;
+  border-radius:0 !important;
+
+  background:transparent !important;
+}
+
+.ethereal-v7 .er8-nav-item span {
+  font-size:11px;
+  line-height:1;
+
+  color:rgba(247,247,251,.62);
+
+  text-transform:uppercase;
+  letter-spacing:.08em;
+}
+
+
+/* purple hover state */
+
+.ethereal-v7 .er8-nav-item {
+  transition:
+    border-color .25s ease,
+    background .25s ease,
+    transform .25s ease;
+}
+
+.ethereal-v7 .er8-nav-item:hover {
+  border-color:#6044FF;
+  background:rgba(96,68,255,.08);
+  transform:translateY(-4px);
+}
+
+
+/* remove any remaining broken old nav */
+
+.ethereal-v7 .er6-nav-signs {
+  display:none !important;
+}
+
+
+/* homepage should not reserve space for deleted title */
+
+.ethereal-v7 .er5-home-title {
+  margin-bottom:28px !important;
+}
+
+.ethereal-v7 .er5-home-title h3 {
+  display:none !important;
+}
+
+
+@media(max-width:900px) {
+  .ethereal-v7 .er8-nav-showcase {
+    grid-template-columns:repeat(3,1fr);
+  }
+}
+
+@media(max-width:600px) {
+  .ethereal-v7 .er8-nav-showcase {
+    grid-template-columns:repeat(2,1fr);
+  }
+}
+
+
+
+/* =========================================================
+   ETHEREAL NAVIGATION — REFINEMENT
+   ========================================================= */
+
+/* slightly narrower overall navigation showcase */
+.ethereal-v7 .er8-nav-showcase {
+  gap: 28px !important;
+  align-items: center !important;
+}
+
+/* remove individual card frames */
+.ethereal-v7 .er8-nav-item {
+  min-height: 0 !important;
+
+  padding: 12px 4px !important;
+
+  border: 0 !important;
+
+  background: transparent !important;
+
+  gap: 14px !important;
+
+  transform: none !important;
+}
+
+/* don't bring frame back on hover */
+.ethereal-v7 .er8-nav-item:hover {
+  border: 0 !important;
+
+  background: transparent !important;
+
+  transform: translateY(-2px) !important;
+}
+
+/* make navigation SVGs a little smaller */
+.ethereal-v7 .er8-nav-icon {
+  width: 68px !important;
+
+  height: 68px !important;
+
+  max-width: 68px !important;
+
+  max-height: 68px !important;
+
+  object-fit: contain !important;
+}
+
+/* smaller labels */
+.ethereal-v7 .er8-nav-item span {
+  margin-top: 2px !important;
+
+  font-size: 9px !important;
+
+  letter-spacing: .09em !important;
+}
+
+
+
+/* =========================================================
+   ETHEREAL FINAL PANEL — REAL PATTERN IMAGE
+   ========================================================= */
+
+.ethereal-v7 .er3-final-banner,
+.ethereal-v7 .er2-final-banner,
+.ethereal-v7 .er-project-end {
+  position: relative !important;
+
+  background-color: #01060A !important;
+
+  background-image:
+    linear-gradient(
+      rgba(1,6,10,.10),
+      rgba(1,6,10,.30)
+    ),
+    url("/public/projects/ethereal-realm/pattern/Screenshot%202024-07-16%20at%205.10.44%E2%80%AFpm%203.jpeg") !important;
+
+  background-size: cover !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+}
+
+/* make sure an existing child image doesn't hide the background */
+.ethereal-v7 .er3-final-banner > img,
+.ethereal-v7 .er2-final-banner > img {
+  position: relative;
+  z-index: 1;
+}
+
+/* remove prototype heading spacing */
+.ethereal-v7 .er7-prototype-animation {
+  padding-top: 24px !important;
+}
+
+.ethereal-v7 .er7-prototype-animation-heading {
+  display: none !important;
+}
+
+
+
+/* =========================================================
+   ETHEREAL — INTERFACE FLOW ONWARD = NEON BLUE
+   ========================================================= */
+
+/*
+  Branding/app setup can stay purple,
+  but Interface Flow and everything after it
+  uses the Realm neon blue.
+*/
+
+.ethereal-v7 #er2-8,
+.ethereal-v7 #er2-9,
+.ethereal-v7 .er2-flows,
+.ethereal-v7 .er6-realm-flow,
+.ethereal-v7 .er3-prototype,
+.ethereal-v7 .er7-prototype-animation,
+.ethereal-v7 .er3-final-banner,
+.ethereal-v7 .er2-final-banner,
+.ethereal-v7 .er-project-end {
+  --er-app-accent: #60EEFF;
+}
+
+
+/* section labels */
+.ethereal-v7 #er2-8 .er2-label,
+.ethereal-v7 #er2-9 .er2-label,
+.ethereal-v7 .er2-flows .er2-label,
+.ethereal-v7 .er2-flows .copy > span,
+.ethereal-v7 .er6-realm-flow .copy > span,
+.ethereal-v7 .er3-prototype .er2-label,
+.ethereal-v7 .er7-prototype-animation .er2-label {
+  color:#60EEFF !important;
+}
+
+
+/* flow dividers */
+.ethereal-v7 #er2-8,
+.ethereal-v7 .er2-flows,
+.ethereal-v7 .er6-realm-flow {
+  border-color:rgba(96,238,255,.20) !important;
+}
+
+
+/* phone/frame borders */
+.ethereal-v7 #er2-8 .phones img,
+.ethereal-v7 .er2-flows .phones img,
+.ethereal-v7 .er6-realm-flow-phones img,
+.ethereal-v7 .er7-animation-frame {
+  border-color:rgba(96,238,255,.42) !important;
+}
+
+
+/* text links / micro accents */
+.ethereal-v7 #er2-8 a,
+.ethereal-v7 #er2-9 a,
+.ethereal-v7 .er2-flows a,
+.ethereal-v7 .er3-prototype a {
+  color:#60EEFF !important;
+}
+
+
+/* any technical boxes appearing after interface flow */
+.ethereal-v7 #er2-8 .er6-info-box,
+.ethereal-v7 #er2-9 .er6-info-box,
+.ethereal-v7 .er2-flows .er6-info-box {
+  border-color:rgba(96,238,255,.72) !important;
+}
+
+.ethereal-v7 #er2-8 .er6-info-box b,
+.ethereal-v7 #er2-9 .er6-info-box b,
+.ethereal-v7 .er2-flows .er6-info-box b {
+  color:#60EEFF !important;
+}
+
+
+/* final prototype remains black */
+.ethereal-v7 .er3-prototype,
+.ethereal-v7 .er7-prototype-animation {
+  background:#01060A !important;
+}
+
+
+/* final panel can keep image background,
+   but any accent typography becomes neon blue */
+.ethereal-v7 .er3-final-banner .er2-label,
+.ethereal-v7 .er2-final-banner .er2-label,
+.ethereal-v7 .er-project-end .er2-label {
+  color:#60EEFF !important;
+}
+
+
+/* =========================================================
+   ETHEREAL FINAL ACCENT FIX
+   Interface Flow onward = #6044FF
+   ========================================================= */
+
+.ethereal-v7 #er2-8,
+.ethereal-v7 #er2-9 {
+  --er-app-accent: #6044FF !important;
+  --violet: #6044FF !important;
+  --cyan: #6044FF !important;
+}
+
+/* labels / flow numbers */
+.ethereal-v7 #er2-8 .er2-label,
+.ethereal-v7 #er2-8 .copy > span,
+.ethereal-v7 #er2-9 .er2-label,
+.ethereal-v7 #er2-9 .copy > span {
+  color: #6044FF !important;
+}
+
+/* frame borders + dividers */
+.ethereal-v7 #er2-8 .phones img,
+.ethereal-v7 #er2-8 .er6-realm-flow-phones img,
+.ethereal-v7 #er2-9 .er7-animation-frame {
+  border-color: rgba(96,68,255,.46) !important;
+}
+
+.ethereal-v7 #er2-8,
+.ethereal-v7 #er2-9,
+.ethereal-v7 #er2-8 article {
+  border-color: rgba(96,68,255,.22) !important;
+}
+
+/* links and small accents */
+.ethereal-v7 #er2-8 a,
+.ethereal-v7 #er2-9 a {
+  color: #6044FF !important;
+}
+
+/* override previous neon-blue technical boxes */
+.ethereal-v7 #er2-8 .er6-info-box,
+.ethereal-v7 #er2-9 .er6-info-box {
+  border-color: rgba(96,68,255,.72) !important;
+}
+
+.ethereal-v7 #er2-8 .er6-info-box b,
+.ethereal-v7 #er2-9 .er6-info-box b {
+  color: #6044FF !important;
+}
+
+
+
+/* FINAL ETHEREAL BACKGROUND */
+
+.ethereal-v7 .er-final-background {
+  width: 100% !important;
+  max-width: none !important;
+  min-height: 72vh !important;
+
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+
+  padding-left: max(8vw, 70px) !important;
+  padding-right: max(8vw, 70px) !important;
+
+  background:
+    linear-gradient(
+      rgba(1,6,10,.08),
+      rgba(1,6,10,.20)
+    ),
+    url("/public/projects/ethereal-realm/pattern/final%20background.jpeg") center / cover no-repeat !important;
+}
+
+
+
+/* ETHEREAL FRAME + OVERLAY FIX */
+
+.ethereal-v7 #er2-8 .phones img,
+.ethereal-v7 #er2-8 .er6-realm-flow-phones img,
+.ethereal-v7 #er2-9 .er7-animation-frame,
+.ethereal-v7 .er2-flow .phones img,
+.ethereal-v7 .er6-realm-flow-phones img {
+  border-color: rgba(220,220,224,.48) !important;
+}
+
+.ethereal-v7 .er-final-background {
+  position: relative !important;
+  isolation: isolate !important;
+  overflow: hidden !important;
+}
+
+.ethereal-v7 .er-final-background::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(1,6,10,.42);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.ethereal-v7 .er-final-background > * {
+  position: relative !important;
+  z-index: 2 !important;
+}
+
+
+
+/* NAV ICON HOVER SWAP */
+
+.ethereal-v7 .er8-nav-icon-wrap {
+  position: relative;
+  width: 62px;
+  height: 62px;
+}
+
+.ethereal-v7 .er8-nav-icon {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 62px !important;
+  height: 62px !important;
+  object-fit: contain !important;
+  transition: opacity .2s ease !important;
+}
+
+.ethereal-v7 .er8-nav-default {
+  opacity: 1;
+}
+
+.ethereal-v7 .er8-nav-hover {
+  opacity: 0;
+}
+
+.ethereal-v7 .er8-nav-item:hover .er8-nav-default {
+  opacity: 0;
+}
+
+.ethereal-v7 .er8-nav-item:hover .er8-nav-hover {
+  opacity: 1;
+}
+
+
+
+/* =========================================================
+   ETHEREAL — HOMEPAGE WIDTH FIX
+   ========================================================= */
+
+/* restore project-page content width */
+.ethereal-v7 .er3-homepage,
+.ethereal-v7 .er5-homepage,
+.ethereal-v7 .er6-homepage {
+  width: min(calc(100% - 120px), 1276px) !important;
+  max-width: 1276px !important;
+
+  margin-left: auto !important;
+  margin-right: auto !important;
+
+  position: relative !important;
+  left: auto !important;
+  right: auto !important;
+
+  transform: none !important;
+}
+
+
+/* label aligns with the rest of the project */
+.ethereal-v7 .er5-home-title,
+.ethereal-v7 .er7-home-title {
+  width: 100% !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+
+/* homepage diagram must stay inside its parent */
+.ethereal-v7 .er6-home-diagram {
+  width: 100% !important;
+  max-width: 100% !important;
+
+  margin: 0 !important;
+
+  grid-template-columns:
+    110px
+    minmax(0, 1fr)
+    44px
+    minmax(0, 1fr)
+    126px
+    minmax(0, 1fr)
+    minmax(185px, .85fr) !important;
+
+  gap: 22px !important;
+
+  box-sizing: border-box !important;
+}
+
+
+/* phone columns cannot force grid wider than container */
+.ethereal-v7 .er6-home-phone {
+  min-width: 0 !important;
+  width: 100% !important;
+}
+
+.ethereal-v7 .er6-home-img {
+  display: block !important;
+
+  width: 100% !important;
+  max-width: 100% !important;
+
+  height: auto !important;
+
+  margin: 0 auto !important;
+
+  object-fit: contain !important;
+}
+
+
+/* annotation columns */
+.ethereal-v7 .er6-home-actions,
+.ethereal-v7 .er6-home-features {
+  min-width: 0 !important;
+  width: 100% !important;
+}
+
+
+/* do not allow previous full-bleed rules to affect homepage */
+.ethereal-v7 .er3-homepage,
+.ethereal-v7 .er3-homepage * {
+  box-sizing: border-box;
+}
+
+
+@media (max-width: 1100px) {
+  .ethereal-v7 .er3-homepage,
+  .ethereal-v7 .er5-homepage,
+  .ethereal-v7 .er6-homepage {
+    width: min(calc(100% - 48px), 1276px) !important;
+  }
+}
+
+
+
+/* =========================================================
+   ETHEREAL — NAV / HOMEPAGE / PROTOTYPE SPACING
+   ========================================================= */
+
+/* Navigation: no leftover space from removed white heading */
+.ethereal-v7 .er5-nav-copy h3 {
+  display:none !important;
+}
+
+.ethereal-v7 .er5-nav-copy .er2-label {
+  margin-bottom:18px !important;
+}
+
+.ethereal-v7 .er5-nav-copy p {
+  margin-top:0 !important;
+}
+
+
+/* Homepage heading aligns with Navigation left edge */
+.ethereal-v7 .er3-homepage,
+.ethereal-v7 .er5-homepage,
+.ethereal-v7 .er6-homepage {
+  width:min(calc(100% - 120px),1276px) !important;
+  max-width:1276px !important;
+  margin-left:auto !important;
+  margin-right:auto !important;
+}
+
+.ethereal-v7 .er5-home-title,
+.ethereal-v7 .er7-home-title {
+  width:100% !important;
+  margin-left:0 !important;
+  padding-left:0 !important;
+  text-align:left !important;
+}
+
+.ethereal-v7 .er5-home-title .er2-label,
+.ethereal-v7 .er7-home-title .er2-label {
+  display:block !important;
+  margin-left:0 !important;
+  text-align:left !important;
+}
+
+
+/* More space between Open prototype CTA and animation flow */
+.ethereal-v7 #er2-9 .er2-proto-copy,
+.ethereal-v7 .er3-prototype .er2-proto-copy {
+  margin-bottom:110px !important;
+}
+
+.ethereal-v7 .er7-prototype-animation {
+  padding-top:0 !important;
+  margin-top:0 !important;
+}
+
+
+/* responsive */
+@media(max-width:1100px) {
+  .ethereal-v7 .er3-homepage,
+  .ethereal-v7 .er5-homepage,
+  .ethereal-v7 .er6-homepage {
+    width:min(calc(100% - 48px),1276px) !important;
+  }
+
+  .ethereal-v7 #er2-9 .er2-proto-copy,
+  .ethereal-v7 .er3-prototype .er2-proto-copy {
+    margin-bottom:72px !important;
+  }
+}
+
+
+
+/* =========================================================
+   ETHEREAL — NAV + HOMEPAGE ALIGNMENT REFINEMENT
+   ========================================================= */
+
+/* More breathing room:
+   NAVIGATION label -> body paragraph */
+.ethereal-v7 .er5-nav-copy .er2-label {
+  display:block !important;
+  margin-bottom:34px !important;
+}
+
+.ethereal-v7 .er5-nav-copy p {
+  margin-top:0 !important;
+}
+
+
+/* HOME PAGE label:
+   move right so its left edge matches Navigation copy */
+.ethereal-v7 .er5-home-title,
+.ethereal-v7 .er7-home-title {
+  padding-left:62px !important;
+  box-sizing:border-box !important;
+}
+
+
+/* Keep the actual homepage diagram at its current width */
+.ethereal-v7 .er6-home-diagram {
+  width:100% !important;
+}
+
+
+/* responsive */
+@media(max-width:1100px) {
+  .ethereal-v7 .er5-home-title,
+  .ethereal-v7 .er7-home-title {
+    padding-left:0 !important;
+  }
+}
+
+
+
+/* =========================================================
+   ETHEREAL — REALM APP INTRO REVERSE LAYOUT
+   text left / icon right
+   ========================================================= */
+
+.ethereal-v7 .er2-app-intro,
+.ethereal-v7 .er3-app-intro,
+.ethereal-v7 .er-app-intro {
+  display:flex !important;
+  flex-direction:row-reverse !important;
+
+  justify-content:center !important;
+  align-items:center !important;
+
+  gap:clamp(100px,12vw,190px) !important;
+}
+
+
+/* TEXT — LEFT */
+
+.ethereal-v7 .er2-app-intro-copy,
+.ethereal-v7 .er3-app-intro-copy,
+.ethereal-v7 .er-app-intro-copy {
+  flex:0 1 auto !important;
+
+  text-align:left !important;
+
+  margin:0 !important;
+}
+
+
+/* APP ICON — RIGHT */
+
+.ethereal-v7 .er2-app-intro img,
+.ethereal-v7 .er3-app-intro img,
+.ethereal-v7 .er-app-intro img {
+  flex:none !important;
+
+  width:clamp(190px,18vw,280px) !important;
+  height:auto !important;
+
+  margin:0 !important;
+
+  object-fit:contain !important;
+}
+
+
+/* Keep section number / label left aligned */
+
+.ethereal-v7 .er2-app-intro .er2-label,
+.ethereal-v7 .er3-app-intro .er2-label,
+.ethereal-v7 .er-app-intro .er2-label {
+  display:block !important;
+  text-align:left !important;
+}
+
+
+/* mobile */
+
+@media(max-width:760px) {
+  .ethereal-v7 .er2-app-intro,
+  .ethereal-v7 .er3-app-intro,
+  .ethereal-v7 .er-app-intro {
+    flex-direction:column-reverse !important;
+    align-items:flex-start !important;
+    gap:48px !important;
+  }
+}
+
+
+
+/* =========================================================
+   ETHEREAL — GLOBAL SMALL HEADING ALIGNMENT
+   All section labels use one consistent left anchor
+   ========================================================= */
+
+.ethereal-v7 {
+  --er-content-width: 1276px;
+  --er-page-gutter: 60px;
+  --er-label-x: 0px;
+}
+
+
+/* ---------------------------------------------------------
+   STANDARD SMALL LABEL
+   --------------------------------------------------------- */
+
+.ethereal-v7 .er2-label,
+.ethereal-v7 .er5-nav-copy .er2-label,
+.ethereal-v7 .er5-home-title .er2-label,
+.ethereal-v7 .er7-home-title .er2-label,
+.ethereal-v7 .er2-flow .copy > span,
+.ethereal-v7 .er6-realm-flow .copy > span {
+  display:block !important;
+
+  position:relative !important;
+  left:auto !important;
+  right:auto !important;
+
+  margin-left:0 !important;
+  margin-right:0 !important;
+
+  padding-left:0 !important;
+
+  text-align:left !important;
+
+  transform:none !important;
+}
+
+
+/* ---------------------------------------------------------
+   NAVIGATION + HOMEPAGE
+   Remove previous custom offsets
+   --------------------------------------------------------- */
+
+.ethereal-v7 .er5-home-title,
+.ethereal-v7 .er7-home-title {
+  padding-left:0 !important;
+  margin-left:0 !important;
+}
+
+
+/*
+  Navigation and Homepage use the SAME container,
+  therefore their labels begin at exactly the same X.
+*/
+
+.ethereal-v7 .er5-navigation,
+.ethereal-v7 .er6-navigation,
+.ethereal-v7 .er7-navigation,
+.ethereal-v7 .er3-homepage,
+.ethereal-v7 .er5-homepage,
+.ethereal-v7 .er6-homepage {
+  width:min(
+    calc(100% - 120px),
+    var(--er-content-width)
+  ) !important;
+
+  max-width:var(--er-content-width) !important;
+
+  margin-left:auto !important;
+  margin-right:auto !important;
+}
+
+
+/* Navigation was previously a grid whose copy sat inward.
+   Make its label anchor to the actual section left edge. */
+
+.ethereal-v7 .er5-navigation,
+.ethereal-v7 .er6-navigation,
+.ethereal-v7 .er7-navigation {
+  position:relative !important;
+}
+
+.ethereal-v7 .er5-nav-copy {
+  position:relative !important;
+  left:0 !important;
+
+  margin-left:0 !important;
+  padding-left:0 !important;
+}
+
+
+/* Homepage label same X position */
+
+.ethereal-v7 .er5-home-title,
+.ethereal-v7 .er7-home-title {
+  width:100% !important;
+
+  position:relative !important;
+  left:0 !important;
+
+  margin-left:0 !important;
+  padding-left:0 !important;
+}
+
+
+/* ---------------------------------------------------------
+   CONSISTENT LABEL -> CONTENT VERTICAL GAP
+
+   This means labels sit in the same "position" relative
+   to the content immediately underneath them.
+   --------------------------------------------------------- */
+
+.ethereal-v7 .er2-label {
+  margin-bottom:30px !important;
+}
+
+.ethereal-v7 .er5-nav-copy .er2-label {
+  margin-bottom:30px !important;
+}
+
+.ethereal-v7 .er5-home-title .er2-label,
+.ethereal-v7 .er7-home-title .er2-label {
+  margin-bottom:30px !important;
+}
+
+
+/* Don't let old heading rules create extra space */
+
+.ethereal-v7 .er5-home-title,
+.ethereal-v7 .er7-home-title {
+  margin-bottom:0 !important;
+}
+
+
+/* Give homepage flow the same label-to-content rhythm */
+
+.ethereal-v7 .er6-home-diagram {
+  margin-top:0 !important;
+}
+
+
+/* ---------------------------------------------------------
+   MOBILE
+   Same alignment principle, smaller page gutter
+   --------------------------------------------------------- */
+
+@media(max-width:1100px) {
+
+  .ethereal-v7 .er5-navigation,
+  .ethereal-v7 .er6-navigation,
+  .ethereal-v7 .er7-navigation,
+  .ethereal-v7 .er3-homepage,
+  .ethereal-v7 .er5-homepage,
+  .ethereal-v7 .er6-homepage {
+    width:calc(100% - 48px) !important;
+  }
+
+}
+
+
+
+/* =========================================================
+   ETHEREAL — ALIGN 04 / NAVIGATION / HOMEPAGE LABELS
+   ========================================================= */
+
+/*
+  Use one explicit shared left anchor for:
+  04 — 1ST MINI ALBUM
+  NAVIGATION
+  HOME PAGE
+*/
+
+.ethereal-v7 {
+  --er-label-anchor: max(60px, calc((100vw - 1276px) / 2));
+}
+
+
+/* 04 — 1ST MINI ALBUM */
+.ethereal-v7 #er2-4 .er2-label,
+.ethereal-v7 #er2-4 .copy > span {
+  position: relative !important;
+  left: 0 !important;
+
+  margin-left: 0 !important;
+  padding-left: 0 !important;
+
+  text-align: left !important;
+}
+
+
+/* force the 04 section content container to same page width */
+.ethereal-v7 #er2-4 > .shell,
+.ethereal-v7 #er2-4 .shell {
+  width: min(calc(100% - 120px), 1276px) !important;
+  max-width: 1276px !important;
+
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+
+/* NAVIGATION */
+.ethereal-v7 .er5-navigation,
+.ethereal-v7 .er6-navigation,
+.ethereal-v7 .er7-navigation {
+  width: min(calc(100% - 120px), 1276px) !important;
+  max-width: 1276px !important;
+
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.ethereal-v7 .er5-nav-copy {
+  margin-left: 0 !important;
+  padding-left: 0 !important;
+}
+
+.ethereal-v7 .er5-nav-copy .er2-label {
+  margin-left: 0 !important;
+  padding-left: 0 !important;
+}
+
+
+/* HOME PAGE */
+.ethereal-v7 .er3-homepage,
+.ethereal-v7 .er5-homepage,
+.ethereal-v7 .er6-homepage {
+  width: min(calc(100% - 120px), 1276px) !important;
+  max-width: 1276px !important;
+
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.ethereal-v7 .er5-home-title,
+.ethereal-v7 .er7-home-title {
+  margin-left: 0 !important;
+  padding-left: 0 !important;
+}
+
+.ethereal-v7 .er5-home-title .er2-label,
+.ethereal-v7 .er7-home-title .er2-label {
+  margin-left: 0 !important;
+  padding-left: 0 !important;
+}
+
+
+/* exact same text treatment */
+.ethereal-v7 #er2-4 .er2-label,
+.ethereal-v7 .er5-nav-copy .er2-label,
+.ethereal-v7 .er5-home-title .er2-label,
+.ethereal-v7 .er7-home-title .er2-label {
+  display: block !important;
+
+  text-align: left !important;
+
+  transform: none !important;
+
+  left: auto !important;
+  right: auto !important;
+}
+
+
+/* responsive */
+@media(max-width:1100px) {
+
+  .ethereal-v7 #er2-4 > .shell,
+  .ethereal-v7 #er2-4 .shell,
+  .ethereal-v7 .er5-navigation,
+  .ethereal-v7 .er6-navigation,
+  .ethereal-v7 .er7-navigation,
+  .ethereal-v7 .er3-homepage,
+  .ethereal-v7 .er5-homepage,
+  .ethereal-v7 .er6-homepage {
+    width: calc(100% - 48px) !important;
+  }
+
+}
+
+
+
+/* =========================================================
+   ETHEREAL — HARD ALIGNMENT FIX
+   04 / NAVIGATION / HOME PAGE
+   ========================================================= */
+
+/*
+  One exact viewport anchor.
+  All three labels use this same x-position regardless
+  of their parent grid / shell structure.
+*/
+
+.ethereal-v7 {
+  --er-shared-label-left: max(60px, calc((100vw - 1276px) / 2));
+}
+
+
+/* 04 — 1ST MINI ALBUM */
+.ethereal-v7 #er2-4 {
+  position: relative !important;
+}
+
+.ethereal-v7 #er2-4 .er2-label {
+  position: relative !important;
+  left: calc(
+    var(--er-shared-label-left)
+    - ((100vw - min(100vw - 120px, 1276px)) / 2)
+  ) !important;
+
+  margin-left: 0 !important;
+  padding-left: 0 !important;
+  text-align: left !important;
+}
+
+
+/* NAVIGATION */
+.ethereal-v7 .er5-nav-copy .er2-label {
+  position: relative !important;
+
+  left: calc(
+    var(--er-shared-label-left)
+    - ((100vw - min(100vw - 120px, 1276px)) / 2)
+  ) !important;
+
+  margin-left: 0 !important;
+  padding-left: 0 !important;
+  text-align: left !important;
+}
+
+
+/* HOME PAGE */
+.ethereal-v7 .er5-home-title .er2-label,
+.ethereal-v7 .er7-home-title .er2-label {
+  position: relative !important;
+
+  left: calc(
+    var(--er-shared-label-left)
+    - ((100vw - min(100vw - 120px, 1276px)) / 2)
+  ) !important;
+
+  margin-left: 0 !important;
+  padding-left: 0 !important;
+  text-align: left !important;
+}
+
+
+/* mobile: just use normal content gutter */
+@media (max-width:1100px) {
+
+  .ethereal-v7 #er2-4 .er2-label,
+  .ethereal-v7 .er5-nav-copy .er2-label,
+  .ethereal-v7 .er5-home-title .er2-label,
+  .ethereal-v7 .er7-home-title .er2-label {
+    left:0 !important;
+  }
+
+}
+
+
+
+/* =========================================================
+   ETHEREAL — TRUE SHARED LABEL ALIGNMENT
+   IA / NAVIGATION / HOME PAGE
+   ========================================================= */
+
+/*
+  Shared global left anchor = same as Information Architecture.
+  At large screens this is the centered 1276px content gutter.
+*/
+
+.ethereal-v7 {
+  --er-global-left: max(60px, calc((100vw - 1276px) / 2));
+}
+
+
+/* ---------------------------------------------------------
+   INFORMATION ARCHITECTURE
+   keep as reference anchor
+   --------------------------------------------------------- */
+
+.ethereal-v7 .er2-ia > .er2-label,
+.ethereal-v7 .er2-ia .er2-label {
+  position: relative !important;
+  left: auto !important;
+  margin-left: 0 !important;
+  padding-left: 0 !important;
+}
+
+
+/* ---------------------------------------------------------
+   NAVIGATION
+   pull label out of the nav copy column
+   --------------------------------------------------------- */
+
+.ethereal-v7 .er5-navigation,
+.ethereal-v7 .er6-navigation,
+.ethereal-v7 .er7-navigation {
+  position: relative !important;
+}
+
+.ethereal-v7 .er5-nav-copy .er2-label {
+  position: absolute !important;
+
+  left: calc(
+    var(--er-global-left)
+    - ((100vw - min(calc(100vw - 120px), 1276px)) / 2)
+  ) !important;
+
+  top: 0 !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
+
+  text-align: left !important;
+}
+
+
+/* give paragraph room below absolute label */
+
+.ethereal-v7 .er5-nav-copy {
+  padding-top: 58px !important;
+}
+
+
+/* ---------------------------------------------------------
+   HOME PAGE
+   snap label to the same viewport anchor
+   --------------------------------------------------------- */
+
+.ethereal-v7 .er3-homepage,
+.ethereal-v7 .er5-homepage,
+.ethereal-v7 .er6-homepage {
+  position: relative !important;
+}
+
+.ethereal-v7 .er5-home-title,
+.ethereal-v7 .er7-home-title {
+  position: relative !important;
+}
+
+.ethereal-v7 .er5-home-title .er2-label,
+.ethereal-v7 .er7-home-title .er2-label {
+  position: relative !important;
+
+  left: calc(
+    var(--er-global-left)
+    - ((100vw - min(calc(100vw - 120px), 1276px)) / 2)
+  ) !important;
+
+  margin-left: 0 !important;
+  padding-left: 0 !important;
+
+  text-align: left !important;
+}
+
+
+/* ---------------------------------------------------------
+   OPTIONAL: 04 — 1ST MINI ALBUM
+   same exact global anchor
+   --------------------------------------------------------- */
+
+.ethereal-v7 #er2-4 .er2-label {
+  position: relative !important;
+
+  left: calc(
+    var(--er-global-left)
+    - ((100vw - min(calc(100vw - 120px), 1276px)) / 2)
+  ) !important;
+
+  margin-left: 0 !important;
+  padding-left: 0 !important;
+
+  text-align: left !important;
+}
+
+
+/* ---------------------------------------------------------
+   MOBILE
+   --------------------------------------------------------- */
+
+@media(max-width:1100px) {
+
+  .ethereal-v7 {
+    --er-global-left: 24px;
+  }
+
+  .ethereal-v7 .er5-nav-copy .er2-label,
+  .ethereal-v7 .er5-home-title .er2-label,
+  .ethereal-v7 .er7-home-title .er2-label,
+  .ethereal-v7 #er2-4 .er2-label {
+    left: 0 !important;
+  }
+
+}
+
+
+
+/* =========================================================
+   ETHEREAL — NATIVE SHELL ALIGNMENT FIX
+   04 / NAVIGATION / HOME PAGE
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   NAVIGATION
+   remove the old 24px inset
+   --------------------------------------------------------- */
+
+.ethereal-v7 .er5-navigation,
+.ethereal-v7 .er6-navigation,
+.ethereal-v7 .er7-navigation {
+  margin-left:auto !important;
+  margin-right:auto !important;
+}
+
+.ethereal-v7 .er5-nav-copy {
+  margin-left:0 !important;
+  padding-left:0 !important;
+  left:0 !important;
+}
+
+.ethereal-v7 .er5-nav-copy .er2-label {
+  position:relative !important;
+
+  left:0 !important;
+
+  margin-left:0 !important;
+  padding-left:0 !important;
+
+  transform:none !important;
+}
+
+
+/* ---------------------------------------------------------
+   HOME PAGE
+   now has .shell in the markup
+   let shell control the width
+   --------------------------------------------------------- */
+
+.ethereal-v7 .er3-homepage,
+.ethereal-v7 .er5-homepage,
+.ethereal-v7 .er6-homepage {
+  width:auto !important;
+  max-width:none !important;
+
+  margin-left:auto !important;
+  margin-right:auto !important;
+
+  left:auto !important;
+  right:auto !important;
+
+  transform:none !important;
+}
+
+.ethereal-v7 .er5-home-title,
+.ethereal-v7 .er7-home-title,
+.ethereal-v7 .er5-home-title .er2-label,
+.ethereal-v7 .er7-home-title .er2-label {
+  position:relative !important;
+
+  left:0 !important;
+
+  margin-left:0 !important;
+  padding-left:0 !important;
+
+  transform:none !important;
+  text-align:left !important;
+}
+
+
+/* ---------------------------------------------------------
+   04 — 1ST MINI ALBUM
+   remove the custom min-width container logic
+   and return to normal shell dimensions
+   --------------------------------------------------------- */
+
+.ethereal-v7 #er2-4 > .shell,
+.ethereal-v7 #er2-4 .shell {
+  width:auto !important;
+  max-width:none !important;
+
+  margin-left:auto !important;
+  margin-right:auto !important;
+}
+
+.ethereal-v7 #er2-4 .er2-label {
+  position:relative !important;
+
+  left:0 !important;
+
+  margin-left:0 !important;
+  padding-left:0 !important;
+
+  transform:none !important;
+  text-align:left !important;
+}
+
+
+/* ---------------------------------------------------------
+   kill the old shared-label viewport calculations
+   --------------------------------------------------------- */
+
+.ethereal-v7 {
+  --er-shared-label-left:0px !important;
+  --er-global-left:0px !important;
+}
+
+
+
+/* =========================================================
+   ETHEREAL — STRUCTURAL SHELL ALIGNMENT FINAL FIX
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   04 — 1ST MINI ALBUM
+   remove previous custom width:min(...) and width:auto hacks
+   let the site's native .shell control alignment
+   --------------------------------------------------------- */
+
+.ethereal-v7 #er2-4 > .shell,
+.ethereal-v7 #er2-4 .shell {
+  width: unset !important;
+  max-width: unset !important;
+
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+
+/* ---------------------------------------------------------
+   NAVIGATION
+   now has .shell directly in markup
+   disable all old width overrides
+   --------------------------------------------------------- */
+
+.ethereal-v7 .er5-navigation,
+.ethereal-v7 .er6-navigation,
+.ethereal-v7 .er7-navigation {
+  width: unset !important;
+  max-width: unset !important;
+
+  margin-left: auto !important;
+  margin-right: auto !important;
+
+  left: auto !important;
+  right: auto !important;
+
+  transform: none !important;
+}
+
+
+/* remove any old navigation copy inset */
+.ethereal-v7 .er5-nav-copy {
+  margin-left: 0 !important;
+  padding-left: 0 !important;
+  left: 0 !important;
+}
+
+
+/* navigation small heading */
+.ethereal-v7 .er5-nav-copy .er2-label {
+  position: relative !important;
+
+  left: 0 !important;
+
+  margin-left: 0 !important;
+  padding-left: 0 !important;
+
+  transform: none !important;
+
+  margin-bottom: 42px !important;
+}
+
+
+/* paragraph should start cleanly below heading */
+.ethereal-v7 .er5-nav-copy p {
+  margin-top: 0 !important;
+}
+
+
+/* ---------------------------------------------------------
+   HOMEPAGE
+   now also has .shell directly in markup
+   --------------------------------------------------------- */
+
+.ethereal-v7 .er3-homepage,
+.ethereal-v7 .er5-homepage,
+.ethereal-v7 .er6-homepage {
+  width: unset !important;
+  max-width: unset !important;
+
+  margin-left: auto !important;
+  margin-right: auto !important;
+
+  left: auto !important;
+  right: auto !important;
+
+  transform: none !important;
+}
+
+
+/* reset all previous homepage label offsets */
+.ethereal-v7 .er5-home-title,
+.ethereal-v7 .er7-home-title,
+.ethereal-v7 .er5-home-title .er2-label,
+.ethereal-v7 .er7-home-title .er2-label {
+  position: relative !important;
+
+  left: 0 !important;
+  right: auto !important;
+
+  margin-left: 0 !important;
+  padding-left: 0 !important;
+
+  transform: none !important;
+
+  text-align: left !important;
+}
+
+
+/* ---------------------------------------------------------
+   IMPORTANT:
+   neutralize previous global alignment hacks
+   --------------------------------------------------------- */
+
+.ethereal-v7 {
+  --er-global-left: 0px !important;
+  --er-shared-label-left: 0px !important;
+}
+
+
+
+/* =========================================================
+   ETHEREAL — FINAL WIDTH / ALIGNMENT CORRECTION
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   04 — 1ST MINI ALBUM
+   restore normal portfolio shell width
+   --------------------------------------------------------- */
+
+.ethereal-v7 #er2-4 > .shell,
+.ethereal-v7 #er2-4 .shell {
+  width: min(calc(100% - 120px), 1276px) !important;
+  max-width: 1276px !important;
+
+  margin-left: auto !important;
+  margin-right: auto !important;
+
+  box-sizing: border-box !important;
+}
+
+
+/* ---------------------------------------------------------
+   NAVIGATION
+   alignment is correct — only reduce heading/body gap
+   --------------------------------------------------------- */
+
+.ethereal-v7 .er5-nav-copy .er2-label {
+  margin-bottom: 24px !important;
+}
+
+.ethereal-v7 .er5-nav-copy p {
+  margin-top: 0 !important;
+}
+
+
+/* ---------------------------------------------------------
+   HOME PAGE
+   it already has .shell in HTML,
+   but previous width:unset overrides are defeating it.
+   Force the SAME shell width explicitly.
+   --------------------------------------------------------- */
+
+.ethereal-v7 .shell.er3-homepage,
+.ethereal-v7 .shell.er5-homepage,
+.ethereal-v7 .shell.er6-homepage,
+.ethereal-v7 .shell.er3-homepage.er5-homepage.er6-homepage {
+  width: min(calc(100% - 120px), 1276px) !important;
+  max-width: 1276px !important;
+
+  margin-left: auto !important;
+  margin-right: auto !important;
+
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+
+  left: auto !important;
+  right: auto !important;
+
+  transform: none !important;
+
+  box-sizing: border-box !important;
+}
+
+
+/* homepage inner content must never escape shell */
+
+.ethereal-v7 .er6-home-diagram {
+  width: 100% !important;
+  max-width: 100% !important;
+
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+
+  box-sizing: border-box !important;
+}
+
+
+/* HOME PAGE small label aligns with shell */
+
+.ethereal-v7 .er5-home-title,
+.ethereal-v7 .er7-home-title {
+  width: 100% !important;
+
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+.ethereal-v7 .er5-home-title .er2-label,
+.ethereal-v7 .er7-home-title .er2-label {
+  left: 0 !important;
+
+  margin-left: 0 !important;
+  padding-left: 0 !important;
+
+  transform: none !important;
+}
+
+
+/* ---------------------------------------------------------
+   RESPONSIVE
+   --------------------------------------------------------- */
+
+@media (max-width: 1100px) {
+
+  .ethereal-v7 #er2-4 > .shell,
+  .ethereal-v7 #er2-4 .shell,
+  .ethereal-v7 .shell.er3-homepage,
+  .ethereal-v7 .shell.er5-homepage,
+  .ethereal-v7 .shell.er6-homepage,
+  .ethereal-v7 .shell.er3-homepage.er5-homepage.er6-homepage {
+    width: calc(100% - 48px) !important;
+  }
+
+}
+
+
+
+/* =========================================================
+   ETHEREAL — STRUCTURAL WIDTH CLEANUP
+   Uses the portfolio's REAL native .shell system
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   04 — 1ST MINI ALBUM
+
+   Actual markup:
+   <div class="shell er2-album-intro er3-album-intro">
+
+   Restore the site's native shell instead of 1276px hacks.
+   --------------------------------------------------------- */
+
+.ethereal-v7 #er2-4 > .shell,
+.ethereal-v7 #er2-4 .shell.er2-album-intro,
+.ethereal-v7 #er2-4 .shell.er2-album-outcomes {
+  width: min(100%, var(--max)) !important;
+  max-width: none !important;
+
+  margin-left: auto !important;
+  margin-right: auto !important;
+
+  padding-left: var(--pad) !important;
+  padding-right: var(--pad) !important;
+
+  box-sizing: border-box !important;
+
+  left: auto !important;
+  right: auto !important;
+  transform: none !important;
+}
+
+
+/* 04 label itself: no inherited offset */
+.ethereal-v7 #er2-4 .er2-label {
+  position: relative !important;
+
+  left: 0 !important;
+  right: auto !important;
+
+  margin-left: 0 !important;
+  padding-left: 0 !important;
+
+  transform: none !important;
+  text-align: left !important;
+}
+
+
+/* ---------------------------------------------------------
+   NAVIGATION
+
+   Your current container alignment is correct.
+   Do NOT change its width/grid again.
+
+   Only tighten:
+   NAVIGATION -> paragraph
+   --------------------------------------------------------- */
+
+.ethereal-v7 .er5-nav-copy .er2-label {
+  margin-bottom: 18px !important;
+}
+
+.ethereal-v7 .er5-nav-copy p {
+  margin-top: 0 !important;
+}
+
+
+/* ---------------------------------------------------------
+   HOME PAGE
+
+   Your DOM now correctly contains:
+
+   <div class="shell er3-homepage er5-homepage er6-homepage">
+
+   Previous CSS was overriding .shell with:
+   width: unset
+   width: 1276px
+   padding: 0
+
+   Restore the ACTUAL native shell values.
+   --------------------------------------------------------- */
+
+.ethereal-v7 .shell.er3-homepage,
+.ethereal-v7 .shell.er5-homepage,
+.ethereal-v7 .shell.er6-homepage,
+.ethereal-v7 .shell.er3-homepage.er5-homepage.er6-homepage {
+  width: min(100%, var(--max)) !important;
+  max-width: none !important;
+
+  margin-left: auto !important;
+  margin-right: auto !important;
+
+  padding-left: var(--pad) !important;
+  padding-right: var(--pad) !important;
+
+  box-sizing: border-box !important;
+
+  left: auto !important;
+  right: auto !important;
+
+  transform: none !important;
+}
+
+
+/* Homepage heading stays inside shell */
+.ethereal-v7 .er5-home-title,
+.ethereal-v7 .er7-home-title {
+  width: 100% !important;
+  max-width: 100% !important;
+
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+
+  position: relative !important;
+
+  left: 0 !important;
+  right: auto !important;
+
+  transform: none !important;
+}
+
+
+/* HOME PAGE label itself */
+.ethereal-v7 .er5-home-title .er2-label,
+.ethereal-v7 .er7-home-title .er2-label {
+  position: relative !important;
+
+  left: 0 !important;
+
+  margin-left: 0 !important;
+  padding-left: 0 !important;
+
+  transform: none !important;
+  text-align: left !important;
+}
+
+
+/* ---------------------------------------------------------
+   HOMEPAGE FLOW
+
+   Keep everything inside the shell.
+   The grid is allowed to fill the AVAILABLE shell width,
+   not the viewport.
+   --------------------------------------------------------- */
+
+.ethereal-v7 .er6-home-diagram {
+  width: 100% !important;
+  max-width: 100% !important;
+
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+
+  box-sizing: border-box !important;
+
+  overflow: visible !important;
+}
+
+
+/* prevent individual grid columns forcing overflow */
+.ethereal-v7 .er6-home-phone,
+.ethereal-v7 .er6-home-actions,
+.ethereal-v7 .er6-home-features {
+  min-width: 0 !important;
+}
+
+
+/* phones must remain inside their grid columns */
+.ethereal-v7 .er6-home-img {
+  width: 100% !important;
+  max-width: 100% !important;
+
+  height: auto !important;
+
+  display: block !important;
+
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+
+/* ---------------------------------------------------------
+   REMOVE EFFECT OF OLD FAKE SHELL VARIABLES
+   --------------------------------------------------------- */
+
+.ethereal-v7 {
+  --er-global-left: 0px !important;
+  --er-shared-label-left: 0px !important;
+}
+
+
+/* ---------------------------------------------------------
+   MOBILE
+   Native shell already handles its own gutter.
+   Don't introduce another fake width.
+   --------------------------------------------------------- */
+
+@media (max-width:1100px) {
+
+  .ethereal-v7 #er2-4 > .shell,
+  .ethereal-v7 #er2-4 .shell.er2-album-intro,
+  .ethereal-v7 #er2-4 .shell.er2-album-outcomes,
+  .ethereal-v7 .shell.er3-homepage,
+  .ethereal-v7 .shell.er5-homepage,
+  .ethereal-v7 .shell.er6-homepage {
+    width: min(100%, var(--max)) !important;
+
+    padding-left: var(--pad) !important;
+    padding-right: var(--pad) !important;
+  }
+
+}
+
+
+
+/* =========================================================
+   ETHEREAL — MATCH 04 + HOMEPAGE TO NAV WIDTH
+   ========================================================= */
+
+.ethereal-v7 {
+  --er-section-width: 1276px;
+}
+
+
+/* ---------------------------------------------------------
+   04 — 1ST MINI ALBUM
+   same width as Navigation
+   --------------------------------------------------------- */
+
+.ethereal-v7 #er2-4 > .shell,
+.ethereal-v7 #er2-4 .shell.er2-album-intro,
+.ethereal-v7 #er2-4 .shell.er2-album-outcomes {
+  width: min(calc(100% - 120px), var(--er-section-width)) !important;
+  max-width: var(--er-section-width) !important;
+
+  margin-left: auto !important;
+  margin-right: auto !important;
+
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+
+  box-sizing: border-box !important;
+}
+
+
+/* keep 04 label on same left edge */
+.ethereal-v7 #er2-4 .er2-label {
+  left: 0 !important;
+  margin-left: 0 !important;
+  padding-left: 0 !important;
+}
+
+
+/* ---------------------------------------------------------
+   HOMEPAGE
+   same exact width as Navigation
+   --------------------------------------------------------- */
+
+.ethereal-v7 .shell.er3-homepage.er5-homepage.er6-homepage,
+.ethereal-v7 .shell.er3-homepage,
+.ethereal-v7 .shell.er5-homepage,
+.ethereal-v7 .shell.er6-homepage {
+  width: min(calc(100% - 120px), var(--er-section-width)) !important;
+  max-width: var(--er-section-width) !important;
+
+  margin-left: auto !important;
+  margin-right: auto !important;
+
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+
+  box-sizing: border-box !important;
+}
+
+
+/* Homepage label sits on exact section edge */
+.ethereal-v7 .er5-home-title,
+.ethereal-v7 .er7-home-title,
+.ethereal-v7 .er5-home-title .er2-label,
+.ethereal-v7 .er7-home-title .er2-label {
+  left: 0 !important;
+
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+
+/* homepage flow cannot expand past container */
+.ethereal-v7 .er6-home-diagram {
+  width: 100% !important;
+  max-width: 100% !important;
+
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+
+  box-sizing: border-box !important;
+}
+
+
+/* ---------------------------------------------------------
+   responsive
+   --------------------------------------------------------- */
+
+@media (max-width: 1100px) {
+
+  .ethereal-v7 #er2-4 > .shell,
+  .ethereal-v7 #er2-4 .shell.er2-album-intro,
+  .ethereal-v7 #er2-4 .shell.er2-album-outcomes,
+  .ethereal-v7 .shell.er3-homepage.er5-homepage.er6-homepage {
+    width: calc(100% - 48px) !important;
+  }
+
+}
+
