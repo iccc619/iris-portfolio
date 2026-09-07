@@ -1,3 +1,10 @@
+# Ethereal Realm — original large video files
+public/projects/ethereal-realm/*.mp4
+
+# But keep web-optimized versions
+!public/projects/ethereal-realm/web-video/
+!public/projects/ethereal-realm/web-video/*.mp4
+
 node_modules/
 dist/
 .DS_Store
@@ -9,3 +16,10 @@ dist/
 *.psd
 *.ai
 *.indd
+
+public/projects/ethereal-realm/Highlight Medley.mp4
+public/projects/ethereal-realm/Dreaming.mp4
+public/projects/ethereal-realm/The Moment We Encounter.mp4
+public/projects/ethereal-realm/1.mp4
+public/projects/ethereal-realm/Digit Wings.mp4
+
