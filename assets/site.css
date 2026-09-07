@@ -2611,3 +2611,626 @@ body[data-page="work"] .page-intro{
 @media(prefers-reduced-motion:reduce){
   .er-member,.er-phone,.er-flow-phones img{transition:none!important}
 }
+
+
+/* =========================================================
+   ETHEREAL / REALM v2 — annotation refinement pass
+   ========================================================= */
+@font-face{
+  font-family:"ER Pixel";
+  src:url("/public/fonts/pixeloid-font/PixeloidSans-mLxMm.ttf") format("truetype");
+  font-weight:400;
+  font-style:normal;
+  font-display:swap
+}
+@font-face{
+  font-family:"ER Pixel";
+  src:url("/public/fonts/pixeloid-font/PixeloidSansBold-PKnYd.ttf") format("truetype");
+  font-weight:700;
+  font-style:normal;
+  font-display:swap
+}
+@font-face{
+  font-family:"ER Octo";
+  src:url("/public/fonts/TT%20Octosquares%20Trial%201-000/TT%20Octosquares%20Trial%20Condensed%20ExtraBold.ttf") format("truetype");
+  font-weight:800;
+  font-style:normal;
+  font-display:swap
+}
+
+.er2{
+  --black:#01060A;--blue:#1B03A3;--violet:#6044FF;--cyan:#7DF9FF;--pink:#FF7AAD;
+  --white:#f7f7fb;--line:rgba(125,249,255,.18);--soft:rgba(247,247,251,.68);
+  background:var(--black);color:var(--white);overflow:hidden;
+  font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text",Arial,sans-serif
+}
+.er2 *{box-sizing:border-box}
+.er2 img{display:block;max-width:100%}
+.er2 .shell{width:min(92vw,1560px);margin-inline:auto}
+.er2-pixel{font-family:"ER Pixel",sans-serif;font-weight:700}
+.er2-octo{font-family:"ER Octo","ER Pixel",sans-serif;font-weight:800}
+.er2-label{font:600 10px/1.2 "ER Pixel",monospace;letter-spacing:.08em;text-transform:uppercase;color:var(--cyan)}
+.er2 h2,.er2 h3,.er2 p{margin-top:0}
+.er2 h2{font-size:clamp(3.2rem,7.2vw,8.2rem);line-height:.86;letter-spacing:-.065em;font-weight:650}
+.er2 h3{font-size:clamp(2.2rem,4vw,4.9rem);line-height:.92;letter-spacing:-.055em}
+.er2-progress{background:linear-gradient(90deg,var(--violet),var(--cyan),var(--pink))}
+.er2-rail{position:fixed;z-index:70;right:18px;top:50%;transform:translateY(-50%);display:grid;gap:7px}
+.er2-rail a{display:flex;align-items:center;justify-content:flex-end;gap:8px;font:500 8px var(--mono);opacity:.3}
+.er2-rail a i{width:12px;height:1px;background:currentColor;transition:.25s}
+.er2-rail a.active{opacity:1;color:var(--cyan)}
+.er2-rail a.active i{width:30px}
+
+/* Hero */
+.er2-hero{min-height:100svh;position:relative;display:flex;align-items:flex-end;background:#060414;padding:150px 0 74px}
+.er2-hero-art{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 42%;image-rendering:auto}
+.er2-hero-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(1,6,10,.08) 8%,rgba(1,6,10,.15) 56%,rgba(1,6,10,.94) 100%)}
+.er2-hero-inner{position:relative;z-index:2}
+.er2-kicker{font:700 10px "ER Pixel",monospace;letter-spacing:.08em;text-transform:uppercase;color:var(--cyan)}
+.er2-hero h1{font-size:clamp(5.2rem,13.5vw,13.5rem);line-height:.76;letter-spacing:-.045em;margin:26px 0 26px;text-shadow:0 0 38px rgba(96,68,255,.32)}
+.er2-hero-lower{display:grid;grid-template-columns:minmax(0,740px) 1fr;gap:55px;align-items:end}
+.er2-hero-lower p{font-size:clamp(1.15rem,2vw,2.2rem);line-height:1.12;letter-spacing:-.035em;max-width:29ch}
+.er2-tags{display:flex;gap:7px;justify-content:flex-end;flex-wrap:wrap}
+.er2-tags span{border:1px solid rgba(255,255,255,.18);padding:8px 11px;font:600 9px "ER Pixel",monospace;letter-spacing:.04em;text-transform:uppercase;background:rgba(1,6,10,.26);backdrop-filter:blur(8px)}
+
+/* Brand world */
+.er2-world{padding:clamp(105px,12vw,190px) 0 120px}
+.er2-world-grid{display:grid;grid-template-columns:1.12fr .88fr;gap:8vw;align-items:start}
+.er2-heading-block h2{margin:32px 0 0}
+.er2-world-copy{padding-top:5rem}
+.er2-world-copy>p{font-size:clamp(17px,1.35vw,22px);line-height:1.55;max-width:58ch}
+.er2-world-copy aside{margin-top:58px;border-top:1px solid var(--line);padding-top:17px;display:grid;gap:8px}
+.er2-world-copy aside b{font:700 11px "ER Pixel",monospace;color:var(--cyan)}
+.er2-world-copy aside span{font-size:13px;line-height:1.45;color:rgba(247,247,251,.58);max-width:62ch}
+.er2-identity{margin-top:110px;border-top:1px solid var(--line)}
+.er2-type-card{display:grid;grid-template-columns:190px 1fr 140px;align-items:center;min-height:170px;border-bottom:1px solid var(--line);gap:22px}
+.er2-type-card>span,.er2-type-card>em{font:600 9px "ER Pixel",monospace;text-transform:uppercase;letter-spacing:.06em;color:rgba(247,247,251,.48);font-style:normal}
+.er2-type-card>strong{font-size:clamp(2.8rem,6vw,7rem);line-height:.86;white-space:nowrap}
+.er2-type-card>em{text-align:right}
+.er2-palette{display:grid;grid-template-columns:repeat(4,1fr);padding-top:44px}
+.er2-palette div{height:190px;background:var(--c);padding:16px;display:flex;flex-direction:column;justify-content:space-between;color:#fff;border:1px solid transparent}
+.er2-palette .dark{border-color:rgba(255,255,255,.22)}
+.er2-palette .light{color:#01060A}
+.er2-palette b{font:700 11px -apple-system,BlinkMacSystemFont,sans-serif}.er2-palette span{font:700 9px "ER Pixel",monospace}
+
+/* members */
+.er2-members{padding:clamp(115px,12vw,190px) 0;background:linear-gradient(180deg,#01060A,#070416 60%,#01060A)}
+.er2-section-head{display:grid;grid-template-columns:1fr minmax(0,3.15fr);gap:22px;align-items:start;margin-bottom:68px}
+.er2-section-head h2{margin:0}
+.er2-section-head>p{grid-column:2;font-size:15px;line-height:1.55;color:var(--soft);max-width:55ch;margin-top:-25px}
+.er2-member-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:5px}
+.er2-member{position:relative;min-width:0;outline:none}
+.er2-member-image{height:clamp(410px,45vw,710px);overflow:hidden;background:#070a10;border-bottom:3px solid var(--member)}
+.er2-member-image img{width:100%;height:100%;object-fit:cover;object-position:50% top;transition:.5s transform,.5s filter}
+.er2-member:hover .er2-member-image img,.er2-member:focus .er2-member-image img{transform:scale(1.035);filter:saturate(1.08)}
+.er2-member-title{height:52px;display:flex;align-items:center}
+.er2-member-title img{max-height:32px;max-width:86%}
+.er2-member-basic{display:grid;gap:4px;border-top:1px solid rgba(255,255,255,.12);padding-top:10px;min-height:90px}
+.er2-member-basic b{font:700 18px "ER Pixel",sans-serif}
+.er2-member-basic b small{font-size:10px;font-weight:400;opacity:.55}
+.er2-member-basic span,.er2-member-basic i{font:500 8px "ER Pixel",monospace;text-transform:uppercase;letter-spacing:.04em;font-style:normal;color:rgba(255,255,255,.5)}
+.er2-member-detail{position:absolute;left:8px;right:8px;bottom:105px;background:rgba(1,6,10,.92);border:1px solid color-mix(in srgb,var(--member),transparent 35%);backdrop-filter:blur(12px);padding:13px;display:grid;grid-template-columns:1fr 1fr;gap:10px;opacity:0;transform:translateY(10px);pointer-events:none;transition:.25s}
+.er2-member:hover .er2-member-detail,.er2-member:focus .er2-member-detail{opacity:1;transform:none}
+.er2-member-detail span{font-size:10px;line-height:1.35;color:rgba(255,255,255,.74)}
+.er2-member-detail b{display:block;font:700 8px "ER Pixel",monospace;color:var(--member);margin-bottom:3px;text-transform:uppercase}
+.er2-member-detail .wide{grid-column:1/-1}
+.er2-member-colours{display:grid;grid-template-columns:repeat(5,1fr);margin-top:65px;border-top:1px solid var(--line)}
+.er2-member-colours div{padding:14px 9px;display:grid;grid-template-columns:auto 1fr auto;gap:10px;align-items:center;border-right:1px solid var(--line)}
+.er2-member-colours i{height:7px;background:var(--member)}.er2-member-colours span,.er2-member-colours b{font:600 8px "ER Pixel",monospace;text-transform:uppercase}.er2-member-colours b{opacity:.48}
+
+/* album */
+.er2-album{padding:clamp(110px,13vw,205px) 0;background:#01060A}
+.er2-album-intro{display:grid;grid-template-columns:1fr 3fr;gap:20px;align-items:start}
+.er2-album-logo{grid-column:2;width:min(100%,900px);margin:26px 0 45px}
+.er2-album-intro p{grid-column:2;font-size:clamp(19px,1.8vw,30px);line-height:1.32;letter-spacing:-.025em;max-width:46ch}
+.er2-static-flow{overflow:hidden;margin-top:90px;padding:34px 0}
+.er2-static-track{display:flex;width:max-content;gap:6px;will-change:transform}
+.er2-static-track img{width:clamp(260px,24vw,420px);height:clamp(210px,18vw,315px);object-fit:cover;flex:none}
+.er2-static-track img:nth-child(3n+2){transform:translateY(18px)}
+.er2-album-outcomes{margin-top:105px}
+.er2-subhead{display:flex;justify-content:space-between;align-items:end;border-top:1px solid var(--line);padding-top:15px;margin-bottom:26px}
+.er2-subhead span{font:700 11px "ER Pixel",monospace;text-transform:uppercase;color:var(--cyan)}
+.er2-subhead p{font-size:12px;color:var(--soft);margin:0}
+.er2-album-pair{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.er2-album-pair img{width:100%;background:#070a10}
+
+/* campaign */
+.er2-campaign{padding:clamp(110px,12vw,190px) 0 135px;background:#070312}
+.er2-tracklists{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}
+.er2-tracklists img{width:100%}
+.er2-social-collage{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-top:100px}
+.er2-social-collage>div{overflow:hidden;background:#01060A}
+.er2-social-collage img{width:100%;height:100%;object-fit:cover}
+.er2-social-collage .hero{grid-column:1/-1;aspect-ratio:16/5}
+.er2-social-collage .wide{grid-column:1/-1;aspect-ratio:16/5}
+.er2-youtube{margin-top:85px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:34px 0;display:grid;grid-template-columns:1fr auto;gap:40px;align-items:end}
+.er2-youtube h3{font-size:clamp(2.2rem,4vw,5.5rem);margin:18px 0 0;max-width:16ch}
+.er2-youtube a{border:1px solid rgba(255,255,255,.34);padding:13px 16px;font:700 9px "ER Pixel",monospace;text-transform:uppercase;white-space:nowrap;transition:.2s}
+.er2-youtube a:hover{background:var(--cyan);color:#01060A;border-color:var(--cyan)}
+.er2-motion-pair{margin-top:80px;display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.er2-motion-pair figure{margin:0;background:#01060A;position:relative;aspect-ratio:16/10;overflow:hidden;border:1px solid rgba(255,255,255,.07)}
+.er2-motion-pair video{width:100%;height:100%;display:block;object-fit:cover}
+.er2-motion-pair figcaption{position:absolute;left:12px;bottom:10px;padding:7px 9px;background:rgba(1,6,10,.74);font:700 8px "ER Pixel",monospace;text-transform:uppercase;letter-spacing:.05em}
+
+/* Realm opening */
+.er2-realm{padding:clamp(120px,14vw,220px) 0 110px;background:linear-gradient(180deg,#01060A,#0b0626 55%,#01060A)}
+.er2-realm-header{display:grid;grid-template-columns:.85fr 2fr;gap:7vw;align-items:center}
+.er2-realm-brand{display:grid;grid-template-columns:150px 1fr;gap:24px;align-items:center}
+.er2-realm-brand>img{width:150px;border-radius:32px}
+.er2-realm-brand strong{display:block;font-size:clamp(2.7rem,5.5vw,6rem);line-height:.85;margin-top:17px}
+.er2-realm-header h2{margin:0 0 35px}
+.er2-realm-header p{font-size:clamp(17px,1.45vw,23px);line-height:1.55;max-width:58ch;color:var(--soft)}
+.er2-realm-preview{display:flex;justify-content:center;align-items:flex-end;gap:clamp(7px,1vw,15px);margin-top:100px;padding-inline:2vw}
+.er2-realm-preview img{width:min(18vw,290px);border-radius:clamp(22px,2vw,34px);box-shadow:0 24px 70px rgba(0,0,0,.42)}
+.er2-realm-preview img:nth-child(2),.er2-realm-preview img:nth-child(4){transform:translateY(28px)}
+
+/* system / process */
+.er2-system{padding:clamp(110px,13vw,200px) 0;background:#f3f2f7;color:#08090d}
+.er2-system .er2-label{color:#6044FF}
+.er2-system-head{display:grid;grid-template-columns:1fr 3fr;gap:20px;padding-bottom:65px;border-bottom:1px solid rgba(8,9,13,.16)}
+.er2-system-head h2{margin:0}
+.er2-persona{display:grid;grid-template-columns:1fr 1.35fr;gap:5vw;padding:78px 0;border-bottom:1px solid rgba(8,9,13,.16)}
+.er2-persona-id span,.er2-persona-about>b,.er2-persona-cards b{font:700 9px "ER Pixel",monospace;text-transform:uppercase;color:#6044FF}
+.er2-persona-id strong{display:block;font:700 clamp(2.8rem,5.3vw,6rem) "ER Pixel",sans-serif;line-height:.9;margin:25px 0 10px}
+.er2-persona-id small{font:500 10px "ER Pixel",monospace;opacity:.52}
+.er2-persona-about p{font-size:clamp(17px,1.35vw,22px);line-height:1.52}
+.er2-persona-cards{grid-column:2;display:grid;grid-template-columns:1fr 1fr;gap:7px}
+.er2-persona-cards>div{border:1px solid rgba(8,9,13,.18);padding:15px;display:grid;gap:9px}
+.er2-persona-cards span{font-size:12px;line-height:1.35;border-top:1px solid rgba(8,9,13,.11);padding-top:7px}
+.er2-traits{grid-column:1;display:grid;grid-template-columns:auto 1fr auto;gap:8px 12px;align-items:center;font:600 8px "ER Pixel",monospace;text-transform:uppercase}
+.er2-traits i{height:4px;background:linear-gradient(90deg,#6044FF var(--p),rgba(8,9,13,.12) var(--p))}
+.er2-app-colour{display:grid;grid-template-columns:1fr 3fr;gap:20px;padding:70px 0;border-bottom:1px solid rgba(8,9,13,.16)}
+.er2-app-swatch{display:grid;grid-template-columns:100px auto 1fr;align-items:center;gap:22px}
+.er2-app-swatch i{width:100px;height:100px;background:#6044FF}
+.er2-app-swatch strong{font:700 2rem "ER Pixel",sans-serif}.er2-app-swatch p{margin:0;max-width:48ch;font-size:13px;line-height:1.5}
+.er2-ia{padding:95px 0;text-align:center;border-bottom:1px solid rgba(8,9,13,.16)}
+.er2-ia .root{margin:45px auto 0;width:190px;background:#6044FF;color:white;padding:17px;font:700 12px "ER Pixel",sans-serif}
+.er2-ia .stem{height:55px;width:1px;background:#6044FF;margin:auto}
+.er2-ia .nodes{position:relative;display:grid;grid-template-columns:repeat(5,1fr);gap:7px}
+.er2-ia .nodes:before{content:"";position:absolute;left:10%;right:10%;top:0;height:1px;background:#6044FF}
+.er2-ia .nodes div{border:1px solid rgba(8,9,13,.18);padding:24px 8px 19px}
+.er2-ia .nodes b{display:block;font:700 10px "ER Pixel",sans-serif}.er2-ia .nodes small{font-size:9px;opacity:.45}
+.er2-components,.er2-wire{display:grid;grid-template-columns:.8fr 1.4fr;gap:7vw;align-items:center;padding:90px 0;border-bottom:1px solid rgba(8,9,13,.16)}
+.er2-components .copy h3,.er2-wire .copy h3{margin:28px 0}.er2-components .copy p,.er2-wire .copy p{font-size:14px;line-height:1.58;max-width:48ch}
+.er2-components .demo{display:grid;gap:22px}
+.er2-components .nav{background:#06070b;border-radius:18px;color:#ddd;padding:18px 22px;display:grid;grid-template-columns:repeat(5,1fr);text-align:center}
+.er2-components .nav span{display:grid;gap:6px;font-size:20px}.er2-components .nav small{font-size:8px}.er2-components .nav .on{color:#6044FF}
+.er2-components .patterns{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
+.er2-components .patterns i{border:1px solid rgba(8,9,13,.18);padding:26px;font:600 9px "ER Pixel",monospace;font-style:normal;text-align:center}
+.er2-components .patterns .online{border-color:#6044FF;box-shadow:inset 0 0 0 1px #6044FF}
+.er2-wire{border-bottom:0;padding-bottom:0}
+.er2-wire .compare{display:flex;align-items:center;justify-content:center;gap:28px}
+.er2-wire .wire-phone,.er2-wire .compare>img{width:min(42%,285px);aspect-ratio:390/844;border-radius:34px}
+.er2-wire .wire-phone{border:2px solid #6044FF;padding:20px;display:grid;grid-template-rows:auto 1.1fr .8fr 2fr auto;gap:11px}
+.er2-wire .status{font-size:9px;font-weight:700}.er2-wire .wire-news,.er2-wire .wire-check,.er2-wire .wire-schedule{border:1px solid rgba(8,9,13,.22);padding:10px;font:700 8px "ER Pixel",monospace}
+.er2-wire .wire-check{display:flex;justify-content:space-between;align-items:center}.er2-wire .wire-check span{font-size:22px}
+.er2-wire .wire-schedule{display:grid;gap:7px}.er2-wire .wire-schedule i{height:1px;background:rgba(8,9,13,.22)}
+.er2-wire .wire-nav{font:600 6px "ER Pixel",monospace;text-align:center;border-top:1px solid rgba(8,9,13,.18);padding-top:9px}
+.er2-wire .compare>img{height:auto;box-shadow:0 22px 50px rgba(0,0,0,.13)}.er2-wire .arrow{font-size:35px;color:#6044FF}
+
+/* final flows */
+.er2-flows{padding:clamp(110px,13vw,205px) 0;background:#01060A}
+.er2-flow{display:grid;grid-template-columns:.82fr 1.55fr;gap:6vw;align-items:center;padding:100px 0;border-top:1px solid var(--line)}
+.er2-flow .copy>span,.er2-flow .copy>b{font:700 8px "ER Pixel",monospace;text-transform:uppercase;color:var(--cyan);letter-spacing:.05em}
+.er2-flow .copy h3{margin:24px 0}.er2-flow .copy p{font-size:13px;line-height:1.55;color:var(--soft);max-width:42ch}.er2-flow .copy>b{display:block;margin-top:28px;color:rgba(255,255,255,.4)}
+.er2-flow .phones{display:flex;align-items:center;justify-content:center;gap:clamp(7px,1vw,15px)}
+.er2-flow .phones img{width:min(29%,250px);border-radius:clamp(20px,1.8vw,30px);box-shadow:0 20px 55px rgba(0,0,0,.42);transition:.25s}
+.er2-flow .phones.four img{width:min(23%,210px)}
+.er2-flow .phones img:nth-child(even){transform:translateY(27px)}
+.er2-flow .phones img:hover{transform:translateY(-8px) scale(1.04);z-index:2}
+
+/* prototype */
+.er2-prototype{padding:clamp(115px,13vw,205px) 0;background:#1B03A3}
+.er2-proto-copy{display:grid;grid-template-columns:1fr 3fr;gap:20px}
+.er2-proto-copy h2,.er2-proto-copy p,.er2-proto-copy a{grid-column:2}
+.er2-proto-copy h2{margin:28px 0}.er2-proto-copy p{font-size:clamp(17px,1.45vw,23px);line-height:1.5;max-width:58ch}
+.er2-proto-copy a{justify-self:start;margin-top:22px;border:1px solid rgba(255,255,255,.55);padding:13px 15px;font:700 9px "ER Pixel",monospace;text-transform:uppercase}
+.er2-proto-map{width:min(94vw,1650px);margin:100px auto 0;display:grid;grid-template-columns:1fr 1.2fr 1.2fr 1fr;gap:18px;align-items:start}
+.er2-proto-map .lane{position:relative;border-top:1px solid rgba(255,255,255,.48);padding-top:38px;display:flex;justify-content:center;gap:7px;min-height:530px}
+.er2-proto-map .lane>span{position:absolute;top:10px;left:0;font:700 8px "ER Pixel",monospace}
+.er2-proto-map .lane img{width:min(44%,180px);height:max-content;border-radius:22px;box-shadow:0 18px 45px rgba(0,0,0,.26)}
+.er2-proto-map .lane:nth-child(even){transform:translateY(50px)}
+.er2-proto-map .shop img{width:min(30%,155px)}
+
+/* ending */
+.er2-finale{height:72svh;position:relative;display:flex;align-items:flex-end;background:#01060A;overflow:hidden}
+.er2-finale-bg{position:absolute;inset:0}.er2-finale-bg img{width:100%;height:100%;object-fit:cover;filter:brightness(.5) saturate(.75);transform:scale(1.04)}
+.er2-finale-bg:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(1,6,10,.82),rgba(1,6,10,.12))}
+.er2-finale .shell{position:relative;z-index:2;padding-bottom:65px}.er2-finale span{font:700 9px "ER Pixel",monospace;letter-spacing:.08em}.er2-finale strong{display:block;font-size:clamp(3.5rem,9vw,10rem);line-height:.78;letter-spacing:-.06em;margin-top:15px}
+.er2-next{background:#7DF9FF;color:#01060A}
+
+@media(max-width:1020px){
+  .er2-world-grid,.er2-realm-header,.er2-flow,.er2-components,.er2-wire{grid-template-columns:1fr}
+  .er2-world-copy{padding-top:0}.er2-section-head{grid-template-columns:1fr}.er2-section-head>p{grid-column:1;margin-top:0}
+  .er2-member-grid{grid-template-columns:repeat(2,1fr)}.er2-member:last-child{grid-column:1/-1;width:50%}
+  .er2-member-colours{grid-template-columns:repeat(5,1fr)}
+  .er2-type-card{grid-template-columns:150px 1fr}.er2-type-card>em{display:none}
+  .er2-album-intro,.er2-system-head,.er2-app-colour,.er2-proto-copy{grid-template-columns:1fr}
+  .er2-album-logo,.er2-album-intro p,.er2-proto-copy h2,.er2-proto-copy p,.er2-proto-copy a{grid-column:1}
+  .er2-realm-brand{max-width:550px}.er2-proto-map{grid-template-columns:1fr 1fr}.er2-proto-map .lane:nth-child(even){transform:none}
+  .er2-persona{grid-template-columns:1fr}.er2-persona-cards,.er2-traits{grid-column:1}
+}
+@media(max-width:700px){
+  .er2-rail{display:none}.er2-hero{min-height:88svh}.er2-hero h1{font-size:19vw}
+  .er2-hero-lower{grid-template-columns:1fr}.er2-tags{justify-content:flex-start}
+  .er2-type-card{display:block;padding:27px 0;min-height:0}.er2-type-card strong{display:block;margin-top:16px;font-size:10vw;white-space:normal}
+  .er2-palette{grid-template-columns:1fr 1fr}.er2-palette div{height:145px}
+  .er2-member-grid{display:block}.er2-member,.er2-member:last-child{width:100%;margin-bottom:54px}.er2-member-image{height:120vw}.er2-member-detail{position:static;opacity:1;transform:none;margin-top:8px}
+  .er2-member-colours{grid-template-columns:1fr}
+  .er2-album-pair,.er2-motion-pair{grid-template-columns:1fr}
+  .er2-tracklists{grid-template-columns:1fr 1fr}.er2-social-collage{grid-template-columns:1fr 1fr}.er2-social-collage .hero,.er2-social-collage .wide{grid-column:1/-1}
+  .er2-youtube{grid-template-columns:1fr}.er2-youtube a{justify-self:start}
+  .er2-realm-brand{grid-template-columns:92px 1fr}.er2-realm-brand>img{width:92px;border-radius:20px}
+  .er2-realm-preview{overflow-x:auto;justify-content:flex-start;padding:20px 6vw 40px}.er2-realm-preview img{width:62vw;flex:none}.er2-realm-preview img:nth-child(2),.er2-realm-preview img:nth-child(4){transform:none}
+  .er2-persona-cards{grid-template-columns:1fr}.er2-app-swatch{grid-template-columns:70px 1fr}.er2-app-swatch i{width:70px;height:70px}.er2-app-swatch p{grid-column:1/-1}
+  .er2-ia .nodes{grid-template-columns:1fr 1fr}.er2-ia .nodes:before{display:none}
+  .er2-components .patterns{grid-template-columns:1fr}.er2-wire .compare{gap:9px}.er2-wire .wire-phone,.er2-wire .compare>img{width:44%;border-radius:20px}
+  .er2-flow{padding:75px 0}.er2-flow .phones{overflow-x:auto;justify-content:flex-start;padding:25px 0}.er2-flow .phones img,.er2-flow .phones.four img{width:58vw;flex:none}.er2-flow .phones img:nth-child(even){transform:none}
+  .er2-proto-map{grid-template-columns:1fr;gap:50px}.er2-proto-map .lane{min-height:0;justify-content:flex-start;overflow-x:auto}.er2-proto-map .lane img,.er2-proto-map .shop img{width:46vw;flex:none}
+  .er2-finale{height:58svh}
+}
+@media(prefers-reduced-motion:reduce){
+  .er2-member-image img,.er2-member-detail,.er2-flow .phones img{transition:none!important}
+}
+
+
+/* =========================================================
+   ETHEREAL / REALM v3 — user-directed refinement
+   No generated imagery; code/layout only.
+   ========================================================= */
+.ethereal-v3 .er2{
+  --er-heading:var(--display);
+}
+
+/* Return portfolio headings to the site's original sans-serif and reduce scale globally */
+.ethereal-v3 .er2 h1,
+.ethereal-v3 .er2 h2,
+.ethereal-v3 .er2 h3,
+.ethereal-v3 .er2 .er2-system-head h2,
+.ethereal-v3 .er2 .er2-section-head h2,
+.ethereal-v3 .er2 .er2-flow h3,
+.ethereal-v3 .er2 .er2-proto-copy h2{
+  font-family:var(--display)!important;
+  font-weight:600;
+}
+.ethereal-v3 .er2 h2{
+  font-size:clamp(2.45rem,4.5vw,5.7rem)!important;
+  line-height:.91!important;
+  letter-spacing:-.055em!important;
+}
+.ethereal-v3 .er2 h3{
+  font-size:clamp(1.65rem,2.7vw,3.2rem)!important;
+  line-height:.96!important;
+  letter-spacing:-.045em!important;
+}
+.ethereal-v3 .er2-hero h1{
+  font-family:var(--display)!important;
+  font-size:clamp(4.3rem,10vw,10rem)!important;
+  font-weight:600;
+  letter-spacing:-.065em!important;
+}
+.ethereal-v3 .er2-label{font-size:8px}
+.ethereal-v3 .er2-section-head{grid-template-columns:1fr minmax(0,2.7fr);margin-bottom:52px}
+.ethereal-v3 .er2-section-head>p{font-size:13px;max-width:50ch;margin-top:-10px}
+
+/* image 1 — remove hero category boxes */
+.ethereal-v3 .er2-hero-lower{display:block;max-width:760px}
+.ethereal-v3 .er2-tags{display:none!important}
+
+/* brand world — replace text heading with blue star SVG */
+.ethereal-v3 .er2-world{padding-top:95px}
+.ethereal-v3 .er2-world-grid{grid-template-columns:.8fr 1.2fr;gap:8vw}
+.ethereal-v3 .er2-heading-block{min-height:320px;display:flex;flex-direction:column}
+.ethereal-v3 .er3-world-star{
+  width:min(24vw,260px);
+  aspect-ratio:1;
+  margin-top:42px;
+  background:#7DF9FF;
+  -webkit-mask:url("/public/projects/ethereal-realm/svg/Group%2074.svg") center/contain no-repeat;
+  mask:url("/public/projects/ethereal-realm/svg/Group%2074.svg") center/contain no-repeat;
+  filter:drop-shadow(0 0 28px rgba(125,249,255,.18));
+}
+.ethereal-v3 .er2-world-copy{padding-top:34px}
+.ethereal-v3 .er2-world-copy>p{font-size:16px;line-height:1.55}
+.ethereal-v3 .er2-world-copy aside{margin-top:38px}
+
+/* image 2 — type specimens dramatically smaller */
+.ethereal-v3 .er2-identity{margin-top:70px}
+.ethereal-v3 .er2-type-card{min-height:118px;grid-template-columns:210px 1fr 120px}
+.ethereal-v3 .er2-type-card>strong{font-size:clamp(2rem,3.7vw,4.7rem)!important;line-height:.95}
+.ethereal-v3 .er2-palette{padding-top:30px}
+.ethereal-v3 .er2-palette div{height:155px}
+
+/* images 3–4 — no five extra SVG cards; use large custom pixel SVG symbols */
+.ethereal-v3 .er2-members{padding-top:105px}
+.ethereal-v3 .er2-member-grid{gap:8px}
+.ethereal-v3 .er2-member-image{height:clamp(360px,40vw,620px)}
+.ethereal-v3 .er2-member-title{display:none!important}
+.ethereal-v3 .er2-member-basic{
+  min-height:112px;
+  padding:13px 4px 0;
+  display:grid;
+  grid-template-columns:1fr 74px;
+  align-items:start;
+  gap:8px;
+}
+.ethereal-v3 .er2-member-basic>div{display:grid;gap:5px}
+.ethereal-v3 .er2-member-basic b{font-size:16px}
+.ethereal-v3 .er2-member-basic span,
+.ethereal-v3 .er2-member-basic i{font-size:7px}
+.ethereal-v3 .er3-member-emoji{
+  width:66px;
+  height:66px;
+  object-fit:contain;
+  justify-self:end;
+  margin-top:2px;
+}
+.ethereal-v3 .er2-member-colours{display:none!important}
+.ethereal-v3 .er2-member-detail{bottom:120px}
+
+/* image 5 — centered, smaller album lockup; taller moving static strip */
+.ethereal-v3 .er2-album{padding-top:120px}
+.ethereal-v3 .er3-album-intro{
+  display:flex!important;
+  flex-direction:column;
+  align-items:center;
+  text-align:center;
+  max-width:1080px;
+}
+.ethereal-v3 .er3-album-intro .er2-label{align-self:flex-start}
+.ethereal-v3 .er3-album-intro .er2-album-logo{
+  grid-column:auto!important;
+  width:min(72vw,720px)!important;
+  margin:18px auto 25px!important;
+}
+.ethereal-v3 .er3-album-intro p{
+  grid-column:auto!important;
+  max-width:47ch!important;
+  font-size:clamp(15px,1.25vw,19px)!important;
+  line-height:1.45!important;
+  margin-inline:auto;
+}
+.ethereal-v3 .er2-static-flow{margin-top:60px;padding:24px 0 42px}
+.ethereal-v3 .er2-static-track img{
+  width:clamp(300px,28vw,470px)!important;
+  height:clamp(310px,30vw,510px)!important;
+  object-fit:cover;
+}
+.ethereal-v3 .er2-static-track img:nth-child(3n+2){transform:none!important}
+.ethereal-v3 .er2-album-outcomes{margin-top:76px}
+.ethereal-v3 .er2-album-pair{
+  height:clamp(430px,42vw,680px);
+  overflow:hidden;
+}
+.ethereal-v3 .er2-album-pair img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center;
+  transform:scale(1.18);
+}
+.ethereal-v3 .er2-subhead span{font-family:var(--display);font-size:11px;font-weight:600;letter-spacing:0}
+.ethereal-v3 .er2-subhead p{font-size:11px}
+
+/* images 6–7 — promotion title reduced, removed tracklist/textured image collage */
+.ethereal-v3 .er2-campaign{padding-top:105px}
+.ethereal-v3 .er2-campaign .er2-section-head h2{
+  font-size:clamp(2.45rem,4vw,4.8rem)!important;
+  max-width:12ch;
+}
+.ethereal-v3 .er2-campaign .er2-section-head>p{margin-top:0}
+.ethereal-v3 .er2-tracklists,
+.ethereal-v3 .er2-social-collage{display:none!important}
+.ethereal-v3 .er2-youtube{margin-top:35px}
+.ethereal-v3 .er2-youtube h3{
+  font-family:var(--display)!important;
+  font-size:clamp(1.45rem,2.2vw,2.7rem)!important;
+  max-width:24ch;
+}
+.ethereal-v3 .er2-motion-pair{margin-top:54px}
+.ethereal-v3 .er2-motion-pair figure{
+  aspect-ratio:16/9;
+  background:#01060A;
+}
+.ethereal-v3 .er2-motion-pair video{
+  object-fit:contain!important;
+  width:100%;
+  height:100%;
+}
+.ethereal-v3 .er2-motion-pair figcaption{font-size:7px}
+
+/* image 8 — Realm intro smaller + continuous top/bottom aligned right-to-left screen flow */
+.ethereal-v3 .er2-realm{padding-top:115px;padding-bottom:88px}
+.ethereal-v3 .er2-realm-header{grid-template-columns:.8fr 1.45fr;gap:6vw}
+.ethereal-v3 .er2-realm-brand{grid-template-columns:112px 1fr;gap:18px}
+.ethereal-v3 .er2-realm-brand>img{width:112px;border-radius:24px}
+.ethereal-v3 .er2-realm-brand strong{font-size:clamp(2rem,3.4vw,3.8rem)}
+.ethereal-v3 .er2-realm-header h2{
+  font-size:clamp(2.55rem,4.2vw,4.8rem)!important;
+  margin-bottom:22px;
+}
+.ethereal-v3 .er2-realm-header p{
+  font-size:14px;
+  line-height:1.52;
+  max-width:55ch;
+}
+.ethereal-v3 .er2-realm-preview{display:none!important}
+.ethereal-v3 .er3-realm-flow{
+  overflow:hidden;
+  margin-top:72px;
+  padding:10px 0 24px;
+}
+.ethereal-v3 .er3-realm-track{
+  display:flex;
+  width:max-content;
+  gap:14px;
+  align-items:stretch;
+  will-change:transform;
+}
+.ethereal-v3 .er3-realm-track img{
+  flex:none;
+  width:clamp(190px,16vw,260px);
+  height:clamp(410px,35vw,560px);
+  object-fit:cover;
+  object-position:top center;
+  border-radius:clamp(20px,1.7vw,30px);
+  box-shadow:0 20px 55px rgba(0,0,0,.35);
+}
+
+/* Target audience: compact, reorganised, much less white space */
+.ethereal-v3 .er3-system{padding:0!important;background:#f3f2f7}
+.ethereal-v3 .er3-persona-shell{padding-top:80px;padding-bottom:70px}
+.ethereal-v3 .er2-system-head{
+  grid-template-columns:.55fr 2fr;
+  padding-bottom:40px;
+}
+.ethereal-v3 .er2-system-head h2{
+  font-size:clamp(2.25rem,3.8vw,4.6rem)!important;
+  max-width:18ch;
+}
+.ethereal-v3 .er3-persona{
+  grid-template-columns:.9fr 1.1fr 1.2fr!important;
+  gap:28px!important;
+  padding:42px 0 0!important;
+  border:0!important;
+  align-items:start;
+}
+.ethereal-v3 .er3-persona .er2-persona-id{grid-column:1}
+.ethereal-v3 .er3-persona .er2-persona-about{grid-column:2}
+.ethereal-v3 .er3-persona .er2-persona-cards{grid-column:3;grid-template-columns:1fr 1fr;gap:6px}
+.ethereal-v3 .er3-persona .er2-traits{grid-column:1 / 3;margin-top:0}
+.ethereal-v3 .er2-persona-id strong{font-size:clamp(2rem,3.1vw,3.8rem);margin:17px 0 8px}
+.ethereal-v3 .er2-persona-about p{font-size:14px;line-height:1.5}
+.ethereal-v3 .er2-persona-cards span{font-size:10px}
+.ethereal-v3 .er2-persona-cards>div{padding:12px}
+.ethereal-v3 .er2-traits{font-size:7px}
+
+/* App colour / IA / navigation / homepage are black */
+.ethereal-v3 .er3-dark-process{
+  background:#01060A;
+  color:#f7f7fb;
+  padding:25px 0 120px;
+}
+.ethereal-v3 .er3-dark-process .er2-label{color:#7DF9FF}
+.ethereal-v3 .er3-dark-process .er2-app-colour,
+.ethereal-v3 .er3-dark-process .er2-ia,
+.ethereal-v3 .er3-dark-process .er2-components,
+.ethereal-v3 .er3-dark-process .er3-homepage{
+  border-color:rgba(125,249,255,.16);
+}
+.ethereal-v3 .er2-app-colour{
+  padding:55px 0;
+  grid-template-columns:.6fr 2fr;
+}
+.ethereal-v3 .er2-app-swatch{
+  grid-template-columns:72px auto 1fr;
+  gap:18px;
+}
+.ethereal-v3 .er2-app-swatch i{width:72px;height:72px}
+.ethereal-v3 .er2-app-swatch strong{font-size:1.45rem;color:#fff}
+.ethereal-v3 .er2-app-swatch p{font-size:12px;color:rgba(255,255,255,.62)}
+.ethereal-v3 .er2-ia{padding:64px 0}
+.ethereal-v3 .er2-ia .nodes div{border-color:rgba(255,255,255,.16)}
+.ethereal-v3 .er2-ia .nodes b{color:#fff}
+.ethereal-v3 .er2-ia .nodes small{color:rgba(255,255,255,.55)}
+.ethereal-v3 .er2-components{padding:68px 0}
+.ethereal-v3 .er2-components .copy p{color:rgba(255,255,255,.62)}
+.ethereal-v3 .er2-components .patterns i{
+  color:#fff;
+  border-color:rgba(255,255,255,.18);
+}
+.ethereal-v3 .er2-components .nav{border:1px solid rgba(255,255,255,.12)}
+
+/* Homepage: three actual frames from app/homepage folder; no fake CSS wireframe */
+.ethereal-v3 .er3-homepage{
+  padding:74px 0 0;
+  border-top:1px solid rgba(125,249,255,.16);
+}
+.ethereal-v3 .er3-home-copy{
+  display:grid;
+  grid-template-columns:.55fr 1.15fr 1.15fr;
+  gap:24px;
+  align-items:start;
+  margin-bottom:48px;
+}
+.ethereal-v3 .er3-home-copy h3{margin:0;font-size:clamp(1.9rem,2.8vw,3.4rem)!important}
+.ethereal-v3 .er3-home-copy p{font-size:12px;line-height:1.55;color:rgba(255,255,255,.62);max-width:48ch}
+.ethereal-v3 .er3-home-frames{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+  align-items:start;
+}
+.ethereal-v3 .er3-home-frames img{
+  width:100%;
+  height:auto;
+  max-height:720px;
+  object-fit:contain;
+  object-position:top center;
+}
+
+/* final interface-flow typography smaller */
+.ethereal-v3 .er2-flows{padding-top:105px}
+.ethereal-v3 .er2-flows .er2-section-head h2{
+  font-size:clamp(2.65rem,4vw,4.8rem)!important;
+}
+.ethereal-v3 .er2-flow{padding:72px 0;grid-template-columns:.72fr 1.6fr}
+.ethereal-v3 .er2-flow .copy h3{
+  font-size:clamp(1.65rem,2.5vw,2.8rem)!important;
+}
+.ethereal-v3 .er2-flow .copy p{font-size:12px}
+.ethereal-v3 .er2-flow .phones img{width:min(27%,220px)}
+.ethereal-v3 .er2-flow .phones.four img{width:min(22%,190px)}
+
+/* final prototype — rebuild as stable animated flow rather than broken lanes */
+.ethereal-v3 .er3-prototype{padding-top:100px}
+.ethereal-v3 .er2-proto-copy{grid-template-columns:.65fr 2fr}
+.ethereal-v3 .er2-proto-copy h2{
+  font-size:clamp(2.4rem,4vw,4.7rem)!important;
+}
+.ethereal-v3 .er2-proto-copy p{font-size:14px;max-width:54ch}
+.ethereal-v3 .er3-final-flow{
+  overflow:hidden;
+  margin-top:70px;
+  padding:25px 0 38px;
+  border-top:1px solid rgba(255,255,255,.2);
+  border-bottom:1px solid rgba(255,255,255,.2);
+}
+.ethereal-v3 .er3-final-track{
+  width:max-content;
+  display:flex;
+  align-items:stretch;
+  gap:12px;
+  will-change:transform;
+}
+.ethereal-v3 .er3-final-track img{
+  width:clamp(165px,14vw,225px);
+  height:clamp(355px,30vw,485px);
+  object-fit:cover;
+  object-position:top center;
+  border-radius:22px;
+  flex:none;
+  box-shadow:0 18px 45px rgba(0,0,0,.28);
+}
+.ethereal-v3 .er2-proto-map{display:none!important}
+
+@media(max-width:1000px){
+  .ethereal-v3 .er2-world-grid,
+  .ethereal-v3 .er2-realm-header{grid-template-columns:1fr}
+  .ethereal-v3 .er3-world-star{width:180px}
+  .ethereal-v3 .er3-persona{grid-template-columns:1fr 1fr!important}
+  .ethereal-v3 .er3-persona .er2-persona-cards{grid-column:1/-1}
+  .ethereal-v3 .er3-home-copy{grid-template-columns:1fr}
+}
+@media(max-width:700px){
+  .ethereal-v3 .er2-type-card{grid-template-columns:1fr!important}
+  .ethereal-v3 .er2-member-basic{grid-template-columns:1fr 58px}
+  .ethereal-v3 .er3-member-emoji{width:52px;height:52px}
+  .ethereal-v3 .er2-album-pair{height:auto;grid-template-columns:1fr}
+  .ethereal-v3 .er2-album-pair img{height:auto;transform:none}
+  .ethereal-v3 .er3-persona{grid-template-columns:1fr!important}
+  .ethereal-v3 .er3-persona .er2-persona-about,
+  .ethereal-v3 .er3-persona .er2-persona-cards,
+  .ethereal-v3 .er3-persona .er2-traits{grid-column:1}
+  .ethereal-v3 .er2-app-colour{grid-template-columns:1fr}
+  .ethereal-v3 .er3-home-frames{grid-template-columns:1fr}
+}
