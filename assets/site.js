@@ -328,10 +328,25 @@ function render60BPM(p,projects){
         <div class="bpm4-head light"><span>06 — Packaging + applications</span><p>The identity moves through description cards, printed pieces, coffee packaging and carry-bag applications as one connected café system.</p></div>
 
         <div class="bpm4-subhead"><h3>Description cards</h3></div>
-        <div class="bpm4-desc-cards">
-          ${pic("digital/Description Card_01.svg","Adagio description card")}
-          ${pic("digital/Description Card_02.svg","Moderato description card")}
-          ${pic("digital/Description Card_03.svg","Presto description card")}
+        <div class="bpm4-desc-cards" aria-label="Interactive description cards">
+          <button class="bpm4-flip-card" type="button" aria-pressed="false" aria-label="Flip Adagio description card">
+            <span class="bpm4-flip-inner">
+              <span class="bpm4-flip-face bpm4-flip-front"><img src="${A}/digital/Description Card_01.svg" alt="Adagio description card front"></span>
+              <span class="bpm4-flip-face bpm4-flip-back"><img src="${A}/digital/Description Card Refinement2.png" alt="Adagio description card back"></span>
+            </span>
+          </button>
+          <button class="bpm4-flip-card" type="button" aria-pressed="false" aria-label="Flip Moderato description card">
+            <span class="bpm4-flip-inner">
+              <span class="bpm4-flip-face bpm4-flip-front"><img src="${A}/digital/Description Card_02.svg" alt="Moderato description card front"></span>
+              <span class="bpm4-flip-face bpm4-flip-back"><img src="${A}/digital/Description Card Refinement4.png" alt="Moderato description card back"></span>
+            </span>
+          </button>
+          <button class="bpm4-flip-card" type="button" aria-pressed="false" aria-label="Flip Presto description card">
+            <span class="bpm4-flip-inner">
+              <span class="bpm4-flip-face bpm4-flip-front"><img src="${A}/digital/Description Card_03.svg" alt="Presto description card front"></span>
+              <span class="bpm4-flip-face bpm4-flip-back"><img src="${A}/digital/Description Card Refinement6.png" alt="Presto description card back"></span>
+            </span>
+          </button>
         </div>
       </div>
 
@@ -421,6 +436,23 @@ function render60BPM(p,projects){
     }
   }),{rootMargin:"-42% 0px -48% 0px"});
   sections.forEach(s=>obs.observe(s));
+
+  const flipCards=[...document.querySelectorAll(".bpm4-flip-card")];
+  flipCards.forEach(card=>{
+    let locked=false;
+    const setFlip=(on)=>{
+      card.classList.toggle("is-flipped",on);
+      card.setAttribute("aria-pressed",on?"true":"false");
+    };
+    card.addEventListener("click",()=>{
+      locked=!locked;
+      setFlip(locked);
+    });
+    if(matchMedia("(hover:hover) and (pointer:fine)").matches){
+      card.addEventListener("mouseenter",()=>{ if(!locked) setFlip(true); });
+      card.addEventListener("mouseleave",()=>{ if(!locked) setFlip(false); });
+    }
+  });
 
   const gradientSection=document.querySelector(".bpm4-gradients");
   if(gradientSection){
