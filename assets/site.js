@@ -1067,6 +1067,999 @@ function renderEtherealRealm(p,projects){
 }
 
 
+
+function renderGreenGridV1(p,projects){
+  const A="/public/projects/green-grid";
+  const enc=s=>s.split("/").map(encodeURIComponent).join("/");
+  const img=(path,alt="",cls="")=>`<img class="${cls}" src="${A}/${enc(path)}" alt="${esc(alt)}" loading="lazy">`;
+  const phone=(name,alt)=>img(`app frame/${name}`,alt,"gg-phone");
+  const next=projects[(projects.indexOf(p)+1)%projects.length];
+
+  document.body.classList.add("compact-brand","project-green-grid","gg-v1");
+  document.documentElement.style.setProperty("--project-accent","#DAE436");
+  document.documentElement.style.setProperty("--project-secondary","#6C4BFF");
+  document.title="Green Grid — Iris Wang";
+
+  document.body.insertAdjacentHTML(
+    "afterbegin",
+    header()+`<div class="reading-progress" id="progress"></div>`
+  );
+
+  document.querySelector("#project-root").innerHTML=`
+  <article class="gg-case">
+
+    <nav class="gg-rail" aria-label="Green Grid chapters">
+      ${[
+        "Overview",
+        "Research",
+        "Synthesis",
+        "Product logic",
+        "Paper prototype",
+        "Evaluation",
+        "Iteration",
+        "Final flows",
+        "Reflection"
+      ].map((x,i)=>`
+        <a href="#gg-${i+1}" aria-label="${x}">
+          <i></i><span>${String(i+1).padStart(2,"0")}</span>
+        </a>
+      `).join("")}
+    </nav>
+
+    <!-- ==================================================
+         01 HERO / OVERVIEW
+         ================================================== -->
+
+    <section class="gg-hero" id="gg-1">
+      <div class="shell gg-hero-grid">
+
+        <div class="gg-hero-copy">
+          <div class="gg-hero-kicker">
+      <span>UI/UX · RESEARCH · PRODUCT DESIGN</span>
+      <span>2025</span>
+    </div>
+
+          <h1>GREEN<br>GRID</h1>
+
+          <p class="gg-lead">
+            A research-led mobile product for community-garden members,
+            designed to support plot management, plant knowledge,
+            coordination and social connection.
+          </p>
+
+          <div class="gg-meta">
+            <div>
+              <b>Context</b>
+              <span>Academic · Team of 4</span>
+            </div>
+
+            <div>
+              <b>Role</b>
+              <span>Design + prototyping, research synthesis, personas and user-flow contribution</span>
+            </div>
+
+            <div>
+              <b>Tools</b>
+              <span>Figma · FigJam · Photoshop</span>
+            </div>
+
+            <div>
+              <b>Year</b>
+              <span>2025</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="gg-hero-mark">
+          ${img("App Icon.svg","Green Grid app icon","gg-app-icon")}
+          <div class="gg-hero-word">
+            <span>GREEN</span>
+            <span>GRID</span>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="shell gg-phone-hero">
+        ${phone("APP_CG_Home.png","Green Grid home screen")}
+        ${phone("APP_CG_Map.png","Green Grid garden map")}
+        ${phone("APP_CG_Community.png","Green Grid community screen")}
+      </div>
+    </section>
+
+
+    <!-- ==================================================
+         02 RESEARCH QUESTION + ROLE
+         ================================================== -->
+
+    <section class="gg-research" id="gg-2">
+      <div class="shell">
+
+        <span class="gg-label">02 — RESEARCH QUESTION</span>
+
+        <blockquote class="gg-question">
+          How might digital tools support organisation,
+          information sharing and social cohesion within
+          community gardens?
+        </blockquote>
+
+        <div class="gg-scope-grid">
+
+          <div class="gg-scope-intro">
+            <h2>Start with people,<br>not screens.</h2>
+
+            <p>
+              The team investigated how gardeners participate, coordinate
+              voluntary work and look for plant information before defining
+              the final feature set.
+            </p>
+          </div>
+
+          <div class="gg-role-card">
+            <span>IRIS'S CONTRIBUTION</span>
+
+            <ul>
+              <li>Helped construct the semi-structured interview flow.</li>
+              <li>Asked follow-up questions during an interview.</li>
+              <li>Colour-coded and reviewed interview material.</li>
+              <li>Identified recurring themes across transcripts.</li>
+              <li>Helped consolidate findings into two personas.</li>
+              <li>Designed the persona template in Figma.</li>
+              <li>Mapped app functions, pages and user pathways.</li>
+              <li>Translated requirements into interface concepts.</li>
+              <li>Contributed to prototype design and linking.</li>
+            </ul>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ==================================================
+         03 SYNTHESIS
+         ================================================== -->
+
+    <section class="gg-synthesis" id="gg-3">
+      <div class="shell">
+
+        <div class="gg-section-head">
+          <span class="gg-label">03 — SYNTHESIS</span>
+          <h2>Patterns emerged across the interviews.</h2>
+        </div>
+
+        <div class="gg-synthesis-board">
+
+          <section class="gg-synth-column">
+            <h3>Motivations</h3>
+
+            <div class="gg-synth-notes">
+              <article class="gg-note note-yellow">
+                <p>Reasons for growing plants</p>
+                <small>Interview synthesis</small>
+              </article>
+
+              <article class="gg-note note-mint">
+                <p>Views and experiences of community gardening and co-planting</p>
+                <small>Interview synthesis</small>
+              </article>
+
+              <article class="gg-note note-white">
+                <p>Helping others or receiving help with plant care</p>
+                <small>Interview synthesis</small>
+              </article>
+
+              <article class="gg-note note-grey">
+                <p>Struggles, deterrents and reflections on joining community gardens</p>
+                <small>Interview synthesis</small>
+              </article>
+            </div>
+          </section>
+
+          <section class="gg-synth-column">
+            <h3>Coordination</h3>
+
+            <div class="gg-synth-notes">
+              <article class="gg-note note-purple">
+                <p>Techniques and approaches used to organise group work</p>
+                <small>Interview synthesis</small>
+              </article>
+
+              <article class="gg-note note-green">
+                <p>Features that remind members about tasks and responsibilities</p>
+                <small>Interview synthesis</small>
+              </article>
+
+              <article class="gg-note note-blue">
+                <p>Applications already used to organise group work</p>
+                <small>Interview synthesis</small>
+              </article>
+            </div>
+          </section>
+
+          <section class="gg-synth-column">
+            <h3>Information Sharing</h3>
+
+            <div class="gg-synth-notes">
+              <article class="gg-note note-pink">
+                <p>Information people need or seek regarding plants</p>
+                <small>Interview synthesis</small>
+              </article>
+
+              <article class="gg-note note-orange">
+                <p>Perceived reasons for plant death or harm</p>
+                <small>Interview synthesis</small>
+              </article>
+
+              <article class="gg-note note-coral">
+                <p>How participants currently seek information about plants</p>
+                <small>Interview synthesis</small>
+              </article>
+            </div>
+          </section>
+
+        </div>
+
+        <div class="gg-synthesis-outcome">
+          <span>RESEARCH SYNTHESIS</span>
+          <p>
+            These themes reframed the app around three connected needs:
+            managing shared responsibilities, finding relevant plant knowledge,
+            and maintaining communication within the garden community.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ==================================================
+         04 PRODUCT LOGIC
+         ================================================== -->
+
+    <section class="gg-product-logic" id="gg-4">
+      <div class="shell">
+
+        <div class="gg-section-head">
+          <span class="gg-label">04 — PRODUCT LOGIC</span>
+          <h2>A garden is both a place<br>and a social system.</h2>
+        </div>
+
+        <div class="gg-feature-map">
+
+          <article>
+            <b>MAP</b>
+            <span>Find plots</span>
+            <span>See ownership</span>
+            <span>Apply for space</span>
+          </article>
+
+          <article>
+            <b>PLOTS</b>
+            <span>Add plants</span>
+            <span>Track current plants</span>
+            <span>Manage available space</span>
+          </article>
+
+          <article>
+            <b>PLANT INFO</b>
+            <span>Soil pH</span>
+            <span>Seasonal guidance</span>
+            <span>Plant records</span>
+          </article>
+
+          <article>
+            <b>COMMUNITY</b>
+            <span>Share updates</span>
+            <span>Like + comment</span>
+            <span>Garden announcements</span>
+          </article>
+
+          <article>
+            <b>CHAT</b>
+            <span>Private messages</span>
+            <span>Share a plot</span>
+            <span>Share a plant</span>
+          </article>
+
+          <article>
+            <b>PROFILE</b>
+            <span>Current plants</span>
+            <span>Past plants</span>
+            <span>Settings</span>
+          </article>
+
+        </div>
+
+        <div class="gg-hive-note">
+          <div class="gg-hive-shape">
+            <i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+          </div>
+
+          <p>
+            The identity compares the community to a beehive:
+            individual members maintain their own responsibilities
+            while contributing to the health of a larger shared system.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ==================================================
+         05 PAPER PROTOTYPE
+         ================================================== -->
+
+    
+    
+    <section class="gg-personas" id="gg-personas">
+      <div class="shell">
+
+        <div class="gg-section-head gg-persona-intro">
+          <span class="gg-label">04 — PERSONAS</span>
+
+          <h2>Different gardeners,<br>shared infrastructure.</h2>
+
+          <p>
+            Interview findings were consolidated into two contrasting user
+            profiles. Rather than treating the personas as finished artefacts,
+            they are presented here as design inputs that helped define what
+            Green Grid needed to support.
+          </p>
+        </div>
+
+
+        <div class="gg-persona-system">
+
+          <!-- TOBY -->
+          <article class="gg-persona-row">
+
+            <div class="gg-persona-identity">
+
+              <div class="gg-persona-name">
+                <span>01</span>
+                <h3>Toby</h3>
+              </div>
+
+              <dl>
+                <div>
+                  <dt>Age</dt>
+                  <dd>19</dd>
+                </div>
+
+                <div>
+                  <dt>Location</dt>
+                  <dd>Melbourne CBD</dd>
+                </div>
+
+                <div>
+                  <dt>Occupation</dt>
+                  <dd>University student</dd>
+                </div>
+              </dl>
+            </div>
+
+
+            <div class="gg-persona-story">
+              <span class="gg-persona-eyebrow">PROFILE</span>
+
+              <p class="gg-persona-summary">
+                A young urban resident interested in locally growing fruit,
+                but constrained by apartment living, limited cultivation
+                space and the demands of university life.
+              </p>
+
+              <blockquote>
+                “I’d love to have a garden space of my own, imagine there
+                I can actually grow and eat the fruit I’ve nurtured myself.”
+              </blockquote>
+
+              <div class="gg-persona-signals">
+                <div>
+                  <span>Garden knowledge</span>
+                  <b><i style="--level:41%"></i></b>
+                </div>
+
+                <div>
+                  <span>Food sustainability</span>
+                  <b><i style="--level:82%"></i></b>
+                </div>
+
+                <div>
+                  <span>Social belonging</span>
+                  <b><i style="--level:66%"></i></b>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="gg-persona-needs">
+
+              <section>
+                <span>FRICTION</span>
+
+                <p>Limited access to suitable urban growing space.</p>
+                <p>Plant information can be difficult to retrieve quickly.</p>
+                <p>Care routines compete with study and examination periods.</p>
+              </section>
+
+              <section>
+                <span>NEEDS</span>
+
+                <p>Scheduling and plant-care reminders.</p>
+                <p>Guidance appropriate to urban growing conditions.</p>
+                <p>A simple path from information to practical action.</p>
+              </section>
+
+            </div>
+
+            <section class="gg-persona-design-response gg-persona-response-wide">
+              <span>DESIGN RESPONSE</span>
+
+              <strong>
+                Make garden space, plant knowledge and reminders accessible
+                through one connected system.
+              </strong>
+            </section>
+
+          </article>
+
+
+          <!-- VERONICA -->
+          <article class="gg-persona-row">
+
+            <div class="gg-persona-identity">
+
+              <div class="gg-persona-name">
+                <span>02</span>
+                <h3>Veronica</h3>
+              </div>
+
+              <dl>
+                <div>
+                  <dt>Age</dt>
+                  <dd>56</dd>
+                </div>
+
+                <div>
+                  <dt>Location</dt>
+                  <dd>East Malvern, Victoria</dd>
+                </div>
+
+                <div>
+                  <dt>Occupation</dt>
+                  <dd>English teacher</dd>
+                </div>
+              </dl>
+            </div>
+
+
+            <div class="gg-persona-story">
+              <span class="gg-persona-eyebrow">PROFILE</span>
+
+              <p class="gg-persona-summary">
+                An experienced home gardener who values the wellbeing,
+                knowledge-sharing and shared responsibility that can emerge
+                through communal gardening.
+              </p>
+
+              <blockquote>
+                “Apart from being able to harvest and eat some of them,
+                seeing the growth process itself is also meaningful and
+                enjoyable to me.”
+              </blockquote>
+
+              <div class="gg-persona-signals">
+                <div>
+                  <span>Garden knowledge</span>
+                  <b><i style="--level:79%"></i></b>
+                </div>
+
+                <div>
+                  <span>Food sustainability</span>
+                  <b><i style="--level:76%"></i></b>
+                </div>
+
+                <div>
+                  <span>Social belonging</span>
+                  <b><i style="--level:35%"></i></b>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="gg-persona-needs">
+
+              <section>
+                <span>FRICTION</span>
+
+                <p>Professional gardening knowledge is not always accessible.</p>
+                <p>Plant maintenance requires ongoing monitoring.</p>
+                <p>Workdays limit the time available for garden care.</p>
+              </section>
+
+              <section>
+                <span>NEEDS</span>
+
+                <p>Reliable gardening advice and plant information.</p>
+                <p>A community space for exchanging experience.</p>
+                <p>Notifications relevant to plants and climate.</p>
+              </section>
+
+            </div>
+
+            <section class="gg-persona-design-response gg-persona-response-wide">
+              <span>DESIGN RESPONSE</span>
+
+              <strong>
+                Support experienced gardeners with useful information,
+                communication and lightweight monitoring tools.
+              </strong>
+            </section>
+
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+<section class="gg-paper" id="gg-5">
+
+      <div class="gg-paper-reference shell">
+
+        <div class="gg-paper-section-head">
+          <span class="gg-label">05 — PAPER PROTOTYPE</span>
+        </div>
+
+        <div class="gg-paper-reference-row">
+
+          <div class="gg-sketch-phone">
+            <div class="gg-sketch-tabs">
+              <span>Community</span><span>Chat</span>
+            </div>
+            <div class="gg-sketch-user"></div>
+            <i class="gg-sketch-line long"></i>
+            <i class="gg-sketch-line mid"></i>
+
+            <div class="gg-sketch-photo-row">
+              <b></b><b></b><b></b>
+            </div>
+
+            <div class="gg-sketch-actions">♡ No.　○ No.</div>
+
+            <div class="gg-sketch-user small"></div>
+            <i class="gg-sketch-line long"></i>
+            <i class="gg-sketch-line mid"></i>
+
+            <div class="gg-sketch-nav">⌂　◇　◯　♙</div>
+          </div>
+
+
+          <div class="gg-sketch-phone">
+            <div class="gg-sketch-tabs">
+              <span>Community</span><span class="under">Chat</span>
+            </div>
+
+            <div class="gg-chat-list">
+              <div><i></i><span>Name<br><small>Text</small></span><b>Date</b></div>
+              <div><i></i><span>Name<br><small>Text</small></span><b>Date</b></div>
+              <div><i></i><span>Name<br><small>Text</small></span><b>Date</b></div>
+              <div><i></i><span>Name<br><small>Text</small></span><b>Date</b></div>
+              <div><i></i><span>Name<br><small>Text</small></span><b>Date</b></div>
+            </div>
+
+            <div class="gg-sketch-nav">⌂　◇　◯　♙</div>
+          </div>
+
+
+          <div class="gg-sketch-phone">
+            <div class="gg-message-head">‹ Name　⋮</div>
+
+            <div class="gg-message-flow">
+              <p class="left"></p>
+              <p class="right short"></p>
+              <span>Time</span>
+              <p class="left tiny"></p>
+              <p class="left"></p>
+              <span>Time</span>
+              <p class="right long"></p>
+              <p class="right mid"></p>
+              <p class="right short"></p>
+            </div>
+
+            <div class="gg-message-tools">
+              <i></i><i></i><i></i><i></i>
+            </div>
+          </div>
+
+
+          <div class="gg-sketch-phone">
+            <div class="gg-message-head">‹ Name　◉</div>
+
+            <div class="gg-message-flow">
+              <span>Time</span>
+              <p class="left tiny"></p>
+              <p class="left short"></p>
+              <span>Time</span>
+              <p class="right long"></p>
+              <p class="right mid"></p>
+              <p class="right short"></p>
+            </div>
+
+            <div class="gg-shared-plot">
+              <b></b>
+              <span>Plot Name<br><small>Description</small></span>
+            </div>
+
+            <div class="gg-message-tools compact">
+              <i></i><i></i>
+            </div>
+          </div>
+
+
+          <div class="gg-sketch-phone">
+            <div class="gg-profile-banner"></div>
+
+            <div class="gg-profile-avatar"></div>
+
+            <div class="gg-month-strip">
+              <span>Sep 2025</span>
+              <div>○ ○ ○ ○ ○ ○ ○</div>
+            </div>
+
+            <small class="gg-history-label">Plant History</small>
+
+            <div class="gg-honey-grid">
+              <i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+            </div>
+
+            <div class="gg-sketch-nav">⌂　◇　◯　♙</div>
+          </div>
+
+
+          <div class="gg-sketch-phone">
+            <div class="gg-message-head">‹ Plot</div>
+
+            <div class="gg-search-bar">⌕ Search plants...</div>
+
+            <div class="gg-plot-list">
+              <div><i></i><span>Plot Name<br><small>Description</small></span></div>
+              <div><i></i><span>Plot Name<br><small>Description</small></span></div>
+              <div><i></i><span>Plot Name<br><small>Description</small></span></div>
+              <div><i></i><span>Plot Name<br><small>Description</small></span></div>
+              <div><i></i><span>Plot Name<br><small>Description</small></span></div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ==================================================
+         06 USABILITY TESTING
+         ================================================== -->
+
+    <section class="gg-testing" id="gg-6">
+      <div class="shell">
+
+        <div class="gg-section-head">
+          <span class="gg-label">06 — USABILITY EVALUATION</span>
+          <h2>Eight participants.<br>Two kinds of evidence.</h2>
+        </div>
+
+        <div class="gg-test-grid">
+
+          <article class="gg-test-type">
+            <span>QUANTITATIVE</span>
+
+            <p>
+              Participants completed structured navigation and task prompts
+              across home, map, chat and profile functions.
+            </p>
+
+            <div class="gg-task-list">
+              <b>Example tasks</b>
+              <span>Navigate to the garden map</span>
+              <span>Apply for an unowned plot</span>
+              <span>Add a carrot plant</span>
+              <span>Check soil pH guidance</span>
+              <span>Check the latest message</span>
+              <span>Change profile settings</span>
+            </div>
+          </article>
+
+          <article class="gg-test-type">
+            <span>QUALITATIVE</span>
+
+            <p>
+              Open-ended prompts were used to understand first impressions,
+              navigation logic and how participants interpreted key features.
+            </p>
+
+            <div class="gg-task-list">
+              <b>Example prompts</b>
+              <span>First impression of the homepage</span>
+              <span>Review promotional events</span>
+              <span>Inspect current plot plants</span>
+              <span>Remove a harvested plant</span>
+              <span>Like and comment on a post</span>
+              <span>Share a plant through chat</span>
+            </div>
+          </article>
+
+        </div>
+
+        
+        <div class="gg-participants">
+          <span class="gg-mini-title">EVALUATION PARTICIPANTS</span>
+
+          <div class="gg-participant-grid">
+            ${[
+              ["01","27","PhD student"],
+              ["02","19","Undergraduate"],
+              ["03","50","Human resources"],
+              ["04","27","PhD student"],
+              ["05","19","Undergraduate"],
+              ["06","23","Postgraduate"],
+              ["07","18","Undergraduate"],
+              ["08","19","Undergraduate"]
+            ].map(x=>`
+              <div>
+                <b>${x[0]}</b>
+                <span>${x[1]} yrs</span>
+                <small>${x[2]}</small>
+              </div>
+            `).join("")}
+          </div>
+        </div>
+
+        <div class="gg-findings">
+
+          <article class="positive">
+            <span>WHAT WORKED</span>
+
+            <ul>
+              <li>Pages had clear individual purposes.</li>
+              <li>Simple actions could be completed quickly.</li>
+              <li>The overall structure felt logical once understood.</li>
+              <li>Participants liked the organisation of garden plots.</li>
+              <li>The overall garden-management concept was valued.</li>
+            </ul>
+          </article>
+
+          <article class="negative">
+            <span>FRICTION FOUND</span>
+
+            <ul>
+              <li>Homepage information density felt overwhelming.</li>
+              <li>Some arrows were unclear or non-functional.</li>
+              <li>The community like button was poorly positioned.</li>
+              <li>Owned and unowned plots were difficult to distinguish.</li>
+              <li>Plot-application feedback lacked clarity.</li>
+              <li>Banner arrows disappeared against imagery.</li>
+            </ul>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ==================================================
+         07 ITERATION
+         ================================================== -->
+
+    <section class="gg-iteration" id="gg-7">
+      <div class="shell">
+
+        <div class="gg-section-head">
+          <span class="gg-label">07 — EVIDENCE-LED ITERATION</span>
+          <h2>Findings became<br>interface changes.</h2>
+        </div>
+
+        <div class="gg-change-list">
+
+          ${[
+            ["01","Homepage density",
+             "Removed the latest-message panel, Today’s Progress and What’s New; weather advice became a compact expandable strip."],
+
+            ["02","Plot ownership",
+             "Added the user’s profile image to owned plots and changed unowned plots to a lighter grey."],
+
+            ["03","Application feedback",
+             "Expanded the confirmation state to explain that further information would arrive by email within seven days."],
+
+            ["04","Banner visibility",
+             "Added a vignette behind navigation arrows so controls remain visible across promotional imagery."],
+
+            ["05","Plant history",
+             "Separated current and previous plants using darker grey treatment and a dashed divider."],
+
+            ["06","Community actions",
+             "Removed the duplicated like button beside the comment-entry field."],
+
+            ["07","Interaction cues",
+             "Used purple selectively for selected states and controls requiring stronger clickability."]
+          ].map(x=>`
+            <article>
+              <span>${x[0]}</span>
+              <h3>${x[1]}</h3>
+              <p>${x[2]}</p>
+            </article>
+          `).join("")}
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ==================================================
+         08 FINAL FLOWS
+         ================================================== -->
+
+    <section class="gg-final" id="gg-8">
+      <div class="shell">
+
+        <div class="gg-section-head">
+          <span class="gg-label">08 — FINAL PRODUCT</span>
+          <h2>Research resolved<br>into connected flows.</h2>
+        </div>
+
+        <article class="gg-flow">
+          <div class="gg-flow-copy">
+            <span>01 / GARDEN MAP</span>
+            <h3>Find, understand and apply.</h3>
+            <p>
+              The map distinguishes garden plots and supports the transition
+              from viewing available space to submitting an application.
+            </p>
+          </div>
+
+          <div class="gg-flow-phones">
+            ${phone("APP_CG_Map.png","Garden map")}
+            ${phone("APP_CG_Map_Apply.png","Plot application")}
+            ${phone("APP_CG_Map_Application Sent.png","Plot application confirmation")}
+          </div>
+        </article>
+
+        <article class="gg-flow">
+          <div class="gg-flow-copy">
+            <span>02 / PLANT MANAGEMENT</span>
+            <h3>Knowledge in context.</h3>
+            <p>
+              Plant records combine plot management with soil-pH guidance,
+              planting information and ongoing garden care.
+            </p>
+          </div>
+
+          <div class="gg-flow-phones">
+            ${phone("APP_CG_Map_AddPlant.png","Add plant")}
+            ${phone("APP_CG_plant_info.png","Plant information")}
+            ${phone("APP_CG_plant_PH.png","Plant soil pH information")}
+          </div>
+        </article>
+
+        <article class="gg-flow">
+          <div class="gg-flow-copy">
+            <span>03 / COMMUNITY</span>
+            <h3>Share knowledge publicly.</h3>
+            <p>
+              The community feed supports garden updates, posts,
+              comments and peer-to-peer knowledge sharing.
+            </p>
+          </div>
+
+          <div class="gg-flow-phones">
+            ${phone("APP_CG_Community.png","Community feed")}
+            ${phone("APP_CG_Community_Post.png","Community post")}
+            ${phone("APP_CG_Community_Comment.png","Community comments")}
+          </div>
+        </article>
+
+        <article class="gg-flow">
+          <div class="gg-flow-copy">
+            <span>04 / CHAT + PROFILE</span>
+            <h3>Coordinate privately.</h3>
+            <p>
+              Direct messaging supports plot and plant references while
+              profiles preserve each member’s personal garden history.
+            </p>
+          </div>
+
+          <div class="gg-flow-phones">
+            ${phone("APP_CG_Chat.png","Green Grid chat")}
+            ${img("app frame/APP_CG_Chat page.png","Green Grid chat page","gg-phone")}
+            ${phone("APP_CG_Profile_MyPlants.png","Profile plant gallery")}
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+
+    <!-- ==================================================
+         09 REFLECTION
+         ================================================== -->
+
+    <section class="gg-reflection" id="gg-9">
+      <div class="shell gg-reflection-final">
+
+        <div class="gg-reflection-brand">
+          <span class="gg-label">09 — REFLECTION</span>
+
+          ${img("green grid.svg","Green Grid","gg-final-logo")}
+        </div>
+
+        <div class="gg-reflection-copy">
+
+          <p class="gg-reflection-lead">
+            Green Grid demonstrates a complete research-to-iteration loop:
+            qualitative evidence informed the product structure, usability
+            testing exposed friction, and the final interface changed in
+            response to those findings.
+          </p>
+
+          <div class="gg-limitations">
+            <span>Future considerations</span>
+            <p>Configurable garden maps for different sites.</p>
+            <p>Clearer non-colour ownership labels and accessibility support.</p>
+            <p>Help content for users with lower digital confidence.</p>
+            <p>Privacy, moderation and transparent plot-allocation systems.</p>
+          </div>
+
+          <a class="gg-proto-link"
+             href="https://www.figma.com/proto/GbshUdcmS4aRtFtdbxM3d7/Community-Garden?node-id=199-864&starting-point-node-id=199%3A864"
+             target="_blank"
+             rel="noreferrer">
+            Open Figma prototype ↗
+          </a>
+
+        </div>
+
+      </div>
+    </section>
+
+    <a class="next-project gg-next" href="/work/${next.slug}/">
+      <span class="meta-mono">Next project</span><br>
+      ${esc(next.title)} →
+    </a>
+
+  </article>
+  `;
+
+  document.body.insertAdjacentHTML("beforeend",footer());
+
+  const progress=document.querySelector("#progress");
+
+  addEventListener("scroll",()=>{
+    const h=document.documentElement.scrollHeight-innerHeight;
+    progress.style.width=`${h?scrollY/h*100:0}%`;
+  },{passive:true});
+
+  const links=[...document.querySelectorAll(".gg-rail a")];
+  const sections=links.map(a=>document.querySelector(a.getAttribute("href")));
+
+  const io=new IntersectionObserver(entries=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting){
+        const i=sections.indexOf(entry.target);
+        links.forEach((a,j)=>a.classList.toggle("active",i===j));
+      }
+    });
+  },{rootMargin:"-42% 0px -48% 0px"});
+
+  sections.forEach(s=>s&&io.observe(s));
+}
+
+
 async function renderProject(){
   const projects=await getProjects();
   const slug=location.pathname.split("/").filter(Boolean).pop();
@@ -1078,6 +2071,7 @@ async function renderProject(){
 
   if(p.slug==="60-bpm"){ render60BPM(p,projects); return; }
   if(p.slug==="ethereal-realm"){ renderEtherealRealm(p,projects); return; }
+  if(p.slug==="green-grid"){ renderGreenGridV1(p,projects); return; }
 
   document.body.classList.add("compact-brand");
   document.documentElement.style.setProperty("--project-accent",p.accent);

@@ -6554,3 +6554,3942 @@ p {
 
 }
 
+
+
+/* =========================================================
+   GREEN GRID CASE STUDY V1
+   ========================================================= */
+
+.gg-v1{
+  --gg-green:#B7F34A;
+  --gg-purple:#6C4BFF;
+  --gg-ink:#11130F;
+  --gg-paper:#F4F5F0;
+  --gg-grey:#D7D9D1;
+}
+
+.gg-v1 .site-header{
+  background:rgba(244,245,240,.92);
+  color:var(--gg-ink);
+  border-color:rgba(17,19,15,.14);
+}
+
+.gg-v1 .site-header a{
+  color:inherit;
+}
+
+.gg-case{
+  background:var(--gg-paper);
+  color:var(--gg-ink);
+}
+
+.gg-case p{
+  text-wrap:pretty;
+}
+
+.gg-label,
+.gg-mini-title{
+  display:block;
+  font-size:10px;
+  line-height:1;
+  font-weight:800;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  color:var(--gg-purple);
+}
+
+.gg-section-head{
+  max-width:800px;
+  margin-bottom:68px;
+}
+
+.gg-section-head h2,
+.gg-scope-intro h2,
+.gg-reflection h2{
+  margin:18px 0 22px;
+  font-size:clamp(44px,6vw,86px);
+  line-height:.94;
+  letter-spacing:-.055em;
+}
+
+.gg-section-head > p,
+.gg-scope-intro p{
+  max-width:62ch;
+  font-size:16px;
+  line-height:1.6;
+  color:rgba(17,19,15,.67);
+}
+
+
+/* RAIL */
+
+.gg-rail{
+  position:fixed;
+  z-index:50;
+  right:22px;
+  top:50%;
+  transform:translateY(-50%);
+  display:grid;
+  gap:11px;
+}
+
+.gg-rail a{
+  display:grid;
+  grid-template-columns:32px 18px;
+  align-items:center;
+  gap:8px;
+  color:rgba(17,19,15,.36);
+  font-size:8px;
+  text-decoration:none;
+}
+
+.gg-rail i{
+  height:1px;
+  background:currentColor;
+  transition:.25s ease;
+}
+
+.gg-rail a.active{
+  color:var(--gg-purple);
+}
+
+.gg-rail a.active i{
+  width:32px;
+  height:2px;
+}
+
+
+/* HERO */
+
+.gg-hero{
+  min-height:100vh;
+  padding:180px 0 110px;
+  overflow:hidden;
+  background:
+    radial-gradient(circle at 88% 20%,rgba(183,243,74,.42),transparent 26%),
+    var(--gg-paper);
+}
+
+.gg-hero-grid{
+  display:grid;
+  grid-template-columns:1.35fr .65fr;
+  gap:80px;
+  align-items:center;
+}
+
+.gg-hero-copy h1{
+  margin:24px 0 30px;
+  max-width:950px;
+  font-size:clamp(76px,10vw,150px);
+  line-height:.82;
+  letter-spacing:-.075em;
+}
+
+.gg-lead{
+  max-width:610px;
+  font-size:20px;
+  line-height:1.5;
+  color:rgba(17,19,15,.68);
+}
+
+.gg-meta{
+  margin-top:70px;
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:22px 38px;
+  max-width:720px;
+}
+
+.gg-meta div{
+  border-top:1px solid rgba(17,19,15,.2);
+  padding-top:12px;
+}
+
+.gg-meta b{
+  display:block;
+  margin-bottom:8px;
+  font-size:9px;
+  text-transform:uppercase;
+  letter-spacing:.08em;
+}
+
+.gg-meta span{
+  display:block;
+  max-width:34ch;
+  font-size:12px;
+  line-height:1.45;
+  color:rgba(17,19,15,.65);
+}
+
+.gg-hero-mark{
+  justify-self:end;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:25px;
+}
+
+.gg-app-icon{
+  width:min(250px,21vw);
+  height:auto;
+}
+
+.gg-hero-word{
+  font-weight:900;
+  font-size:clamp(30px,3.5vw,55px);
+  line-height:.83;
+  letter-spacing:-.04em;
+}
+
+.gg-hero-word span{
+  display:block;
+}
+
+.gg-phone-hero{
+  margin-top:110px;
+  display:flex;
+  align-items:flex-end;
+  justify-content:center;
+  gap:clamp(32px,6vw,94px);
+}
+
+.gg-phone-hero .gg-phone{
+  width:min(245px,19vw);
+  height:auto;
+  filter:drop-shadow(0 24px 34px rgba(17,19,15,.13));
+}
+
+.gg-phone-hero .gg-phone:nth-child(2){
+  transform:translateY(-42px);
+}
+
+
+/* RESEARCH */
+
+.gg-research{
+  padding:145px 0;
+  background:#fff;
+}
+
+.gg-question{
+  margin:32px 0 120px;
+  max-width:1180px;
+  font-size:clamp(50px,7vw,105px);
+  line-height:.98;
+  letter-spacing:-.055em;
+  font-weight:700;
+}
+
+.gg-question::before{
+  content:"“";
+  color:var(--gg-green);
+}
+
+.gg-question::after{
+  content:"”";
+  color:var(--gg-green);
+}
+
+.gg-scope-grid{
+  display:grid;
+  grid-template-columns:.8fr 1.2fr;
+  gap:100px;
+  align-items:start;
+}
+
+.gg-role-card{
+  background:var(--gg-ink);
+  color:white;
+  padding:42px;
+}
+
+.gg-role-card > span{
+  color:var(--gg-green);
+  font-size:10px;
+  font-weight:800;
+  letter-spacing:.08em;
+}
+
+.gg-role-card ul{
+  margin:32px 0 0;
+  padding:0;
+  list-style:none;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:0 36px;
+}
+
+.gg-role-card li{
+  padding:14px 0;
+  border-top:1px solid rgba(255,255,255,.16);
+  font-size:12px;
+  line-height:1.45;
+}
+
+
+/* SYNTHESIS */
+
+.gg-synthesis{
+  padding:145px 0;
+  background:var(--gg-paper);
+}
+
+.gg-theme-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:22px;
+}
+
+.gg-theme{
+  min-height:490px;
+  padding:26px;
+  display:flex;
+  flex-direction:column;
+}
+
+.gg-theme > span{
+  font-size:11px;
+  font-weight:800;
+}
+
+.gg-theme h3{
+  margin:100px 0 32px;
+  font-size:35px;
+  letter-spacing:-.04em;
+}
+
+.gg-theme.motivations{background:#F8D986;}
+.gg-theme.coordination{background:#C7B6F5;}
+.gg-theme.information{background:#F3A6D2;}
+
+.gg-notes{
+  margin-top:auto;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:9px;
+}
+
+.gg-notes p{
+  min-height:86px;
+  margin:0;
+  padding:12px;
+  background:rgba(255,255,255,.75);
+  font-size:10px;
+  line-height:1.35;
+}
+
+.gg-insight-line{
+  margin-top:78px;
+  padding-top:24px;
+  border-top:1px solid rgba(17,19,15,.22);
+  display:grid;
+  grid-template-columns:.42fr 1fr;
+  gap:40px;
+}
+
+.gg-insight-line span{
+  color:var(--gg-purple);
+  font-size:10px;
+  font-weight:800;
+}
+
+.gg-insight-line p{
+  max-width:820px;
+  margin:0;
+  font-size:25px;
+  line-height:1.35;
+  letter-spacing:-.02em;
+}
+
+
+/* PRODUCT LOGIC */
+
+.gg-product-logic{
+  padding:145px 0;
+  background:var(--gg-ink);
+  color:#fff;
+}
+
+.gg-product-logic .gg-label{
+  color:var(--gg-green);
+}
+
+.gg-feature-map{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:1px;
+  background:rgba(255,255,255,.18);
+  border:1px solid rgba(255,255,255,.18);
+}
+
+.gg-feature-map article{
+  min-height:240px;
+  background:var(--gg-ink);
+  padding:26px;
+  display:flex;
+  flex-direction:column;
+}
+
+.gg-feature-map b{
+  margin-bottom:auto;
+  color:var(--gg-green);
+  font-size:12px;
+}
+
+.gg-feature-map span{
+  border-top:1px solid rgba(255,255,255,.14);
+  padding:9px 0;
+  font-size:11px;
+  color:rgba(255,255,255,.66);
+}
+
+.gg-hive-note{
+  margin-top:90px;
+  display:grid;
+  grid-template-columns:.5fr 1fr;
+  align-items:center;
+  gap:80px;
+}
+
+.gg-hive-note p{
+  max-width:720px;
+  font-size:26px;
+  line-height:1.35;
+}
+
+.gg-hive-shape{
+  display:grid;
+  grid-template-columns:repeat(3,70px);
+  width:max-content;
+}
+
+.gg-hive-shape i{
+  width:74px;
+  height:64px;
+  margin:-5px;
+  background:var(--gg-green);
+  clip-path:polygon(25% 0,75% 0,100% 50%,75% 100%,25% 100%,0 50%);
+}
+
+.gg-hive-shape i:nth-child(4){
+  grid-column:2;
+}
+
+
+/* PAPER */
+
+.gg-paper{
+  padding:145px 0;
+  background:#F7F7F3;
+}
+
+.gg-paper-row{
+  display:flex;
+  gap:24px;
+  align-items:flex-start;
+  justify-content:center;
+  padding:50px 0 20px;
+}
+
+.gg-paper-phone{
+  width:180px;
+  min-height:385px;
+  padding:20px 14px;
+  background:#fff;
+  border:1.5px solid #8E8E8E;
+  border-radius:28px;
+  transform:rotate(var(--r));
+  box-shadow:0 10px 28px rgba(17,19,15,.05);
+  font-family:"Courier New",monospace;
+}
+
+.gg-paper-top{
+  height:42px;
+  border-bottom:1px solid #999;
+  font-size:11px;
+  font-weight:bold;
+}
+
+.gg-paper-phone i{
+  display:block;
+  width:100%;
+  height:58px;
+  margin:15px 0 8px;
+  border:1px solid #aaa;
+}
+
+.gg-paper-phone i.short{
+  height:30px;
+}
+
+.gg-paper-phone p{
+  margin:5px 0;
+  font-size:8px;
+}
+
+.gg-paper-nav{
+  margin-top:24px;
+  border-top:1px solid #aaa;
+  padding-top:12px;
+  text-align:center;
+  font-size:9px;
+}
+
+
+/* TESTING */
+
+.gg-testing{
+  padding:145px 0;
+  background:#fff;
+}
+
+.gg-test-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:26px;
+}
+
+.gg-test-type{
+  padding:36px;
+  border:1px solid rgba(17,19,15,.18);
+}
+
+.gg-test-type > span{
+  color:var(--gg-purple);
+  font-size:11px;
+  font-weight:800;
+}
+
+.gg-test-type > p{
+  max-width:52ch;
+  margin:40px 0 44px;
+  font-size:18px;
+  line-height:1.5;
+}
+
+.gg-task-list{
+  display:grid;
+}
+
+.gg-task-list b,
+.gg-task-list span{
+  border-top:1px solid rgba(17,19,15,.14);
+  padding:10px 0;
+}
+
+.gg-task-list b{
+  font-size:10px;
+  text-transform:uppercase;
+}
+
+.gg-task-list span{
+  font-size:11px;
+  color:rgba(17,19,15,.66);
+}
+
+.gg-participants{
+  margin-top:80px;
+}
+
+.gg-participant-grid{
+  margin-top:24px;
+  display:grid;
+  grid-template-columns:repeat(8,1fr);
+  border-top:1px solid rgba(17,19,15,.18);
+  border-bottom:1px solid rgba(17,19,15,.18);
+}
+
+.gg-participant-grid div{
+  min-height:150px;
+  padding:18px 12px;
+  border-right:1px solid rgba(17,19,15,.18);
+  display:flex;
+  flex-direction:column;
+}
+
+.gg-participant-grid div:last-child{
+  border-right:0;
+}
+
+.gg-participant-grid b{
+  color:var(--gg-purple);
+}
+
+.gg-participant-grid span{
+  margin-top:auto;
+  font-size:13px;
+}
+
+.gg-participant-grid small{
+  margin-top:6px;
+  color:rgba(17,19,15,.52);
+  line-height:1.3;
+}
+
+.gg-findings{
+  margin-top:90px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:24px;
+}
+
+.gg-findings article{
+  padding:34px;
+  min-height:430px;
+}
+
+.gg-findings .positive{
+  background:var(--gg-green);
+}
+
+.gg-findings .negative{
+  background:var(--gg-purple);
+  color:#fff;
+}
+
+.gg-findings article > span{
+  font-size:10px;
+  font-weight:800;
+}
+
+.gg-findings ul{
+  margin:80px 0 0;
+  padding:0;
+  list-style:none;
+}
+
+.gg-findings li{
+  padding:13px 0;
+  border-top:1px solid currentColor;
+  font-size:14px;
+  line-height:1.4;
+}
+
+
+/* ITERATION */
+
+.gg-iteration{
+  padding:145px 0;
+  background:var(--gg-paper);
+}
+
+.gg-change-list{
+  border-top:1px solid rgba(17,19,15,.2);
+}
+
+.gg-change-list article{
+  display:grid;
+  grid-template-columns:80px .7fr 1.3fr;
+  gap:30px;
+  padding:28px 0;
+  border-bottom:1px solid rgba(17,19,15,.2);
+  align-items:start;
+}
+
+.gg-change-list article > span{
+  color:var(--gg-purple);
+  font-size:10px;
+  font-weight:800;
+}
+
+.gg-change-list h3{
+  margin:0;
+  font-size:21px;
+  letter-spacing:-.02em;
+}
+
+.gg-change-list p{
+  max-width:64ch;
+  margin:0;
+  color:rgba(17,19,15,.63);
+  line-height:1.5;
+}
+
+
+/* FINAL */
+
+.gg-final{
+  padding:145px 0;
+  background:#10120E;
+  color:#fff;
+}
+
+.gg-final .gg-label,
+.gg-flow-copy > span{
+  color:var(--gg-green);
+}
+
+.gg-flow{
+  display:grid;
+  grid-template-columns:.58fr 1.42fr;
+  gap:70px;
+  align-items:center;
+  padding:92px 0;
+  border-top:1px solid rgba(255,255,255,.16);
+}
+
+.gg-flow-copy > span{
+  font-size:9px;
+  font-weight:800;
+}
+
+.gg-flow-copy h3{
+  margin:18px 0;
+  font-size:clamp(36px,4vw,62px);
+  line-height:.98;
+  letter-spacing:-.045em;
+}
+
+.gg-flow-copy p{
+  max-width:46ch;
+  color:rgba(255,255,255,.58);
+  line-height:1.55;
+}
+
+.gg-flow-phones{
+  display:flex;
+  justify-content:center;
+  gap:30px;
+  align-items:flex-start;
+}
+
+.gg-flow-phones .gg-phone{
+  display:block;
+  width:auto;
+  height:min(560px,38vw);
+  max-width:30%;
+  object-fit:contain;
+  border:1px solid rgba(220,220,224,.42);
+  border-radius:22px;
+}
+
+
+/* REFLECTION */
+
+.gg-reflection{
+  padding:145px 0;
+  background:var(--gg-green);
+}
+
+.gg-reflection .gg-label{
+  color:var(--gg-ink);
+}
+
+.gg-reflection-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:100px;
+}
+
+.gg-reflection-copy > p{
+  margin:0;
+  max-width:56ch;
+  font-size:24px;
+  line-height:1.4;
+}
+
+.gg-limitations{
+  margin-top:55px;
+}
+
+.gg-limitations > span{
+  display:block;
+  margin-bottom:14px;
+  font-size:10px;
+  font-weight:800;
+  text-transform:uppercase;
+}
+
+.gg-limitations p{
+  margin:0;
+  padding:11px 0;
+  border-top:1px solid rgba(17,19,15,.28);
+  font-size:12px;
+}
+
+.gg-proto-link{
+  display:inline-block;
+  margin-top:55px;
+  padding:15px 20px;
+  background:var(--gg-ink);
+  color:#fff;
+  text-decoration:none;
+  font-size:12px;
+  font-weight:700;
+}
+
+.gg-next{
+  background:var(--gg-purple);
+  color:#fff;
+}
+
+
+/* RESPONSIVE */
+
+@media(max-width:1000px){
+
+  .gg-hero-grid,
+  .gg-scope-grid,
+  .gg-hive-note,
+  .gg-reflection-grid,
+  .gg-flow{
+    grid-template-columns:1fr;
+  }
+
+  .gg-hero-mark{
+    justify-self:start;
+  }
+
+  .gg-theme-grid{
+    grid-template-columns:1fr;
+  }
+
+  .gg-feature-map{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .gg-paper-row{
+    overflow-x:auto;
+    justify-content:flex-start;
+    padding-bottom:28px;
+  }
+
+  .gg-paper-phone{
+    flex:none;
+  }
+
+  .gg-participant-grid{
+    grid-template-columns:repeat(4,1fr);
+  }
+
+  .gg-findings,
+  .gg-test-grid{
+    grid-template-columns:1fr;
+  }
+
+  .gg-flow-phones .gg-phone{
+    height:470px;
+  }
+}
+
+@media(max-width:700px){
+
+  .gg-rail{
+    display:none;
+  }
+
+  .gg-hero{
+    padding-top:130px;
+  }
+
+  .gg-hero-copy h1{
+    font-size:64px;
+  }
+
+  .gg-meta{
+    grid-template-columns:1fr;
+  }
+
+  .gg-phone-hero{
+    overflow-x:auto;
+    justify-content:flex-start;
+  }
+
+  .gg-phone-hero .gg-phone{
+    width:210px;
+    flex:none;
+  }
+
+  .gg-role-card ul{
+    grid-template-columns:1fr;
+  }
+
+  .gg-feature-map{
+    grid-template-columns:1fr;
+  }
+
+  .gg-test-grid,
+  .gg-findings{
+    grid-template-columns:1fr;
+  }
+
+  .gg-participant-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .gg-change-list article{
+    grid-template-columns:42px 1fr;
+  }
+
+  .gg-change-list article p{
+    grid-column:2;
+  }
+
+  .gg-flow-phones{
+    overflow-x:auto;
+    justify-content:flex-start;
+  }
+
+  .gg-flow-phones .gg-phone{
+    height:420px;
+    max-width:none;
+    flex:none;
+  }
+}
+
+
+
+/* =========================================================
+   GREEN GRID — SUBTLE SECTION NAV
+   closer to 60 BPM / Ethereal Realm
+   ========================================================= */
+
+.gg-v1 .gg-rail{
+  right:20px !important;
+  gap:10px !important;
+  opacity:.42;
+  transition:opacity .25s ease;
+}
+
+.gg-v1 .gg-rail:hover{
+  opacity:1;
+}
+
+
+/* default items almost disappear */
+.gg-v1 .gg-rail a{
+  grid-template-columns:24px 16px !important;
+  gap:7px !important;
+
+  color:rgba(17,19,15,.22) !important;
+
+  font-size:7px !important;
+  line-height:1 !important;
+
+  transition:
+    color .2s ease,
+    opacity .2s ease;
+}
+
+
+/* shorter, thinner ticks */
+.gg-v1 .gg-rail i{
+  width:15px !important;
+  height:1px !important;
+
+  background:currentColor !important;
+
+  transition:
+    width .22s ease,
+    background .22s ease;
+}
+
+
+/* numbers very quiet */
+.gg-v1 .gg-rail span{
+  opacity:.45;
+  transition:opacity .2s ease;
+}
+
+
+/* active state */
+.gg-v1 .gg-rail a.active{
+  color:var(--gg-purple) !important;
+}
+
+.gg-v1 .gg-rail a.active i{
+  width:28px !important;
+  height:1px !important;
+}
+
+.gg-v1 .gg-rail a.active span{
+  opacity:1;
+}
+
+
+/* hover individual item */
+.gg-v1 .gg-rail a:hover{
+  color:var(--gg-purple) !important;
+}
+
+.gg-v1 .gg-rail a:hover i{
+  width:28px !important;
+}
+
+.gg-v1 .gg-rail a:hover span{
+  opacity:1;
+}
+
+
+/* avoid competing with page content */
+@media(max-width:1200px){
+  .gg-v1 .gg-rail{
+    right:12px !important;
+  }
+}
+
+
+
+/* =========================================================
+   GREEN GRID — MINIMAL SECTION RAIL
+   match 60 BPM / Ethereal behaviour
+   ========================================================= */
+
+.gg-v1 .gg-rail {
+  right: 18px !important;
+  gap: 11px !important;
+
+  opacity: 1 !important;
+}
+
+
+/* inactive item = nearly invisible */
+.gg-v1 .gg-rail a {
+  display: grid !important;
+  grid-template-columns: 25px 18px !important;
+  gap: 7px !important;
+
+  color: rgba(17,19,15,.075) !important;
+
+  font-size: 7px !important;
+  line-height: 1 !important;
+
+  opacity: 1 !important;
+}
+
+
+/* tiny inactive tick */
+.gg-v1 .gg-rail a i {
+  display: block !important;
+
+  width: 13px !important;
+  height: 1px !important;
+
+  background: currentColor !important;
+
+  opacity: 1 !important;
+
+  transition:
+    width .2s ease,
+    color .2s ease;
+}
+
+
+/* hide inactive numbers */
+.gg-v1 .gg-rail a span {
+  opacity: 0 !important;
+
+  transition: opacity .18s ease;
+}
+
+
+/* ACTIVE = the only obvious item */
+.gg-v1 .gg-rail a.active {
+  color: var(--gg-purple) !important;
+}
+
+.gg-v1 .gg-rail a.active i {
+  width: 28px !important;
+}
+
+.gg-v1 .gg-rail a.active span {
+  opacity: .8 !important;
+}
+
+
+/* reveal rail item only when intentionally hovered */
+.gg-v1 .gg-rail a:hover {
+  color: rgba(108,75,255,.62) !important;
+}
+
+.gg-v1 .gg-rail a:hover i {
+  width: 28px !important;
+}
+
+.gg-v1 .gg-rail a:hover span {
+  opacity: .75 !important;
+}
+
+
+/* keep the entire control visually quiet */
+.gg-v1 .gg-rail:not(:hover) a:not(.active) {
+  color: rgba(17,19,15,.055) !important;
+}
+
+
+/* dark sections */
+.gg-v1 .gg-product-logic .gg-rail a,
+.gg-v1 .gg-final .gg-rail a {
+  color: rgba(255,255,255,.08) !important;
+}
+
+
+/* mobile */
+@media(max-width:900px){
+  .gg-v1 .gg-rail{
+    display:none !important;
+  }
+}
+
+
+
+/* =========================================================
+   GREEN GRID — SUBTLE TOP NAV
+   closer to 60 BPM / ETHEREAL
+   ========================================================= */
+
+.gg-v1 .site-header{
+  background:transparent !important;
+
+  border-bottom:
+    1px solid rgba(17,19,15,.10) !important;
+
+  backdrop-filter:none !important;
+  -webkit-backdrop-filter:none !important;
+
+  box-shadow:none !important;
+
+  color:#11130F !important;
+}
+
+
+/* nav text less apparent */
+.gg-v1 .site-header .brand,
+.gg-v1 .site-header nav a{
+  color:rgba(17,19,15,.62) !important;
+
+  transition:
+    color .2s ease,
+    opacity .2s ease;
+}
+
+
+/* Iris Wang slightly stronger */
+.gg-v1 .site-header .brand{
+  color:rgba(17,19,15,.88) !important;
+}
+
+
+/* quiet default links */
+.gg-v1 .site-header nav a{
+  opacity:.72 !important;
+}
+
+
+/* hover */
+.gg-v1 .site-header nav a:hover{
+  color:#11130F !important;
+  opacity:1 !important;
+}
+
+
+/* remove any dark inherited nav panel */
+.gg-v1 .site-header::before,
+.gg-v1 .site-header::after{
+  display:none !important;
+}
+
+
+/* keep header floating over hero */
+.gg-v1 .site-header{
+  position:absolute !important;
+  top:0 !important;
+  left:0 !important;
+  right:0 !important;
+
+  z-index:100 !important;
+}
+
+
+/* GREEN GRID — stronger top-nav typography */
+.gg-v1 .site-header .brand{
+  color:rgba(17,19,15,.96) !important;
+  opacity:1 !important;
+}
+
+.gg-v1 .site-header nav a{
+  color:rgba(17,19,15,.82) !important;
+  opacity:1 !important;
+}
+
+.gg-v1 .site-header nav a:hover{
+  color:#11130F !important;
+  opacity:1 !important;
+}
+
+/* GREEN GRID — stronger top-nav typography */
+.gg-v1 .site-header .brand{
+  color:rgba(17,19,15,.96) !important;
+  opacity:1 !important;
+}
+
+.gg-v1 .site-header nav a{
+  color:rgba(17,19,15,.82) !important;
+  opacity:1 !important;
+}
+
+.gg-v1 .site-header nav a:hover{
+  color:#11130F !important;
+  opacity:1 !important;
+}
+
+/* =========================================================
+   GREEN GRID — TOP NAV FINAL OVERRIDE
+   ========================================================= */
+
+.gg-v1 .site-header {
+  background: transparent !important;
+  color: #11130F !important;
+  border-bottom: 1px solid rgba(17,19,15,.10) !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  mix-blend-mode: normal !important;
+}
+
+.gg-v1 .site-header .brand {
+  color: #11130F !important;
+  opacity: 1 !important;
+}
+
+.gg-v1 .site-header .nav a {
+  color: rgba(17,19,15,.78) !important;
+  opacity: 1 !important;
+}
+
+.gg-v1 .site-header .nav a:hover,
+.gg-v1 .site-header .nav a:focus-visible {
+  color: #11130F !important;
+  opacity: 1 !important;
+}
+
+
+/* =========================================================
+   GREEN GRID — STICKY TOP NAV
+   ========================================================= */
+
+.gg-v1 .site-header {
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 200 !important;
+
+  background: rgba(244,245,240,.86) !important;
+
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+
+  border-bottom: 1px solid rgba(17,19,15,.10) !important;
+
+  color: #11130F !important;
+
+  mix-blend-mode: normal !important;
+}
+
+
+/* keep text readable */
+.gg-v1 .site-header .brand {
+  color: #11130F !important;
+  opacity: 1 !important;
+}
+
+.gg-v1 .site-header .nav a {
+  color: rgba(17,19,15,.78) !important;
+  opacity: 1 !important;
+}
+
+.gg-v1 .site-header .nav a:hover,
+.gg-v1 .site-header .nav a:focus-visible {
+  color: #11130F !important;
+}
+
+
+/* avoid hero sitting underneath nav awkwardly */
+.gg-v1 .gg-hero {
+  scroll-margin-top: 78px;
+}
+
+
+
+/* =========================================================
+   GREEN GRID — STICKY BUT TRANSPARENT TOP NAV
+   ========================================================= */
+
+.gg-v1 .site-header {
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 200 !important;
+
+  background: transparent !important;
+
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+
+  box-shadow: none !important;
+
+  border-bottom: 1px solid rgba(17,19,15,.10) !important;
+
+  mix-blend-mode: normal !important;
+}
+
+
+/* keep nav typography readable */
+.gg-v1 .site-header .brand {
+  color: #11130F !important;
+  opacity: 1 !important;
+}
+
+.gg-v1 .site-header .nav a {
+  color: rgba(17,19,15,.78) !important;
+  opacity: 1 !important;
+}
+
+.gg-v1 .site-header .nav a:hover,
+.gg-v1 .site-header .nav a:focus-visible {
+  color: #11130F !important;
+}
+
+
+/* no hidden background layers */
+.gg-v1 .site-header::before,
+.gg-v1 .site-header::after {
+  display: none !important;
+}
+
+
+/* GREEN GRID — remove top-nav divider */
+.gg-v1 .site-header {
+  border-bottom: 0 !important;
+}
+
+
+/* =========================================================
+   GREEN GRID — HERO TITLE / MARK CLEANUP
+   ========================================================= */
+
+/* hero now uses one column */
+.gg-v1 .gg-hero-grid{
+  grid-template-columns:1fr !important;
+  gap:0 !important;
+}
+
+
+/* remove any remaining right-side mark */
+.gg-v1 .gg-hero-mark{
+  display:none !important;
+}
+
+
+/* Green Grid title */
+.gg-v1 .gg-hero-copy h1{
+  max-width:980px !important;
+
+  font-size:clamp(96px,13vw,190px) !important;
+  line-height:.78 !important;
+
+  letter-spacing:-.075em !important;
+
+  margin-top:26px !important;
+  margin-bottom:42px !important;
+}
+
+
+/* keep intro paragraph readable */
+.gg-v1 .gg-lead{
+  max-width:650px !important;
+}
+
+
+/* sticky + fully transparent header */
+.gg-v1 .site-header{
+  position:sticky !important;
+  top:0 !important;
+  z-index:200 !important;
+
+  background:transparent !important;
+
+  backdrop-filter:none !important;
+  -webkit-backdrop-filter:none !important;
+
+  box-shadow:none !important;
+
+  border-bottom:0 !important;
+
+  mix-blend-mode:normal !important;
+}
+
+
+/* no pseudo divider either */
+.gg-v1 .site-header::before,
+.gg-v1 .site-header::after{
+  display:none !important;
+}
+
+
+/* keep top nav readable */
+.gg-v1 .site-header .brand{
+  color:#11130F !important;
+  opacity:1 !important;
+}
+
+.gg-v1 .site-header .nav a{
+  color:rgba(17,19,15,.82) !important;
+  opacity:1 !important;
+}
+
+.gg-v1 .site-header .nav a:hover{
+  color:#11130F !important;
+}
+
+
+
+/* =========================================================
+   GREEN GRID — HEADER + HERO META CLEANUP
+   ========================================================= */
+
+/* remove the black sticky bar entirely */
+.gg-v1 .site-header{
+  position:sticky !important;
+  top:0 !important;
+  z-index:200 !important;
+
+  background:transparent !important;
+  background-color:transparent !important;
+  background-image:none !important;
+
+  box-shadow:none !important;
+  border:0 !important;
+
+  backdrop-filter:none !important;
+  -webkit-backdrop-filter:none !important;
+
+  mix-blend-mode:normal !important;
+}
+
+/* kill any inherited overlay/pseudo background */
+.gg-v1 .site-header::before,
+.gg-v1 .site-header::after{
+  content:none !important;
+  display:none !important;
+  background:none !important;
+}
+
+/* keep nav text readable */
+.gg-v1 .site-header .brand{
+  color:#11130F !important;
+  opacity:1 !important;
+}
+
+.gg-v1 .site-header .nav a{
+  color:rgba(17,19,15,.82) !important;
+  opacity:1 !important;
+}
+
+/* hero metadata should match 02 — RESEARCH QUESTION */
+.gg-v1 .gg-hero-kicker{
+  display:flex !important;
+  justify-content:space-between !important;
+  align-items:center !important;
+
+  margin:0 0 34px !important;
+
+  font-family:inherit !important;
+  font-size:10px !important;
+  font-weight:800 !important;
+  line-height:1 !important;
+  letter-spacing:.06em !important;
+  text-transform:uppercase !important;
+
+  color:var(--gg-purple) !important;
+}
+
+/* both sides use same styling */
+.gg-v1 .gg-hero-kicker span{
+  font-family:inherit !important;
+  font-size:10px !important;
+  font-weight:800 !important;
+  line-height:1 !important;
+  letter-spacing:.06em !important;
+  text-transform:uppercase !important;
+  color:var(--gg-purple) !important;
+}
+
+/* keep year on same line */
+.gg-v1 .gg-hero-kicker span:last-child{
+  margin-left:auto !important;
+  text-align:right !important;
+}
+
+
+
+/* =========================================================
+   GREEN GRID — REFINEMENT V2
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   TOP NAV
+   fixed overlay = no black strip / no reserved row
+   --------------------------------------------------------- */
+
+.gg-v1 .site-header{
+  position:fixed !important;
+  top:0 !important;
+  left:0 !important;
+  right:0 !important;
+
+  width:100% !important;
+
+  z-index:300 !important;
+
+  background:transparent !important;
+  background-color:transparent !important;
+  background-image:none !important;
+
+  border:0 !important;
+  box-shadow:none !important;
+
+  backdrop-filter:none !important;
+  -webkit-backdrop-filter:none !important;
+
+  mix-blend-mode:normal !important;
+}
+
+.gg-v1 .site-header::before,
+.gg-v1 .site-header::after{
+  display:none !important;
+  content:none !important;
+}
+
+.gg-v1 .site-header .brand{
+  color:#11130F !important;
+  opacity:1 !important;
+}
+
+.gg-v1 .site-header .nav a{
+  color:rgba(17,19,15,.82) !important;
+  opacity:1 !important;
+}
+
+
+/* ---------------------------------------------------------
+   HERO META
+   --------------------------------------------------------- */
+
+.gg-v1 .gg-hero-kicker{
+  display:block !important;
+
+  margin:0 0 30px !important;
+
+  font-family:inherit !important;
+  font-size:10px !important;
+  font-weight:800 !important;
+  line-height:1 !important;
+  letter-spacing:.06em !important;
+  text-transform:uppercase !important;
+
+  color:var(--gg-purple) !important;
+}
+
+.gg-v1 .gg-hero-kicker span{
+  font:inherit !important;
+  color:inherit !important;
+}
+
+
+/* ---------------------------------------------------------
+   SMALLER RESEARCH QUESTION
+   --------------------------------------------------------- */
+
+.gg-v1 .gg-question{
+  max-width:1050px !important;
+
+  font-size:clamp(42px,5.2vw,78px) !important;
+  line-height:1.02 !important;
+  letter-spacing:-.045em !important;
+
+  margin-top:28px !important;
+  margin-bottom:105px !important;
+}
+
+
+/* ---------------------------------------------------------
+   SMALLER SLOGAN HEADINGS THROUGHOUT GREEN GRID
+   --------------------------------------------------------- */
+
+.gg-v1 .gg-section-head h2,
+.gg-v1 .gg-scope-intro h2,
+.gg-v1 .gg-reflection h2{
+  font-size:clamp(36px,4.4vw,64px) !important;
+  line-height:.98 !important;
+  letter-spacing:-.045em !important;
+}
+
+.gg-v1 .gg-flow-copy h3{
+  font-size:clamp(30px,3.4vw,50px) !important;
+}
+
+
+/* ---------------------------------------------------------
+   SYNTHESIS
+   closer to research-board composition in PDF
+   --------------------------------------------------------- */
+
+.gg-v1 .gg-synthesis{
+  background:#F7F7F4 !important;
+}
+
+.gg-v1 .gg-synthesis-board{
+  display:grid;
+  grid-template-columns:1fr 1fr 1fr;
+  gap:58px;
+
+  align-items:start;
+}
+
+.gg-v1 .gg-synth-column h3{
+  margin:0 0 34px;
+
+  text-align:center;
+
+  font-size:24px;
+  font-weight:700;
+  letter-spacing:-.025em;
+
+  color:#6C5CE7;
+}
+
+.gg-v1 .gg-synth-notes{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
+  align-items:start;
+}
+
+.gg-v1 .gg-note{
+  min-height:150px;
+
+  padding:18px;
+
+  box-shadow:
+    0 7px 14px rgba(17,19,15,.08);
+
+  display:flex;
+  flex-direction:column;
+
+  transform:rotate(-.35deg);
+}
+
+.gg-v1 .gg-note:nth-child(even){
+  transform:rotate(.4deg);
+}
+
+.gg-v1 .gg-note p{
+  margin:0;
+
+  font-size:12px;
+  line-height:1.42;
+}
+
+.gg-v1 .gg-note small{
+  margin-top:auto;
+  padding-top:30px;
+
+  font-size:8px;
+  color:rgba(17,19,15,.44);
+}
+
+.gg-v1 .note-yellow{background:#F8DA8B;}
+.gg-v1 .note-mint{background:#AEEBD9;}
+.gg-v1 .note-white{background:#FFF;}
+.gg-v1 .note-grey{background:#E9E9E7;}
+
+.gg-v1 .note-purple{background:#C8B6F6;}
+.gg-v1 .note-green{background:#ACE8AF;}
+.gg-v1 .note-blue{background:#A6D6F3;}
+
+.gg-v1 .note-pink{background:#F1A7D5;}
+.gg-v1 .note-orange{background:#F4C190;}
+.gg-v1 .note-coral{background:#F1A098;}
+
+.gg-v1 .gg-synthesis-outcome{
+  margin-top:88px;
+
+  padding-top:24px;
+
+  border-top:1px solid rgba(17,19,15,.18);
+
+  display:grid;
+  grid-template-columns:.35fr 1fr;
+  gap:50px;
+}
+
+.gg-v1 .gg-synthesis-outcome span{
+  color:var(--gg-purple);
+
+  font-size:10px;
+  font-weight:800;
+}
+
+.gg-v1 .gg-synthesis-outcome p{
+  margin:0;
+
+  max-width:800px;
+
+  font-size:22px;
+  line-height:1.38;
+}
+
+
+/* hide old synthesis layout if any remnants exist */
+.gg-v1 .gg-theme-grid,
+.gg-v1 .gg-insight-line{
+  display:none !important;
+}
+
+
+/* ---------------------------------------------------------
+   PAPER PROTOTYPE
+   match supplied reference
+   --------------------------------------------------------- */
+
+.gg-v1 .gg-paper{
+  padding:0 !important;
+
+  background:#F8F8F8 !important;
+}
+
+.gg-v1 .gg-paper > .shell{
+  display:none !important;
+}
+
+.gg-v1 .gg-paper-reference{
+  min-height:720px;
+
+  padding:
+    106px
+    clamp(38px,5vw,82px)
+    90px;
+
+  background:#F8F8F8;
+}
+
+.gg-v1 .gg-paper-reference > h2{
+  margin:0 0 86px;
+
+  text-align:center;
+
+  font-size:30px;
+  line-height:1;
+
+  color:#6C63FF;
+
+  font-weight:700;
+  letter-spacing:-.025em;
+}
+
+.gg-v1 .gg-paper-reference-row{
+  display:grid;
+  grid-template-columns:repeat(6,minmax(0,1fr));
+
+  gap:22px;
+
+  max-width:1360px;
+
+  margin:0 auto;
+
+  align-items:center;
+}
+
+.gg-v1 .gg-sketch-phone{
+  position:relative;
+
+  aspect-ratio:195 / 425;
+
+  padding:16px 10px 14px;
+
+  border:1.4px solid #766BFF;
+  border-radius:30px;
+
+  background:#FAFAFA;
+
+  color:#585858;
+
+  font-family:
+    "Bradley Hand",
+    "Comic Sans MS",
+    cursive;
+
+  font-size:8px;
+
+  overflow:hidden;
+}
+
+.gg-v1 .gg-sketch-tabs{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+
+  border-bottom:1px solid #aaa;
+
+  margin-bottom:10px;
+}
+
+.gg-v1 .gg-sketch-tabs span{
+  padding:3px 1px;
+}
+
+.gg-v1 .gg-sketch-tabs .under{
+  text-decoration:underline;
+}
+
+.gg-v1 .gg-sketch-user{
+  width:26px;
+  height:26px;
+
+  border:1px solid #999;
+  border-radius:50%;
+
+  margin-bottom:8px;
+}
+
+.gg-v1 .gg-sketch-user.small{
+  width:22px;
+  height:22px;
+
+  margin-top:14px;
+}
+
+.gg-v1 .gg-sketch-line{
+  display:block;
+
+  height:1px;
+
+  margin:7px 0;
+
+  background:#aaa;
+}
+
+.gg-v1 .gg-sketch-line.long{width:95%;}
+.gg-v1 .gg-sketch-line.mid{width:72%;}
+
+.gg-v1 .gg-sketch-photo-row{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+
+  gap:5px;
+
+  margin:22px 0 8px;
+}
+
+.gg-v1 .gg-sketch-photo-row b{
+  display:block;
+
+  aspect-ratio:1;
+
+  border:1px solid #999;
+
+  background:
+    linear-gradient(45deg,transparent 49%,#aaa 50%,transparent 51%),
+    linear-gradient(-45deg,transparent 49%,#aaa 50%,transparent 51%);
+}
+
+.gg-v1 .gg-sketch-actions{
+  margin-bottom:10px;
+}
+
+.gg-v1 .gg-sketch-nav{
+  position:absolute;
+
+  left:9px;
+  right:9px;
+  bottom:9px;
+
+  padding-top:9px;
+
+  border-top:1px solid #aaa;
+
+  text-align:center;
+}
+
+.gg-v1 .gg-chat-list{
+  display:grid;
+  gap:6px;
+}
+
+.gg-v1 .gg-chat-list > div{
+  display:grid;
+  grid-template-columns:24px 1fr auto;
+
+  gap:7px;
+  align-items:center;
+
+  min-height:46px;
+}
+
+.gg-v1 .gg-chat-list i{
+  width:22px;
+  height:22px;
+
+  border:1px solid #999;
+  border-radius:50%;
+}
+
+.gg-v1 .gg-chat-list span,
+.gg-v1 .gg-chat-list b{
+  font-size:7px;
+  font-weight:400;
+}
+
+.gg-v1 .gg-chat-list small{
+  font-size:6px;
+}
+
+.gg-v1 .gg-message-head{
+  height:22px;
+
+  border:1px solid #999;
+
+  padding:4px;
+}
+
+.gg-v1 .gg-message-flow{
+  display:flex;
+  flex-direction:column;
+
+  gap:6px;
+
+  padding-top:12px;
+}
+
+.gg-v1 .gg-message-flow p{
+  height:23px;
+
+  margin:0;
+
+  border:1px solid #999;
+  border-radius:3px;
+
+  width:50%;
+}
+
+.gg-v1 .gg-message-flow p.left{
+  align-self:flex-start;
+}
+
+.gg-v1 .gg-message-flow p.right{
+  align-self:flex-end;
+}
+
+.gg-v1 .gg-message-flow p.short{width:34%;}
+.gg-v1 .gg-message-flow p.mid{width:52%;}
+.gg-v1 .gg-message-flow p.long{width:72%;}
+.gg-v1 .gg-message-flow p.tiny{width:28%;}
+
+.gg-v1 .gg-message-flow span{
+  text-align:center;
+
+  font-size:6px;
+}
+
+.gg-v1 .gg-message-tools{
+  position:absolute;
+
+  left:10px;
+  right:10px;
+  bottom:10px;
+
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+
+  gap:5px;
+
+  padding:8px;
+
+  border:1px solid #999;
+}
+
+.gg-v1 .gg-message-tools.compact{
+  grid-template-columns:1fr 35px;
+}
+
+.gg-v1 .gg-message-tools i{
+  height:26px;
+
+  border:1px solid #999;
+}
+
+.gg-v1 .gg-shared-plot{
+  position:absolute;
+
+  bottom:58px;
+  left:15px;
+  right:15px;
+
+  display:grid;
+  grid-template-columns:35px 1fr;
+
+  gap:7px;
+
+  padding:7px;
+
+  border:1px solid #999;
+}
+
+.gg-v1 .gg-shared-plot b{
+  border:1px solid #999;
+}
+
+.gg-v1 .gg-profile-banner{
+  height:95px;
+
+  margin:-16px -10px 0;
+
+  border-bottom:1px solid #aaa;
+}
+
+.gg-v1 .gg-profile-avatar{
+  width:36px;
+  height:36px;
+
+  border:1px solid #999;
+  border-radius:50%;
+
+  margin:-18px 0 18px 2px;
+
+  background:#FAFAFA;
+}
+
+.gg-v1 .gg-month-strip{
+  padding:8px;
+
+  border:1px solid #999;
+
+  text-align:center;
+}
+
+.gg-v1 .gg-month-strip span{
+  display:block;
+
+  margin-bottom:6px;
+}
+
+.gg-v1 .gg-history-label{
+  display:block;
+
+  margin:12px 0 7px;
+}
+
+.gg-v1 .gg-honey-grid{
+  display:grid;
+  grid-template-columns:repeat(4,30px);
+
+  justify-content:center;
+
+  gap:0;
+}
+
+.gg-v1 .gg-honey-grid i{
+  width:32px;
+  height:28px;
+
+  border:1px solid #999;
+
+  clip-path:polygon(
+    25% 0,
+    75% 0,
+    100% 50%,
+    75% 100%,
+    25% 100%,
+    0 50%
+  );
+}
+
+.gg-v1 .gg-search-bar{
+  margin:9px 0;
+
+  padding:5px;
+
+  border:1px solid #999;
+}
+
+.gg-v1 .gg-plot-list{
+  display:grid;
+  gap:8px;
+}
+
+.gg-v1 .gg-plot-list > div{
+  min-height:51px;
+
+  padding:6px;
+
+  border:1px solid #999;
+
+  display:grid;
+  grid-template-columns:34px 1fr;
+
+  gap:7px;
+}
+
+.gg-v1 .gg-plot-list i{
+  border:1px solid #999;
+}
+
+.gg-v1 .gg-plot-list span{
+  font-size:7px;
+}
+
+.gg-v1 .gg-plot-list small{
+  font-size:6px;
+}
+
+
+/* ---------------------------------------------------------
+   RESPONSIVE
+   --------------------------------------------------------- */
+
+@media(max-width:1000px){
+
+  .gg-v1 .gg-synthesis-board{
+    grid-template-columns:1fr;
+  }
+
+  .gg-v1 .gg-paper-reference-row{
+    overflow-x:auto;
+
+    grid-template-columns:repeat(6,190px);
+
+    justify-content:start;
+
+    padding-bottom:24px;
+  }
+}
+
+
+
+/* =========================================================
+   GREEN GRID — PAPER PROTOTYPE V3
+   ========================================================= */
+
+/* ---------------------------------------------------------
+   SECTION HEADING
+   --------------------------------------------------------- */
+
+.gg-v1 .gg-paper{
+  padding:128px 0 150px !important;
+  background:#F7F7F5 !important;
+}
+
+.gg-v1 .gg-paper > .shell{
+  display:block !important;
+}
+
+.gg-v1 .gg-paper-reference{
+  min-height:0 !important;
+  padding-top:0 !important;
+  padding-bottom:0 !important;
+  background:transparent !important;
+}
+
+.gg-v1 .gg-paper-reference > h2{
+  display:none !important;
+}
+
+.gg-v1 .gg-paper-section-head{
+  margin-bottom:72px !important;
+}
+
+.gg-v1 .gg-paper-section-head .gg-label{
+  display:block !important;
+  margin:0 !important;
+}
+
+
+/* ---------------------------------------------------------
+   SIX PAPER PROTOTYPES
+   --------------------------------------------------------- */
+
+.gg-v1 .gg-paper-reference-row{
+  display:grid !important;
+  grid-template-columns:repeat(6,minmax(0,1fr)) !important;
+
+  gap:clamp(18px,2vw,30px) !important;
+
+  width:100% !important;
+  max-width:none !important;
+
+  margin:0 !important;
+
+  align-items:center !important;
+}
+
+
+/* overall phone shape */
+.gg-v1 .gg-sketch-phone{
+  position:relative !important;
+
+  width:100% !important;
+  max-width:none !important;
+
+  aspect-ratio:0.46 !important;
+
+  min-height:0 !important;
+
+  padding:18px 12px 15px !important;
+
+  border:1.15px solid rgba(108,99,255,.82) !important;
+  border-radius:30px 30px 27px 27px !important;
+
+  background:#FBFBFA !important;
+
+  box-shadow:none !important;
+
+  overflow:hidden !important;
+
+  color:#727272 !important;
+
+  font-family:
+    "Bradley Hand",
+    "Comic Sans MS",
+    cursive !important;
+
+  font-size:8px !important;
+
+  transform-origin:center center !important;
+}
+
+
+/* slight irregularity like the actual photographed sketches */
+.gg-v1 .gg-sketch-phone:nth-child(1){
+  transform:rotate(-.45deg) translateY(3px) !important;
+}
+
+.gg-v1 .gg-sketch-phone:nth-child(2){
+  transform:rotate(.32deg) !important;
+}
+
+.gg-v1 .gg-sketch-phone:nth-child(3){
+  transform:rotate(-.20deg) translateY(-2px) !important;
+}
+
+.gg-v1 .gg-sketch-phone:nth-child(4){
+  transform:rotate(.38deg) translateY(1px) !important;
+}
+
+.gg-v1 .gg-sketch-phone:nth-child(5){
+  transform:rotate(-.28deg) translateY(-1px) !important;
+}
+
+.gg-v1 .gg-sketch-phone:nth-child(6){
+  transform:rotate(.25deg) translateY(2px) !important;
+}
+
+
+/* ---------------------------------------------------------
+   DRAWING LANGUAGE
+   make everything lighter + more sketch-like
+   --------------------------------------------------------- */
+
+.gg-v1 .gg-sketch-phone *,
+.gg-v1 .gg-sketch-phone *::before,
+.gg-v1 .gg-sketch-phone *::after{
+  box-sizing:border-box !important;
+}
+
+.gg-v1 .gg-sketch-tabs{
+  min-height:28px !important;
+
+  border-bottom:1px solid rgba(110,110,110,.48) !important;
+
+  margin-bottom:12px !important;
+}
+
+.gg-v1 .gg-sketch-tabs span{
+  padding:3px 3px 7px !important;
+  font-size:8px !important;
+}
+
+.gg-v1 .gg-sketch-tabs .under{
+  text-decoration:none !important;
+  border-bottom:1px solid rgba(80,80,80,.72) !important;
+}
+
+
+/* avatar */
+.gg-v1 .gg-sketch-user,
+.gg-v1 .gg-chat-list i,
+.gg-v1 .gg-profile-avatar{
+  border-color:rgba(105,105,105,.56) !important;
+}
+
+
+/* general sketch lines */
+.gg-v1 .gg-sketch-line{
+  height:1px !important;
+
+  background:rgba(105,105,105,.42) !important;
+
+  margin:8px 0 !important;
+}
+
+
+/* image placeholders */
+.gg-v1 .gg-sketch-photo-row{
+  gap:5px !important;
+  margin:19px 0 9px !important;
+}
+
+.gg-v1 .gg-sketch-photo-row b{
+  border-color:rgba(105,105,105,.58) !important;
+
+  background:
+    linear-gradient(
+      45deg,
+      transparent 49%,
+      rgba(105,105,105,.45) 50%,
+      transparent 51%
+    ),
+    linear-gradient(
+      -45deg,
+      transparent 49%,
+      rgba(105,105,105,.45) 50%,
+      transparent 51%
+    ) !important;
+}
+
+
+/* ---------------------------------------------------------
+   CHAT LIST
+   --------------------------------------------------------- */
+
+.gg-v1 .gg-chat-list{
+  gap:3px !important;
+}
+
+.gg-v1 .gg-chat-list > div{
+  min-height:48px !important;
+
+  grid-template-columns:27px 1fr auto !important;
+
+  gap:7px !important;
+
+  border-bottom:
+    1px solid rgba(120,120,120,.10) !important;
+}
+
+.gg-v1 .gg-chat-list i{
+  width:25px !important;
+  height:25px !important;
+}
+
+.gg-v1 .gg-chat-list span{
+  font-size:7.5px !important;
+  line-height:1.3 !important;
+}
+
+.gg-v1 .gg-chat-list small{
+  color:rgba(80,80,80,.58) !important;
+}
+
+.gg-v1 .gg-chat-list b{
+  font-size:6px !important;
+  color:rgba(80,80,80,.55) !important;
+}
+
+
+/* ---------------------------------------------------------
+   CHAT CONVERSATION
+   --------------------------------------------------------- */
+
+.gg-v1 .gg-message-head{
+  height:27px !important;
+
+  padding:5px 6px !important;
+
+  border-color:rgba(105,105,105,.56) !important;
+}
+
+.gg-v1 .gg-message-flow{
+  gap:7px !important;
+  padding-top:14px !important;
+}
+
+.gg-v1 .gg-message-flow p{
+  min-height:22px !important;
+
+  border-color:rgba(105,105,105,.53) !important;
+
+  border-radius:2px !important;
+
+  background:transparent !important;
+}
+
+.gg-v1 .gg-message-flow span{
+  color:rgba(80,80,80,.55) !important;
+}
+
+
+/* bottom chat tools */
+.gg-v1 .gg-message-tools{
+  left:11px !important;
+  right:11px !important;
+  bottom:11px !important;
+
+  padding:7px !important;
+
+  border-color:rgba(105,105,105,.48) !important;
+}
+
+.gg-v1 .gg-message-tools i{
+  height:27px !important;
+
+  border-color:rgba(105,105,105,.48) !important;
+}
+
+
+/* shared plot card */
+.gg-v1 .gg-shared-plot{
+  left:15px !important;
+  right:15px !important;
+  bottom:61px !important;
+
+  padding:7px !important;
+
+  border-color:rgba(105,105,105,.52) !important;
+}
+
+
+/* ---------------------------------------------------------
+   PROFILE / HISTORY
+   --------------------------------------------------------- */
+
+.gg-v1 .gg-profile-banner{
+  height:102px !important;
+
+  border-color:rgba(105,105,105,.42) !important;
+}
+
+.gg-v1 .gg-profile-avatar{
+  width:38px !important;
+  height:38px !important;
+}
+
+.gg-v1 .gg-month-strip{
+  padding:8px 5px !important;
+
+  border-color:rgba(105,105,105,.48) !important;
+
+  line-height:1.45 !important;
+}
+
+.gg-v1 .gg-history-label{
+  margin-top:14px !important;
+}
+
+
+/* honeycomb */
+.gg-v1 .gg-honey-grid{
+  grid-template-columns:repeat(4,31px) !important;
+
+  gap:1px !important;
+
+  margin-top:7px !important;
+}
+
+.gg-v1 .gg-honey-grid i{
+  width:32px !important;
+  height:29px !important;
+
+  border-color:rgba(105,105,105,.52) !important;
+}
+
+
+/* ---------------------------------------------------------
+   PLOT LIST
+   --------------------------------------------------------- */
+
+.gg-v1 .gg-search-bar{
+  margin:10px 0 11px !important;
+
+  padding:6px !important;
+
+  border-color:rgba(105,105,105,.52) !important;
+}
+
+.gg-v1 .gg-plot-list{
+  gap:7px !important;
+}
+
+.gg-v1 .gg-plot-list > div{
+  min-height:52px !important;
+
+  padding:6px !important;
+
+  grid-template-columns:35px 1fr !important;
+
+  border-color:rgba(105,105,105,.52) !important;
+}
+
+.gg-v1 .gg-plot-list i{
+  border-color:rgba(105,105,105,.48) !important;
+}
+
+
+/* ---------------------------------------------------------
+   BOTTOM NAV
+   --------------------------------------------------------- */
+
+.gg-v1 .gg-sketch-nav{
+  left:10px !important;
+  right:10px !important;
+  bottom:9px !important;
+
+  padding-top:9px !important;
+
+  border-color:rgba(105,105,105,.52) !important;
+
+  font-size:9px !important;
+  letter-spacing:.05em !important;
+}
+
+
+/* ---------------------------------------------------------
+   desktop proportions
+   --------------------------------------------------------- */
+
+@media(min-width:1200px){
+
+  .gg-v1 .gg-paper-reference-row{
+    padding:0 10px !important;
+  }
+
+}
+
+
+/* responsive horizontal scroll */
+@media(max-width:1000px){
+
+  .gg-v1 .gg-paper-reference-row{
+    display:flex !important;
+
+    overflow-x:auto !important;
+
+    gap:20px !important;
+
+    padding-bottom:24px !important;
+  }
+
+  .gg-v1 .gg-sketch-phone{
+    flex:0 0 180px !important;
+  }
+
+}
+
+
+
+/* =========================================================
+   GREEN GRID — PAPER PROTOTYPES STRAIGHT
+   ========================================================= */
+
+.gg-v1 .gg-sketch-phone,
+.gg-v1 .gg-sketch-phone:nth-child(1),
+.gg-v1 .gg-sketch-phone:nth-child(2),
+.gg-v1 .gg-sketch-phone:nth-child(3),
+.gg-v1 .gg-sketch-phone:nth-child(4),
+.gg-v1 .gg-sketch-phone:nth-child(5),
+.gg-v1 .gg-sketch-phone:nth-child(6){
+  transform:none !important;
+}
+
+.gg-v1 .gg-paper-reference-row{
+  align-items:start !important;
+}
+
+
+
+/* =========================================================
+   GREEN GRID — PAPER PROTOTYPES STRAIGHT
+   ========================================================= */
+
+.gg-v1 .gg-sketch-phone,
+.gg-v1 .gg-sketch-phone:nth-child(1),
+.gg-v1 .gg-sketch-phone:nth-child(2),
+.gg-v1 .gg-sketch-phone:nth-child(3),
+.gg-v1 .gg-sketch-phone:nth-child(4),
+.gg-v1 .gg-sketch-phone:nth-child(5),
+.gg-v1 .gg-sketch-phone:nth-child(6){
+  transform:none !important;
+}
+
+.gg-v1 .gg-paper-reference-row{
+  align-items:start !important;
+}
+
+
+
+/* =========================================================
+   GREEN GRID — RESEARCH / PERSONA / FINAL REFINEMENT
+   ========================================================= */
+
+.gg-v1{
+  --gg-green:#DAE436 !important;
+}
+
+
+/* ---------------------------------------------------------
+   REMOVE PHONE FRAME BORDERS
+   --------------------------------------------------------- */
+
+.gg-v1 .gg-phone,
+.gg-v1 .gg-flow-phones .gg-phone,
+.gg-v1 .gg-phone-hero .gg-phone{
+  border:0 !important;
+  outline:0 !important;
+  border-radius:0 !important;
+}
+
+
+/* ---------------------------------------------------------
+   QUANTITATIVE CHARTS
+   --------------------------------------------------------- */
+
+.gg-v1 .gg-quant-charts{
+  margin-top:90px;
+
+  display:grid;
+  grid-template-columns:1fr 1fr;
+
+  gap:28px;
+}
+
+.gg-v1 .gg-chart-card{
+  padding:30px 28px 28px;
+
+  background:#FAFAF8;
+
+  border:1px solid rgba(17,19,15,.09);
+}
+
+.gg-v1 .gg-chart-card h3{
+  margin:0 0 24px;
+
+  font-size:19px;
+  line-height:1.25;
+
+  font-weight:500;
+  letter-spacing:-.02em;
+
+  color:#5B5B5B;
+}
+
+.gg-v1 .gg-scatter-wrap,
+.gg-v1 .gg-line-wrap{
+  position:relative;
+}
+
+.gg-v1 .gg-chart-y-label{
+  position:absolute;
+
+  left:-12px;
+  top:50%;
+
+  transform:
+    translate(-50%,-50%)
+    rotate(-90deg);
+
+  font-size:9px;
+  white-space:nowrap;
+}
+
+.gg-v1 .gg-scatter-chart,
+.gg-v1 .gg-line-chart{
+  width:100%;
+  height:auto;
+
+  overflow:visible;
+}
+
+.gg-v1 .gg-chart-card .grid line{
+  stroke:#D4D4D4;
+  stroke-width:1;
+}
+
+.gg-v1 .gg-chart-card .axis-labels text,
+.gg-v1 .gg-chart-card .task-labels text{
+  fill:#3B3B3B;
+
+  font-family:inherit;
+  font-size:9px;
+}
+
+.gg-v1 .gg-average-line{
+  fill:none;
+
+  stroke:#E8942E;
+
+  stroke-width:6;
+
+  stroke-linecap:round;
+  stroke-linejoin:round;
+}
+
+.gg-v1 .gg-chart-legend{
+  position:absolute;
+
+  right:3px;
+  top:4px;
+
+  display:grid;
+  gap:8px;
+
+  font-size:9px;
+}
+
+.gg-v1 .gg-chart-legend span{
+  display:flex;
+  align-items:center;
+
+  gap:7px;
+}
+
+.gg-v1 .gg-chart-legend i{
+  width:10px;
+  height:10px;
+
+  border-radius:50%;
+
+  background:var(--c);
+}
+
+
+/* ---------------------------------------------------------
+   PERSONAS
+   --------------------------------------------------------- */
+
+.gg-v1 .gg-personas{
+  padding:145px 0;
+
+  background:#F7F7F5;
+}
+
+.gg-v1 .gg-persona-heading{
+  max-width:760px;
+}
+
+.gg-v1 .gg-persona-stack{
+  display:grid;
+  gap:34px;
+}
+
+.gg-v1 .gg-persona{
+  display:grid;
+
+  grid-template-columns:.72fr 1.2fr 1.1fr;
+
+  gap:40px;
+
+  padding:26px;
+
+  background:#FCFCFA;
+
+  border:1px solid rgba(17,19,15,.13);
+}
+
+.gg-v1 .gg-persona-left,
+.gg-v1 .gg-persona-middle,
+.gg-v1 .gg-persona-right{
+  min-width:0;
+}
+
+.gg-v1 .gg-persona-photo{
+  display:block;
+
+  width:100%;
+  aspect-ratio:1 / 1.08;
+
+  object-fit:cover;
+
+  border-radius:26px;
+}
+
+.gg-v1 .gg-photo-placeholder{
+  background:
+    linear-gradient(
+      135deg,
+      #D9D9D5,
+      #F2F2EE
+    );
+}
+
+.gg-v1 .gg-persona-left h3{
+  margin:24px 0 18px;
+
+  font-size:42px;
+  line-height:1;
+
+  letter-spacing:-.04em;
+}
+
+.gg-v1 .gg-persona-meta{
+  margin:0;
+
+  display:grid;
+
+  gap:5px;
+}
+
+.gg-v1 .gg-persona-meta div{
+  display:grid;
+  grid-template-columns:86px 1fr;
+
+  font-size:11px;
+}
+
+.gg-v1 .gg-persona-meta dt{
+  font-weight:700;
+}
+
+.gg-v1 .gg-persona-meta dd{
+  margin:0;
+}
+
+.gg-v1 .gg-persona-left blockquote{
+  margin:30px 0 0;
+
+  padding:24px;
+
+  border-radius:24px;
+
+  background:#C6C5CA;
+
+  font-size:12px;
+  line-height:1.55;
+}
+
+.gg-v1 .gg-persona h4{
+  margin:0 0 18px;
+
+  font-size:22px;
+  line-height:1;
+
+  letter-spacing:-.025em;
+}
+
+.gg-v1 .gg-persona-middle > section{
+  margin-bottom:34px;
+}
+
+.gg-v1 .gg-persona-middle > section:first-child h4{
+  color:#DAE436;
+}
+
+.gg-v1 .gg-persona-middle p{
+  margin:0;
+
+  max-width:62ch;
+
+  font-size:12px;
+  line-height:1.55;
+}
+
+.gg-v1 .gg-knowledge h4{
+  margin-bottom:12px;
+}
+
+.gg-v1 .gg-scale{
+  position:relative;
+
+  height:11px;
+
+  background:#5B5A60;
+}
+
+.gg-v1 .gg-scale i{
+  position:absolute;
+
+  top:0;
+
+  width:11px;
+  height:11px;
+
+  background:#DAE436;
+
+  transform:translateX(-50%);
+}
+
+.gg-v1 .gg-social-text{
+  font-size:14px;
+  font-weight:600;
+
+  letter-spacing:.01em;
+}
+
+.gg-v1 .gg-personality{
+  padding:24px;
+
+  border-radius:24px;
+
+  background:#C6C5CA;
+}
+
+.gg-v1 .gg-personality > div{
+  display:grid;
+
+  grid-template-columns:75px 1fr 75px;
+
+  gap:10px;
+
+  align-items:center;
+
+  margin-top:12px;
+
+  font-size:10px;
+}
+
+.gg-v1 .gg-personality > div span:last-child{
+  text-align:right;
+}
+
+.gg-v1 .gg-personality b{
+  position:relative;
+
+  height:9px;
+
+  background:#5B5A60;
+}
+
+.gg-v1 .gg-personality b i{
+  position:absolute;
+
+  top:0;
+
+  width:9px;
+  height:9px;
+
+  background:#DAE436;
+
+  transform:translateX(-50%);
+}
+
+.gg-v1 .gg-persona-right{
+  display:grid;
+
+  gap:20px;
+}
+
+.gg-v1 .gg-motivation-card,
+.gg-v1 .gg-dark-card{
+  padding:24px;
+
+  border-radius:24px;
+}
+
+.gg-v1 .gg-motivation-card{
+  background:#C6C5CA;
+}
+
+.gg-v1 .gg-motivation-card label{
+  display:block;
+
+  margin:15px 0 8px;
+
+  font-size:10px;
+}
+
+.gg-v1 .gg-dark-card{
+  background:#171719;
+  color:#fff;
+}
+
+.gg-v1 .gg-dark-card h4{
+  color:#DAE436;
+}
+
+.gg-v1 .gg-dark-card ul{
+  margin:0;
+
+  padding-left:17px;
+
+  font-size:10px;
+  line-height:1.6;
+}
+
+
+/* ---------------------------------------------------------
+   07 ITERATION — CENTER CONTENT BETWEEN LINES
+   --------------------------------------------------------- */
+
+.gg-v1 .gg-change-list article{
+  min-height:120px !important;
+
+  align-items:center !important;
+}
+
+.gg-v1 .gg-change-list article > span,
+.gg-v1 .gg-change-list article h3,
+.gg-v1 .gg-change-list article p{
+  align-self:center !important;
+
+  margin-top:0 !important;
+  margin-bottom:0 !important;
+}
+
+
+/* ---------------------------------------------------------
+   FINAL REFLECTION
+   --------------------------------------------------------- */
+
+.gg-v1 .gg-reflection{
+  background:#F7F7F5 !important;
+
+  color:var(--gg-ink) !important;
+}
+
+.gg-v1 .gg-reflection-final{
+  display:grid;
+
+  grid-template-columns:.72fr 1.28fr;
+
+  gap:110px;
+
+  align-items:center;
+}
+
+.gg-v1 .gg-reflection-brand{
+  display:flex;
+
+  min-height:430px;
+
+  flex-direction:column;
+
+  justify-content:space-between;
+}
+
+.gg-v1 .gg-final-logo{
+  display:block;
+
+  width:min(100%,360px);
+
+  height:auto;
+}
+
+.gg-v1 .gg-reflection-lead{
+  margin:0;
+
+  max-width:55ch;
+
+  font-size:27px;
+  line-height:1.38;
+
+  letter-spacing:-.025em;
+}
+
+
+/* ---------------------------------------------------------
+   RESPONSIVE
+   --------------------------------------------------------- */
+
+@media(max-width:1000px){
+
+  .gg-v1 .gg-quant-charts{
+    grid-template-columns:1fr;
+  }
+
+  .gg-v1 .gg-persona{
+    grid-template-columns:1fr;
+  }
+
+  .gg-v1 .gg-persona-photo{
+    max-width:420px;
+  }
+
+  .gg-v1 .gg-reflection-final{
+    grid-template-columns:1fr;
+    gap:60px;
+  }
+
+  .gg-v1 .gg-reflection-brand{
+    min-height:auto;
+    gap:60px;
+  }
+
+}
+
+
+
+/* =========================================================
+   GREEN GRID — PERSONAS V2 / GRAPH REMOVAL / FINAL ALIGNMENT
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   QUANTITATIVE GRAPH SECTION — REMOVE COMPLETELY
+   --------------------------------------------------------- */
+
+.gg-v1 .gg-quant-charts,
+.gg-v1 .gg-chart-card,
+.gg-v1 .gg-scatter-wrap,
+.gg-v1 .gg-line-wrap{
+  display:none !important;
+}
+
+
+/* =========================================================
+   PERSONAS
+   research-led layout aligned with Green Grid page language
+   ========================================================= */
+
+.gg-v1 .gg-personas{
+  padding:145px 0 !important;
+  background:#F7F7F4 !important;
+}
+
+.gg-v1 .gg-persona-intro{
+  max-width:820px !important;
+  margin-bottom:86px !important;
+}
+
+
+/* two large research records rather than persona-board cards */
+
+.gg-v1 .gg-persona-system{
+  border-top:1px solid rgba(17,19,15,.18);
+}
+
+.gg-v1 .gg-persona-row{
+  display:grid !important;
+
+  grid-template-columns:
+    minmax(190px,.52fr)
+    minmax(340px,1fr)
+    minmax(300px,.82fr) !important;
+
+  gap:clamp(38px,5vw,82px) !important;
+
+  padding:58px 0 !important;
+
+  border:0 !important;
+  border-bottom:1px solid rgba(17,19,15,.18) !important;
+
+  background:transparent !important;
+}
+
+
+/* ---------------------------------
+   IDENTITY COLUMN
+   --------------------------------- */
+
+.gg-v1 .gg-persona-identity{
+  display:flex;
+  flex-direction:column;
+}
+
+.gg-v1 .gg-persona-portrait{
+  display:block;
+
+  width:100% !important;
+  max-width:265px !important;
+
+  aspect-ratio:1 / 1.08;
+
+  object-fit:cover;
+
+  border-radius:0 !important;
+}
+
+.gg-v1 .gg-persona-placeholder{
+  background:#DDD;
+}
+
+.gg-v1 .gg-persona-name{
+  display:flex;
+
+  align-items:flex-end;
+
+  justify-content:space-between;
+
+  gap:18px;
+
+  margin-top:22px;
+}
+
+.gg-v1 .gg-persona-name span{
+  color:var(--gg-purple);
+
+  font-size:9px;
+  font-weight:800;
+}
+
+.gg-v1 .gg-persona-name h3{
+  flex:1;
+
+  margin:0 !important;
+
+  font-size:clamp(34px,3.4vw,52px) !important;
+  line-height:.9;
+
+  letter-spacing:-.045em;
+
+  text-align:right;
+}
+
+.gg-v1 .gg-persona-identity dl{
+  margin:28px 0 0 !important;
+
+  display:grid;
+
+  border-top:1px solid rgba(17,19,15,.16);
+}
+
+.gg-v1 .gg-persona-identity dl > div{
+  display:grid !important;
+
+  grid-template-columns:85px 1fr !important;
+
+  padding:9px 0;
+
+  border-bottom:1px solid rgba(17,19,15,.13);
+
+  font-size:10px !important;
+}
+
+.gg-v1 .gg-persona-identity dt{
+  font-weight:700;
+}
+
+.gg-v1 .gg-persona-identity dd{
+  margin:0;
+  color:rgba(17,19,15,.60);
+}
+
+
+/* ---------------------------------
+   STORY / RESEARCH SIGNALS
+   --------------------------------- */
+
+.gg-v1 .gg-persona-story{
+  display:flex;
+  flex-direction:column;
+}
+
+.gg-v1 .gg-persona-eyebrow,
+.gg-v1 .gg-persona-needs section > span{
+  display:block;
+
+  margin-bottom:20px;
+
+  color:var(--gg-purple);
+
+  font-size:9px;
+  line-height:1;
+
+  font-weight:800;
+  letter-spacing:.06em;
+}
+
+.gg-v1 .gg-persona-summary{
+  margin:0 !important;
+
+  max-width:560px;
+
+  font-size:20px !important;
+  line-height:1.42 !important;
+
+  letter-spacing:-.018em;
+}
+
+.gg-v1 .gg-persona-story blockquote{
+  margin:40px 0 46px !important;
+
+  padding:0 0 0 18px !important;
+
+  max-width:48ch;
+
+  border:0 !important;
+  border-left:3px solid #DAE436 !important;
+
+  background:none !important;
+
+  font-size:12px !important;
+  line-height:1.55 !important;
+
+  color:rgba(17,19,15,.62);
+}
+
+
+/* compact data bars */
+
+.gg-v1 .gg-persona-signals{
+  margin-top:auto;
+
+  display:grid;
+
+  gap:18px;
+}
+
+.gg-v1 .gg-persona-signals > div{
+  display:grid;
+
+  grid-template-columns:150px 1fr;
+
+  align-items:center;
+
+  gap:16px;
+}
+
+.gg-v1 .gg-persona-signals span{
+  font-size:9px;
+  text-transform:uppercase;
+
+  letter-spacing:.035em;
+}
+
+.gg-v1 .gg-persona-signals b{
+  position:relative;
+
+  display:block;
+
+  height:2px;
+
+  background:rgba(17,19,15,.20);
+}
+
+.gg-v1 .gg-persona-signals b i{
+  position:absolute;
+
+  left:0;
+  top:0;
+
+  width:var(--level);
+  height:2px;
+
+  background:#DAE436;
+}
+
+
+/* ---------------------------------
+   NEEDS / FRICTION
+   --------------------------------- */
+
+.gg-v1 .gg-persona-needs{
+  display:grid;
+
+  align-content:start;
+}
+
+.gg-v1 .gg-persona-needs section{
+  padding:0 0 28px;
+
+  margin-bottom:28px;
+
+  border-bottom:1px solid rgba(17,19,15,.16);
+}
+
+.gg-v1 .gg-persona-needs section:last-child{
+  margin-bottom:0;
+}
+
+.gg-v1 .gg-persona-needs section > span{
+  margin-bottom:16px;
+}
+
+.gg-v1 .gg-persona-needs p{
+  margin:0;
+
+  padding:7px 0;
+
+  border-top:1px solid rgba(17,19,15,.08);
+
+  font-size:11px;
+  line-height:1.42;
+
+  color:rgba(17,19,15,.66);
+}
+
+
+/* final research-to-design connection */
+
+.gg-v1 .gg-persona-design-response{
+  border-bottom:0 !important;
+}
+
+.gg-v1 .gg-persona-design-response > span{
+  color:#11130F !important;
+}
+
+.gg-v1 .gg-persona-design-response strong{
+  display:block;
+
+  padding:21px;
+
+  background:#DAE436;
+
+  font-size:14px;
+  line-height:1.4;
+
+  font-weight:600;
+}
+
+
+/* remove all old persona-board styling remnants */
+
+.gg-v1 .gg-persona-left,
+.gg-v1 .gg-persona-middle,
+.gg-v1 .gg-persona-right,
+.gg-v1 .gg-personality,
+.gg-v1 .gg-motivation-card,
+.gg-v1 .gg-dark-card{
+  all:unset;
+}
+
+
+/* =========================================================
+   FINAL REFLECTION
+   smaller Green Grid SVG + baseline with prototype CTA
+   ========================================================= */
+
+.gg-v1 .gg-reflection-final{
+  display:grid !important;
+
+  grid-template-columns:.58fr 1.42fr !important;
+
+  gap:clamp(70px,9vw,150px) !important;
+
+  align-items:stretch !important;
+}
+
+
+/* left side */
+
+.gg-v1 .gg-reflection-brand{
+  min-height:0 !important;
+
+  display:grid !important;
+
+  grid-template-rows:auto 1fr auto !important;
+
+  align-items:start !important;
+}
+
+
+/* much smaller mark */
+
+.gg-v1 .gg-final-logo{
+  grid-row:3;
+
+  display:block !important;
+
+  width:clamp(105px,10vw,150px) !important;
+  max-width:150px !important;
+
+  height:auto !important;
+
+  align-self:end !important;
+
+  margin:0 !important;
+}
+
+
+/* right side becomes vertical so CTA is the baseline */
+
+.gg-v1 .gg-reflection-copy{
+  display:flex !important;
+
+  flex-direction:column !important;
+
+  min-height:420px;
+}
+
+.gg-v1 .gg-reflection-lead{
+  margin-top:0 !important;
+}
+
+.gg-v1 .gg-limitations{
+  margin-top:52px !important;
+}
+
+
+/* CTA pushed to exact bottom */
+
+.gg-v1 .gg-proto-link{
+  margin-top:auto !important;
+
+  align-self:flex-start !important;
+}
+
+
+/* both elements share same lower baseline */
+
+.gg-v1 .gg-final-logo,
+.gg-v1 .gg-proto-link{
+  margin-bottom:0 !important;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media(max-width:1000px){
+
+  .gg-v1 .gg-persona-row{
+    grid-template-columns:240px 1fr !important;
+  }
+
+  .gg-v1 .gg-persona-needs{
+    grid-column:1 / -1;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:22px;
+  }
+
+  .gg-v1 .gg-persona-needs section{
+    margin:0;
+
+    border-bottom:0;
+  }
+
+  .gg-v1 .gg-reflection-final{
+    grid-template-columns:1fr !important;
+  }
+
+  .gg-v1 .gg-reflection-brand{
+    gap:50px;
+  }
+
+  .gg-v1 .gg-reflection-copy{
+    min-height:0;
+  }
+
+  .gg-v1 .gg-proto-link{
+    margin-top:55px !important;
+  }
+
+}
+
+
+@media(max-width:680px){
+
+  .gg-v1 .gg-persona-row{
+    grid-template-columns:1fr !important;
+  }
+
+  .gg-v1 .gg-persona-portrait{
+    max-width:260px !important;
+  }
+
+  .gg-v1 .gg-persona-needs{
+    grid-column:auto;
+
+    grid-template-columns:1fr;
+  }
+
+  .gg-v1 .gg-persona-signals > div{
+    grid-template-columns:120px 1fr;
+  }
+
+}
+
+
+
+/* =========================================================
+   GREEN GRID — PERSONAS COMPACT / NO IMAGES
+   ========================================================= */
+
+.gg-v1 .gg-personas{
+  padding:118px 0 126px !important;
+}
+
+.gg-v1 .gg-persona-intro{
+  margin-bottom:58px !important;
+}
+
+
+/* tighter overall rows */
+.gg-v1 .gg-persona-row{
+  grid-template-columns:
+    minmax(185px,.48fr)
+    minmax(320px,1fr)
+    minmax(290px,.78fr) !important;
+
+  gap:clamp(28px,3.4vw,54px) !important;
+
+  padding:40px 0 !important;
+}
+
+
+/* remove image spacing */
+.gg-v1 .gg-persona-portrait,
+.gg-v1 .gg-persona-placeholder{
+  display:none !important;
+}
+
+
+/* ---------------------------------
+   IDENTITY COLUMN
+   --------------------------------- */
+
+.gg-v1 .gg-persona-identity{
+  justify-content:flex-start !important;
+}
+
+.gg-v1 .gg-persona-name{
+  margin-top:0 !important;
+
+  align-items:flex-start !important;
+}
+
+.gg-v1 .gg-persona-name h3{
+  font-size:clamp(34px,3vw,48px) !important;
+}
+
+.gg-v1 .gg-persona-identity dl{
+  margin-top:22px !important;
+}
+
+.gg-v1 .gg-persona-identity dl > div{
+  padding:8px 0 !important;
+}
+
+
+/* quote becomes compact, not a large block */
+.gg-v1 .gg-persona-identity blockquote{
+  margin:24px 0 0 !important;
+
+  padding:0 0 0 14px !important;
+
+  border-left:2px solid #DAE436 !important;
+
+  background:none !important;
+
+  font-size:11px !important;
+  line-height:1.5 !important;
+
+  color:rgba(17,19,15,.60) !important;
+}
+
+
+/* ---------------------------------
+   STORY COLUMN
+   --------------------------------- */
+
+.gg-v1 .gg-persona-summary{
+  font-size:18px !important;
+  line-height:1.38 !important;
+
+  max-width:520px !important;
+}
+
+.gg-v1 .gg-persona-story blockquote{
+  display:none !important;
+}
+
+
+/* signals move up directly under summary */
+.gg-v1 .gg-persona-signals{
+  margin-top:34px !important;
+
+  gap:14px !important;
+}
+
+.gg-v1 .gg-persona-signals > div{
+  grid-template-columns:132px 1fr !important;
+
+  gap:14px !important;
+}
+
+
+/* ---------------------------------
+   NEEDS COLUMN
+   tighter vertical rhythm
+   --------------------------------- */
+
+.gg-v1 .gg-persona-needs section{
+  padding-bottom:20px !important;
+
+  margin-bottom:20px !important;
+}
+
+.gg-v1 .gg-persona-needs section > span{
+  margin-bottom:12px !important;
+}
+
+.gg-v1 .gg-persona-needs p{
+  padding:5px 0 !important;
+
+  font-size:10.5px !important;
+}
+
+
+/* design response more compact */
+.gg-v1 .gg-persona-design-response strong{
+  padding:16px !important;
+
+  font-size:12.5px !important;
+}
+
+
+/* reduce space between two personas */
+.gg-v1 .gg-persona-row + .gg-persona-row{
+  margin-top:0 !important;
+}
+
+
+/* ---------------------------------
+   mobile
+   --------------------------------- */
+
+@media(max-width:1000px){
+
+  .gg-v1 .gg-persona-row{
+    grid-template-columns:
+      minmax(170px,.45fr)
+      1fr !important;
+  }
+
+  .gg-v1 .gg-persona-needs{
+    grid-column:1 / -1 !important;
+
+    grid-template-columns:repeat(3,1fr) !important;
+
+    gap:18px !important;
+
+    margin-top:10px !important;
+  }
+
+}
+
+@media(max-width:680px){
+
+  .gg-v1 .gg-persona-row{
+    grid-template-columns:1fr !important;
+
+    gap:28px !important;
+  }
+
+  .gg-v1 .gg-persona-needs{
+    grid-template-columns:1fr !important;
+  }
+
+}
+
+
+
+/* =========================================================
+   GREEN GRID — PERSONA DENSITY + HERO META ROW
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   HERO META — ONE HORIZONTAL LINE
+   --------------------------------------------------------- */
+
+.gg-v1 .gg-meta{
+  margin-top:54px !important;
+
+  display:grid !important;
+  grid-template-columns:
+    .78fr
+    1.45fr
+    .88fr
+    .38fr !important;
+
+  gap:0 !important;
+
+  max-width:none !important;
+
+  width:100% !important;
+
+  border-top:1px solid rgba(17,19,15,.18) !important;
+  border-bottom:1px solid rgba(17,19,15,.18) !important;
+}
+
+.gg-v1 .gg-meta > div{
+  min-width:0 !important;
+
+  padding:16px 22px 18px 0 !important;
+
+  border-top:0 !important;
+  border-right:1px solid rgba(17,19,15,.16) !important;
+}
+
+.gg-v1 .gg-meta > div:not(:first-child){
+  padding-left:22px !important;
+}
+
+.gg-v1 .gg-meta > div:last-child{
+  border-right:0 !important;
+  padding-right:0 !important;
+}
+
+.gg-v1 .gg-meta b{
+  margin-bottom:8px !important;
+
+  font-size:9px !important;
+  line-height:1 !important;
+}
+
+.gg-v1 .gg-meta span{
+  max-width:none !important;
+
+  font-size:12px !important;
+  line-height:1.38 !important;
+}
+
+
+/* ---------------------------------------------------------
+   PERSONA ROW — REDUCE DEAD SPACE
+   --------------------------------------------------------- */
+
+.gg-v1 .gg-persona-row{
+  grid-template-columns:
+    minmax(190px,.46fr)
+    minmax(360px,1.08fr)
+    minmax(290px,.78fr) !important;
+
+  grid-template-rows:auto auto !important;
+
+  column-gap:clamp(28px,3vw,48px) !important;
+  row-gap:26px !important;
+
+  padding:36px 0 !important;
+
+  align-items:start !important;
+}
+
+
+/* columns sit compactly at the top */
+.gg-v1 .gg-persona-identity,
+.gg-v1 .gg-persona-story,
+.gg-v1 .gg-persona-needs{
+  align-self:start !important;
+}
+
+
+/* tighten identity column */
+.gg-v1 .gg-persona-name{
+  margin-bottom:0 !important;
+}
+
+.gg-v1 .gg-persona-identity dl{
+  margin-top:18px !important;
+}
+
+
+/* reduce story whitespace */
+.gg-v1 .gg-persona-summary{
+  font-size:17px !important;
+  line-height:1.34 !important;
+}
+
+.gg-v1 .gg-persona-signals{
+  margin-top:26px !important;
+  gap:12px !important;
+}
+
+
+/* tighten friction / needs blocks */
+.gg-v1 .gg-persona-needs{
+  gap:0 !important;
+}
+
+.gg-v1 .gg-persona-needs section{
+  margin-bottom:16px !important;
+  padding-bottom:16px !important;
+}
+
+.gg-v1 .gg-persona-needs section:last-child{
+  margin-bottom:0 !important;
+}
+
+
+/* ---------------------------------------------------------
+   DESIGN RESPONSE — FULL WIDTH BOTTOM STRIP
+   --------------------------------------------------------- */
+
+.gg-v1 .gg-persona-response-wide{
+  grid-column:1 / -1 !important;
+  grid-row:2 !important;
+
+  display:grid !important;
+  grid-template-columns:180px 1fr !important;
+
+  align-items:center !important;
+
+  gap:28px !important;
+
+  margin:0 !important;
+  padding:0 !important;
+
+  border:0 !important;
+}
+
+.gg-v1 .gg-persona-response-wide > span{
+  margin:0 !important;
+
+  color:#11130F !important;
+
+  font-size:9px !important;
+  font-weight:800 !important;
+  letter-spacing:.06em !important;
+}
+
+.gg-v1 .gg-persona-response-wide strong{
+  display:block !important;
+
+  margin:0 !important;
+
+  padding:16px 20px !important;
+
+  background:#DAE436 !important;
+
+  font-size:13px !important;
+  line-height:1.35 !important;
+
+  font-weight:600 !important;
+}
+
+
+/* remove residual spacing caused by old response position */
+.gg-v1 .gg-persona-needs .gg-persona-design-response{
+  display:none !important;
+}
+
+
+/* ---------------------------------------------------------
+   RESPONSIVE
+   --------------------------------------------------------- */
+
+@media(max-width:1000px){
+
+  .gg-v1 .gg-meta{
+    grid-template-columns:1fr 1fr !important;
+  }
+
+  .gg-v1 .gg-meta > div{
+    border-bottom:1px solid rgba(17,19,15,.16) !important;
+  }
+
+  .gg-v1 .gg-persona-response-wide{
+    grid-template-columns:140px 1fr !important;
+  }
+
+}
+
+@media(max-width:680px){
+
+  .gg-v1 .gg-meta{
+    grid-template-columns:1fr !important;
+  }
+
+  .gg-v1 .gg-meta > div{
+    padding-left:0 !important;
+    border-right:0 !important;
+  }
+
+  .gg-v1 .gg-persona-response-wide{
+    grid-template-columns:1fr !important;
+    gap:10px !important;
+  }
+
+}
+
