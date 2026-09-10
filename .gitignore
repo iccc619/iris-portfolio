@@ -37,3 +37,11 @@ public/projects/ethereal-realm/The Moment We Encounter.mp4
 
 # Large editable design source
 public/projects/60-bpm/source/60 BPM Branding 2024.fig
+
+# Local patch backups
+assets/site.css.before-*
+assets/site.css.backup-*
+assets/site.css.force-backup-*
+assets/site.js.before-*
+assets/site.js.backup-*
+assets/site.js.force-backup-*
