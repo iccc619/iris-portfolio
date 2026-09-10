@@ -427,7 +427,7 @@ function render60BPM(p,projects){
   const tip=document.querySelector("#bpm4-tip");
   rail.forEach(a=>{
     a.addEventListener("mouseenter",()=>{tip.textContent=a.dataset.label;tip.classList.add("show")});
-    a.addEventListener("mouseleave",()=>tip.classList.remove("visible"));
+    a.addEventListener("mouseleave",()=>tip.classList.remove("show"));
   });
   const obs=new IntersectionObserver(es=>es.forEach(e=>{
     if(e.isIntersecting){
@@ -5079,183 +5079,135 @@ function initNExhibitionHeroSpace(){
 
 
 
+
 /* =========================================================
-   MODULAR TYPEFACE V2
+   MODULAR TYPEFACE
    ========================================================= */
 
-function renderModularTypefaceV2(p,projects){
+function renderModularTypefaceProject(root){
 
-  const A="/public/projects/modular-typeface";
+  const base = "/projects/modular-typeface/";
 
-  const src=path=>
-    `${A}/${path.split("/").map(encodeURIComponent).join("/")}`;
+  const asset = path =>
+    base + path.split("/").map(encodeURIComponent).join("/");
 
-  const pic=(path,alt="",cls="")=>
+  const img = (path, alt="", cls="") =>
     `<img
+      src="${asset(path)}"
+      alt="${alt}"
       ${cls ? `class="${cls}"` : ""}
-      src="${src(path)}"
-      alt="${esc(alt)}"
       loading="lazy"
       decoding="async"
     >`;
 
-  const next=
-    projects[(projects.indexOf(p)+1)%projects.length];
-
-  const letters=
+  const alphabet =
     "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
 
-  const numbers=
+  const numbers =
     "0123456789".split("");
 
-  const modules=
+  const modules =
     ["01","02","03","04","05","06"];
 
-  const heroWord=word=>
-    `<div class="mt2-word mt2-word-${word.toLowerCase()}">
-      ${word.split("").map((ch,i)=>`
-        <span class="mt2-hero-glyph" style="--i:${i}">
-          ${pic(`alphabet/${ch}.svg`,ch)}
-        </span>
-      `).join("")}
+  const glyph = char =>
+    `<div class="mt-glyph" data-glyph="${char}">
+      ${img(`alphabet/${char}.svg`, char)}
+      <span>${char}</span>
     </div>`;
 
-  const glyph=ch=>
-    `<button class="mt2-glyph" type="button" data-char="${ch}">
-      <span class="mt2-glyph-char">
-        ${pic(`alphabet/${ch}.svg`,ch)}
-      </span>
-      <span class="mt2-glyph-label">${ch}</span>
-    </button>`;
+  root.innerHTML = `
 
-  document.body.classList.add(
-    "compact-brand",
-    "project-modular-typeface"
-  );
+    <article class="mt-v1">
 
-  document.documentElement.style.setProperty(
-    "--project-accent",
-    "#E93D9A"
-  );
+      <!-- ==================================================
+           HERO
+           ================================================== -->
 
-  document.documentElement.style.setProperty(
-    "--project-secondary",
-    "#F5F3EE"
-  );
+      <section class="mt-hero" id="mt-1">
 
-  document.title="Modular Typeface — Iris Wang";
+        <div class="mt-grid" aria-hidden="true"></div>
 
-  document.body.insertAdjacentHTML(
-    "afterbegin",
-    header()+
-    `<div class="reading-progress" id="progress"></div>`
-  );
+        <div class="mt-hero-modules" aria-hidden="true">
+          ${modules.map((n,i)=>`
+            <div class="mt-floating-module mt-floating-module-${i+1}">
+              ${img(`modulars/${n}.svg`,"")}
+            </div>
+          `).join("")}
+        </div>
 
-  document.querySelector("#project-root").innerHTML=`
+        <div class="mt-hero-inner shell">
 
-    <article class="mt2">
-
-      <!-- HERO -->
-      <section class="mt2-hero" id="mt2-1">
-
-        <div class="mt2-grid" aria-hidden="true"></div>
-
-        <div class="shell mt2-hero-inner">
-
-          <div class="mt2-meta">
+          <div class="mt-meta">
             TYPE DESIGN · MODULAR SYSTEM · 2025
           </div>
 
-          <div class="mt2-hero-type"
-               aria-label="Modular Typeface">
+          <h1 class="mt-title">
+            <span>MODULAR</span>
+            <span>TYPEFACE</span>
+          </h1>
 
-            ${heroWord("MODULAR")}
-            ${heroWord("TYPEFACE")}
+          <div class="mt-hero-bottom">
 
-          </div>
-
-          <div class="mt2-hero-foot">
-
-            <p>
-              A modular display typeface constructed from six
-              repeatable forms, expanding a restricted geometric
-              system into a complete alphabet, numerals and
-              graphic applications.
+            <p class="mt-intro">
+              A display typeface constructed from six modular forms,
+              exploring how a limited geometric system can generate
+              an expressive alphabet across graphic and physical applications.
             </p>
 
-            <span>A–Z / 0–9</span>
+            <div class="mt-index">
+              A–Z / 0–9
+            </div>
 
           </div>
-
-        </div>
-
-        <div class="mt2-module-cloud"
-             aria-hidden="true">
-
-          ${modules.map((n,i)=>`
-            <div class="mt2-float mt2-float-${i+1}">
-              ${pic(`modulars/${n}.svg`,"")}
-            </div>
-          `).join("")}
 
         </div>
 
       </section>
 
 
-      <!-- 01 SYSTEM -->
-      <section class="mt2-section mt2-system"
-               id="mt2-2">
+      <!-- ==================================================
+           01 SYSTEM
+           ================================================== -->
+
+      <section class="mt-section mt-system" id="mt-2">
 
         <div class="shell">
 
-          <header class="mt2-head">
+          <header class="mt-section-head">
 
             <div>
-              <span class="mt2-label">
-                01 — MODULAR SYSTEM
-              </span>
-
-              <h2>
-                Six modules.<br>
-                One language.
-              </h2>
+              <div class="mt-kicker">01 — SYSTEM</div>
+              <h2>Six forms.<br>One alphabet.</h2>
             </div>
 
             <p>
-              The alphabet begins with six curved and pointed
-              components. Rotation, reflection and combination
-              allow the same limited toolkit to generate
-              recognisable but expressive letterforms.
+              The typeface begins with a restricted set of modular
+              components. Curved, pointed forms are rotated,
+              mirrored and combined to construct each character.
             </p>
 
           </header>
 
-          <div class="mt2-modules">
+          <div class="mt-module-grid">
 
             ${modules.map((n,i)=>`
-              <article class="mt2-module">
+              <article class="mt-module-card">
 
-                <span>
-                  ${String(i+1).padStart(2,"0")}
-                </span>
-
-                <div>
-                  ${pic(
-                    `modulars/${n}.svg`,
-                    `Modular component ${i+1}`
-                  )}
+                <div class="mt-module-number">
+                  0${i+1}
                 </div>
 
-                <small>
-                  MODULE ${String(i+1).padStart(2,"0")}
-                </small>
+                <div class="mt-module-art">
+                  ${img(`modulars/${n}.svg`,`Module ${i+1}`)}
+                </div>
+
+                <div class="mt-module-foot">
+                  MODULE / 0${i+1}
+                </div>
 
               </article>
             `).join("")}
 
-            </div>
-
           </div>
 
         </div>
@@ -5263,69 +5215,44 @@ function renderModularTypefaceV2(p,projects){
       </section>
 
 
-      <!-- 02 DEVELOPMENT -->
-      <section class="mt2-section mt2-development"
-               id="mt2-3">
+      <!-- ==================================================
+           02 CONSTRUCTION
+           ================================================== -->
+
+      <section class="mt-section mt-construction" id="mt-3">
 
         <div class="shell">
 
-          <header class="mt2-head">
+          <header class="mt-section-head">
 
             <div>
-              <span class="mt2-label">
-                02 — LETTER DEVELOPMENT
-              </span>
-
-              <h2>
-                Built on<br>
-                a grid.
-              </h2>
+              <div class="mt-kicker">02 — CONSTRUCTION</div>
+              <h2>From module<br>to letter.</h2>
             </div>
 
             <p>
-              Early graph-paper studies established the
-              proportions of the system. The modules are then
-              assembled across different widths while retaining
-              a consistent visual rhythm.
+              Individual components are assembled within a measured
+              grid. Width changes from narrow to wide while the same
+              visual language remains consistent across the system.
             </p>
 
           </header>
 
-          <div class="mt2-dev-intro">
+          <div class="mt-development">
 
-            <figure>
-              ${pic(
-                "development/development_01.png",
-                "Early modular typeface development"
-              )}
-            </figure>
+            ${["I","K","M","U"].map((letter,i)=>`
+              <figure class="mt-development-card">
 
-            <figure>
-              ${pic(
-                "development/development_02.png",
-                "Modular typeface development"
-              )}
-            </figure>
-
-          </div>
-
-          <div class="mt2-dev-letters">
-
-            ${["I","K","M","U"].map((ch,i)=>`
-              <figure class="mt2-dev-card">
-
-                <div class="mt2-dev-img">
-                  ${pic(
-                    `development/development_${ch}.png`,
-                    `${ch} letter construction`
+                <div class="mt-dev-stage">
+                  ${img(
+                    `development/development_${letter}.png`,
+                    `${letter} letter construction`
                   )}
                 </div>
 
                 <figcaption>
-                  <span>
-                    ${String(i+1).padStart(2,"0")}
-                  </span>
-                  <strong>${ch}</strong>
+                  <span>0${i+1}</span>
+                  <strong>${letter}</strong>
                 </figcaption>
 
               </figure>
@@ -5338,29 +5265,31 @@ function renderModularTypefaceV2(p,projects){
       </section>
 
 
-      <!-- 03 ALPHABET -->
-      <section class="mt2-alphabet"
-               id="mt2-4">
+      <!-- ==================================================
+           03 ALPHABET
+           ================================================== -->
+
+      <section class="mt-alphabet" id="mt-4">
 
         <div class="shell">
 
-          <header class="mt2-alpha-head">
+          <header class="mt-alphabet-head">
 
-            <span class="mt2-label">
+            <div class="mt-kicker">
               03 — ALPHABET
-            </span>
+            </div>
 
-            <span class="mt2-label">
-              26 LETTERS · 10 NUMERALS
-            </span>
+            <div class="mt-alpha-counter">
+              26 LETTERS / 10 NUMERALS
+            </div>
 
           </header>
 
-          <div class="mt2-alpha-grid">
-            ${letters.map(glyph).join("")}
+          <div class="mt-glyph-grid">
+            ${alphabet.map(glyph).join("")}
           </div>
 
-          <div class="mt2-number-grid">
+          <div class="mt-number-grid">
             ${numbers.map(glyph).join("")}
           </div>
 
@@ -5369,62 +5298,56 @@ function renderModularTypefaceV2(p,projects){
       </section>
 
 
-      <!-- 04 SPECIMEN -->
-      <section class="mt2-specimen"
-               id="mt2-5">
+      <!-- ==================================================
+           04 TYPE PLAY
+           ================================================== -->
 
-        <div class="mt2-specimen-head shell">
+      <section class="mt-type-play" id="mt-5">
 
-          <span class="mt2-label">
-            04 — TYPE SPECIMEN
-          </span>
+        <div class="mt-marquee" aria-hidden="true">
 
-          <p>
-            Repetition reveals the rhythm of the system.
-          </p>
+          <div class="mt-marquee-track">
+            <span>CYBERPUNK</span>
+            <span>MATRIX</span>
+            <span>SMOOTH</span>
+            <span>JAZZ</span>
+            <span>CYBERPUNK</span>
+            <span>MATRIX</span>
+          </div>
 
         </div>
 
-        <div class="mt2-strip">
-          <div class="mt2-strip-track">
-            ${["CYBERPUNK","MATRIX","SMOOTH","JAZZ"].map(
-              word=>`
-                <div class="mt2-strip-word">
-                  ${word.split("").map(ch=>
-                    pic(`alphabet/${ch}.svg`,ch)
-                  ).join("")}
-                </div>
-              `
-            ).join("")}
+        <div class="shell mt-play-copy">
 
-            ${["CYBERPUNK","MATRIX","SMOOTH","JAZZ"].map(
-              word=>`
-                <div class="mt2-strip-word"
-                     aria-hidden="true">
-                  ${word.split("").map(ch=>
-                    pic(`alphabet/${ch}.svg`,"")
-                  ).join("")}
-                </div>
-              `
-            ).join("")}
+          <div class="mt-kicker">
+            04 — TYPE PLAY
           </div>
+
+          <p>
+            A modular structure creates consistency,
+            while shifts in proportion and orientation allow
+            each word to develop its own rhythm.
+          </p>
+
         </div>
 
       </section>
 
 
-      <!-- 05 APPLICATION -->
-      <section class="mt2-section mt2-apps"
-               id="mt2-6">
+      <!-- ==================================================
+           05 APPLICATION
+           ================================================== -->
+
+      <section class="mt-section mt-applications" id="mt-6">
 
         <div class="shell">
 
-          <header class="mt2-head">
+          <header class="mt-section-head">
 
             <div>
-              <span class="mt2-label">
+              <div class="mt-kicker">
                 05 — APPLICATION
-              </span>
+              </div>
 
               <h2>
                 From screen<br>
@@ -5433,107 +5356,62 @@ function renderModularTypefaceV2(p,projects){
             </div>
 
             <p>
-              The modular system extends beyond the alphabet
-              into film titles, skateboard graphics, album
-              artwork and metallic objects.
+              The modular letterforms move beyond the specimen
+              into film titles, skate graphics, album artwork
+              and metallic objects.
             </p>
 
           </header>
 
 
-          <div class="mt2-film">
+          <div class="mt-app-feature mt-app-film">
 
             <figure>
-              ${pic(
-                "application/film_1.png",
-                "Film title application"
-              )}
-              <figcaption>
-                FILM TITLE / 01
-              </figcaption>
+              ${img("application/film_1.png","Film title application")}
+              <figcaption>FILM TITLE / 01</figcaption>
             </figure>
 
             <figure>
-              ${pic(
-                "application/film_2.png",
-                "Film title application"
-              )}
-              <figcaption>
-                FILM TITLE / 02
-              </figcaption>
+              ${img("application/film_2.png","Film title application")}
+              <figcaption>FILM TITLE / 02</figcaption>
             </figure>
 
           </div>
 
 
-          <div class="mt2-feature">
+          <figure class="mt-app-wide">
+            ${img(
+              "application/Skateboard Mockup.png",
+              "Skateboard application"
+            )}
+            <figcaption>
+              SKATEBOARD APPLICATION
+            </figcaption>
+          </figure>
 
-            <figure>
-              ${pic(
-                "application/Skateboard Mockup.png",
-                "Skateboard typography application"
+
+          <div class="mt-app-album">
+
+            <figure class="mt-album-main">
+              ${img(
+                "application/Album Cover.png",
+                "Album cover application"
               )}
-              <figcaption>
-                SKATEBOARD APPLICATION
-              </figcaption>
-            </figure>
-
-            <figure>
-              ${pic(
-                "application/Skateboard Zoom 1.png",
-                "Skateboard typography detail"
-              )}
-              <figcaption>
-                DETAIL / MODULAR LETTERFORMS
-              </figcaption>
-            </figure>
-
-          </div>
-
-
-          <div class="mt2-album">
-
-            <figure class="mt2-album-hero">
-
-              <div class="mt2-album-stage">
-
-                ${pic(
-                  "application/Album Background Image.png",
-                  "Album cover background",
-                  "mt2-album-bg"
-                )}
-
-                ${pic(
-                  "application/Album Modular.png",
-                  "3D modular album typography",
-                  "mt2-album-modular"
-                )}
-
-                <div class="mt2-album-modular-layer" aria-hidden="true"></div>
-
-              <div class="mt2-album-ui" aria-hidden="true">
-                  <span>ALBUM COVER</span>
-                  <span>3D INFLATE / MODULAR TYPE</span>
-                </div>
-
-              </div>
-
               <figcaption>
                 ALBUM COVER / 3D INFLATE
               </figcaption>
-
             </figure>
 
-            <div class="mt2-album-covers">
+            <div class="mt-album-grid">
 
               ${[1,2,3,4].map(n=>`
                 <figure>
-                  ${pic(
+                  ${img(
                     `application/Artboard ${n}.png`,
                     `Album cover variation ${n}`
                   )}
                   <figcaption>
-                    VERSION ${String(n).padStart(2,"0")}
+                    VERSION / 0${n}
                   </figcaption>
                 </figure>
               `).join("")}
@@ -5543,34 +5421,28 @@ function renderModularTypefaceV2(p,projects){
           </div>
 
 
+          <figure class="mt-app-wide">
+            ${img(
+              "application/Rounded Clock Mockup.png",
+              "Metallic clock application"
+            )}
+            <figcaption>
+              METALLIC CLOCK
+            </figcaption>
+          </figure>
 
-          <div class="mt2-jewelry-wrap">
 
-            <div class="mt2-jewelry-head">
-              <span class="mt2-label">
-                LETTER JEWELLERY
-              </span>
-
-              <span class="mt2-label">
-                TYPE IN THREE DIMENSIONS.
-              </span>
-            </div>
-
-            <div class="mt2-jewelry">
+          <div class="mt-jewelry">
 
             ${["01","02","03"].map((n,i)=>`
               <figure>
-
-                ${pic(
+                ${img(
                   `application/Necklace mockup_${n}.png`,
-                  `Letter jewelry application ${i+1}`
+                  `Letter jewelry ${i+1}`
                 )}
-
                 <figcaption>
-                  LETTER JEWELRY /
-                  ${String(i+1).padStart(2,"0")}
+                  LETTER JEWELRY / 0${i+1}
                 </figcaption>
-
               </figure>
             `).join("")}
 
@@ -5581,282 +5453,92 @@ function renderModularTypefaceV2(p,projects){
       </section>
 
 
-      <!-- ENDING -->
-      <section class="mt2-ending"
-               id="mt2-7">
+      <!-- ==================================================
+           END
+           ================================================== -->
 
-        <div class="mt2-grid"
-             aria-hidden="true"></div>
+      <section class="mt-end">
 
-        <div class="shell mt2-ending-inner">
+        <div class="mt-end-grid" aria-hidden="true"></div>
 
-          <span class="mt2-label">
-            MODULAR TYPEFACE · 2025
-          </span>
+        <div class="shell mt-end-inner">
 
-          <div class="mt2-ending-glyphs">
-            ${pic("alphabet/M.svg","M")}
-            ${pic("alphabet/T.svg","T")}
+          <div class="mt-kicker">
+            MODULAR TYPEFACE / 2025
+          </div>
+
+          <div class="mt-end-type">
+            Aa
           </div>
 
         </div>
 
       </section>
 
-
-      <!-- SIDE NAV -->
-      <nav class="chapter-rail mt2-rail"
-           aria-label="Modular Typeface sections">
-
-        ${[
-          ["mt2-1","Hero"],
-          ["mt2-2","Modular system"],
-          ["mt2-3","Letter development"],
-          ["mt2-4","Alphabet"],
-          ["mt2-5","Type specimen"],
-          ["mt2-6","Applications"],
-          ["mt2-7","Final"]
-        ].map(([id,label])=>`
-          <a href="#${id}"
-             data-label="${label}"
-             aria-label="${label}">
-          </a>
-        `).join("")}
-
-      </nav>
-
-      <div class="chapter-tip mt2-tip"
-           id="mt2-tip"></div>
-
-
-      <!-- SHARED NEXT PROJECT -->
-      <a class="next-project mt2-next"
-         href="/work/${next.slug}/">
-
-        <span class="meta-mono">
-          Next project
-        </span>
-
-        <br>
-
-        ${esc(next.title)} →
-
-      </a>
-
     </article>
   `;
 
-  document.body.insertAdjacentHTML(
-    "beforeend",
-    footer()
-  );
+  initModularTypefaceProject(root);
+}
 
 
-  /* progress */
-  const progress=
-    document.querySelector("#progress");
+function initModularTypefaceProject(root){
 
-  const updateProgress=()=>{
+  const page =
+    root.querySelector(".mt-v1");
 
-    const h=
-      document.documentElement.scrollHeight-innerHeight;
-
-    progress.style.width=
-      `${h ? scrollY/h*100 : 0}%`;
-  };
-
-  updateProgress();
-
-  addEventListener(
-    "scroll",
-    updateProgress,
-    {passive:true}
-  );
+  if(!page) return;
 
 
-  /* rail */
-  const rail=[
-    ...document.querySelectorAll(".mt2-rail a")
-  ];
+  /* -----------------------------------------
+     glyph hover
+     ----------------------------------------- */
 
-  const sections=
-    rail.map(a=>
-      document.querySelector(
-        a.getAttribute("href")
-      )
-    );
+  page.querySelectorAll(".mt-glyph").forEach(item=>{
 
-  const tip=
-    document.querySelector("#mt2-tip");
+    item.addEventListener("pointerenter",()=>{
 
-  rail.forEach(a=>{
+      page.querySelectorAll(".mt-glyph.is-active")
+        .forEach(el=>el.classList.remove("is-active"));
 
-    a.addEventListener(
-      "mouseenter",
-      ()=>{
-        tip.textContent=a.dataset.label;
-        tip.classList.add("visible");
-      }
-    );
+      item.classList.add("is-active");
 
-    a.addEventListener(
-      "mouseleave",
-      ()=>tip.classList.remove("visible")
-    );
+    });
 
   });
 
-  const observer=
-    new IntersectionObserver(
-      entries=>{
 
-        entries.forEach(entry=>{
+  /* -----------------------------------------
+     hero pointer movement
+     ----------------------------------------- */
 
-          if(!entry.isIntersecting) return;
-
-          const index=
-            sections.indexOf(entry.target);
-
-          rail.forEach(
-            (a,i)=>
-              a.classList.toggle(
-                "active",
-                i===index
-              )
-          );
-
-        });
-
-      },
-      {
-        rootMargin:
-          "-42% 0px -48% 0px"
-      }
-    );
-
-  sections.forEach(section=>{
-    if(section) observer.observe(section);
-  });
-
-
-  /* album modular DOM animation */
-  const mt2AlbumDomAnimation=
-    document.querySelector(".mt2-album-modular-layer");
-
-  if(
-    mt2AlbumDomAnimation &&
-    !matchMedia("(prefers-reduced-motion: reduce)").matches
-  ){
-
-    mt2AlbumDomAnimation.animate(
-      [
-        {
-          transform:
-            "translate(-50%, -50%) rotate(-3deg) scale(1)"
-        },
-        {
-          transform:
-            "translate(-47%, -55%) rotate(1.5deg) scale(1.07)"
-        },
-        {
-          transform:
-            "translate(-52%, -51%) rotate(3deg) scale(1.11)"
-        },
-        {
-          transform:
-            "translate(-49%, -54%) rotate(-1deg) scale(1.05)"
-        },
-        {
-          transform:
-            "translate(-50%, -50%) rotate(-3deg) scale(1)"
-        }
-      ],
-      {
-        duration:6500,
-        iterations:Infinity,
-        easing:"ease-in-out"
-      }
-    );
-
-  }
-
-
-  /* album parallax */
-  const albumStage=
-    document.querySelector(".mt2-album-stage");
-
-  if(albumStage){
-
-    albumStage.dataset.mt2AlbumParallaxReady="1";
-
-    albumStage.addEventListener(
-      "pointermove",
-      e=>{
-
-        const r=
-          albumStage.getBoundingClientRect();
-
-        albumStage.style.setProperty(
-          "--album-x",
-          ((e.clientX-r.left)/r.width)-.5
-        );
-
-        albumStage.style.setProperty(
-          "--album-y",
-          ((e.clientY-r.top)/r.height)-.5
-        );
-
-      }
-    );
-
-    albumStage.addEventListener(
-      "pointerleave",
-      ()=>{
-
-        albumStage.style.setProperty("--album-x",0);
-        albumStage.style.setProperty("--album-y",0);
-
-      }
-    );
-
-  }
-
-  const mt2AlbumParallaxReady=true;
-
-
-  /* hero parallax */
-  const hero=
-    document.querySelector(".mt2-hero");
+  const hero =
+    page.querySelector(".mt-hero");
 
   if(hero){
 
-    hero.addEventListener(
-      "pointermove",
-      e=>{
+    hero.addEventListener("pointermove",e=>{
 
-        const r=
-          hero.getBoundingClientRect();
+      const rect =
+        hero.getBoundingClientRect();
 
-        hero.style.setProperty(
-          "--mx",
-          ((e.clientX-r.left)/r.width-.5)
-        );
+      const x =
+        (e.clientX-rect.left)/rect.width-.5;
 
-        hero.style.setProperty(
-          "--my",
-          ((e.clientY-r.top)/r.height-.5)
-        );
+      const y =
+        (e.clientY-rect.top)/rect.height-.5;
 
-      }
-    );
+      hero.style.setProperty("--mx",x);
+      hero.style.setProperty("--my",y);
 
-    hero.addEventListener(
-      "pointerleave",
-      ()=>{
-        hero.style.setProperty("--mx",0);
-        hero.style.setProperty("--my",0);
-      }
-    );
+    });
+
+    hero.addEventListener("pointerleave",()=>{
+
+      hero.style.setProperty("--mx",0);
+      hero.style.setProperty("--my",0);
+
+    });
 
   }
 
@@ -5865,6 +5547,20 @@ function renderModularTypefaceV2(p,projects){
 
 
 async function renderProject(){
+
+  if(location.pathname.includes("/work/modular-typeface")){
+
+    const root =
+      document.querySelector("main") ||
+      document.querySelector("#app");
+
+    if(root){
+      document.body.classList.add("modular-typeface-page");
+      renderModularTypefaceProject(root);
+      return;
+    }
+  }
+
   const projects=await getProjects();
   const slug=location.pathname.split("/").filter(Boolean).pop();
   const p=projects.find(x=>x.slug===slug);
@@ -5877,7 +5573,6 @@ async function renderProject(){
   if(p.slug==="ethereal-realm"){ renderEtherealRealm(p,projects); return; }
   if(p.slug==="green-grid"){ renderGreenGridV1(p,projects); return; }
   if(p.slug==="n-exhibition"){ renderNExhibitionV1(p,projects); return; }
-  if(p.slug==="modular-typeface"){ renderModularTypefaceV2(p,projects); return; }
 
   document.body.classList.add("compact-brand");
   document.documentElement.style.setProperty("--project-accent",p.accent);

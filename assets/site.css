@@ -28205,3 +28205,8737 @@ h1.nx-hero-title-final{
 
 }
 
+
+
+/* =========================================================
+   MODULAR TYPEFACE — V1
+   ========================================================= */
+
+.mt-v1{
+  --mt-black:#171516;
+  --mt-white:#f2f0eb;
+  --mt-pink:#d51a7c;
+  --mt-line:rgba(213,26,124,.32);
+
+  background:var(--mt-white);
+  color:var(--mt-black);
+  overflow:hidden;
+}
+
+.mt-v1 *,
+.mt-v1 *::before,
+.mt-v1 *::after{
+  box-sizing:border-box;
+}
+
+.mt-kicker,
+.mt-meta,
+.mt-index,
+.mt-module-number,
+.mt-module-foot,
+.mt-alpha-counter,
+.mt-v1 figcaption{
+  font-family:var(--font-sans,Arial,sans-serif);
+  font-size:10px;
+  line-height:1.2;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+}
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.mt-hero{
+  --mx:0;
+  --my:0;
+
+  position:relative;
+  min-height:100svh;
+
+  background:var(--mt-white);
+  overflow:hidden;
+}
+
+.mt-grid,
+.mt-end-grid{
+  position:absolute;
+  inset:0;
+
+  background-image:
+    linear-gradient(
+      var(--mt-line) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      var(--mt-line) 1px,
+      transparent 1px
+    );
+
+  background-size:
+    clamp(42px,5vw,80px)
+    clamp(42px,5vw,80px);
+
+  opacity:.42;
+}
+
+.mt-hero-inner{
+  position:relative;
+  z-index:10;
+
+  min-height:100svh;
+
+  display:flex;
+  flex-direction:column;
+
+  padding-top:clamp(150px,19vh,210px);
+  padding-bottom:54px;
+}
+
+.mt-meta{
+  margin-bottom:clamp(34px,5vh,68px);
+}
+
+.mt-title{
+  margin:0;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size:
+    clamp(78px,13.2vw,220px);
+
+  line-height:.76;
+
+  letter-spacing:-.075em;
+
+  font-weight:700;
+
+  text-transform:uppercase;
+}
+
+.mt-title span{
+  display:block;
+}
+
+.mt-title span:last-child{
+  color:transparent;
+
+  -webkit-text-stroke:
+    1.5px var(--mt-black);
+}
+
+.mt-hero-bottom{
+  margin-top:auto;
+
+  display:grid;
+  grid-template-columns:
+    minmax(0,520px) 1fr;
+
+  align-items:end;
+  gap:40px;
+}
+
+.mt-intro{
+  margin:0;
+
+  font-family:var(--font-sans,Arial,sans-serif);
+
+  font-size:clamp(15px,1.15vw,18px);
+  line-height:1.5;
+}
+
+.mt-index{
+  justify-self:end;
+}
+
+
+/* floating modules */
+
+.mt-hero-modules{
+  position:absolute;
+  inset:0;
+
+  z-index:4;
+
+  pointer-events:none;
+}
+
+.mt-floating-module{
+  position:absolute;
+
+  width:clamp(70px,8vw,130px);
+
+  transform:
+    translate(
+      calc(var(--mx) * 35px),
+      calc(var(--my) * 25px)
+    );
+
+  transition:transform .12s linear;
+
+  opacity:.16;
+}
+
+.mt-floating-module img{
+  width:100%;
+  height:auto;
+  display:block;
+}
+
+.mt-floating-module-1{
+  top:14%;
+  right:8%;
+}
+
+.mt-floating-module-2{
+  top:31%;
+  right:25%;
+  transform:
+    rotate(90deg)
+    translate(
+      calc(var(--my) * 20px),
+      calc(var(--mx) * -30px)
+    );
+}
+
+.mt-floating-module-3{
+  bottom:11%;
+  right:11%;
+}
+
+.mt-floating-module-4{
+  top:10%;
+  left:48%;
+  transform:rotate(180deg);
+}
+
+.mt-floating-module-5{
+  bottom:13%;
+  left:54%;
+  transform:rotate(-90deg);
+}
+
+.mt-floating-module-6{
+  top:46%;
+  left:4%;
+  opacity:.08;
+}
+
+
+/* =========================================================
+   SHARED SECTIONS
+   ========================================================= */
+
+.mt-section{
+  padding:
+    clamp(110px,14vw,220px)
+    0;
+}
+
+.mt-section-head{
+  display:grid;
+
+  grid-template-columns:
+    minmax(0,1.2fr)
+    minmax(280px,.72fr);
+
+  gap:clamp(50px,9vw,150px);
+
+  align-items:end;
+
+  margin-bottom:
+    clamp(70px,10vw,150px);
+}
+
+.mt-section-head h2{
+  margin:
+    22px 0 0;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size:
+    clamp(56px,7.5vw,126px);
+
+  line-height:.88;
+
+  letter-spacing:-.065em;
+
+  font-weight:700;
+}
+
+.mt-section-head p{
+  margin:0;
+
+  max-width:500px;
+
+  font-family:
+    var(--font-sans,Arial,sans-serif);
+
+  font-size:
+    clamp(14px,1.05vw,17px);
+
+  line-height:1.55;
+}
+
+
+/* =========================================================
+   MODULE SYSTEM
+   ========================================================= */
+
+.mt-system{
+  border-top:
+    1px solid rgba(23,21,22,.18);
+}
+
+.mt-module-grid{
+  display:grid;
+  grid-template-columns:repeat(6,1fr);
+
+  border-top:
+    1px solid var(--mt-black);
+
+  border-bottom:
+    1px solid var(--mt-black);
+}
+
+.mt-module-card{
+  position:relative;
+
+  min-height:
+    clamp(300px,37vw,590px);
+
+  padding:16px;
+
+  display:flex;
+  flex-direction:column;
+
+  border-right:
+    1px solid rgba(23,21,22,.25);
+
+  transition:
+    background .35s ease,
+    color .35s ease;
+}
+
+.mt-module-card:last-child{
+  border-right:0;
+}
+
+.mt-module-card:hover{
+  background:var(--mt-black);
+  color:var(--mt-white);
+}
+
+.mt-module-number{
+  color:var(--mt-pink);
+}
+
+.mt-module-art{
+  flex:1;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  padding:25%;
+}
+
+.mt-module-art img{
+  display:block;
+
+  width:100%;
+  max-height:260px;
+
+  object-fit:contain;
+
+  transition:
+    filter .35s ease,
+    transform .5s cubic-bezier(.2,.8,.2,1);
+}
+
+.mt-module-card:hover img{
+  filter:invert(1);
+  transform:scale(1.12) rotate(4deg);
+}
+
+
+/* =========================================================
+   CONSTRUCTION
+   ========================================================= */
+
+.mt-construction{
+  background:#e9e6df;
+}
+
+.mt-development{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:1px;
+
+  background:
+    rgba(23,21,22,.2);
+
+  border:
+    1px solid rgba(23,21,22,.2);
+}
+
+.mt-development-card{
+  margin:0;
+  background:var(--mt-white);
+}
+
+.mt-dev-stage{
+  aspect-ratio:4 / 3;
+
+  padding:
+    clamp(25px,4vw,70px);
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  background-image:
+    linear-gradient(
+      rgba(213,26,124,.12) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(213,26,124,.12) 1px,
+      transparent 1px
+    );
+
+  background-size:32px 32px;
+}
+
+.mt-dev-stage img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+}
+
+.mt-development-card figcaption{
+  padding:16px;
+
+  display:flex;
+  justify-content:space-between;
+
+  border-top:
+    1px solid rgba(23,21,22,.2);
+}
+
+.mt-development-card figcaption strong{
+  font-size:14px;
+}
+
+
+/* =========================================================
+   ALPHABET
+   ========================================================= */
+
+.mt-alphabet{
+  padding:
+    clamp(100px,12vw,190px)
+    0;
+
+  background:var(--mt-black);
+  color:var(--mt-white);
+}
+
+.mt-alphabet-head{
+  display:flex;
+  justify-content:space-between;
+
+  margin-bottom:
+    clamp(60px,8vw,120px);
+}
+
+.mt-glyph-grid{
+  display:grid;
+  grid-template-columns:
+    repeat(9,1fr);
+
+  border-top:
+    1px solid rgba(255,255,255,.18);
+
+  border-left:
+    1px solid rgba(255,255,255,.18);
+}
+
+.mt-number-grid{
+  display:grid;
+  grid-template-columns:
+    repeat(10,1fr);
+
+  margin-top:70px;
+
+  border-top:
+    1px solid rgba(255,255,255,.18);
+
+  border-left:
+    1px solid rgba(255,255,255,.18);
+}
+
+.mt-glyph{
+  position:relative;
+
+  aspect-ratio:1 / 1.15;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  padding:20%;
+
+  border-right:
+    1px solid rgba(255,255,255,.18);
+
+  border-bottom:
+    1px solid rgba(255,255,255,.18);
+
+  overflow:hidden;
+
+  transition:
+    background .25s ease;
+}
+
+.mt-glyph img{
+  width:100%;
+  height:100%;
+
+  object-fit:contain;
+
+  filter:invert(1);
+
+  transition:
+    transform .45s cubic-bezier(.2,.8,.2,1),
+    filter .25s ease;
+}
+
+.mt-glyph span{
+  position:absolute;
+
+  left:8px;
+  bottom:7px;
+
+  font-family:
+    var(--font-sans,Arial,sans-serif);
+
+  font-size:9px;
+
+  opacity:.4;
+}
+
+.mt-glyph:hover,
+.mt-glyph.is-active{
+  background:var(--mt-pink);
+}
+
+.mt-glyph:hover img,
+.mt-glyph.is-active img{
+  transform:scale(1.22);
+}
+
+
+/* =========================================================
+   TYPE PLAY
+   ========================================================= */
+
+.mt-type-play{
+  padding:
+    clamp(100px,12vw,180px)
+    0;
+
+  background:var(--mt-pink);
+  color:var(--mt-black);
+
+  overflow:hidden;
+}
+
+.mt-marquee{
+  width:100%;
+
+  overflow:hidden;
+
+  border-top:
+    1px solid var(--mt-black);
+
+  border-bottom:
+    1px solid var(--mt-black);
+}
+
+.mt-marquee-track{
+  width:max-content;
+
+  display:flex;
+  align-items:center;
+
+  animation:
+    mtMarquee 24s linear infinite;
+}
+
+.mt-marquee-track span{
+  display:block;
+
+  padding:
+    .12em .22em .16em;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size:
+    clamp(90px,15vw,250px);
+
+  line-height:.82;
+
+  font-weight:700;
+
+  letter-spacing:-.07em;
+}
+
+.mt-marquee-track span:nth-child(even){
+  color:transparent;
+
+  -webkit-text-stroke:
+    1.5px var(--mt-black);
+}
+
+@keyframes mtMarquee{
+  to{
+    transform:translateX(-50%);
+  }
+}
+
+.mt-play-copy{
+  margin-top:42px;
+
+  display:flex;
+  justify-content:space-between;
+  gap:40px;
+}
+
+.mt-play-copy p{
+  width:min(460px,50%);
+
+  margin:0;
+
+  font-family:
+    var(--font-sans,Arial,sans-serif);
+
+  font-size:15px;
+  line-height:1.5;
+}
+
+
+/* =========================================================
+   APPLICATIONS
+   ========================================================= */
+
+.mt-applications{
+  background:var(--mt-white);
+}
+
+.mt-v1 figure{
+  margin:0;
+}
+
+.mt-v1 figure img{
+  display:block;
+  width:100%;
+}
+
+.mt-v1 figure figcaption{
+  padding-top:12px;
+}
+
+.mt-app-feature{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+
+  gap:clamp(14px,2vw,30px);
+
+  margin-bottom:
+    clamp(100px,12vw,190px);
+}
+
+.mt-app-feature img{
+  aspect-ratio:16 / 9;
+  object-fit:cover;
+}
+
+.mt-app-wide{
+  margin-bottom:
+    clamp(110px,14vw,220px)
+    !important;
+}
+
+.mt-app-wide img{
+  max-height:85vh;
+  object-fit:contain;
+}
+
+.mt-app-album{
+  margin-bottom:
+    clamp(110px,14vw,220px);
+}
+
+.mt-album-main{
+  width:min(70%,1000px);
+
+  margin-left:auto !important;
+
+  margin-bottom:
+    clamp(50px,7vw,110px)
+    !important;
+}
+
+.mt-album-grid{
+  display:grid;
+  grid-template-columns:
+    repeat(4,1fr);
+
+  gap:clamp(10px,1.4vw,22px);
+}
+
+.mt-album-grid img{
+  aspect-ratio:1 / 1;
+  object-fit:cover;
+}
+
+.mt-jewelry{
+  display:grid;
+  grid-template-columns:
+    repeat(3,1fr);
+
+  gap:clamp(12px,1.6vw,24px);
+}
+
+.mt-jewelry img{
+  aspect-ratio:3 / 4;
+  object-fit:cover;
+}
+
+
+/* =========================================================
+   END
+   ========================================================= */
+
+.mt-end{
+  position:relative;
+
+  min-height:80vh;
+
+  background:var(--mt-black);
+  color:var(--mt-white);
+
+  overflow:hidden;
+}
+
+.mt-end-grid{
+  opacity:.15;
+}
+
+.mt-end-inner{
+  position:relative;
+  z-index:2;
+
+  min-height:80vh;
+
+  display:flex;
+  flex-direction:column;
+
+  justify-content:space-between;
+
+  padding-top:70px;
+  padding-bottom:40px;
+}
+
+.mt-end-type{
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size:
+    clamp(220px,43vw,700px);
+
+  line-height:.65;
+
+  letter-spacing:-.1em;
+
+  color:var(--mt-pink);
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media(max-width:900px){
+
+  .mt-section-head{
+    grid-template-columns:1fr;
+  }
+
+  .mt-module-grid{
+    grid-template-columns:repeat(3,1fr);
+  }
+
+  .mt-module-card{
+    min-height:360px;
+
+    border-bottom:
+      1px solid rgba(23,21,22,.25);
+  }
+
+  .mt-glyph-grid{
+    grid-template-columns:repeat(5,1fr);
+  }
+
+  .mt-number-grid{
+    grid-template-columns:repeat(5,1fr);
+  }
+
+  .mt-album-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+}
+
+
+@media(max-width:650px){
+
+  .mt-title{
+    font-size:clamp(62px,21vw,120px);
+  }
+
+  .mt-hero-bottom{
+    grid-template-columns:1fr;
+  }
+
+  .mt-index{
+    justify-self:start;
+  }
+
+  .mt-module-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .mt-development{
+    grid-template-columns:1fr;
+  }
+
+  .mt-glyph-grid{
+    grid-template-columns:repeat(4,1fr);
+  }
+
+  .mt-number-grid{
+    grid-template-columns:repeat(5,1fr);
+  }
+
+  .mt-app-feature,
+  .mt-jewelry{
+    grid-template-columns:1fr;
+  }
+
+  .mt-album-main{
+    width:100%;
+  }
+
+  .mt-play-copy{
+    flex-direction:column;
+  }
+
+  .mt-play-copy p{
+    width:100%;
+  }
+
+}
+
+
+@media(prefers-reduced-motion:reduce){
+
+  .mt-marquee-track{
+    animation:none;
+  }
+
+  .mt-floating-module{
+    transition:none;
+  }
+
+}
+
+
+
+/* =========================================================
+   MODULAR TYPEFACE V2
+   ========================================================= */
+
+.mt2{
+  --black:#171516;
+  --paper:#f5f3ee;
+  --pink:#e93d9a;
+  --grid:rgba(233,61,154,.20);
+
+  background:var(--paper);
+  color:var(--black);
+  overflow:hidden;
+}
+
+.mt2 *,
+.mt2 *::before,
+.mt2 *::after{
+  box-sizing:border-box;
+}
+
+.mt2-label,
+.mt2-meta,
+.mt2 figcaption{
+  font-family:var(--font-sans,Arial,sans-serif);
+  font-size:10px;
+  line-height:1.2;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+}
+
+
+/* HERO */
+
+.mt2-hero{
+  --mx:0;
+  --my:0;
+
+  position:relative;
+  min-height:100svh;
+  overflow:hidden;
+}
+
+.mt2-grid{
+  position:absolute;
+  inset:0;
+
+  background-image:
+    linear-gradient(
+      var(--grid) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      var(--grid) 1px,
+      transparent 1px
+    );
+
+  background-size:
+    clamp(54px,5vw,78px)
+    clamp(54px,5vw,78px);
+
+  pointer-events:none;
+}
+
+.mt2-hero-inner{
+  position:relative;
+  z-index:5;
+
+  min-height:100svh;
+
+  padding-top:
+    clamp(155px,19vh,220px);
+
+  padding-bottom:
+    clamp(38px,5vh,65px);
+
+  display:flex;
+  flex-direction:column;
+}
+
+.mt2-meta{
+  margin-bottom:
+    clamp(42px,6vh,72px);
+}
+
+.mt2-hero-type{
+  width:min(1080px,78vw);
+}
+
+.mt2-word{
+  display:flex;
+  align-items:center;
+  height:clamp(115px,16vw,235px);
+}
+
+.mt2-word-typeface{
+  margin-top:8px;
+}
+
+.mt2-hero-glyph{
+  height:100%;
+
+  display:flex;
+  align-items:center;
+
+  margin-right:
+    clamp(5px,.65vw,11px);
+
+  transform:
+    translate(
+      calc(var(--mx) * var(--i) * .8px),
+      calc(var(--my) * var(--i) * .55px)
+    );
+
+  transition:
+    transform .12s linear;
+}
+
+.mt2-hero-glyph img{
+  height:100%;
+  width:auto;
+  display:block;
+}
+
+.mt2-hero-foot{
+  margin-top:auto;
+
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-end;
+  gap:40px;
+}
+
+.mt2-hero-foot p{
+  width:min(590px,48vw);
+
+  margin:0;
+
+  font-family:
+    var(--font-sans,Arial,sans-serif);
+
+  font-size:
+    clamp(15px,1.15vw,18px);
+
+  line-height:1.5;
+}
+
+.mt2-hero-foot span{
+  font-family:
+    var(--font-sans,Arial,sans-serif);
+
+  font-size:10px;
+
+  letter-spacing:.12em;
+}
+
+
+/* HERO MODULES */
+
+.mt2-module-cloud{
+  position:absolute;
+  inset:0;
+  z-index:2;
+  pointer-events:none;
+}
+
+.mt2-float{
+  position:absolute;
+  width:clamp(55px,6vw,100px);
+  opacity:.07;
+}
+
+.mt2-float img{
+  width:100%;
+  display:block;
+}
+
+.mt2-float-1{
+  top:17%;
+  right:8%;
+}
+
+.mt2-float-2{
+  top:38%;
+  right:19%;
+  transform:rotate(90deg);
+}
+
+.mt2-float-3{
+  bottom:13%;
+  right:8%;
+}
+
+.mt2-float-4{
+  top:14%;
+  left:49%;
+  transform:rotate(180deg);
+}
+
+.mt2-float-5{
+  bottom:12%;
+  left:56%;
+  transform:rotate(-90deg);
+}
+
+.mt2-float-6{
+  top:48%;
+  left:3%;
+}
+
+
+/* SHARED HEAD */
+
+.mt2-section{
+  padding:
+    clamp(110px,13vw,210px)
+    0;
+}
+
+.mt2-head{
+  display:grid;
+
+  grid-template-columns:
+    minmax(0,1.25fr)
+    minmax(280px,.72fr);
+
+  gap:
+    clamp(50px,9vw,150px);
+
+  align-items:end;
+
+  margin-bottom:
+    clamp(70px,9vw,140px);
+}
+
+.mt2-head h2{
+  margin:22px 0 0;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size:
+    clamp(60px,7.8vw,128px);
+
+  line-height:.86;
+  letter-spacing:-.065em;
+}
+
+.mt2-head p{
+  max-width:500px;
+  margin:0;
+
+  font-family:
+    var(--font-sans,Arial,sans-serif);
+
+  font-size:
+    clamp(14px,1.05vw,17px);
+
+  line-height:1.55;
+}
+
+
+/* MODULES */
+
+.mt2-modules{
+  display:grid;
+  grid-template-columns:repeat(6,1fr);
+
+  border-top:1px solid var(--black);
+  border-bottom:1px solid var(--black);
+}
+
+.mt2-module{
+  min-height:
+    clamp(320px,37vw,570px);
+
+  padding:14px;
+
+  display:flex;
+  flex-direction:column;
+
+  border-right:
+    1px solid rgba(23,21,22,.25);
+
+  transition:
+    background .3s,
+    color .3s;
+}
+
+.mt2-module:last-child{
+  border-right:0;
+}
+
+.mt2-module > span,
+.mt2-module small{
+  font-family:
+    var(--font-sans,Arial,sans-serif);
+
+  font-size:9px;
+  letter-spacing:.12em;
+}
+
+.mt2-module > span{
+  color:var(--pink);
+}
+
+.mt2-module > div{
+  flex:1;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  padding:25%;
+}
+
+.mt2-module img{
+  width:100%;
+  max-height:250px;
+  object-fit:contain;
+
+  transition:
+    transform .45s cubic-bezier(.2,.8,.2,1),
+    filter .3s;
+}
+
+.mt2-module:hover{
+  background:var(--black);
+  color:var(--paper);
+}
+
+.mt2-module:hover img{
+  transform:
+    scale(1.14)
+    rotate(5deg);
+
+  filter:invert(1);
+}
+
+
+/* DEVELOPMENT */
+
+.mt2-development{
+  background:#e9e6df;
+}
+
+.mt2-dev-intro{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+
+  gap:1px;
+
+  margin-bottom:
+    clamp(60px,7vw,110px);
+
+  background:
+    rgba(23,21,22,.2);
+}
+
+.mt2-dev-intro figure{
+  margin:0;
+  background:var(--paper);
+}
+
+.mt2-dev-intro img{
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:contain;
+}
+
+.mt2-dev-letters{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+
+  gap:1px;
+
+  background:
+    rgba(23,21,22,.2);
+
+  border:
+    1px solid rgba(23,21,22,.2);
+}
+
+.mt2-dev-card{
+  margin:0;
+  background:var(--paper);
+}
+
+.mt2-dev-img{
+  min-height:480px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  padding:
+    clamp(35px,5vw,80px);
+
+  background-image:
+    linear-gradient(
+      rgba(233,61,154,.12) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(233,61,154,.12) 1px,
+      transparent 1px
+    );
+
+  background-size:32px 32px;
+}
+
+.mt2-dev-img img{
+  width:100%;
+  height:100%;
+  max-height:480px;
+  object-fit:contain;
+}
+
+.mt2-dev-card figcaption{
+  padding:15px;
+
+  display:flex;
+  justify-content:space-between;
+
+  border-top:
+    1px solid rgba(23,21,22,.2);
+}
+
+
+/* ALPHABET */
+
+.mt2-alphabet{
+  padding:
+    clamp(110px,13vw,210px)
+    0;
+
+  background:var(--black);
+  color:var(--paper);
+}
+
+.mt2-alpha-head{
+  display:flex;
+  justify-content:space-between;
+
+  margin-bottom:
+    clamp(60px,7vw,110px);
+}
+
+.mt2-alpha-grid{
+  display:grid;
+  grid-template-columns:repeat(9,1fr);
+}
+
+.mt2-number-grid{
+  display:grid;
+  grid-template-columns:repeat(10,1fr);
+
+  margin-top:60px;
+}
+
+.mt2-glyph{
+  appearance:none;
+
+  position:relative;
+
+  aspect-ratio:1 / 1.12;
+
+  padding:20%;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  background:transparent;
+  color:inherit;
+
+  border:0;
+  border-top:
+    1px solid rgba(255,255,255,.17);
+
+  border-right:
+    1px solid rgba(255,255,255,.17);
+
+  cursor:pointer;
+
+  overflow:hidden;
+}
+
+.mt2-glyph:nth-child(9n+1){
+  border-left:
+    1px solid rgba(255,255,255,.17);
+}
+
+.mt2-number-grid .mt2-glyph:first-child{
+  border-left:
+    1px solid rgba(255,255,255,.17);
+}
+
+.mt2-glyph-char{
+  width:100%;
+  height:100%;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.mt2-glyph img{
+  width:100%;
+  height:100%;
+
+  object-fit:contain;
+
+  filter:invert(1);
+
+  transition:
+    transform .45s cubic-bezier(.2,.8,.2,1);
+}
+
+.mt2-glyph-label{
+  position:absolute;
+  left:8px;
+  bottom:7px;
+
+  font-family:
+    var(--font-sans,Arial,sans-serif);
+
+  font-size:8px;
+
+  opacity:.35;
+}
+
+.mt2-glyph:hover{
+  background:var(--pink);
+}
+
+.mt2-glyph:hover img{
+  transform:scale(1.22);
+}
+
+
+/* SPECIMEN */
+
+.mt2-specimen{
+  padding:
+    clamp(100px,11vw,170px)
+    0;
+
+  background:var(--pink);
+}
+
+.mt2-specimen-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-end;
+
+  margin-bottom:50px;
+}
+
+.mt2-specimen-head p{
+  margin:0;
+  font-family:var(--font-sans,Arial,sans-serif);
+}
+
+.mt2-strip{
+  overflow:hidden;
+
+  border-top:1px solid var(--black);
+  border-bottom:1px solid var(--black);
+}
+
+.mt2-strip-track{
+  width:max-content;
+
+  display:flex;
+  align-items:center;
+
+  animation:
+    mt2-scroll 30s linear infinite;
+}
+
+.mt2-strip-word{
+  height:
+    clamp(130px,18vw,280px);
+
+  padding:
+    clamp(24px,3vw,48px)
+    clamp(30px,4vw,70px);
+
+  display:flex;
+  align-items:center;
+
+  gap:
+    clamp(4px,.5vw,9px);
+
+  border-right:
+    1px solid rgba(23,21,22,.5);
+}
+
+.mt2-strip-word img{
+  height:100%;
+  width:auto;
+}
+
+@keyframes mt2-scroll{
+  to{
+    transform:translateX(-50%);
+  }
+}
+
+
+/* APPLICATIONS */
+
+.mt2-apps figure{
+  margin:0;
+}
+
+.mt2-apps img{
+  display:block;
+  width:100%;
+}
+
+.mt2-apps figcaption{
+  padding-top:11px;
+}
+
+.mt2-film{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+
+  gap:
+    clamp(12px,2vw,30px);
+
+  margin-bottom:
+    clamp(100px,12vw,190px);
+}
+
+.mt2-film img{
+  aspect-ratio:16/9;
+  object-fit:cover;
+}
+
+.mt2-feature{
+  display:grid;
+
+  grid-template-columns:
+    minmax(0,.75fr)
+    minmax(0,1.25fr);
+
+  gap:
+    clamp(20px,4vw,70px);
+
+  align-items:center;
+
+  margin-bottom:
+    clamp(120px,15vw,230px);
+}
+
+.mt2-feature img{
+  max-height:82vh;
+  object-fit:contain;
+}
+
+.mt2-album{
+  margin-bottom:
+    clamp(120px,15vw,230px);
+}
+
+.mt2-album-hero{
+  width:min(74%,1050px);
+
+  margin-left:auto !important;
+
+  margin-bottom:
+    clamp(60px,8vw,120px)
+    !important;
+}
+
+.mt2-album-covers{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+
+  gap:
+    clamp(10px,1.4vw,22px);
+}
+
+.mt2-clock{
+  margin-bottom:
+    clamp(120px,15vw,230px)
+    !important;
+}
+
+.mt2-clock img{
+  max-height:86vh;
+  object-fit:contain;
+}
+
+.mt2-jewelry{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+
+  gap:
+    clamp(12px,1.7vw,26px);
+}
+
+.mt2-jewelry img{
+  aspect-ratio:3/4;
+  object-fit:cover;
+}
+
+
+/* END */
+
+.mt2-ending{
+  position:relative;
+
+  min-height:85vh;
+
+  background:var(--black);
+  color:var(--paper);
+
+  overflow:hidden;
+}
+
+.mt2-ending .mt2-grid{
+  opacity:.16;
+}
+
+.mt2-ending-inner{
+  position:relative;
+  z-index:2;
+
+  min-height:85vh;
+
+  padding-top:65px;
+  padding-bottom:45px;
+
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+}
+
+.mt2-ending-glyphs{
+  height:
+    clamp(250px,42vw,650px);
+
+  display:flex;
+  align-items:flex-end;
+
+  gap:
+    clamp(15px,2vw,35px);
+}
+
+.mt2-ending-glyphs img{
+  height:100%;
+  width:auto;
+
+  filter:invert(39%)
+    sepia(80%)
+    saturate(3312%)
+    hue-rotate(303deg)
+    brightness(98%)
+    contrast(86%);
+}
+
+
+/* NEXT PROJECT */
+
+.mt2-next{
+  background:var(--pink);
+  color:var(--black);
+}
+
+
+/* RESPONSIVE */
+
+@media(max-width:900px){
+
+  .mt2-head{
+    grid-template-columns:1fr;
+  }
+
+  .mt2-modules{
+    grid-template-columns:repeat(3,1fr);
+  }
+
+  .mt2-alpha-grid{
+    grid-template-columns:repeat(5,1fr);
+  }
+
+  .mt2-number-grid{
+    grid-template-columns:repeat(5,1fr);
+  }
+
+  .mt2-dev-letters{
+    grid-template-columns:1fr;
+  }
+
+  .mt2-album-covers{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+}
+
+
+@media(max-width:650px){
+
+  .mt2-hero-type{
+    width:100%;
+  }
+
+  .mt2-word{
+    height:clamp(75px,19vw,120px);
+  }
+
+  .mt2-hero-foot{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+
+  .mt2-hero-foot p{
+    width:100%;
+  }
+
+  .mt2-modules{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .mt2-module{
+    min-height:320px;
+  }
+
+  .mt2-dev-intro,
+  .mt2-film,
+  .mt2-feature,
+  .mt2-jewelry{
+    grid-template-columns:1fr;
+  }
+
+  .mt2-alpha-grid{
+    grid-template-columns:repeat(4,1fr);
+  }
+
+  .mt2-album-hero{
+    width:100%;
+  }
+
+  .mt2-rail,
+  .mt2-tip{
+    display:none;
+  }
+
+}
+
+
+@media(prefers-reduced-motion:reduce){
+
+  .mt2-strip-track{
+    animation:none;
+  }
+
+}
+
+
+
+/* =========================================================
+   MODULAR TYPEFACE — HERO REFINEMENT
+   ========================================================= */
+
+.mt2-hero-inner{
+  padding-top:clamp(145px,17vh,195px) !important;
+  padding-bottom:clamp(44px,5vh,62px) !important;
+}
+
+
+/* meta sits closer to the type specimen */
+.mt2-meta{
+  margin-bottom:clamp(30px,4vh,48px) !important;
+}
+
+
+/* control the overall title block */
+.mt2-hero-type{
+  width:min(1160px,82vw) !important;
+}
+
+
+/* smaller + more controlled line height */
+.mt2-word{
+  height:clamp(96px,13.4vw,195px) !important;
+}
+
+
+/* give the two lines breathing room */
+.mt2-word-typeface{
+  margin-top:clamp(16px,1.6vw,28px) !important;
+}
+
+
+/* slightly tighter glyph spacing */
+.mt2-hero-glyph{
+  margin-right:clamp(3px,.4vw,7px) !important;
+}
+
+
+/* make sure long words never clip */
+.mt2-hero-glyph img{
+  max-width:100% !important;
+  object-fit:contain !important;
+}
+
+
+/* footer copy sits higher and feels intentional */
+.mt2-hero-foot{
+  margin-top:auto !important;
+  padding-top:clamp(28px,4vh,54px) !important;
+  align-items:flex-end !important;
+}
+
+
+.mt2-hero-foot p{
+  width:min(560px,46vw) !important;
+
+  font-size:clamp(15px,1.05vw,17px) !important;
+  line-height:1.48 !important;
+}
+
+
+/* slightly stronger but still subtle floating modules */
+.mt2-float{
+  opacity:.10 !important;
+}
+
+
+/* =========================================================
+   SECTION 01 — MODULE SYSTEM REFINEMENT
+   ========================================================= */
+
+.mt2-system{
+  padding-top:clamp(105px,11vw,170px) !important;
+  padding-bottom:clamp(105px,11vw,170px) !important;
+}
+
+
+/* reduce headline dominance */
+.mt2-system .mt2-head h2{
+  font-size:clamp(54px,6.5vw,104px) !important;
+  line-height:.9 !important;
+}
+
+
+/* tighter intro layout */
+.mt2-system .mt2-head{
+  margin-bottom:clamp(62px,7vw,100px) !important;
+}
+
+
+/* shorter module cards */
+.mt2-module{
+  min-height:clamp(280px,31vw,460px) !important;
+}
+
+
+/* enlarge actual module forms */
+.mt2-module > div{
+  padding:18% !important;
+}
+
+
+.mt2-module img{
+  max-height:210px !important;
+}
+
+
+/* stronger hover */
+.mt2-module:hover img{
+  transform:scale(1.18) rotate(4deg) !important;
+}
+
+
+/* =========================================================
+   LARGE DESKTOP
+   ========================================================= */
+
+@media(min-width:1400px){
+
+  .mt2-hero-type{
+    width:min(1180px,80vw) !important;
+  }
+
+  .mt2-word{
+    height:clamp(130px,12.6vw,195px) !important;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media(max-width:650px){
+
+  .mt2-hero-inner{
+    padding-top:125px !important;
+  }
+
+  .mt2-hero-type{
+    width:100% !important;
+  }
+
+  .mt2-word{
+    height:clamp(64px,17vw,95px) !important;
+  }
+
+  .mt2-word-typeface{
+    margin-top:12px !important;
+  }
+
+  .mt2-hero-foot p{
+    width:100% !important;
+  }
+
+}
+
+
+/* Modular Typeface — use global project rail geometry */
+.mt2 .chapter-rail{
+  color:currentColor;
+}
+
+.mt2 .chapter-tip{
+  pointer-events:none;
+}
+
+
+/* =========================================================
+   MODULAR TYPEFACE — LETTER DEVELOPMENT SCALE FIX
+   ========================================================= */
+
+/* section intro slightly tighter */
+.mt2-development .mt2-head{
+  margin-bottom:clamp(52px,6vw,88px) !important;
+}
+
+
+/* development_01 + development_02:
+   keep full image, but stop them becoming giant vertical panels */
+.mt2-dev-intro{
+  width:min(100%,1180px) !important;
+  margin-inline:auto !important;
+  margin-bottom:clamp(70px,8vw,120px) !important;
+
+  align-items:start !important;
+  background:transparent !important;
+  gap:clamp(18px,2vw,32px) !important;
+}
+
+.mt2-dev-intro figure{
+  display:flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+
+  background:#f5f3ee !important;
+  overflow:hidden !important;
+}
+
+.mt2-dev-intro img{
+  width:100% !important;
+  height:auto !important;
+
+  max-height:72vh !important;
+
+  object-fit:contain !important;
+}
+
+
+/* I / K / M / U construction grid */
+.mt2-dev-letters{
+  width:min(100%,1180px) !important;
+  margin-inline:auto !important;
+
+  gap:1px !important;
+}
+
+.mt2-dev-img{
+  min-height:0 !important;
+  height:clamp(390px,43vw,610px) !important;
+
+  padding:clamp(32px,4vw,62px) !important;
+}
+
+.mt2-dev-img img{
+  width:100% !important;
+  height:100% !important;
+
+  max-height:none !important;
+  object-fit:contain !important;
+}
+
+
+/* make captions feel like technical specimen labels */
+.mt2-dev-card figcaption{
+  min-height:42px !important;
+  padding:13px 14px !important;
+
+  align-items:center !important;
+}
+
+.mt2-dev-card figcaption span,
+.mt2-dev-card figcaption strong{
+  font-size:9px !important;
+  letter-spacing:.1em !important;
+}
+
+
+/* give the end of the development grid some breathing room */
+.mt2-development{
+  padding-bottom:clamp(120px,13vw,190px) !important;
+}
+
+
+@media(max-width:900px){
+
+  .mt2-dev-intro{
+    grid-template-columns:1fr !important;
+  }
+
+  .mt2-dev-intro img{
+    max-height:none !important;
+  }
+
+  .mt2-dev-img{
+    height:auto !important;
+    aspect-ratio:1 / .88 !important;
+  }
+
+}
+
+
+/* =========================================================
+   MODULAR TYPEFACE — DEVELOPMENT REFINEMENT V3
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   02 LETTER DEVELOPMENT
+   --------------------------------------------------------- */
+
+.mt2-development{
+  background:#e9e6df !important;
+
+  padding-top:
+    clamp(105px,11vw,170px) !important;
+
+  padding-bottom:
+    clamp(120px,12vw,190px) !important;
+}
+
+
+/* tighten heading area */
+
+.mt2-development .mt2-head{
+  margin-bottom:
+    clamp(55px,6vw,85px) !important;
+}
+
+
+
+/* =========================================================
+   DEVELOPMENT 01 / 02
+   transparent presentation
+   ========================================================= */
+
+.mt2-dev-intro{
+  width:100% !important;
+
+  display:grid !important;
+
+  grid-template-columns:
+    repeat(2,minmax(0,1fr)) !important;
+
+  gap:
+    clamp(24px,3vw,48px) !important;
+
+  margin:
+    0 0
+    clamp(90px,9vw,135px)
+    !important;
+
+  background:transparent !important;
+
+  border:0 !important;
+}
+
+
+/* remove card / panel feeling completely */
+
+.mt2-dev-intro figure{
+  margin:0 !important;
+
+  display:flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+
+  background:transparent !important;
+
+  border:0 !important;
+  box-shadow:none !important;
+
+  overflow:visible !important;
+}
+
+
+/* preserve actual artwork ratio */
+
+.mt2-dev-intro img{
+  display:block !important;
+
+  width:100% !important;
+  height:auto !important;
+
+  max-width:100% !important;
+  max-height:68vh !important;
+
+  object-fit:contain !important;
+
+  background:transparent !important;
+}
+
+
+/* =========================================================
+   I / K / M / U — ONE ROW
+   ========================================================= */
+
+.mt2-dev-letters{
+  width:100% !important;
+
+  display:grid !important;
+
+  grid-template-columns:
+    repeat(4,minmax(0,1fr)) !important;
+
+  gap:0 !important;
+
+  margin:0 !important;
+
+  background:transparent !important;
+
+  border-top:
+    1px solid rgba(23,21,22,.28) !important;
+
+  border-bottom:
+    1px solid rgba(23,21,22,.28) !important;
+
+  border-left:0 !important;
+  border-right:0 !important;
+}
+
+
+/* each glyph construction card */
+
+.mt2-dev-card{
+  min-width:0 !important;
+
+  margin:0 !important;
+
+  background:transparent !important;
+
+  border:0 !important;
+
+  border-right:
+    1px solid rgba(23,21,22,.22) !important;
+}
+
+.mt2-dev-card:last-child{
+  border-right:0 !important;
+}
+
+
+/* construction drawing area */
+
+.mt2-dev-img{
+  width:100% !important;
+
+  height:
+    clamp(390px,34vw,560px) !important;
+
+  min-height:0 !important;
+
+  padding:
+    clamp(28px,3.2vw,52px)
+    clamp(20px,2.2vw,36px)
+    !important;
+
+  display:flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+
+  background-color:transparent !important;
+
+
+  /* technical graph-paper grid */
+  background-image:
+    linear-gradient(
+      rgba(233,61,154,.12) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(233,61,154,.12) 1px,
+      transparent 1px
+    ) !important;
+
+  background-size:
+    28px 28px !important;
+}
+
+
+/* full image, never crop */
+
+.mt2-dev-img img{
+  display:block !important;
+
+  width:100% !important;
+  height:100% !important;
+
+  max-width:100% !important;
+  max-height:100% !important;
+
+  object-fit:contain !important;
+}
+
+
+/* technical labels */
+
+.mt2-dev-card figcaption{
+  min-height:46px !important;
+
+  padding:
+    13px 14px !important;
+
+  display:flex !important;
+
+  align-items:center !important;
+  justify-content:space-between !important;
+
+  background:transparent !important;
+
+  border-top:
+    1px solid rgba(23,21,22,.22) !important;
+}
+
+
+.mt2-dev-card figcaption span,
+.mt2-dev-card figcaption strong{
+  font-family:
+    var(--font-sans,Arial,sans-serif) !important;
+
+  font-size:9px !important;
+
+  line-height:1 !important;
+
+  letter-spacing:.12em !important;
+
+  text-transform:uppercase !important;
+}
+
+
+.mt2-dev-card figcaption strong{
+  font-weight:600 !important;
+}
+
+
+
+/* =========================================================
+   DEVELOPMENT SECTION — BETTER VISUAL RHYTHM
+   ========================================================= */
+
+/* give the first two studies breathing room */
+
+.mt2-dev-intro::after{
+  content:"";
+
+  display:none;
+}
+
+
+/* slightly softer graph-paper presence */
+
+.mt2-development .mt2-dev-img{
+  transition:
+    background-color .35s ease,
+    transform .35s ease !important;
+}
+
+
+/* subtle interaction, no gimmicks */
+
+@media(hover:hover) and (pointer:fine){
+
+  .mt2-dev-card:hover .mt2-dev-img{
+    background-color:
+      rgba(245,243,238,.42) !important;
+  }
+
+  .mt2-dev-card:hover img{
+    transform:scale(1.018);
+  }
+
+  .mt2-dev-card img{
+    transition:
+      transform .45s cubic-bezier(.2,.8,.2,1);
+  }
+
+}
+
+
+/* =========================================================
+   SECTION TRANSITION
+   make Alphabet feel like the next visual climax
+   ========================================================= */
+
+.mt2-alphabet{
+  border-top:0 !important;
+
+  padding-top:
+    clamp(105px,11vw,175px) !important;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media(max-width:1050px){
+
+  .mt2-dev-letters{
+    grid-template-columns:
+      repeat(2,minmax(0,1fr)) !important;
+  }
+
+  .mt2-dev-card:nth-child(2){
+    border-right:0 !important;
+  }
+
+  .mt2-dev-card:nth-child(-n+2){
+    border-bottom:
+      1px solid rgba(23,21,22,.22) !important;
+  }
+
+}
+
+
+@media(max-width:700px){
+
+  .mt2-dev-intro{
+    grid-template-columns:1fr !important;
+
+    gap:30px !important;
+  }
+
+  .mt2-dev-intro img{
+    max-height:none !important;
+  }
+
+  .mt2-dev-letters{
+    grid-template-columns:1fr !important;
+  }
+
+  .mt2-dev-card{
+    border-right:0 !important;
+
+    border-bottom:
+      1px solid rgba(23,21,22,.22) !important;
+  }
+
+  .mt2-dev-card:last-child{
+    border-bottom:0 !important;
+  }
+
+  .mt2-dev-img{
+    height:auto !important;
+
+    aspect-ratio:
+      4 / 3 !important;
+  }
+
+}
+
+
+/* =========================================================
+   MODULAR TYPEFACE — CONSTRUCTION GRID CLEANUP
+   Use the artwork's real pink guides instead of a fake CSS grid
+   ========================================================= */
+
+.mt2-dev-letters{
+  position:relative !important;
+
+  grid-template-columns:
+    repeat(4,minmax(0,1fr)) !important;
+
+  gap:0 !important;
+
+  background:transparent !important;
+
+  border-top:
+    1px solid rgba(23,21,22,.22) !important;
+
+  border-bottom:
+    1px solid rgba(23,21,22,.22) !important;
+}
+
+
+/* remove the misaligned artificial graph grid */
+.mt2-dev-img{
+  position:relative !important;
+
+  background-color:transparent !important;
+  background-image:none !important;
+
+  height:clamp(340px,30vw,490px) !important;
+
+  padding:
+    clamp(22px,2.2vw,34px)
+    clamp(14px,1.5vw,24px)
+    !important;
+
+  overflow:hidden !important;
+}
+
+
+/* artwork itself defines the construction system */
+.mt2-dev-img img{
+  position:relative !important;
+  z-index:2 !important;
+
+  display:block !important;
+
+  width:100% !important;
+  height:100% !important;
+
+  object-fit:contain !important;
+
+  max-width:100% !important;
+  max-height:100% !important;
+}
+
+
+/* subtle shared horizontal construction axes
+   aligned to the 1/3 + 2/3 structure visible in I/K/M/U */
+.mt2-dev-img::before,
+.mt2-dev-img::after{
+  content:"";
+
+  position:absolute;
+
+  left:0;
+  right:0;
+
+  z-index:1;
+
+  height:1px;
+
+  background:
+    rgba(233,61,154,.22);
+
+  pointer-events:none;
+}
+
+.mt2-dev-img::before{
+  top:33.333%;
+}
+
+.mt2-dev-img::after{
+  top:66.666%;
+}
+
+
+/* center construction axis */
+.mt2-dev-card{
+  position:relative !important;
+
+  background:transparent !important;
+}
+
+.mt2-dev-card::before{
+  content:"";
+
+  position:absolute;
+
+  z-index:1;
+
+  top:0;
+  bottom:46px;
+
+  left:50%;
+
+  width:1px;
+
+  background:
+    rgba(233,61,154,.16);
+
+  pointer-events:none;
+}
+
+
+/* I is a narrow construction:
+   don't force a fake center axis through it */
+.mt2-dev-card:first-child::before{
+  display:none;
+}
+
+
+/* cleaner separators */
+.mt2-dev-card{
+  border-right:
+    1px solid rgba(23,21,22,.18) !important;
+}
+
+.mt2-dev-card:last-child{
+  border-right:0 !important;
+}
+
+
+/* image labels */
+.mt2-dev-card figcaption{
+  position:relative !important;
+  z-index:3 !important;
+
+  min-height:46px !important;
+
+  background:
+    #e9e6df !important;
+
+  border-top:
+    1px solid rgba(23,21,22,.18) !important;
+}
+
+
+/* =========================================================
+   DEVELOPMENT 01 / 02
+   completely transparent — no white panels
+   ========================================================= */
+
+.mt2-dev-intro{
+  background:transparent !important;
+}
+
+.mt2-dev-intro figure{
+  background:transparent !important;
+  box-shadow:none !important;
+  border:0 !important;
+}
+
+.mt2-dev-intro img{
+  background:transparent !important;
+}
+
+
+/* =========================================================
+   Better transition into Alphabet
+   ========================================================= */
+
+.mt2-development{
+  padding-bottom:
+    clamp(90px,9vw,135px) !important;
+}
+
+.mt2-alphabet{
+  margin-top:0 !important;
+}
+
+
+/* =========================================================
+   Desktop: always one line
+   ========================================================= */
+
+@media(min-width:901px){
+
+  .mt2-dev-letters{
+    grid-template-columns:
+      repeat(4,minmax(0,1fr)) !important;
+  }
+
+}
+
+
+/* tablet */
+@media(max-width:900px){
+
+  .mt2-dev-letters{
+    grid-template-columns:
+      repeat(2,minmax(0,1fr)) !important;
+  }
+
+}
+
+
+/* mobile */
+@media(max-width:650px){
+
+  .mt2-dev-letters{
+    grid-template-columns:1fr !important;
+  }
+
+  .mt2-dev-img::before,
+  .mt2-dev-img::after,
+  .mt2-dev-card::before{
+    display:none !important;
+  }
+
+}
+
+
+/* =========================================================
+   MODULAR TYPEFACE — ALIGNED SMALL GRID V4
+   ========================================================= */
+
+/* restore small technical grid */
+.mt2-dev-img{
+  position:relative !important;
+
+  background-color:transparent !important;
+
+  background-image:
+    linear-gradient(
+      rgba(233,61,154,.10) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(233,61,154,.10) 1px,
+      transparent 1px
+    ) !important;
+
+  /* vertical rhythm aligned to the artwork */
+  background-size:
+    var(--gx,28px)
+    var(--gy,28px)
+    !important;
+
+  background-position:
+    var(--gox,0px)
+    var(--goy,0px)
+    !important;
+}
+
+
+/* remove the previous large shared construction lines */
+.mt2-dev-img::before,
+.mt2-dev-img::after{
+  display:none !important;
+}
+
+.mt2-dev-card::before{
+  display:none !important;
+}
+
+
+/* =========================================================
+   PER-GLYPH GRID TUNING
+   ========================================================= */
+
+/* I — 30x width */
+.mt2-dev-card:nth-child(1) .mt2-dev-img{
+  --gx:27px;
+  --gy:27px;
+
+  --gox:0px;
+  --goy:0px;
+}
+
+
+/* K — 60x width */
+.mt2-dev-card:nth-child(2) .mt2-dev-img{
+  --gx:27px;
+  --gy:27px;
+
+  --gox:0px;
+  --goy:0px;
+}
+
+
+/* M — 80x width */
+.mt2-dev-card:nth-child(3) .mt2-dev-img{
+  --gx:27px;
+  --gy:27px;
+
+  --gox:0px;
+  --goy:0px;
+}
+
+
+/* U — 80x width */
+.mt2-dev-card:nth-child(4) .mt2-dev-img{
+  --gx:27px;
+  --gy:27px;
+
+  --gox:0px;
+  --goy:0px;
+}
+
+
+/* keep cards visually clean */
+.mt2-dev-card{
+  background:transparent !important;
+}
+
+
+/* images stay above the grid */
+.mt2-dev-img img{
+  position:relative !important;
+  z-index:2 !important;
+
+  background:transparent !important;
+}
+
+
+/* slightly stronger grid on hover only */
+@media(hover:hover) and (pointer:fine){
+
+  .mt2-dev-card:hover .mt2-dev-img{
+    background-image:
+      linear-gradient(
+        rgba(233,61,154,.15) 1px,
+        transparent 1px
+      ),
+      linear-gradient(
+        90deg,
+        rgba(233,61,154,.15) 1px,
+        transparent 1px
+      ) !important;
+  }
+
+}
+
+
+/* =========================================================
+   MODULAR TYPEFACE — PRECISE CONSTRUCTION GRID ALIGNMENT
+   ========================================================= */
+
+.mt2-dev-card .mt2-dev-img{
+  --mt-unit:32.5px;
+
+  background-image:
+    linear-gradient(
+      rgba(233,61,154,.11) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(233,61,154,.11) 1px,
+      transparent 1px
+    ) !important;
+
+  background-size:
+    var(--mt-unit)
+    var(--mt-unit) !important;
+
+  /*
+    Align grid origin with the real pink construction
+    lines embedded in I / K / M / U artwork.
+  */
+  background-position:
+    10px .5px !important;
+
+  background-repeat:repeat !important;
+}
+
+
+/* same modular unit across all four letters */
+.mt2-dev-card:nth-child(1) .mt2-dev-img,
+.mt2-dev-card:nth-child(2) .mt2-dev-img,
+.mt2-dev-card:nth-child(3) .mt2-dev-img,
+.mt2-dev-card:nth-child(4) .mt2-dev-img{
+  --gx:32.5px !important;
+  --gy:32.5px !important;
+  --gox:10px !important;
+  --goy:.5px !important;
+}
+
+
+/* keep original construction artwork visually dominant */
+.mt2-dev-img img{
+  position:relative !important;
+  z-index:2 !important;
+}
+
+
+/* small grid stays subtle */
+.mt2-dev-img{
+  background-color:transparent !important;
+}
+
+
+/* remove any old large guide overlays */
+.mt2-dev-img::before,
+.mt2-dev-img::after,
+.mt2-dev-card::before{
+  display:none !important;
+}
+
+
+/* =========================================================
+   MODULAR TYPEFACE — PER-GLYPH GRID CALIBRATION
+   ========================================================= */
+
+/* base */
+.mt2-dev-card .mt2-dev-img{
+  background-repeat:repeat !important;
+
+  background-image:
+    linear-gradient(
+      rgba(233,61,154,.10) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(233,61,154,.10) 1px,
+      transparent 1px
+    ) !important;
+
+  background-size:
+    var(--grid-x)
+    var(--grid-y) !important;
+
+  background-position:
+    var(--grid-left)
+    var(--grid-top) !important;
+}
+
+
+/* ---------------------------------------------------------
+   I
+   narrow character — needs a different horizontal unit
+   --------------------------------------------------------- */
+
+.mt2-dev-card:nth-child(1) .mt2-dev-img{
+  --grid-x:43px;
+  --grid-y:32.7px;
+
+  --grid-left:4px;
+  --grid-top:1px;
+}
+
+
+/* ---------------------------------------------------------
+   K
+   --------------------------------------------------------- */
+
+.mt2-dev-card:nth-child(2) .mt2-dev-img{
+  --grid-x:32.7px;
+  --grid-y:32.7px;
+
+  --grid-left:9px;
+  --grid-top:1px;
+}
+
+
+/* ---------------------------------------------------------
+   M
+   --------------------------------------------------------- */
+
+.mt2-dev-card:nth-child(3) .mt2-dev-img{
+  --grid-x:32.85px;
+  --grid-y:32.7px;
+
+  --grid-left:7px;
+  --grid-top:1px;
+}
+
+
+/* ---------------------------------------------------------
+   U
+   --------------------------------------------------------- */
+
+.mt2-dev-card:nth-child(4) .mt2-dev-img{
+  --grid-x:32.65px;
+  --grid-y:32.7px;
+
+  --grid-left:10px;
+  --grid-top:1px;
+}
+
+
+/* kill older guide overlays */
+.mt2-dev-img::before,
+.mt2-dev-img::after,
+.mt2-dev-card::before{
+  display:none !important;
+}
+
+
+/* grid should remain secondary to the real artwork guides */
+.mt2-dev-card .mt2-dev-img{
+  background-color:transparent !important;
+}
+
+
+/* =========================================================
+   MODULAR TYPEFACE — FINAL SMALL GRID ALIGNMENT
+   ========================================================= */
+
+.mt2-dev-card .mt2-dev-img{
+  --mt-grid-unit:32.75px;
+
+  background-image:
+    linear-gradient(
+      rgba(233,61,154,.10) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(233,61,154,.10) 1px,
+      transparent 1px
+    ) !important;
+
+  background-size:
+    var(--mt-grid-unit)
+    var(--mt-grid-unit) !important;
+
+  /*
+    Shift origin so the repeated small grid lands
+    on the embedded pink construction lines.
+  */
+  background-position:
+    10.5px 11.25px !important;
+
+  background-repeat:repeat !important;
+}
+
+
+/* remove all older per-glyph calibration */
+.mt2-dev-card:nth-child(1) .mt2-dev-img,
+.mt2-dev-card:nth-child(2) .mt2-dev-img,
+.mt2-dev-card:nth-child(3) .mt2-dev-img,
+.mt2-dev-card:nth-child(4) .mt2-dev-img{
+  --grid-x:unset !important;
+  --grid-y:unset !important;
+  --grid-left:unset !important;
+  --grid-top:unset !important;
+
+  --gx:unset !important;
+  --gy:unset !important;
+  --gox:unset !important;
+  --goy:unset !important;
+
+  background-size:
+    32.75px 32.75px !important;
+
+  background-position:
+    10.5px 11.25px !important;
+}
+
+
+/* no fake large guide lines */
+.mt2-dev-img::before,
+.mt2-dev-img::after,
+.mt2-dev-card::before{
+  display:none !important;
+}
+
+
+/* keep original pink guides visually dominant */
+.mt2-dev-img img{
+  position:relative !important;
+  z-index:2 !important;
+}
+
+
+/* =========================================================
+   MODULAR TYPEFACE — GLOBAL REFINEMENT V5
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   GLOBAL TYPOGRAPHIC RHYTHM
+   --------------------------------------------------------- */
+
+.mt2{
+  --mt-border:rgba(23,21,22,.18);
+  --mt-pink-soft:rgba(233,61,154,.10);
+}
+
+.mt2-label{
+  font-size:9px !important;
+  letter-spacing:.13em !important;
+}
+
+.mt2-head p,
+.mt2-hero-foot p{
+  letter-spacing:-.012em;
+}
+
+
+/* =========================================================
+   02 — LETTER DEVELOPMENT
+   ========================================================= */
+
+.mt2-development{
+  padding-top:clamp(100px,10vw,155px) !important;
+  padding-bottom:clamp(95px,9vw,140px) !important;
+}
+
+
+/* slightly more controlled headline */
+.mt2-development .mt2-head h2{
+  font-size:clamp(56px,7vw,110px) !important;
+  line-height:.87 !important;
+}
+
+
+/* top development pair */
+.mt2-dev-intro{
+  width:100% !important;
+
+  margin-bottom:
+    clamp(75px,7vw,110px) !important;
+
+  gap:
+    clamp(28px,3vw,50px) !important;
+}
+
+.mt2-dev-intro figure{
+  min-width:0 !important;
+
+  background:transparent !important;
+
+  display:flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+}
+
+.mt2-dev-intro img{
+  width:100% !important;
+  height:auto !important;
+
+  max-height:64vh !important;
+
+  object-fit:contain !important;
+}
+
+
+/* ---------------------------------------------------------
+   I / K / M / U
+   --------------------------------------------------------- */
+
+.mt2-dev-letters{
+  width:100% !important;
+
+  grid-template-columns:
+    repeat(4,minmax(0,1fr)) !important;
+
+  border-top:
+    1px solid var(--mt-border) !important;
+
+  border-bottom:
+    1px solid var(--mt-border) !important;
+}
+
+
+/* make cards feel like one continuous specimen */
+.mt2-dev-card{
+  min-width:0 !important;
+
+  border-right:
+    1px solid var(--mt-border) !important;
+
+  background:transparent !important;
+}
+
+.mt2-dev-card:last-child{
+  border-right:0 !important;
+}
+
+
+/* slightly shorter construction area */
+.mt2-dev-img{
+  height:clamp(325px,29vw,455px) !important;
+
+  padding:
+    clamp(20px,2vw,30px)
+    clamp(12px,1.4vw,22px)
+    !important;
+
+  overflow:hidden !important;
+}
+
+
+/* finer small grid */
+.mt2-dev-card .mt2-dev-img{
+  background-image:
+    linear-gradient(
+      rgba(233,61,154,.085) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(233,61,154,.085) 1px,
+      transparent 1px
+    ) !important;
+}
+
+
+/* original construction drawing stays dominant */
+.mt2-dev-img img{
+  width:100% !important;
+  height:100% !important;
+
+  object-fit:contain !important;
+
+  position:relative !important;
+  z-index:2 !important;
+}
+
+
+/* technical caption strip */
+.mt2-dev-card figcaption{
+  height:46px !important;
+  min-height:46px !important;
+
+  padding:0 14px !important;
+
+  display:flex !important;
+  align-items:center !important;
+
+  background:transparent !important;
+
+  border-top:
+    1px solid var(--mt-border) !important;
+}
+
+
+/* quieter numbering */
+.mt2-dev-card figcaption span{
+  opacity:.7;
+}
+
+
+/* stronger letter label */
+.mt2-dev-card figcaption strong{
+  font-weight:600 !important;
+  opacity:1;
+}
+
+
+/* subtle hover, no gimmick */
+@media(hover:hover) and (pointer:fine){
+
+  .mt2-dev-card{
+    transition:
+      background .28s ease;
+  }
+
+  .mt2-dev-card:hover{
+    background:
+      rgba(245,243,238,.35) !important;
+  }
+
+  .mt2-dev-card:hover .mt2-dev-img{
+    background-image:
+      linear-gradient(
+        rgba(233,61,154,.13) 1px,
+        transparent 1px
+      ),
+      linear-gradient(
+        90deg,
+        rgba(233,61,154,.13) 1px,
+        transparent 1px
+      ) !important;
+  }
+
+}
+
+
+/* =========================================================
+   TRANSITION — DEVELOPMENT → ALPHABET
+   ========================================================= */
+
+.mt2-alphabet{
+  position:relative !important;
+
+  margin-top:0 !important;
+
+  padding-top:
+    clamp(110px,11vw,170px) !important;
+
+  padding-bottom:
+    clamp(120px,12vw,190px) !important;
+}
+
+
+/* make transition feel deliberate */
+.mt2-alphabet::before{
+  content:"";
+
+  position:absolute;
+
+  top:0;
+  left:0;
+  right:0;
+
+  height:1px;
+
+  background:
+    rgba(255,255,255,.08);
+}
+
+
+/* =========================================================
+   03 — ALPHABET REFINEMENT
+   ========================================================= */
+
+.mt2-alpha-head{
+  margin-bottom:
+    clamp(55px,6vw,90px) !important;
+
+  align-items:center !important;
+}
+
+
+/* slightly larger glyph display */
+.mt2-glyph{
+  padding:16% !important;
+
+  transition:
+    background .25s ease,
+    transform .25s ease !important;
+}
+
+
+/* more consistent specimen borders */
+.mt2-alpha-grid,
+.mt2-number-grid{
+  border-left:
+    1px solid rgba(255,255,255,.14);
+}
+
+.mt2-glyph{
+  border-top:
+    1px solid rgba(255,255,255,.14) !important;
+
+  border-right:
+    1px solid rgba(255,255,255,.14) !important;
+
+  border-bottom:
+    1px solid rgba(255,255,255,.14);
+}
+
+
+/* quieter labels */
+.mt2-glyph-label{
+  font-size:8px !important;
+
+  left:8px !important;
+  bottom:7px !important;
+
+  opacity:.32 !important;
+}
+
+
+/* stronger interaction */
+.mt2-glyph:hover{
+  background:#e93d9a !important;
+}
+
+.mt2-glyph:hover img{
+  transform:scale(1.16) !important;
+}
+
+
+/* numbers closer to letters */
+.mt2-number-grid{
+  margin-top:
+    clamp(42px,5vw,70px) !important;
+}
+
+
+/* =========================================================
+   HEADER ON DARK ALPHABET
+   ========================================================= */
+
+.project-modular-typeface .site-header{
+  transition:
+    color .25s ease,
+    background .25s ease;
+}
+
+
+/* =========================================================
+   SIDE NAV
+   Keep identical to other projects
+   ========================================================= */
+
+.mt2 .chapter-rail{
+  z-index:95;
+}
+
+.mt2 .chapter-tip{
+  z-index:96;
+}
+
+
+/* =========================================================
+   TYPE SPECIMEN
+   ========================================================= */
+
+.mt2-specimen{
+  padding-top:
+    clamp(90px,9vw,145px) !important;
+
+  padding-bottom:
+    clamp(90px,9vw,145px) !important;
+}
+
+.mt2-specimen-head{
+  margin-bottom:
+    clamp(36px,4vw,55px) !important;
+}
+
+
+/* =========================================================
+   APPLICATION RHYTHM
+   ========================================================= */
+
+.mt2-apps{
+  padding-top:
+    clamp(110px,11vw,175px) !important;
+}
+
+.mt2-apps figure figcaption{
+  padding-top:10px !important;
+
+  font-size:9px !important;
+
+  letter-spacing:.12em !important;
+}
+
+
+/* avoid huge dead spaces */
+.mt2-film{
+  margin-bottom:
+    clamp(80px,9vw,135px) !important;
+}
+
+.mt2-feature{
+  margin-bottom:
+    clamp(95px,11vw,165px) !important;
+}
+
+.mt2-album{
+  margin-bottom:
+    clamp(100px,11vw,170px) !important;
+}
+
+.mt2-clock{
+  margin-bottom:
+    clamp(100px,11vw,170px) !important;
+}
+
+
+/* =========================================================
+   NEXT PROJECT
+   ========================================================= */
+
+.mt2-next{
+  border-top:
+    1px solid rgba(23,21,22,.18);
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media(max-width:900px){
+
+  .mt2-dev-letters{
+    grid-template-columns:
+      repeat(2,minmax(0,1fr)) !important;
+  }
+
+  .mt2-dev-img{
+    height:clamp(350px,55vw,520px) !important;
+  }
+
+}
+
+
+@media(max-width:650px){
+
+  .mt2-dev-letters{
+    grid-template-columns:1fr !important;
+  }
+
+  .mt2-dev-img{
+    height:auto !important;
+    aspect-ratio:4 / 3 !important;
+  }
+
+}
+
+
+/* =========================================================
+   MODULAR TYPEFACE — SECTION FLOW + APPLICATION EDITORIAL V6
+   ========================================================= */
+
+
+/* =========================================================
+   SECTION TRANSITIONS
+   ========================================================= */
+
+/* Development should finish tighter before alphabet */
+.mt2-development{
+  padding-bottom:clamp(80px,7vw,115px) !important;
+}
+
+
+/* Alphabet becomes a strong uninterrupted chapter */
+.mt2-alphabet{
+  padding-top:clamp(95px,9vw,145px) !important;
+  padding-bottom:clamp(95px,9vw,145px) !important;
+
+  margin:0 !important;
+
+  background:#171516 !important;
+}
+
+
+/* reduce dead air above alphabet specimen */
+.mt2-alpha-head{
+  margin-bottom:clamp(45px,5vw,75px) !important;
+}
+
+
+/* specimen begins immediately after alphabet */
+.mt2-specimen{
+  position:relative !important;
+
+  margin:0 !important;
+
+  padding-top:clamp(62px,6vw,95px) !important;
+  padding-bottom:clamp(62px,6vw,95px) !important;
+
+  background:#e93d9a !important;
+
+  border-top:0 !important;
+}
+
+
+/* thin technical transition line */
+.mt2-specimen::before{
+  content:"";
+
+  position:absolute;
+
+  top:0;
+  left:0;
+  right:0;
+
+  height:1px;
+
+  background:
+    rgba(23,21,22,.30);
+}
+
+
+/* tighten specimen header */
+.mt2-specimen-head{
+  margin-bottom:clamp(28px,3vw,44px) !important;
+}
+
+
+/* larger, stronger moving type strip */
+.mt2-strip-word{
+  height:clamp(115px,15vw,225px) !important;
+
+  padding:
+    clamp(18px,2vw,34px)
+    clamp(28px,3vw,52px)
+    !important;
+}
+
+
+/* =========================================================
+   SPECIMEN → APPLICATION TRANSITION
+   ========================================================= */
+
+.mt2-apps{
+  position:relative !important;
+
+  padding-top:clamp(95px,9vw,150px) !important;
+  padding-bottom:clamp(110px,11vw,180px) !important;
+
+  background:#f5f3ee !important;
+}
+
+
+/* subtle continuation from pink chapter */
+.mt2-apps::before{
+  content:"";
+
+  position:absolute;
+
+  top:0;
+  left:var(--pad);
+  right:var(--pad);
+
+  height:1px;
+
+  background:
+    rgba(23,21,22,.18);
+}
+
+
+.mt2-apps .mt2-head{
+  margin-bottom:clamp(70px,7vw,110px) !important;
+}
+
+
+/* =========================================================
+   APPLICATION — COMMON IMAGE SYSTEM
+   ========================================================= */
+
+.mt2-apps figure{
+  position:relative !important;
+
+  margin:0 !important;
+}
+
+
+.mt2-apps figure img{
+  width:100% !important;
+  height:auto !important;
+
+  display:block !important;
+}
+
+
+.mt2-apps figcaption{
+  padding-top:11px !important;
+
+  font-size:9px !important;
+
+  line-height:1.25 !important;
+
+  letter-spacing:.12em !important;
+
+  text-transform:uppercase !important;
+
+  opacity:.75;
+}
+
+
+/* =========================================================
+   FILM TITLES
+   ========================================================= */
+
+.mt2-film{
+  display:grid !important;
+
+  grid-template-columns:
+    repeat(2,minmax(0,1fr)) !important;
+
+  gap:clamp(16px,2vw,30px) !important;
+
+  margin-bottom:
+    clamp(105px,11vw,170px) !important;
+}
+
+
+.mt2-film figure{
+  min-width:0 !important;
+}
+
+
+.mt2-film img{
+  width:100% !important;
+
+  aspect-ratio:16 / 9 !important;
+
+  object-fit:cover !important;
+}
+
+
+/* =========================================================
+   SKATEBOARD
+   portrait + landscape editorial pair
+   ========================================================= */
+
+.mt2-feature{
+  display:grid !important;
+
+  grid-template-columns:
+    minmax(0,.72fr)
+    minmax(0,1.28fr) !important;
+
+  gap:
+    clamp(28px,4vw,72px) !important;
+
+  align-items:end !important;
+
+  margin-bottom:
+    clamp(120px,13vw,205px) !important;
+}
+
+
+/* portrait skateboard */
+.mt2-feature figure:first-child{
+  align-self:start !important;
+
+  padding-top:
+    clamp(20px,4vw,65px);
+}
+
+
+.mt2-feature figure:first-child img{
+  max-height:72vh !important;
+
+  object-fit:contain !important;
+}
+
+
+/* landscape detail gets more visual weight */
+.mt2-feature figure:last-child{
+  align-self:end !important;
+}
+
+
+.mt2-feature figure:last-child img{
+  width:100% !important;
+
+  max-height:none !important;
+
+  object-fit:contain !important;
+}
+
+
+/* =========================================================
+   ALBUM
+   main visual + 2x2 covers in one editorial composition
+   ========================================================= */
+
+.mt2-album{
+  display:grid !important;
+
+  grid-template-columns:
+    minmax(0,1.25fr)
+    minmax(320px,.75fr) !important;
+
+  gap:
+    clamp(36px,5vw,82px) !important;
+
+  align-items:end !important;
+
+  margin-bottom:
+    clamp(125px,13vw,210px) !important;
+}
+
+
+/* remove old isolated main-image layout */
+.mt2-album-hero{
+  width:100% !important;
+
+  margin:0 !important;
+
+  align-self:end !important;
+}
+
+
+.mt2-album-hero img{
+  width:100% !important;
+
+  max-height:82vh !important;
+
+  object-fit:contain !important;
+}
+
+
+/* four album covers become one compact system */
+.mt2-album-covers{
+  display:grid !important;
+
+  grid-template-columns:
+    repeat(2,minmax(0,1fr)) !important;
+
+  gap:
+    clamp(10px,1.2vw,18px) !important;
+
+  align-self:end !important;
+}
+
+
+.mt2-album-covers figure{
+  min-width:0 !important;
+}
+
+
+.mt2-album-covers img{
+  width:100% !important;
+
+  aspect-ratio:1 / 1 !important;
+
+  object-fit:cover !important;
+}
+
+
+/* =========================================================
+   CLOCK
+   large isolated physical object
+   ========================================================= */
+
+.mt2-clock{
+  width:min(76%,1080px) !important;
+
+  margin:
+    0 0
+    clamp(130px,14vw,220px)
+    auto
+    !important;
+}
+
+
+.mt2-clock img{
+  width:100% !important;
+
+  max-height:80vh !important;
+
+  object-fit:contain !important;
+}
+
+
+/* =========================================================
+   JEWELRY
+   turn the final physical application into a dark band
+   ========================================================= */
+
+.mt2-jewelry{
+  position:relative !important;
+
+  display:grid !important;
+
+  grid-template-columns:
+    repeat(3,minmax(0,1fr)) !important;
+
+  gap:
+    clamp(14px,1.5vw,24px) !important;
+
+  padding-top:
+    clamp(70px,7vw,110px) !important;
+
+  padding-bottom:
+    clamp(70px,7vw,110px) !important;
+
+  isolation:isolate;
+}
+
+
+/* full-bleed dark field while keeping shell alignment */
+.mt2-jewelry::before{
+  content:"";
+
+  position:absolute;
+
+  z-index:-1;
+
+  top:0;
+  bottom:0;
+
+  left:50%;
+
+  width:100vw;
+
+  transform:
+    translateX(-50%);
+
+  background:#171516;
+}
+
+
+.mt2-jewelry figure{
+  color:#f5f3ee !important;
+}
+
+
+.mt2-jewelry img{
+  width:100% !important;
+
+  aspect-ratio:3 / 4 !important;
+
+  object-fit:cover !important;
+}
+
+
+.mt2-jewelry figcaption{
+  color:#f5f3ee !important;
+
+  opacity:.72 !important;
+}
+
+
+/* =========================================================
+   APPLICATION IMAGE HOVER
+   very restrained
+   ========================================================= */
+
+@media(hover:hover) and (pointer:fine){
+
+  .mt2-apps figure{
+    overflow:hidden;
+  }
+
+  .mt2-apps figure img{
+    transition:
+      transform .55s cubic-bezier(.2,.8,.2,1);
+  }
+
+  .mt2-film figure:hover img,
+  .mt2-feature figure:hover img,
+  .mt2-album figure:hover img,
+  .mt2-clock:hover img,
+  .mt2-jewelry figure:hover img{
+    transform:scale(1.012);
+  }
+
+}
+
+
+/* =========================================================
+   APPLICATION → ENDING
+   ========================================================= */
+
+.mt2-ending{
+  margin-top:0 !important;
+
+  border-top:
+    1px solid rgba(255,255,255,.08);
+}
+
+
+/* =========================================================
+   DESKTOP DETAIL
+   ========================================================= */
+
+@media(min-width:1200px){
+
+  /* stagger film pair just enough to avoid rigid PDF feeling */
+  .mt2-film figure:nth-child(2){
+    transform:
+      translateY(clamp(24px,3vw,48px));
+  }
+
+
+  /* skateboard landscape gets slight downward offset */
+  .mt2-feature figure:last-child{
+    transform:
+      translateY(clamp(16px,2vw,30px));
+  }
+
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media(max-width:900px){
+
+  .mt2-feature{
+    grid-template-columns:
+      1fr 1.25fr !important;
+  }
+
+
+  .mt2-album{
+    grid-template-columns:1fr !important;
+  }
+
+
+  .mt2-album-covers{
+    width:75% !important;
+
+    margin-left:auto !important;
+  }
+
+
+  .mt2-clock{
+    width:88% !important;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media(max-width:650px){
+
+  .mt2-film,
+  .mt2-feature,
+  .mt2-jewelry{
+    grid-template-columns:1fr !important;
+  }
+
+
+  .mt2-feature figure:first-child{
+    width:72%;
+  }
+
+
+  .mt2-album-covers{
+    width:100% !important;
+  }
+
+
+  .mt2-clock{
+    width:100% !important;
+  }
+
+
+  .mt2-jewelry{
+    gap:34px !important;
+  }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media(prefers-reduced-motion:reduce){
+
+  .mt2-apps figure img{
+    transition:none !important;
+  }
+
+}
+
+/* =========================================================
+   MODULAR TYPEFACE
+   APPLICATION ALIGNMENT — FINAL OVERRIDE
+   ========================================================= */
+
+
+/* =========================================================
+   01 FILM — LOCK BOTH IMAGES TO THE SAME FRAME
+   ========================================================= */
+
+.mt2-apps .mt2-film{
+  display:grid !important;
+  grid-template-columns:repeat(2,minmax(0,1fr)) !important;
+
+  gap:clamp(18px,2vw,30px) !important;
+
+  align-items:start !important;
+
+  margin-bottom:
+    clamp(90px,9vw,145px) !important;
+}
+
+.mt2-apps .mt2-film figure,
+.mt2-apps .mt2-film figure:nth-child(1),
+.mt2-apps .mt2-film figure:nth-child(2){
+  display:flex !important;
+  flex-direction:column !important;
+
+  width:100% !important;
+  height:auto !important;
+
+  margin:0 !important;
+  padding:0 !important;
+
+  align-self:start !important;
+
+  transform:none !important;
+  translate:none !important;
+}
+
+.mt2-apps .mt2-film figure img{
+  display:block !important;
+
+  width:100% !important;
+  height:auto !important;
+
+  aspect-ratio:16 / 9 !important;
+
+  min-height:0 !important;
+  max-height:none !important;
+
+  object-fit:cover !important;
+
+  margin:0 !important;
+  padding:0 !important;
+
+  transform:none !important;
+}
+
+.mt2-apps .mt2-film figcaption{
+  width:100% !important;
+  margin:0 !important;
+
+  flex:none !important;
+}
+
+
+/* =========================================================
+   02 SKATEBOARD
+   PORTRAIT LEFT + DETAIL RIGHT
+   EXACT SHARED MEDIA HEIGHT
+   ========================================================= */
+
+.mt2-apps .mt2-feature{
+  --mt-skate-h:
+    clamp(500px,43vw,660px);
+
+  display:grid !important;
+
+  grid-template-columns:
+    minmax(260px,.68fr)
+    minmax(0,1.32fr) !important;
+
+  gap:
+    clamp(24px,4vw,64px) !important;
+
+  align-items:start !important;
+
+  margin-bottom:
+    clamp(100px,11vw,170px) !important;
+}
+
+
+/* erase all old offsets */
+.mt2-apps .mt2-feature figure,
+.mt2-apps .mt2-feature figure:first-child,
+.mt2-apps .mt2-feature figure:last-child{
+  display:flex !important;
+  flex-direction:column !important;
+
+  width:100% !important;
+  height:auto !important;
+
+  margin:0 !important;
+  padding:0 !important;
+
+  align-self:start !important;
+
+  transform:none !important;
+  translate:none !important;
+}
+
+
+/* BOTH media areas are exactly equal height */
+.mt2-apps .mt2-feature figure img,
+.mt2-apps .mt2-feature figure:first-child img,
+.mt2-apps .mt2-feature figure:last-child img{
+  display:block !important;
+
+  width:100% !important;
+  height:var(--mt-skate-h) !important;
+
+  min-height:var(--mt-skate-h) !important;
+  max-height:var(--mt-skate-h) !important;
+
+  margin:0 !important;
+
+  object-fit:cover !important;
+
+  transform:none !important;
+}
+
+
+/* portrait crop:
+   crop the mockup rather than shrinking the whole image */
+.mt2-apps .mt2-feature figure:first-child img{
+  object-position:center center !important;
+}
+
+
+/* detail remains a landscape crop */
+.mt2-apps .mt2-feature figure:last-child img{
+  object-position:center center !important;
+}
+
+
+/* captions now share same baseline */
+.mt2-apps .mt2-feature figcaption{
+  width:100% !important;
+
+  flex:none !important;
+
+  margin:0 !important;
+}
+
+
+/* =========================================================
+   03 ALBUM
+   LEFT 3D + RIGHT 2×2
+   EXACT SAME TOP AND BOTTOM
+   ========================================================= */
+
+.mt2-apps .mt2-album{
+  --mt-album-h:
+    clamp(500px,44vw,670px);
+
+  display:grid !important;
+
+  grid-template-columns:
+    minmax(0,1.28fr)
+    minmax(330px,.72fr) !important;
+
+  gap:
+    clamp(24px,3.5vw,54px) !important;
+
+  align-items:start !important;
+
+  margin-bottom:0 !important;
+}
+
+
+/* LEFT */
+.mt2-apps .mt2-album-hero{
+  display:flex !important;
+  flex-direction:column !important;
+
+  width:100% !important;
+
+  margin:0 !important;
+  padding:0 !important;
+
+  align-self:start !important;
+
+  transform:none !important;
+}
+
+
+.mt2-apps .mt2-album-hero img{
+  display:block !important;
+
+  width:100% !important;
+  height:var(--mt-album-h) !important;
+
+  min-height:var(--mt-album-h) !important;
+  max-height:var(--mt-album-h) !important;
+
+  margin:0 !important;
+
+  object-fit:cover !important;
+  object-position:center center !important;
+
+  transform:none !important;
+}
+
+
+/* RIGHT 2 × 2 */
+.mt2-apps .mt2-album-covers{
+  display:grid !important;
+
+  grid-template-columns:
+    repeat(2,minmax(0,1fr)) !important;
+
+  grid-template-rows:
+    repeat(2,minmax(0,1fr)) !important;
+
+  gap:
+    clamp(8px,.8vw,12px) !important;
+
+  width:100% !important;
+
+  height:var(--mt-album-h) !important;
+  min-height:var(--mt-album-h) !important;
+  max-height:var(--mt-album-h) !important;
+
+  margin:0 !important;
+  padding:0 !important;
+
+  align-self:start !important;
+
+  position:relative !important;
+}
+
+
+/* remove previous fake album footer */
+.mt2-apps .mt2-album-covers::after{
+  display:none !important;
+}
+
+
+.mt2-apps .mt2-album-covers figure{
+  display:block !important;
+
+  width:100% !important;
+  height:100% !important;
+
+  min-width:0 !important;
+  min-height:0 !important;
+
+  margin:0 !important;
+  padding:0 !important;
+
+  overflow:hidden !important;
+}
+
+
+.mt2-apps .mt2-album-covers figure img{
+  display:block !important;
+
+  width:100% !important;
+  height:100% !important;
+
+  min-height:0 !important;
+  max-height:none !important;
+
+  aspect-ratio:auto !important;
+
+  object-fit:cover !important;
+  object-position:center center !important;
+
+  margin:0 !important;
+}
+
+
+/* hide four micro-captions */
+.mt2-apps .mt2-album-covers figcaption{
+  display:none !important;
+}
+
+
+/* left caption sits BELOW artwork, not included in media height */
+.mt2-apps .mt2-album-hero figcaption{
+  flex:none !important;
+}
+
+
+/* =========================================================
+   ALBUM COVERS SHARED CAPTION
+   ========================================================= */
+
+.mt2-apps .mt2-album-covers{
+  margin-bottom:38px !important;
+}
+
+.mt2-apps .mt2-album-covers::before{
+  content:"ALBUM COVERS";
+
+  position:absolute;
+
+  top:100%;
+
+  left:0;
+  right:0;
+
+  height:38px;
+
+  display:flex !important;
+  align-items:center;
+
+  font-family:
+    var(--font-sans,Arial,sans-serif);
+
+  font-size:8px;
+
+  line-height:1;
+
+  letter-spacing:.13em;
+
+  text-transform:uppercase;
+
+  color:#171516;
+
+  border-bottom:
+    1px solid rgba(23,21,22,.22);
+}
+
+
+/* =========================================================
+   CLOCK — DELETE VISUALLY EVEN IF OLD MARKUP EXISTS
+   ========================================================= */
+
+.mt2-apps .mt2-clock{
+  display:none !important;
+}
+
+
+/* =========================================================
+   JEWELLERY
+   SMALLER + MORE BREATHING SPACE
+   ========================================================= */
+
+.mt2-jewelry-wrap{
+  margin-top:
+    clamp(105px,11vw,170px) !important;
+
+  padding-top:
+    clamp(60px,6vw,90px) !important;
+
+  padding-bottom:
+    clamp(80px,8vw,120px) !important;
+}
+
+
+.mt2-jewelry-head{
+  margin-bottom:
+    clamp(42px,4vw,62px) !important;
+}
+
+
+.mt2-jewelry{
+  width:min(76%,1040px) !important;
+
+  grid-template-columns:
+    repeat(3,minmax(0,1fr)) !important;
+
+  gap:
+    clamp(30px,4vw,64px) !important;
+
+  margin-inline:auto !important;
+}
+
+
+.mt2-jewelry figure{
+  width:100% !important;
+}
+
+
+/* deliberately smaller jewellery visual */
+.mt2-jewelry img{
+  display:block !important;
+
+  width:100% !important;
+  height:auto !important;
+
+  max-height:390px !important;
+
+  aspect-ratio:3 / 4 !important;
+
+  object-fit:cover !important;
+
+  margin:0 auto !important;
+}
+
+
+/* =========================================================
+   REMOVE OLD APPLICATION TRANSFORMS / STAGGER
+   ========================================================= */
+
+@media(min-width:901px){
+
+  .mt2-film figure,
+  .mt2-film figure:nth-child(2),
+  .mt2-feature figure,
+  .mt2-feature figure:first-child,
+  .mt2-feature figure:last-child,
+  .mt2-album-hero,
+  .mt2-album-covers{
+    transform:none !important;
+    translate:none !important;
+
+    top:auto !important;
+    bottom:auto !important;
+  }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media(max-width:900px){
+
+  .mt2-apps .mt2-feature{
+    --mt-skate-h:520px;
+
+    grid-template-columns:
+      .72fr 1.28fr !important;
+  }
+
+
+  .mt2-apps .mt2-album{
+    --mt-album-h:auto;
+
+    grid-template-columns:1fr !important;
+  }
+
+
+  .mt2-apps .mt2-album-hero img{
+    height:auto !important;
+
+    min-height:0 !important;
+    max-height:none !important;
+  }
+
+
+  .mt2-apps .mt2-album-covers{
+    height:auto !important;
+
+    min-height:0 !important;
+    max-height:none !important;
+
+    aspect-ratio:1 / 1 !important;
+
+    margin-top:35px !important;
+  }
+
+}
+
+
+@media(max-width:650px){
+
+  .mt2-apps .mt2-film,
+  .mt2-apps .mt2-feature{
+    grid-template-columns:1fr !important;
+  }
+
+
+  .mt2-apps .mt2-feature{
+    --mt-skate-h:auto;
+  }
+
+
+  .mt2-apps .mt2-feature figure img{
+    height:auto !important;
+
+    min-height:0 !important;
+    max-height:none !important;
+  }
+
+
+  .mt2-apps .mt2-feature figure:first-child img{
+    aspect-ratio:3 / 4 !important;
+  }
+
+
+  .mt2-jewelry{
+    width:min(78%,430px) !important;
+
+    grid-template-columns:1fr !important;
+  }
+
+}
+
+
+/* =========================================================
+   MODULAR TYPEFACE — ALBUM + JEWELLERY FINAL REFINEMENT
+   ========================================================= */
+
+
+/* =========================================================
+   ALBUM
+   Left 16:9 crop / Right true 2×2 squares
+   ========================================================= */
+
+.mt2-apps .mt2-album{
+  display:grid !important;
+
+  grid-template-columns:
+    minmax(0,1.28fr)
+    minmax(0,.72fr) !important;
+
+  gap:
+    clamp(22px,3.2vw,50px) !important;
+
+  align-items:start !important;
+
+  width:100% !important;
+}
+
+
+/* ---------------------------------------------------------
+   LEFT — 3D INFLATE
+   --------------------------------------------------------- */
+
+.mt2-apps .mt2-album-hero{
+  width:100% !important;
+
+  margin:0 !important;
+  padding:0 !important;
+
+  display:flex !important;
+  flex-direction:column !important;
+}
+
+
+/*
+  16:9 is deliberate:
+  with the current 1.28 / .72 column ratio,
+  its rendered height closely matches the square 2×2 block.
+*/
+.mt2-apps .mt2-album-hero img{
+  display:block !important;
+
+  width:100% !important;
+  height:auto !important;
+
+  aspect-ratio:16 / 9 !important;
+
+  min-height:0 !important;
+  max-height:none !important;
+
+  object-fit:cover !important;
+
+  /*
+    Keep the green type as the focal point while cropping.
+  */
+  object-position:center 48% !important;
+
+  margin:0 !important;
+}
+
+
+/* ---------------------------------------------------------
+   RIGHT — ALBUM COVERS
+   entire 2×2 composition = square
+   --------------------------------------------------------- */
+
+.mt2-apps .mt2-album-covers{
+  display:grid !important;
+
+  grid-template-columns:
+    repeat(2,minmax(0,1fr)) !important;
+
+  grid-template-rows:
+    repeat(2,minmax(0,1fr)) !important;
+
+  gap:
+    clamp(8px,.75vw,12px) !important;
+
+  width:100% !important;
+  height:auto !important;
+
+  min-height:0 !important;
+  max-height:none !important;
+
+  aspect-ratio:1 / 1 !important;
+
+  margin:0 !important;
+  padding:0 !important;
+
+  align-self:start !important;
+
+  overflow:visible !important;
+}
+
+
+/* every cover is a real square */
+.mt2-apps .mt2-album-covers figure{
+  width:100% !important;
+  height:100% !important;
+
+  min-width:0 !important;
+  min-height:0 !important;
+
+  aspect-ratio:1 / 1 !important;
+
+  margin:0 !important;
+  padding:0 !important;
+
+  overflow:hidden !important;
+}
+
+
+/* crop rather than distort */
+.mt2-apps .mt2-album-covers figure img{
+  display:block !important;
+
+  width:100% !important;
+  height:100% !important;
+
+  min-width:0 !important;
+  min-height:0 !important;
+
+  max-width:none !important;
+  max-height:none !important;
+
+  aspect-ratio:1 / 1 !important;
+
+  object-fit:cover !important;
+  object-position:center center !important;
+
+  margin:0 !important;
+}
+
+
+/* remove all old generated album caption systems */
+.mt2-apps .mt2-album-covers::before,
+.mt2-apps .mt2-album-covers::after{
+  display:none !important;
+}
+
+
+/* individual captions remain hidden */
+.mt2-apps .mt2-album-covers figcaption{
+  display:none !important;
+}
+
+
+/* album labels aligned beneath both compositions */
+.mt2-apps .mt2-album-hero figcaption{
+  height:40px !important;
+
+  padding:
+    10px 0 0 !important;
+
+  border-bottom:
+    1px solid rgba(23,21,22,.22) !important;
+}
+
+
+/* shared label under right square */
+.mt2-apps .mt2-album-covers{
+  margin-bottom:40px !important;
+}
+
+.mt2-apps .mt2-album-covers::after{
+  content:"ALBUM COVERS";
+
+  display:flex !important;
+
+  position:absolute;
+
+  top:100%;
+  left:0;
+  right:0;
+
+  height:40px;
+
+  align-items:flex-start;
+
+  padding-top:10px;
+
+  border-bottom:
+    1px solid rgba(23,21,22,.22);
+
+  font-family:
+    var(--font-sans,Arial,sans-serif);
+
+  font-size:8px;
+
+  line-height:1;
+
+  letter-spacing:.13em;
+
+  text-transform:uppercase;
+
+  color:#171516;
+}
+
+
+/* needed for the shared caption */
+.mt2-apps .mt2-album-covers{
+  position:relative !important;
+}
+
+
+
+/* =========================================================
+   JEWELLERY
+   Match exact dark tone used by the source imagery
+   ========================================================= */
+
+.mt2-jewelry-wrap{
+  background:#171516 !important;
+  color:#f5f3ee !important;
+}
+
+
+/* full-width field = same tone */
+.mt2-jewelry-wrap::before{
+  background:#171516 !important;
+}
+
+
+/*
+  Remove any slightly different backgrounds
+  coming from parent application section.
+*/
+.mt2-jewelry{
+  background:#171516 !important;
+}
+
+
+/* figure itself also uses same exact dark */
+.mt2-jewelry figure{
+  background:#171516 !important;
+}
+
+
+/*
+  The necklace artwork background is effectively the same
+  #171516 tone, so don't introduce borders/cards around it.
+*/
+.mt2-jewelry img{
+  background:#171516 !important;
+
+  border:0 !important;
+  box-shadow:none !important;
+}
+
+
+/* make the three pieces slightly more compact */
+.mt2-jewelry{
+  width:min(72%,980px) !important;
+
+  gap:
+    clamp(36px,5vw,80px) !important;
+}
+
+
+.mt2-jewelry img{
+  max-height:360px !important;
+
+  object-fit:contain !important;
+}
+
+
+/* cleaner jewellery captions */
+.mt2-jewelry figcaption{
+  padding-top:14px !important;
+
+  border-bottom:0 !important;
+
+  opacity:.72 !important;
+}
+
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media(max-width:900px){
+
+  .mt2-apps .mt2-album{
+    grid-template-columns:1fr !important;
+  }
+
+  .mt2-apps .mt2-album-hero img{
+    aspect-ratio:16 / 9 !important;
+  }
+
+  .mt2-apps .mt2-album-covers{
+    width:70% !important;
+
+    margin:
+      clamp(32px,5vw,55px)
+      0
+      40px
+      auto !important;
+  }
+
+}
+
+
+@media(max-width:650px){
+
+  .mt2-apps .mt2-album-covers{
+    width:100% !important;
+  }
+
+  .mt2-jewelry{
+    width:min(78%,420px) !important;
+  }
+
+}
+
+
+/* =========================================================
+   MODULAR TYPEFACE — JEWELLERY SECTION FIX
+   ========================================================= */
+
+/*
+  Break the jewellery block out of the parent .shell
+  so the dark background is genuinely full viewport width.
+*/
+.mt2-jewelry-wrap{
+  position:relative !important;
+
+  left:50% !important;
+
+  width:100vw !important;
+  max-width:none !important;
+
+  margin-left:-50vw !important;
+  margin-right:0 !important;
+
+  margin-top:
+    clamp(95px,9vw,145px) !important;
+
+  padding:
+    clamp(58px,6vw,86px)
+    var(--pad)
+    clamp(76px,8vw,118px)
+    !important;
+
+  background:#171516 !important;
+  color:#f5f3ee !important;
+
+  overflow:hidden !important;
+
+  isolation:auto !important;
+}
+
+
+/* old fake full-bleed layer no longer needed */
+.mt2-jewelry-wrap::before{
+  display:none !important;
+}
+
+
+/* ---------------------------------------------------------
+   SECTION HEADING
+   --------------------------------------------------------- */
+
+.mt2-jewelry-head{
+  width:min(
+    100%,
+    calc(var(--max) - (var(--pad) * 2))
+  ) !important;
+
+  margin:
+    0 auto
+    clamp(48px,5vw,74px)
+    !important;
+
+  display:flex !important;
+
+  justify-content:space-between !important;
+  align-items:center !important;
+
+  gap:32px !important;
+}
+
+
+.mt2-jewelry-head .mt2-label{
+  display:block !important;
+
+  margin:0 !important;
+
+  color:#f5f3ee !important;
+
+  white-space:nowrap !important;
+
+  opacity:.82 !important;
+}
+
+
+/* ---------------------------------------------------------
+   JEWELLERY GRID
+   --------------------------------------------------------- */
+
+.mt2-jewelry{
+  width:min(78%,1080px) !important;
+
+  margin:0 auto !important;
+  padding:0 !important;
+
+  display:grid !important;
+
+  grid-template-columns:
+    repeat(3,minmax(0,1fr)) !important;
+
+  gap:
+    clamp(42px,5.2vw,82px) !important;
+
+  background:transparent !important;
+}
+
+
+/* remove any remaining fake background */
+.mt2-jewelry::before{
+  display:none !important;
+}
+
+
+.mt2-jewelry figure{
+  width:100% !important;
+
+  margin:0 !important;
+  padding:0 !important;
+
+  background:transparent !important;
+
+  overflow:visible !important;
+}
+
+
+/* give the jewellery a useful visual frame */
+.mt2-jewelry img{
+  display:block !important;
+
+  width:100% !important;
+  height:auto !important;
+
+  max-width:300px !important;
+  max-height:none !important;
+
+  aspect-ratio:auto !important;
+
+  object-fit:contain !important;
+
+  margin:0 auto !important;
+
+  background:#171516 !important;
+
+  border:0 !important;
+  box-shadow:none !important;
+
+  transform:none !important;
+}
+
+
+/* captions line up beneath all three */
+.mt2-jewelry figcaption{
+  width:100% !important;
+
+  margin-top:
+    clamp(18px,2vw,28px) !important;
+
+  padding:0 !important;
+
+  min-height:0 !important;
+
+  color:#f5f3ee !important;
+
+  border:0 !important;
+
+  font-size:8px !important;
+  letter-spacing:.12em !important;
+
+  opacity:.72 !important;
+}
+
+
+/* ---------------------------------------------------------
+   Remove application section cream showing through
+   around the jewellery breakpoint
+   --------------------------------------------------------- */
+
+.mt2-apps{
+  overflow:visible !important;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media(max-width:900px){
+
+  .mt2-jewelry{
+    width:86% !important;
+
+    gap:30px !important;
+  }
+
+  .mt2-jewelry img{
+    max-width:260px !important;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media(max-width:650px){
+
+  .mt2-jewelry-wrap{
+    padding-inline:var(--pad) !important;
+  }
+
+  .mt2-jewelry-head{
+    flex-direction:column !important;
+
+    align-items:flex-start !important;
+
+    gap:10px !important;
+  }
+
+  .mt2-jewelry{
+    width:min(82%,390px) !important;
+
+    grid-template-columns:1fr !important;
+
+    gap:58px !important;
+  }
+
+  .mt2-jewelry img{
+    max-width:280px !important;
+  }
+
+}
+
+
+/* MODULAR TYPEFACE — jewellery scale refinement */
+
+.mt2-jewelry{
+  width:min(86%,1240px) !important;
+  gap:clamp(36px,4vw,68px) !important;
+}
+
+.mt2-jewelry img{
+  width:100% !important;
+  max-width:380px !important;
+  height:auto !important;
+  object-fit:contain !important;
+}
+
+@media(max-width:900px){
+  .mt2-jewelry{
+    width:90% !important;
+  }
+
+  .mt2-jewelry img{
+    max-width:330px !important;
+  }
+}
+
+/* MODULAR TYPEFACE — jewellery slightly larger */
+
+.mt2-jewelry{
+  width:min(91%,1320px) !important;
+  gap:clamp(30px,3.2vw,56px) !important;
+}
+
+.mt2-jewelry img{
+  width:100% !important;
+  max-width:440px !important;
+  height:auto !important;
+  object-fit:contain !important;
+}
+
+@media(max-width:900px){
+  .mt2-jewelry{
+    width:92% !important;
+  }
+
+  .mt2-jewelry img{
+    max-width:370px !important;
+  }
+}
+
+/* =========================================================
+   MODULAR TYPEFACE — JEWELLERY PORTRAIT CROP
+   ========================================================= */
+
+.mt2-jewelry{
+  width:min(88%,1240px) !important;
+
+  grid-template-columns:
+    repeat(3,minmax(0,1fr)) !important;
+
+  gap:
+    clamp(28px,3.5vw,54px) !important;
+
+  align-items:start !important;
+}
+
+
+/* Each jewellery figure becomes a portrait card */
+.mt2-jewelry figure{
+  display:flex !important;
+  flex-direction:column !important;
+
+  width:100% !important;
+
+  margin:0 !important;
+  padding:0 !important;
+
+  background:transparent !important;
+}
+
+
+/* portrait crop */
+.mt2-jewelry img{
+  display:block !important;
+
+  width:100% !important;
+
+  aspect-ratio:3 / 4 !important;
+
+  height:auto !important;
+
+  max-width:none !important;
+  max-height:none !important;
+
+  object-fit:cover !important;
+
+  /* keep pendant visually centred */
+  object-position:center 42% !important;
+
+  margin:0 !important;
+
+  background:#171516 !important;
+
+  border:0 !important;
+  box-shadow:none !important;
+}
+
+
+/* captions aligned beneath all three */
+.mt2-jewelry figcaption{
+  width:100% !important;
+
+  min-height:40px !important;
+
+  margin:0 !important;
+
+  padding:
+    13px 0 0 !important;
+
+  display:flex !important;
+  align-items:flex-start !important;
+
+  color:#f5f3ee !important;
+
+  border:0 !important;
+
+  font-size:8px !important;
+  letter-spacing:.12em !important;
+
+  opacity:.72 !important;
+}
+
+
+/* slightly tighter heading-to-image gap */
+.mt2-jewelry-head{
+  margin-bottom:
+    clamp(36px,4vw,56px) !important;
+}
+
+
+/* dark field remains identical to artwork background */
+.mt2-jewelry-wrap,
+.mt2-jewelry,
+.mt2-jewelry figure,
+.mt2-jewelry img{
+  background-color:#171516 !important;
+}
+
+
+/* tablet */
+@media(max-width:900px){
+
+  .mt2-jewelry{
+    width:92% !important;
+    gap:24px !important;
+  }
+
+}
+
+
+/* mobile */
+@media(max-width:650px){
+
+  .mt2-jewelry{
+    width:min(82%,420px) !important;
+    grid-template-columns:1fr !important;
+    gap:48px !important;
+  }
+
+  .mt2-jewelry img{
+    aspect-ratio:3 / 4 !important;
+  }
+
+}
+
+
+/* =========================================================
+   MODULAR TYPEFACE — LAYERED ALBUM COVER
+   ========================================================= */
+
+.mt2-album-stage{
+  --album-x:0;
+  --album-y:0;
+
+  position:relative;
+
+  width:100%;
+  aspect-ratio:16 / 9;
+
+  overflow:hidden;
+
+  background:#171516;
+}
+
+
+/* background */
+.mt2-album-stage .mt2-album-bg{
+  position:absolute !important;
+
+  inset:0 !important;
+
+  z-index:1;
+
+  display:block !important;
+
+  width:100% !important;
+  height:100% !important;
+
+  max-width:none !important;
+  max-height:none !important;
+
+  object-fit:cover !important;
+  object-position:center center !important;
+
+  transform:
+    scale(1.04)
+    translate(
+      calc(var(--album-x) * -6px),
+      calc(var(--album-y) * -5px)
+    ) !important;
+
+  transition:transform .14s linear;
+}
+
+
+/* subtle depth layer */
+.mt2-album-stage::after{
+  content:"";
+
+  position:absolute;
+  inset:0;
+
+  z-index:2;
+
+  pointer-events:none;
+
+  background:
+    radial-gradient(
+      circle at 50% 46%,
+      transparent 20%,
+      rgba(0,0,0,.05) 62%,
+      rgba(0,0,0,.20) 100%
+    );
+}
+
+
+/* animated modular artwork */
+.mt2-album-stage .mt2-album-modular{
+  position:absolute !important;
+
+  z-index:3;
+
+  left:50% !important;
+  top:50% !important;
+
+  width:min(68%,760px) !important;
+  height:auto !important;
+
+  max-width:none !important;
+  max-height:78% !important;
+
+  object-fit:contain !important;
+
+  transform-origin:center center;
+
+  animation:
+    mtAlbumModularFloat
+    7s
+    ease-in-out
+    infinite;
+
+  filter:
+    drop-shadow(
+      0 20px 24px rgba(0,0,0,.25)
+    );
+
+  will-change:transform;
+}
+
+
+@keyframes mtAlbumModularFloat{
+
+  0%{
+    transform:
+      translate(
+        calc(-50% + var(--album-x) * 12px),
+        calc(-50% + var(--album-y) * 9px)
+      )
+      rotate(-1.5deg)
+      scale(.98);
+  }
+
+  35%{
+    transform:
+      translate(
+        calc(-49% + var(--album-x) * 15px),
+        calc(-53% + var(--album-y) * 11px)
+      )
+      rotate(.8deg)
+      scale(1.025);
+  }
+
+  70%{
+    transform:
+      translate(
+        calc(-51% + var(--album-x) * 11px),
+        calc(-48% + var(--album-y) * 8px)
+      )
+      rotate(-.4deg)
+      scale(1.01);
+  }
+
+  100%{
+    transform:
+      translate(
+        calc(-50% + var(--album-x) * 12px),
+        calc(-50% + var(--album-y) * 9px)
+      )
+      rotate(-1.5deg)
+      scale(.98);
+  }
+
+}
+
+
+/* small album metadata */
+.mt2-album-ui{
+  position:absolute;
+
+  z-index:5;
+
+  left:18px;
+  right:18px;
+  bottom:16px;
+
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-end;
+
+  gap:30px;
+
+  color:#f5f3ee;
+
+  pointer-events:none;
+}
+
+
+.mt2-album-ui span{
+  font-family:
+    var(--font-sans,Arial,sans-serif);
+
+  font-size:8px;
+
+  letter-spacing:.13em;
+  line-height:1.2;
+
+  text-transform:uppercase;
+
+  opacity:.78;
+}
+
+
+/* ---------------------------------------------------------
+   Keep album alignment with right 2×2 square covers
+   --------------------------------------------------------- */
+
+.mt2-apps .mt2-album{
+  display:grid !important;
+
+  grid-template-columns:
+    minmax(0,1.28fr)
+    minmax(0,.72fr) !important;
+
+  gap:
+    clamp(22px,3.2vw,50px) !important;
+
+  align-items:start !important;
+}
+
+
+.mt2-apps .mt2-album-hero{
+  width:100% !important;
+  margin:0 !important;
+}
+
+
+.mt2-apps .mt2-album-covers{
+  display:grid !important;
+
+  grid-template-columns:
+    repeat(2,minmax(0,1fr)) !important;
+
+  grid-template-rows:
+    repeat(2,minmax(0,1fr)) !important;
+
+  gap:
+    clamp(8px,.75vw,12px) !important;
+
+  width:100% !important;
+
+  aspect-ratio:1 / 1 !important;
+
+  height:auto !important;
+
+  margin:0 0 40px !important;
+  padding:0 !important;
+}
+
+
+.mt2-apps .mt2-album-covers figure{
+  width:100% !important;
+  height:100% !important;
+
+  aspect-ratio:1 / 1 !important;
+
+  overflow:hidden !important;
+}
+
+
+.mt2-apps .mt2-album-covers img{
+  width:100% !important;
+  height:100% !important;
+
+  aspect-ratio:1 / 1 !important;
+
+  object-fit:cover !important;
+  object-position:center !important;
+}
+
+
+/* responsive */
+@media(max-width:900px){
+
+  .mt2-apps .mt2-album{
+    grid-template-columns:1fr !important;
+  }
+
+  .mt2-apps .mt2-album-covers{
+    width:72% !important;
+
+    margin:
+      40px 0 40px auto !important;
+  }
+
+}
+
+
+@media(max-width:650px){
+
+  .mt2-album-stage{
+    aspect-ratio:4 / 3;
+  }
+
+  .mt2-album-stage .mt2-album-modular{
+    width:78% !important;
+  }
+
+  .mt2-album-ui{
+    display:none;
+  }
+
+  .mt2-apps .mt2-album-covers{
+    width:100% !important;
+  }
+
+}
+
+
+@media(prefers-reduced-motion:reduce){
+
+  .mt2-album-stage .mt2-album-modular{
+    animation:none !important;
+
+    transform:
+      translate(-50%,-50%)
+      !important;
+  }
+
+}
+
+
+/* =========================================================
+   MODULAR TYPEFACE — ALBUM MODULAR FIX
+   ========================================================= */
+
+/* keep the existing 16:9 stage */
+.mt2-album-stage{
+  position:relative !important;
+  aspect-ratio:16 / 9 !important;
+  overflow:hidden !important;
+}
+
+
+/* background remains full bleed */
+.mt2-album-stage .mt2-album-bg{
+  position:absolute !important;
+  inset:0 !important;
+
+  width:100% !important;
+  height:100% !important;
+
+  object-fit:cover !important;
+  object-position:center !important;
+
+  z-index:1 !important;
+}
+
+
+/* reset ALL previous modular sizing / positioning */
+.mt2-album-stage .mt2-album-modular{
+  position:absolute !important;
+
+  left:50% !important;
+  top:50% !important;
+  right:auto !important;
+  bottom:auto !important;
+
+  /*
+    Keep the whole transparent PNG visible.
+    Do not let generic application image rules stretch it.
+  */
+  width:56% !important;
+  height:68% !important;
+
+  max-width:none !important;
+  max-height:none !important;
+
+  object-fit:contain !important;
+  object-position:center !important;
+
+  margin:0 !important;
+  padding:0 !important;
+
+  z-index:4 !important;
+
+  transform-origin:center center !important;
+
+  animation:
+    mt2AlbumModularFloatFixed
+    7s
+    ease-in-out
+    infinite
+    !important;
+
+  filter:
+    drop-shadow(0 18px 24px rgba(0,0,0,.24))
+    !important;
+}
+
+
+/* much more restrained movement */
+@keyframes mt2AlbumModularFloatFixed{
+
+  0%{
+    transform:
+      translate(-50%,-50%)
+      rotate(-1deg)
+      scale(.97);
+  }
+
+  35%{
+    transform:
+      translate(-49%,-52%)
+      rotate(.6deg)
+      scale(1.015);
+  }
+
+  70%{
+    transform:
+      translate(-51%,-49%)
+      rotate(-.4deg)
+      scale(1);
+  }
+
+  100%{
+    transform:
+      translate(-50%,-50%)
+      rotate(-1deg)
+      scale(.97);
+  }
+
+}
+
+
+/* pointer parallax variables should no longer
+   push the artwork outside its frame */
+.mt2-album-stage:hover .mt2-album-modular{
+  filter:
+    drop-shadow(0 22px 30px rgba(0,0,0,.30))
+    !important;
+}
+
+
+/* make overlay UI quieter */
+.mt2-album-ui{
+  z-index:6 !important;
+}
+
+.mt2-album-ui span{
+  font-size:7px !important;
+  opacity:.66 !important;
+}
+
+
+/* right 2×2 stays locked */
+.mt2-apps .mt2-album-covers{
+  aspect-ratio:1 / 1 !important;
+}
+
+.mt2-apps .mt2-album-covers figure,
+.mt2-apps .mt2-album-covers figure img{
+  aspect-ratio:1 / 1 !important;
+}
+
+
+/* responsive */
+@media(max-width:900px){
+
+  .mt2-album-stage .mt2-album-modular{
+    width:60% !important;
+    height:70% !important;
+  }
+
+}
+
+@media(max-width:650px){
+
+  .mt2-album-stage .mt2-album-modular{
+    width:70% !important;
+    height:72% !important;
+  }
+
+}
+
+
+/* accessibility */
+@media(prefers-reduced-motion:reduce){
+
+  .mt2-album-stage .mt2-album-modular{
+    animation:none !important;
+    transform:translate(-50%,-50%) !important;
+  }
+
+}
+
+/* =========================================================
+   MODULAR TYPEFACE — ALBUM STAGE HARD RESET
+   Do not use the image elements for visual layout anymore.
+   ========================================================= */
+
+/* hide the two DOM images completely */
+.mt2-album-stage > img.mt2-album-bg,
+.mt2-album-stage > img.mt2-album-modular{
+  display:none !important;
+}
+
+
+/* =========================================================
+   STAGE = BACKGROUND IMAGE
+   ========================================================= */
+
+.mt2-apps .mt2-album-stage{
+  --album-x:0;
+  --album-y:0;
+
+  position:relative !important;
+
+  width:100% !important;
+  height:auto !important;
+
+  aspect-ratio:16 / 9 !important;
+
+  overflow:hidden !important;
+
+  background-color:#171516 !important;
+
+  background-image:
+    url("/public/projects/modular-typeface/application/Album%20Background%20Image.png")
+    !important;
+
+  background-size:cover !important;
+  background-position:center center !important;
+  background-repeat:no-repeat !important;
+
+  isolation:isolate !important;
+}
+
+
+/* =========================================================
+   MODULAR PNG = INDEPENDENT PSEUDO ELEMENT
+   ========================================================= */
+
+.mt2-apps .mt2-album-stage::before{
+  content:"" !important;
+
+  display:block !important;
+
+  position:absolute !important;
+
+  z-index:3 !important;
+
+  left:50% !important;
+  top:50% !important;
+
+  /*
+    Independent box.
+    It cannot inherit any figure img styling now.
+  */
+  width:64% !important;
+  height:72% !important;
+
+  background-image:
+    url("/public/projects/modular-typeface/application/Album%20Modular.png")
+    !important;
+
+  background-repeat:no-repeat !important;
+  background-position:center center !important;
+  background-size:contain !important;
+
+  transform-origin:center center !important;
+
+  transform:
+    translate(-50%,-50%)
+    !important;
+
+  animation:
+    mt2-modular-float-clean
+    7s
+    ease-in-out
+    infinite
+    !important;
+
+  filter:
+    drop-shadow(
+      0 18px 25px rgba(0,0,0,.25)
+    );
+
+  pointer-events:none !important;
+}
+
+
+/* =========================================================
+   VERY CONTROLLED MOTION
+   ========================================================= */
+
+@keyframes mt2-modular-float-clean{
+
+  0%{
+    transform:
+      translate(
+        calc(-50% + var(--album-x) * 8px),
+        calc(-50% + var(--album-y) * 6px)
+      )
+      rotate(-1deg)
+      scale(.96);
+  }
+
+  50%{
+    transform:
+      translate(
+        calc(-50% + var(--album-x) * 10px),
+        calc(-52% + var(--album-y) * 8px)
+      )
+      rotate(.7deg)
+      scale(1.02);
+  }
+
+  100%{
+    transform:
+      translate(
+        calc(-50% + var(--album-x) * 8px),
+        calc(-50% + var(--album-y) * 6px)
+      )
+      rotate(-1deg)
+      scale(.96);
+  }
+
+}
+
+
+/* =========================================================
+   DEPTH / VIGNETTE
+   ========================================================= */
+
+.mt2-apps .mt2-album-stage::after{
+  content:"" !important;
+
+  position:absolute !important;
+  inset:0 !important;
+
+  z-index:2 !important;
+
+  background:
+    radial-gradient(
+      circle at 50% 48%,
+      transparent 20%,
+      rgba(0,0,0,.03) 58%,
+      rgba(0,0,0,.18) 100%
+    ) !important;
+
+  pointer-events:none !important;
+}
+
+
+/* =========================================================
+   UI ABOVE EVERYTHING
+   ========================================================= */
+
+.mt2-apps .mt2-album-ui{
+  position:absolute !important;
+
+  z-index:5 !important;
+
+  left:18px !important;
+  right:18px !important;
+  bottom:16px !important;
+}
+
+
+/* =========================================================
+   REMOVE ALL OLD HOVER TRANSFORMS
+   ========================================================= */
+
+.mt2-apps .mt2-album-hero:hover img,
+.mt2-apps .mt2-album-stage:hover img{
+  transform:none !important;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media(max-width:650px){
+
+  .mt2-apps .mt2-album-stage{
+    aspect-ratio:4 / 3 !important;
+  }
+
+  .mt2-apps .mt2-album-stage::before{
+    width:72% !important;
+    height:72% !important;
+  }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media(prefers-reduced-motion:reduce){
+
+  .mt2-apps .mt2-album-stage::before{
+    animation:none !important;
+    transform:translate(-50%,-50%) !important;
+  }
+
+}
+
+
+/* =========================================================
+   MODULAR TYPEFACE — ALBUM MODULAR OVERSIZED MOTION
+   ========================================================= */
+
+/* allow modular artwork to visually escape the album frame */
+.mt2-apps .mt2-album-hero{
+  position:relative !important;
+  overflow:visible !important;
+}
+
+/* background frame still clips its own background */
+.mt2-apps .mt2-album-stage{
+  position:relative !important;
+
+  overflow:visible !important;
+
+  isolation:isolate !important;
+}
+
+
+/* create an inner clipping layer for the background only */
+.mt2-apps .mt2-album-stage::after{
+  content:"" !important;
+
+  position:absolute !important;
+  inset:0 !important;
+
+  z-index:1 !important;
+
+  background-image:
+    url("/public/projects/modular-typeface/application/Album%20Background%20Image.png")
+    !important;
+
+  background-size:cover !important;
+  background-position:center center !important;
+  background-repeat:no-repeat !important;
+
+  pointer-events:none !important;
+}
+
+
+/* remove background from stage itself */
+.mt2-apps .mt2-album-stage{
+  background-image:none !important;
+  background-color:#171516 !important;
+}
+
+
+/* =========================================================
+   BIG FLOATING MODULAR
+   ========================================================= */
+
+.mt2-apps .mt2-album-stage::before{
+  content:"" !important;
+
+  position:absolute !important;
+
+  z-index:4 !important;
+
+  left:50% !important;
+  top:50% !important;
+
+  width:88% !important;
+  height:112% !important;
+
+  background-image:
+    url("/public/projects/modular-typeface/application/Album%20Modular.png")
+    !important;
+
+  background-repeat:no-repeat !important;
+  background-position:center center !important;
+  background-size:contain !important;
+
+  transform-origin:center center !important;
+
+  animation:
+    mt2AlbumOversizedMotion
+    6.5s
+    ease-in-out
+    infinite
+    !important;
+
+  filter:
+    drop-shadow(
+      0 26px 34px rgba(0,0,0,.30)
+    );
+
+  pointer-events:none !important;
+
+  will-change:
+    transform;
+}
+
+
+/* clearly visible motion */
+@keyframes mt2AlbumOversizedMotion{
+
+  0%{
+    transform:
+      translate(-50%,-50%)
+      rotate(-3deg)
+      scale(1.00);
+  }
+
+  25%{
+    transform:
+      translate(-47%,-54%)
+      rotate(1.5deg)
+      scale(1.06);
+  }
+
+  50%{
+    transform:
+      translate(-52%,-48%)
+      rotate(3deg)
+      scale(1.10);
+  }
+
+  75%{
+    transform:
+      translate(-49%,-53%)
+      rotate(-1deg)
+      scale(1.05);
+  }
+
+  100%{
+    transform:
+      translate(-50%,-50%)
+      rotate(-3deg)
+      scale(1.00);
+  }
+
+}
+
+
+/* =========================================================
+   KEEP UI ABOVE BACKGROUND, BELOW MODULAR IF DESIRED
+   ========================================================= */
+
+.mt2-apps .mt2-album-ui{
+  z-index:6 !important;
+}
+
+
+/* =========================================================
+   PREVENT MODULAR FROM COVERING RIGHT ALBUM GRID
+   ========================================================= */
+
+.mt2-apps .mt2-album{
+  position:relative !important;
+  overflow:visible !important;
+}
+
+.mt2-apps .mt2-album-covers{
+  position:relative !important;
+  z-index:8 !important;
+  background:#f5f3ee !important;
+}
+
+
+/* =========================================================
+   SLIGHTLY MORE SPACE AROUND THE ALBUM COMPOSITION
+   ========================================================= */
+
+.mt2-apps .mt2-album{
+  margin-top:
+    clamp(10px,2vw,24px) !important;
+
+  margin-bottom:
+    clamp(120px,12vw,190px) !important;
+}
+
+
+/* =========================================================
+   DESKTOP
+   modular can intentionally spill beyond the background
+   ========================================================= */
+
+@media(min-width:1100px){
+
+  .mt2-apps .mt2-album-stage::before{
+    width:94% !important;
+    height:120% !important;
+  }
+
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media(max-width:900px){
+
+  .mt2-apps .mt2-album-stage::before{
+    width:82% !important;
+    height:105% !important;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media(max-width:650px){
+
+  .mt2-apps .mt2-album-stage::before{
+    width:88% !important;
+    height:108% !important;
+  }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media(prefers-reduced-motion:reduce){
+
+  .mt2-apps .mt2-album-stage::before{
+    animation:none !important;
+
+    transform:
+      translate(-50%,-50%)
+      rotate(-2deg)
+      scale(1.04)
+      !important;
+  }
+
+}
+
+
+/* =========================================================
+   MODULAR TYPEFACE — ALBUM TOP-ONLY OVERFLOW + REAL ANIMATION
+   ========================================================= */
+
+
+/* kill old pseudo-element modular */
+.mt2-apps .mt2-album-stage::before{
+  display:none !important;
+  animation:none !important;
+}
+
+
+/* album stage remains the background frame */
+.mt2-apps .mt2-album-stage{
+  position:relative !important;
+
+  aspect-ratio:16 / 9 !important;
+
+  overflow:visible !important;
+
+  isolation:isolate !important;
+}
+
+
+/* background itself */
+.mt2-apps .mt2-album-stage::after{
+  content:"" !important;
+
+  position:absolute !important;
+  inset:0 !important;
+
+  z-index:1 !important;
+
+  background:
+    url("/public/projects/modular-typeface/application/Album%20Background%20Image.png")
+    center / cover
+    no-repeat !important;
+
+  pointer-events:none !important;
+}
+
+
+/* =========================================================
+   REAL MODULAR LAYER
+   ========================================================= */
+
+.mt2-album-modular-layer{
+  position:absolute !important;
+
+  z-index:4 !important;
+
+  left:50% !important;
+
+  /*
+    push center slightly upward,
+    so overflow happens on top only
+  */
+  top:43% !important;
+
+  width:96% !important;
+  height:112% !important;
+
+  background:
+    url("/public/projects/modular-typeface/application/Album%20Modular.png")
+    center / contain
+    no-repeat !important;
+
+  transform:
+    translate(-50%,-50%) !important;
+
+  transform-origin:center center !important;
+
+  filter:
+    drop-shadow(0 24px 32px rgba(0,0,0,.30));
+
+  pointer-events:none !important;
+
+  will-change:transform;
+}
+
+
+/* =========================================================
+   BOTTOM CLIP MASK
+   only top is allowed to escape
+   ========================================================= */
+
+/*
+  This mask hides anything extending below the stage,
+  but keeps the top unrestricted.
+*/
+.mt2-album-stage{
+  clip-path:
+    polygon(
+      -20% -30%,
+      120% -30%,
+      120% 100%,
+      -20% 100%
+    ) !important;
+}
+
+
+/* UI stays above */
+.mt2-album-ui{
+  z-index:6 !important;
+}
+
+
+/* =========================================================
+   MORE VISIBLE MOTION RESPONSE
+   ========================================================= */
+
+@media(hover:hover) and (pointer:fine){
+
+  .mt2-album-stage:hover .mt2-album-modular-layer{
+    filter:
+      drop-shadow(0 30px 38px rgba(0,0,0,.38));
+  }
+
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media(max-width:900px){
+
+  .mt2-album-modular-layer{
+    width:90% !important;
+    height:108% !important;
+    top:44% !important;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media(max-width:650px){
+
+  .mt2-album-modular-layer{
+    width:96% !important;
+    height:110% !important;
+    top:44% !important;
+  }
+
+}
+
+
+/* reduced motion fallback */
+@media(prefers-reduced-motion:reduce){
+
+  .mt2-album-modular-layer{
+    transform:
+      translate(-50%,-50%)
+      rotate(-2deg)
+      scale(1.05)
+      !important;
+  }
+
+}
+
+
+/* =========================================================
+   MODULAR TYPEFACE — ALBUM ANIMATION ACTUAL FIX
+   ========================================================= */
+
+/*
+  IMPORTANT:
+  no !important on transform.
+  Otherwise keyframes / Web Animations cannot control it.
+*/
+.mt2-apps .mt2-album-modular-layer{
+  position:absolute !important;
+
+  left:50% !important;
+  top:42% !important;
+
+  z-index:4 !important;
+
+  width:102% !important;
+  height:118% !important;
+
+  background:
+    url("/public/projects/modular-typeface/application/Album%20Modular.png")
+    center center / contain
+    no-repeat !important;
+
+  transform-origin:50% 55% !important;
+
+  /* fallback only — deliberately NOT !important */
+  transform:translate(-50%,-50%);
+
+  animation:
+    mt2AlbumActuallyMoves
+    5.5s
+    cubic-bezier(.45,0,.55,1)
+    infinite
+    !important;
+
+  will-change:transform;
+
+  pointer-events:none !important;
+
+  filter:
+    drop-shadow(
+      0 25px 34px rgba(0,0,0,.28)
+    ) !important;
+}
+
+
+/* noticeably visible, but still slow */
+@keyframes mt2AlbumActuallyMoves{
+
+  0%{
+    transform:
+      translate(-50%,-50%)
+      rotate(-4deg)
+      scale(1.02);
+  }
+
+  25%{
+    transform:
+      translate(-47%,-55%)
+      rotate(1deg)
+      scale(1.08);
+  }
+
+  50%{
+    transform:
+      translate(-51%,-52%)
+      rotate(4deg)
+      scale(1.12);
+  }
+
+  75%{
+    transform:
+      translate(-53%,-56%)
+      rotate(-1deg)
+      scale(1.07);
+  }
+
+  100%{
+    transform:
+      translate(-50%,-50%)
+      rotate(-4deg)
+      scale(1.02);
+  }
+
+}
+
+
+/* =========================================================
+   TOP OVERFLOW ONLY
+   ========================================================= */
+
+.mt2-apps .mt2-album-stage{
+  overflow:visible !important;
+
+  /*
+    top may escape;
+    left/right/bottom remain visually bounded
+  */
+  clip-path:
+    polygon(
+      0 -28%,
+      100% -28%,
+      100% 100%,
+      0 100%
+    ) !important;
+}
+
+
+/* bigger on desktop */
+@media(min-width:1100px){
+
+  .mt2-apps .mt2-album-modular-layer{
+    width:108% !important;
+    height:124% !important;
+    top:41% !important;
+  }
+
+}
+
+
+/* DO NOT let older rules freeze transform */
+.mt2-apps .mt2-album-modular-layer[style]{
+  /* intentionally no transform declaration here */
+}
+
+
+/* reduced motion only when OS explicitly requests it */
+@media(prefers-reduced-motion:reduce){
+
+  .mt2-apps .mt2-album-modular-layer{
+    animation:none !important;
+    transform:
+      translate(-50%,-50%)
+      rotate(-2deg)
+      scale(1.06);
+  }
+
+}
+
+/* =========================================================
+   MODULAR TYPEFACE — ALBUM MOTION V3
+   Position and animation are separated.
+   ========================================================= */
+
+.mt2-apps .mt2-album-modular-layer{
+  /* positioning only */
+  left:50% !important;
+  top:100% !important;
+
+  width:112% !important;
+  height:126% !important;
+
+  /* anchor bottom to background bottom */
+  transform:translate(-50%, 0) !important;
+  transform-origin:50% 100% !important;
+
+  overflow:visible !important;
+
+  /* parent itself DOES NOT animate */
+  animation:none !important;
+}
+
+
+/* animate the actual generated layer */
+.mt2-apps .mt2-album-modular-layer::after{
+  content:"";
+
+  position:absolute;
+
+  left:0;
+  right:0;
+  bottom:0;
+
+  width:100%;
+  height:100%;
+
+  background:
+    url("/public/projects/modular-typeface/application/Album%20Modular.png")
+    center bottom / contain
+    no-repeat;
+
+  transform-origin:50% 100%;
+
+  animation:
+    mt2ModularFloatV3
+    4.2s
+    cubic-bezier(.45,.05,.55,.95)
+    infinite;
+
+  will-change:transform;
+}
+
+
+/* hide the old background copy on the parent */
+.mt2-apps .mt2-album-modular-layer{
+  background:none !important;
+}
+
+
+/*
+   More obvious movement:
+   - bottom stays anchored
+   - top can escape
+   - horizontal drift
+   - rotation
+   - scale / breathing
+*/
+@keyframes mt2ModularFloatV3{
+
+  0%{
+    transform:
+      translate3d(-5%, 0, 0)
+      rotate(-5deg)
+      scale(.96);
+  }
+
+  20%{
+    transform:
+      translate3d(2%, -3%, 0)
+      rotate(-1deg)
+      scale(1.04);
+  }
+
+  40%{
+    transform:
+      translate3d(6%, -7%, 0)
+      rotate(4deg)
+      scale(1.10);
+  }
+
+  60%{
+    transform:
+      translate3d(1%, -4%, 0)
+      rotate(1deg)
+      scale(1.06);
+  }
+
+  80%{
+    transform:
+      translate3d(-6%, -2%, 0)
+      rotate(-4deg)
+      scale(1.01);
+  }
+
+  100%{
+    transform:
+      translate3d(-5%, 0, 0)
+      rotate(-5deg)
+      scale(.96);
+  }
+}
+
+
+/* city background remains the frame */
+.mt2-apps .mt2-album-stage{
+  position:relative !important;
+  overflow:visible !important;
+
+  /* allow overflow ABOVE, not below */
+  clip-path:
+    polygon(
+      0 -35%,
+      100% -35%,
+      100% 100%,
+      0 100%
+    ) !important;
+}
+
+
+/* prevent old img/pseudo layers from duplicating modular */
+.mt2-apps .mt2-album-modular-layer > img{
+  visibility:hidden !important;
+}
+
+
+/* mobile: slightly calmer */
+@media(max-width:800px){
+
+  .mt2-apps .mt2-album-modular-layer{
+    width:108% !important;
+    height:120% !important;
+  }
+
+}
+
+
+/* accessibility */
+@media(prefers-reduced-motion:reduce){
+
+  .mt2-apps .mt2-album-modular-layer::after{
+    animation:none;
+    transform:scale(1.03);
+  }
+
+}
+
+
+/* =========================================================
+   MODULAR TYPEFACE — ALBUM MODULAR POSITION FIX
+   ========================================================= */
+
+.mt2-apps .mt2-album-modular-layer{
+  /*
+    Move the anchor up.
+    The animated ::after will now sit visually
+    around the middle-upper area of the album cover.
+  */
+  top:72% !important;
+
+  width:108% !important;
+  height:118% !important;
+
+  transform:
+    translate(-50%, -50%) !important;
+}
+
+
+/* keep the actual modular artwork centered inside its layer */
+.mt2-apps .mt2-album-modular-layer::after{
+  left:0 !important;
+  right:0 !important;
+
+  top:0 !important;
+  bottom:auto !important;
+
+  width:100% !important;
+  height:100% !important;
+
+  background-position:center center !important;
+  background-size:contain !important;
+
+  transform-origin:50% 55% !important;
+}
+
+
+/* animation now floats around the correct visual center */
+@keyframes mt2ModularFloatV3{
+
+  0%{
+    transform:
+      translate3d(-4%, 0%, 0)
+      rotate(-4deg)
+      scale(.98);
+  }
+
+  25%{
+    transform:
+      translate3d(2%, -4%, 0)
+      rotate(0deg)
+      scale(1.04);
+  }
+
+  50%{
+    transform:
+      translate3d(5%, -7%, 0)
+      rotate(3deg)
+      scale(1.08);
+  }
+
+  75%{
+    transform:
+      translate3d(-1%, -3%, 0)
+      rotate(-1deg)
+      scale(1.03);
+  }
+
+  100%{
+    transform:
+      translate3d(-4%, 0%, 0)
+      rotate(-4deg)
+      scale(.98);
+  }
+
+}
+
+
+/* top overflow allowed, bottom still clipped */
+.mt2-apps .mt2-album-stage{
+  clip-path:
+    polygon(
+      0 -28%,
+      100% -28%,
+      100% 100%,
+      0 100%
+    ) !important;
+}
+
+
+/* =========================================================
+   MODULAR TYPEFACE — SMOOTH ALBUM MOTION
+   ========================================================= */
+
+.mt2-apps .mt2-album-modular-layer::after{
+  animation:
+    mt2ModularSmoothFloat
+    8s
+    cubic-bezier(.45, 0, .55, 1)
+    infinite !important;
+
+  will-change:transform;
+  backface-visibility:hidden;
+}
+
+
+/*
+   Gentle continuous floating.
+   Keep movement mostly vertical with subtle horizontal drift.
+*/
+@keyframes mt2ModularSmoothFloat{
+
+  0%{
+    transform:
+      translate3d(-2%, 1%, 0)
+      rotate(-1.2deg)
+      scale(1.01);
+  }
+
+  16%{
+    transform:
+      translate3d(-0.5%, -1%, 0)
+      rotate(-0.5deg)
+      scale(1.025);
+  }
+
+  33%{
+    transform:
+      translate3d(1.5%, -3%, 0)
+      rotate(.4deg)
+      scale(1.04);
+  }
+
+  50%{
+    transform:
+      translate3d(2%, -4%, 0)
+      rotate(1deg)
+      scale(1.05);
+  }
+
+  66%{
+    transform:
+      translate3d(.8%, -2.5%, 0)
+      rotate(.4deg)
+      scale(1.04);
+  }
+
+  83%{
+    transform:
+      translate3d(-1%, -.5%, 0)
+      rotate(-.5deg)
+      scale(1.025);
+  }
+
+  100%{
+    transform:
+      translate3d(-2%, 1%, 0)
+      rotate(-1.2deg)
+      scale(1.01);
+  }
+}
+
+
+/* =========================================================
+   ALBUM MODULAR — FINAL POSITION
+   full modular visible + slightly higher
+   ========================================================= */
+
+.mt2-apps .mt2-album-modular-layer{
+  /* move the entire modular upward */
+  top:64% !important;
+
+  /* keep it large, but guarantee the full form stays visible */
+  width:104% !important;
+  height:108% !important;
+
+  transform:translate(-50%, -50%) !important;
+}
+
+.mt2-apps .mt2-album-modular-layer::after{
+  background-position:center center !important;
+  background-size:contain !important;
+
+  /* animation pivots around visual centre */
+  transform-origin:50% 50% !important;
+}
+
+
+/* slightly reduce vertical travel so the complete object
+   remains visible throughout the animation */
+@keyframes mt2ModularSmoothFloat{
+
+  0%{
+    transform:
+      translate3d(-1.5%, 0%, 0)
+      rotate(-1deg)
+      scale(.98);
+  }
+
+  20%{
+    transform:
+      translate3d(-.5%, -1%, 0)
+      rotate(-.4deg)
+      scale(.99);
+  }
+
+  40%{
+    transform:
+      translate3d(1%, -2%, 0)
+      rotate(.3deg)
+      scale(1.01);
+  }
+
+  60%{
+    transform:
+      translate3d(1.5%, -2.5%, 0)
+      rotate(.7deg)
+      scale(1.02);
+  }
+
+  80%{
+    transform:
+      translate3d(0%, -1%, 0)
+      rotate(-.2deg)
+      scale(1);
+  }
+
+  100%{
+    transform:
+      translate3d(-1.5%, 0%, 0)
+      rotate(-1deg)
+      scale(.98);
+  }
+}
+
+
+/* =========================================================
+   ALBUM MODULAR — MOVE HIGHER
+   ========================================================= */
+
+.mt2-apps .mt2-album-modular-layer{
+  top:57% !important;
+
+  width:102% !important;
+  height:104% !important;
+
+  transform:translate(-50%, -50%) !important;
+}
+
+
+/* keep the full modular visible during motion */
+.mt2-apps .mt2-album-modular-layer::after{
+  background-position:center center !important;
+  background-size:contain !important;
+  transform-origin:50% 50% !important;
+}
+
+
+/* slightly tighter vertical travel */
+@keyframes mt2ModularSmoothFloat{
+
+  0%{
+    transform:
+      translate3d(-1.2%, 0%, 0)
+      rotate(-.8deg)
+      scale(.985);
+  }
+
+  20%{
+    transform:
+      translate3d(-.4%, -.6%, 0)
+      rotate(-.3deg)
+      scale(.995);
+  }
+
+  40%{
+    transform:
+      translate3d(.8%, -1.2%, 0)
+      rotate(.2deg)
+      scale(1.008);
+  }
+
+  60%{
+    transform:
+      translate3d(1.1%, -1.5%, 0)
+      rotate(.5deg)
+      scale(1.015);
+  }
+
+  80%{
+    transform:
+      translate3d(0%, -.7%, 0)
+      rotate(-.1deg)
+      scale(1);
+  }
+
+  100%{
+    transform:
+      translate3d(-1.2%, 0%, 0)
+      rotate(-.8deg)
+      scale(.985);
+  }
+}
+
+
+/* =========================================================
+   ALBUM MODULAR — HIGHER / BIGGER / LIVELIER MOTION
+   ========================================================= */
+
+.mt2-apps .mt2-album-modular-layer{
+  top:53% !important;
+
+  width:106% !important;
+  height:108% !important;
+
+  transform:translate(-50%, -50%) !important;
+}
+
+
+.mt2-apps .mt2-album-modular-layer::after{
+  background-position:center center !important;
+  background-size:contain !important;
+
+  transform-origin:50% 52% !important;
+
+  animation:
+    mt2ModularSmoothFloatLively
+    7.2s
+    cubic-bezier(.42,0,.24,1)
+    infinite !important;
+}
+
+
+/* smoother but more expressive movement */
+@keyframes mt2ModularSmoothFloatLively{
+
+  0%{
+    transform:
+      translate3d(-1.5%, 0%, 0)
+      rotate(-1.2deg)
+      scale(.99);
+  }
+
+  14%{
+    transform:
+      translate3d(-.4%, -1.8%, 0)
+      rotate(-.4deg)
+      scale(1.015);
+  }
+
+  30%{
+    transform:
+      translate3d(1.4%, -3.2%, 0)
+      rotate(.9deg)
+      scale(1.035);
+  }
+
+  46%{
+    transform:
+      translate3d(2.2%, -2.1%, 0)
+      rotate(1.5deg)
+      scale(1.025);
+  }
+
+  62%{
+    transform:
+      translate3d(.8%, -4%, 0)
+      rotate(.4deg)
+      scale(1.045);
+  }
+
+  78%{
+    transform:
+      translate3d(-1.7%, -2%, 0)
+      rotate(-1deg)
+      scale(1.018);
+  }
+
+  90%{
+    transform:
+      translate3d(-2.2%, -.8%, 0)
+      rotate(-1.4deg)
+      scale(1.005);
+  }
+
+  100%{
+    transform:
+      translate3d(-1.5%, 0%, 0)
+      rotate(-1.2deg)
+      scale(.99);
+  }
+}
+
+
+/* keep only top overflow */
+.mt2-apps .mt2-album-stage{
+  clip-path:
+    polygon(
+      0 -32%,
+      100% -32%,
+      100% 100%,
+      0 100%
+    ) !important;
+}
+
+
+/* =========================================================
+   MODULAR TYPEFACE — FINAL PANEL REFINEMENT
+   ========================================================= */
+
+.mt2-ending{
+  position:relative !important;
+
+  min-height:92vh !important;
+
+  background:#171516 !important;
+  color:#f5f3ee !important;
+
+  overflow:hidden !important;
+}
+
+
+/* finer technical grid */
+.mt2-ending .mt2-grid{
+  opacity:.12 !important;
+
+  background-size:
+    clamp(52px,5vw,76px)
+    clamp(52px,5vw,76px)
+    !important;
+}
+
+
+/* layout */
+.mt2-ending-inner{
+  position:relative !important;
+  z-index:2 !important;
+
+  min-height:92vh !important;
+
+  padding-top:
+    clamp(68px,7vw,100px) !important;
+
+  padding-bottom:
+    clamp(44px,5vw,70px) !important;
+
+  display:grid !important;
+
+  grid-template-rows:
+    auto 1fr auto !important;
+}
+
+
+/* top label */
+.mt2-ending .mt2-label{
+  font-size:9px !important;
+
+  letter-spacing:.14em !important;
+
+  opacity:.82 !important;
+}
+
+
+/* =========================================================
+   GLYPH COMPOSITION
+   ========================================================= */
+
+.mt2-ending-glyphs{
+  position:relative !important;
+
+  width:100% !important;
+  height:auto !important;
+
+  min-height:
+    clamp(480px,58vh,720px) !important;
+
+  display:block !important;
+
+  margin-top:
+    clamp(28px,3vw,44px) !important;
+}
+
+
+/* reset old image sizing */
+.mt2-ending-glyphs img{
+  position:absolute !important;
+
+  width:auto !important;
+  height:auto !important;
+
+  max-width:none !important;
+  max-height:none !important;
+
+  margin:0 !important;
+
+  filter:
+    brightness(0)
+    saturate(100%)
+    invert(31%)
+    sepia(97%)
+    saturate(3654%)
+    hue-rotate(309deg)
+    brightness(105%)
+    contrast(101%)
+    !important;
+}
+
+
+/* LEFT — dominant M */
+.mt2-ending-glyphs img:first-child{
+  left:0 !important;
+  top:50% !important;
+
+  width:
+    clamp(420px,43vw,700px) !important;
+
+  transform:
+    translateY(-50%) !important;
+
+  opacity:1 !important;
+}
+
+
+/* RIGHT — T / secondary modular */
+.mt2-ending-glyphs img:last-child{
+  right:8% !important;
+  top:48% !important;
+
+  width:
+    clamp(220px,24vw,390px) !important;
+
+  transform:
+    translateY(-50%)
+    rotate(-4deg)
+    !important;
+
+  opacity:.88 !important;
+}
+
+
+/* subtle floating relationship */
+@media(prefers-reduced-motion:no-preference){
+
+  .mt2-ending-glyphs img:first-child{
+    animation:
+      mt2EndingM
+      9s
+      ease-in-out
+      infinite;
+  }
+
+  .mt2-ending-glyphs img:last-child{
+    animation:
+      mt2EndingT
+      7.5s
+      ease-in-out
+      infinite;
+  }
+
+}
+
+
+@keyframes mt2EndingM{
+
+  0%,100%{
+    transform:
+      translateY(-50%)
+      rotate(-1deg);
+  }
+
+  50%{
+    transform:
+      translateY(-53%)
+      rotate(1deg);
+  }
+
+}
+
+
+@keyframes mt2EndingT{
+
+  0%,100%{
+    transform:
+      translateY(-50%)
+      rotate(-4deg)
+      scale(.98);
+  }
+
+  50%{
+    transform:
+      translateY(-55%)
+      rotate(2deg)
+      scale(1.04);
+  }
+
+}
+
+
+/* =========================================================
+   ENDING BASELINE
+   ========================================================= */
+
+.mt2-ending-inner::after{
+  content:"A–Z   /   0–9   /   6 MODULES";
+
+  grid-row:3;
+
+  width:100%;
+
+  padding-top:14px;
+
+  border-top:
+    1px solid rgba(245,243,238,.18);
+
+  font-family:
+    var(--font-sans,Arial,sans-serif);
+
+  font-size:8px;
+
+  line-height:1;
+
+  letter-spacing:.14em;
+
+  text-transform:uppercase;
+
+  color:rgba(245,243,238,.62);
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media(max-width:700px){
+
+  .mt2-ending{
+    min-height:80vh !important;
+  }
+
+  .mt2-ending-inner{
+    min-height:80vh !important;
+  }
+
+  .mt2-ending-glyphs{
+    min-height:430px !important;
+  }
+
+  .mt2-ending-glyphs img:first-child{
+    width:68vw !important;
+  }
+
+  .mt2-ending-glyphs img:last-child{
+    width:38vw !important;
+
+    right:-4% !important;
+  }
+
+}
+
+
+/* =========================================================
+   MODULAR TYPEFACE — ENDING PANEL HARD FIX
+   ========================================================= */
+
+.mt2-ending{
+  position:relative !important;
+  min-height:88vh !important;
+
+  background:#171516 !important;
+  color:#f5f3ee !important;
+
+  overflow:hidden !important;
+}
+
+.mt2-ending .mt2-grid{
+  opacity:.10 !important;
+}
+
+
+/* ---------------------------------------------------------
+   ENDING LAYOUT
+   --------------------------------------------------------- */
+
+.mt2-ending-inner{
+  position:relative !important;
+  z-index:2 !important;
+
+  min-height:88vh !important;
+
+  padding-top:clamp(70px,7vw,100px) !important;
+  padding-bottom:clamp(46px,5vw,68px) !important;
+
+  display:grid !important;
+
+  grid-template-rows:
+    auto
+    minmax(0,1fr)
+    auto !important;
+
+  gap:0 !important;
+}
+
+
+/* label */
+.mt2-ending .mt2-label{
+  position:relative !important;
+  z-index:4 !important;
+
+  margin:0 !important;
+
+  font-size:9px !important;
+  letter-spacing:.14em !important;
+
+  opacity:.78 !important;
+}
+
+
+/* ---------------------------------------------------------
+   GLYPH PAIR
+   --------------------------------------------------------- */
+
+.mt2-ending-glyphs{
+  position:relative !important;
+
+  width:100% !important;
+  height:100% !important;
+  min-height:0 !important;
+
+  margin:0 !important;
+
+  display:grid !important;
+
+  grid-template-columns:
+    minmax(0,1.12fr)
+    minmax(0,.88fr) !important;
+
+  align-items:center !important;
+
+  gap:
+    clamp(70px,9vw,150px) !important;
+}
+
+
+/* completely reset old absolute positioning */
+.mt2-ending-glyphs img,
+.mt2-ending-glyphs img:first-child,
+.mt2-ending-glyphs img:last-child{
+  position:static !important;
+
+  left:auto !important;
+  right:auto !important;
+  top:auto !important;
+  bottom:auto !important;
+
+  display:block !important;
+
+  width:auto !important;
+  height:auto !important;
+
+  max-width:100% !important;
+  max-height:58vh !important;
+
+  margin:0 !important;
+
+  object-fit:contain !important;
+
+  transform:none !important;
+
+  opacity:1 !important;
+
+  animation:none !important;
+}
+
+
+/* dominant M */
+.mt2-ending-glyphs img:first-child{
+  justify-self:start !important;
+
+  width:min(100%,640px) !important;
+}
+
+
+/* secondary T */
+.mt2-ending-glyphs img:last-child{
+  justify-self:end !important;
+
+  width:min(72%,420px) !important;
+
+  opacity:.88 !important;
+}
+
+
+/* use the same project pink */
+.mt2-ending-glyphs img{
+  filter:
+    brightness(0)
+    saturate(100%)
+    invert(31%)
+    sepia(98%)
+    saturate(3737%)
+    hue-rotate(308deg)
+    brightness(104%)
+    contrast(103%)
+    !important;
+}
+
+
+/* ---------------------------------------------------------
+   BOTTOM META
+   --------------------------------------------------------- */
+
+.mt2-ending-inner::after{
+  content:"A–Z   /   0–9   /   6 MODULES" !important;
+
+  position:static !important;
+
+  grid-row:3 !important;
+
+  width:100% !important;
+
+  padding-top:14px !important;
+
+  border-top:
+    1px solid rgba(245,243,238,.18) !important;
+
+  font-family:
+    var(--font-sans,Arial,sans-serif);
+
+  font-size:8px !important;
+
+  line-height:1 !important;
+
+  letter-spacing:.14em !important;
+
+  text-transform:uppercase;
+
+  color:
+    rgba(245,243,238,.58) !important;
+}
+
+
+/* ---------------------------------------------------------
+   OPTIONAL SUBTLE MOTION
+   --------------------------------------------------------- */
+
+@media(prefers-reduced-motion:no-preference){
+
+  .mt2-ending-glyphs img:first-child{
+    animation:
+      mt2EndingFloatA
+      9s
+      ease-in-out
+      infinite !important;
+  }
+
+  .mt2-ending-glyphs img:last-child{
+    animation:
+      mt2EndingFloatB
+      8s
+      ease-in-out
+      infinite !important;
+  }
+
+}
+
+@keyframes mt2EndingFloatA{
+
+  0%,100%{
+    transform:
+      translate3d(0,0,0)
+      rotate(-.6deg);
+  }
+
+  50%{
+    transform:
+      translate3d(0,-10px,0)
+      rotate(.5deg);
+  }
+
+}
+
+@keyframes mt2EndingFloatB{
+
+  0%,100%{
+    transform:
+      translate3d(0,4px,0)
+      rotate(-2deg);
+  }
+
+  50%{
+    transform:
+      translate3d(-8px,-8px,0)
+      rotate(1.5deg);
+  }
+
+}
+
+
+/* ---------------------------------------------------------
+   MOBILE
+   --------------------------------------------------------- */
+
+@media(max-width:700px){
+
+  .mt2-ending{
+    min-height:auto !important;
+  }
+
+  .mt2-ending-inner{
+    min-height:auto !important;
+
+    padding-top:64px !important;
+    padding-bottom:42px !important;
+  }
+
+  .mt2-ending-glyphs{
+    grid-template-columns:1fr !important;
+
+    gap:34px !important;
+
+    padding:
+      54px 0
+      70px !important;
+  }
+
+  .mt2-ending-glyphs img:first-child{
+    width:78vw !important;
+  }
+
+  .mt2-ending-glyphs img:last-child{
+    width:48vw !important;
+
+    justify-self:end !important;
+  }
+
+}
+
+
+/* =========================================================
+   MODULAR TYPEFACE — ENDING PANEL REFINEMENT V2
+   ========================================================= */
+
+.mt2-ending{
+  min-height:90vh !important;
+}
+
+
+/* slightly tighter vertical system */
+.mt2-ending-inner{
+  min-height:90vh !important;
+
+  padding-top:
+    clamp(66px,6.5vw,92px) !important;
+
+  padding-bottom:
+    clamp(36px,4vw,54px) !important;
+}
+
+
+/* ---------------------------------------------------------
+   GLYPH COMPOSITION
+   --------------------------------------------------------- */
+
+.mt2-ending-glyphs{
+  grid-template-columns:
+    minmax(0,1fr)
+    minmax(0,1fr) !important;
+
+  gap:
+    clamp(90px,11vw,180px) !important;
+
+  align-items:center !important;
+
+  padding:
+    clamp(10px,2vw,24px)
+    0
+    clamp(20px,3vw,42px)
+    !important;
+}
+
+
+/* dominant M — slightly smaller / higher */
+.mt2-ending-glyphs img:first-child{
+  width:min(86%,560px) !important;
+
+  justify-self:start !important;
+
+  transform:
+    translateY(-3%) !important;
+}
+
+
+/* secondary T — larger and moved further right */
+.mt2-ending-glyphs img:last-child{
+  width:min(64%,460px) !important;
+
+  justify-self:center !important;
+
+  transform:
+    translate(10%,-1%)
+    rotate(-3deg)
+    !important;
+
+  opacity:.94 !important;
+}
+
+
+/* ---------------------------------------------------------
+   MORE BALANCED MOTION
+   --------------------------------------------------------- */
+
+@media(prefers-reduced-motion:no-preference){
+
+  .mt2-ending-glyphs img:first-child{
+    animation:
+      mt2EndingFloatA2
+      10s
+      ease-in-out
+      infinite !important;
+  }
+
+  .mt2-ending-glyphs img:last-child{
+    animation:
+      mt2EndingFloatB2
+      8.8s
+      ease-in-out
+      infinite !important;
+  }
+
+}
+
+@keyframes mt2EndingFloatA2{
+
+  0%,100%{
+    transform:
+      translate3d(0,-3%,0)
+      rotate(-.6deg);
+  }
+
+  50%{
+    transform:
+      translate3d(8px,-5%,0)
+      rotate(.6deg);
+  }
+
+}
+
+@keyframes mt2EndingFloatB2{
+
+  0%,100%{
+    transform:
+      translate3d(10%,-1%,0)
+      rotate(-3deg)
+      scale(.99);
+  }
+
+  50%{
+    transform:
+      translate3d(7%,-5%,0)
+      rotate(1deg)
+      scale(1.035);
+  }
+
+}
+
+
+/* ---------------------------------------------------------
+   TOP LABEL
+   --------------------------------------------------------- */
+
+.mt2-ending .mt2-label{
+  margin-bottom:
+    clamp(18px,2vw,28px) !important;
+
+  opacity:.72 !important;
+}
+
+
+/* ---------------------------------------------------------
+   BOTTOM RULE
+   --------------------------------------------------------- */
+
+.mt2-ending-inner::after{
+  content:"A–Z   /   0–9   /   6 MODULES" !important;
+
+  width:100% !important;
+
+  padding-top:13px !important;
+
+  border-top:
+    1px solid rgba(245,243,238,.20) !important;
+
+  text-align:right !important;
+
+  color:
+    rgba(245,243,238,.56) !important;
+}
+
+
+/* =========================================================
+   DESKTOP — stronger right-side presence
+   ========================================================= */
+
+@media(min-width:1200px){
+
+  .mt2-ending-glyphs img:last-child{
+    width:min(70%,500px) !important;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media(max-width:700px){
+
+  .mt2-ending-glyphs{
+    grid-template-columns:1fr !important;
+
+    gap:30px !important;
+
+    padding:
+      44px 0
+      58px
+      !important;
+  }
+
+  .mt2-ending-glyphs img:first-child{
+    width:72vw !important;
+
+    transform:none !important;
+  }
+
+  .mt2-ending-glyphs img:last-child{
+    width:46vw !important;
+
+    justify-self:end !important;
+
+    transform:none !important;
+  }
+
+  .mt2-ending-inner::after{
+    text-align:left !important;
+  }
+
+}
+
+
+/* =========================================================
+   MODULAR TYPEFACE — ENDING PANEL CLEAN COMPOSITION
+   ========================================================= */
+
+.mt2-ending{
+  min-height:88vh !important;
+  background:#171516 !important;
+  overflow:hidden !important;
+}
+
+
+/* overall ending layout */
+.mt2-ending-inner{
+  min-height:88vh !important;
+
+  padding-top:clamp(72px,7vw,100px) !important;
+  padding-bottom:clamp(42px,4vw,58px) !important;
+
+  display:grid !important;
+
+  grid-template-rows:
+    auto
+    1fr
+    auto !important;
+}
+
+
+/* top meta */
+.mt2-ending .mt2-label{
+  position:relative !important;
+  z-index:5 !important;
+
+  margin:0 !important;
+
+  font-size:9px !important;
+  letter-spacing:.14em !important;
+
+  opacity:.72 !important;
+}
+
+
+/* =========================================================
+   MAIN GLYPH COMPOSITION
+   ========================================================= */
+
+.mt2-ending-glyphs{
+  position:relative !important;
+
+  display:block !important;
+
+  width:100% !important;
+  height:100% !important;
+
+  min-height:0 !important;
+
+  margin:0 !important;
+  padding:0 !important;
+}
+
+
+/* reset both */
+.mt2-ending-glyphs img,
+.mt2-ending-glyphs img:first-child,
+.mt2-ending-glyphs img:last-child{
+  position:absolute !important;
+
+  max-height:none !important;
+  max-width:none !important;
+
+  margin:0 !important;
+
+  object-fit:contain !important;
+}
+
+
+/* ---------------------------------------------------------
+   M = MAIN HERO GLYPH
+   --------------------------------------------------------- */
+
+.mt2-ending-glyphs img:first-child{
+  left:50% !important;
+  top:50% !important;
+
+  width:clamp(420px,38vw,620px) !important;
+  height:auto !important;
+
+  transform:
+    translate(-54%,-48%) !important;
+
+  z-index:3 !important;
+
+  opacity:1 !important;
+
+  animation:
+    mt2FinalM
+    10s
+    ease-in-out
+    infinite !important;
+}
+
+
+/* ---------------------------------------------------------
+   T = SECONDARY / GHOST FORM
+   --------------------------------------------------------- */
+
+.mt2-ending-glyphs img:last-child{
+  left:62% !important;
+  top:47% !important;
+
+  width:clamp(180px,18vw,285px) !important;
+  height:auto !important;
+
+  transform:
+    translate(-50%,-50%)
+    rotate(-10deg)
+    !important;
+
+  z-index:2 !important;
+
+  opacity:.16 !important;
+
+  animation:
+    mt2FinalT
+    12s
+    ease-in-out
+    infinite !important;
+}
+
+
+/* M stays project pink */
+.mt2-ending-glyphs img:first-child{
+  filter:
+    brightness(0)
+    saturate(100%)
+    invert(31%)
+    sepia(98%)
+    saturate(3737%)
+    hue-rotate(308deg)
+    brightness(104%)
+    contrast(103%)
+    !important;
+}
+
+
+/* ghost T becomes pale neutral */
+.mt2-ending-glyphs img:last-child{
+  filter:
+    brightness(0)
+    invert(95%)
+    !important;
+}
+
+
+/* =========================================================
+   MOTION
+   ========================================================= */
+
+@keyframes mt2FinalM{
+
+  0%,100%{
+    transform:
+      translate(-54%,-48%)
+      rotate(-.7deg);
+  }
+
+  50%{
+    transform:
+      translate(-53%,-51%)
+      rotate(.7deg);
+  }
+
+}
+
+
+@keyframes mt2FinalT{
+
+  0%,100%{
+    transform:
+      translate(-50%,-50%)
+      rotate(-10deg)
+      scale(.97);
+  }
+
+  50%{
+    transform:
+      translate(-46%,-55%)
+      rotate(-5deg)
+      scale(1.04);
+  }
+
+}
+
+
+/* =========================================================
+   BOTTOM SYSTEM LINE
+   ========================================================= */
+
+.mt2-ending-inner::after{
+  content:"A–Z   /   0–9   /   6 MODULES" !important;
+
+  position:relative !important;
+
+  width:100% !important;
+
+  padding-top:14px !important;
+
+  border-top:
+    1px solid rgba(245,243,238,.20) !important;
+
+  text-align:right !important;
+
+  font-family:
+    var(--font-sans,Arial,sans-serif);
+
+  font-size:8px !important;
+
+  line-height:1 !important;
+
+  letter-spacing:.14em !important;
+
+  color:
+    rgba(245,243,238,.52) !important;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media(max-width:700px){
+
+  .mt2-ending{
+    min-height:78vh !important;
+  }
+
+  .mt2-ending-inner{
+    min-height:78vh !important;
+  }
+
+  .mt2-ending-glyphs img:first-child{
+    width:72vw !important;
+  }
+
+  .mt2-ending-glyphs img:last-child{
+    width:34vw !important;
+
+    left:68% !important;
+  }
+
+  .mt2-ending-inner::after{
+    text-align:left !important;
+  }
+
+}
+
+
+/* accessibility */
+@media(prefers-reduced-motion:reduce){
+
+  .mt2-ending-glyphs img{
+    animation:none !important;
+  }
+
+}
+
+
+/* =========================================================
+   MODULAR TYPEFACE — FINAL PANEL HARD RESET V3
+   ========================================================= */
+
+
+/* =========================================================
+   REMOVE THE WHITE BAND BEFORE ENDING
+   ========================================================= */
+
+.mt2-apps{
+  padding-bottom:0 !important;
+  margin-bottom:0 !important;
+}
+
+.mt2-jewelry-wrap{
+  margin-bottom:0 !important;
+}
+
+.mt2-ending{
+  margin-top:0 !important;
+  padding-top:0 !important;
+
+  display:block !important;
+
+  background:#171516 !important;
+}
+
+
+/*
+  If the previous section leaves collapsing margin,
+  force the transition to stay flush.
+*/
+.mt2-jewelry-wrap + .mt2-ending,
+.mt2-apps + .mt2-ending{
+  margin-top:0 !important;
+}
+
+
+/* =========================================================
+   ENDING PANEL
+   ========================================================= */
+
+.mt2-ending{
+  position:relative !important;
+
+  width:100% !important;
+
+  min-height:88svh !important;
+
+  background:#171516 !important;
+  color:#f5f3ee !important;
+
+  overflow:hidden !important;
+}
+
+
+/* grid */
+.mt2-ending .mt2-grid{
+  position:absolute !important;
+  inset:0 !important;
+
+  opacity:.09 !important;
+
+  pointer-events:none !important;
+}
+
+
+/* =========================================================
+   INNER LAYOUT
+   ========================================================= */
+
+.mt2-ending-inner{
+  position:relative !important;
+  z-index:2 !important;
+
+  width:min(100%,var(--max)) !important;
+
+  min-height:88svh !important;
+
+  margin:0 auto !important;
+
+  padding:
+    clamp(64px,6vw,88px)
+    var(--pad)
+    clamp(36px,4vw,56px)
+    !important;
+
+  display:grid !important;
+
+  grid-template-rows:
+    auto
+    minmax(0,1fr)
+    auto
+    !important;
+}
+
+
+/* top meta */
+.mt2-ending .mt2-label{
+  position:relative !important;
+
+  margin:0 !important;
+
+  z-index:10 !important;
+
+  font-size:9px !important;
+  letter-spacing:.14em !important;
+
+  opacity:.72 !important;
+}
+
+
+/* =========================================================
+   GLYPH COMPOSITION
+   ========================================================= */
+
+.mt2-ending-glyphs{
+  position:relative !important;
+
+  width:100% !important;
+  height:100% !important;
+
+  min-height:0 !important;
+
+  display:block !important;
+
+  margin:0 !important;
+  padding:0 !important;
+}
+
+
+/* completely wipe old glyph positioning */
+.mt2-ending-glyphs img,
+.mt2-ending-glyphs img:first-child,
+.mt2-ending-glyphs img:last-child{
+  margin:0 !important;
+
+  max-width:none !important;
+  max-height:none !important;
+
+  object-fit:contain !important;
+}
+
+
+/* ---------------------------------------------------------
+   MAIN M
+   --------------------------------------------------------- */
+
+.mt2-ending-glyphs img:first-child{
+  position:absolute !important;
+
+  left:40% !important;
+  top:50% !important;
+
+  width:
+    clamp(390px,39vw,590px) !important;
+
+  height:auto !important;
+
+  transform:
+    translate(-50%,-50%) !important;
+
+  z-index:4 !important;
+
+  opacity:1 !important;
+
+  filter:
+    brightness(0)
+    saturate(100%)
+    invert(31%)
+    sepia(98%)
+    saturate(3737%)
+    hue-rotate(308deg)
+    brightness(104%)
+    contrast(103%)
+    !important;
+
+  animation:
+    mt2FinalMainFloat
+    10s
+    ease-in-out
+    infinite
+    !important;
+}
+
+
+/* ---------------------------------------------------------
+   SECONDARY GLYPH
+   becomes atmospheric, not another competing object
+   --------------------------------------------------------- */
+
+.mt2-ending-glyphs img:last-child{
+  position:absolute !important;
+
+  left:63% !important;
+  top:49% !important;
+
+  width:
+    clamp(180px,19vw,285px) !important;
+
+  height:auto !important;
+
+  transform:
+    translate(-50%,-50%)
+    rotate(-8deg) !important;
+
+  z-index:2 !important;
+
+  opacity:.11 !important;
+
+  filter:
+    brightness(0)
+    invert(1)
+    !important;
+
+  animation:
+    mt2FinalGhostFloat
+    12s
+    ease-in-out
+    infinite
+    !important;
+}
+
+
+/* =========================================================
+   MOTION
+   ========================================================= */
+
+@keyframes mt2FinalMainFloat{
+
+  0%,
+  100%{
+    transform:
+      translate(-50%,-50%)
+      rotate(-.7deg);
+  }
+
+  50%{
+    transform:
+      translate(-49%,-52%)
+      rotate(.7deg);
+  }
+
+}
+
+
+@keyframes mt2FinalGhostFloat{
+
+  0%,
+  100%{
+    transform:
+      translate(-50%,-50%)
+      rotate(-8deg)
+      scale(.98);
+  }
+
+  50%{
+    transform:
+      translate(-46%,-54%)
+      rotate(-3deg)
+      scale(1.04);
+  }
+
+}
+
+
+/* =========================================================
+   BOTTOM SYSTEM LINE
+   ========================================================= */
+
+.mt2-ending-inner::after{
+  content:"A–Z   /   0–9   /   6 MODULES" !important;
+
+  position:relative !important;
+
+  display:block !important;
+
+  width:100% !important;
+
+  padding-top:13px !important;
+
+  border-top:
+    1px solid rgba(245,243,238,.18) !important;
+
+  font-family:
+    var(--font-sans,Arial,sans-serif);
+
+  font-size:8px !important;
+
+  line-height:1 !important;
+
+  letter-spacing:.14em !important;
+
+  text-transform:uppercase;
+
+  text-align:right !important;
+
+  color:
+    rgba(245,243,238,.50) !important;
+}
+
+
+/* =========================================================
+   KEEP SITE HEADER DARK WHEN OVER FINAL PANEL
+   ========================================================= */
+
+body.project-modular-typeface .site-header{
+  z-index:100 !important;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media(max-width:700px){
+
+  .mt2-ending{
+    min-height:76svh !important;
+  }
+
+  .mt2-ending-inner{
+    min-height:76svh !important;
+  }
+
+  .mt2-ending-glyphs img:first-child{
+    left:44% !important;
+
+    width:72vw !important;
+  }
+
+  .mt2-ending-glyphs img:last-child{
+    left:72% !important;
+
+    width:34vw !important;
+  }
+
+  .mt2-ending-inner::after{
+    text-align:left !important;
+  }
+
+}
+
+
+/* accessibility */
+@media(prefers-reduced-motion:reduce){
+
+  .mt2-ending-glyphs img{
+    animation:none !important;
+  }
+
+}
+
+
+/* =========================================================
+   MODULAR TYPEFACE — FINAL PANEL NARROWER
+   ========================================================= */
+
+.mt2-ending{
+  min-height:72svh !important;
+}
+
+.mt2-ending-inner{
+  min-height:72svh !important;
+
+  padding-top:
+    clamp(52px,5vw,72px) !important;
+
+  padding-bottom:
+    clamp(30px,3vw,44px) !important;
+}
+
+/* slightly tighter main composition */
+.mt2-ending-glyphs img:first-child{
+  width:
+    clamp(350px,34vw,520px) !important;
+}
+
+.mt2-ending-glyphs img:last-child{
+  width:
+    clamp(150px,16vw,240px) !important;
+}
+
+/* keep bottom line closer */
+.mt2-ending-inner::after{
+  padding-top:11px !important;
+}
+
+
+/* =========================================================
+   HERO — KEEP M + T LARGE
+   SHRINK OTHER GLYPHS SLIGHTLY
+   ========================================================= */
+
+/* default hero glyphs slightly smaller */
+.mt2-hero-glyph{
+  height:92% !important;
+
+  transform-origin:center center !important;
+}
+
+/* M in MODULAR */
+.mt2-word-modular .mt2-hero-glyph:nth-child(1){
+  height:100% !important;
+}
+
+/* T in TYPEFACE */
+.mt2-word-typeface .mt2-hero-glyph:nth-child(1){
+  height:100% !important;
+}
+
+/* slightly shrink all remaining letters */
+.mt2-word-modular .mt2-hero-glyph:not(:nth-child(1)),
+.mt2-word-typeface .mt2-hero-glyph:not(:nth-child(1)){
+  height:90% !important;
+}
+
+/* vertically center the smaller glyphs against M / T */
+.mt2-word{
+  align-items:center !important;
+}
+
+/* preserve existing spacing */
+.mt2-hero-glyph{
+  display:flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+}
+
+.mt2-hero-glyph img{
+  height:100% !important;
+  width:auto !important;
+  object-fit:contain !important;
+}
+
+
+/* mobile */
+@media(max-width:700px){
+
+  .mt2-ending{
+    min-height:64svh !important;
+  }
+
+  .mt2-ending-inner{
+    min-height:64svh !important;
+  }
+
+  .mt2-word-modular .mt2-hero-glyph:not(:nth-child(1)),
+  .mt2-word-typeface .mt2-hero-glyph:not(:nth-child(1)){
+    height:92% !important;
+  }
+
+}
+
+
+/* =========================================================
+   MODULAR TYPEFACE — HERO FINAL REFINEMENT
+   ========================================================= */
+
+/* slightly tighter overall hero stack */
+.mt2-hero-inner{
+  padding-top:clamp(140px,16vh,185px) !important;
+  padding-bottom:clamp(38px,4.5vh,54px) !important;
+}
+
+
+/* meta slightly closer to title */
+.mt2-meta{
+  margin-bottom:clamp(24px,3vh,38px) !important;
+}
+
+
+/* title block slightly more compact */
+.mt2-hero-type{
+  width:min(1120px,79vw) !important;
+}
+
+
+/* preserve M / T hierarchy, but tighten row height */
+.mt2-word{
+  height:clamp(92px,12.7vw,184px) !important;
+}
+
+
+/* reduce gap between MODULAR and TYPEFACE */
+.mt2-word-typeface{
+  margin-top:clamp(10px,1vw,17px) !important;
+}
+
+
+/* default non-anchor letters slightly smaller */
+.mt2-word-modular .mt2-hero-glyph:not(:first-child),
+.mt2-word-typeface .mt2-hero-glyph:not(:first-child){
+  height:88% !important;
+}
+
+
+/* M and T stay dominant */
+.mt2-word-modular .mt2-hero-glyph:first-child,
+.mt2-word-typeface .mt2-hero-glyph:first-child{
+  height:100% !important;
+}
+
+
+/* =========================================================
+   DESCRIPTION — CLOSER + SLIGHTLY LARGER
+   ========================================================= */
+
+.mt2-hero-foot{
+  margin-top:0 !important;
+
+  padding-top:
+    clamp(22px,2.8vh,34px) !important;
+
+  align-items:flex-end !important;
+}
+
+
+.mt2-hero-foot p{
+  width:min(610px,48vw) !important;
+
+  margin:0 !important;
+
+  font-size:
+    clamp(16px,1.18vw,19px) !important;
+
+  line-height:1.46 !important;
+
+  letter-spacing:-.015em !important;
+}
+
+
+/* A–Z / 0–9 stays aligned with description baseline */
+.mt2-hero-foot span{
+  margin-bottom:2px !important;
+}
+
+
+/* =========================================================
+   LARGE DESKTOP
+   ========================================================= */
+
+@media(min-width:1400px){
+
+  .mt2-hero-type{
+    width:min(1140px,78vw) !important;
+  }
+
+  .mt2-word{
+    height:clamp(120px,12.2vw,186px) !important;
+  }
+
+  .mt2-hero-foot{
+    padding-top:24px !important;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media(max-width:650px){
+
+  .mt2-hero-foot{
+    padding-top:20px !important;
+  }
+
+  .mt2-hero-foot p{
+    width:100% !important;
+    font-size:15px !important;
+  }
+
+}
+
+/* =========================================================
+   MODULAR TYPEFACE HERO
+   M + T KEEP CURRENT SIZE
+   ALL OTHER LETTERS SMALLER
+   ========================================================= */
+
+/* M — keep current size */
+.mt2-word-modular .mt2-hero-glyph:first-child{
+  height:100% !important;
+  transform:scale(1) !important;
+}
+
+/* T — keep current size */
+.mt2-word-typeface .mt2-hero-glyph:first-child{
+  height:100% !important;
+  transform:scale(1) !important;
+}
+
+
+/* MODULAR: O D U L A R smaller */
+.mt2-word-modular .mt2-hero-glyph:not(:first-child){
+  height:82% !important;
+}
+
+
+/* TYPEFACE: Y P E F A C E smaller */
+.mt2-word-typeface .mt2-hero-glyph:not(:first-child){
+  height:82% !important;
+}
+
+
+/* keep every smaller character vertically centred */
+.mt2-word{
+  align-items:center !important;
+}
+
+.mt2-word .mt2-hero-glyph{
+  align-self:center !important;
+}
+
+
+/* preserve image proportions */
+.mt2-word .mt2-hero-glyph img{
+  width:auto !important;
+  height:100% !important;
+  max-height:100% !important;
+  object-fit:contain !important;
+}
+
+/* =========================================================
+   MODULAR HERO — SMALLER SECONDARY LETTERS + BOTTOM ALIGN
+   ========================================================= */
+
+/* Each title row shares one bottom baseline */
+.mt2-word{
+  align-items:flex-end !important;
+}
+
+
+/* M + T stay exactly at current size */
+.mt2-word-modular .mt2-hero-glyph:first-child,
+.mt2-word-typeface .mt2-hero-glyph:first-child{
+  height:100% !important;
+  align-self:flex-end !important;
+  transform:none !important;
+}
+
+
+/* all other letters smaller */
+.mt2-word-modular .mt2-hero-glyph:not(:first-child),
+.mt2-word-typeface .mt2-hero-glyph:not(:first-child){
+  height:76% !important;
+
+  align-self:flex-end !important;
+
+  transform:none !important;
+}
+
+
+/* important: image itself must also sit on baseline */
+.mt2-word .mt2-hero-glyph{
+  display:flex !important;
+  align-items:flex-end !important;
+  justify-content:center !important;
+}
+
+.mt2-word .mt2-hero-glyph img{
+  display:block !important;
+
+  width:auto !important;
+  height:100% !important;
+
+  object-fit:contain !important;
+  object-position:center bottom !important;
+}
+
+/* =========================================================
+   HERO — TYPEFACE ROW SLIGHTLY SMALLER
+   ========================================================= */
+
+/* shrink the entire TYPEFACE row */
+.mt2-word-typeface{
+  width:88% !important;
+  height:88% !important;
+
+  transform-origin:left bottom !important;
+
+  align-self:flex-start !important;
+}
+
+/* T remains dominant inside the smaller TYPEFACE row */
+.mt2-word-typeface .mt2-hero-glyph:first-child{
+  height:100% !important;
+  align-self:flex-end !important;
+}
+
+/* Y P E F A C E stay smaller relative to T */
+.mt2-word-typeface .mt2-hero-glyph:not(:first-child){
+  height:76% !important;
+  align-self:flex-end !important;
+}
+
+/* keep baseline alignment */
+.mt2-word-typeface{
+  align-items:flex-end !important;
+}
+
+.mt2-word-typeface .mt2-hero-glyph{
+  align-items:flex-end !important;
+}
+
+.mt2-word-typeface .mt2-hero-glyph img{
+  object-position:center bottom !important;
+}
+
+/* =========================================================
+   FIX — RESTORE TYPEFACE ROW
+   Do not resize the row itself
+   ========================================================= */
+
+.mt2-word-typeface{
+  display:flex !important;
+
+  width:100% !important;
+  height:clamp(92px,12.7vw,184px) !important;
+
+  margin-top:clamp(8px,.8vw,14px) !important;
+
+  align-items:flex-end !important;
+  align-self:auto !important;
+
+  transform:none !important;
+  transform-origin:left bottom !important;
+
+  overflow:visible !important;
+
+  opacity:1 !important;
+  visibility:visible !important;
+}
+
+
+/* TYPEFACE overall visually smaller:
+   T = 88% of row */
+.mt2-word-typeface .mt2-hero-glyph:first-child{
+  display:flex !important;
+
+  height:88% !important;
+
+  align-self:flex-end !important;
+  align-items:flex-end !important;
+
+  opacity:1 !important;
+  visibility:visible !important;
+
+  transform:none !important;
+}
+
+
+/* Y P E F A C E smaller again */
+.mt2-word-typeface .mt2-hero-glyph:not(:first-child){
+  display:flex !important;
+
+  height:67% !important;
+
+  align-self:flex-end !important;
+  align-items:flex-end !important;
+
+  opacity:1 !important;
+  visibility:visible !important;
+
+  transform:none !important;
+}
+
+
+/* images always visible + bottom aligned */
+.mt2-word-typeface .mt2-hero-glyph img{
+  display:block !important;
+
+  width:auto !important;
+  height:100% !important;
+  max-height:100% !important;
+
+  object-fit:contain !important;
+  object-position:center bottom !important;
+
+  opacity:1 !important;
+  visibility:visible !important;
+}
