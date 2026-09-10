@@ -2060,6 +2060,3024 @@ function renderGreenGridV1(p,projects){
 }
 
 
+
+function renderNExhibitionV1(p,projects){
+  const A="/public/projects/n-exhibition";
+  const enc=s=>s.split("/").map(encodeURIComponent).join("/");
+  const img=(path,alt="",cls="")=>`<img class="${cls}" src="${A}/${enc(path)}" alt="${esc(alt)}" loading="lazy">`;
+
+  const next=projects[(projects.indexOf(p)+1)%projects.length];
+
+  document.body.classList.add("compact-brand","project-n-exhibition","nx-v1");
+  document.documentElement.style.setProperty("--project-accent","#B1B1C0");
+  document.title="N Exhibition — Iris Wang";
+
+  document.body.insertAdjacentHTML(
+    "afterbegin",
+    header()+`<div class="reading-progress" id="progress"></div>`
+  );
+
+  document.querySelector("#project-root").innerHTML=`
+  <article class="nx-case">
+
+    <nav class="nx-rail" aria-label="N Exhibition sections">
+      ${[
+        "Introduction",
+        "Concept",
+        "Identity",
+        "Colour",
+        "Tickets",
+        "Printed matter",
+            "Environment"
+      ].map((x,i)=>`
+        <a href="#nx-${i+1}" aria-label="${x}">
+          <i></i><span>${String(i+1).padStart(2,"0")}</span>
+        </a>
+      `).join("")}
+    </nav>
+
+
+    <!-- ==================================================
+         01 HERO
+         ================================================== -->
+
+    
+    
+    <section class="nx-hero nx-hero-60style" id="nx-1">
+  <div class="nxh-exhibition-space" aria-hidden="true">
+
+    <div class="nxh-projection nxh-projection-a">
+      <span>01</span>
+    </div>
+
+    <div class="nxh-projection nxh-projection-b">
+      <span>02</span>
+    </div>
+
+    <div class="nxh-projection nxh-projection-c">
+      <span>03</span>
+    </div>
+
+    <div class="nxh-guide-line nxh-guide-line-a"></div>
+    <div class="nxh-guide-line nxh-guide-line-b"></div>
+
+    <div class="nxh-room-code">
+      N / DREAM HOUSE / 2024
+    </div>
+
+  </div>
+
+
+      ${img("hero.svg","N Exhibition hero artwork","nx-hero-art")}
+      <div class="nx-hero-overlay"></div>
+
+      <div class="shell nx-hero-inner">
+
+        <div class="nx-hero-meta">
+          <span>EXHIBITION IDENTITY · ART DIRECTION · PRINT · 2024</span>
+        </div>
+
+        <div class="nx-hero-copy">
+
+          
+<div class="nx-hero-logo-final">
+  ${img("logo/logo.svg","N Exhibition logo")}
+</div>
+
+
+          
+
+        </div>
+
+      </div>
+
+    
+  <div class="nxh-final">
+
+    <div class="nxh-meta">
+      EXHIBITION IDENTITY · ART DIRECTION · PRINT · 2024
+    </div>
+
+    <div class="nxh-logo">
+      ${img("logo/logo.svg","N Exhibition logo")}
+    </div>
+
+    <p class="nxh-summary">
+      An interactive exhibition where dream and reality overlap,
+      inviting visitors to enter experiences they desire but may
+      never encounter in everyday life.
+    </p>
+
+  </div>
+
+</section>
+
+
+    <section class="nx-concept nx-concept-refined" id="nx-2">
+
+      <div class="shell">
+
+        <div class="nx-section-head nx-section-label-only">
+          <span class="nx-label">02 — CONCEPT + IDENTITY</span>
+        </div>
+
+        <div class="nx-concept-identity-layout">
+
+          <div class="nx-identity-logo">
+            ${img("logo/logo.svg","N Exhibition logo")}
+          </div>
+
+          <div class="nx-concept-identity-copy">
+
+            <div class="nx-concept-detail">
+              <span class="nx-mini-label">CONCEPT</span>
+
+              <p>
+                Visitors are invited to manually fall into dreams and experience
+                what they wish for or love, but which may never happen in reality.
+                Dream and reality are treated as interconnected states rather than
+                complete opposites.
+              </p>
+            </div>
+
+            <div class="nx-concept-detail">
+              <span class="nx-mini-label">THE LETTER N</span>
+
+              <p>
+                The letter N refers to “intuitive” from the 16 personality types,
+                describing people who favour imagination, ideas and possibilities
+                beyond what is immediately visible.
+              </p>
+            </div>
+
+            <div class="nx-concept-detail">
+              <span class="nx-mini-label">FOUR PARTS</span>
+
+              <p>
+                Derived from the four-quadrant structure, the letter N is divided
+                into four fragments in two groups to represent the relationship
+                between dream and reality.
+              </p>
+            </div>
+
+            <div class="nx-concept-detail">
+              <span class="nx-mini-label">RADIAL BLUR</span>
+
+              <p>
+                The diagonal sections are distorted through radial blur to suggest
+                the hazy and unstable boundary between dream and reality.
+              </p>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+
+    <section class="nx-colour nx-colour-refined" id="nx-4">
+
+      <div class="shell nx-colour-heading">
+        <span class="nx-label">04 — COLOUR SYSTEM</span>
+      </div>
+
+      <div class="nx-colour-board nx-colour-board-full">
+        ${img("figma/COLOUR_1440x600.png","N Exhibition colour system")}
+      </div>
+
+    </section>
+
+
+    <section class="nx-tickets nx-tickets-refined" id="nx-5">
+
+      <div class="shell">
+
+        <div class="nx-ticket-topline">
+
+          <span class="nx-label">05 — TICKET SYSTEM</span>
+
+          <p>
+            Each ticket is divided into four parts. The exhibition entry and room
+            passes form a collectible system, while pieces of the N can be torn away
+            and assembled onto a dedicated postcard.
+          </p>
+
+        </div>
+
+
+        <div class="nx-ticket-presentation">
+
+          <div class="nx-ticket-main-grid">
+            ${img("print/Ticket/Tickets-01.png","Exhibition ticket")}
+            ${img("print/Ticket/Tickets-02.png","Exhibition ticket")}
+            ${img("print/Ticket/Tickets-03.png","Exhibition ticket")}
+            ${img("print/Ticket/Tickets-04.png","Exhibition ticket")}
+          </div>
+
+
+          <div class="nx-collective-heading nx-collective-heading-right">
+
+            <div class="nx-collective-copy">
+              
+
+              <p>
+                The four ticket pieces can be collected and assembled,
+                turning admission material into a physical extension of the identity.
+              </p>
+            </div>
+
+          </div>
+
+
+          <div class="nx-collective-row">
+
+            <figure>
+              ${img("print/Ticket/Ticket Collect.png","Collective N pieces — filled")}
+              <figcaption>Front Filled ver.</figcaption>
+            </figure>
+
+            <figure>
+              ${img("print/Ticket/Ticket Collect-06.png","Collective N pieces — empty")}
+              <figcaption>Front Empty ver.</figcaption>
+            </figure>
+
+            <figure>
+              ${img("print/Ticket/Ticket Collect-07.png","Collective N postcard — back")}
+              <figcaption>Back</figcaption>
+            </figure>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    
+    
+    
+    
+    
+    
+
+
+
+
+
+
+<section
+  class="nxpmf-section"
+  id="nx-6"
+>
+
+  <div class="shell nxpmf-head">
+
+    <span class="nx-label">
+      06 — PRINTED MATTER
+    </span>
+
+    <div class="nxpmf-head-main">
+
+      <h3>
+        Printed Matter
+      </h3>
+
+      <p>
+        Printed applications are presented as a continuous moving display.
+        Drag to explore, hover for details, and click to view each complete
+        design at its original proportion.
+      </p>
+
+    </div>
+
+  </div>
+
+
+  <div
+    class="nxpmf-viewport"
+    id="nxpmf-viewport"
+  >
+
+    <div
+      class="nxpmf-track"
+      id="nxpmf-track"
+    >
+
+      <div class="nxpmf-set">
+        
+    <article
+      class="nxpmf-item"
+      data-nxpmf="1"
+    >
+
+      <div class="nxpmf-art">
+
+        ${img("thumbnail/Billboard Poster.jpeg","Billboard Poster")}
+
+        <div class="nxpmf-overlay">
+
+          <span>
+            01
+          </span>
+
+          <div>
+            <strong>Billboard Poster</strong>
+            <small>Click to view full design</small>
+          </div>
+
+        </div>
+
+      </div>
+
+      
+        <template class="nxpmf-template">
+
+          <figure class="nxpmf-full">
+
+            ${img("thumbnail/Billboard Poster.jpeg","Billboard Poster")}
+
+            <figcaption>
+              Billboard Poster
+            </figcaption>
+
+          </figure>
+
+        </template>
+        
+
+    </article>
+    
+
+    <article
+      class="nxpmf-item"
+      data-nxpmf="2"
+    >
+
+      <div class="nxpmf-art">
+
+        ${img("thumbnail/Brochre.jpeg","Brochure")}
+
+        <div class="nxpmf-overlay">
+
+          <span>
+            02
+          </span>
+
+          <div>
+            <strong>Brochure</strong>
+            <small>Click to view full design</small>
+          </div>
+
+        </div>
+
+      </div>
+
+      
+        <template class="nxpmf-template">
+
+          <div class="nxpmf-pair">
+
+            <figure>
+              ${img("print/Brochre/Brochre Refinement.png","Brochure front")}
+              <figcaption>Front</figcaption>
+            </figure>
+
+            <figure>
+              ${img("print/Brochre/Brochre Refinement3.png","Brochure back")}
+              <figcaption>Back</figcaption>
+            </figure>
+
+          </div>
+
+        </template>
+        
+
+    </article>
+    
+
+    <article
+      class="nxpmf-item"
+      data-nxpmf="3"
+    >
+
+      <div class="nxpmf-art">
+
+        ${img("thumbnail/Filter Holder Mockup P.jpeg","Filter Holder")}
+
+        <div class="nxpmf-overlay">
+
+          <span>
+            03
+          </span>
+
+          <div>
+            <strong>Filter Holder</strong>
+            <small>Click to view full design</small>
+          </div>
+
+        </div>
+
+      </div>
+
+      
+        <template class="nxpmf-template">
+
+          <div class="nxpmf-pair">
+
+            <figure>
+              ${img("print/Filter Holder/Filter Holder-05.png","Filter Holder 05")}
+              <figcaption>Filter Holder</figcaption>
+            </figure>
+
+            <figure>
+              ${img("print/Filter Holder/Filter Holder-06.png","Filter Holder 06")}
+              <figcaption>Polaroid Filter</figcaption>
+            </figure>
+
+          </div>
+
+        </template>
+        
+
+    </article>
+    
+
+    <article
+      class="nxpmf-item"
+      data-nxpmf="4"
+    >
+
+      <div class="nxpmf-art">
+
+        ${img("thumbnail/Poster_04.jpeg","Poster 01")}
+
+        <div class="nxpmf-overlay">
+
+          <span>
+            04
+          </span>
+
+          <div>
+            <strong>Poster 01</strong>
+            <small>Click to view full design</small>
+          </div>
+
+        </div>
+
+      </div>
+
+      
+        <template class="nxpmf-template">
+
+          <figure class="nxpmf-full nxpmf-full-poster">
+
+            ${img("print/Poster/Poster-04.png","Poster 01")}
+
+            <figcaption>
+              Poster 01
+            </figcaption>
+
+          </figure>
+
+        </template>
+        
+
+    </article>
+    
+
+    <article
+      class="nxpmf-item"
+      data-nxpmf="5"
+    >
+
+      <div class="nxpmf-art">
+
+        ${img("thumbnail/Poster_05.jpeg","Poster 02")}
+
+        <div class="nxpmf-overlay">
+
+          <span>
+            05
+          </span>
+
+          <div>
+            <strong>Poster 02</strong>
+            <small>Click to view full design</small>
+          </div>
+
+        </div>
+
+      </div>
+
+      
+        <template class="nxpmf-template">
+
+          <figure class="nxpmf-full nxpmf-full-poster">
+
+            ${img("print/Poster/Poster-05.png","Poster 02")}
+
+            <figcaption>
+              Poster 02
+            </figcaption>
+
+          </figure>
+
+        </template>
+        
+
+    </article>
+    
+
+    <article
+      class="nxpmf-item"
+      data-nxpmf="6"
+    >
+
+      <div class="nxpmf-art">
+
+        ${img("thumbnail/Poster_06.jpeg","Poster 03")}
+
+        <div class="nxpmf-overlay">
+
+          <span>
+            06
+          </span>
+
+          <div>
+            <strong>Poster 03</strong>
+            <small>Click to view full design</small>
+          </div>
+
+        </div>
+
+      </div>
+
+      
+        <template class="nxpmf-template">
+
+          <figure class="nxpmf-full nxpmf-full-poster">
+
+            ${img("print/Poster/Poster-06.png","Poster 03")}
+
+            <figcaption>
+              Poster 03
+            </figcaption>
+
+          </figure>
+
+        </template>
+        
+
+    </article>
+    
+      </div>
+
+      <div class="nxpmf-set">
+        
+    <article
+      class="nxpmf-item"
+      data-nxpmf="1"
+    >
+
+      <div class="nxpmf-art">
+
+        ${img("thumbnail/Billboard Poster.jpeg","Billboard Poster")}
+
+        <div class="nxpmf-overlay">
+
+          <span>
+            01
+          </span>
+
+          <div>
+            <strong>Billboard Poster</strong>
+            <small>Click to view full design</small>
+          </div>
+
+        </div>
+
+      </div>
+
+      
+        <template class="nxpmf-template">
+
+          <figure class="nxpmf-full">
+
+            ${img("thumbnail/Billboard Poster.jpeg","Billboard Poster")}
+
+            <figcaption>
+              Billboard Poster
+            </figcaption>
+
+          </figure>
+
+        </template>
+        
+
+    </article>
+    
+
+    <article
+      class="nxpmf-item"
+      data-nxpmf="2"
+    >
+
+      <div class="nxpmf-art">
+
+        ${img("thumbnail/Brochre.jpeg","Brochure")}
+
+        <div class="nxpmf-overlay">
+
+          <span>
+            02
+          </span>
+
+          <div>
+            <strong>Brochure</strong>
+            <small>Click to view full design</small>
+          </div>
+
+        </div>
+
+      </div>
+
+      
+        <template class="nxpmf-template">
+
+          <div class="nxpmf-pair">
+
+            <figure>
+              ${img("print/Brochre/Brochre Refinement.png","Brochure front")}
+              <figcaption>Front</figcaption>
+            </figure>
+
+            <figure>
+              ${img("print/Brochre/Brochre Refinement3.png","Brochure back")}
+              <figcaption>Back</figcaption>
+            </figure>
+
+          </div>
+
+        </template>
+        
+
+    </article>
+    
+
+    <article
+      class="nxpmf-item"
+      data-nxpmf="3"
+    >
+
+      <div class="nxpmf-art">
+
+        ${img("thumbnail/Filter Holder Mockup P.jpeg","Filter Holder")}
+
+        <div class="nxpmf-overlay">
+
+          <span>
+            03
+          </span>
+
+          <div>
+            <strong>Filter Holder</strong>
+            <small>Click to view full design</small>
+          </div>
+
+        </div>
+
+      </div>
+
+      
+        <template class="nxpmf-template">
+
+          <div class="nxpmf-pair">
+
+            <figure>
+              ${img("print/Filter Holder/Filter Holder-05.png","Filter Holder 05")}
+              <figcaption>Filter Holder</figcaption>
+            </figure>
+
+            <figure>
+              ${img("print/Filter Holder/Filter Holder-06.png","Filter Holder 06")}
+              <figcaption>Polaroid Filter</figcaption>
+            </figure>
+
+          </div>
+
+        </template>
+        
+
+    </article>
+    
+
+    <article
+      class="nxpmf-item"
+      data-nxpmf="4"
+    >
+
+      <div class="nxpmf-art">
+
+        ${img("thumbnail/Poster_04.jpeg","Poster 01")}
+
+        <div class="nxpmf-overlay">
+
+          <span>
+            04
+          </span>
+
+          <div>
+            <strong>Poster 01</strong>
+            <small>Click to view full design</small>
+          </div>
+
+        </div>
+
+      </div>
+
+      
+        <template class="nxpmf-template">
+
+          <figure class="nxpmf-full nxpmf-full-poster">
+
+            ${img("print/Poster/Poster-04.png","Poster 01")}
+
+            <figcaption>
+              Poster 01
+            </figcaption>
+
+          </figure>
+
+        </template>
+        
+
+    </article>
+    
+
+    <article
+      class="nxpmf-item"
+      data-nxpmf="5"
+    >
+
+      <div class="nxpmf-art">
+
+        ${img("thumbnail/Poster_05.jpeg","Poster 02")}
+
+        <div class="nxpmf-overlay">
+
+          <span>
+            05
+          </span>
+
+          <div>
+            <strong>Poster 02</strong>
+            <small>Click to view full design</small>
+          </div>
+
+        </div>
+
+      </div>
+
+      
+        <template class="nxpmf-template">
+
+          <figure class="nxpmf-full nxpmf-full-poster">
+
+            ${img("print/Poster/Poster-05.png","Poster 02")}
+
+            <figcaption>
+              Poster 02
+            </figcaption>
+
+          </figure>
+
+        </template>
+        
+
+    </article>
+    
+
+    <article
+      class="nxpmf-item"
+      data-nxpmf="6"
+    >
+
+      <div class="nxpmf-art">
+
+        ${img("thumbnail/Poster_06.jpeg","Poster 03")}
+
+        <div class="nxpmf-overlay">
+
+          <span>
+            06
+          </span>
+
+          <div>
+            <strong>Poster 03</strong>
+            <small>Click to view full design</small>
+          </div>
+
+        </div>
+
+      </div>
+
+      
+        <template class="nxpmf-template">
+
+          <figure class="nxpmf-full nxpmf-full-poster">
+
+            ${img("print/Poster/Poster-06.png","Poster 03")}
+
+            <figcaption>
+              Poster 03
+            </figcaption>
+
+          </figure>
+
+        </template>
+        
+
+    </article>
+    
+      </div>
+
+      <div class="nxpmf-set">
+        
+    <article
+      class="nxpmf-item"
+      data-nxpmf="1"
+    >
+
+      <div class="nxpmf-art">
+
+        ${img("thumbnail/Billboard Poster.jpeg","Billboard Poster")}
+
+        <div class="nxpmf-overlay">
+
+          <span>
+            01
+          </span>
+
+          <div>
+            <strong>Billboard Poster</strong>
+            <small>Click to view full design</small>
+          </div>
+
+        </div>
+
+      </div>
+
+      
+        <template class="nxpmf-template">
+
+          <figure class="nxpmf-full">
+
+            ${img("thumbnail/Billboard Poster.jpeg","Billboard Poster")}
+
+            <figcaption>
+              Billboard Poster
+            </figcaption>
+
+          </figure>
+
+        </template>
+        
+
+    </article>
+    
+
+    <article
+      class="nxpmf-item"
+      data-nxpmf="2"
+    >
+
+      <div class="nxpmf-art">
+
+        ${img("thumbnail/Brochre.jpeg","Brochure")}
+
+        <div class="nxpmf-overlay">
+
+          <span>
+            02
+          </span>
+
+          <div>
+            <strong>Brochure</strong>
+            <small>Click to view full design</small>
+          </div>
+
+        </div>
+
+      </div>
+
+      
+        <template class="nxpmf-template">
+
+          <div class="nxpmf-pair">
+
+            <figure>
+              ${img("print/Brochre/Brochre Refinement.png","Brochure front")}
+              <figcaption>Front</figcaption>
+            </figure>
+
+            <figure>
+              ${img("print/Brochre/Brochre Refinement3.png","Brochure back")}
+              <figcaption>Back</figcaption>
+            </figure>
+
+          </div>
+
+        </template>
+        
+
+    </article>
+    
+
+    <article
+      class="nxpmf-item"
+      data-nxpmf="3"
+    >
+
+      <div class="nxpmf-art">
+
+        ${img("thumbnail/Filter Holder Mockup P.jpeg","Filter Holder")}
+
+        <div class="nxpmf-overlay">
+
+          <span>
+            03
+          </span>
+
+          <div>
+            <strong>Filter Holder</strong>
+            <small>Click to view full design</small>
+          </div>
+
+        </div>
+
+      </div>
+
+      
+        <template class="nxpmf-template">
+
+          <div class="nxpmf-pair">
+
+            <figure>
+              ${img("print/Filter Holder/Filter Holder-05.png","Filter Holder 05")}
+              <figcaption>Filter Holder</figcaption>
+            </figure>
+
+            <figure>
+              ${img("print/Filter Holder/Filter Holder-06.png","Filter Holder 06")}
+              <figcaption>Polaroid Filter</figcaption>
+            </figure>
+
+          </div>
+
+        </template>
+        
+
+    </article>
+    
+
+    <article
+      class="nxpmf-item"
+      data-nxpmf="4"
+    >
+
+      <div class="nxpmf-art">
+
+        ${img("thumbnail/Poster_04.jpeg","Poster 01")}
+
+        <div class="nxpmf-overlay">
+
+          <span>
+            04
+          </span>
+
+          <div>
+            <strong>Poster 01</strong>
+            <small>Click to view full design</small>
+          </div>
+
+        </div>
+
+      </div>
+
+      
+        <template class="nxpmf-template">
+
+          <figure class="nxpmf-full nxpmf-full-poster">
+
+            ${img("print/Poster/Poster-04.png","Poster 01")}
+
+            <figcaption>
+              Poster 01
+            </figcaption>
+
+          </figure>
+
+        </template>
+        
+
+    </article>
+    
+
+    <article
+      class="nxpmf-item"
+      data-nxpmf="5"
+    >
+
+      <div class="nxpmf-art">
+
+        ${img("thumbnail/Poster_05.jpeg","Poster 02")}
+
+        <div class="nxpmf-overlay">
+
+          <span>
+            05
+          </span>
+
+          <div>
+            <strong>Poster 02</strong>
+            <small>Click to view full design</small>
+          </div>
+
+        </div>
+
+      </div>
+
+      
+        <template class="nxpmf-template">
+
+          <figure class="nxpmf-full nxpmf-full-poster">
+
+            ${img("print/Poster/Poster-05.png","Poster 02")}
+
+            <figcaption>
+              Poster 02
+            </figcaption>
+
+          </figure>
+
+        </template>
+        
+
+    </article>
+    
+
+    <article
+      class="nxpmf-item"
+      data-nxpmf="6"
+    >
+
+      <div class="nxpmf-art">
+
+        ${img("thumbnail/Poster_06.jpeg","Poster 03")}
+
+        <div class="nxpmf-overlay">
+
+          <span>
+            06
+          </span>
+
+          <div>
+            <strong>Poster 03</strong>
+            <small>Click to view full design</small>
+          </div>
+
+        </div>
+
+      </div>
+
+      
+        <template class="nxpmf-template">
+
+          <figure class="nxpmf-full nxpmf-full-poster">
+
+            ${img("print/Poster/Poster-06.png","Poster 03")}
+
+            <figcaption>
+              Poster 03
+            </figcaption>
+
+          </figure>
+
+        </template>
+        
+
+    </article>
+    
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <div
+    class="nxpmf-modal"
+    id="nxpmf-modal"
+    aria-hidden="true"
+  >
+
+    <button
+      class="nxpmf-backdrop"
+      type="button"
+      aria-label="Close"
+    ></button>
+
+    <div class="nxpmf-modal-inner">
+
+      <button
+        class="nxpmf-close"
+        type="button"
+        aria-label="Close"
+      >
+        ×
+      </button>
+
+      <div
+        id="nxpmf-modal-body"
+      ></div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+
+
+
+
+
+
+
+<section class="nx-campaign-space nx-campaign-final" id="nx-8">
+
+  <div class="shell nx-campaign-space-head">
+
+    <span class="nx-label">
+      07 — CAMPAIGN + SPACE
+    </span>
+
+    <h2>Campaign + Space</h2>
+
+    <p>
+      The exhibition identity expands across campaign and environmental
+      applications, from billboard scale to poster installations and
+      spatial graphics.
+    </p>
+
+  </div>
+
+
+  <div class="shell nx-mockup-showcase">
+
+    <figure class="nx-mockup-landscape">
+      ${img("mockup/Billboard Mockup L.png","Billboard application")}
+      <figcaption>
+        Billboard Campaign
+      </figcaption>
+    </figure>
+
+
+    <figure class="nx-mockup-landscape">
+      ${img("mockup/Poster Mockup 3.png","Three poster campaign")}
+      <figcaption>
+        Three-Poster Campaign
+      </figcaption>
+    </figure>
+
+
+    <div class="nx-mockup-portrait-row">
+
+      <figure>
+        ${img("mockup/Billboard Mockup P 2.jpeg","Campaign application")}
+        <figcaption>
+          Environmental Application
+        </figcaption>
+      </figure>
+
+      <figure>
+        ${img("mockup/Poster Mockup 1.png","Campaign application")}
+        <figcaption>
+          Exhibition Application
+        </figcaption>
+      </figure>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<section class="nx-project-ending">
+
+  <div class="nx-project-ending-bg">
+    ${img("print/Poster/Billboard Poster.png","N Exhibition billboard poster")}
+  </div>
+
+  <div class="nx-project-ending-shade"></div>
+
+  </section>
+
+
+
+
+
+
+<a class="next-project nx-next" href="/work/${next.slug}/">
+      <span class="meta-mono">Next project</span><br>
+      ${esc(next.title)} →
+    </a>
+
+  </article>
+  `;
+
+  document.body.insertAdjacentHTML("beforeend",footer());
+
+  requestAnimationFrame(initNxFilmRibbon);
+
+  
+
+  const progress=document.querySelector("#progress");
+
+  addEventListener("scroll",()=>{
+    const h=document.documentElement.scrollHeight-innerHeight;
+    progress.style.width=`${h?scrollY/h*100:0}%`;
+  },{passive:true});
+
+  const links=[...document.querySelectorAll(".nx-rail a")];
+  const sections=links.map(a=>document.querySelector(a.getAttribute("href")));
+
+  const io=new IntersectionObserver(entries=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting){
+        const i=sections.indexOf(entry.target);
+        links.forEach((a,j)=>a.classList.toggle("active",i===j));
+      }
+    });
+  },{rootMargin:"-42% 0px -48% 0px"});
+
+  sections.forEach(s=>s&&io.observe(s));
+}
+
+
+
+
+
+
+
+document.addEventListener("keydown",e=>{
+  if(e.key==="Escape") nxClosePrint();
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+document.addEventListener(
+  "keydown",
+  e=>{
+    if(e.key === "Escape"){
+      nxCloseFilmDesign();
+    }
+  }
+);
+
+
+
+
+
+
+
+
+
+
+/*
+ * Robust route/render watcher.
+ * This fixes the previous bug where the film engine
+ * sometimes never initialized after renderProject().
+ */
+(function watchNxFilm(){
+
+  const boot = ()=>{
+    if(
+      document.querySelector(
+        "#nx-film-viewport"
+      )
+    ){
+      initNxFilmCinema();
+    }
+  };
+
+  if(
+    document.readyState ===
+    "loading"
+  ){
+    document.addEventListener(
+      "DOMContentLoaded",
+      boot
+    );
+  }else{
+    boot();
+  }
+
+  const observer =
+    new MutationObserver(
+      boot
+    );
+
+  observer.observe(
+    document.documentElement,
+    {
+      childList:true,
+      subtree:true
+    }
+  );
+
+})();
+
+
+
+function initNxCinemaWall(){
+
+  const viewport =
+    document.querySelector("#nx-cinema-viewport");
+
+  const track =
+    document.querySelector("#nx-cinema-track");
+const modal =
+    document.querySelector("#nx-cinema-modal");
+
+  const modalBody =
+    document.querySelector("#nx-cinema-modal-body");
+
+  if(
+    !viewport ||
+    !track ||
+    viewport.dataset.cinemaReady === "1"
+  ){
+    return;
+  }
+
+  viewport.dataset.cinemaReady = "1";
+
+
+  let dragging = false;
+  let dragged = false;
+
+  let lastX = 0;
+  let lastTime = 0;
+
+  let velocity = .46;
+  const autoSpeed = .46;
+
+  let resumeAt = 0;
+function halfWidth(){
+    return track.scrollWidth / 2;
+  }
+
+
+  function wrap(){
+
+    const half = halfWidth();
+
+    if(!half) return;
+
+    while(viewport.scrollLeft >= half){
+      viewport.scrollLeft -= half;
+    }
+
+    while(viewport.scrollLeft < 0){
+      viewport.scrollLeft += half;
+    }
+  }
+
+
+  /*
+   * Strong curved cinema-wall geometry.
+   *
+   * Centre faces user.
+   * Outer frames rotate strongly inward and shrink,
+   * creating the panoramic wall seen in the reference.
+   */
+  function curve(){
+
+    const viewportWidth =
+      viewport.clientWidth;
+
+    const viewportCenter =
+      viewportWidth / 2;
+
+    const cards =
+      viewport.querySelectorAll(
+        ".nx-cinema-card"
+      );
+
+    cards.forEach(card=>{
+
+      /*
+       * IMPORTANT:
+       * use the card's ORIGINAL flow position,
+       * not getBoundingClientRect() after transform.
+       *
+       * This keeps the whole wall stable and continuous.
+       */
+      const cardCenter =
+        card.offsetLeft
+        - viewport.scrollLeft
+        + card.offsetWidth / 2;
+
+      let n =
+        (cardCenter - viewportCenter)
+        /
+        (viewportWidth * .54);
+
+      n =
+        Math.max(
+          -1.35,
+          Math.min(1.35,n)
+        );
+
+      const abs =
+        Math.abs(n);
+
+
+      /*
+       * Continuous concave cinema wall.
+       *
+       * centre:
+       *   flat / close / largest
+       *
+       * sides:
+       *   rotate inward / travel backward
+       */
+      const y =
+        -58 * abs * abs;
+
+      const z =
+        -210 * abs * abs;
+
+      const rotateY =
+        -n * 38;
+
+      const rotateZ =
+        n * 1.4;
+
+      /*
+       * Small horizontal compensation helps
+       * neighbouring panels visually connect.
+       */
+      const x =
+        -n * 15;
+
+      const scale =
+        1.035 -
+        abs * .045;
+
+      const opacity =
+        1 -
+        Math.min(
+          abs * .18,
+          .18
+        );
+
+
+      card.style.setProperty(
+        "--cinema-x",
+        `${x}px`
+      );
+
+      card.style.setProperty(
+        "--cinema-y",
+        `${y}px`
+      );
+
+      card.style.setProperty(
+        "--cinema-z",
+        `${z}px`
+      );
+
+      card.style.setProperty(
+        "--cinema-ry",
+        `${rotateY}deg`
+      );
+
+      card.style.setProperty(
+        "--cinema-rz",
+        `${rotateZ}deg`
+      );
+
+      card.style.setProperty(
+        "--cinema-scale",
+        scale.toFixed(3)
+      );
+
+      card.style.setProperty(
+        "--cinema-opacity",
+        opacity.toFixed(3)
+      );
+
+    });
+
+  }
+
+
+  function pause(ms=800){
+    resumeAt =
+      performance.now() + ms;
+  }
+
+
+  let previous =
+    performance.now();
+
+
+  function animate(now){
+
+    const dt =
+      Math.min(
+        (now-previous)/16.667,
+        3
+      );
+
+    previous = now;
+
+    if(!dragging){
+
+      if(now > resumeAt){
+
+        velocity +=
+          (autoSpeed-velocity)
+          *.026;
+
+      }else{
+
+        velocity *= .96;
+
+      }
+
+      viewport.scrollLeft +=
+        velocity*dt;
+    }
+
+    wrap();
+    curve();
+
+    requestAnimationFrame(
+      animate
+    );
+  }
+
+
+  /* ------------------------------------------------------
+     DRAG
+     ------------------------------------------------------ */
+
+  viewport.addEventListener(
+    "pointerdown",
+    e=>{
+
+      dragging = true;
+      dragged = false;
+
+      lastX = e.clientX;
+      lastTime = performance.now();
+
+      velocity = 0;
+
+      viewport.classList.add(
+        "is-dragging"
+      );
+
+      viewport.setPointerCapture?.(
+        e.pointerId
+      );
+    }
+  );
+
+
+  viewport.addEventListener(
+    "pointermove",
+    e=>{
+
+      if(!dragging) return;
+
+      const now =
+        performance.now();
+
+      const dx =
+        e.clientX-lastX;
+
+      if(Math.abs(dx)>3){
+        dragged = true;
+      }
+
+      viewport.scrollLeft -= dx;
+
+      const elapsed =
+        Math.max(
+          now-lastTime,
+          1
+        );
+
+      velocity =
+        -(dx/elapsed)*15;
+
+      lastX = e.clientX;
+      lastTime = now;
+
+      wrap();
+    }
+  );
+
+
+  function release(){
+
+    if(!dragging) return;
+
+    dragging = false;
+
+    viewport.classList.remove(
+      "is-dragging"
+    );
+
+    pause(550);
+  }
+
+  viewport.addEventListener(
+    "pointerup",
+    release
+  );
+
+  viewport.addEventListener(
+    "pointercancel",
+    release
+  );
+
+
+  viewport.addEventListener(
+    "wheel",
+    e=>{
+
+      const delta =
+        Math.abs(e.deltaX)
+        >
+        Math.abs(e.deltaY)
+          ? e.deltaX
+          : e.deltaY;
+
+      viewport.scrollLeft += delta;
+
+      velocity =
+        delta*.025;
+
+      pause(900);
+
+      e.preventDefault();
+    },
+    {passive:false}
+  );
+
+
+  /* ------------------------------------------------------
+     FULL-PAGE HOVER
+     ------------------------------------------------------ */
+
+  
+
+
+  
+
+
+  
+
+
+  
+
+
+  /* ------------------------------------------------------
+     CLICK = PIN FULL VIEW
+     ------------------------------------------------------ */
+
+  viewport.addEventListener(
+    "click",
+    e=>{
+
+      const card =
+        e.target.closest(
+          ".nx-cinema-card"
+        );
+
+      if(!card || dragged) return;
+
+      const template =
+        card.querySelector(
+          ".nx-cinema-click-template"
+        );
+
+      if(
+        !template ||
+        !modal ||
+        !modalBody
+      ){
+        return;
+      }
+
+      modalBody.innerHTML = "";
+
+      modalBody.appendChild(
+        template.content.cloneNode(true)
+      );
+
+      modal.classList.add(
+        "is-open"
+      );
+
+      modal.setAttribute(
+        "aria-hidden",
+        "false"
+      );
+
+      document.body.classList.add(
+        "nx-cinema-open"
+      );
+    }
+  );
+
+
+  function closeModal(){
+
+    modal?.classList.remove(
+      "is-open"
+    );
+
+    modal?.setAttribute(
+      "aria-hidden",
+      "true"
+    );
+
+    document.body.classList.remove(
+      "nx-cinema-open"
+    );
+  }
+
+
+  modal
+    ?.querySelector(
+      ".nx-cinema-modal-bg"
+    )
+    ?.addEventListener(
+      "click",
+      closeModal
+    );
+
+
+  modal
+    ?.querySelector(
+      ".nx-cinema-modal-close"
+    )
+    ?.addEventListener(
+      "click",
+      closeModal
+    );
+
+
+  document.addEventListener(
+    "keydown",
+    e=>{
+      if(e.key==="Escape"){
+        closeModal();
+      }
+    }
+  );
+
+
+  curve();
+
+  requestAnimationFrame(
+    animate
+  );
+}
+
+
+/*
+ * Initialize even when renderProject injects the page later.
+ */
+(function nxCinemaBoot(){
+
+  const boot = ()=>{
+    if(
+      document.querySelector(
+        "#nx-cinema-viewport"
+      )
+    ){
+      initNxCinemaWall();
+    }
+  };
+
+  if(document.readyState==="loading"){
+    document.addEventListener(
+      "DOMContentLoaded",
+      boot
+    );
+  }else{
+    boot();
+  }
+
+  const observer =
+    new MutationObserver(boot);
+
+  observer.observe(
+    document.documentElement,
+    {
+      childList:true,
+      subtree:true
+    }
+  );
+
+})();
+
+
+
+
+function initNxBandWall(){
+
+  const viewport =
+    document.getElementById("nxb-viewport");
+
+  const track =
+    document.getElementById("nxb-track");
+
+  const modal =
+    document.getElementById("nxb-modal");
+
+  const modalBody =
+    document.getElementById("nxb-modal-body");
+
+  if(
+    !viewport ||
+    !track ||
+    viewport.dataset.nxbReady === "1"
+  ){
+    return;
+  }
+
+  viewport.dataset.nxbReady = "1";
+
+
+  const sets =
+    [...track.querySelectorAll(".nxb-set")];
+
+  if(sets.length < 3){
+    console.warn("N Exhibition loop requires 3 sets");
+    return;
+  }
+
+
+  let pressed = false;
+  let moved = false;
+
+  let startX = 0;
+  let lastX = 0;
+  let lastTime = 0;
+
+  let activePanel = null;
+
+  /*
+   * positive scrollLeft = artwork moves left.
+   */
+  let velocity = .42;
+  const autoSpeed = .42;
+
+  let resumeTime = 0;
+
+  let setWidth = 0;
+
+
+  /* ======================================================
+     MEASURE + START IN MIDDLE COPY
+     ====================================================== */
+
+  function measure(){
+
+    setWidth =
+      sets[1].getBoundingClientRect().width;
+
+    if(!setWidth){
+      return;
+    }
+
+    /*
+     * Main copy begins after previous copy.
+     */
+    viewport.scrollLeft = setWidth;
+
+    updatePanels();
+  }
+
+
+  /*
+   * Wait until images/layout have real dimensions.
+   */
+  requestAnimationFrame(()=>{
+    requestAnimationFrame(measure);
+  });
+
+  window.addEventListener(
+    "resize",
+    ()=>{
+      const oldWidth = setWidth;
+
+      setWidth =
+        sets[1].getBoundingClientRect().width;
+
+      if(oldWidth && setWidth){
+        const local =
+          viewport.scrollLeft - oldWidth;
+
+        viewport.scrollLeft =
+          setWidth + local;
+      }
+    }
+  );
+
+
+  /* ======================================================
+     SEAMLESS WRAP
+     ====================================================== */
+
+  function wrap(){
+
+    if(!setWidth) return;
+
+    /*
+     * We live around the middle copy:
+     *
+     * 0           setWidth        setWidth*2
+     * [ PREVIOUS ][   MAIN   ][    NEXT    ]
+     *
+     * Crossing into either outside copy instantly shifts
+     * by one complete set, preserving the exact visual
+     * position.
+     */
+
+    while(viewport.scrollLeft < setWidth * .5){
+      viewport.scrollLeft += setWidth;
+    }
+
+    while(viewport.scrollLeft >= setWidth * 1.5){
+      viewport.scrollLeft -= setWidth;
+    }
+  }
+
+
+  /* ======================================================
+     CURVED WALL
+     ====================================================== */
+
+  function updatePanels(){
+
+    const width =
+      viewport.clientWidth;
+
+    const centre =
+      width / 2;
+
+    const radius =
+      width * .78;
+
+    viewport
+      .querySelectorAll(".nxb-panel")
+      .forEach(panel=>{
+
+        const linearX =
+          panel.offsetLeft
+          - viewport.scrollLeft
+          + panel.offsetWidth / 2
+          - centre;
+
+        let angle =
+          linearX / radius;
+
+        const maxAngle = 1.02;
+
+        angle =
+          Math.max(
+            -maxAngle,
+            Math.min(maxAngle,angle)
+          );
+
+        const curvedX =
+          Math.sin(angle) * radius;
+
+        const curvedZ =
+          Math.cos(angle) * radius - radius;
+
+        const correctionX =
+          curvedX - linearX;
+
+        const rotateY =
+          -angle * (180 / Math.PI);
+
+        const amount =
+          Math.abs(angle) / maxAngle;
+
+        const y =
+          -20 * amount * amount;
+
+        panel.style.setProperty(
+          "--nxb-x",
+          correctionX+"px"
+        );
+
+        panel.style.setProperty(
+          "--nxb-y",
+          y+"px"
+        );
+
+        panel.style.setProperty(
+          "--nxb-z",
+          curvedZ+"px"
+        );
+
+        panel.style.setProperty(
+          "--nxb-ry",
+          rotateY+"deg"
+        );
+
+        panel.style.setProperty(
+          "--nxb-scale",
+          "1"
+        );
+
+        panel.style.setProperty(
+          "--nxb-opacity",
+          (1-amount*.16).toFixed(3)
+        );
+
+      });
+  }
+
+
+  function pause(ms=700){
+    resumeTime =
+      performance.now()+ms;
+  }
+
+
+  /* ======================================================
+     DRAG
+     ====================================================== */
+
+  viewport.addEventListener(
+    "pointerdown",
+    e=>{
+
+      if(
+        e.button !== undefined &&
+        e.button !== 0
+      ){
+        return;
+      }
+
+      pressed = true;
+      moved = false;
+
+      startX = e.clientX;
+      lastX = e.clientX;
+
+      lastTime =
+        performance.now();
+
+      activePanel =
+        e.target.closest(".nxb-panel");
+
+      velocity = 0;
+
+      viewport.classList.add(
+        "is-dragging"
+      );
+
+      viewport.setPointerCapture?.(
+        e.pointerId
+      );
+    }
+  );
+
+
+  viewport.addEventListener(
+    "pointermove",
+    e=>{
+
+      if(!pressed) return;
+
+      const total =
+        e.clientX-startX;
+
+      if(Math.abs(total)>9){
+        moved = true;
+      }
+
+      if(!moved) return;
+
+      const now =
+        performance.now();
+
+      const dx =
+        e.clientX-lastX;
+
+      viewport.scrollLeft -= dx;
+
+      const elapsed =
+        Math.max(now-lastTime,1);
+
+      velocity =
+        -(dx/elapsed)*14;
+
+      lastX = e.clientX;
+      lastTime = now;
+
+      wrap();
+      updatePanels();
+    }
+  );
+
+
+  viewport.addEventListener(
+    "pointerup",
+    ()=>{
+
+      if(!pressed) return;
+
+      const shouldOpen =
+        !moved && activePanel;
+
+      pressed = false;
+
+      viewport.classList.remove(
+        "is-dragging"
+      );
+
+      pause(500);
+
+
+      /*
+       * CLICK — unchanged
+       */
+      if(shouldOpen){
+
+        const template =
+          activePanel.querySelector(
+            ".nxb-full-template"
+          );
+
+        if(
+          template &&
+          modal &&
+          modalBody
+        ){
+
+          modalBody.innerHTML = "";
+
+          modalBody.appendChild(
+            template.content.cloneNode(true)
+          );
+
+          modal.classList.add(
+            "is-open"
+          );
+
+          modal.setAttribute(
+            "aria-hidden",
+            "false"
+          );
+
+          document.body.classList.add(
+            "nxb-open"
+          );
+        }
+      }
+
+
+      activePanel = null;
+      moved = false;
+    }
+  );
+
+
+  viewport.addEventListener(
+    "pointercancel",
+    ()=>{
+
+      pressed = false;
+      moved = false;
+      activePanel = null;
+
+      viewport.classList.remove(
+        "is-dragging"
+      );
+    }
+  );
+
+
+  /* ======================================================
+     TRACKPAD / WHEEL
+     ====================================================== */
+
+  viewport.addEventListener(
+    "wheel",
+    e=>{
+
+      const delta =
+        Math.abs(e.deltaX) >
+        Math.abs(e.deltaY)
+          ? e.deltaX
+          : e.deltaY;
+
+      viewport.scrollLeft += delta;
+
+      velocity =
+        delta*.022;
+
+      wrap();
+      updatePanels();
+
+      pause(850);
+
+      e.preventDefault();
+    },
+    {passive:false}
+  );
+
+
+  /* ======================================================
+     MODAL
+     ====================================================== */
+
+  function closeModal(){
+
+    modal?.classList.remove(
+      "is-open"
+    );
+
+    modal?.setAttribute(
+      "aria-hidden",
+      "true"
+    );
+
+    document.body.classList.remove(
+      "nxb-open"
+    );
+  }
+
+
+  modal
+    ?.querySelector(".nxb-modal-backdrop")
+    ?.addEventListener(
+      "click",
+      closeModal
+    );
+
+
+  modal
+    ?.querySelector(".nxb-modal-close")
+    ?.addEventListener(
+      "click",
+      closeModal
+    );
+
+
+  document.addEventListener(
+    "keydown",
+    e=>{
+      if(e.key==="Escape"){
+        closeModal();
+      }
+    }
+  );
+
+
+  /* ======================================================
+     ANIMATION
+     ====================================================== */
+
+  let lastFrame =
+    performance.now();
+
+
+  function loop(now){
+
+    const dt =
+      Math.min(
+        (now-lastFrame)/16.667,
+        3
+      );
+
+    lastFrame = now;
+
+
+    if(!pressed && setWidth){
+
+      if(now > resumeTime){
+
+        velocity +=
+          (autoSpeed-velocity)
+          *.028;
+
+      }else{
+
+        velocity *= .96;
+
+      }
+
+      viewport.scrollLeft +=
+        velocity*dt;
+    }
+
+
+    wrap();
+    updatePanels();
+
+    requestAnimationFrame(loop);
+  }
+
+
+  requestAnimationFrame(loop);
+}
+
+
+
+/*
+ * Robust boot for dynamically-rendered project page.
+ */
+(function bootNxBandWall(){
+
+  const boot = ()=>{
+
+    if(
+      document.getElementById(
+        "nxb-viewport"
+      )
+    ){
+      initNxBandWall();
+    }
+
+  };
+
+
+  if(
+    document.readyState ===
+    "loading"
+  ){
+
+    document.addEventListener(
+      "DOMContentLoaded",
+      boot
+    );
+
+  }else{
+
+    boot();
+
+  }
+
+
+  new MutationObserver(
+    boot
+  ).observe(
+    document.documentElement,
+    {
+      childList:true,
+      subtree:true
+    }
+  );
+
+})();
+
+
+
+function initNxPrintedMatterFinal(){
+
+  const viewport =
+    document.getElementById("nxpmf-viewport");
+
+  const track =
+    document.getElementById("nxpmf-track");
+
+  const modal =
+    document.getElementById("nxpmf-modal");
+
+  const modalBody =
+    document.getElementById("nxpmf-modal-body");
+
+  if(
+    !viewport ||
+    !track ||
+    viewport.dataset.nxpmfReady==="1"
+  ){
+    return;
+  }
+
+  viewport.dataset.nxpmfReady="1";
+
+
+  const sets =
+    [...track.querySelectorAll(".nxpmf-set")];
+
+  if(sets.length !== 3){
+    return;
+  }
+
+
+  let setWidth = 0;
+
+  let dragging = false;
+  let moved = false;
+
+  let startX = 0;
+  let lastX = 0;
+  let lastTime = 0;
+
+  let currentItem = null;
+
+  let velocity = .48;
+  const autoSpeed = .48;
+
+  let resumeAt = 0;
+
+
+  function measure(){
+
+    const middle =
+      sets[1];
+
+    setWidth =
+      middle.getBoundingClientRect().width;
+
+    if(setWidth){
+      viewport.scrollLeft =
+        setWidth;
+    }
+
+  }
+
+
+  function wrap(){
+
+    if(!setWidth){
+      return;
+    }
+
+    if(
+      viewport.scrollLeft <
+      setWidth*.5
+    ){
+      viewport.scrollLeft +=
+        setWidth;
+    }
+
+    if(
+      viewport.scrollLeft >=
+      setWidth*1.5
+    ){
+      viewport.scrollLeft -=
+        setWidth;
+    }
+
+  }
+
+
+  function pause(ms=700){
+    resumeAt =
+      performance.now()+ms;
+  }
+
+
+  /*
+   * Wait until images establish their intrinsic widths.
+   */
+  const images =
+    [...track.querySelectorAll("img")];
+
+  Promise.all(
+    images.map(image=>{
+
+      if(image.complete){
+        return Promise.resolve();
+      }
+
+      return new Promise(resolve=>{
+
+        image.addEventListener(
+          "load",
+          resolve,
+          {once:true}
+        );
+
+        image.addEventListener(
+          "error",
+          resolve,
+          {once:true}
+        );
+
+      });
+
+    })
+  ).then(()=>{
+
+    requestAnimationFrame(()=>{
+      requestAnimationFrame(measure);
+    });
+
+  });
+
+
+  /* ======================================================
+     DRAG
+     ====================================================== */
+
+  viewport.addEventListener(
+    "pointerdown",
+    e=>{
+
+      if(
+        e.button !== undefined &&
+        e.button !== 0
+      ){
+        return;
+      }
+
+      dragging = true;
+      moved = false;
+
+      startX = e.clientX;
+      lastX = e.clientX;
+      lastTime = performance.now();
+
+      currentItem =
+        e.target.closest(".nxpmf-item");
+
+      velocity = 0;
+
+      viewport.classList.add(
+        "is-dragging"
+      );
+
+      viewport.setPointerCapture?.(
+        e.pointerId
+      );
+
+    }
+  );
+
+
+  viewport.addEventListener(
+    "pointermove",
+    e=>{
+
+      if(!dragging){
+        return;
+      }
+
+      const total =
+        e.clientX-startX;
+
+      if(Math.abs(total)>8){
+        moved = true;
+      }
+
+      if(!moved){
+        return;
+      }
+
+      const now =
+        performance.now();
+
+      const dx =
+        e.clientX-lastX;
+
+      viewport.scrollLeft -= dx;
+
+      const elapsed =
+        Math.max(now-lastTime,1);
+
+      velocity =
+        -(dx/elapsed)*13;
+
+      lastX = e.clientX;
+      lastTime = now;
+
+      wrap();
+
+    }
+  );
+
+
+  viewport.addEventListener(
+    "pointerup",
+    ()=>{
+
+      if(!dragging){
+        return;
+      }
+
+      const open =
+        !moved && currentItem;
+
+      dragging = false;
+
+      viewport.classList.remove(
+        "is-dragging"
+      );
+
+      pause(500);
+
+
+      if(open){
+
+        const template =
+          currentItem.querySelector(
+            ".nxpmf-template"
+          );
+
+        if(
+          template &&
+          modal &&
+          modalBody
+        ){
+
+          modalBody.innerHTML = "";
+
+          modalBody.appendChild(
+            template.content.cloneNode(true)
+          );
+
+          modal.classList.add(
+            "is-open"
+          );
+
+          modal.setAttribute(
+            "aria-hidden",
+            "false"
+          );
+
+          document.body.classList.add(
+            "nxpmf-open"
+          );
+
+        }
+
+      }
+
+
+      currentItem = null;
+      moved = false;
+
+    }
+  );
+
+
+  viewport.addEventListener(
+    "pointercancel",
+    ()=>{
+
+      dragging = false;
+      moved = false;
+      currentItem = null;
+
+      viewport.classList.remove(
+        "is-dragging"
+      );
+
+    }
+  );
+
+
+  /* ======================================================
+     TRACKPAD
+     ====================================================== */
+
+  viewport.addEventListener(
+    "wheel",
+    e=>{
+
+      const d =
+        Math.abs(e.deltaX) >
+        Math.abs(e.deltaY)
+          ? e.deltaX
+          : e.deltaY;
+
+      viewport.scrollLeft += d;
+
+      velocity =
+        d*.018;
+
+      pause(850);
+      wrap();
+
+      e.preventDefault();
+
+    },
+    {passive:false}
+  );
+
+
+  /* ======================================================
+     MODAL
+     ====================================================== */
+
+  function close(){
+
+    modal?.classList.remove(
+      "is-open"
+    );
+
+    modal?.setAttribute(
+      "aria-hidden",
+      "true"
+    );
+
+    document.body.classList.remove(
+      "nxpmf-open"
+    );
+
+  }
+
+
+  modal
+    ?.querySelector(".nxpmf-backdrop")
+    ?.addEventListener(
+      "click",
+      close
+    );
+
+
+  modal
+    ?.querySelector(".nxpmf-close")
+    ?.addEventListener(
+      "click",
+      close
+    );
+
+
+  document.addEventListener(
+    "keydown",
+    e=>{
+
+      if(e.key==="Escape"){
+        close();
+      }
+
+    }
+  );
+
+
+  /* ======================================================
+     LOOP
+     ====================================================== */
+
+  let previous =
+    performance.now();
+
+
+  function loop(now){
+
+    const dt =
+      Math.min(
+        (now-previous)/16.667,
+        3
+      );
+
+    previous = now;
+
+
+    if(
+      !dragging &&
+      setWidth
+    ){
+
+      if(now>resumeAt){
+
+        velocity +=
+          (autoSpeed-velocity)
+          *.025;
+
+      }else{
+
+        velocity *= .96;
+
+      }
+
+      viewport.scrollLeft +=
+        velocity*dt;
+
+    }
+
+
+    wrap();
+
+    requestAnimationFrame(loop);
+
+  }
+
+
+  requestAnimationFrame(loop);
+
+}
+
+
+/*
+ * Start after dynamic project renderer inserts #nx-6.
+ */
+(function bootNxPrintedMatterFinal(){
+
+  const boot = ()=>{
+
+    if(
+      document.getElementById(
+        "nxpmf-viewport"
+      )
+    ){
+      initNxPrintedMatterFinal();
+    }
+
+  };
+
+
+  if(
+    document.readyState==="loading"
+  ){
+
+    document.addEventListener(
+      "DOMContentLoaded",
+      boot
+    );
+
+  }else{
+
+    boot();
+
+  }
+
+
+  new MutationObserver(
+    boot
+  ).observe(
+    document.documentElement,
+    {
+      childList:true,
+      subtree:true
+    }
+  );
+
+})();
+
+
+
+function initNExhibitionHeroSpace(){
+
+  const hero =
+    document.querySelector(".nx-v1 #nx-1");
+
+  const space =
+    hero?.querySelector(".nxh-exhibition-space");
+
+  if(
+    !hero ||
+    !space ||
+    hero.dataset.spaceReady === "1"
+  ){
+    return;
+  }
+
+  hero.dataset.spaceReady = "1";
+
+  let targetX = 0;
+  let targetY = 0;
+
+  let currentX = 0;
+  let currentY = 0;
+
+
+  hero.addEventListener(
+    "pointermove",
+    e=>{
+
+      const rect =
+        hero.getBoundingClientRect();
+
+      targetX =
+        (
+          (e.clientX - rect.left)
+          /
+          rect.width
+          -.5
+        );
+
+      targetY =
+        (
+          (e.clientY - rect.top)
+          /
+          rect.height
+          -.5
+        );
+
+    }
+  );
+
+
+  hero.addEventListener(
+    "pointerleave",
+    ()=>{
+      targetX = 0;
+      targetY = 0;
+    }
+  );
+
+
+  function loop(){
+
+    currentX +=
+      (targetX-currentX)
+      *.045;
+
+    currentY +=
+      (targetY-currentY)
+      *.045;
+
+    space.style.setProperty(
+      "--space-x",
+      currentX
+    );
+
+    space.style.setProperty(
+      "--space-y",
+      currentY
+    );
+
+    requestAnimationFrame(loop);
+  }
+
+  requestAnimationFrame(loop);
+}
+
+
+(function bootNExhibitionHeroSpace(){
+
+  const boot = ()=>{
+    initNExhibitionHeroSpace();
+  };
+
+  if(document.readyState==="loading"){
+    document.addEventListener(
+      "DOMContentLoaded",
+      boot
+    );
+  }else{
+    boot();
+  }
+
+  new MutationObserver(
+    boot
+  ).observe(
+    document.documentElement,
+    {
+      childList:true,
+      subtree:true
+    }
+  );
+
+})();
+
+
 async function renderProject(){
   const projects=await getProjects();
   const slug=location.pathname.split("/").filter(Boolean).pop();
@@ -2072,6 +5090,7 @@ async function renderProject(){
   if(p.slug==="60-bpm"){ render60BPM(p,projects); return; }
   if(p.slug==="ethereal-realm"){ renderEtherealRealm(p,projects); return; }
   if(p.slug==="green-grid"){ renderGreenGridV1(p,projects); return; }
+  if(p.slug==="n-exhibition"){ renderNExhibitionV1(p,projects); return; }
 
   document.body.classList.add("compact-brand");
   document.documentElement.style.setProperty("--project-accent",p.accent);
