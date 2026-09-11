@@ -1,0 +1,1645 @@
+/* =========================================================
+   STEP / MOTION
+   CLEAN PROJECT STYLESHEET
+   ========================================================= */
+
+body.project-step-motion{
+  --sm-black:#0a0a0a;
+  --sm-paper:#f1f0eb;
+  --sm-white:#f7f6f1;
+  --sm-grey:#8d8d88;
+  --sm-signal:#d5bc2b;
+
+  --sm-rule:rgba(10,10,10,.16);
+  --sm-rule-dark:rgba(255,255,255,.20);
+
+  --sm-section-y:clamp(72px,6vw,104px);
+
+  --sm-h2:clamp(38px,3.4vw,58px);
+
+  --sm-head-rule:34px;
+  --sm-rule-content:48px;
+}
+
+
+/* =========================================================
+   BASE
+   ========================================================= */
+
+body.project-step-motion{
+  background:var(--sm-paper);
+  color:var(--sm-black);
+}
+
+body.project-step-motion .sm-page{
+  width:100%;
+  overflow:clip;
+}
+
+body.project-step-motion .sm-page img,
+body.project-step-motion .sm-page video{
+  display:block;
+  max-width:100%;
+}
+
+body.project-step-motion .sm-page figure{
+  margin:0;
+}
+
+
+/* =========================================================
+   SHARED NUMBERED SECTION SYSTEM
+   This is now the ONLY major heading system.
+   ========================================================= */
+
+body.project-step-motion .sm-case-section{
+  position:relative;
+
+  margin:0;
+  padding:
+    var(--sm-section-y)
+    var(--pad);
+
+  min-height:0;
+}
+
+
+/* heading row */
+
+body.project-step-motion .sm-case-head{
+  display:grid;
+  grid-template-columns:44px minmax(0,1fr);
+  align-items:start;
+
+  width:min(100%,var(--max));
+  margin:0 auto;
+  padding:0;
+}
+
+
+/* section number */
+
+body.project-step-motion .sm-case-head > span:first-child,
+body.project-step-motion .sm-sequence-number,
+body.project-step-motion .sm-di-number{
+  padding-top:.48em;
+
+  font-size:11px;
+  line-height:1;
+  letter-spacing:.08em;
+}
+
+
+/* ALL numbered-section headings */
+
+body.project-step-motion .sm-case-title{
+  margin:0;
+
+  font-size:var(--sm-h2);
+  line-height:.94;
+
+  font-weight:500;
+  letter-spacing:-.055em;
+}
+
+
+/* shared divider */
+
+body.project-step-motion .sm-case-rule{
+  display:block;
+
+  width:min(100%,var(--max));
+  height:1px;
+
+  margin:
+    var(--sm-head-rule)
+    auto
+    var(--sm-rule-content);
+
+  padding:0;
+
+  border:0;
+  background:var(--sm-rule);
+}
+
+
+/* shared first-content container */
+
+body.project-step-motion .sm-case-content{
+  width:min(100%,var(--max));
+
+  margin-left:auto;
+  margin-right:auto;
+  margin-top:0;
+
+  padding-top:0;
+}
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+body.project-step-motion .sm-hero{
+  position:relative;
+
+  width:100%;
+  height:100svh;
+  min-height:720px;
+
+  overflow:hidden;
+
+  background:#000;
+  color:#fff;
+}
+
+body.project-step-motion .sm-hero-video{
+  position:absolute;
+  inset:0;
+
+  width:100%;
+  height:100%;
+
+  object-fit:cover;
+
+  filter:grayscale(1) contrast(1.08);
+}
+
+body.project-step-motion .sm-hero-shade{
+  position:absolute;
+  inset:0;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(0,0,0,.2),
+      rgba(0,0,0,.05) 42%,
+      rgba(0,0,0,.38)
+    );
+}
+
+body.project-step-motion .sm-hero-inner{
+  position:relative;
+  z-index:2;
+
+  height:100%;
+
+  width:min(100%,var(--max));
+  margin:auto;
+
+  padding:
+    clamp(92px,8vw,126px)
+    var(--pad)
+    clamp(42px,4vw,64px);
+}
+
+body.project-step-motion .sm-kicker{
+  display:flex;
+  align-items:center;
+
+  gap:0;
+
+  font-size:11px;
+  line-height:1;
+
+  letter-spacing:.12em;
+  text-transform:uppercase;
+}
+
+body.project-step-motion .sm-kicker span:last-child::before{
+  content:" · ";
+}
+
+
+/* hero title positioning */
+
+body.project-step-motion .sm-hero-title{
+  position:absolute;
+  inset:0;
+
+  pointer-events:none;
+}
+
+body.project-step-motion .sm-hero-title .sm-step{
+  position:absolute;
+
+  left:4%;
+  top:25%;
+
+  font-size:clamp(84px,12vw,190px);
+  line-height:.82;
+
+  font-weight:600;
+  letter-spacing:-.075em;
+}
+
+body.project-step-motion .sm-hero-title .sm-motion{
+  position:absolute;
+
+  right:8%;
+  top:49%;
+
+  font-size:clamp(84px,12vw,190px);
+  line-height:.82;
+
+  font-weight:600;
+  letter-spacing:-.075em;
+}
+
+body.project-step-motion .sm-hero-title .sm-dash{
+  position:absolute;
+
+  left:34%;
+  top:50%;
+
+  width:9px;
+  height:clamp(92px,10vw,154px);
+
+  transform:translateY(-50%) rotate(14deg);
+
+  background:var(--sm-signal);
+}
+
+body.project-step-motion .sm-hero-copy{
+  position:absolute;
+
+  left:var(--pad);
+  bottom:clamp(42px,4vw,62px);
+
+  max-width:520px;
+
+  margin:0;
+
+  font-size:clamp(15px,1.15vw,19px);
+  line-height:1.45;
+}
+
+
+/* =========================================================
+   01 — TIME AS SPACE
+   ========================================================= */
+
+body.project-step-motion .sm-concept-grid{
+  display:grid;
+
+  grid-template-columns:
+    minmax(240px,.82fr)
+    minmax(0,430px)
+    minmax(0,430px);
+
+  column-gap:clamp(18px,2vw,30px);
+
+  align-items:start;
+}
+
+body.project-step-motion .sm-concept-image{
+  width:100%;
+  height:560px;
+
+  overflow:hidden;
+}
+
+body.project-step-motion .sm-concept-image img{
+  width:100%;
+  height:100%;
+
+  object-fit:cover;
+}
+
+body.project-step-motion .sm-concept-a,
+body.project-step-motion .sm-concept-b{
+  margin:0;
+}
+
+
+/* =========================================================
+   02 — CONSTRUCTING THE FILM
+   ========================================================= */
+
+body.project-step-motion .sm-film{
+  background:var(--sm-black);
+  color:var(--sm-white);
+}
+
+body.project-step-motion .sm-film .sm-case-rule{
+  background:var(--sm-rule-dark);
+}
+
+body.project-step-motion .sm-film-swipe-intro{
+  display:grid;
+
+  grid-template-columns:minmax(0,1fr) auto;
+  gap:40px;
+
+  align-items:center;
+}
+
+body.project-step-motion .sm-film-swipe{
+  display:flex;
+
+  gap:28px;
+
+  overflow-x:auto;
+  overflow-y:hidden;
+
+  scroll-snap-type:x mandatory;
+  overscroll-behavior-x:contain;
+
+  scrollbar-width:none;
+
+  margin-top:54px;
+}
+
+body.project-step-motion .sm-film-swipe::-webkit-scrollbar{
+  display:none;
+}
+
+body.project-step-motion .sm-film-slide{
+  flex:0 0 min(72vw,1080px);
+
+  scroll-snap-align:start;
+}
+
+body.project-step-motion .sm-film-slide img{
+  width:100%;
+  height:auto;
+
+  object-fit:contain;
+}
+
+body.project-step-motion .sm-film-slide figcaption{
+  display:grid;
+
+  grid-template-columns:32px minmax(0,1fr);
+  gap:10px;
+
+  margin-top:18px;
+}
+
+body.project-step-motion .sm-film-slide h3{
+  margin:0 0 8px;
+
+  font-size:clamp(25px,2vw,36px);
+  line-height:1;
+
+  font-weight:500;
+  letter-spacing:-.035em;
+}
+
+
+/* =========================================================
+   03 — TEMPORAL COMPOSITING
+   ========================================================= */
+
+body.project-step-motion .sm-process,
+body.project-step-motion .sm-compositing{
+  background:var(--sm-black);
+  color:var(--sm-white);
+}
+
+body.project-step-motion .sm-process .sm-case-rule,
+body.project-step-motion .sm-compositing .sm-case-rule{
+  background:var(--sm-rule-dark);
+}
+
+body.project-step-motion .sm-process-lead{
+  display:grid;
+
+  grid-template-columns:minmax(0,1.8fr) minmax(260px,.62fr);
+  gap:clamp(50px,8vw,140px);
+
+  align-items:start;
+}
+
+body.project-step-motion .sm-process-lead h3{
+  margin:0;
+
+  max-width:860px;
+
+  font-size:clamp(38px,4vw,68px);
+  line-height:1.02;
+
+  letter-spacing:-.06em;
+  font-weight:400;
+}
+
+body.project-step-motion .sm-process-media{
+  margin-top:72px;
+}
+
+body.project-step-motion .sm-process-media img{
+  width:100%;
+  height:auto;
+}
+
+
+/* =========================================================
+   04 — SOUND AS TIME
+   ========================================================= */
+
+body.project-step-motion .sm-sound{
+  background:var(--sm-signal);
+  color:var(--sm-black);
+}
+
+body.project-step-motion .sm-sound .sm-case-rule{
+  background:rgba(10,10,10,.22);
+}
+
+body.project-step-motion .sm-sound-content{
+  display:grid;
+
+  grid-template-columns:minmax(0,1.55fr) minmax(300px,.7fr);
+  gap:clamp(60px,10vw,170px);
+
+  align-items:end;
+}
+
+body.project-step-motion .sm-sound-words{
+  margin:0;
+
+  font-size:clamp(64px,7vw,116px);
+  line-height:.82;
+
+  letter-spacing:-.065em;
+  font-weight:400;
+}
+
+body.project-step-motion .sm-sound-image{
+  width:100%;
+
+  margin-top:58px;
+}
+
+body.project-step-motion .sm-sound-image img{
+  width:100%;
+  height:auto;
+}
+
+
+/* =========================================================
+   05 — FINAL FILM
+   ========================================================= */
+
+body.project-step-motion .sm-final-film{
+  background:var(--sm-black);
+  color:var(--sm-white);
+}
+
+body.project-step-motion .sm-final-film .sm-case-rule{
+  background:var(--sm-rule-dark);
+}
+
+body.project-step-motion .sm-video-stage{
+  width:100%;
+}
+
+body.project-step-motion .sm-video-stage video{
+  width:100%;
+  height:auto;
+}
+
+body.project-step-motion .sm-video-meta{
+  display:flex;
+  justify-content:space-between;
+
+  margin-top:12px;
+
+  font-size:10px;
+  letter-spacing:.08em;
+}
+
+
+/* =========================================================
+   FILM → BOOK TRANSITION
+   ========================================================= */
+
+body.project-step-motion .sm-transition{
+  position:relative;
+
+  height:auto !important;
+  min-height:0 !important;
+
+  padding:0 !important;
+  margin:0 !important;
+
+  background:var(--sm-black);
+  color:var(--sm-white);
+}
+
+body.project-step-motion .sm-transition-inner{
+  width:min(100%,var(--max));
+  height:340px !important;
+  min-height:340px !important;
+
+  margin:0 auto;
+  padding-inline:var(--pad);
+
+  display:grid;
+  grid-template-columns:1fr auto 1fr;
+  align-items:center;
+
+  gap:30px;
+}
+
+body.project-step-motion .sm-transition strong,
+body.project-step-motion .sm-transition .sm-film-word,
+body.project-step-motion .sm-transition .sm-book-word{
+  margin:0;
+
+  font-size:clamp(70px,8vw,128px);
+  line-height:.82;
+
+  font-weight:600;
+  letter-spacing:-.07em;
+}
+
+body.project-step-motion .sm-transition .sm-film-word{
+  justify-self:start;
+}
+
+body.project-step-motion .sm-transition .sm-book-word{
+  justify-self:end;
+}
+
+body.project-step-motion .sm-transition-arrow{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  color:var(--sm-signal);
+
+  font-size:28px;
+  line-height:1;
+}
+
+/* =========================================================
+   06 — MOVEMENT BECOMES SEQUENCE
+   ========================================================= */
+
+body.project-step-motion .sm-sequence-section{
+  background:var(--sm-paper);
+}
+
+body.project-step-motion .sm-sequence-intro{
+  display:grid;
+
+  grid-template-columns:minmax(0,1.8fr) auto;
+  gap:40px;
+
+  align-items:end;
+}
+
+body.project-step-motion .sm-sequence-lead{
+  max-width:970px;
+
+  margin:0;
+
+  font-size:clamp(42px,5vw,78px);
+  line-height:1.02;
+
+  font-weight:400;
+  letter-spacing:-.065em;
+}
+
+body.project-step-motion .sm-sequence-meta{
+  padding-bottom:8px;
+
+  font-size:10px;
+  letter-spacing:.16em;
+}
+
+body.project-step-motion .sm-stopmotion{
+  margin-top:72px;
+}
+
+body.project-step-motion .sm-stopmotion-stage{
+  position:relative;
+
+  width:min(100%,1180px);
+  margin:auto;
+}
+
+body.project-step-motion .sm-stopmotion-stage img{
+  width:100%;
+  height:auto;
+
+  object-fit:contain;
+}
+
+
+/* =========================================================
+   07 — DIGITAL IMAGING
+   ========================================================= */
+
+body.project-step-motion .sm-material-digital{
+  position:relative !important;
+
+  margin:0 !important;
+  padding:72px var(--pad) 76px !important;
+
+  min-height:0 !important;
+  height:auto !important;
+
+  background:var(--sm-paper) !important;
+}
+
+body.project-step-motion .sm-material-digital::before,
+body.project-step-motion .sm-material-digital::after{
+  content:none !important;
+  display:none !important;
+}
+
+body.project-step-motion .sm-di-shell{
+  position:relative !important;
+
+  width:min(100%,var(--max)) !important;
+
+  margin:0 auto !important;
+  padding:0 !important;
+
+  min-height:0 !important;
+  height:auto !important;
+}
+
+body.project-step-motion .sm-di-header{
+  position:relative !important;
+
+  display:block !important;
+
+  margin:0 !important;
+  padding:0 !important;
+
+  min-height:0 !important;
+  height:auto !important;
+
+  border:0 !important;
+  border-top:0 !important;
+  border-bottom:0 !important;
+}
+
+body.project-step-motion .sm-di-header::before,
+body.project-step-motion .sm-di-header::after{
+  content:none !important;
+  display:none !important;
+}
+
+body.project-step-motion .sm-di-title{
+  position:relative !important;
+
+  display:grid !important;
+
+  grid-template-columns:44px minmax(0,1fr) !important;
+
+  align-items:start !important;
+
+  margin:0 !important;
+  padding:0 !important;
+}
+
+body.project-step-motion .sm-di-number{
+  padding-top:7px !important;
+
+  font-size:11px !important;
+  line-height:1 !important;
+}
+
+body.project-step-motion .sm-di-kicker{
+  display:block !important;
+
+  margin:0 0 12px !important;
+
+  font-size:10px !important;
+  line-height:1 !important;
+
+  letter-spacing:.16em !important;
+}
+
+body.project-step-motion .sm-di-header h2{
+  position:relative !important;
+
+  margin:0 !important;
+  padding:0 !important;
+
+  font-size:clamp(38px,3.4vw,58px) !important;
+  line-height:.94 !important;
+
+  font-weight:500 !important;
+  letter-spacing:-.055em !important;
+}
+
+body.project-step-motion .sm-di-header > p{
+  display:none !important;
+}
+
+/* one and only one divider */
+body.project-step-motion .sm-di-rule{
+  position:relative !important;
+
+  display:block !important;
+
+  width:100% !important;
+  height:1px !important;
+
+  margin:34px 0 46px !important;
+  padding:0 !important;
+
+  border:0 !important;
+
+  background:rgba(10,10,10,.16) !important;
+
+  transform:none !important;
+}
+
+body.project-step-motion .sm-di-rule::before,
+body.project-step-motion .sm-di-rule::after{
+  content:none !important;
+  display:none !important;
+}
+
+body.project-step-motion .sm-di-study-head{
+  display:grid !important;
+
+  grid-template-columns:minmax(0,1fr) minmax(300px,.7fr) !important;
+  gap:60px !important;
+
+  align-items:start !important;
+
+  margin:0 0 32px !important;
+  padding:0 !important;
+
+  min-height:0 !important;
+
+  border:0 !important;
+}
+
+body.project-step-motion .sm-di-grid{
+  display:grid !important;
+
+  grid-template-columns:repeat(3,minmax(0,1fr)) !important;
+
+  column-gap:12px !important;
+  row-gap:32px !important;
+
+  margin:0 !important;
+  padding:0 !important;
+}
+
+body.project-step-motion .sm-di-frame{
+  margin:0 !important;
+  padding:0 !important;
+}
+
+body.project-step-motion .sm-di-frame img{
+  display:block !important;
+
+  width:100% !important;
+  height:auto !important;
+
+  aspect-ratio:1.65 / 1 !important;
+
+  object-fit:cover !important;
+}
+
+body.project-step-motion .sm-di-frame figcaption{
+  display:flex !important;
+  justify-content:space-between !important;
+
+  gap:16px !important;
+
+  margin:8px 0 0 !important;
+  padding:0 !important;
+
+  font-size:9px !important;
+  line-height:1 !important;
+
+  letter-spacing:.14em !important;
+}
+
+/* =========================================================
+   08 — STEP / MOTION BOOK OBJECT
+   ========================================================= */
+
+body.project-step-motion .sm-book-intro{
+  position:relative !important;
+
+  margin:0 !important;
+  padding:72px var(--pad) 72px !important;
+
+  min-height:0 !important;
+  height:auto !important;
+
+  background:var(--sm-paper) !important;
+
+  overflow:visible !important;
+}
+
+body.project-step-motion .sm-book-intro::before,
+body.project-step-motion .sm-book-intro::after{
+  content:none !important;
+  display:none !important;
+}
+
+body.project-step-motion .sm-book-intro > .shell{
+  position:relative !important;
+
+  width:min(100%,var(--max)) !important;
+
+  margin:0 auto !important;
+  padding:0 !important;
+
+  min-height:0 !important;
+  height:auto !important;
+}
+
+
+/* HEADER */
+
+body.project-step-motion .sm-book-intro .sm-section-head{
+  position:relative !important;
+
+  display:grid !important;
+
+  grid-template-columns:44px minmax(0,1fr) !important;
+
+  align-items:start !important;
+
+  margin:0 !important;
+  padding:0 !important;
+
+  min-height:0 !important;
+  height:auto !important;
+
+  border:0 !important;
+  border-top:0 !important;
+  border-bottom:0 !important;
+}
+
+body.project-step-motion .sm-book-intro .sm-section-head::before,
+body.project-step-motion .sm-book-intro .sm-section-head::after{
+  content:none !important;
+  display:none !important;
+}
+
+body.project-step-motion .sm-book-intro .sm-section-head > span{
+  position:static !important;
+
+  margin:0 !important;
+  padding:7px 0 0 !important;
+
+  font-size:11px !important;
+  line-height:1 !important;
+
+  transform:none !important;
+}
+
+body.project-step-motion .sm-book-intro .sm-section-head h2{
+  position:static !important;
+
+  margin:0 !important;
+  padding:0 !important;
+
+  font-size:clamp(38px,3.4vw,58px) !important;
+  line-height:.94 !important;
+
+  font-weight:500 !important;
+  letter-spacing:-.055em !important;
+
+  transform:none !important;
+}
+
+
+/* DIVIDER */
+
+body.project-step-motion .sm-book-intro .sm-case-rule{
+  position:relative !important;
+
+  display:block !important;
+
+  width:100% !important;
+  height:1px !important;
+
+  margin:34px 0 46px !important;
+  padding:0 !important;
+
+  border:0 !important;
+
+  background:rgba(10,10,10,.16) !important;
+
+  transform:none !important;
+}
+
+body.project-step-motion .sm-book-intro .sm-case-rule::before,
+body.project-step-motion .sm-book-intro .sm-case-rule::after{
+  content:none !important;
+  display:none !important;
+}
+
+
+/* MAIN BOOK COMPOSITION */
+
+body.project-step-motion .sm-book-intro-grid{
+  position:relative !important;
+
+  display:grid !important;
+
+  grid-template-columns:
+    minmax(190px,.52fr)
+    minmax(520px,1.72fr)
+    minmax(190px,.52fr)
+    !important;
+
+  column-gap:clamp(38px,5vw,78px) !important;
+
+  align-items:center !important;
+
+  margin:0 !important;
+  padding:0 !important;
+
+  min-height:0 !important;
+  height:auto !important;
+
+  transform:none !important;
+}
+
+body.project-step-motion .sm-book-intro-grid > div:first-child{
+  order:1 !important;
+}
+
+body.project-step-motion .sm-book-intro-grid figure{
+  order:2 !important;
+
+  margin:0 !important;
+  padding:0 !important;
+
+  min-height:0 !important;
+}
+
+body.project-step-motion .sm-book-intro-grid > div:last-child{
+  order:3 !important;
+}
+
+body.project-step-motion .sm-book-intro-grid figure img{
+  display:block !important;
+
+  width:100% !important;
+  max-width:760px !important;
+  height:auto !important;
+
+  margin:0 auto !important;
+  padding:0 !important;
+
+  object-fit:contain !important;
+}
+
+body.project-step-motion .sm-book-intro-grid h3{
+  margin:0 0 14px !important;
+  padding:0 !important;
+
+  font-size:clamp(48px,5vw,80px) !important;
+  line-height:.9 !important;
+
+  font-weight:500 !important;
+  letter-spacing:-.06em !important;
+}
+
+body.project-step-motion .sm-book-intro-grid p{
+  max-width:250px !important;
+
+  margin:0 !important;
+  padding:0 !important;
+
+  font-size:15px !important;
+  line-height:1.5 !important;
+
+  color:#555 !important;
+}
+
+/* =========================================================
+   BOOK SEQUENCE / SIX CHAPTERS
+   ========================================================= */
+
+body.project-step-motion .sm-chapter-flow{
+  position:relative !important;
+
+  margin:0 !important;
+  padding:72px var(--pad) 76px !important;
+
+  min-height:0 !important;
+  height:auto !important;
+
+  background:var(--sm-paper) !important;
+}
+
+body.project-step-motion .sm-chapter-flow::before,
+body.project-step-motion .sm-chapter-flow::after{
+  content:none !important;
+  display:none !important;
+}
+
+body.project-step-motion .sm-chapter-flow-head{
+  position:relative !important;
+
+  width:min(100%,var(--max)) !important;
+
+  margin:0 auto !important;
+  padding:0 !important;
+
+  display:grid !important;
+
+  grid-template-columns:minmax(0,1fr) minmax(300px,.68fr) !important;
+  gap:70px !important;
+
+  align-items:end !important;
+
+  min-height:0 !important;
+  height:auto !important;
+
+  border:0 !important;
+}
+
+body.project-step-motion .sm-chapter-flow-head::before,
+body.project-step-motion .sm-chapter-flow-head::after{
+  content:none !important;
+  display:none !important;
+}
+
+body.project-step-motion .sm-chapter-flow-kicker{
+  display:block !important;
+
+  margin:0 0 12px !important;
+
+  font-size:10px !important;
+  line-height:1 !important;
+
+  letter-spacing:.15em !important;
+}
+
+body.project-step-motion .sm-chapter-flow-head h3{
+  margin:0 !important;
+  padding:0 !important;
+
+  font-size:clamp(38px,3.4vw,58px) !important;
+  line-height:.94 !important;
+
+  font-weight:500 !important;
+  letter-spacing:-.055em !important;
+}
+
+body.project-step-motion .sm-chapter-flow-head p{
+  max-width:520px !important;
+
+  margin:0 !important;
+  padding:0 !important;
+
+  font-size:16px !important;
+  line-height:1.5 !important;
+}
+
+body.project-step-motion .sm-chapter-flow-rule{
+  display:block !important;
+
+  width:min(100%,var(--max)) !important;
+  height:1px !important;
+
+  margin:34px auto 40px !important;
+  padding:0 !important;
+
+  border:0 !important;
+
+  background:rgba(10,10,10,.16) !important;
+}
+
+body.project-step-motion .sm-chapter-flow-stage{
+  width:min(100%,var(--max)) !important;
+
+  margin:0 auto !important;
+  padding:0 !important;
+
+  min-height:0 !important;
+  height:auto !important;
+}
+
+body.project-step-motion .sm-chapter-volumes{
+  display:grid !important;
+
+  grid-template-columns:1fr 1fr !important;
+  gap:48px !important;
+
+  margin:0 !important;
+  padding:0 !important;
+}
+
+body.project-step-motion .sm-chapter-volume{
+  margin:0 !important;
+  padding:0 !important;
+
+  min-height:0 !important;
+  height:auto !important;
+}
+
+body.project-step-motion .sm-chapter-volume header{
+  display:flex !important;
+
+  align-items:center !important;
+  justify-content:space-between !important;
+
+  margin:0 0 14px !important;
+  padding:0 !important;
+}
+
+body.project-step-motion .sm-chapter-volume header > span{
+  font-size:13px !important;
+  line-height:1 !important;
+
+  font-weight:600 !important;
+  letter-spacing:.14em !important;
+}
+
+body.project-step-motion .sm-chapter-viewport{
+  position:relative !important;
+
+  overflow:hidden !important;
+}
+
+body.project-step-motion .sm-chapter-frame{
+  display:none !important;
+
+  margin:0 !important;
+  padding:0 !important;
+}
+
+body.project-step-motion .sm-chapter-frame.is-active{
+  display:block !important;
+}
+
+body.project-step-motion .sm-chapter-frame img{
+  display:block !important;
+
+  width:100% !important;
+  height:auto !important;
+}
+
+/* =========================================================
+   09 — PROCESS / TOOLS
+   ========================================================= */
+
+body.project-step-motion .sm-tools,
+body.project-step-motion .sm-process-tools{
+  background:var(--sm-black);
+  color:var(--sm-white);
+}
+
+body.project-step-motion .sm-tools .sm-case-rule,
+body.project-step-motion .sm-process-tools .sm-case-rule{
+  background:var(--sm-rule-dark);
+}
+
+body.project-step-motion .sm-tools-grid{
+  display:grid;
+
+  grid-template-columns:repeat(4,1fr);
+
+  border-top:1px solid rgba(255,255,255,.18);
+  border-left:1px solid rgba(255,255,255,.18);
+}
+
+body.project-step-motion .sm-tools-grid > *{
+  min-height:280px;
+
+  padding:34px 24px;
+
+  border-right:1px solid rgba(255,255,255,.18);
+}
+
+
+/* =========================================================
+   ENDING
+   ========================================================= */
+
+body.project-step-motion .sm-ending{
+  position:relative;
+
+  min-height:72svh;
+
+  overflow:hidden;
+
+  background:#000;
+  color:#fff;
+}
+
+body.project-step-motion .sm-ending img{
+  position:absolute;
+  inset:0;
+
+  width:100%;
+  height:100%;
+
+  object-fit:cover;
+
+  filter:grayscale(1);
+}
+
+body.project-step-motion .sm-ending-shade{
+  position:absolute;
+  inset:0;
+
+  background:rgba(0,0,0,.18);
+}
+
+body.project-step-motion .sm-ending-inner{
+  position:relative;
+  z-index:2;
+
+  min-height:72svh;
+
+  display:flex;
+  flex-direction:column;
+
+  justify-content:center;
+}
+
+body.project-step-motion .sm-ending-title{
+  display:flex;
+  justify-content:space-between;
+
+  font-size:clamp(72px,10vw,160px);
+  line-height:.82;
+
+  font-weight:600;
+  letter-spacing:-.07em;
+}
+
+
+/* =========================================================
+   CHAPTER RAIL
+   transparent on both light and dark backgrounds
+   ========================================================= */
+
+body.project-step-motion .sm-chapter-rail-v2{
+  background:transparent !important;
+  box-shadow:none !important;
+}
+
+body.project-step-motion .sm-chapter-rail-v2 a{
+  background:transparent !important;
+}
+
+body.project-step-motion .sm-chapter-rail-v2 .rail-line,
+body.project-step-motion .sm-chapter-rail-v2 a::after{
+  background:#ccc;
+}
+
+body.project-step-motion .sm-chapter-rail-v2 .is-active::after{
+  background:var(--sm-signal);
+}
+
+
+/* =========================================================
+   TEXT SELECTION
+   ========================================================= */
+
+body.project-step-motion ::selection{
+  background:var(--sm-signal);
+  color:#000;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media(max-width:900px){
+
+  body.project-step-motion{
+    --sm-section-y:56px;
+    --sm-h2:clamp(32px,8vw,46px);
+
+    --sm-head-rule:26px;
+    --sm-rule-content:34px;
+  }
+
+  body.project-step-motion .sm-concept-grid,
+  body.project-step-motion .sm-process-lead,
+  body.project-step-motion .sm-sound-content,
+  body.project-step-motion .sm-sequence-intro,
+  body.project-step-motion .sm-di-study-head,
+  body.project-step-motion .sm-book-intro-grid,
+  body.project-step-motion .sm-chapter-flow-head{
+    grid-template-columns:1fr;
+  }
+
+  body.project-step-motion .sm-concept-image{
+    width:100%;
+    height:auto;
+
+    aspect-ratio:3/4;
+  }
+
+  body.project-step-motion .sm-di-grid{
+    grid-template-columns:1fr 1fr;
+  }
+
+  body.project-step-motion .sm-book-intro-grid{
+    gap:30px;
+  }
+
+  body.project-step-motion .sm-chapter-volumes{
+    grid-template-columns:1fr;
+  }
+
+  body.project-step-motion .sm-tools-grid{
+    grid-template-columns:1fr 1fr;
+  }
+
+}
+
+@media(max-width:600px){
+
+  body.project-step-motion .sm-di-grid,
+  body.project-step-motion .sm-tools-grid{
+    grid-template-columns:1fr;
+  }
+
+  body.project-step-motion .sm-film-slide{
+    flex-basis:88vw;
+  }
+
+}
+
+
+
+/* =========================================================
+   STEP / MOTION — TARGETED SPACING CORRECTIONS
+   2026-09-12
+   Only:
+   - final film video spacing
+   - film → book transition
+   - 07 digital imaging header
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   FINAL FILM
+   slightly less space above video + less empty black space
+   below the film
+   --------------------------------------------------------- */
+
+body.project-step-motion .sm-final-film .sm-video-stage{
+  padding-top:clamp(24px, 2.4vw, 38px) !important;
+}
+
+body.project-step-motion .sm-final-film{
+  padding-bottom:clamp(54px, 5vw, 80px) !important;
+}
+
+
+/* ---------------------------------------------------------
+   FILM → BOOK
+   restore transition as an intentional bridge between media
+   --------------------------------------------------------- */
+
+body.project-step-motion .sm-transition{
+  position:relative !important;
+
+  display:block !important;
+
+  margin:0 !important;
+  padding:0 !important;
+
+  min-height:0 !important;
+  height:auto !important;
+
+  background:#0a0a0a !important;
+
+  overflow:hidden !important;
+}
+
+body.project-step-motion .sm-transition::before,
+body.project-step-motion .sm-transition::after{
+  content:none !important;
+}
+
+body.project-step-motion .sm-transition-inner{
+  position:relative !important;
+
+  display:grid !important;
+  grid-template-columns:minmax(0,1fr) auto minmax(0,1fr) !important;
+  align-items:center !important;
+  gap:clamp(22px,3vw,48px) !important;
+
+  width:min(100%,var(--max)) !important;
+
+  margin:0 auto !important;
+  padding:
+    clamp(52px,5.5vw,88px)
+    0
+    clamp(52px,5.5vw,88px)
+    !important;
+
+  min-height:0 !important;
+  height:auto !important;
+
+  color:var(--sm-white) !important;
+}
+
+body.project-step-motion .sm-transition-inner > span:first-child,
+body.project-step-motion .sm-transition-inner > span:last-child{
+  display:block !important;
+
+  width:100% !important;
+  height:1px !important;
+
+  margin:0 !important;
+  padding:0 !important;
+
+  background:rgba(247,246,241,.25) !important;
+}
+
+body.project-step-motion .sm-transition-copy{
+  display:flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  gap:clamp(14px,1.5vw,24px) !important;
+
+  margin:0 !important;
+  padding:0 !important;
+
+  white-space:nowrap !important;
+}
+
+body.project-step-motion .sm-transition-copy strong,
+body.project-step-motion .sm-transition-copy span{
+  margin:0 !important;
+  padding:0 !important;
+}
+
+
+/* ---------------------------------------------------------
+   07 — DIGITAL IMAGING HEADER
+
+   Fix:
+   rule currently intersects DIGITAL IMAGING.
+   Header owns the number/kicker/title;
+   divider begins only after that complete heading block.
+   --------------------------------------------------------- */
+
+body.project-step-motion .sm-material-digital{
+  padding-top:clamp(62px,5vw,78px) !important;
+}
+
+body.project-step-motion .sm-material-digital .sm-di-header{
+  display:block !important;
+
+  position:relative !important;
+
+  margin:0 !important;
+  padding:0 !important;
+
+  height:auto !important;
+  min-height:0 !important;
+
+  border:0 !important;
+  background:none !important;
+}
+
+body.project-step-motion .sm-material-digital .sm-di-title{
+  display:grid !important;
+
+  grid-template-columns:44px minmax(0,1fr) !important;
+  column-gap:24px !important;
+
+  align-items:start !important;
+
+  margin:0 !important;
+  padding:0 !important;
+
+  height:auto !important;
+  min-height:0 !important;
+}
+
+body.project-step-motion .sm-material-digital .sm-di-number{
+  display:block !important;
+
+  position:static !important;
+
+  margin:0 !important;
+  padding-top:6px !important;
+
+  transform:none !important;
+
+  font-size:11px !important;
+  line-height:1 !important;
+}
+
+body.project-step-motion .sm-material-digital .sm-di-title > div{
+  display:block !important;
+
+  margin:0 !important;
+  padding:0 !important;
+}
+
+body.project-step-motion .sm-material-digital .sm-di-kicker{
+  display:block !important;
+
+  margin:0 0 13px !important;
+  padding:0 !important;
+
+  font-size:10px !important;
+  line-height:1 !important;
+  letter-spacing:.17em !important;
+}
+
+body.project-step-motion .sm-material-digital .sm-di-title h2{
+  display:block !important;
+
+  position:static !important;
+
+  margin:0 !important;
+  padding:0 !important;
+
+  font-size:clamp(38px,3.4vw,58px) !important;
+  line-height:.94 !important;
+
+  font-weight:500 !important;
+  letter-spacing:-.055em !important;
+
+  transform:none !important;
+}
+
+body.project-step-motion .sm-material-digital .sm-di-header::before,
+body.project-step-motion .sm-material-digital .sm-di-header::after,
+body.project-step-motion .sm-material-digital .sm-di-title::before,
+body.project-step-motion .sm-material-digital .sm-di-title::after{
+  content:none !important;
+  display:none !important;
+}
+
+
+/* Divider is explicitly below the completed heading. */
+
+body.project-step-motion .sm-material-digital .sm-di-rule{
+  display:block !important;
+  position:relative !important;
+
+  clear:both !important;
+
+  width:100% !important;
+  height:1px !important;
+
+  margin:32px 0 44px !important;
+  padding:0 !important;
+
+  border:0 !important;
+
+  background:rgba(10,10,10,.16) !important;
+
+  transform:none !important;
+}
+
+body.project-step-motion .sm-material-digital .sm-di-rule::before,
+body.project-step-motion .sm-material-digital .sm-di-rule::after{
+  content:none !important;
+  display:none !important;
+}
+
+
+/* Keep first Digital Imaging content aligned with page grid. */
+
+body.project-step-motion .sm-material-digital .sm-di-study-head{
+  margin-top:0 !important;
+  padding-top:0 !important;
+}
+
+
+/* ---------------------------------------------------------
+   MOBILE
+   --------------------------------------------------------- */
+
+@media (max-width:760px){
+
+  body.project-step-motion .sm-final-film .sm-video-stage{
+    padding-top:24px !important;
+  }
+
+  body.project-step-motion .sm-final-film{
+    padding-bottom:52px !important;
+  }
+
+  body.project-step-motion .sm-transition-inner{
+    grid-template-columns:1fr !important;
+    gap:22px !important;
+
+    padding:48px 0 !important;
+  }
+
+  body.project-step-motion .sm-transition-copy{
+    justify-content:flex-start !important;
+  }
+
+  body.project-step-motion .sm-material-digital .sm-di-title{
+    grid-template-columns:32px minmax(0,1fr) !important;
+    column-gap:14px !important;
+  }
+
+}

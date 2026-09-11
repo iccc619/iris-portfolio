@@ -411,7 +411,7 @@ function render60BPM(p,projects){
       <img class="bpm4-finale-logo" src="${A}/svg/Secondary Logo 4.svg" alt="60 BPM secondary logo 4">
     </section>
 
-    <a class="next-project bpm4-next" href="/work/${next.slug}/"><span class="meta-mono">Next project</span><br>${esc(next.title)} →</a>
+    <a class="next-project bpm4-next" href="/work/${next.slug}/"><span class="meta-mono">NEXT PROJECT</span><br>${esc(next.title)} →</a>
   </article>`;
 
   document.body.insertAdjacentHTML("beforeend",footer());
@@ -533,7 +533,16 @@ function renderEtherealRealm(p,projects){
     </nav>
 
     <section class="er2-hero" id="er2-1">
-      ${img("svg/hero.svg","EtheReal pixel identity graphic","er2-hero-art")}
+      <video
+        class="er2-hero-art er2-hero-video"
+        src="/public/projects/ethereal-realm/hero.mp4"
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="auto"
+        aria-hidden="true"
+      ></video>
       <div class="er2-hero-overlay"></div>
       <div class="shell er2-hero-inner">
         <div class="er2-kicker">Brand identity · AI-assisted art direction · UI/UX · 2024</div>
@@ -992,7 +1001,7 @@ function renderEtherealRealm(p,projects){
       <div class="shell er-final-background"><span>WHEN THE SCREEN GOES DARK</span><strong>THE DREAM<br>DISAPPEARS.</strong></div>
     </section>
 
-    <a class="next-project er2-next" href="/work/${next.slug}/"><span class="meta-mono">Next project</span><br>${esc(next.title)} →</a>
+    <a class="next-project er2-next" href="/work/${next.slug}/"><span class="meta-mono">NEXT PROJECT</span><br>${esc(next.title)} →</a>
   </article>`;
 
   document.body.insertAdjacentHTML("beforeend",footer());
@@ -1127,7 +1136,20 @@ function renderGreenGridV1(p,projects){
             coordination and social connection.
           </p>
 
-          <div class="gg-meta">
+          
+        </div>
+
+        <div class="gg-hero-mark">
+          ${img("App Icon.svg","Green Grid app icon","gg-app-icon")}
+          <div class="gg-hero-word">
+            <span>GREEN</span>
+            <span>GRID</span>
+          </div>
+        </div>
+
+      </div>
+
+<div class="gg-meta">
             <div>
               <b>Context</b>
               <span>Academic · Team of 4</span>
@@ -1148,23 +1170,12 @@ function renderGreenGridV1(p,projects){
               <span>2025</span>
             </div>
           </div>
-        </div>
 
-        <div class="gg-hero-mark">
-          ${img("App Icon.svg","Green Grid app icon","gg-app-icon")}
-          <div class="gg-hero-word">
-            <span>GREEN</span>
-            <span>GRID</span>
-          </div>
-        </div>
 
-      </div>
 
-      <div class="shell gg-phone-hero">
-        ${phone("APP_CG_Home.png","Green Grid home screen")}
-        ${phone("APP_CG_Map.png","Green Grid garden map")}
-        ${phone("APP_CG_Community.png","Green Grid community screen")}
-      </div>
+
+
+      
     </section>
 
 
@@ -2028,7 +2039,7 @@ function renderGreenGridV1(p,projects){
     </section>
 
     <a class="next-project gg-next" href="/work/${next.slug}/">
-      <span class="meta-mono">Next project</span><br>
+      <span class="meta-mono">NEXT PROJECT</span><br>
       ${esc(next.title)} →
     </a>
 
@@ -3299,7 +3310,7 @@ function renderNExhibitionV1(p,projects){
 
 
 <a class="next-project nx-next" href="/work/${next.slug}/">
-      <span class="meta-mono">Next project</span><br>
+      <span class="meta-mono">NEXT PROJECT</span><br>
       ${esc(next.title)} →
     </a>
 
@@ -5083,6 +5094,1112 @@ function initNExhibitionHeroSpace(){
    MODULAR TYPEFACE V2
    ========================================================= */
 
+
+function renderStepMotion(project) {
+  const base = "/public/projects/step-motion";
+
+  return `
+    <article class="sm-page">
+
+      <!-- HERO -->
+      <section class="sm-hero">
+        <video
+          class="sm-hero-video"
+          src="${base}/Film_Final.mp4"
+          autoplay
+          muted
+          loop
+          playsinline
+          preload="metadata"
+        ></video>
+
+        <div class="sm-hero-shade"></div>
+
+        <div class="sm-hero-montage" aria-hidden="true">
+
+          <div class="sm-hero-panel sm-hero-panel-a">
+            <img src="${base}/film/2.png" alt="">
+          </div>
+
+          <div class="sm-hero-panel sm-hero-panel-b">
+            <img src="${base}/film/4.png" alt="">
+          </div>
+
+          <div class="sm-hero-panel sm-hero-panel-c">
+            <img src="${base}/film/3.png" alt="">
+          </div>
+
+        </div>
+
+
+        <div class="shell sm-hero-inner">
+          <div class="sm-kicker">
+  <span>FILM · SOUND · PRINT · BOOK · 2026</span>
+</div>
+
+          <div class="sm-title">
+            <span class="sm-title-step">STEP</span>
+            <span class="sm-title-slash">/</span>
+            <span class="sm-title-motion">MOTION</span>
+          </div>
+
+          <div class="sm-hero-foot">
+            <p>
+              A cross-media study of fragmented time, translating
+              stairs, elevators and repeated human movement from
+              moving image into a physical book.
+            </p>
+
+            <span>FILM · SOUND · PRINT · BOOK</span>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- CONCEPT -->
+      <section class="sm-paper sm-concept">
+        <div class="shell">
+          <div class="sm-section-head sm-case-head">
+            <span>01</span>
+            <h2>TIME AS SPACE</h2>
+          </div>
+
+          <div class="sm-concept-grid">
+            <div class="sm-concept-copy">
+              <p class="sm-lead">
+                Step / Motion explores the passage of time through
+                spaces designed for movement.
+              </p>
+
+              <p>
+                Staircases represent bodily rhythm and memory,
+                while elevators and escalators introduce mechanical,
+                continuous motion. Repetition, montage, blur and
+                spatial distortion allow different moments to appear
+                to coexist within the same frame.
+              </p>
+            </div>
+
+            <figure class="sm-concept-image sm-concept-a">
+              <img
+                src="${base}/film/1.png"
+                alt="People moving across a staircase"
+              >
+            </figure>
+
+            <figure class="sm-concept-image sm-concept-b">
+              <img
+                src="${base}/film/2.png"
+                alt="People travelling through an escalator"
+              >
+            </figure>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- FILM -->
+      <section class="sm-dark sm-film" id="sm-film">
+
+        <div class="shell">
+
+          <div class="sm-section-head sm-section-head-light">
+            <span>02</span>
+            <h2>CONSTRUCTING THE FILM</h2>
+          </div>
+
+          <div class="sm-film-swipe-intro">
+
+            <p>
+              Five frames trace the film's movement from bodily rhythm
+              through mechanical repetition, spatial disruption and
+              layered temporal space.
+            </p>
+
+            <div class="sm-film-swipe-controls">
+
+              <button
+                type="button"
+                data-sm-swipe-prev
+                aria-label="Previous frame"
+              >←</button>
+
+              <span>SWIPE / DRAG</span>
+
+              <button
+                type="button"
+                data-sm-swipe-next
+                aria-label="Next frame"
+              >→</button>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <div class="sm-film-swipe" data-sm-swipe>
+
+
+          <!-- 01 -->
+          <article class="sm-film-slide">
+
+            <figure>
+              <img
+                src="${base}/film/1.png"
+                alt="People moving across a staircase"
+              >
+            </figure>
+
+            <div class="sm-film-slide-caption">
+
+              <span>01</span>
+
+              <div>
+                <h3>HUMAN RHYTHM</h3>
+
+                <p>
+                  The staircase records movement at a human pace.
+                  Different bodies cross the same structure independently,
+                  creating uneven rhythms of arrival and departure.
+                </p>
+
+                <small>
+                  STAIRCASE / BODY / DURATION
+                </small>
+              </div>
+
+            </div>
+
+          </article>
+
+
+          <!-- 02 -->
+          <article class="sm-film-slide">
+
+            <figure>
+              <img
+                src="${base}/film/2.png"
+                alt="People travelling on an escalator"
+              >
+            </figure>
+
+            <div class="sm-film-slide-caption">
+
+              <span>02</span>
+
+              <div>
+                <h3>MECHANICAL RHYTHM</h3>
+
+                <p>
+                  The escalator replaces individual pacing with continuous
+                  mechanical movement. Figures blur while the architecture
+                  carries them steadily through the frame.
+                </p>
+
+                <small>
+                  ESCALATOR / CONTINUITY / REPETITION
+                </small>
+              </div>
+
+            </div>
+
+          </article>
+
+
+          <!-- 03 -->
+          <article class="sm-film-slide">
+
+            <figure>
+              <img
+                src="${base}/film/3.png"
+                alt="Rotated escalator structure with diagonal yellow lines"
+              >
+            </figure>
+
+            <div class="sm-film-slide-caption">
+
+              <span>03</span>
+
+              <div>
+                <h3>SHIFTED SPACE</h3>
+
+                <p>
+                  Rotation breaks the expected direction of the escalator.
+                  Rails, steps and yellow markings become graphic lines,
+                  making the familiar space feel unstable.
+                </p>
+
+                <small>
+                  ROTATION / ANGLE / DISORIENTATION
+                </small>
+              </div>
+
+            </div>
+
+          </article>
+
+
+          <!-- 04 -->
+          <article class="sm-film-slide">
+
+            <figure>
+              <img
+                src="${base}/film/4.png"
+                alt="Multiple escalator structures layered across the frame"
+              >
+            </figure>
+
+            <div class="sm-film-slide-caption">
+
+              <span>04</span>
+
+              <div>
+                <h3>LAYERED TIME</h3>
+
+                <p>
+                  Multiple escalator planes overlap within one image.
+                  Separate moments are compressed together, allowing
+                  movement and architecture to coexist simultaneously.
+                </p>
+
+                <small>
+                  OVERLAP / MONTAGE / TEMPORAL LAYERS
+                </small>
+              </div>
+
+            </div>
+
+          </article>
+
+
+          <!-- 05 -->
+          <article class="sm-film-slide">
+
+            <figure>
+              <img
+                src="${base}/film/5.png"
+                alt="Dark staircase crossed by a diagonal handrail"
+              >
+            </figure>
+
+            <div class="sm-film-slide-caption">
+
+              <span>05</span>
+
+              <div>
+                <h3>PAUSE</h3>
+
+                <p>
+                  The final frame returns to the staircase in darkness.
+                  The diagonal handrail holds the direction of movement
+                  while the sequence slows into a quieter pause.
+                </p>
+
+                <small>
+                  STAIRCASE / SHADOW / STILLNESS
+                </small>
+              </div>
+
+            </div>
+
+          </article>
+
+
+        </div>
+
+
+        <div class="shell sm-film-swipe-bottom">
+
+          <div class="sm-film-swipe-progress" aria-hidden="true">
+            <span class="is-active"></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+
+          <span class="sm-film-slide-count">
+            <b data-sm-current-slide>01</b> / 05
+          </span>
+
+        </div>
+
+      </section>
+
+
+      <!-- AFTER EFFECTS PROCESS -->
+      
+<section class="sm-refine-temporal">
+
+  <div class="sm-rf-head">
+    <div class="sm-rf-number">03</div>
+
+    <div class="sm-rf-heading">
+      <h2>TEMPORAL COMPOSITING</h2>
+    </div>
+  </div>
+
+  <div class="sm-rf-rule"></div>
+
+  <div class="sm-rf-intro">
+    <p class="sm-rf-lead">
+      Motion is constructed through temporal layering,
+      keyframes and controlled distortion.
+    </p>
+
+    <p class="sm-rf-copy">
+      The process moves between footage treatment and structural editing:
+      long-exposure trails stretch a single moment, while rotation, scale
+      and spatial transforms destabilise the strict verticality of escalators.
+    </p>
+  </div>
+
+
+  <div class="sm-rf-feature">
+
+    <figure class="sm-rf-feature-media">
+      <img
+        src="${base}/film process/Comp 1495.png"
+        alt="Temporal compositing experiment showing overlapping traces of movement"
+      >
+    </figure>
+
+    <div class="sm-rf-feature-note">
+      <span>AFTER EFFECTS</span>
+
+      <h3>CC WIDE TIME</h3>
+
+      <p>
+        Temporal accumulation turns individual bodies
+        into overlapping traces of movement.
+      </p>
+    </div>
+
+  </div>
+
+
+  <div class="sm-rf-process-grid">
+
+    <figure class="sm-rf-process-card">
+      <figcaption>
+        <span>LONG EXPOSURE TRAIL</span>
+        <span>TIME / LAYERS / COMPOSITING</span>
+      </figcaption>
+
+      <img
+        src="${base}/film process/Film footage timeline_Long Exposure Trail.png"
+        alt="After Effects timeline showing long exposure trail process"
+      >
+    </figure>
+
+
+    <figure class="sm-rf-process-card">
+      <figcaption>
+        <span>ROLL MOVEMENT</span>
+        <span>POSITION / SCALE / ROTATION</span>
+      </figcaption>
+
+      <img
+        src="${base}/film process/Film footage timeline_Tilt Effect.png"
+        alt="After Effects interface showing position scale and rotation transforms"
+      >
+    </figure>
+
+  </div>
+
+</section>
+
+
+
+      <!-- SOUND -->
+      
+<section class="sm-refine-sound">
+
+  <div class="sm-sound-head">
+
+    <div class="sm-rf-number">04</div>
+
+    <div class="sm-rf-heading">
+      <h2>SOUND AS TIME</h2>
+    </div>
+
+  </div>
+
+  <div class="sm-sound-rule"></div>
+
+
+  <div class="sm-sound-intro">
+
+    <div class="sm-sound-words" aria-label="Sound sources">
+      <span>WHITE NOISE</span>
+      <span>STEP</span>
+      <span>FLASHBACK</span>
+    </div>
+
+
+    <div class="sm-sound-copy">
+
+      <div class="sm-sound-small">SOUND COMPOSITION</div>
+
+      <p>
+        Environmental recordings, mechanical white noise and recurring
+        sound motifs are layered rather than treated as continuous
+        background music.
+      </p>
+
+      <p>
+        Changes in volume and density become part of the film's
+        temporal structure.
+      </p>
+
+    </div>
+
+  </div>
+
+
+  <figure class="sm-sound-timeline">
+
+    <figcaption>
+      <span>PREMIERE PRO</span>
+      <span>VOLUME / DENSITY / REPETITION</span>
+    </figcaption>
+
+    <img
+      src="${base}/film process/Sound file timeline.png"
+      alt="Premiere Pro audio timeline showing layered environmental sound"
+    >
+
+  </figure>
+
+</section>
+
+
+
+      <!-- FINAL FILM -->
+      <section class="sm-final-film">
+        <div class="shell">
+
+          <div class="sm-section-head sm-section-head-light">
+            <span>05</span>
+            <h2>FINAL FILM</h2>
+          </div>
+
+          <div class="sm-video-stage">
+            <video
+              src="${base}/Film_Final.mp4"
+              controls
+              playsinline
+              preload="metadata"
+              poster="${base}/Cover.png"
+            ></video>
+
+            <div class="sm-video-meta">
+              <span>STEP / MOTION</span>
+              <span>FILM · 2026</span>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+
+      <!-- TRANSITION -->
+      <section class="sm-transition">
+        <div class="shell sm-transition-inner">
+          <span></span>
+
+          <div>
+            <strong>FILM</strong>
+            <i>→</i>
+            <strong>BOOK</strong>
+          </div>
+
+          <p>
+            
+          </p>
+        </div>
+      </section>
+
+
+      <!-- SEQUENCE -->
+      
+<section class="sm-sequence-section sm-case-section" data-sm-book-sequence>
+
+  <div class="sm-sequence-head sm-case-head">
+    <span class="sm-sequence-number">06</span>
+
+    <h2 class="sm-case-title">MOVEMENT BECOMES SEQUENCE</h2>
+  </div>
+
+  <div class="sm-sequence-rule sm-case-rule"></div>
+
+  <div class="sm-sequence-intro sm-case-content">
+    <p class="sm-sequence-lead">
+      A moving body becomes a series of stills.
+      A series of stills becomes a page rhythm.
+    </p>
+
+    <span class="sm-sequence-meta">
+      FRAME / TRACE / REPEAT
+    </span>
+  </div>
+
+
+  <div class="sm-stopmotion">
+
+    <div class="sm-stopmotion-stage">
+
+      <button
+        class="sm-stopmotion-arrow sm-stopmotion-prev"
+        type="button"
+        data-sm-book-prev
+        aria-label="Previous frame">
+        ←
+      </button>
+
+      <div class="sm-stopmotion-frame">
+
+        <img
+          data-sm-book-frame
+          src="${base}/book-sequence-fixed/Still_010000.png"
+          alt="Sequential human movement study"
+        >
+
+      </div>
+
+      <button
+        class="sm-stopmotion-arrow sm-stopmotion-next"
+        type="button"
+        data-sm-book-next
+        aria-label="Next frame">
+        →
+      </button>
+
+    </div>
+
+
+    <div class="sm-stopmotion-controls">
+
+      <button
+        class="sm-stopmotion-play"
+        type="button"
+        data-sm-book-play
+        aria-label="Pause animation">
+        II
+      </button>
+
+      <div class="sm-stopmotion-progress">
+        <div class="sm-stopmotion-track">
+          <span data-sm-book-progress></span>
+        </div>
+
+        <span class="sm-stopmotion-count">
+          <span data-sm-book-current>01</span>
+          /
+          <span data-sm-book-total>11</span>
+        </span>
+      </div>
+
+    </div>
+
+
+    <div class="sm-stopmotion-caption">
+
+      <span>PAGE SEQUENCE</span>
+
+      <p>
+        The figure moves through the book one frame at a time.
+        Turning the page becomes an act of movement.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section class="sm-material-digital sm-material">
+
+  <div class="sm-di-shell">
+
+    <!-- ===================================================
+         HEADER
+         =================================================== -->
+
+    <header class="sm-di-header">
+
+      <div class="sm-di-title">
+
+        <span class="sm-di-number">
+          07
+        </span>
+
+        <div>
+          <span class="sm-di-kicker">
+            MATERIAL → IMAGE
+          </span>
+
+          <h2>
+            DIGITAL IMAGING
+          </h2>
+        </div>
+
+      </div>
+
+    </header>
+
+
+    <div class="sm-di-rule"></div>
+
+
+
+    <!-- ===================================================
+         SOURCE / BASE IMAGE
+         =================================================== -->
+
+    
+
+
+
+    <!-- ===================================================
+         SIX DIGITAL STUDIES
+         =================================================== -->
+
+    <div class="sm-di-study-head">
+
+      <span>
+        DIGITAL TRANSFORMATIONS
+      </span>
+
+      <p>
+        Six treatments test how the same architectural image
+        can shift between photographic detail, tonal field,
+        edge, texture and printable graphic form.
+      </p>
+
+    </div>
+
+
+    <div class="sm-di-grid">
+
+      
+
+
+      
+
+
+      
+
+
+      
+
+
+      
+
+
+      
+
+    
+<figure class="sm-di-frame">
+        <div class="sm-di-image">
+          <img
+            src="${base}/book%20process/colour_01.png"
+            alt="Digital staircase study 01"
+            loading="lazy"
+          >
+        </div>
+
+        <figcaption>
+          <span>01</span>
+          <span>PRINT</span>
+        </figcaption>
+      </figure>
+<figure class="sm-di-frame">
+        <div class="sm-di-image">
+          <img
+            src="${base}/book%20process/colour_02.png"
+            alt="Digital staircase study 02"
+            loading="lazy"
+          >
+        </div>
+
+        <figcaption>
+          <span>02</span>
+          <span>THRESHOLD</span>
+        </figcaption>
+      </figure>
+<figure class="sm-di-frame">
+        <div class="sm-di-image">
+          <img
+            src="${base}/book%20process/colour_03.png"
+            alt="Digital staircase study 03"
+            loading="lazy"
+          >
+        </div>
+
+        <figcaption>
+          <span>03</span>
+          <span>TONAL FIELD</span>
+        </figcaption>
+      </figure>
+<figure class="sm-di-frame">
+        <div class="sm-di-image">
+          <img
+            src="${base}/book%20process/colour_05.png"
+            alt="Digital staircase study 05"
+            loading="lazy"
+          >
+        </div>
+
+        <figcaption>
+          <span>04</span>
+          <span>SEPARATION</span>
+        </figcaption>
+      </figure>
+<figure class="sm-di-frame">
+        <div class="sm-di-image">
+          <img
+            src="${base}/book%20process/colour_06.png"
+            alt="Digital staircase study 06"
+            loading="lazy"
+          >
+        </div>
+
+        <figcaption>
+          <span>05</span>
+          <span>RELIEF</span>
+        </figcaption>
+      </figure>
+<figure class="sm-di-frame">
+        <div class="sm-di-image">
+          <img
+            src="${base}/book%20process/colour_04.png"
+            alt="Digital staircase study 04"
+            loading="lazy"
+          >
+        </div>
+
+        <figcaption>
+          <span>06</span>
+          <span>CONTRAST</span>
+        </figcaption>
+      </figure>
+</div>
+
+
+
+    <!-- ===================================================
+         PRINT CONNECTION
+         =================================================== -->
+</div>
+
+  </div>
+
+</section>
+
+
+
+
+
+
+      <!-- BOOK INTRO -->
+      <section class="sm-book-intro sm-case-section">
+        <div class="shell">
+
+          <div class="sm-section-head">
+            <span>08</span>
+            <h2 class="sm-case-title">STEP / MOTION</h2>
+          </div>
+
+          <div class="sm-case-rule"></div>
+<div class="sm-book-intro-grid sm-case-content">
+            <div>
+              <h3>STEP</h3>
+              <p>
+                Old staircases, bodily movement and the physical
+                cadence of ascending and descending.
+              </p>
+            </div>
+
+            <figure>
+              <img
+                src="${base}/book/IMG_2116%202.png"
+                alt="Step Motion book open"
+              >
+            </figure>
+
+            <div>
+              <h3>MOTION</h3>
+              <p>
+                Elevators, escalators and mechanical movement
+                translated through repetition and sequential pages.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+
+      <!-- TRANSPARENCY -->
+      
+<section class="sm-chapter-flow" data-sm-chapter-flow>
+
+  <div class="sm-chapter-flow-head">
+
+    <div>
+      <span class="sm-chapter-flow-kicker">
+        BOOK SEQUENCE
+      </span>
+
+      <h3>
+        Two books.<br>
+        Six chapters.
+      </h3>
+    </div>
+
+    <p>
+      STEP and MOTION develop in parallel. Each chapter shifts
+      the rhythm of image, transparency and sequence, translating
+      movement into a physical reading experience.
+    </p>
+
+  </div>
+
+
+  <div class="sm-chapter-flow-rule"></div>
+
+
+  <div class="sm-chapter-flow-stage">
+
+    <!-- STEP -->
+    <article class="sm-chapter-volume sm-chapter-step">
+
+      <header>
+        <span>STEP</span>
+
+        <small data-sm-step-count>
+          01 / 03
+        </small>
+      </header>
+
+
+      <div class="sm-chapter-viewport">
+
+        <figure
+          class="sm-chapter-frame is-active"
+          data-sm-step-frame>
+
+          <img
+            src="${base}/book/IMG_1902.png"
+            alt="STEP book chapter 1">
+
+          <figcaption>
+            CHAPTER 01
+          </figcaption>
+
+        </figure>
+
+      </div>
+
+
+      <div class="sm-chapter-progress"
+           aria-hidden="true">
+
+        <button class="is-active"
+                data-sm-step-dot="0"></button>
+
+        <button data-sm-step-dot="1"></button>
+
+        <button data-sm-step-dot="2"></button>
+
+      </div>
+
+    </article>
+
+
+
+    <div class="sm-chapter-divider"
+         aria-hidden="true">
+      <span></span>
+    </div>
+
+
+
+    <!-- MOTION -->
+    <article class="sm-chapter-volume sm-chapter-motion">
+
+      <header>
+        <span>MOTION</span>
+
+        <small data-sm-motion-count>
+          01 / 03
+        </small>
+      </header>
+
+
+      <div class="sm-chapter-viewport">
+
+        <figure
+          class="sm-chapter-frame is-active"
+          data-sm-motion-frame>
+
+          <img
+            src="${base}/book/IMG_1927.png"
+            alt="MOTION book chapter 1">
+
+          <figcaption>
+            CHAPTER 01
+          </figcaption>
+
+        </figure>
+
+      </div>
+
+
+      <div class="sm-chapter-progress"
+           aria-hidden="true">
+
+        <button class="is-active"
+                data-sm-motion-dot="0"></button>
+
+        <button data-sm-motion-dot="1"></button>
+
+        <button data-sm-motion-dot="2"></button>
+
+      </div>
+
+    </article>
+
+  </div>
+
+
+  <div class="sm-chapter-flow-controls">
+
+    <button type="button"
+            data-sm-chapter-prev
+            aria-label="Previous chapter">
+      ←
+    </button>
+
+    <span>
+      CHAPTER
+      <strong data-sm-chapter-current>01</strong>
+      / 03
+    </span>
+
+    <button type="button"
+            data-sm-chapter-next
+            aria-label="Next chapter">
+      →
+    </button>
+
+  </div>
+
+</section>
+
+
+
+      <!-- MATERIAL -->
+      
+
+
+      <!-- CAPABILITIES -->
+      <section class="sm-capability-section">
+        <div class="shell">
+
+          <div class="sm-section-head sm-section-head-light">
+            <span>09</span>
+            <h2>PROCESS / TOOLS</h2>
+          </div>
+
+          <div class="sm-capability-grid">
+
+            <div>
+              <span>01</span>
+              <h3>AFTER EFFECTS</h3>
+              <p>
+                CC Wide Time<br>
+                Masking &amp; compositing<br>
+                Position / scale / rotation<br>
+                Temporal distortion
+              </p>
+            </div>
+
+            <div>
+              <span>02</span>
+              <h3>EDITING / SOUND</h3>
+              <p>
+                Montage<br>
+                Multi-layer sequencing<br>
+                Environmental recording<br>
+                Volume transitions
+              </p>
+            </div>
+
+            <div>
+              <span>03</span>
+              <h3>PHOTOSHOP</h3>
+              <p>
+                Scanned image treatment<br>
+                Tonal adjustment<br>
+                Texture variation<br>
+                Frame preparation
+              </p>
+            </div>
+
+            <div>
+              <span>04</span>
+              <h3>EDITORIAL / BOOK</h3>
+              <p>
+                Page sequencing<br>
+                Transparent overlays<br>
+                Physical binding<br>
+                Print production
+              </p>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+
+      <!-- END -->
+      <section class="sm-ending">
+        <figure class="sm-ending-image">
+          <img
+            src="${base}/book/IMG_1987.jpg"
+            alt="Final Step Motion book"
+          >
+        </figure>
+
+        <div class="sm-ending-shade"></div>
+
+        <div class="shell sm-ending-inner">
+          <div class="sm-ending-title">
+            <span>STEP</span>
+            <span>/ MOTION</span>
+          </div>
+
+          <div class="sm-ending-foot">
+            <p>
+              A movement becomes an image.<br>
+              An image becomes a sequence.
+            </p>
+
+            <span>2026</span>
+          </div>
+        </div>
+      </section>
+
+    </article>
+  `;
+}
+
+
 function renderModularTypefaceV2(p,projects){
 
   const A="/public/projects/modular-typeface";
@@ -5633,9 +6750,7 @@ function renderModularTypefaceV2(p,projects){
       <a class="next-project mt2-next"
          href="/work/${next.slug}/">
 
-        <span class="meta-mono">
-          Next project
-        </span>
+        <span class="meta-mono">NEXT PROJECT</span>
 
         <br>
 
@@ -5864,6 +6979,247 @@ function renderModularTypefaceV2(p,projects){
 
 
 
+
+
+
+/* STEP MOTION HERO CAPTION BALANCE START */
+
+function initStepMotionHeroCaptionBalance(){
+
+  const hero =
+    document.querySelector(".sm-hero");
+
+  if(!hero) return;
+
+
+  const kicker =
+    hero.querySelector(".sm-kicker");
+
+  const copy =
+    hero.querySelector(".sm-hero-copy");
+
+
+  /*
+    Use the REAL title classes from the markup.
+    Fall back to spans only if necessary.
+  */
+
+  const step =
+    hero.querySelector(".sm-title-step") ||
+    hero.querySelector(".sm-title > span:first-child");
+
+  const motion =
+    hero.querySelector(".sm-title-motion") ||
+    hero.querySelector(".sm-title > span:last-child");
+
+
+  if(
+    !kicker ||
+    !copy ||
+    !step ||
+    !motion
+  ){
+    console.warn(
+      "[Step Motion] hero caption balance: elements missing"
+    );
+
+    return;
+  }
+
+
+  let raf = null;
+
+
+  const sync = ()=>{
+
+    cancelAnimationFrame(raf);
+
+    raf = requestAnimationFrame(()=>{
+
+      const heroRect =
+        hero.getBoundingClientRect();
+
+      const stepRect =
+        step.getBoundingClientRect();
+
+      const motionRect =
+        motion.getBoundingClientRect();
+
+
+      /*
+        Same REAL visual gap above STEP
+        and below MOTION.
+      */
+
+      const gap =
+        window.innerWidth <= 760
+          ? 18
+          : 28;
+
+
+      /*
+        Kicker:
+        bottom edge = STEP top - gap
+      */
+
+      const kickerTop =
+        stepRect.top
+        - heroRect.top
+        - gap
+        - kicker.offsetHeight;
+
+
+      /*
+        Description:
+        top edge = MOTION bottom + gap
+      */
+
+      const copyTop =
+        motionRect.bottom
+        - heroRect.top
+        + gap;
+
+
+      kicker.style.top =
+        `${Math.round(kickerTop)}px`;
+
+      copy.style.top =
+        `${Math.round(copyTop)}px`;
+
+    });
+
+  };
+
+
+  sync();
+
+
+  /*
+    Video itself does not affect text geometry,
+    but fonts + viewport width do.
+  */
+
+  if(document.fonts?.ready){
+    document.fonts.ready.then(sync);
+  }
+
+
+  if("ResizeObserver" in window){
+
+    const observer =
+      new ResizeObserver(sync);
+
+    observer.observe(hero);
+
+  }
+  else{
+
+    window.addEventListener(
+      "resize",
+      sync,
+      { passive:true }
+    );
+
+  }
+
+
+  window.addEventListener(
+    "resize",
+    sync,
+    { passive:true }
+  );
+
+}
+
+/* STEP MOTION HERO CAPTION BALANCE END */
+
+
+/* =========================================================
+   STEP / MOTION — SHARED PROJECT CHROME
+   chapter rail / next project / global footer
+   ========================================================= */
+
+function initStepMotionProjectChrome(){
+  /*
+   * Legacy controller disabled.
+   * Step / Motion chrome is handled by CHROME V2 below.
+   */
+  return;
+}
+
+
+function ensureStepMotionEndMatter(p, projects){
+
+  const article = document.querySelector(".sm-page");
+  if(!article) return;
+
+
+  /* -------------------------------------------------------
+     NEXT PROJECT
+     ------------------------------------------------------- */
+
+  if(!article.querySelector(".sm-next-project")){
+
+    const currentIndex = projects.findIndex(
+      project => project.slug === p.slug
+    );
+
+    const nextProject =
+      projects[(currentIndex + 1) % projects.length];
+
+    if(nextProject){
+
+      article.insertAdjacentHTML(
+        "beforeend",
+        `
+        <a
+          class="next-project sm-next-project"
+          href="/work/${nextProject.slug}/">
+
+          <span class="meta-mono next-project-label">
+            NEXT PROJECT
+          </span>
+
+          <span class="sm-next-project-title next-project-title">
+            ${esc(nextProject.title)}
+          </span>
+
+          <span class="sm-next-project-arrow next-project-arrow">
+            →
+          </span>
+
+        </a>
+        `
+      );
+
+    }
+  }
+
+
+  /* -------------------------------------------------------
+     SHARED SITE FOOTER
+     ------------------------------------------------------- */
+
+  const alreadyHasFooter =
+    document.querySelector(
+      "body > footer, body > .site-footer, .sm-page + footer"
+    );
+
+  if(!alreadyHasFooter){
+
+    if(typeof footer === "function"){
+
+      document.body.insertAdjacentHTML(
+        "beforeend",
+        footer()
+      );
+
+    }
+
+  }
+}
+
+
 async function renderProject(){
   const projects=await getProjects();
   const slug=location.pathname.split("/").filter(Boolean).pop();
@@ -5874,10 +7230,177 @@ async function renderProject(){
   }
 
   if(p.slug==="60-bpm"){ render60BPM(p,projects); return; }
-  if(p.slug==="ethereal-realm"){ renderEtherealRealm(p,projects); return; }
+  if(p.slug==="ethereal-realm"){
+    document.body.classList.add("project-ethereal-realm"); renderEtherealRealm(p,projects); return; }
   if(p.slug==="green-grid"){ renderGreenGridV1(p,projects); return; }
   if(p.slug==="n-exhibition"){ renderNExhibitionV1(p,projects); return; }
-  if(p.slug==="modular-typeface"){ renderModularTypefaceV2(p,projects); return; }
+  
+if(p.slug==="step-motion"){
+  document.body.classList.add("project-step-motion");
+
+  document.documentElement.style.setProperty(
+    "--project-accent",
+    "#d5bc2b"
+  );
+
+  document.title=`${p.title} — Iris Wang`;
+
+  document.body.insertAdjacentHTML(
+    "afterbegin",
+    header()+`<div class="reading-progress" id="progress"></div>`
+  );
+
+  document.querySelector("#project-root").innerHTML=renderStepMotion(p);
+
+  requestAnimationFrame(() => initStepMotionHeroCaptionBalance());
+
+  requestAnimationFrame(() => {
+    initStepMotionChapterFlow();
+  });
+
+
+  const article=document.querySelector(".sm-page");
+
+  const stepSections=[
+    ["sm-section-1","TIME AS SPACE"],
+    ["sm-section-2","CONSTRUCTING THE FILM"],
+    ["sm-section-3","TEMPORAL COMPOSITING"],
+    ["sm-section-4","SOUND AS TIME"],
+    ["sm-section-5","FINAL FILM"],
+    ["sm-section-6","MOVEMENT BECOMES SEQUENCE"],
+    ["sm-section-7","FILM TO BOOK"],
+    ["sm-section-8","PROCESS / TOOLS"]
+  ];
+
+  if(article){
+    article.insertAdjacentHTML(
+      "beforeend",
+      `
+      <nav class="chapter-rail sm-rail"
+           aria-label="Step Motion sections">
+
+        ${stepSections.map(([id,label])=>`
+          <a href="#${id}"
+             data-label="${label}"
+             aria-label="${label}">
+          </a>
+        `).join("")}
+
+      </nav>
+
+      <div class="chapter-tip sm-tip"
+           id="sm-tip"></div>
+      `
+    );
+
+    const currentIndex=projects.indexOf(p);
+    const next=projects[(currentIndex+1)%projects.length];
+
+    if(next){
+      article.insertAdjacentHTML(
+        "beforeend",
+        `
+        <a class="next-project sm-next"
+           href="/work/${next.slug}/">
+
+          <span class="meta-mono">NEXT PROJECT</span>
+
+          <br>
+
+          ${esc(next.title)} →
+
+        </a>
+        `
+      );
+    }
+  }
+
+  document.body.insertAdjacentHTML(
+    "beforeend",
+    footer()
+  );
+
+  const progress=document.querySelector("#progress");
+
+  const updateProgress=()=>{
+    const h=document.documentElement.scrollHeight-innerHeight;
+
+    if(progress){
+      progress.style.width=
+        `${h ? scrollY/h*100 : 0}%`;
+    }
+  };
+
+  updateProgress();
+
+  addEventListener(
+    "scroll",
+    updateProgress,
+    {passive:true}
+  );
+
+  const rail=[
+    ...document.querySelectorAll(".sm-rail a")
+  ];
+
+  const sections=rail.map(a=>
+    document.querySelector(
+      a.getAttribute("href")
+    )
+  );
+
+  const tip=document.querySelector("#sm-tip");
+
+  rail.forEach(a=>{
+
+    const showTip=()=>{
+      if(!tip) return;
+      tip.textContent=a.dataset.label || "";
+      tip.classList.add("visible");
+    };
+
+    const hideTip=()=>{
+      if(!tip) return;
+      tip.classList.remove("visible");
+    };
+
+    a.addEventListener("mouseenter",showTip);
+    a.addEventListener("mouseleave",hideTip);
+    a.addEventListener("focus",showTip);
+    a.addEventListener("blur",hideTip);
+  });
+
+  const observer=new IntersectionObserver(
+    entries=>{
+      entries.forEach(entry=>{
+        if(!entry.isIntersecting) return;
+
+        const i=sections.indexOf(entry.target);
+
+        rail.forEach((a,j)=>
+          a.classList.toggle("active",i===j)
+        );
+      });
+    },
+    {
+      rootMargin:"-42% 0px -48% 0px",
+      threshold:0
+    }
+  );
+
+  sections.forEach(section=>{
+    if(section) observer.observe(section);
+  });
+
+  requestAnimationFrame(()=>{
+    initStepMotionBookSequence();
+    initStepMotionSwipe();
+  });
+
+  return;
+}
+
+if(p.slug==="modular-typeface"){ renderModularTypefaceV2(p,projects); return; }
 
   document.body.classList.add("compact-brand");
   document.documentElement.style.setProperty("--project-accent",p.accent);
@@ -5907,12 +7430,17 @@ async function renderProject(){
         <h1>${esc(p.title)}</h1>
         <p class="project-summary-big">${esc(p.summary)}</p>
         <div class="meta-grid">${meta.map(m=>`<div class="meta-item"><b>${m[0]}</b><span>${esc(m[1])}</span></div>`).join("")}</div>
-        <div class="hero-media">${media(p,"hero media — asset to confirm")}</div>
+        <div class="hero-media">
+${media(p,"hero media — asset to confirm")}</div>
       </header>
       <section class="demonstrates"><div class="inner"><span class="meta-mono">What this demonstrates</span><p>${esc(p.demonstrates)}</p></div></section>
       <div class="shell case-flow">${flow}</div>
       ${createChapterRail(p)}
-      <a class="next-project" href="/work/${next.slug}/"><span class="meta-mono">Next</span><br>${esc(next.title)} →</a>
+      <a class="next-project" href="/work/${next.slug}/">
+        <span class="meta-mono next-project-label">NEXT PROJECT</span>
+        <span class="next-project-title">${esc(next.title)}</span>
+        <span class="next-project-arrow">→</span>
+      </a>
     </article>`;
 
   document.body.insertAdjacentHTML("beforeend",footer());
@@ -5936,3 +7464,1017 @@ document.addEventListener("DOMContentLoaded",()=>{
   if(page==="project")renderProject().catch(console.error);
   if(page==="about")renderAbout();
 });
+
+
+
+
+
+
+function initStepMotionChapterFlow(){
+
+  const root =
+    document.querySelector("[data-sm-chapter-flow]");
+
+  if(!root) return;
+
+
+  /* prevent duplicate mounting from safe-boot + render boot */
+  if(root.dataset.chapterController === "1"){
+    return;
+  }
+
+  root.dataset.chapterController = "1";
+  root.dataset.ready = "true";
+  root.dataset.chapterFlowMounted = "true";
+
+
+  /* --------------------------------------------------------
+     REAL DOM
+     one figure on STEP side
+     one figure on MOTION side
+     images are swapped dynamically
+     -------------------------------------------------------- */
+
+  const stepFigure =
+    root.querySelector("[data-sm-step-frame]");
+
+  const motionFigure =
+    root.querySelector("[data-sm-motion-frame]");
+
+  if(!stepFigure || !motionFigure){
+    console.warn(
+      "[Step Motion] chapter flow: figures missing"
+    );
+    return;
+  }
+
+
+  const stepImg =
+    stepFigure.querySelector("img");
+
+  const motionImg =
+    motionFigure.querySelector("img");
+
+  const stepCaption =
+    stepFigure.querySelector("figcaption");
+
+  const motionCaption =
+    motionFigure.querySelector("figcaption");
+
+
+  if(!stepImg || !motionImg){
+    console.warn(
+      "[Step Motion] chapter flow: images missing"
+    );
+    return;
+  }
+
+
+  const stepCount =
+    root.querySelector("[data-sm-step-count]");
+
+  const motionCount =
+    root.querySelector("[data-sm-motion-count]");
+
+  const current =
+    root.querySelector("[data-sm-chapter-current]");
+
+  const prev =
+    root.querySelector("[data-sm-chapter-prev]");
+
+  const next =
+    root.querySelector("[data-sm-chapter-next]");
+
+
+  const stepDots = [
+    ...root.querySelectorAll("[data-sm-step-dot]")
+  ];
+
+  const motionDots = [
+    ...root.querySelectorAll("[data-sm-motion-dot]")
+  ];
+
+
+  /* --------------------------------------------------------
+     Correct chapter images
+     -------------------------------------------------------- */
+
+  const base =
+    "/public/projects/step-motion/book";
+
+
+  const stepFrames = [
+    "IMG_1902.png",
+    "IMG_1911.png",
+    "IMG_1925.png"
+  ];
+
+
+  const motionFrames = [
+    "IMG_1940%202.png",
+    "IMG_1943%202.png",
+    "IMG_1954%202.png"
+  ];
+
+
+  const total = 3;
+
+  let index = 0;
+  let timer = null;
+  let swapTimer = null;
+
+  const AUTOPLAY_MS = 3200;
+  const TRANSITION_MS = 180;
+
+
+  /* --------------------------------------------------------
+     Preload all six images
+     -------------------------------------------------------- */
+
+  [
+    ...stepFrames,
+    ...motionFrames
+  ].forEach(file => {
+
+    const img = new Image();
+
+    img.src =
+      `${base}/${file}`;
+
+  });
+
+
+  function pad(value){
+    return String(value).padStart(2,"0");
+  }
+
+
+  /* --------------------------------------------------------
+     UI state
+     -------------------------------------------------------- */
+
+  function updateUI(){
+
+    const number =
+      pad(index + 1);
+
+    const countLabel =
+      `${number} / ${pad(total)}`;
+
+
+    if(stepCaption){
+      stepCaption.textContent =
+        `CHAPTER ${number}`;
+    }
+
+    if(motionCaption){
+      motionCaption.textContent =
+        `CHAPTER ${number}`;
+    }
+
+
+    if(stepCount){
+      stepCount.textContent =
+        countLabel;
+    }
+
+    if(motionCount){
+      motionCount.textContent =
+        countLabel;
+    }
+
+
+    if(current){
+      current.textContent =
+        number;
+    }
+
+
+    stepDots.forEach((dot,i)=>{
+
+      const active =
+        i === index;
+
+      dot.classList.toggle(
+        "is-active",
+        active
+      );
+
+      dot.setAttribute(
+        "aria-current",
+        active ? "true" : "false"
+      );
+
+    });
+
+
+    motionDots.forEach((dot,i)=>{
+
+      const active =
+        i === index;
+
+      dot.classList.toggle(
+        "is-active",
+        active
+      );
+
+      dot.setAttribute(
+        "aria-current",
+        active ? "true" : "false"
+      );
+
+    });
+
+  }
+
+
+  /* --------------------------------------------------------
+     Image transition
+     -------------------------------------------------------- */
+
+  function renderFrame(direction = 1){
+
+    if(swapTimer){
+      clearTimeout(swapTimer);
+      swapTimer = null;
+    }
+
+
+    stepFigure.classList.toggle(
+      "is-reverse",
+      direction < 0
+    );
+
+    motionFigure.classList.toggle(
+      "is-reverse",
+      direction < 0
+    );
+
+
+    /*
+      Trigger existing CSS transition.
+      Even if animation CSS is unavailable,
+      src still changes after 180ms.
+    */
+
+    stepFigure.classList.remove(
+      "is-active"
+    );
+
+    motionFigure.classList.remove(
+      "is-active"
+    );
+
+
+    swapTimer = window.setTimeout(()=>{
+
+      stepImg.src =
+        `${base}/${stepFrames[index]}`;
+
+      motionImg.src =
+        `${base}/${motionFrames[index]}`;
+
+
+      stepImg.alt =
+        `STEP book chapter ${index + 1}`;
+
+      motionImg.alt =
+        `MOTION book chapter ${index + 1}`;
+
+
+      updateUI();
+
+
+      requestAnimationFrame(()=>{
+
+        requestAnimationFrame(()=>{
+
+          stepFigure.classList.add(
+            "is-active"
+          );
+
+          motionFigure.classList.add(
+            "is-active"
+          );
+
+        });
+
+      });
+
+    }, TRANSITION_MS);
+
+  }
+
+
+  /* --------------------------------------------------------
+     Autoplay
+     -------------------------------------------------------- */
+
+  function stop(){
+
+    if(timer){
+      clearInterval(timer);
+      timer = null;
+    }
+
+  }
+
+
+  function start(){
+
+    stop();
+
+    if(
+      window.matchMedia(
+        "(prefers-reduced-motion: reduce)"
+      ).matches
+    ){
+      return;
+    }
+
+
+    timer = window.setInterval(()=>{
+
+      index =
+        (index + 1) % total;
+
+      renderFrame(1);
+
+    }, AUTOPLAY_MS);
+
+  }
+
+
+  function go(nextIndex, direction){
+
+    index =
+      (
+        nextIndex % total
+        + total
+      ) % total;
+
+    renderFrame(direction);
+
+    start();
+
+  }
+
+
+  /* --------------------------------------------------------
+     Buttons
+     -------------------------------------------------------- */
+
+  prev?.addEventListener(
+    "click",
+    event => {
+
+      event.preventDefault();
+
+      go(
+        index - 1,
+        -1
+      );
+
+    }
+  );
+
+
+  next?.addEventListener(
+    "click",
+    event => {
+
+      event.preventDefault();
+
+      go(
+        index + 1,
+        1
+      );
+
+    }
+  );
+
+
+  /* --------------------------------------------------------
+     Progress controls
+     -------------------------------------------------------- */
+
+  stepDots.forEach((dot,i)=>{
+
+    dot.addEventListener(
+      "click",
+      event => {
+
+        event.preventDefault();
+
+        go(
+          i,
+          i < index ? -1 : 1
+        );
+
+      }
+    );
+
+  });
+
+
+  motionDots.forEach((dot,i)=>{
+
+    dot.addEventListener(
+      "click",
+      event => {
+
+        event.preventDefault();
+
+        go(
+          i,
+          i < index ? -1 : 1
+        );
+
+      }
+    );
+
+  });
+
+
+  /* --------------------------------------------------------
+     Pause during intentional interaction
+     -------------------------------------------------------- */
+
+  root.addEventListener(
+    "mouseenter",
+    stop
+  );
+
+
+  root.addEventListener(
+    "mouseleave",
+    start
+  );
+
+
+  document.addEventListener(
+    "visibilitychange",
+    ()=>{
+
+      if(document.hidden){
+        stop();
+      }
+      else{
+        start();
+      }
+
+    }
+  );
+
+
+  /* --------------------------------------------------------
+     INITIALISE
+     -------------------------------------------------------- */
+
+  index = 0;
+
+  stepImg.src =
+    `${base}/${stepFrames[0]}`;
+
+  motionImg.src =
+    `${base}/${motionFrames[0]}`;
+
+  updateUI();
+
+  stepFigure.classList.add(
+    "is-active"
+  );
+
+  motionFigure.classList.add(
+    "is-active"
+  );
+
+  start();
+
+
+  console.log(
+    "[Step Motion] chapter flow mounted",
+    {
+      total,
+      stepFrames,
+      motionFrames
+    }
+  );
+
+}
+
+
+function initStepMotionBookSequence(){
+
+  const root = document.querySelector("[data-sm-book-sequence]");
+  if(!root || root.dataset.ready === "true") return;
+
+  root.dataset.ready = "true";
+
+  const base = "/public/projects/step-motion/book-sequence-fixed";
+
+  const frames = [
+    "Still_010000.png",
+    "Still_010100.png",
+    "Still_010200.png",
+    "Still_010300.png",
+    "Still_010400.png",
+    "Still_010500.png",
+    "Still_010600.png",
+    "Still_010700.png",
+    "Still_010800.png",
+    "Still_010900.png",
+    "Still_011000.png"
+  ];
+
+  const image = root.querySelector("[data-sm-book-frame]");
+  const prev = root.querySelector("[data-sm-book-prev]");
+  const next = root.querySelector("[data-sm-book-next]");
+  const play = root.querySelector("[data-sm-book-play]");
+  const current = root.querySelector("[data-sm-book-current]");
+  const total = root.querySelector("[data-sm-book-total]");
+  const progress = root.querySelector("[data-sm-book-progress]");
+
+  if(!image) return;
+
+  let index = 0;
+  let playing = true;
+  let timer = null;
+
+  total.textContent = String(frames.length).padStart(2,"0");
+
+
+  // Preload every actual project frame
+  frames.forEach(name => {
+    const preload = new Image();
+    preload.src = `${base}/${name}`;
+  });
+
+
+  function render(){
+
+    image.src = `${base}/${frames[index]}`;
+
+    current.textContent =
+      String(index + 1).padStart(2,"0");
+
+    progress.style.width =
+      `${((index + 1) / frames.length) * 100}%`;
+  }
+
+
+  function step(direction = 1){
+
+    index =
+      (index + direction + frames.length) %
+      frames.length;
+
+    render();
+  }
+
+
+  function start(){
+
+    clearInterval(timer);
+
+    timer = setInterval(() => {
+      step(1);
+    }, 190);
+
+    playing = true;
+    play.textContent = "II";
+    play.setAttribute("aria-label","Pause animation");
+  }
+
+
+  function stop(){
+
+    clearInterval(timer);
+
+    playing = false;
+    play.textContent = "▶";
+    play.setAttribute("aria-label","Play animation");
+  }
+
+
+  play?.addEventListener("click", () => {
+    playing ? stop() : start();
+  });
+
+
+  prev?.addEventListener("click", () => {
+    stop();
+    step(-1);
+  });
+
+
+  next?.addEventListener("click", () => {
+    stop();
+    step(1);
+  });
+
+
+  // Pause while the tab isn't visible
+  document.addEventListener("visibilitychange", () => {
+
+    if(document.hidden){
+      clearInterval(timer);
+      return;
+    }
+
+    if(playing){
+      start();
+    }
+
+  });
+
+
+  render();
+  start();
+}
+
+
+function initStepMotionSwipe(){
+  const rail = document.querySelector("[data-sm-swipe]");
+  if(!rail) return false;
+
+  /* prevent duplicate listeners */
+  if(rail.dataset.swipeReady === "1"){
+    return true;
+  }
+
+  rail.dataset.swipeReady = "1";
+
+  const slides = [...rail.querySelectorAll(".sm-film-slide")];
+  const bars = [...document.querySelectorAll(".sm-film-swipe-progress span")];
+  const counter = document.querySelector("[data-sm-current-slide]");
+  const prev = document.querySelector("[data-sm-swipe-prev]");
+  const next = document.querySelector("[data-sm-swipe-next]");
+
+  if(!slides.length) return false;
+
+  let active = 0;
+  let raf = null;
+
+  const setActive = (index) => {
+    index = Math.max(0, Math.min(slides.length - 1, index));
+    active = index;
+
+    bars.forEach((bar, i) => {
+      bar.classList.toggle("is-active", i === index);
+      bar.setAttribute("aria-current", i === index ? "true" : "false");
+    });
+
+    slides.forEach((slide, i) => {
+      slide.classList.toggle("is-active", i === index);
+    });
+
+    if(counter){
+      counter.textContent = String(index + 1).padStart(2, "0");
+    }
+  };
+
+  const getActiveIndex = () => {
+    /*
+      Slides all share the same width.
+      offsetLeft difference gives the REAL carousel step,
+      including its gap.
+    */
+    if(slides.length > 1){
+      const step = slides[1].offsetLeft - slides[0].offsetLeft;
+
+      if(step > 0){
+        return Math.round(rail.scrollLeft / step);
+      }
+    }
+
+    /* fallback */
+    let closest = 0;
+    let distance = Infinity;
+
+    slides.forEach((slide, i) => {
+      const d = Math.abs(slide.offsetLeft - rail.scrollLeft);
+
+      if(d < distance){
+        distance = d;
+        closest = i;
+      }
+    });
+
+    return closest;
+  };
+
+  const sync = () => {
+    raf = null;
+    setActive(getActiveIndex());
+  };
+
+  const requestSync = () => {
+    if(raf !== null) return;
+    raf = requestAnimationFrame(sync);
+  };
+
+  const goTo = (index) => {
+    index = Math.max(0, Math.min(slides.length - 1, index));
+
+    rail.scrollTo({
+      left: slides[index].offsetLeft,
+      behavior: "smooth"
+    });
+
+    setActive(index);
+
+    setTimeout(sync, 120);
+    setTimeout(sync, 350);
+    setTimeout(sync, 650);
+  };
+
+
+  /* manual swipe / trackpad / scrollbar */
+  rail.addEventListener("scroll", requestSync, {
+    passive: true
+  });
+
+  rail.addEventListener("touchmove", requestSync, {
+    passive: true
+  });
+
+  rail.addEventListener("touchend", sync, {
+    passive: true
+  });
+
+  rail.addEventListener("pointerup", sync);
+
+
+  /* arrow buttons */
+  prev?.addEventListener("click", () => {
+    goTo(active - 1);
+  });
+
+  next?.addEventListener("click", () => {
+    goTo(active + 1);
+  });
+
+
+  /* progress bars = navigation too */
+  bars.forEach((bar, i) => {
+    bar.addEventListener("click", () => {
+      goTo(i);
+    });
+
+    bar.setAttribute("role", "button");
+    bar.setAttribute("tabindex", "0");
+
+    bar.addEventListener("keydown", e => {
+      if(e.key === "Enter" || e.key === " "){
+        e.preventDefault();
+        goTo(i);
+      }
+    });
+  });
+
+
+  /* sync after image sizes settle */
+  const images = [...rail.querySelectorAll("img")];
+
+  images.forEach(img => {
+    if(!img.complete){
+      img.addEventListener("load", requestSync, {
+        once: true
+      });
+    }
+  });
+
+  window.addEventListener("resize", requestSync, {
+    passive: true
+  });
+
+  setActive(0);
+
+  requestAnimationFrame(sync);
+  setTimeout(sync, 100);
+  setTimeout(sync, 500);
+
+  console.log(
+    "[Step Motion] swipe ready:",
+    slides.length,
+    "slides"
+  );
+
+  return true;
+}
+
+
+
+
+/* =========================================================
+   STEP / MOTION — SELF INITIALISING SWIPE
+   ========================================================= */
+
+(() => {
+
+  const bootStepMotionSwipe = () => {
+    const rail = document.querySelector("[data-sm-swipe]");
+
+    if(
+      rail &&
+      rail.dataset.swipeReady !== "1" &&
+      typeof initStepMotionSwipe === "function"
+    ){
+      initStepMotionSwipe();
+    }
+  };
+
+
+  /* try immediately */
+  bootStepMotionSwipe();
+
+
+  /* try when DOM is ready */
+  if(document.readyState === "loading"){
+    document.addEventListener(
+      "DOMContentLoaded",
+      bootStepMotionSwipe,
+      { once:true }
+    );
+  }
+
+
+  /*
+    Project content is rendered dynamically.
+    Watch until the Step / Motion carousel appears.
+  */
+  const observer = new MutationObserver(() => {
+    bootStepMotionSwipe();
+  });
+
+  observer.observe(document.documentElement, {
+    childList:true,
+    subtree:true
+  });
+
+
+  /* final fallback for delayed route rendering */
+  let attempts = 0;
+
+  const timer = setInterval(() => {
+    attempts += 1;
+
+    bootStepMotionSwipe();
+
+    const rail = document.querySelector("[data-sm-swipe]");
+
+    if(
+      rail?.dataset.swipeReady === "1" ||
+      attempts > 20
+    ){
+      clearInterval(timer);
+    }
+  }, 250);
+
+})();
+
+/* =========================================================
+   STEP / MOTION — BOOK SECTION REFINEMENT HOOKS
+   ========================================================= */
+
+function refineStepMotionBookLayout(){
+  if(!document.body.classList.contains("project-step-motion")) return;
+
+  const sections=[...document.querySelectorAll(".sm-page section")];
+
+  sections.forEach(section=>{
+    const h2=section.querySelector("h2");
+    if(!h2) return;
+
+    const title=h2.textContent.replace(/\s+/g," ").trim();
+
+    if(title==="STEP / MOTION"){
+      section.classList.add("sm-book-editorial");
+    }
+
+    if(title==="MATERIAL → IMAGE" || title==="MATERIAL → IMAGE"){
+      section.classList.add("sm-material-editorial");
+    }
+  });
+}
+
+requestAnimationFrame(refineStepMotionBookLayout);
+setTimeout(refineStepMotionBookLayout,300);
+
+
+
+/* =========================================================
+   STEP / MOTION — Section 07 explicit heading hook
+   ========================================================= */
+
+function initStepMotionBookHeading(){
+  if(!document.body.classList.contains("project-step-motion")) return;
+
+  const headings = [
+    ...document.querySelectorAll(".sm-page h1, .sm-page h2, .sm-page h3")
+  ];
+
+  const heading = headings.find(el =>
+    el.textContent.replace(/\s+/g, " ").trim() === "STEP / MOTION"
+  );
+
+  if(!heading) return;
+
+  heading.classList.add("sm-book-section-title");
+
+  const section = heading.closest("section");
+
+  if(section){
+    section.classList.add("sm-book-section-final");
+  }
+}
+
+requestAnimationFrame(initStepMotionBookHeading);
+setTimeout(initStepMotionBookHeading, 200);
+
+/* STEP / MOTION — use the same rule system as sequence section */
+function syncStepMotionSectionHeader(){
+  const title = document.querySelector(
+    ".project-step-motion .sm-book-section-title"
+  );
+
+  if(!title) return;
+
+  const section = title.closest("section");
+  if(!section) return;
+
+  const rule = section.querySelector(
+    "hr, .sm-rule, .section-rule"
+  );
+
+  if(rule) rule.classList.add("sm-sequence-rule");
+}
+
+requestAnimationFrame(syncStepMotionSectionHeader);
+
+/* =========================================================
+   GREEN GRID — HERO SVG
+   mounted inside the actual hero grid
+   ========================================================= */
+
+(() => {
+  if (!location.pathname.includes("/work/green-grid")) return;
+
+  const mountGreenGridHeroSvg = () => {
+    const root = document.querySelector("#project-root");
+    if (!root) return;
+
+    const grid = root.querySelector(".gg-hero-grid");
+    if (!grid) return;
+
+    const hero = grid.closest(".gg-hero");
+
+    /*
+      Metadata belongs BELOW the two-column hero grid,
+      not inside the left text column.
+    */
+    const meta = grid.querySelector(".gg-meta");
+
+    if (hero && meta) {
+      if (meta.parentElement !== hero) {
+        hero.appendChild(meta);
+      }
+
+      meta.classList.add("gg-hero-meta-row");
+    }
+
+    let img = root.querySelector(".gg-hero-svg-overlay");
+
+    /*
+      If an older version mounted the SVG directly in the
+      section, move that exact node into the grid.
+    */
+    if (img) {
+      if (img.parentElement !== grid) {
+        grid.appendChild(img);
+      }
+
+      return;
+    }
+
+    img = document.createElement("img");
+
+    img.className = "gg-hero-svg-overlay";
+    img.src = "/public/projects/green-grid/hero.svg";
+    img.alt = "";
+    img.setAttribute("aria-hidden", "true");
+
+    grid.appendChild(img);
+  };
+
+  mountGreenGridHeroSvg();
+
+  const observer = new MutationObserver(mountGreenGridHeroSvg);
+
+  observer.observe(document.body, {
+    childList: true,
+    subtree: true
+  });
+})();
+
