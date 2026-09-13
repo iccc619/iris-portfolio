@@ -1,29 +1,7 @@
-const SCRIPT_URL = (() => {
-  const current =
-    document.currentScript ||
-    [...document.scripts].find(
-      script =>
-        /\/assets\/site\.js(?:\?|$)/.test(script.src)
-    );
-
-  return new URL(
-    current?.src || "assets/site.js",
-    location.href
-  );
-})();
-
-const BASE_PATH = (() => {
-  const pathname = SCRIPT_URL.pathname;
-
-  const base = pathname.replace(
-    /\/assets\/site\.js$/,
-    ""
-  );
-
-  if(base === "/") return "";
-
-  return base.replace(/\/$/, "");
-})();
+const BASE_PATH =
+  location.hostname === "iccc619.github.io"
+    ? "/iris-portfolio"
+    : "";
 
 const sitePath = (path="") => {
   if(!path) return path;
@@ -34,10 +12,6 @@ const sitePath = (path="") => {
     return path;
   }
 
-  /*
-    Already normalized:
-    /iris-portfolio/public/...
-  */
   if(
     BASE_PATH &&
     (
@@ -62,7 +36,8 @@ const sitePath = (path="") => {
     : `/${clean}`;
 };
 
-const DATA_URL = sitePath("/data/projects.json");
+const DATA_URL =
+  sitePath("/data/projects.json");
 const esc = (s="") => String(s).replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[m]));
 const media = (p,label="project media") => `<div class="placeholder" style="--accent:${p.accent};--secondary:${p.secondary}"><span class="label">${esc(label)}</span></div>`;
 const header = () => `<header class="site-header"><div class="shell"><a class="brand" href="${sitePath("/")}">Iris Wang</a><nav class="nav" aria-label="Primary"><a href="${sitePath("/work/")}">Work</a><a href="${sitePath("/about/")}">About</a><a href="mailto:iriswangsh@gmail.com">Contact</a></nav></div></header>`;
