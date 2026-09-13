@@ -684,7 +684,7 @@ function setupChapterRail(){
 
 
 function render60BPM(p,projects){
-  const A=sitePath(sitePath("/public/projects/60-bpm"));
+  const A=sitePath("/public/projects/60-bpm");
   const pic=(src,alt,cls="")=>`<img class="${cls}" src="${A}/${src}" alt="${esc(alt)}" loading="lazy">`;
   const next=projects[(projects.indexOf(p)+1)%projects.length];
 
@@ -979,7 +979,7 @@ function render60BPM(p,projects){
 
 
 function renderEtherealRealm(p,projects){
-  const A=sitePath(sitePath("/public/projects/ethereal-realm"));
+  const A=sitePath("/public/projects/ethereal-realm");
   const enc=s=>s.split("/").map(encodeURIComponent).join("/");
   const img=(src,alt,cls="")=>`<img class="${cls}" src="${A}/${enc(src)}" alt="${esc(alt)}" loading="lazy">`;
   const frame=(name,alt="Realm app interface",cls="")=>img(`app/App Frames/${name}`,alt,`er2-phone-img ${cls}`);
@@ -1022,7 +1022,7 @@ function renderEtherealRealm(p,projects){
     <section class="er2-hero" id="er2-1">
       <video
         class="er2-hero-art er2-hero-video"
-        src=sitePath("/public/projects/ethereal-realm/hero.mp4")
+        src="${sitePath(\"/public/projects/ethereal-realm/hero.mp4\")}"
         autoplay
         muted
         loop
@@ -1565,7 +1565,7 @@ function renderEtherealRealm(p,projects){
 
 
 function renderGreenGridV1(p,projects){
-  const A=sitePath(sitePath("/public/projects/green-grid"));
+  const A=sitePath("/public/projects/green-grid");
   const enc=s=>s.split("/").map(encodeURIComponent).join("/");
   const img=(path,alt="",cls="")=>`<img class="${cls}" src="${A}/${enc(path)}" alt="${esc(alt)}" loading="lazy">`;
   const phone=(name,alt)=>img(`app frame/${name}`,alt,"gg-phone");
@@ -2560,7 +2560,7 @@ function renderGreenGridV1(p,projects){
 
 
 function renderNExhibitionV1(p,projects){
-  const A=sitePath(sitePath("/public/projects/n-exhibition"));
+  const A=sitePath("/public/projects/n-exhibition");
   const enc=s=>s.split("/").map(encodeURIComponent).join("/");
   const img=(path,alt="",cls="")=>`<img class="${cls}" src="${A}/${enc(path)}" alt="${esc(alt)}" loading="lazy">`;
 
@@ -5583,7 +5583,7 @@ function initNExhibitionHeroSpace(){
 
 
 function renderStepMotion(project) {
-  const base = sitePath(sitePath("/public/projects/step-motion"));
+  const base = sitePath("/public/projects/step-motion");
 
   return `
     <article class="sm-page">
@@ -6689,7 +6689,7 @@ function renderStepMotion(project) {
 
 function renderModularTypefaceV2(p,projects){
 
-  const A=sitePath(sitePath("/public/projects/modular-typeface"));
+  const A=sitePath("/public/projects/modular-typeface");
 
   const src=path=>
     `${A}/${path.split("/").map(encodeURIComponent).join("/")}`;
@@ -7714,7 +7714,7 @@ function ensureStepMotionEndMatter(p, projects){
 
 function renderAustralianLight(project){
 
-  const base = sitePath(sitePath("/public/projects/australian-light"));
+  const base = sitePath("/public/projects/australian-light");
 
   return `
     <article class="al-page">
@@ -8755,7 +8755,7 @@ function initStepMotionChapterFlow(){
      -------------------------------------------------------- */
 
   const base =
-    sitePath(sitePath("/public/projects/step-motion/book"));
+    sitePath("/public/projects/step-motion/book");
 
 
   const stepFrames = [
@@ -9166,7 +9166,7 @@ function initStepMotionBookSequence(){
 
   root.dataset.ready = "true";
 
-  const base = sitePath(sitePath("/public/projects/step-motion/book-sequence-fixed"));
+  const base = sitePath("/public/projects/step-motion/book-sequence-fixed");
 
   const frames = [
     "Still_010000.png",
@@ -10975,7 +10975,7 @@ function rebuildAustralianLightProcess(){
           <figure class="al-sketch-card al-sketch-card--large">
             <div class="al-process-image">
               <img
-                src=sitePath("/public/projects/australian-light/process/homepage.png")
+                src="${sitePath(\"/public/projects/australian-light/process/homepage.png\")}"
                 alt="Australian Light early homepage sketch"
                 loading="lazy"
               >
@@ -10989,7 +10989,7 @@ function rebuildAustralianLightProcess(){
           <figure class="al-sketch-card">
             <div class="al-process-image">
               <img
-                src=sitePath("/public/projects/australian-light/process/search.png")
+                src="${sitePath(\"/public/projects/australian-light/process/search.png\")}"
                 alt="Australian Light search interface sketch"
                 loading="lazy"
               >
@@ -11003,7 +11003,7 @@ function rebuildAustralianLightProcess(){
           <figure class="al-sketch-card">
             <div class="al-process-image">
               <img
-                src=sitePath("/public/projects/australian-light/process/product.png")
+                src="${sitePath(\"/public/projects/australian-light/process/product.png\")}"
                 alt="Australian Light product interface sketch"
                 loading="lazy"
               >
@@ -11017,7 +11017,7 @@ function rebuildAustralianLightProcess(){
           <figure class="al-sketch-card">
             <div class="al-process-image">
               <img
-                src=sitePath("/public/projects/australian-light/process/purchase.png")
+                src="${sitePath(\"/public/projects/australian-light/process/purchase.png\")}"
                 alt="Australian Light checkout interface sketch"
                 loading="lazy"
               >
@@ -11067,7 +11067,7 @@ function rebuildAustralianLightProcess(){
               <figure>
                 <div class="al-lowfi-frame">
                   <img
-                    src=sitePath("/public/projects/australian-light/process/lowfi-Homepage.svg")
+                    src="${sitePath(\"/public/projects/australian-light/process/lowfi-Homepage.svg\")}"
                     alt="Low fidelity homepage"
                     loading="lazy"
                   >
@@ -11078,7 +11078,7 @@ function rebuildAustralianLightProcess(){
               <figure>
                 <div class="al-lowfi-frame">
                   <img
-                    src=sitePath("/public/projects/australian-light/process/lowfi-Homepage_Side Navigation.svg")
+                    src="${sitePath(\"/public/projects/australian-light/process/lowfi-Homepage_Side Navigation.svg\")}"
                     alt="Low fidelity side navigation"
                     loading="lazy"
                   >
@@ -11089,7 +11089,7 @@ function rebuildAustralianLightProcess(){
               <figure>
                 <div class="al-lowfi-frame">
                   <img
-                    src=sitePath("/public/projects/australian-light/process/lowfi-Search Result.svg")
+                    src="${sitePath(\"/public/projects/australian-light/process/lowfi-Search Result.svg\")}"
                     alt="Low fidelity search results"
                     loading="lazy"
                   >
@@ -11116,7 +11116,7 @@ function rebuildAustralianLightProcess(){
   <figure>
     <div class="al-lowfi-frame">
       <img
-        src=sitePath("/public/projects/australian-light/process/lowfi-Product List.svg")
+        src="${sitePath(\"/public/projects/australian-light/process/lowfi-Product List.svg\")}"
         alt="Low fidelity product list"
         loading="lazy"
       >
@@ -11127,7 +11127,7 @@ function rebuildAustralianLightProcess(){
   <figure>
     <div class="al-lowfi-frame">
       <img
-        src=sitePath("/public/projects/australian-light/process/lowfi-Product List_Filter.svg")
+        src="${sitePath(\"/public/projects/australian-light/process/lowfi-Product List_Filter.svg\")}"
         alt="Low fidelity product list filter"
         loading="lazy"
       >
@@ -11138,7 +11138,7 @@ function rebuildAustralianLightProcess(){
   <figure>
     <div class="al-lowfi-frame">
       <img
-        src=sitePath("/public/projects/australian-light/process/lowfi-Product Detail.svg")
+        src="${sitePath(\"/public/projects/australian-light/process/lowfi-Product Detail.svg\")}"
         alt="Low fidelity product detail"
         loading="lazy"
       >
@@ -11165,7 +11165,7 @@ function rebuildAustralianLightProcess(){
               <figure>
                 <div class="al-lowfi-frame">
                   <img
-                    src=sitePath("/public/projects/australian-light/process/lowfi-Cart.svg")
+                    src="${sitePath(\"/public/projects/australian-light/process/lowfi-Cart.svg\")}"
                     alt="Low fidelity shopping cart"
                     loading="lazy"
                   >
@@ -11176,7 +11176,7 @@ function rebuildAustralianLightProcess(){
               <figure>
                 <div class="al-lowfi-frame">
                   <img
-                    src=sitePath("/public/projects/australian-light/process/lowfi-Cart_Info.svg")
+                    src="${sitePath(\"/public/projects/australian-light/process/lowfi-Cart_Info.svg\")}"
                     alt="Low fidelity checkout information"
                     loading="lazy"
                   >
@@ -11187,7 +11187,7 @@ function rebuildAustralianLightProcess(){
               <figure>
                 <div class="al-lowfi-frame">
                   <img
-                    src=sitePath("/public/projects/australian-light/process/lowfi-Cart_Pay_01.svg")
+                    src="${sitePath(\"/public/projects/australian-light/process/lowfi-Cart_Pay_01.svg\")}"
                     alt="Low fidelity payment interface"
                     loading="lazy"
                   >
