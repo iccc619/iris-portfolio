@@ -1,7 +1,18 @@
-const BASE_PATH =
-  location.hostname === "iccc619.github.io"
-    ? "/iris-portfolio"
-    : "";
+const SCRIPT_SRC = (() => {
+  const script =
+    document.currentScript ||
+    [...document.scripts].find(
+      el => /\/assets\/site\.js(?:\?|$)/.test(el.src)
+    );
+
+  return new URL(
+    script?.src || "assets/site.js",
+    document.baseURI
+  );
+})();
+
+const SITE_ROOT =
+  new URL("../", SCRIPT_SRC);
 
 const sitePath = (path="") => {
   if(!path) return path;
@@ -12,32 +23,25 @@ const sitePath = (path="") => {
     return path;
   }
 
-  if(
-    BASE_PATH &&
-    (
-      path === BASE_PATH ||
-      path.startsWith(`${BASE_PATH}/`)
-    )
-  ){
-    return path;
-  }
-
   const clean =
     String(path).replace(/^\/+/, "");
 
-  if(!clean){
-    return BASE_PATH
-      ? `${BASE_PATH}/`
-      : "/";
-  }
+  const url =
+    new URL(clean, SITE_ROOT);
 
-  return BASE_PATH
-    ? `${BASE_PATH}/${clean}`
-    : `/${clean}`;
+  return (
+    url.pathname +
+    url.search +
+    url.hash
+  );
 };
 
 const DATA_URL =
-  sitePath("/data/projects.json");
+  new URL(
+    "data/projects.json",
+    SITE_ROOT
+  ).href;
+
 const esc = (s="") => String(s).replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[m]));
 const media = (p,label="project media") => `<div class="placeholder" style="--accent:${p.accent};--secondary:${p.secondary}"><span class="label">${esc(label)}</span></div>`;
 const header = () => `<header class="site-header"><div class="shell"><a class="brand" href="${sitePath("/")}">Iris Wang</a><nav class="nav" aria-label="Primary"><a href="${sitePath("/work/")}">Work</a><a href="${sitePath("/about/")}">About</a><a href="mailto:iriswangsh@gmail.com">Contact</a></nav></div></header>`;
@@ -574,9 +578,9 @@ function setupHeaderState(){
 }
 
 async function renderHome(){
-  const projects=await getProjects();
-
   document.body.insertAdjacentHTML("afterbegin",header());
+
+  const projects=await getProjects();
 
   const featured=projects.filter(p=>p.featured);
   const classes=["wide","narrow","medium","large","large","medium"];
@@ -631,6 +635,57 @@ async function renderWork(){
   setupHomeCardSlogans();
   document.body.insertAdjacentHTML("beforeend",footer());
 }
+
+
+/* =========================================================
+   CORE SITE BOOT — REGISTER BEFORE PROJECT-SPECIFIC SCRIPTS
+   ========================================================= */
+
+function bootSite(){
+  if(document.body.dataset.siteBooted === "1"){
+    return;
+  }
+
+  document.body.dataset.siteBooted = "1";
+
+  const page =
+    document.body.dataset.page;
+
+  if(page === "home"){
+    renderHome().catch(error=>{
+      console.error("[Iris] home render failed:", error);
+    });
+  }
+
+  if(page === "work"){
+    renderWork().catch(error=>{
+      console.error("[Iris] work render failed:", error);
+    });
+  }
+
+  if(page === "project"){
+    renderProject().catch(error=>{
+      console.error("[Iris] project render failed:", error);
+    });
+  }
+
+  if(page === "about"){
+    renderAbout();
+  }
+}
+
+if(document.readyState === "loading"){
+  document.addEventListener(
+    "DOMContentLoaded",
+    bootSite,
+    { once:true }
+  );
+}else{
+  bootSite();
+}
+
+/* ===== END CORE SITE BOOT ===== */
+
 
 const flowModes=["full","split","offset","left","tall","band"];
 
@@ -8659,13 +8714,7 @@ function renderAbout(){
   document.body.insertAdjacentHTML("beforeend",footer());
 }
 
-document.addEventListener("DOMContentLoaded",()=>{
-  const page=document.body.dataset.page;
-  if(page==="home")renderHome().catch(console.error);
-  if(page==="work")renderWork().catch(console.error);
-  if(page==="project")renderProject().catch(console.error);
-  if(page==="about")renderAbout();
-});
+/* Core site boot is registered earlier in this file. */
 
 
 
