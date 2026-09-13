@@ -22,6 +22,16 @@ const sitePath = (path="") => {
     return path;
   }
 
+  if(
+    BASE_PATH &&
+    (
+      path === BASE_PATH ||
+      path.startsWith(`${BASE_PATH}/`)
+    )
+  ){
+    return path;
+  }
+
   if(path.startsWith("/")){
     return `${BASE_PATH}${path}`;
   }
