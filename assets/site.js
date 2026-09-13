@@ -411,7 +411,7 @@ function render60BPM(p,projects){
       <img class="bpm4-finale-logo" src="${A}/svg/Secondary Logo 4.svg" alt="60 BPM secondary logo 4">
     </section>
 
-    <a class="next-project bpm4-next" href="/work/${next.slug}/"><span class="meta-mono">NEXT PROJECT</span><br>${esc(next.title)} →</a>
+    <a class="next-project bpm4-next" href="/work/${next.slug}/"><span class="meta-mono">NEXT PROJECT</span>${esc(next.title)} →</a>
   </article>`;
 
   document.body.insertAdjacentHTML("beforeend",footer());
@@ -1001,7 +1001,7 @@ function renderEtherealRealm(p,projects){
       <div class="shell er-final-background"><span>WHEN THE SCREEN GOES DARK</span><strong>THE DREAM<br>DISAPPEARS.</strong></div>
     </section>
 
-    <a class="next-project er2-next" href="/work/${next.slug}/"><span class="meta-mono">NEXT PROJECT</span><br>${esc(next.title)} →</a>
+    <a class="next-project er2-next" href="/work/${next.slug}/"><span class="meta-mono">NEXT PROJECT</span>${esc(next.title)} →</a>
   </article>`;
 
   document.body.insertAdjacentHTML("beforeend",footer());
@@ -2039,7 +2039,7 @@ function renderGreenGridV1(p,projects){
     </section>
 
     <a class="next-project gg-next" href="/work/${next.slug}/">
-      <span class="meta-mono">NEXT PROJECT</span><br>
+      <span class="meta-mono">NEXT PROJECT</span>
       ${esc(next.title)} →
     </a>
 
@@ -3310,7 +3310,7 @@ function renderNExhibitionV1(p,projects){
 
 
 <a class="next-project nx-next" href="/work/${next.slug}/">
-      <span class="meta-mono">NEXT PROJECT</span><br>
+      <span class="meta-mono">NEXT PROJECT</span>
       ${esc(next.title)} →
     </a>
 
@@ -6752,7 +6752,7 @@ function renderModularTypefaceV2(p,projects){
 
         <span class="meta-mono">NEXT PROJECT</span>
 
-        <br>
+        
 
         ${esc(next.title)} →
 
@@ -7255,7 +7255,7 @@ function renderAustralianLight(project){
           <div class="al-hero-visual">
             <div class="al-hero-frame">
               <img
-                src="${base}/hero/hero-desktop.png"
+                src="${base}/hero/hero mockup.png"
                 alt="Australian Light final website homepage"
               >
             </div>
@@ -7680,36 +7680,24 @@ function renderAustralianLight(project){
             ${[
               [
                 "01",
-                "SEARCH",
-                "Search history + suggested products",
-                "final/Desktop - Search_02.png"
-              ],
-              [
-                "02",
                 "DISCOVER",
                 "Filtering, sorting and responsive product grids",
                 "final/Desktop - Product List_02.png"
               ],
               [
-                "03",
+                "02",
                 "SELECT",
                 "Style, size, pricing and product information",
                 "final/Desktop - Product Detail_02.png"
               ],
               [
-                "04",
-                "CART",
-                "Persistent products and editable quantity",
-                "final/Desktop - Cart.png"
-              ],
-              [
-                "05",
+                "03",
                 "CHECKOUT",
                 "Validated contact, shipping and payment progression",
                 "final/Desktop - Cart_Pay.png"
               ],
               [
-                "06",
+                "04",
                 "CONFIRM",
                 "Order number, arrival information and purchase summary",
                 "final/Desktop - Cart_Confirmation.png"
@@ -7881,113 +7869,7 @@ function renderAustralianLight(project){
       </section>
 
 
-      <!-- 08 ITERATION -->
-      <section class="al-section al-iteration" id="al-section-8">
-        <div class="al-shell">
 
-          <div class="al-section-head">
-            <span class="al-section-no">08</span>
-            <h2>TEST.<br>REFINE. REPEAT.</h2>
-          </div>
-
-          <div class="al-rule"></div>
-
-          <div class="al-iteration-grid">
-
-            <article class="al-iteration-item">
-
-              <div class="al-iteration-compare">
-                <figure>
-                  <img
-                    src="${base}/iteration/hero-before.png"
-                    alt="Australian Light hero before iteration"
-                    loading="lazy"
-                  >
-                  <figcaption>BEFORE</figcaption>
-                </figure>
-
-                <figure>
-                  <img
-                    src="${base}/iteration/hero-after.png"
-                    alt="Australian Light hero after iteration"
-                    loading="lazy"
-                  >
-                  <figcaption>AFTER</figcaption>
-                </figure>
-              </div>
-
-              <span>01</span>
-              <h3>Clearer first impression</h3>
-              <p>
-                Hero copy was refined so the purpose of the photography
-                platform becomes easier to understand immediately.
-              </p>
-            </article>
-
-            <article class="al-iteration-item">
-
-              <div class="al-iteration-compare">
-                <figure>
-                  <img
-                    src="${base}/iteration/checkout-before.png"
-                    alt="Australian Light checkout before iteration"
-                    loading="lazy"
-                  >
-                  <figcaption>BEFORE</figcaption>
-                </figure>
-
-                <figure>
-                  <img
-                    src="${base}/iteration/checkout-after.png"
-                    alt="Australian Light checkout after iteration"
-                    loading="lazy"
-                  >
-                  <figcaption>AFTER</figcaption>
-                </figure>
-              </div>
-
-              <span>02</span>
-              <h3>Checkout validation</h3>
-              <p>
-                Required inputs now control CTA availability so users
-                cannot progress through an incomplete checkout.
-              </p>
-            </article>
-
-            <article class="al-iteration-item">
-
-              <div class="al-iteration-compare">
-                <figure>
-                  <img
-                    src="${base}/iteration/recommendation-before.png"
-                    alt="Australian Light recommendations before iteration"
-                    loading="lazy"
-                  >
-                  <figcaption>BEFORE</figcaption>
-                </figure>
-
-                <figure>
-                  <img
-                    src="${base}/iteration/recommendation-after.png"
-                    alt="Australian Light recommendations after iteration"
-                    loading="lazy"
-                  >
-                  <figcaption>AFTER</figcaption>
-                </figure>
-              </div>
-
-              <span>03</span>
-              <h3>Contextual recommendations</h3>
-              <p>
-                Recommendation content was corrected to respond more
-                appropriately to the selected photography product.
-              </p>
-            </article>
-
-          </div>
-
-        </div>
-      </section>
 
     </article>
   `;
@@ -8015,9 +7897,44 @@ async function renderProject(){
     document.querySelector("#project-root").innerHTML=
       renderAustralianLight(p);
 
+
+    const currentProjectIndex=
+      projects.findIndex(project=>project.slug===p.slug);
+
+    const nextProject=
+      projects[
+        (currentProjectIndex + 1 + projects.length) %
+        projects.length
+      ];
+
+    document.querySelector("#project-root")
+      .insertAdjacentHTML(
+        "beforeend",
+        `
+        <a
+          class="next-project"
+          href="/work/${nextProject.slug}/"
+          aria-label="Next project: ${esc(nextProject.title)}">
+          <span class="meta-mono next-project-label">
+            NEXT PROJECT
+          </span>
+          <span class="next-project-title">
+            ${esc(nextProject.title)}
+          </span>
+          <span class="next-project-arrow">→</span>
+        </a>
+        `
+      );
+
+    document.body.insertAdjacentHTML(
+      "beforeend",
+      footer()
+    );
+
     requestAnimationFrame(()=>{
       initAustralianLightMotion();
       initAustralianLightFlowProgress();
+      initAustralianLightChrome();
     });
 
     return;
@@ -8096,7 +8013,7 @@ if(p.slug==="step-motion"){
 
           <span class="meta-mono">NEXT PROJECT</span>
 
-          <br>
+          
 
           ${esc(next.title)} →
 
@@ -9294,8 +9211,7 @@ function initAustralianLightMotion(){
     ".al-flow-rail",
     ".al-code-grid",
     ".al-live-intro",
-    ".al-laptop-wrap",
-    ".al-iteration-grid"
+    ".al-laptop-wrap"
   ];
 
   const items = [
@@ -9785,11 +9701,8 @@ function initAustralianLightInteractions(){
 
 function initAustralianLightChrome(project,projects){
 
-  const article =
-    document.querySelector(".al-page");
-
+  const article = document.querySelector(".al-page");
   if(!article) return;
-
 
   const chapters = [
     ["al-section-1","FROM GALLERY TO COMMERCE"],
@@ -9798,12 +9711,16 @@ function initAustralianLightChrome(project,projects){
     ["al-section-4","VISUAL SYSTEM"],
     ["al-section-5","SHOPPING FLOW"],
     ["al-section-6","FIGMA TO CODE"],
-    ["al-section-7","LIVE PRODUCT"],
-    ["al-section-8","ITERATION"]
+    ["al-section-7","LIVE PRODUCT"]
   ];
 
+  /* -------------------------------------------------------
+     CHAPTER RAIL
+     Australian Light uses its own section IDs because this
+     case study is not built from shared .flow-item sections.
+     ------------------------------------------------------- */
 
-  if(!article.querySelector(".chapter-rail")){
+  if(!article.querySelector(".al-chapter-rail")){
 
     article.insertAdjacentHTML(
       "beforeend",
@@ -9823,33 +9740,157 @@ function initAustralianLightChrome(project,projects){
       </nav>
 
       <div
-        class="chapter-tip"
-        id="al-chapter-tip">
+        class="chapter-tip al-chapter-tip"
+        id="al-chapter-tip"
+        aria-hidden="true">
       </div>
       `
     );
+  }
 
+  const rail =
+    [...article.querySelectorAll(".al-chapter-rail a")];
+
+  const tip =
+    article.querySelector("#al-chapter-tip");
+
+  const sections =
+    chapters
+      .map(([id])=>document.getElementById(id))
+      .filter(Boolean);
+
+  const showTip = link => {
+    if(!tip) return;
+
+    tip.textContent = link.dataset.label || "";
+    tip.classList.add("visible");
+    tip.setAttribute("aria-hidden","false");
+  };
+
+  const hideTip = () => {
+    if(!tip) return;
+
+    tip.classList.remove("visible");
+    tip.setAttribute("aria-hidden","true");
+  };
+
+  rail.forEach(link=>{
+
+    link.addEventListener(
+      "mouseenter",
+      ()=>showTip(link)
+    );
+
+    link.addEventListener(
+      "mouseleave",
+      hideTip
+    );
+
+    link.addEventListener(
+      "focus",
+      ()=>showTip(link)
+    );
+
+    link.addEventListener(
+      "blur",
+      hideTip
+    );
+  });
+
+
+  /* -------------------------------------------------------
+     RAIL THEME
+     Follow the section currently crossing the viewport
+     centre. 01 + 07 are dark; 02–06 are light.
+     ------------------------------------------------------- */
+
+  const darkSections =
+    new Set([
+      "al-section-1",
+      "al-section-7"
+    ]);
+
+  const setRailTheme = section => {
+
+    if(!section) return;
+
+    const dark =
+      darkSections.has(section.id);
+
+    article.classList.toggle(
+      "al-rail-on-dark",
+      dark
+    );
+
+    article.classList.toggle(
+      "al-rail-on-light",
+      !dark
+    );
+  };
+
+
+  /* -------------------------------------------------------
+     ACTIVE CHAPTER
+     ------------------------------------------------------- */
+
+  if(sections.length){
+
+    const observer =
+      new IntersectionObserver(
+        entries=>{
+
+          entries.forEach(entry=>{
+
+            if(!entry.isIntersecting) return;
+
+            const index =
+              sections.indexOf(entry.target);
+
+            if(index < 0) return;
+
+            rail.forEach(
+              (link,i)=>
+                link.classList.toggle(
+                  "active",
+                  i === index
+                )
+            );
+
+            setRailTheme(entry.target);
+          });
+
+        },
+        {
+          rootMargin:"-42% 0px -48% 0px",
+          threshold:0
+        }
+      );
+
+    sections.forEach(
+      section=>observer.observe(section)
+    );
+
+    setRailTheme(sections[0]);
   }
 
 
-  /* next project */
+  /* -------------------------------------------------------
+     NEXT PROJECT
+     Same markup contract as the global project footer.
+     ------------------------------------------------------- */
 
-  if(!article.querySelector(
-    ".al-next-project"
-  )){
+  if(!article.querySelector(".al-next-project")){
 
     const index =
       projects.findIndex(
-        item =>
-          item.slug === project.slug
+        item=>item.slug === project.slug
       );
 
     const next =
       projects[
-        (index + 1) %
+        (index + 1 + projects.length) %
         projects.length
       ];
-
 
     if(next){
 
@@ -9858,26 +9899,31 @@ function initAustralianLightChrome(project,projects){
         `
         <a
           class="next-project al-next-project"
-          href="/work/${next.slug}/">
+          href="/work/${next.slug}/"
+          aria-label="Next project: ${esc(next.title)}">
 
-          <span class="meta-mono">
+          <span class="meta-mono next-project-label">
             NEXT PROJECT
           </span>
 
-          <span class="al-next-title">
-            ${esc(next.title)} →
+          <span class="next-project-title">
+            ${esc(next.title)}
+          </span>
+
+          <span class="next-project-arrow">
+            →
           </span>
 
         </a>
         `
       );
-
     }
-
   }
 
 
-  /* shared footer */
+  /* -------------------------------------------------------
+     SHARED SITE FOOTER
+     ------------------------------------------------------- */
 
   const hasFooter =
     document.querySelector(
@@ -9888,19 +9934,11 @@ function initAustralianLightChrome(project,projects){
     !hasFooter &&
     typeof footer === "function"
   ){
-
     document.body.insertAdjacentHTML(
       "beforeend",
       footer()
     );
-
   }
-
-
-  if(typeof setupChapterRail === "function"){
-    setupChapterRail();
-  }
-
 }
 
 

@@ -35934,3 +35934,79 @@ display:grid;
 
 }
 
+
+
+/* =========================================================
+   GLOBAL NON-PROJECT TEXT SELECTION
+   Home / Work / About
+   ========================================================= */
+
+body[data-page="home"] ::selection,
+body[data-page="work"] ::selection,
+body[data-page="about"] ::selection{
+  background:#A48F6E;
+  color:#F8F6F0;
+  text-shadow:none;
+}
+
+body[data-page="home"] ::-moz-selection,
+body[data-page="work"] ::-moz-selection,
+body[data-page="about"] ::-moz-selection{
+  background:#A48F6E;
+  color:#F8F6F0;
+  text-shadow:none;
+}
+
+/* ===== END GLOBAL NON-PROJECT TEXT SELECTION ===== */
+
+
+/* =========================================================
+   ABOUT — CONTACT ROW
+   ========================================================= */
+
+.about-page .about-contact,
+.about-page .contact-row,
+.about-page .about-contact-row{
+  display:grid;
+  grid-template-columns:minmax(140px,.7fr) minmax(0,2.3fr);
+  align-items:start;
+  gap:clamp(28px,4vw,72px);
+}
+
+.about-page .about-contact h2,
+.about-page .contact-row h2,
+.about-page .about-contact-row h2,
+.about-page .about-contact p,
+.about-page .contact-row p,
+.about-page .about-contact-row p{
+  margin-top:0;
+}
+
+@media(max-width:680px){
+  .about-page .about-contact,
+  .about-page .contact-row,
+  .about-page .about-contact-row{
+    grid-template-columns:1fr;
+    gap:16px;
+  }
+}
+
+/* ===== END ABOUT — CONTACT ROW ===== */
+
+
+
+/* =========================================================
+   WORK PAGE — DARK HERO
+   ========================================================= */
+
+body[data-page="work"] .page-intro{
+  background:#0A0A0A;
+  color:#F8F6F0;
+}
+
+body[data-page="work"] .page-intro h1,
+body[data-page="work"] .page-intro p{
+  color:#F8F6F0;
+}
+
+/* ===== END WORK PAGE — DARK HERO ===== */

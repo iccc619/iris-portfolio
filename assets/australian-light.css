@@ -177,7 +177,7 @@ body.project-australian-light .al-hero-frame::after{
   position:absolute;
   inset:0;
   pointer-events:none;
-  box-shadow:inset 0 0 0 1px rgba(255,255,255,.10);
+
 }
 
 body.project-australian-light .al-meta{
@@ -912,10 +912,6 @@ body.project-australian-light .al-hero-frame img{
     grid-column:auto;
   }
 
-  body.project-australian-light .al-iteration-compare{
-    grid-template-columns:1fr;
-  }
-
 }
 
   body.project-australian-light .al-audit-grid{
@@ -960,15 +956,12 @@ body.project-australian-light .al-hero-frame img{
     grid-template-columns:1fr;
   }
 
-  body.project-australian-light .al-issues,
-  body.project-australian-light .al-iteration-grid{
+  body.project-australian-light .al-issues{
     grid-template-columns:1fr;
   }
 
   body.project-australian-light .al-issue,
-  body.project-australian-light .al-issue + .al-issue,
-  body.project-australian-light .al-iteration-item,
-  body.project-australian-light .al-iteration-item + .al-iteration-item{
+  body.project-australian-light .al-issue + .al-issue{
     padding-left:0;
     border-right:0;
     border-bottom:1px solid currentColor;
@@ -1744,11 +1737,7 @@ body.project-australian-light .al-hero-lead{
 }
 
 body.project-australian-light .al-hero-frame{
-  background:#0a0a09 !important;
 
-  box-shadow:
-    0 42px 100px rgba(0,0,0,.42),
-    0 0 0 1px rgba(255,255,255,.08) !important;
 }
 
 body.project-australian-light .al-meta{
@@ -3661,26 +3650,6 @@ body.project-australian-light
   body.project-australian-light .al-flow-card{
     flex-basis:86vw !important;
     width:86vw !important;
-  }
-
-  body.project-australian-light .al-iteration-grid{
-    grid-template-columns:1fr !important;
-  }
-
-  body.project-australian-light
-  .al-iteration-item{
-    padding:
-      30px
-      0
-      !important;
-  }
-
-  body.project-australian-light
-  .al-iteration-item + .al-iteration-item{
-    border-left:0 !important;
-
-    border-top:
-      1px solid rgba(17,17,15,.14);
   }
 
 }
@@ -7800,3 +7769,465 @@ body.project-australian-light
 
 /* ===== END AUSTRALIAN LIGHT — HERO CANONICAL ===== */
 
+
+
+/* =========================================================
+   AUSTRALIAN LIGHT — CHAPTER RAIL / FOOTER CANONICAL
+   ========================================================= */
+
+/*
+   Rail geometry follows the shared project rail.
+   Only colour is project-aware.
+*/
+
+body.project-australian-light .al-chapter-rail{
+  right:18px;
+  color:#111112;
+  transition:color .22s ease;
+}
+
+body.project-australian-light
+.al-chapter-rail a::before{
+  width:12px;
+  background:currentColor;
+  opacity:.32;
+  transition:
+    width .25s var(--ease),
+    opacity .25s var(--ease),
+    background-color .22s ease;
+}
+
+body.project-australian-light
+.al-chapter-rail a:hover::before,
+
+body.project-australian-light
+.al-chapter-rail a:focus-visible::before,
+
+body.project-australian-light
+.al-chapter-rail a.active::before{
+  width:28px;
+  opacity:1;
+  background:currentColor;
+}
+
+
+/* dark sections: light rail */
+
+body.project-australian-light
+.al-page.al-rail-on-dark
+.al-chapter-rail{
+  color:#f6f2e9;
+}
+
+
+/* light sections: dark rail */
+
+body.project-australian-light
+.al-page.al-rail-on-light
+.al-chapter-rail{
+  color:#111112;
+}
+
+
+/* tooltip follows the same contrast logic */
+
+body.project-australian-light
+.al-chapter-tip{
+  right:62px;
+  background:#111112;
+  color:#f6f2e9;
+  border:1px solid rgba(255,255,255,.08);
+}
+
+body.project-australian-light
+.al-page.al-rail-on-dark
+.al-chapter-tip{
+  background:#f6f2e9;
+  color:#111112;
+  border-color:rgba(17,17,18,.12);
+}
+
+body.project-australian-light
+.al-page.al-rail-on-light
+.al-chapter-tip{
+  background:#111112;
+  color:#f6f2e9;
+  border-color:rgba(255,255,255,.08);
+}
+
+
+/*
+   NEXT PROJECT
+   Do not maintain a separate Australian Light layout.
+   Match the shared 60 BPM/global footer structure.
+*/
+
+body.project-australian-light
+.al-next-project{
+  display:grid;
+  grid-template-columns:auto 1fr auto;
+  grid-template-rows:auto auto;
+  grid-auto-flow:row;
+
+  align-content:center;
+  align-items:center;
+
+  column-gap:clamp(10px,1vw,18px);
+  row-gap:clamp(12px,1vw,18px);
+}
+
+body.project-australian-light
+.al-next-project
+.next-project-label{
+  grid-column:1 / -1;
+  grid-row:1;
+
+  display:block;
+
+  margin:0;
+  padding:0;
+
+  line-height:1;
+}
+
+body.project-australian-light
+.al-next-project
+.next-project-title{
+  grid-column:1 / 3;
+  grid-row:2;
+
+  display:block;
+
+  margin:0;
+  padding:0;
+
+  line-height:.9;
+}
+
+body.project-australian-light
+.al-next-project
+.next-project-arrow{
+  grid-column:3;
+  grid-row:2;
+
+  display:block;
+
+  margin:0;
+  padding:0;
+
+  line-height:.9;
+}
+
+
+/*
+   Kill the legacy Australian Light margin that was making
+   NEXT PROJECT → title spacing different from other projects.
+*/
+
+body.project-australian-light
+.al-next-project .meta-mono{
+  margin:0;
+}
+
+
+/* mobile follows global project behaviour */
+
+@media(max-width:1000px){
+
+  body.project-australian-light
+  .al-chapter-rail,
+
+  body.project-australian-light
+  .al-chapter-tip{
+    display:none;
+  }
+
+}
+
+/* ===== END AUSTRALIAN LIGHT — CHAPTER RAIL / FOOTER CANONICAL ===== */
+
+
+/* =========================================================
+   AUSTRALIAN LIGHT — HERO MOCKUP MEDIA REFINEMENT
+   ========================================================= */
+
+/*
+   mockup_01.png is already a composed presentation image.
+   Preserve the complete composition instead of cropping it
+   like a conventional photographic hero.
+*/
+
+@media (min-width:901px){
+
+  body.project-australian-light .al-hero-frame{
+    width:min(100%,780px) !important;
+    height:auto !important;
+    max-height:none !important;
+    aspect-ratio:auto !important;
+
+    background:transparent;
+    overflow:visible;
+  }
+
+  body.project-australian-light .al-hero-frame img{
+    display:block;
+
+    width:100% !important;
+    height:auto !important;
+
+    max-width:100%;
+    max-height:none !important;
+
+    object-fit:contain !important;
+    object-position:center !important;
+  }
+
+}
+
+
+/* Keep the full mockup visible on smaller screens too. */
+
+@media (max-width:900px){
+
+  body.project-australian-light .al-hero-frame{
+    height:auto !important;
+    aspect-ratio:auto !important;
+    overflow:visible;
+  }
+
+  body.project-australian-light .al-hero-frame img{
+    display:block;
+
+    width:100% !important;
+    height:auto !important;
+
+    object-fit:contain !important;
+    object-position:center !important;
+  }
+
+}
+
+/* ===== END AUSTRALIAN LIGHT — HERO MOCKUP MEDIA REFINEMENT ===== */
+
+
+/* =========================================================
+   AUSTRALIAN LIGHT — HERO MOCKUP FINAL SCALE
+   ========================================================= */
+
+@media(min-width:901px){
+
+  body.project-australian-light .al-hero-visual{
+    overflow:visible;
+    background:transparent;
+  }
+
+  body.project-australian-light .al-hero-frame{
+    /*
+      Slightly larger than the previous 780px presentation,
+      while remaining inside the hero visual column.
+    */
+    width:min(108%,860px) !important;
+    max-width:none !important;
+
+    height:auto !important;
+    aspect-ratio:auto !important;
+
+    margin-left:auto;
+    margin-right:-2%;
+
+    padding:0 !important;
+
+    background:transparent !important;
+    border:0 !important;
+    border-radius:0 !important;
+    box-shadow:none !important;
+
+    overflow:visible !important;
+  }
+
+  body.project-australian-light .al-hero-frame img{
+    display:block;
+
+    width:100% !important;
+    height:auto !important;
+
+    padding:0 !important;
+    margin:0 !important;
+
+    background:transparent !important;
+    border:0 !important;
+    border-radius:0 !important;
+    box-shadow:none !important;
+
+    object-fit:contain !important;
+  }
+
+}
+
+/* ===== END AUSTRALIAN LIGHT — HERO MOCKUP FINAL SCALE ===== */
+
+
+/* =========================================================
+   AUSTRALIAN LIGHT — HERO MOCKUP SCALE FINAL
+   ========================================================= */
+
+@media(min-width:901px){
+
+  body.project-australian-light .al-hero-frame{
+    width:min(122%,980px) !important;
+    max-width:none !important;
+
+    margin-left:-5% !important;
+    margin-right:-17% !important;
+
+    padding:0 !important;
+
+    background:transparent !important;
+    border:0 !important;
+    border-radius:0 !important;
+    box-shadow:none !important;
+
+    overflow:visible !important;
+  }
+
+  body.project-australian-light .al-hero-frame img{
+    width:100% !important;
+    height:auto !important;
+
+    background:transparent !important;
+    border:0 !important;
+    border-radius:0 !important;
+    box-shadow:none !important;
+
+    object-fit:contain !important;
+  }
+
+}
+
+/* ===== END AUSTRALIAN LIGHT — HERO MOCKUP SCALE FINAL ===== */
+
+
+/* =========================================================
+   AUSTRALIAN LIGHT — HERO MOCKUP SCALE FINAL
+   ========================================================= */
+
+@media(min-width:901px){
+
+  body.project-australian-light .al-hero-frame{
+    width:min(122%,980px) !important;
+    max-width:none !important;
+
+    margin-left:-5% !important;
+    margin-right:-17% !important;
+
+    padding:0 !important;
+
+    background:transparent !important;
+    border:0 !important;
+    border-radius:0 !important;
+    box-shadow:none !important;
+
+    overflow:visible !important;
+  }
+
+  body.project-australian-light .al-hero-frame img{
+    width:100% !important;
+    height:auto !important;
+
+    background:transparent !important;
+    border:0 !important;
+    border-radius:0 !important;
+    box-shadow:none !important;
+
+    object-fit:contain !important;
+  }
+
+}
+
+/* ===== END AUSTRALIAN LIGHT — HERO MOCKUP SCALE FINAL ===== */
+
+
+/* =========================================================
+   AUSTRALIAN LIGHT — HERO VIEWPORT HEIGHT
+   ========================================================= */
+
+body.project-australian-light .al-hero{
+  height:100svh !important;
+  min-height:100svh !important;
+  max-height:100svh !important;
+}
+
+body.project-australian-light .al-hero > .al-hero-inner{
+  height:100% !important;
+  min-height:0 !important;
+  box-sizing:border-box;
+}
+
+
+/* Desktop: keep content vertically contained in one viewport */
+
+@media(min-width:901px){
+
+  body.project-australian-light .al-hero > .al-hero-inner{
+    padding-top:clamp(110px,12vh,160px) !important;
+    padding-bottom:32px !important;
+    align-items:center !important;
+  }
+
+}
+
+
+/* Mobile can still use the full viewport without overflowing
+   because the inner layout owns the available height. */
+
+@media(max-width:900px){
+
+  body.project-australian-light .al-hero{
+    height:100svh !important;
+    min-height:100svh !important;
+    max-height:100svh !important;
+  }
+
+}
+
+/* ===== END AUSTRALIAN LIGHT — HERO VIEWPORT HEIGHT ===== */
+
+
+
+/* =========================================================
+   AUSTRALIAN LIGHT — TEXT SELECTION
+   ========================================================= */
+
+/* Main selection treatment */
+
+body.project-australian-light ::selection{
+  background:#A48F6E;
+  color:#F8F6F0;
+  text-shadow:none;
+}
+
+body.project-australian-light ::-moz-selection{
+  background:#A48F6E;
+  color:#F8F6F0;
+  text-shadow:none;
+}
+
+
+/*
+   When text sits on the bronze surface,
+   reverse the selection colours.
+*/
+
+body.project-australian-light .al-bronze ::selection,
+body.project-australian-light [style*="#A48F6E"] ::selection{
+  background:#F8F6F0;
+  color:#A48F6E;
+}
+
+body.project-australian-light .al-bronze ::-moz-selection,
+body.project-australian-light [style*="#A48F6E"] ::-moz-selection{
+  background:#F8F6F0;
+  color:#A48F6E;
+}
+
+/* ===== END AUSTRALIAN LIGHT — TEXT SELECTION ===== */
