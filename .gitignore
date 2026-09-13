@@ -65,3 +65,6 @@ backups/
 # Canela — keep local collection, commit only fonts actually used
 public/fonts/Canela_Collection/*
 public/fonts/Canela_Collection/Canela Text Family/*
+
+# Keep Ethereal Realm hero video
+!public/projects/ethereal-realm/hero.mp4
