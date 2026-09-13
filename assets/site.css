@@ -36010,3 +36010,1236 @@ body[data-page="work"] .page-intro p{
 }
 
 /* ===== END WORK PAGE — DARK HERO ===== */
+
+
+/* =========================================================
+   PROJECT CARDS — THUMBNAIL MEDIA / POINTER MOTION
+   Home + Work
+   ========================================================= */
+
+.project-card .project-media{
+  --thumb-x:0px;
+  --thumb-y:0px;
+  --thumb-rx:0deg;
+  --thumb-ry:0deg;
+
+  position:relative;
+  overflow:hidden;
+
+  background:#0a0a0a;
+
+  isolation:isolate;
+}
+
+
+.project-card .project-thumb{
+  display:block;
+
+  width:100%;
+  height:100%;
+
+  object-fit:cover;
+  object-position:center;
+
+  opacity:.92;
+
+  transform:
+    translate3d(
+      var(--thumb-x),
+      var(--thumb-y),
+      0
+    )
+    rotateX(var(--thumb-rx))
+    rotateY(var(--thumb-ry))
+    scale(1.045);
+
+  transform-origin:center;
+
+  transition:
+    opacity .5s var(--ease),
+    transform .55s var(--ease),
+    filter .55s var(--ease);
+
+  will-change:
+    transform,
+    opacity;
+
+  backface-visibility:hidden;
+}
+
+
+.project-card:hover .project-thumb,
+.project-card:focus-visible .project-thumb{
+  opacity:1;
+
+  transform:
+    translate3d(
+      var(--thumb-x),
+      var(--thumb-y),
+      0
+    )
+    rotateX(var(--thumb-rx))
+    rotateY(var(--thumb-ry))
+    scale(1.085);
+}
+
+
+/*
+   Reveal layer:
+   image/video feels like it appears into the card instead
+   of behaving like a static poster.
+*/
+
+.project-card .project-media::after{
+  content:"";
+
+  position:absolute;
+  inset:0;
+
+  z-index:2;
+
+  pointer-events:none;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(0,0,0,0) 55%,
+      rgba(0,0,0,.10)
+    );
+
+  opacity:.18;
+
+  transition:
+    opacity .45s var(--ease);
+}
+
+.project-card:hover .project-media::after{
+  opacity:0;
+}
+
+
+/* Step / Motion video uses a cinematic crop similar to hero */
+
+.project-card[data-project="step-motion"]
+.project-thumb-video{
+  object-fit:cover;
+  object-position:center center;
+}
+
+
+/* Do not animate aggressively for keyboard/reduced motion */
+
+@media(prefers-reduced-motion:reduce){
+
+  .project-card .project-thumb{
+    transform:none !important;
+    transition:none !important;
+  }
+
+}
+
+
+/* ===== END PROJECT CARDS — THUMBNAIL MEDIA ===== */
+
+
+/* =========================================================
+   MODULAR TYPEFACE — CARD THUMBNAIL GRID
+   Mirrors the project hero's modular / technical language.
+   ========================================================= */
+
+.project-card[data-project="modular-typeface"] .project-media{
+  position:relative;
+  overflow:hidden;
+
+  background:#F5F3EE;
+
+  isolation:isolate;
+}
+
+
+/* technical construction grid */
+
+.project-card[data-project="modular-typeface"]
+.project-media::before{
+  content:"";
+
+  position:absolute;
+  inset:0;
+
+  z-index:0;
+  pointer-events:none;
+
+  background-image:
+    linear-gradient(
+      rgba(5,5,5,.10) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(5,5,5,.10) 1px,
+      transparent 1px
+    );
+
+  background-size:
+    clamp(26px,3vw,46px)
+    clamp(26px,3vw,46px);
+
+  transform:
+    translate3d(
+      calc(var(--thumb-x) * -.18),
+      calc(var(--thumb-y) * -.18),
+      0
+    );
+
+  transition:
+    transform .55s var(--ease),
+    opacity .4s var(--ease);
+}
+
+
+/* image sits above grid */
+
+.project-card[data-project="modular-typeface"]
+.project-thumb{
+  position:relative;
+  z-index:1;
+
+  width:100%;
+  height:100%;
+
+  object-fit:contain;
+  object-position:center;
+
+  padding:clamp(28px,5vw,78px);
+
+  box-sizing:border-box;
+
+  background:transparent;
+
+  opacity:1;
+
+  filter:none;
+}
+
+
+/* slightly stronger specimen scale on hover */
+
+.project-card[data-project="modular-typeface"]:hover
+.project-thumb,
+.project-card[data-project="modular-typeface"]:focus-visible
+.project-thumb{
+  transform:
+    translate3d(
+      var(--thumb-x),
+      var(--thumb-y),
+      0
+    )
+    rotateX(var(--thumb-rx))
+    rotateY(var(--thumb-ry))
+    scale(1.07);
+}
+
+
+/*
+   The generic dark thumbnail fade isn't needed here.
+   Keep the grid clean and graphic.
+*/
+
+.project-card[data-project="modular-typeface"]
+.project-media::after{
+  background:none;
+  opacity:0;
+}
+
+
+/* subtle accent line from the Modular Typeface system */
+
+.project-card[data-project="modular-typeface"]
+.project-media{
+  box-shadow:
+    inset 0 0 0 1px rgba(5,5,5,.08);
+}
+
+
+/* Mobile — keep enough breathing room around the specimen */
+
+@media(max-width:680px){
+
+  .project-card[data-project="modular-typeface"]
+  .project-thumb{
+    padding:clamp(24px,8vw,46px);
+  }
+
+  .project-card[data-project="modular-typeface"]
+  .project-media::before{
+    background-size:28px 28px;
+  }
+
+}
+
+/* ===== END MODULAR TYPEFACE — CARD THUMBNAIL GRID ===== */
+
+/* === GREEN GRID THUMBNAIL REFINEMENT === */
+
+.project-card[data-project="green-grid"] .project-media{
+  position:relative;
+  isolation:isolate;
+  overflow:hidden;
+
+  /*
+    No solid panel background.
+    The tint disappears naturally into the site's own background.
+  */
+  background:transparent;
+}
+
+
+/* soft central wash rather than a rectangular green field */
+
+.project-card[data-project="green-grid"]
+.project-media::before{
+  content:"";
+
+  position:absolute;
+  z-index:0;
+
+  inset:-16% -10% -8%;
+
+  pointer-events:none;
+
+  background:
+    radial-gradient(
+      ellipse at 48% 52%,
+      rgba(224,239,214,.90) 0%,
+      rgba(220,236,209,.68) 32%,
+      rgba(216,233,204,.34) 54%,
+      rgba(211,230,199,.12) 72%,
+      rgba(211,230,199,0) 88%
+    );
+
+  filter:blur(9px);
+
+  opacity:.88;
+
+  transform:
+    translate3d(
+      calc(var(--thumb-x) * -.06),
+      calc(var(--thumb-y) * -.04),
+      0
+    );
+
+  transition:
+    transform .65s var(--ease),
+    opacity .5s var(--ease);
+}
+
+
+/* large SVG — graphic becomes the composition itself */
+
+.project-card[data-project="green-grid"]
+.project-thumb{
+  position:relative;
+  z-index:1;
+
+  width:132%;
+  height:132%;
+
+  max-width:none;
+
+  margin-left:-16%;
+  margin-top:-16%;
+
+  padding:0;
+
+  object-fit:contain;
+  object-position:center;
+
+  background:transparent;
+
+  opacity:.96;
+}
+
+
+/* keep interaction subtle */
+
+.project-card[data-project="green-grid"]:hover
+.project-thumb,
+.project-card[data-project="green-grid"]:focus-visible
+.project-thumb{
+  transform:
+    translate3d(
+      calc(var(--thumb-x) * .42),
+      calc(var(--thumb-y) * .42),
+      0
+    )
+    rotateX(calc(var(--thumb-rx) * .2))
+    rotateY(calc(var(--thumb-ry) * .2))
+    scale(1.025);
+}
+
+
+/* absolutely no generic dark overlay */
+
+.project-card[data-project="green-grid"]
+.project-media::after{
+  content:none;
+}
+
+
+@media(max-width:680px){
+
+  .project-card[data-project="green-grid"]
+  .project-thumb{
+    width:140%;
+    height:140%;
+
+    margin-left:-20%;
+    margin-top:-20%;
+  }
+
+}
+
+/* === END GREEN GRID THUMBNAIL REFINEMENT === */
+
+
+
+/* =========================================================
+   HOME HERO — THUMBNAIL MOTION TRAILS
+   Uniform landscape frames with accent overlay + caption.
+   ========================================================= */
+
+body[data-page="home"] #hero-windows{
+  position:absolute;
+  inset:0;
+
+  overflow:hidden;
+
+  pointer-events:none;
+  z-index:1;
+}
+
+
+body[data-page="home"] .motion-trail{
+  position:absolute;
+
+  width:clamp(220px,19vw,320px);
+  aspect-ratio:16 / 10;
+
+  overflow:hidden;
+
+  opacity:0;
+
+  transform:
+    translate(-50%,-50%)
+    scale(.94);
+
+  transition:
+    opacity .22s ease,
+    transform .5s var(--ease);
+
+  pointer-events:none;
+
+  will-change:
+    transform,
+    opacity;
+}
+
+
+body[data-page="home"] .motion-trail.is-visible{
+  opacity:1;
+
+  transform:
+    translate(-50%,-50%)
+    scale(1);
+}
+
+
+body[data-page="home"] .motion-trail-inner,
+body[data-page="home"] .motion-trail-fallback{
+  position:relative;
+
+  width:100%;
+  height:100%;
+
+  overflow:hidden;
+
+  background:#090909;
+
+  border:
+    1px solid rgba(248,246,240,.26);
+
+  box-sizing:border-box;
+}
+
+
+/* image / video */
+
+body[data-page="home"] .motion-trail-media{
+  position:absolute;
+  inset:0;
+
+  z-index:0;
+
+  display:block;
+
+  width:100%;
+  height:100%;
+
+  object-fit:cover;
+  object-position:center;
+
+  pointer-events:none;
+
+  transform:scale(1.015);
+}
+
+
+/* project accent tint */
+
+body[data-page="home"] .motion-trail-accent{
+  position:absolute;
+  inset:0;
+
+  z-index:1;
+
+  pointer-events:none;
+
+  background:
+    linear-gradient(
+      180deg,
+      color-mix(
+        in srgb,
+        var(--trail-accent) 14%,
+        transparent
+      ) 0%,
+      color-mix(
+        in srgb,
+        var(--trail-accent) 8%,
+        transparent
+      ) 56%,
+      rgba(0,0,0,.18) 100%
+    );
+
+  mix-blend-mode:screen;
+
+  opacity:.72;
+}
+
+
+/* subtle readability fade near caption */
+
+body[data-page="home"] .motion-trail-inner::after,
+body[data-page="home"] .motion-trail-fallback::after{
+  content:"";
+
+  position:absolute;
+  inset:0;
+
+  z-index:2;
+
+  pointer-events:none;
+
+  background:
+    linear-gradient(
+      180deg,
+      transparent 52%,
+      rgba(4,4,4,.08) 72%,
+      rgba(4,4,4,.44) 100%
+    );
+}
+
+
+/* bottom-left project title */
+
+body[data-page="home"] .motion-trail-caption{
+  position:absolute;
+
+  left:10px;
+  bottom:9px;
+
+  z-index:3;
+
+  max-width:calc(100% - 20px);
+
+  color:rgba(248,246,240,.92);
+
+  font-family:var(--mono);
+  font-size:9px;
+  line-height:1;
+
+  letter-spacing:.08em;
+  text-transform:uppercase;
+
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+
+  text-shadow:
+    0 1px 10px rgba(0,0,0,.55);
+
+  pointer-events:none;
+}
+
+
+/* Green Grid SVG remains uncropped */
+
+body[data-page="home"]
+.motion-trail
+.motion-trail-media[src*="green-grid"]{
+  object-fit:contain;
+
+  width:116%;
+  height:116%;
+
+  inset:-8%;
+
+  background:transparent;
+}
+
+
+/* video and image use the same landscape frame */
+
+body[data-page="home"]
+.motion-trail video.motion-trail-media{
+  object-fit:cover;
+}
+
+
+/* keep hover unnecessary — these are cursor trails */
+
+@media(max-width:800px){
+
+  body[data-page="home"] .motion-trail{
+    width:210px;
+  }
+
+}
+
+
+@media(prefers-reduced-motion:reduce){
+
+  body[data-page="home"] .motion-trail{
+    display:none;
+  }
+
+}
+
+/* ===== END HOME HERO — THUMBNAIL MOTION TRAILS ===== */
+
+
+/* =========================================================
+   HOME HERO TRAIL — PROJECT-SPECIFIC OVERLAY TUNING
+   ========================================================= */
+
+
+/* Step / Motion — no accent overlay at all */
+
+body[data-page="home"]
+.motion-trail:has(
+  .motion-trail-media[src*="step-motion"]
+)
+.motion-trail-accent{
+  display:none;
+}
+
+
+/*
+  Keep only a very light readability fade for the caption,
+  without tinting the video/image.
+*/
+
+body[data-page="home"]
+.motion-trail:has(
+  .motion-trail-media[src*="step-motion"]
+)
+.motion-trail-inner::after{
+  background:
+    linear-gradient(
+      180deg,
+      transparent 68%,
+      rgba(4,4,4,.06) 82%,
+      rgba(4,4,4,.24) 100%
+    );
+}
+
+
+/* Modular Typeface — much lighter accent treatment */
+
+body[data-page="home"]
+.motion-trail:has(
+  .motion-trail-media[src*="modular-typeface"]
+)
+.motion-trail-accent{
+  opacity:.28;
+
+  background:
+    linear-gradient(
+      180deg,
+      color-mix(
+        in srgb,
+        var(--trail-accent) 7%,
+        transparent
+      ) 0%,
+      color-mix(
+        in srgb,
+        var(--trail-accent) 3%,
+        transparent
+      ) 58%,
+      transparent 100%
+    );
+}
+
+
+/* reduce the dark fade too, so the type specimen stays crisp */
+
+body[data-page="home"]
+.motion-trail:has(
+  .motion-trail-media[src*="modular-typeface"]
+)
+.motion-trail-inner::after{
+  background:
+    linear-gradient(
+      180deg,
+      transparent 64%,
+      rgba(4,4,4,.04) 80%,
+      rgba(4,4,4,.20) 100%
+    );
+}
+
+
+/* ===== END HOME HERO TRAIL — PROJECT-SPECIFIC OVERLAY TUNING ===== */
+
+
+/* =========================================================
+   HOME TRAILS — PROJECT-SPECIFIC VISIBILITY FIX
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   STEP / MOTION
+   Keep the original image/video completely clean.
+   --------------------------------------------------------- */
+
+body[data-page="home"]
+.motion-trail[data-project="step-motion"]{
+  background:#0A0A0A;
+}
+
+
+body[data-page="home"]
+.motion-trail[data-project="step-motion"]
+.motion-trail-inner{
+  background:#0A0A0A;
+}
+
+
+body[data-page="home"]
+.motion-trail[data-project="step-motion"]
+.motion-trail-media{
+  display:block !important;
+
+  visibility:visible !important;
+  opacity:1 !important;
+
+  z-index:0;
+
+  width:100%;
+  height:100%;
+
+  object-fit:cover;
+  object-position:center;
+
+  filter:none;
+  mix-blend-mode:normal;
+}
+
+
+/* absolutely no colour overlay */
+
+body[data-page="home"]
+.motion-trail[data-project="step-motion"]
+.motion-trail-accent{
+  display:none !important;
+}
+
+
+/* only enough darkening to keep caption readable */
+
+body[data-page="home"]
+.motion-trail[data-project="step-motion"]
+.motion-trail-inner::after{
+  background:
+    linear-gradient(
+      180deg,
+      transparent 72%,
+      rgba(0,0,0,.04) 84%,
+      rgba(0,0,0,.22) 100%
+    );
+}
+
+
+/* ---------------------------------------------------------
+   MODULAR TYPEFACE
+   Light surface underneath so the specimen is readable.
+   --------------------------------------------------------- */
+
+body[data-page="home"]
+.motion-trail[data-project="modular-typeface"]{
+  background:#EEEDE8;
+}
+
+
+body[data-page="home"]
+.motion-trail[data-project="modular-typeface"]
+.motion-trail-inner{
+  background:
+    linear-gradient(
+      145deg,
+      #F4F2ED 0%,
+      #E9E7E1 55%,
+      #DEDDD7 100%
+    );
+}
+
+
+/* subtle technical grid underneath */
+
+body[data-page="home"]
+.motion-trail[data-project="modular-typeface"]
+.motion-trail-inner::before{
+  content:"";
+
+  position:absolute;
+  inset:0;
+
+  z-index:0;
+
+  pointer-events:none;
+
+  background-image:
+    linear-gradient(
+      rgba(20,20,20,.055) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(20,20,20,.055) 1px,
+      transparent 1px
+    );
+
+  background-size:
+    28px 28px;
+}
+
+
+/* keep the artwork above the light surface */
+
+body[data-page="home"]
+.motion-trail[data-project="modular-typeface"]
+.motion-trail-media{
+  z-index:1;
+
+  opacity:1;
+
+  object-fit:contain;
+
+  width:100%;
+  height:100%;
+
+  padding:5%;
+
+  box-sizing:border-box;
+
+  filter:none;
+
+  mix-blend-mode:normal;
+}
+
+
+/* much lighter tint */
+
+body[data-page="home"]
+.motion-trail[data-project="modular-typeface"]
+.motion-trail-accent{
+  z-index:2;
+
+  opacity:.14;
+
+  mix-blend-mode:multiply;
+}
+
+
+/* minimal bottom fade only */
+
+body[data-page="home"]
+.motion-trail[data-project="modular-typeface"]
+.motion-trail-inner::after{
+  z-index:3;
+
+  background:
+    linear-gradient(
+      180deg,
+      transparent 74%,
+      rgba(0,0,0,.04) 88%,
+      rgba(0,0,0,.14) 100%
+    );
+}
+
+
+body[data-page="home"]
+.motion-trail[data-project="modular-typeface"]
+.motion-trail-caption{
+  z-index:4;
+
+  color:#111;
+  text-shadow:none;
+
+  background:rgba(244,242,237,.72);
+
+  padding:3px 5px;
+}
+
+
+/* ---------------------------------------------------------
+   Ensure every trail frame itself stays visible.
+   --------------------------------------------------------- */
+
+body[data-page="home"]
+.motion-trail.is-visible{
+  visibility:visible;
+}
+
+
+body[data-page="home"]
+.motion-trail.is-visible
+.motion-trail-inner{
+  visibility:visible;
+}
+
+
+/* ===== END HOME TRAILS — PROJECT-SPECIFIC VISIBILITY FIX ===== */
+
+
+/* =========================================================
+   HOME HERO TRAIL — STRONGER ACCENT OVERLAY
+   ========================================================= */
+
+/* Default project trail frames — a little more accent */
+
+body[data-page="home"]
+.motion-trail
+.motion-trail-accent{
+  opacity:.88;
+
+  background:
+    linear-gradient(
+      180deg,
+      color-mix(
+        in srgb,
+        var(--trail-accent) 22%,
+        transparent
+      ) 0%,
+      color-mix(
+        in srgb,
+        var(--trail-accent) 15%,
+        transparent
+      ) 48%,
+      color-mix(
+        in srgb,
+        var(--trail-accent) 8%,
+        transparent
+      ) 74%,
+      transparent 100%
+    );
+}
+
+
+/* Step / Motion stays completely clean */
+
+body[data-page="home"]
+.motion-trail[data-project="step-motion"]
+.motion-trail-accent{
+  display:none !important;
+}
+
+
+/* Modular Typeface — slightly stronger than before,
+   but still much lighter than the other projects */
+
+body[data-page="home"]
+.motion-trail[data-project="modular-typeface"]
+.motion-trail-accent{
+  display:block !important;
+
+  opacity:.24;
+
+  mix-blend-mode:multiply;
+
+  background:
+    linear-gradient(
+      180deg,
+      color-mix(
+        in srgb,
+        var(--trail-accent) 10%,
+        transparent
+      ) 0%,
+      color-mix(
+        in srgb,
+        var(--trail-accent) 6%,
+        transparent
+      ) 52%,
+      transparent 100%
+    );
+}
+
+
+/* ===== END HOME HERO TRAIL — STRONGER ACCENT OVERLAY ===== */
+
+
+/* =========================================================
+   HOME HERO TRAIL — UNIFIED ACCENT OVERLAYS
+   ========================================================= */
+
+
+/* Step / Motion — bring accent overlay back */
+
+body[data-page="home"]
+.motion-trail[data-project="step-motion"]
+.motion-trail-accent{
+  display:block !important;
+
+  opacity:.74;
+
+  mix-blend-mode:screen;
+
+  background:
+    linear-gradient(
+      180deg,
+      color-mix(
+        in srgb,
+        var(--trail-accent) 18%,
+        transparent
+      ) 0%,
+      color-mix(
+        in srgb,
+        var(--trail-accent) 12%,
+        transparent
+      ) 52%,
+      color-mix(
+        in srgb,
+        var(--trail-accent) 6%,
+        transparent
+      ) 78%,
+      transparent 100%
+    );
+}
+
+
+/* Modular Typeface — visible accent, still restrained */
+
+body[data-page="home"]
+.motion-trail[data-project="modular-typeface"]
+.motion-trail-accent{
+  display:block !important;
+
+  opacity:.42;
+
+  mix-blend-mode:multiply;
+
+  background:
+    linear-gradient(
+      180deg,
+      color-mix(
+        in srgb,
+        var(--trail-accent) 14%,
+        transparent
+      ) 0%,
+      color-mix(
+        in srgb,
+        var(--trail-accent) 9%,
+        transparent
+      ) 54%,
+      color-mix(
+        in srgb,
+        var(--trail-accent) 4%,
+        transparent
+      ) 78%,
+      transparent 100%
+    );
+}
+
+
+/* ===== END HOME HERO TRAIL — UNIFIED ACCENT OVERLAYS ===== */
+
+
+/* =========================================================
+   HOME HERO — SUBTLE FLOATING GRADIENT
+   ========================================================= */
+
+body[data-page="home"] .hero{
+  position:relative;
+  isolation:isolate;
+  overflow:hidden;
+}
+
+
+/* soft atmosphere behind IRIS WANG */
+
+body[data-page="home"] .hero::before{
+  content:"";
+
+  position:absolute;
+  z-index:0;
+
+  width:min(72vw,980px);
+  height:min(58vw,720px);
+
+  left:50%;
+  top:48%;
+
+  pointer-events:none;
+
+  background:
+    radial-gradient(
+      ellipse at 38% 42%,
+      rgba(164,143,110,.14) 0%,
+      rgba(126,145,112,.09) 30%,
+      rgba(89,106,118,.055) 52%,
+      rgba(20,20,20,0) 74%
+    );
+
+  filter:blur(42px);
+
+  opacity:.82;
+
+  transform:
+    translate(-50%,-50%)
+    rotate(-8deg)
+    scale(1);
+
+  animation:
+    homeHeroGradientFloat 14s
+    ease-in-out
+    infinite alternate;
+
+  will-change:transform;
+}
+
+
+/* keep real hero content + mouse trails above it */
+
+body[data-page="home"] .hero > *{
+  position:relative;
+  z-index:2;
+}
+
+
+/*
+  The trail layer still needs its own absolute positioning.
+*/
+
+body[data-page="home"] .hero #hero-windows{
+  position:absolute;
+  inset:0;
+  z-index:3;
+}
+
+
+/* very slow, almost imperceptible drift */
+
+@keyframes homeHeroGradientFloat{
+
+  0%{
+    transform:
+      translate(-54%,-51%)
+      rotate(-8deg)
+      scale(.96);
+  }
+
+  50%{
+    transform:
+      translate(-47%,-47%)
+      rotate(3deg)
+      scale(1.06);
+  }
+
+  100%{
+    transform:
+      translate(-51%,-53%)
+      rotate(8deg)
+      scale(1.01);
+  }
+
+}
+
+
+@media(prefers-reduced-motion:reduce){
+
+  body[data-page="home"] .hero::before{
+    animation:none;
+
+    transform:
+      translate(-50%,-50%);
+  }
+
+}
+
+/* ===== END HOME HERO — SUBTLE FLOATING GRADIENT ===== */
+
+
+/* =========================================================
+   HOME HERO — LAYER ORDER FIX
+
+   0  gradient
+   2  mouse trail
+   5  IRIS WANG + hero text
+   ========================================================= */
+
+body[data-page="home"] .hero{
+  position:relative;
+  isolation:isolate;
+}
+
+
+/* animated gradient — furthest back */
+
+body[data-page="home"] .hero::before{
+  z-index:0 !important;
+}
+
+
+/* mouse thumbnail rail — behind typography */
+
+body[data-page="home"] .hero #hero-windows{
+  position:absolute;
+  inset:0;
+
+  z-index:2 !important;
+
+  pointer-events:none;
+}
+
+
+/*
+  Hero typography/content sits above every mouse frame.
+  :not(#hero-windows) prevents the trail layer itself
+  from inheriting the foreground z-index.
+*/
+
+body[data-page="home"] .hero > :not(#hero-windows){
+  position:relative;
+  z-index:5;
+}
+
+
+/* If the large title has its own positioning, force it forward */
+
+body[data-page="home"] .hero h1,
+body[data-page="home"] .hero-title,
+body[data-page="home"] .hero-name{
+  position:relative;
+  z-index:6;
+}
+
+
+/* ===== END HOME HERO — LAYER ORDER FIX ===== */

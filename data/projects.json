@@ -4,7 +4,7 @@
     "number": "01",
     "title": "Australian Light",
     "year": "2026",
-    "status": "Academic redesign \u00b7 Individual",
+    "status": "Academic redesign · Individual",
     "disciplines": [
       "UI/UX",
       "E-commerce",
@@ -12,7 +12,7 @@
     ],
     "summary": "A research-led e-commerce redesign that transforms a static Australian photography gallery into a responsive, guided purchasing experience.",
     "role": "End-to-end UX evaluation, interface design, prototyping and front-end implementation",
-    "tools": "Figma \u00b7 HTML \u00b7 CSS \u00b7 JavaScript",
+    "tools": "Figma · HTML · CSS · JavaScript",
     "accent": "#C49A62",
     "secondary": "#E7D5B8",
     "theme": "dark",
@@ -55,22 +55,28 @@
         "Transferable capabilities",
         "Research synthesis, information architecture, responsive UI, prototyping, usability evaluation and front-end implementation."
       ]
-    ]
+    ],
+    "filter": [
+      "ui/ux",
+      "ux"
+    ],
+    "thumbnail": "/public/thumbnails/australian-light.png",
+    "thumbnailType": "image"
   },
   {
     "slug": "60-bpm",
     "number": "02",
     "title": "60 BPM",
     "year": "2024",
-    "status": "Academic \u00b7 Individual",
+    "status": "Academic · Individual",
     "disciplines": [
       "Brand identity",
       "Packaging",
       "Campaign"
     ],
-    "summary": "A caf\u00e9 identity translating a 60-BPM tempo into a calm, rechargeable brand world.",
+    "summary": "A café identity translating a 60-BPM tempo into a calm, rechargeable brand world.",
     "role": "Brand strategy, identity, character, packaging and campaign design",
-    "tools": "Illustrator \u00b7 InDesign \u00b7 Photoshop \u00b7 Figma",
+    "tools": "Illustrator · InDesign · Photoshop · Figma",
     "accent": "#CFDD2C",
     "secondary": "#E4A3C9",
     "theme": "light",
@@ -79,7 +85,7 @@
     "sections": [
       [
         "Overview",
-        "60 BPM is a speculative caf\u00e9 identity built around calmness, restoration and recharging. The name connects sixty beats per minute with adagio: a slower tempo away from the anxiety and speed of daily life."
+        "60 BPM is a speculative café identity built around calmness, restoration and recharging. The name connects sixty beats per minute with adagio: a slower tempo away from the anxiety and speed of daily life."
       ],
       [
         "Concept",
@@ -87,7 +93,7 @@
       ],
       [
         "Research & direction",
-        "Research covered caf\u00e9 brands, merchandise, store atmosphere, logos, typography, menus, character design and relevant case studies. The intended audience includes students, workers, couples and families seeking a higher-quality leisure experience."
+        "Research covered café brands, merchandise, store atmosphere, logos, typography, menus, character design and relevant case studies. The intended audience includes students, workers, couples and families seeking a higher-quality leisure experience."
       ],
       [
         "Identity system",
@@ -105,14 +111,16 @@
         "Transferable capabilities",
         "Brief interpretation, concept development, identity systems, packaging, character design, campaign consistency and art direction."
       ]
-    ]
+    ],
+    "thumbnail": "/public/thumbnails/60-bpm.jpg",
+    "thumbnailType": "image"
   },
   {
     "slug": "green-grid",
     "number": "03",
     "title": "Green Grid",
     "year": "2025",
-    "status": "Academic \u00b7 Team of 4",
+    "status": "Academic · Team of 4",
     "disciplines": [
       "UX research",
       "Product design",
@@ -120,7 +128,7 @@
     ],
     "summary": "A community-garden app designed around coordination, information sharing and social connection.",
     "role": "Design and prototyping; contributions to research, coding transcripts, synthesis, personas and user flows",
-    "tools": "Figma \u00b7 FigJam \u00b7 Photoshop",
+    "tools": "Figma · FigJam · Photoshop",
     "accent": "#B7F34A",
     "secondary": "#6C4BFF",
     "theme": "light",
@@ -137,7 +145,7 @@
       ],
       [
         "Research methods",
-        "The team used background review, semi-structured interviews, transcription, colour-coded thematic analysis, personas, conceptual modelling and user scenarios. Nine participants aged 18\u201356 were interviewed in Melbourne."
+        "The team used background review, semi-structured interviews, transcription, colour-coded thematic analysis, personas, conceptual modelling and user scenarios. Nine participants aged 18–56 were interviewed in Melbourne."
       ],
       [
         "Synthesis",
@@ -171,14 +179,16 @@
         "Transferable capabilities",
         "Interviewing, qualitative synthesis, personas, collaborative planning, prototyping, usability evaluation and evidence-led iteration."
       ]
-    ]
+    ],
+    "thumbnail": "/public/thumbnails/green-grid.svg",
+    "thumbnailType": "image"
   },
   {
     "slug": "ethereal-realm",
     "number": "04",
     "title": "EtheReal / Realm",
     "year": "2024",
-    "status": "Speculative \u00b7 Individual",
+    "status": "Speculative · Individual",
     "disciplines": [
       "Brand identity",
       "UI design",
@@ -186,7 +196,7 @@
     ],
     "summary": "A virtual-idol identity expanded into a connected fan platform, social system and digital campaign.",
     "role": "Brand, campaign and UI design",
-    "tools": "Adobe Creative Suite \u00b7 Figma",
+    "tools": "Adobe Creative Suite · Figma",
     "accent": "#6044FF",
     "secondary": "#7DF9FF",
     "theme": "dark",
@@ -199,7 +209,7 @@
       ],
       [
         "Brand chapter",
-        "The core \u2018electronic butterfly\u2019 idea frames idols as vivid yet distant presences mediated through screens. A pixel-led identity, member-colour system, logo, social campaign and album graphics establish the world."
+        "The core ‘electronic butterfly’ idea frames idols as vivid yet distant presences mediated through screens. A pixel-led identity, member-colour system, logo, social campaign and album graphics establish the world."
       ],
       [
         "Interface chapter",
@@ -213,14 +223,16 @@
         "Transferable capabilities",
         "Brand systems, UI components, information architecture, social content and cross-channel consistency."
       ]
-    ]
+    ],
+    "thumbnail": "/public/thumbnails/ethereal-realm.jpeg",
+    "thumbnailType": "image"
   },
   {
     "slug": "step-motion",
     "number": "05",
     "title": "Step / Motion",
     "year": "2026",
-    "status": "Academic \u00b7 Individual",
+    "status": "Academic · Individual",
     "disciplines": [
       "Motion",
       "Filmmaking",
@@ -228,7 +240,7 @@
     ],
     "summary": "A film and two-volume publication translating cyclical time through stairs, repetition, motion blur and material layering.",
     "role": "Filmmaking, sound, editorial design and bookmaking",
-    "tools": "Camera & audio \u00b7 editorial / motion tools",
+    "tools": "Camera & audio · editorial / motion tools",
     "accent": "#E6D94A",
     "secondary": "#F5F3EE",
     "theme": "dark",
@@ -240,7 +252,7 @@
         "A paired exploration of translating time, tension and atmosphere between moving-image and physical editorial formats."
       ],
       [
-        "Step \u2014 moving image",
+        "Step — moving image",
         "Staircases, escalators and elevators recur as motifs of movement and time. Montage, repeated actions, overlapping moments, long exposure and motion blur contrast speed with stillness."
       ],
       [
@@ -248,8 +260,8 @@
         "Self-produced piano, recorded wind and footsteps, retained location sound and selected free sound-library textures build a restrained soundscape. Tutor feedback led to softer transition wind effects."
       ],
       [
-        "Motion \u2014 physical publication",
-        "A 10 \u00d7 15 cm, 16-page handmade artist\u2019s book translates cinematic darkness and tension through black paper, tracing-paper layers, high-contrast imagery, restricted red/brown accents and sewn binding."
+        "Motion — physical publication",
+        "A 10 × 15 cm, 16-page handmade artist’s book translates cinematic darkness and tension through black paper, tracing-paper layers, high-contrast imagery, restricted red/brown accents and sewn binding."
       ],
       [
         "Outcome",
@@ -259,14 +271,16 @@
         "Transferable capabilities",
         "Storyboarding, shooting, editing, sound, sequencing, material experimentation and editorial pacing."
       ]
-    ]
+    ],
+    "thumbnail": "/public/thumbnails/step-motion.mp4",
+    "thumbnailType": "video"
   },
   {
     "slug": "n-exhibition",
     "number": "06",
     "title": "N Exhibition",
     "year": "2024",
-    "status": "Speculative \u00b7 Individual",
+    "status": "Speculative · Individual",
     "disciplines": [
       "Exhibition identity",
       "Environmental graphics",
@@ -297,91 +311,16 @@
         "Transferable capabilities",
         "Concept development, modular identity, print application and environmental storytelling."
       ]
-    ]
-  },
-  {
-    "slug": "ditto",
-    "number": "07",
-    "title": "Ditto",
-    "year": "2025",
-    "status": "Academic \u00b7 Individual \u00b7 Unaffiliated fan reinterpretation",
-    "disciplines": [
-      "Campaign",
-      "Editorial",
-      "Record packaging",
-      "Motion"
     ],
-    "summary": "A lo-fi visual system for memory and fandom, spanning record packaging, printed matter and moving image.",
-    "role": "Album identity, photography, editorial, campaign and motion",
-    "tools": "Adobe Creative Suite",
-    "accent": "#7D8E9A",
-    "secondary": "#BFC7CB",
-    "theme": "dark",
-    "featured": false,
-    "demonstrates": "Demonstrates atmospheric art direction carried consistently across packaging, photography, editorial and campaign touchpoints.",
-    "sections": [
-      [
-        "Overview",
-        "An academic album-design reinterpretation of NewJeans\u2019 \u2018Ditto\u2019, not affiliated with NewJeans, ADOR or HYBE."
-      ],
-      [
-        "Direction",
-        "Nostalgic high-school memory, camera/film motifs, hazy lo-fi imagery and cold desaturated colour define the system."
-      ],
-      [
-        "Applications",
-        "Record cover and labels, sculptural-form photography, lyric book, posters, billboard, tote-bag and motion outcome."
-      ],
-      [
-        "Transferable capabilities",
-        "Art direction, photography, packaging, editorial sequencing and campaign extension."
-      ]
-    ]
-  },
-  {
-    "slug": "glass-garden",
-    "number": "08",
-    "title": "Glass Garden, March",
-    "year": "2026",
-    "status": "Academic \u00b7 Individual",
-    "disciplines": [
-      "Editorial",
-      "Print",
-      "Colour"
-    ],
-    "summary": "A folded publication built from light, transparent colour and the shifting geometry of glass.",
-    "role": "Research, colour, typography, editorial and folding design",
-    "tools": "Adobe InDesign",
-    "accent": "#8AB7C4",
-    "secondary": "#FFB7C4",
-    "theme": "light",
-    "featured": false,
-    "demonstrates": "Demonstrates the translation of visual research into colour, typography, folds, pacing and production detail.",
-    "sections": [
-      [
-        "Overview",
-        "A folded pamphlet inspired by colour, transparency, reflection and layered glass surfaces in Janet Fish\u2019s \u2018Glass Garden, March\u2019."
-      ],
-      [
-        "Development",
-        "Artwork research, colour studies, typography tests and three folding/visual trials led to a four-panel final direction."
-      ],
-      [
-        "Solution",
-        "The 380 \u00d7 210 mm CMYK pamphlet uses FIN Condensed and Teko with cool blue-green colour, transparent overlays and a liquid-glass atmosphere."
-      ],
-      [
-        "Transferable capabilities",
-        "Editorial systems, colour research, print production and physical pacing."
-      ]
-    ]
+    "thumbnail": "/public/thumbnails/n-exhibition.png",
+    "thumbnailType": "image"
   },
   {
     "slug": "modular-typeface",
     "number": "09",
     "title": "Modular Typeface",
     "year": "2025",
-    "status": "Academic \u00b7 Individual",
+    "status": "Academic · Individual",
     "disciplines": [
       "Typography",
       "Visual systems"
@@ -392,7 +331,7 @@
     "accent": "#E93D9A",
     "secondary": "#F5F3EE",
     "theme": "light",
-    "featured": false,
+    "featured": true,
     "demonstrates": "Demonstrates the construction of a repeatable typographic system from a restricted visual toolkit.",
     "sections": [
       [
@@ -411,82 +350,8 @@
         "Transferable capabilities",
         "Rule-based visual thinking, consistency, iterative refinement and typographic application."
       ]
-    ]
-  },
-  {
-    "slug": "mark-making-book",
-    "number": "10",
-    "title": "Mark Making Book",
-    "year": "2025",
-    "status": "Academic \u00b7 Individual",
-    "disciplines": [
-      "Editorial",
-      "Material experimentation",
-      "Bookmaking"
     ],
-    "summary": "A tactile publication pairing objects with their marks through tracing paper, overprinting and hand binding.",
-    "role": "Mark-making, sequencing, cover design and bookmaking",
-    "tools": "Material processes \u00b7 editorial tools",
-    "accent": "#A8947A",
-    "secondary": "#F5F3EE",
-    "theme": "light",
-    "featured": false,
-    "demonstrates": "Demonstrates experimental image generation, material sensitivity and editorial sequencing.",
-    "sections": [
-      [
-        "Overview",
-        "An editorial book exploring identity through personal marks, image and text, structured around the questions \u2018What\u2019s your identity?\u2019 and \u2018What\u2019s your mark?\u2019"
-      ],
-      [
-        "Process",
-        "Material experiments, mark selection, image/text development, tracing-paper-like layering and long-form page sequencing turn open-ended making into a coherent system."
-      ],
-      [
-        "Outcome",
-        "A resolved publication with front/back covers and an integrated mark, image and text sequence."
-      ],
-      [
-        "Transferable capabilities",
-        "Material experimentation, selection/editing, hierarchy and book sequencing."
-      ]
-    ]
-  },
-  {
-    "slug": "mario-kart",
-    "number": "11",
-    "title": "Mario Kart 8 Deluxe",
-    "year": "2025",
-    "status": "Academic \u00b7 Team of 4 \u00b7 Fan-made / unaffiliated",
-    "disciplines": [
-      "Web design",
-      "Interaction",
-      "Front-end"
-    ],
-    "summary": "A collaborative interactive web experience combining information architecture, playful motion and front-end functionality.",
-    "role": "Team leader; homepage & explanation pages; coordination; shared CSS/JS consolidation",
-    "tools": "HTML5 \u00b7 CSS3 \u00b7 JavaScript \u00b7 VS Code",
-    "accent": "#FFCC00",
-    "secondary": "#FF3434",
-    "theme": "dark",
-    "featured": false,
-    "demonstrates": "Demonstrates collaborative front-end delivery, interaction design and team coordination within an academic fan project.",
-    "sections": [
-      [
-        "Overview",
-        "A seven-page academic team website introducing Mario Kart 8 Deluxe through game information, animated content and a ten-question quiz. It is not affiliated with or endorsed by Nintendo."
-      ],
-      [
-        "Contribution",
-        "Iris led the team, designed and developed the homepage and technical explanation pages, coordinated the group and consolidated shared CSS and JavaScript."
-      ],
-      [
-        "Features",
-        "Shared navigation, responsive layouts, image carousel, scroll-triggered entrances, interactive cards/modals, content pages and a multi-input quiz with progress, feedback and replay."
-      ],
-      [
-        "Transferable capabilities",
-        "Information architecture, responsive front-end, JavaScript interaction, code consolidation and team leadership."
-      ]
-    ]
+    "thumbnail": "/public/thumbnails/modular-typeface.png",
+    "thumbnailType": "image"
   }
 ]

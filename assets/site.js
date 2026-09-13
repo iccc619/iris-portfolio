@@ -15,18 +15,80 @@ function shortStatus(s=""){
   return s.split("·")[0].trim();
 }
 
+function projectCardMedia(p){
+
+  if(!p.thumbnail){
+    return media(
+      p,
+      `${p.title} — project media`
+    );
+  }
+
+  if(p.thumbnailType==="video"){
+
+    const isStepMotion =
+      p.slug==="step-motion";
+
+    return `
+      <video
+        class="project-thumb project-thumb-video"
+        src="${p.thumbnail}"
+        muted
+        playsinline
+        preload="metadata"
+        data-thumb-video
+        ${isStepMotion ? 'data-thumb-segment="step-motion"' : ""}
+        aria-label="${esc(p.title)} project preview">
+      </video>
+    `;
+  }
+
+  return `
+    <img
+      class="project-thumb project-thumb-image"
+      src="${p.thumbnail}"
+      alt="${esc(p.title)} project thumbnail"
+      loading="lazy"
+      decoding="async">
+  `;
+}
+
+
 function card(p,cls=""){
-  return `<a class="project-card ${cls}" href="/work/${p.slug}/" data-project="${p.slug}" data-accent="${p.accent}" data-disciplines="${p.disciplines.join(" ").toLowerCase()}" aria-label="${esc(p.title)} case study">
-    <div class="project-media">${media(p,`${p.title} — media placeholder`)}</div>
+  return `<a
+    class="project-card ${cls}"
+    href="/work/${p.slug}/"
+    data-project="${p.slug}"
+    data-accent="${p.accent}"
+    data-disciplines="${(p.filter?.length ? p.filter : p.disciplines).join(" ").toLowerCase()}"
+    aria-label="${esc(p.title)} case study">
+
+    <div class="project-media">
+      ${projectCardMedia(p)}
+    </div>
+
     <div class="project-info">
       <span class="project-num">${p.number}</span>
+
       <div>
         <h3 class="project-title">${esc(p.title)}</h3>
-        <p class="project-summary">${esc(p.summary)}</p>
-        <p class="meta-mono">${esc(p.disciplines.slice(0,2).join(" · "))} · ${esc(shortStatus(p.status))}</p>
+
+        <p class="project-summary">
+          ${esc(p.summary)}
+        </p>
+
+        <p class="meta-mono">
+          ${esc(p.disciplines.slice(0,2).join(" · "))}
+          ·
+          ${esc(shortStatus(p.status))}
+        </p>
       </div>
-      <span class="project-year meta-mono">${p.year}</span>
+
+      <span class="project-year meta-mono">
+        ${p.year}
+      </span>
     </div>
+
   </a>`;
 }
 
@@ -51,6 +113,123 @@ function filterProjects(kind){
   if(copy) copy.textContent=filterCopy[kind]||filterCopy.all;
 }
 
+function homeHeroMedia(p){
+
+  if(!p.thumbnail){
+    return media(p,p.title);
+  }
+
+  if(p.thumbnailType==="video"){
+
+    return `<video
+      class="hero-window-thumb"
+      src="${p.thumbnail}"
+      muted
+      playsinline
+      autoplay
+      loop
+      preload="metadata"
+      aria-hidden="true"></video>`;
+  }
+
+  return `<img
+    class="hero-window-thumb"
+    src="${p.thumbnail}"
+    alt=""
+    decoding="async">`;
+}
+
+
+/* === HOME MOTION TRAIL MEDIA === */
+
+function heroTrailMedia(p){
+
+  const accent =
+    p.accent || "#F5F3EE";
+
+  /*
+    Step / Motion uses a dedicated mouse-trail image only.
+    This does NOT affect Homepage / Work card thumbnails.
+  */
+  const trailThumbnail =
+    p.slug === "step-motion"
+      ? "/public/thumbnails/step-motion-mouse-rail.png"
+      : p.thumbnail;
+
+
+  if(!trailThumbnail){
+
+    return `
+      <div
+        class="motion-trail-fallback"
+        style="--trail-accent:${accent}">
+        ${media(p,p.title)}
+
+        <span class="motion-trail-caption">
+          ${esc(p.title)}
+        </span>
+      </div>
+    `;
+  }
+
+
+  const isVideo =
+    p.slug !== "step-motion" &&
+    p.thumbnailType === "video";
+
+
+  if(isVideo){
+
+    return `
+      <div
+        class="motion-trail-inner"
+        style="--trail-accent:${accent}">
+
+        <video
+          class="motion-trail-media"
+          src="${trailThumbnail}"
+          muted
+          playsinline
+          autoplay
+          loop
+          preload="metadata"
+          aria-hidden="true"></video>
+
+        <span class="motion-trail-accent"></span>
+
+        <span class="motion-trail-caption">
+          ${esc(p.title)}
+        </span>
+
+      </div>
+    `;
+  }
+
+
+  return `
+    <div
+      class="motion-trail-inner"
+      style="--trail-accent:${accent}">
+
+      <img
+        class="motion-trail-media"
+        src="${trailThumbnail}"
+        alt=""
+        decoding="async"
+        draggable="false">
+
+      <span class="motion-trail-accent"></span>
+
+      <span class="motion-trail-caption">
+        ${esc(p.title)}
+      </span>
+
+    </div>
+  `;
+}
+/* === END HOME MOTION TRAIL MEDIA === */
+
+
 function setupHeroMotion(projects){
   const hero=document.querySelector(".hero");
   const layer=document.querySelector("#hero-windows");
@@ -60,7 +239,8 @@ function setupHeroMotion(projects){
     const p=projects[i%projects.length];
     const el=document.createElement("div");
     el.className="motion-trail";
-    el.innerHTML=media(p,p.title);
+    el.dataset.project=p.slug;
+    el.innerHTML=heroTrailMedia(p);
     layer.appendChild(el);
     return el;
   });
@@ -73,7 +253,8 @@ function setupHeroMotion(projects){
     lastX=x;lastY=y;
     const el=pool[index%pool.length];
     const p=projects[(index+1)%projects.length];
-    el.innerHTML=media(p,p.title);
+    el.dataset.project=p.slug;
+    el.innerHTML=heroTrailMedia(p);
     el.style.left=`${x}px`;el.style.top=`${y}px`;
     el.classList.remove("is-visible");
     requestAnimationFrame(()=>el.classList.add("is-visible"));
@@ -87,6 +268,223 @@ function setupHeroMotion(projects){
     document.documentElement.style.setProperty("--hero-accent","#F5F3EE");
   });
 }
+
+/* =========================================================
+   PROJECT CARD THUMBNAIL MOTION
+   ========================================================= */
+
+function setupProjectCardThumbnails(){
+
+  const cards = [
+    ...document.querySelectorAll(".project-card")
+  ];
+
+  cards.forEach(card=>{
+
+    if(card.dataset.thumbMotionReady==="1"){
+      return;
+    }
+
+    card.dataset.thumbMotionReady="1";
+
+    const media =
+      card.querySelector(".project-media");
+
+    const visual =
+      card.querySelector(".project-thumb");
+
+    const video =
+      card.querySelector("[data-thumb-video]");
+
+    if(!media || !visual) return;
+
+
+    /* -----------------------------------------------------
+       POINTER FOLLOW
+       ----------------------------------------------------- */
+
+    card.addEventListener(
+      "pointermove",
+      event=>{
+
+        const rect =
+          card.getBoundingClientRect();
+
+        const x =
+          (event.clientX - rect.left) /
+          rect.width;
+
+        const y =
+          (event.clientY - rect.top) /
+          rect.height;
+
+        media.style.setProperty(
+          "--thumb-x",
+          `${(x - .5) * 14}px`
+        );
+
+        media.style.setProperty(
+          "--thumb-y",
+          `${(y - .5) * 14}px`
+        );
+
+        media.style.setProperty(
+          "--thumb-rx",
+          `${(.5 - y) * 1.2}deg`
+        );
+
+        media.style.setProperty(
+          "--thumb-ry",
+          `${(x - .5) * 1.2}deg`
+        );
+      }
+    );
+
+
+    card.addEventListener(
+      "pointerleave",
+      ()=>{
+
+        media.style.setProperty(
+          "--thumb-x",
+          "0px"
+        );
+
+        media.style.setProperty(
+          "--thumb-y",
+          "0px"
+        );
+
+        media.style.setProperty(
+          "--thumb-rx",
+          "0deg"
+        );
+
+        media.style.setProperty(
+          "--thumb-ry",
+          "0deg"
+        );
+      }
+    );
+
+
+    /* -----------------------------------------------------
+       VIDEO PREVIEW
+       ----------------------------------------------------- */
+
+    if(video){
+
+      let segmentStart = 0;
+      let segmentEnd = null;
+
+
+      const configureVideo = ()=>{
+
+        /*
+          Step / Motion:
+          use only a short moving excerpt rather than
+          playing the entire film inside the thumbnail.
+        */
+
+        if(
+          video.dataset.thumbSegment ===
+          "step-motion"
+        ){
+
+          const duration =
+            Number.isFinite(video.duration)
+              ? video.duration
+              : 0;
+
+          if(duration > 0){
+
+            segmentStart =
+              Math.min(
+                Math.max(duration * .12, .8),
+                Math.max(duration - 5, 0)
+              );
+
+            segmentEnd =
+              Math.min(
+                segmentStart + 4.8,
+                duration
+              );
+
+            video.currentTime =
+              segmentStart;
+          }
+        }
+      };
+
+
+      if(video.readyState >= 1){
+        configureVideo();
+      }else{
+        video.addEventListener(
+          "loadedmetadata",
+          configureVideo,
+          {once:true}
+        );
+      }
+
+
+      video.addEventListener(
+        "timeupdate",
+        ()=>{
+
+          if(
+            segmentEnd !== null &&
+            video.currentTime >= segmentEnd
+          ){
+            video.currentTime =
+              segmentStart;
+
+            video.play().catch(()=>{});
+          }
+        }
+      );
+
+
+      card.addEventListener(
+        "mouseenter",
+        ()=>{
+
+          if(
+            segmentEnd !== null &&
+            (
+              video.currentTime < segmentStart ||
+              video.currentTime >= segmentEnd
+            )
+          ){
+            video.currentTime =
+              segmentStart;
+          }
+
+          video.play().catch(()=>{});
+        }
+      );
+
+
+      card.addEventListener(
+        "mouseleave",
+        ()=>{
+
+          video.pause();
+
+          if(segmentEnd !== null){
+            video.currentTime =
+              segmentStart;
+          }
+        }
+      );
+    }
+
+  });
+}
+
+
+/* ===== END PROJECT CARD THUMBNAIL MOTION ===== */
+
 
 function setupHomeCardSlogans(){
   document.querySelectorAll(".project-card").forEach(card=>{
@@ -114,25 +512,58 @@ function setupHeaderState(){
 
 async function renderHome(){
   const projects=await getProjects();
+
   document.body.insertAdjacentHTML("afterbegin",header());
-  const featured=projects.filter(p=>p.featured), more=projects.filter(p=>!p.featured);
+
+  const featured=projects.filter(p=>p.featured);
   const classes=["wide","narrow","medium","large","large","medium"];
-  document.querySelector("#featured-grid").innerHTML=featured.map((p,i)=>card(p,classes[i]||"")).join("");
-  document.querySelector("#more-grid").innerHTML=more.map(p=>card(p)).join("");
-  document.querySelectorAll(".filter").forEach(b=>b.addEventListener("click",()=>filterProjects(b.dataset.filter)));
 
-  const windows=[projects[0],projects[1],projects[2],projects[4]];
-  document.querySelector("#hero-windows").innerHTML=windows.map((p,i)=>`<div class="hero-window" style="--accent:${p.accent};--secondary:${p.secondary}">${media(p,i===0?"interface":i===1?"identity":i===2?"prototype":"motion")}</div>`).join("");
+  const featuredGrid=document.querySelector("#featured-grid");
 
-  setupHeroMotion(projects);
+  if(featuredGrid){
+    featuredGrid.innerHTML=featured
+      .map((p,i)=>card(p,classes[i]||""))
+      .join("");
+  }
+
+  document.querySelectorAll(".filter").forEach(
+    b=>b.addEventListener(
+      "click",
+      ()=>filterProjects(b.dataset.filter)
+    )
+  );
+
+  /*
+    No permanent hero frames.
+    #hero-windows is now only the mouse-trail layer.
+  */
+  const heroLayer=document.querySelector("#hero-windows");
+
+  if(heroLayer){
+    heroLayer.innerHTML="";
+  }
+
+  /*
+    Only projects with real thumbnail assets participate
+    in the cursor trail.
+  */
+  const trailProjects=projects.filter(p=>p.thumbnail);
+
+  setupHeroMotion(
+    trailProjects.length
+      ? trailProjects
+      : projects
+  );
+
   setupHomeCardSlogans();
+  setupProjectCardThumbnails();
   setupHeaderState();
-  document.body.insertAdjacentHTML("beforeend",footer());
 }
 
 async function renderWork(){
   const projects=await getProjects();
   document.querySelector("#work-grid").innerHTML=projects.map(p=>card(p)).join("");
+  setupProjectCardThumbnails();
   document.querySelectorAll(".filter").forEach(b=>b.addEventListener("click",()=>filterProjects(b.dataset.filter)));
   setupHomeCardSlogans();
   document.body.insertAdjacentHTML("beforeend",footer());
