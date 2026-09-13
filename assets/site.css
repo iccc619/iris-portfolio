@@ -37243,3 +37243,86 @@ body[data-page="home"] .hero-name{
 
 
 /* ===== END HOME HERO — LAYER ORDER FIX ===== */
+
+
+/* =========================================================
+   ETHEREAL REALM — SECTION 05 / FOUR SCREEN REFINEMENT
+   ========================================================= */
+
+body.project-ethereal-realm
+.realm-communication-four{
+  overflow:hidden;
+}
+
+
+/*
+  Any obvious media/grid container inside section 05
+  should distribute exactly four screens.
+*/
+
+body.project-ethereal-realm
+.realm-communication-four
+:is(
+  .ethereal-v5-grid,
+  .ethereal-flow-grid,
+  .realm-flow-grid,
+  [class*="screens"],
+  [class*="flow-grid"]
+){
+  grid-template-columns:repeat(4,minmax(0,1fr)) !important;
+}
+
+
+/*
+  Keep the four app screens contained and evenly spaced.
+*/
+
+body.project-ethereal-realm
+.realm-communication-four
+img{
+  max-width:100%;
+  height:auto;
+}
+
+
+/* ===== END ETHEREAL REALM — SECTION 05 ===== */
+
+
+/* =========================================================
+   ETHEREAL REALM — REALM COMMUNICATION / EXACT FOUR
+   ========================================================= */
+
+body.project-ethereal-realm
+.er6-realm-flow-phones.er-realm-flow-four{
+  display:grid !important;
+
+  grid-template-columns:
+    repeat(4,minmax(0,1fr)) !important;
+
+  gap:clamp(22px,3vw,52px) !important;
+
+  align-items:start !important;
+}
+
+
+body.project-ethereal-realm
+.er6-realm-flow-phones.er-realm-flow-four
+.er4-flow-frame{
+  width:100% !important;
+  max-width:none !important;
+  height:auto !important;
+
+  object-fit:contain !important;
+}
+
+
+/* hard safety: never show a fifth screen */
+
+body.project-ethereal-realm
+.er6-realm-flow-phones.er-realm-flow-four
+.er4-flow-frame:nth-of-type(n+5){
+  display:none !important;
+}
+
+
+/* ===== END ETHEREAL REALM — REALM COMMUNICATION ===== */

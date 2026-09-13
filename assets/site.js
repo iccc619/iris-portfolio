@@ -1652,7 +1652,6 @@ function renderGreenGridV1(p,projects){
         "Research",
         "Synthesis",
         "Product logic",
-        "Paper prototype",
         "Evaluation",
         "Iteration",
         "Final flows",
@@ -2166,150 +2165,15 @@ function renderGreenGridV1(p,projects){
       </div>
     </section>
 
-<section class="gg-paper" id="gg-5">
-
-      <div class="gg-paper-reference shell">
-
-        <div class="gg-paper-section-head">
-          <span class="gg-label">05 — PAPER PROTOTYPE</span>
-        </div>
-
-        <div class="gg-paper-reference-row">
-
-          <div class="gg-sketch-phone">
-            <div class="gg-sketch-tabs">
-              <span>Community</span><span>Chat</span>
-            </div>
-            <div class="gg-sketch-user"></div>
-            <i class="gg-sketch-line long"></i>
-            <i class="gg-sketch-line mid"></i>
-
-            <div class="gg-sketch-photo-row">
-              <b></b><b></b><b></b>
-            </div>
-
-            <div class="gg-sketch-actions">♡ No.　○ No.</div>
-
-            <div class="gg-sketch-user small"></div>
-            <i class="gg-sketch-line long"></i>
-            <i class="gg-sketch-line mid"></i>
-
-            <div class="gg-sketch-nav">⌂　◇　◯　♙</div>
-          </div>
-
-
-          <div class="gg-sketch-phone">
-            <div class="gg-sketch-tabs">
-              <span>Community</span><span class="under">Chat</span>
-            </div>
-
-            <div class="gg-chat-list">
-              <div><i></i><span>Name<br><small>Text</small></span><b>Date</b></div>
-              <div><i></i><span>Name<br><small>Text</small></span><b>Date</b></div>
-              <div><i></i><span>Name<br><small>Text</small></span><b>Date</b></div>
-              <div><i></i><span>Name<br><small>Text</small></span><b>Date</b></div>
-              <div><i></i><span>Name<br><small>Text</small></span><b>Date</b></div>
-            </div>
-
-            <div class="gg-sketch-nav">⌂　◇　◯　♙</div>
-          </div>
-
-
-          <div class="gg-sketch-phone">
-            <div class="gg-message-head">‹ Name　⋮</div>
-
-            <div class="gg-message-flow">
-              <p class="left"></p>
-              <p class="right short"></p>
-              <span>Time</span>
-              <p class="left tiny"></p>
-              <p class="left"></p>
-              <span>Time</span>
-              <p class="right long"></p>
-              <p class="right mid"></p>
-              <p class="right short"></p>
-            </div>
-
-            <div class="gg-message-tools">
-              <i></i><i></i><i></i><i></i>
-            </div>
-          </div>
-
-
-          <div class="gg-sketch-phone">
-            <div class="gg-message-head">‹ Name　◉</div>
-
-            <div class="gg-message-flow">
-              <span>Time</span>
-              <p class="left tiny"></p>
-              <p class="left short"></p>
-              <span>Time</span>
-              <p class="right long"></p>
-              <p class="right mid"></p>
-              <p class="right short"></p>
-            </div>
-
-            <div class="gg-shared-plot">
-              <b></b>
-              <span>Plot Name<br><small>Description</small></span>
-            </div>
-
-            <div class="gg-message-tools compact">
-              <i></i><i></i>
-            </div>
-          </div>
-
-
-          <div class="gg-sketch-phone">
-            <div class="gg-profile-banner"></div>
-
-            <div class="gg-profile-avatar"></div>
-
-            <div class="gg-month-strip">
-              <span>Sep 2025</span>
-              <div>○ ○ ○ ○ ○ ○ ○</div>
-            </div>
-
-            <small class="gg-history-label">Plant History</small>
-
-            <div class="gg-honey-grid">
-              <i></i><i></i><i></i><i></i><i></i><i></i><i></i>
-            </div>
-
-            <div class="gg-sketch-nav">⌂　◇　◯　♙</div>
-          </div>
-
-
-          <div class="gg-sketch-phone">
-            <div class="gg-message-head">‹ Plot</div>
-
-            <div class="gg-search-bar">⌕ Search plants...</div>
-
-            <div class="gg-plot-list">
-              <div><i></i><span>Plot Name<br><small>Description</small></span></div>
-              <div><i></i><span>Plot Name<br><small>Description</small></span></div>
-              <div><i></i><span>Plot Name<br><small>Description</small></span></div>
-              <div><i></i><span>Plot Name<br><small>Description</small></span></div>
-              <div><i></i><span>Plot Name<br><small>Description</small></span></div>
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- ==================================================
-         06 USABILITY TESTING
+<!-- ==================================================
+         05 USABILITY TESTING
          ================================================== -->
 
-    <section class="gg-testing" id="gg-6">
+    <section class="gg-testing" id="gg-5">
       <div class="shell">
 
         <div class="gg-section-head">
-          <span class="gg-label">06 — USABILITY EVALUATION</span>
+          <span class="gg-label">05 — USABILITY EVALUATION</span>
           <h2>Eight participants.<br>Two kinds of evidence.</h2>
         </div>
 
@@ -2413,14 +2277,14 @@ function renderGreenGridV1(p,projects){
 
 
     <!-- ==================================================
-         07 ITERATION
+         06 ITERATION
          ================================================== -->
 
-    <section class="gg-iteration" id="gg-7">
+    <section class="gg-iteration" id="gg-6">
       <div class="shell">
 
         <div class="gg-section-head">
-          <span class="gg-label">07 — EVIDENCE-LED ITERATION</span>
+          <span class="gg-label">06 — EVIDENCE-LED ITERATION</span>
           <h2>Findings became<br>interface changes.</h2>
         </div>
 
@@ -2462,14 +2326,14 @@ function renderGreenGridV1(p,projects){
 
 
     <!-- ==================================================
-         08 FINAL FLOWS
+         07 FINAL FLOWS
          ================================================== -->
 
-    <section class="gg-final" id="gg-8">
+    <section class="gg-final" id="gg-7">
       <div class="shell">
 
         <div class="gg-section-head">
-          <span class="gg-label">08 — FINAL PRODUCT</span>
+          <span class="gg-label">07 — FINAL PRODUCT</span>
           <h2>Research resolved<br>into connected flows.</h2>
         </div>
 
@@ -2546,14 +2410,14 @@ function renderGreenGridV1(p,projects){
 
 
     <!-- ==================================================
-         09 REFLECTION
+         08 REFLECTION
          ================================================== -->
 
-    <section class="gg-reflection" id="gg-9">
+    <section class="gg-reflection" id="gg-8">
       <div class="shell gg-reflection-final">
 
         <div class="gg-reflection-brand">
-          <span class="gg-label">09 — REFLECTION</span>
+          <span class="gg-label">08 — REFLECTION</span>
 
           ${img("green grid.svg","Green Grid","gg-final-logo")}
         </div>
@@ -12525,4 +12389,315 @@ alProcessObserver.observe(document.documentElement, {
 })();
 
 /* ===== END AUSTRALIAN LIGHT — SECTION 05 FLOW CONTROLS ===== */
+
+
+
+/* ETHEREAL REALM — SECTION 05 EXACT FOUR SCREENS */
+
+function refineEtherealRealmCommunication(){
+  if(!document.body.classList.contains("project-ethereal-realm")) return;
+
+  const sections = [...document.querySelectorAll("section, .section, [class*='ethereal']")];
+
+  const section05 = sections.find(el=>{
+    const text = (el.textContent || "").toLowerCase();
+
+    return (
+      text.includes("realm communication") &&
+      text.includes("messages, subscription and live")
+    );
+  });
+
+  if(!section05){
+    console.warn("[Ethereal] Section 05 not found");
+    return;
+  }
+
+  const desired = [
+    {
+      stem:"APP_ETH_EtheRealRealm_Sub",
+      label:"Subscription"
+    },
+    {
+      stem:"APP_ETH_ER_Chat_EtherReal",
+      label:"Chat · EtheReal"
+    },
+    {
+      stem:"APP_ETH_ER_Chat_Navi",
+      label:"Chat · Navigation"
+    },
+    {
+      stem:"APP_ETH_ER_01",
+      label:"App entry"
+    }
+  ];
+
+  const base =
+    "/public/projects/ethereal-realm/app/realm flow/";
+
+  /*
+    Resolve extensions from existing page images where possible.
+    Default to PNG, which is what this project primarily uses.
+  */
+
+  const allImgs = [...section05.querySelectorAll("img")];
+
+  const findExisting = stem=>{
+    const found = allImgs.find(img=>{
+      const src = decodeURIComponent(
+        img.getAttribute("src") || ""
+      );
+
+      return src.toLowerCase().includes(
+        stem.toLowerCase()
+      );
+    });
+
+    if(found){
+      return found.getAttribute("src");
+    }
+
+    return sitePath(
+      `${base}${stem}.png`
+    );
+  };
+
+  const urls = desired.map(
+    item=>findExisting(item.stem)
+  );
+
+  /*
+    Find the visual cards/screens.
+    Prefer wrappers around images so captions/layout stay intact.
+  */
+
+  const imageWrappers = allImgs
+    .map(img=>{
+      return (
+        img.closest(
+          ".ethereal-v5-card, .ethereal-flow-item, .realm-flow-item, figure, li"
+        ) || img.parentElement
+      );
+    })
+    .filter(Boolean);
+
+  const uniqueWrappers = [
+    ...new Set(imageWrappers)
+  ];
+
+  if(uniqueWrappers.length < 4){
+    console.warn(
+      "[Ethereal] Section 05 screen wrappers found:",
+      uniqueWrappers.length
+    );
+    return;
+  }
+
+  uniqueWrappers.forEach((wrapper,index)=>{
+
+    if(index >= 4){
+      wrapper.remove();
+      return;
+    }
+
+    const img = wrapper.querySelector("img");
+
+    if(!img) return;
+
+    img.src = urls[index];
+    img.alt = desired[index].label;
+
+    wrapper.dataset.realmFlowIndex =
+      String(index + 1);
+
+    const caption =
+      wrapper.querySelector(
+        "figcaption, .caption, [class*='caption'], [class*='label']"
+      );
+
+    if(caption){
+      caption.textContent =
+        `${String(index + 1).padStart(2,"0")}  ${desired[index].label}`;
+    }
+  });
+
+  section05.classList.add(
+    "realm-communication-four"
+  );
+
+  console.log(
+    "[Ethereal] Section 05 refined to exactly four screens"
+  );
+}
+
+
+/*
+  Run after the dedicated Ethereal renderer has finished.
+*/
+
+if(document.readyState === "loading"){
+  document.addEventListener(
+    "DOMContentLoaded",
+    ()=>{
+      requestAnimationFrame(()=>{
+        requestAnimationFrame(
+          refineEtherealRealmCommunication
+        );
+      });
+    },
+    {once:true}
+  );
+}else{
+  requestAnimationFrame(()=>{
+    requestAnimationFrame(
+      refineEtherealRealmCommunication
+    );
+  });
+}
+
+/* END ETHEREAL REALM — SECTION 05 EXACT FOUR SCREENS */
+
+
+
+/* ETHEREAL REALM — EXACT REALM FLOW FIX */
+
+function fixEtherealRealmFlowScreens(){
+
+  if(
+    !document.body.classList.contains("project-ethereal-realm")
+  ){
+    return false;
+  }
+
+  const container =
+    document.querySelector(".er6-realm-flow-phones");
+
+  if(!container){
+    return false;
+  }
+
+  const frames = [
+    ...container.querySelectorAll("img.er4-flow-frame")
+  ];
+
+  if(!frames.length){
+    return false;
+  }
+
+  const desired = [
+    {
+      file:"APP_ETH_EtheRealRealm_Sub.png",
+      alt:"EtheReal Realm subscription"
+    },
+    {
+      file:"APP_ETH_ER_Chat_EtherReal.png",
+      alt:"EtheReal chat interface"
+    },
+    {
+      file:"APP_ETH_ER_Chat_Navi.png",
+      alt:"Navi chat interface"
+    },
+    {
+      file:"APP_ETH_ER_01.png",
+      alt:"EtheReal app entry"
+    }
+  ];
+
+  const base =
+    "/public/projects/ethereal-realm/app/realm flow/";
+
+  desired.forEach((item,index)=>{
+
+    const img = frames[index];
+
+    if(!img) return;
+
+    img.src = sitePath(
+      `${base}${item.file}`
+    );
+
+    img.alt = item.alt;
+
+    img.dataset.realmFlow =
+      String(index + 1);
+  });
+
+
+  /*
+    Remove every image after #4.
+  */
+
+  frames
+    .slice(4)
+    .forEach(img=>img.remove());
+
+
+  container.classList.add(
+    "er-realm-flow-four"
+  );
+
+  console.log(
+    "[Ethereal] Realm communication fixed:",
+    desired.map(x=>x.file)
+  );
+
+  return true;
+}
+
+
+/*
+  Renderer is asynchronous, so wait for the actual
+  .er6-realm-flow-phones element to appear.
+*/
+
+function installEtherealRealmFlowFix(){
+
+  if(fixEtherealRealmFlowScreens()){
+    return;
+  }
+
+  const observer =
+    new MutationObserver(()=>{
+
+      if(fixEtherealRealmFlowScreens()){
+        observer.disconnect();
+      }
+
+    });
+
+  observer.observe(
+    document.documentElement,
+    {
+      childList:true,
+      subtree:true
+    }
+  );
+
+
+  /*
+    Safety timeout — observer doesn't live forever.
+  */
+
+  setTimeout(
+    ()=>observer.disconnect(),
+    10000
+  );
+}
+
+
+if(document.readyState === "loading"){
+
+  document.addEventListener(
+    "DOMContentLoaded",
+    installEtherealRealmFlowFix,
+    {once:true}
+  );
+
+}else{
+
+  installEtherealRealmFlowFix();
+
+}
+
+/* END ETHEREAL REALM — EXACT REALM FLOW FIX */
 
