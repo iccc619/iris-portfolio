@@ -451,7 +451,7 @@ body[data-page="work"] .work-nav{
 @media(prefers-reduced-motion:reduce){.bpm2-phone-track{transform:none!important}}/* 60 BPM — refinement v3 */
 @font-face{
   font-family:"Yorkmade";
-  src:url("/public/fonts/Yorkmade-Demo.otf") format("opentype");
+  src:url("../public/fonts/Yorkmade-Demo.otf") format("opentype");
   font-display:swap;
 }.project-60{background:#F5F3EE}.project-60 .site-header{mix-blend-mode:difference;color:#fff}.bpm3{--lime:#CFDD2C;--pink:#E4A3C9;--ink:#090909;--paper:#F5F3EE;background:var(--paper);color:var(--ink)}.bpm3 img{display:block;width:100%;height:auto;border-radius:0}.bpm3 section{scroll-margin-top:0}.bpm3-meta,
 .bpm3-head span{font:500 11px/1.2 var(--mono);letter-spacing:.12em;text-transform:uppercase}.bpm3-hero{position:relative;min-height:100svh;background:#000;overflow:hidden}.bpm3-hero-img{position:absolute;inset:0;width:100%!important;height:100%!important;object-fit:cover;filter:brightness(.58)}.bpm3-shade{position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.6),rgba(0,0,0,.05) 66%)}.bpm3-hero-copy{position:relative;z-index:2;min-height:100svh;display:flex;flex-direction:column;justify-content:flex-end;padding-top:150px;padding-bottom:7vw;color:#fff}.bpm3-hero h1{margin:15px 0 20px;font-size:clamp(110px,19vw,290px);line-height:.68;letter-spacing:-.085em;font-weight:850}.bpm3-hero p{max-width:540px;margin:28px 0 0;font-size:clamp(18px,2vw,30px);line-height:1.22}.bpm3-system{padding:10vw 0 11vw;background:#080808;color:#F5F3EE}.bpm3-system-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:7vw;align-items:start}.bpm3-yorkmade{
@@ -500,13 +500,13 @@ body[data-page="work"] .work-nav{
 @media(prefers-reduced-motion:reduce){.bpm3-phone-track{transform:none!important}}/* 60 BPM — refinement v4 */
 @font-face{
   font-family:"Montserrat60";
-  src:url("/public/fonts/Montserrat/Montserrat-VariableFont_wght.ttf") format("truetype");
+  src:url("../public/fonts/Montserrat/Montserrat-VariableFont_wght.ttf") format("truetype");
   font-weight:100 900;
   font-style:normal;
   font-display:swap;
 }@font-face{
   font-family:"Yorkmade";
-  src:url("/public/fonts/Yorkmade-Demo.otf") format("opentype");
+  src:url("../public/fonts/Yorkmade-Demo.otf") format("opentype");
   font-weight:400;
   font-style:normal;
   font-display:swap;
@@ -1477,7 +1477,7 @@ preserve readable contrast */
 }/* =========================================================
    ETHEREAL / REALM — custom case study
    ========================================================= */
-@font-face{font-family:"ER Pixel";src:url("/public/fonts/PixeloidSans.ttf") format("truetype");font-display:swap}@font-face{font-family:"ER Octo";src:url("/public/fonts/TT Octosquares Trl Cnd XBd.ttf") format("truetype");font-display:swap}.er{
+@font-face{font-family:"ER Pixel";src:url("../public/fonts/PixeloidSans.ttf") format("truetype");font-display:swap}@font-face{font-family:"ER Octo";src:url("../public/fonts/TT Octosquares Trl Cnd XBd.ttf") format("truetype");font-display:swap}.er{
   --er-black:#01060A;--er-blue:#1B03A3;--er-violet:#6044FF;--er-cyan:#7DF9FF;--er-pink:#FF7AAD;
   --er-white:#f6f5ff;--er-line:rgba(125,249,255,.2);
   background:var(--er-black);color:var(--er-white);overflow:hidden;
@@ -1514,19 +1514,19 @@ preserve readable contrast */
    ========================================================= */
 @font-face{
   font-family:"ER Pixel";
-  src:url("/public/fonts/pixeloid-font/PixeloidSans-mLxMm.ttf") format("truetype");
+  src:url("../public/fonts/pixeloid-font/PixeloidSans-mLxMm.ttf") format("truetype");
   font-weight:400;
   font-style:normal;
   font-display:swap
 }@font-face{
   font-family:"ER Pixel";
-  src:url("/public/fonts/pixeloid-font/PixeloidSansBold-PKnYd.ttf") format("truetype");
+  src:url("../public/fonts/pixeloid-font/PixeloidSansBold-PKnYd.ttf") format("truetype");
   font-weight:700;
   font-style:normal;
   font-display:swap
 }@font-face{
   font-family:"ER Octo";
-  src:url("/public/fonts/TT%20Octosquares%20Trial%201-000/TT%20Octosquares%20Trial%20Condensed%20ExtraBold.ttf") format("truetype");
+  src:url("../public/fonts/TT%20Octosquares%20Trial%201-000/TT%20Octosquares%20Trial%20Condensed%20ExtraBold.ttf") format("truetype");
   font-weight:800;
   font-style:normal;
   font-display:swap
@@ -1652,8 +1652,8 @@ preserve readable contrast */
   aspect-ratio:1;
   margin-top:42px;
   background:#7DF9FF;
-  -webkit-mask:url("/public/projects/ethereal-realm/svg/Group%2074.svg") center/contain no-repeat;
-  mask:url("/public/projects/ethereal-realm/svg/Group%2074.svg") center/contain no-repeat;
+  -webkit-mask:url("../public/projects/ethereal-realm/svg/Group%2074.svg") center/contain no-repeat;
+  mask:url("../public/projects/ethereal-realm/svg/Group%2074.svg") center/contain no-repeat;
   filter:drop-shadow(0 0 28px rgba(125,249,255,.18));
 }.ethereal-v3 .er2-world-copy{padding-top:34px}.ethereal-v3 .er2-world-copy>p{font-size:16px;line-height:1.55}.ethereal-v3 .er2-world-copy aside{margin-top:38px}/* image 2 — type specimens dramatically smaller */
 .ethereal-v3 .er2-identity{margin-top:70px}.ethereal-v3 .er2-type-card{min-height:118px;grid-template-columns:210px 1fr 120px}.ethereal-v3 .er2-type-card>strong{font-size:clamp(2rem,3.7vw,4.7rem)!important;line-height:.95}.ethereal-v3 .er2-palette{padding-top:30px}.ethereal-v3 .er2-palette div{height:155px}/* images 3–4 — no five extra SVG cards; use large custom pixel SVG symbols */
@@ -2840,7 +2840,7 @@ p{
       rgba(1,6,10,.22),
       rgba(1,6,10,.56)
     ),
-    url("/public/projects/ethereal-realm/pattern/Screenshot%202024-07-16%20at%205.10.44%E2%80%AFpm%203.jpeg") !important;
+    url("../public/projects/ethereal-realm/pattern/Screenshot%202024-07-16%20at%205.10.44%E2%80%AFpm%203.jpeg") !important;
 
   background-size: cover !important;
 
@@ -2917,7 +2917,7 @@ p{
       rgba(1,6,10,.10),
       rgba(1,6,10,.38)
     ),
-    url("/public/projects/ethereal-realm/pattern/Screenshot%202024-07-16%20at%205.10.44%E2%80%AFpm%203.jpeg") !important;
+    url("../public/projects/ethereal-realm/pattern/Screenshot%202024-07-16%20at%205.10.44%E2%80%AFpm%203.jpeg") !important;
   background-size:cover !important;
   background-position:center !important;
   background-repeat:no-repeat !important;
@@ -3063,7 +3063,7 @@ p{
       rgba(1,6,10,.10),
       rgba(1,6,10,.30)
     ),
-    url("/public/projects/ethereal-realm/pattern/Screenshot%202024-07-16%20at%205.10.44%E2%80%AFpm%203.jpeg") !important;
+    url("../public/projects/ethereal-realm/pattern/Screenshot%202024-07-16%20at%205.10.44%E2%80%AFpm%203.jpeg") !important;
 
   background-size: cover !important;
   background-position: center center !important;
@@ -3198,7 +3198,7 @@ but any accent typography becomes neon blue */
       rgba(1,6,10,.08),
       rgba(1,6,10,.20)
     ),
-    url("/public/projects/ethereal-realm/pattern/final%20background.jpeg") center / cover no-repeat !important;
+    url("../public/projects/ethereal-realm/pattern/final%20background.jpeg") center / cover no-repeat !important;
 }/* ETHEREAL FRAME + OVERLAY FIX */
 
 .ethereal-v7 #er2-8 .phones img,
@@ -25911,7 +25911,7 @@ so don't introduce borders/cards around it.
   background-color:#171516 !important;
 
   background-image:
-    url("/public/projects/modular-typeface/application/Album%20Background%20Image.png")
+    url("../public/projects/modular-typeface/application/Album%20Background%20Image.png")
     !important;
 
   background-size:cover !important;
@@ -25943,7 +25943,7 @@ so don't introduce borders/cards around it.
   height:72% !important;
 
   background-image:
-    url("/public/projects/modular-typeface/application/Album%20Modular.png")
+    url("../public/projects/modular-typeface/application/Album%20Modular.png")
     !important;
 
   background-repeat:no-repeat !important;
@@ -26093,7 +26093,7 @@ so don't introduce borders/cards around it.
   z-index:1 !important;
 
   background-image:
-    url("/public/projects/modular-typeface/application/Album%20Background%20Image.png")
+    url("../public/projects/modular-typeface/application/Album%20Background%20Image.png")
     !important;
 
   background-size:cover !important;
@@ -26123,7 +26123,7 @@ so don't introduce borders/cards around it.
   height:112% !important;
 
   background-image:
-    url("/public/projects/modular-typeface/application/Album%20Modular.png")
+    url("../public/projects/modular-typeface/application/Album%20Modular.png")
     !important;
 
   background-repeat:no-repeat !important;
@@ -26289,7 +26289,7 @@ BELOW MODULAR IF DESIRED
   z-index:1 !important;
 
   background:
-    url("/public/projects/modular-typeface/application/Album%20Background%20Image.png")
+    url("../public/projects/modular-typeface/application/Album%20Background%20Image.png")
     center / cover
     no-repeat !important;
 
@@ -26315,7 +26315,7 @@ BELOW MODULAR IF DESIRED
   height:112% !important;
 
   background:
-    url("/public/projects/modular-typeface/application/Album%20Modular.png")
+    url("../public/projects/modular-typeface/application/Album%20Modular.png")
     center / contain
     no-repeat !important;
 
@@ -26421,7 +26421,7 @@ but keeps the top unrestricted.
   height:118% !important;
 
   background:
-    url("/public/projects/modular-typeface/application/Album%20Modular.png")
+    url("../public/projects/modular-typeface/application/Album%20Modular.png")
     center center / contain
     no-repeat !important;
 
@@ -26554,7 +26554,7 @@ but keeps the top unrestricted.
   height:100%;
 
   background:
-    url("/public/projects/modular-typeface/application/Album%20Modular.png")
+    url("../public/projects/modular-typeface/application/Album%20Modular.png")
     center bottom / contain
     no-repeat;
 

@@ -1,14 +1,70 @@
+const BASE_PATH = (() => {
+  const script =
+    document.currentScript ||
+    [...document.scripts].find(s =>
+      /\/assets\/site\.js(?:\?|$)/.test(s.src)
+    );
 
-const DATA_URL = "/data/projects.json";
+  if(!script) return "";
+
+  const path = new URL(script.src).pathname;
+  return path
+    .replace(/\/assets\/site\.js$/, "")
+    .replace(/\/$/, "");
+})();
+
+const sitePath = (path="") => {
+  if(!path) return path;
+
+  if(
+    /^(?:https?:|mailto:|tel:|#|data:|blob:)/i.test(path)
+  ){
+    return path;
+  }
+
+  if(path.startsWith("/")){
+    return `${BASE_PATH}${path}`;
+  }
+
+  return path;
+};
+
+
+const DATA_URL = sitePath("/data/projects.json");
 const esc = (s="") => String(s).replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[m]));
 const media = (p,label="project media") => `<div class="placeholder" style="--accent:${p.accent};--secondary:${p.secondary}"><span class="label">${esc(label)}</span></div>`;
-const header = () => `<header class="site-header"><div class="shell"><a class="brand" href="/">Iris Wang</a><nav class="nav" aria-label="Primary"><a href="/work/">Work</a><a href="/about/">About</a><a href="mailto:iriswangsh@gmail.com">Contact</a></nav></div></header>`;
+const header = () => `<header class="site-header"><div class="shell"><a class="brand" href="${sitePath("/")}">Iris Wang</a><nav class="nav" aria-label="Primary"><a href="${sitePath("/work/")}">Work</a><a href="${sitePath("/about/")}">About</a><a href="mailto:iriswangsh@gmail.com">Contact</a></nav></div></header>`;
 const footer = () => `<footer><div class="shell"><p class="footer-big">Systems<br>meet atmosphere.</p><div class="footer-row"><div><a href="mailto:iriswangsh@gmail.com">iriswangsh@gmail.com</a><br>Melbourne, Australia</div><div>Graphic + UX designer<br>© 2026 Iris Wang</div></div></div></footer>`;
 
 async function getProjects(){
   const r=await fetch(DATA_URL);
   if(!r.ok) throw new Error("Project data unavailable");
-  return r.json();
+  const data = await r.json();
+
+  const normalizePaths = value => {
+    if(Array.isArray(value)){
+      return value.map(normalizePaths);
+    }
+
+    if(value && typeof value === "object"){
+      return Object.fromEntries(
+        Object.entries(value).map(
+          ([key,val]) => [key,normalizePaths(val)]
+        )
+      );
+    }
+
+    if(
+      typeof value === "string" &&
+      value.startsWith("/public/")
+    ){
+      return sitePath(value);
+    }
+
+    return value;
+  };
+
+  return normalizePaths(data);
 }
 
 function shortStatus(s=""){
@@ -57,7 +113,7 @@ function projectCardMedia(p){
 function card(p,cls=""){
   return `<a
     class="project-card ${cls}"
-    href="/work/${p.slug}/"
+    href="${sitePath(`/work/${p.slug}/`)}"
     data-project="${p.slug}"
     data-accent="${p.accent}"
     data-disciplines="${(p.filter?.length ? p.filter : p.disciplines).join(" ").toLowerCase()}"
@@ -153,7 +209,7 @@ function heroTrailMedia(p){
   */
   const trailThumbnail =
     p.slug === "step-motion"
-      ? "/public/thumbnails/step-motion-mouse-rail.png"
+      ? sitePath("/public/thumbnails/step-motion-mouse-rail.png")
       : p.thumbnail;
 
 
@@ -628,7 +684,7 @@ function setupChapterRail(){
 
 
 function render60BPM(p,projects){
-  const A="/public/projects/60-bpm";
+  const A=sitePath(sitePath("/public/projects/60-bpm"));
   const pic=(src,alt,cls="")=>`<img class="${cls}" src="${A}/${src}" alt="${esc(alt)}" loading="lazy">`;
   const next=projects[(projects.indexOf(p)+1)%projects.length];
 
@@ -842,7 +898,7 @@ function render60BPM(p,projects){
       <img class="bpm4-finale-logo" src="${A}/svg/Secondary Logo 4.svg" alt="60 BPM secondary logo 4">
     </section>
 
-    <a class="next-project bpm4-next" href="/work/${next.slug}/"><span class="meta-mono">NEXT PROJECT</span>${esc(next.title)} →</a>
+    <a class="next-project bpm4-next" href="${sitePath(`/work/${next.slug}/`)}"><span class="meta-mono">NEXT PROJECT</span>${esc(next.title)} →</a>
   </article>`;
 
   document.body.insertAdjacentHTML("beforeend",footer());
@@ -923,7 +979,7 @@ function render60BPM(p,projects){
 
 
 function renderEtherealRealm(p,projects){
-  const A="/public/projects/ethereal-realm";
+  const A=sitePath(sitePath("/public/projects/ethereal-realm"));
   const enc=s=>s.split("/").map(encodeURIComponent).join("/");
   const img=(src,alt,cls="")=>`<img class="${cls}" src="${A}/${enc(src)}" alt="${esc(alt)}" loading="lazy">`;
   const frame=(name,alt="Realm app interface",cls="")=>img(`app/App Frames/${name}`,alt,`er2-phone-img ${cls}`);
@@ -966,7 +1022,7 @@ function renderEtherealRealm(p,projects){
     <section class="er2-hero" id="er2-1">
       <video
         class="er2-hero-art er2-hero-video"
-        src="/public/projects/ethereal-realm/hero.mp4"
+        src=sitePath("/public/projects/ethereal-realm/hero.mp4")
         autoplay
         muted
         loop
@@ -1432,7 +1488,7 @@ function renderEtherealRealm(p,projects){
       <div class="shell er-final-background"><span>WHEN THE SCREEN GOES DARK</span><strong>THE DREAM<br>DISAPPEARS.</strong></div>
     </section>
 
-    <a class="next-project er2-next" href="/work/${next.slug}/"><span class="meta-mono">NEXT PROJECT</span>${esc(next.title)} →</a>
+    <a class="next-project er2-next" href="${sitePath(`/work/${next.slug}/`)}"><span class="meta-mono">NEXT PROJECT</span>${esc(next.title)} →</a>
   </article>`;
 
   document.body.insertAdjacentHTML("beforeend",footer());
@@ -1509,7 +1565,7 @@ function renderEtherealRealm(p,projects){
 
 
 function renderGreenGridV1(p,projects){
-  const A="/public/projects/green-grid";
+  const A=sitePath(sitePath("/public/projects/green-grid"));
   const enc=s=>s.split("/").map(encodeURIComponent).join("/");
   const img=(path,alt="",cls="")=>`<img class="${cls}" src="${A}/${enc(path)}" alt="${esc(alt)}" loading="lazy">`;
   const phone=(name,alt)=>img(`app frame/${name}`,alt,"gg-phone");
@@ -2469,7 +2525,7 @@ function renderGreenGridV1(p,projects){
       </div>
     </section>
 
-    <a class="next-project gg-next" href="/work/${next.slug}/">
+    <a class="next-project gg-next" href="${sitePath(`/work/${next.slug}/`)}">
       <span class="meta-mono">NEXT PROJECT</span>
       ${esc(next.title)} →
     </a>
@@ -2504,7 +2560,7 @@ function renderGreenGridV1(p,projects){
 
 
 function renderNExhibitionV1(p,projects){
-  const A="/public/projects/n-exhibition";
+  const A=sitePath(sitePath("/public/projects/n-exhibition"));
   const enc=s=>s.split("/").map(encodeURIComponent).join("/");
   const img=(path,alt="",cls="")=>`<img class="${cls}" src="${A}/${enc(path)}" alt="${esc(alt)}" loading="lazy">`;
 
@@ -3740,7 +3796,7 @@ function renderNExhibitionV1(p,projects){
 
 
 
-<a class="next-project nx-next" href="/work/${next.slug}/">
+<a class="next-project nx-next" href="${sitePath(`/work/${next.slug}/`)}">
       <span class="meta-mono">NEXT PROJECT</span>
       ${esc(next.title)} →
     </a>
@@ -5527,7 +5583,7 @@ function initNExhibitionHeroSpace(){
 
 
 function renderStepMotion(project) {
-  const base = "/public/projects/step-motion";
+  const base = sitePath(sitePath("/public/projects/step-motion"));
 
   return `
     <article class="sm-page">
@@ -6633,7 +6689,7 @@ function renderStepMotion(project) {
 
 function renderModularTypefaceV2(p,projects){
 
-  const A="/public/projects/modular-typeface";
+  const A=sitePath(sitePath("/public/projects/modular-typeface"));
 
   const src=path=>
     `${A}/${path.split("/").map(encodeURIComponent).join("/")}`;
@@ -7179,7 +7235,7 @@ function renderModularTypefaceV2(p,projects){
 
       <!-- SHARED NEXT PROJECT -->
       <a class="next-project mt2-next"
-         href="/work/${next.slug}/">
+         href="${sitePath(`/work/${next.slug}/`)}">
 
         <span class="meta-mono">NEXT PROJECT</span>
 
@@ -7658,7 +7714,7 @@ function ensureStepMotionEndMatter(p, projects){
 
 function renderAustralianLight(project){
 
-  const base = "/public/projects/australian-light";
+  const base = sitePath(sitePath("/public/projects/australian-light"));
 
   return `
     <article class="al-page">
@@ -8440,7 +8496,7 @@ if(p.slug==="step-motion"){
         "beforeend",
         `
         <a class="next-project sm-next"
-           href="/work/${next.slug}/">
+           href="${sitePath(`/work/${next.slug}/`)}">
 
           <span class="meta-mono">NEXT PROJECT</span>
 
@@ -8575,7 +8631,7 @@ ${media(p,"hero media — asset to confirm")}</div>
       <section class="demonstrates"><div class="inner"><span class="meta-mono">What this demonstrates</span><p>${esc(p.demonstrates)}</p></div></section>
       <div class="shell case-flow">${flow}</div>
       ${createChapterRail(p)}
-      <a class="next-project" href="/work/${next.slug}/">
+      <a class="next-project" href="${sitePath(`/work/${next.slug}/`)}">
         <span class="meta-mono next-project-label">NEXT PROJECT</span>
         <span class="next-project-title">${esc(next.title)}</span>
         <span class="next-project-arrow">→</span>
@@ -8699,7 +8755,7 @@ function initStepMotionChapterFlow(){
      -------------------------------------------------------- */
 
   const base =
-    "/public/projects/step-motion/book";
+    sitePath(sitePath("/public/projects/step-motion/book"));
 
 
   const stepFrames = [
@@ -9110,7 +9166,7 @@ function initStepMotionBookSequence(){
 
   root.dataset.ready = "true";
 
-  const base = "/public/projects/step-motion/book-sequence-fixed";
+  const base = sitePath(sitePath("/public/projects/step-motion/book-sequence-fixed"));
 
   const frames = [
     "Still_010000.png",
@@ -9600,7 +9656,7 @@ requestAnimationFrame(syncStepMotionSectionHeader);
     img = document.createElement("img");
 
     img.className = "gg-hero-svg-overlay";
-    img.src = "/public/projects/green-grid/hero.svg";
+    img.src = sitePath("/public/projects/green-grid/hero.svg");
     img.alt = "";
     img.setAttribute("aria-hidden", "true");
 
@@ -10330,7 +10386,7 @@ function initAustralianLightChrome(project,projects){
         `
         <a
           class="next-project al-next-project"
-          href="/work/${next.slug}/"
+          href="${sitePath(`/work/${next.slug}/`)}"
           aria-label="Next project: ${esc(next.title)}">
 
           <span class="meta-mono next-project-label">
@@ -10919,7 +10975,7 @@ function rebuildAustralianLightProcess(){
           <figure class="al-sketch-card al-sketch-card--large">
             <div class="al-process-image">
               <img
-                src="/public/projects/australian-light/process/homepage.png"
+                src=sitePath("/public/projects/australian-light/process/homepage.png")
                 alt="Australian Light early homepage sketch"
                 loading="lazy"
               >
@@ -10933,7 +10989,7 @@ function rebuildAustralianLightProcess(){
           <figure class="al-sketch-card">
             <div class="al-process-image">
               <img
-                src="/public/projects/australian-light/process/search.png"
+                src=sitePath("/public/projects/australian-light/process/search.png")
                 alt="Australian Light search interface sketch"
                 loading="lazy"
               >
@@ -10947,7 +11003,7 @@ function rebuildAustralianLightProcess(){
           <figure class="al-sketch-card">
             <div class="al-process-image">
               <img
-                src="/public/projects/australian-light/process/product.png"
+                src=sitePath("/public/projects/australian-light/process/product.png")
                 alt="Australian Light product interface sketch"
                 loading="lazy"
               >
@@ -10961,7 +11017,7 @@ function rebuildAustralianLightProcess(){
           <figure class="al-sketch-card">
             <div class="al-process-image">
               <img
-                src="/public/projects/australian-light/process/purchase.png"
+                src=sitePath("/public/projects/australian-light/process/purchase.png")
                 alt="Australian Light checkout interface sketch"
                 loading="lazy"
               >
@@ -11011,7 +11067,7 @@ function rebuildAustralianLightProcess(){
               <figure>
                 <div class="al-lowfi-frame">
                   <img
-                    src="/public/projects/australian-light/process/lowfi-Homepage.svg"
+                    src=sitePath("/public/projects/australian-light/process/lowfi-Homepage.svg")
                     alt="Low fidelity homepage"
                     loading="lazy"
                   >
@@ -11022,7 +11078,7 @@ function rebuildAustralianLightProcess(){
               <figure>
                 <div class="al-lowfi-frame">
                   <img
-                    src="/public/projects/australian-light/process/lowfi-Homepage_Side Navigation.svg"
+                    src=sitePath("/public/projects/australian-light/process/lowfi-Homepage_Side Navigation.svg")
                     alt="Low fidelity side navigation"
                     loading="lazy"
                   >
@@ -11033,7 +11089,7 @@ function rebuildAustralianLightProcess(){
               <figure>
                 <div class="al-lowfi-frame">
                   <img
-                    src="/public/projects/australian-light/process/lowfi-Search Result.svg"
+                    src=sitePath("/public/projects/australian-light/process/lowfi-Search Result.svg")
                     alt="Low fidelity search results"
                     loading="lazy"
                   >
@@ -11060,7 +11116,7 @@ function rebuildAustralianLightProcess(){
   <figure>
     <div class="al-lowfi-frame">
       <img
-        src="/public/projects/australian-light/process/lowfi-Product List.svg"
+        src=sitePath("/public/projects/australian-light/process/lowfi-Product List.svg")
         alt="Low fidelity product list"
         loading="lazy"
       >
@@ -11071,7 +11127,7 @@ function rebuildAustralianLightProcess(){
   <figure>
     <div class="al-lowfi-frame">
       <img
-        src="/public/projects/australian-light/process/lowfi-Product List_Filter.svg"
+        src=sitePath("/public/projects/australian-light/process/lowfi-Product List_Filter.svg")
         alt="Low fidelity product list filter"
         loading="lazy"
       >
@@ -11082,7 +11138,7 @@ function rebuildAustralianLightProcess(){
   <figure>
     <div class="al-lowfi-frame">
       <img
-        src="/public/projects/australian-light/process/lowfi-Product Detail.svg"
+        src=sitePath("/public/projects/australian-light/process/lowfi-Product Detail.svg")
         alt="Low fidelity product detail"
         loading="lazy"
       >
@@ -11109,7 +11165,7 @@ function rebuildAustralianLightProcess(){
               <figure>
                 <div class="al-lowfi-frame">
                   <img
-                    src="/public/projects/australian-light/process/lowfi-Cart.svg"
+                    src=sitePath("/public/projects/australian-light/process/lowfi-Cart.svg")
                     alt="Low fidelity shopping cart"
                     loading="lazy"
                   >
@@ -11120,7 +11176,7 @@ function rebuildAustralianLightProcess(){
               <figure>
                 <div class="al-lowfi-frame">
                   <img
-                    src="/public/projects/australian-light/process/lowfi-Cart_Info.svg"
+                    src=sitePath("/public/projects/australian-light/process/lowfi-Cart_Info.svg")
                     alt="Low fidelity checkout information"
                     loading="lazy"
                   >
@@ -11131,7 +11187,7 @@ function rebuildAustralianLightProcess(){
               <figure>
                 <div class="al-lowfi-frame">
                   <img
-                    src="/public/projects/australian-light/process/lowfi-Cart_Pay_01.svg"
+                    src=sitePath("/public/projects/australian-light/process/lowfi-Cart_Pay_01.svg")
                     alt="Low fidelity payment interface"
                     loading="lazy"
                   >
