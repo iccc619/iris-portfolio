@@ -45,3 +45,23 @@ assets/site.css.force-backup-*
 assets/site.js.before-*
 assets/site.js.backup-*
 assets/site.js.force-backup-*
+
+.DS_Store
+**/.DS_Store
+
+# Australian Light — local recovery / working backups
+assets/australian-light-clean.css
+assets/australian-light-recovery-preview.css
+assets/australian-light.css.before-*
+assets/australian-light.css.broken-*
+assets/australian-light.css.section08-restore-candidate
+assets/australian-light.css.structural-recovery-candidate
+assets/site.js.broken-*
+work/australian-light/*.before-*
+
+# Local recovery checkpoints — never commit
+backups/
+
+# Canela — keep local collection, commit only fonts actually used
+public/fonts/Canela_Collection/*
+public/fonts/Canela_Collection/Canela Text Family/*

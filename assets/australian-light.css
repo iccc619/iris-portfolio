@@ -1,0 +1,7802 @@
+/* =========================================================
+   AUSTRALIAN LIGHT
+   UX → UI → CODE → LIVE PRODUCT
+   ========================================================= */
+
+body.project-australian-light{
+  --al-bg:#f4f1e9;
+  --al-ink:#11110f;
+  --al-black:#10100f;
+  --al-paper:#f7f4ec;
+  --al-muted:#858078;
+  --al-line:rgba(17,17,15,.18);
+  --al-gold:#aa9270;
+  --al-gold-light:#d0baa0;
+  --al-pad:clamp(24px,4.5vw,76px);
+  --al-max:1600px;
+
+  background:var(--al-bg);
+  color:var(--al-ink);
+}
+
+body.project-australian-light .al-shell{
+  width:min(100%,var(--al-max));
+  margin-inline:auto;
+  padding-inline:var(--al-pad);
+}
+
+body.project-australian-light .al-page{
+  width:100%;
+  overflow:hidden;
+  background:var(--al-bg);
+}
+
+
+/* =========================================================
+   SHARED SECTION HEADER
+   ========================================================= */
+
+body.project-australian-light .al-section{
+  padding-block:clamp(88px,8vw,138px);
+}
+
+body.project-australian-light .al-section-head{
+  display:grid;
+  grid-template-columns:44px minmax(0,1fr);
+  gap:24px;
+  align-items:start;
+}
+
+body.project-australian-light .al-section-no{
+  padding-top:7px;
+  font:500 10px/1 var(--mono,monospace);
+  letter-spacing:.14em;
+}
+
+body.project-australian-light .al-section-head h2{
+  margin:0;
+  max-width:1100px;
+  font-size:clamp(40px,5vw,78px);
+  line-height:.94;
+  font-weight:500;
+  letter-spacing:-.065em;
+}
+
+body.project-australian-light .al-rule{
+  width:100%;
+  height:1px;
+  margin:30px 0 44px;
+  background:var(--al-line);
+}
+
+body.project-australian-light .al-eyebrow{
+  display:block;
+  margin-bottom:18px;
+  font:600 10px/1.2 var(--mono,monospace);
+  letter-spacing:.18em;
+  text-transform:uppercase;
+}
+
+body.project-australian-light .al-copy{
+  font-size:clamp(18px,1.45vw,24px);
+  line-height:1.38;
+  letter-spacing:-.025em;
+}
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+body.project-australian-light .al-hero{
+  position:relative;
+  min-height:100svh;
+  display:flex;
+  flex-direction:column;
+  background:
+    radial-gradient(
+      circle at 78% 40%,
+      rgba(170,146,112,.24),
+      transparent 34%
+    ),
+    var(--al-bg);
+}
+
+body.project-australian-light .al-hero-inner{
+  flex:1;
+  display:grid;
+  grid-template-columns:minmax(0,.92fr) minmax(420px,1.08fr);
+  gap:clamp(40px,6vw,110px);
+  align-items:center;
+
+  padding-top:clamp(140px,14vh,190px);
+  padding-bottom:36px;
+}
+
+body.project-australian-light .al-hero-copy{
+  position:relative;
+  z-index:3;
+}
+
+body.project-australian-light .al-hero-kicker{
+  margin:0 0 30px;
+  font:600 11px/1.2 var(--mono,monospace);
+  letter-spacing:.15em;
+  text-transform:uppercase;
+  color:var(--al-gold);
+}
+
+body.project-australian-light .al-hero h1{
+  margin:0;
+  max-width:760px;
+  font-size:clamp(74px,8.2vw,148px);
+  line-height:.78;
+  letter-spacing:-.075em;
+  font-weight:500;
+}
+
+body.project-australian-light .al-hero-lead{
+  max-width:690px;
+  margin:48px 0 0;
+  font-size:clamp(18px,1.55vw,25px);
+  line-height:1.42;
+  letter-spacing:-.025em;
+  color:#53504a;
+}
+
+body.project-australian-light .al-hero-visual{
+  position:relative;
+  z-index:2;
+  width:100%;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+body.project-australian-light .al-hero-frame{
+  position:relative;
+  width:min(100%,780px);
+  aspect-ratio:4/3;
+  overflow:hidden;
+  background:#171614;
+  box-shadow:
+    0 38px 90px rgba(30,25,18,.18),
+    0 8px 22px rgba(30,25,18,.08);
+}
+
+body.project-australian-light .al-hero-frame img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+
+body.project-australian-light .al-hero-frame::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.10);
+}
+
+body.project-australian-light .al-meta{
+  width:calc(100% - (var(--al-pad) * 2));
+  max-width:calc(var(--al-max) - (var(--al-pad) * 2));
+  margin:0 auto clamp(24px,3vw,44px);
+
+  display:grid;
+  grid-template-columns:1fr 2.1fr 1fr .55fr;
+
+  border-top:1px solid var(--al-line);
+  border-bottom:1px solid var(--al-line);
+}
+
+body.project-australian-light .al-meta > div{
+  min-height:92px;
+  padding:20px 24px 18px;
+  border-right:1px solid var(--al-line);
+}
+
+body.project-australian-light .al-meta > div:first-child{
+  padding-left:0;
+}
+
+body.project-australian-light .al-meta > div:last-child{
+  border-right:0;
+}
+
+body.project-australian-light .al-meta b{
+  display:block;
+  margin-bottom:10px;
+  font:600 10px/1 var(--mono,monospace);
+  letter-spacing:.14em;
+  text-transform:uppercase;
+}
+
+body.project-australian-light .al-meta span{
+  display:block;
+  color:#65615a;
+  font-size:14px;
+  line-height:1.45;
+}
+
+
+/* =========================================================
+   01 — PROBLEM
+   ========================================================= */
+
+body.project-australian-light .al-problem{
+  background:var(--al-black);
+  color:var(--al-paper);
+}
+
+body.project-australian-light .al-problem .al-rule{
+  background:rgba(247,244,236,.19);
+}
+
+body.project-australian-light .al-problem-intro{
+  display:grid;
+  grid-template-columns:minmax(0,1.35fr) minmax(300px,.65fr);
+  gap:clamp(40px,9vw,150px);
+  align-items:start;
+}
+
+body.project-australian-light .al-problem-intro .al-copy{
+  max-width:920px;
+  font-size:clamp(34px,4vw,66px);
+  line-height:1.02;
+  letter-spacing:-.055em;
+}
+
+body.project-australian-light .al-problem-intro > p:last-child{
+  max-width:500px;
+  color:#aaa49a;
+  line-height:1.55;
+}
+
+body.project-australian-light .al-issues{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  margin-top:clamp(70px,8vw,130px);
+  border-top:1px solid rgba(247,244,236,.2);
+  border-bottom:1px solid rgba(247,244,236,.2);
+}
+
+body.project-australian-light .al-issue{
+  min-height:260px;
+  padding:28px 28px 32px 0;
+  border-right:1px solid rgba(247,244,236,.2);
+}
+
+body.project-australian-light .al-issue + .al-issue{
+  padding-left:28px;
+}
+
+body.project-australian-light .al-issue:last-child{
+  border-right:0;
+}
+
+body.project-australian-light .al-issue span{
+  color:var(--al-gold-light);
+  font:600 10px/1 var(--mono,monospace);
+}
+
+body.project-australian-light .al-issue h3{
+  margin:70px 0 14px;
+  font-size:clamp(25px,2.1vw,36px);
+  font-weight:500;
+  letter-spacing:-.04em;
+}
+
+body.project-australian-light .al-issue p{
+  max-width:380px;
+  margin:0;
+  color:#aaa49a;
+  line-height:1.5;
+}
+
+
+/* =========================================================
+   02 — RESEARCH
+   ========================================================= */
+
+body.project-australian-light .al-research-grid{
+  display:grid;
+  grid-template-columns:.72fr 1.28fr;
+  gap:clamp(40px,8vw,130px);
+}
+
+body.project-australian-light .al-research-statement{
+  font-size:clamp(30px,3vw,50px);
+  line-height:1.06;
+  letter-spacing:-.05em;
+}
+
+body.project-australian-light .al-findings{
+  border-top:1px solid var(--al-line);
+}
+
+body.project-australian-light .al-finding{
+  display:grid;
+  grid-template-columns:170px 1fr;
+  gap:30px;
+  padding:22px 0;
+  border-bottom:1px solid var(--al-line);
+}
+
+body.project-australian-light .al-finding b{
+  font:600 10px/1.2 var(--mono,monospace);
+  letter-spacing:.12em;
+  text-transform:uppercase;
+}
+
+body.project-australian-light .al-finding span{
+  color:#5e5a54;
+  line-height:1.45;
+}
+
+
+/* =========================================================
+   03 — PROCESS / SKETCH → UI
+   ========================================================= */
+
+body.project-australian-light .al-process{
+  background:#e9e5db;
+}
+
+body.project-australian-light .al-process-track{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  margin-bottom:60px;
+}
+
+body.project-australian-light .al-process-step{
+  padding:20px 24px 18px 0;
+  border-top:1px solid var(--al-line);
+}
+
+body.project-australian-light .al-process-step strong{
+  display:block;
+  margin-bottom:8px;
+  font-size:14px;
+}
+
+body.project-australian-light .al-process-step span{
+  font:500 10px/1 var(--mono,monospace);
+  color:#77726a;
+}
+
+body.project-australian-light .al-process-media{
+  display:grid;
+  grid-template-columns:1.15fr .85fr;
+  gap:18px;
+}
+
+body.project-australian-light .al-process-media figure,
+body.project-australian-light .al-direction-media figure{
+  margin:0;
+  overflow:hidden;
+}
+
+body.project-australian-light .al-process-media img,
+body.project-australian-light .al-direction-media img{
+  width:100%;
+  height:auto;
+  display:block;
+}
+
+
+/* =========================================================
+   04 — DESIGN DIRECTION
+   ========================================================= */
+
+body.project-australian-light .al-direction{
+  background:var(--al-paper);
+}
+
+
+body.project-australian-light .al-palette{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:8px;
+  margin:38px 0 60px;
+}
+
+body.project-australian-light .al-swatch{
+  aspect-ratio:1.7/1;
+  padding:12px;
+  display:flex;
+  align-items:flex-end;
+  font:500 10px/1 var(--mono,monospace);
+}
+
+body.project-australian-light .al-type-sample{
+  border-top:1px solid var(--al-line);
+  padding-top:28px;
+}
+
+body.project-australian-light .al-type-display{
+  margin:0 0 24px;
+  font-family:Georgia,serif;
+  font-size:clamp(42px,4vw,70px);
+  line-height:1;
+}
+
+body.project-australian-light .al-type-body{
+  margin:0;
+  font-size:22px;
+  color:#6a655e;
+}
+
+body.project-australian-light .al-direction-media{
+  display:grid;
+  grid-template-columns:1.35fr .65fr;
+  gap:16px;
+  align-items:start;
+}
+
+
+/* =========================================================
+   05 — SHOPPING FLOW
+   ========================================================= */
+
+body.project-australian-light .al-flow{
+  background:var(--al-black);
+  color:var(--al-paper);
+}
+
+body.project-australian-light .al-flow .al-rule{
+  background:rgba(247,244,236,.18);
+}
+
+body.project-australian-light .al-flow-rail{
+  display:flex;
+  gap:16px;
+  overflow-x:auto;
+  scroll-snap-type:x mandatory;
+  scrollbar-width:none;
+  padding-bottom:26px;
+}
+
+body.project-australian-light .al-flow-rail::-webkit-scrollbar{
+  display:none;
+}
+
+body.project-australian-light .al-flow-card{
+  flex:0 0 min(64vw,860px);
+  scroll-snap-align:start;
+}
+
+body.project-australian-light .al-flow-card figure{
+  margin:0;
+  aspect-ratio:16/10;
+  overflow:hidden;
+  background:#191816;
+}
+
+body.project-australian-light .al-flow-card img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+
+body.project-australian-light .al-flow-card-meta{
+  display:grid;
+  grid-template-columns:44px 1fr;
+  gap:18px;
+  padding-top:18px;
+}
+
+body.project-australian-light .al-flow-card-meta span{
+  font:500 10px/1 var(--mono,monospace);
+  color:var(--al-gold-light);
+}
+
+body.project-australian-light .al-flow-card-meta strong{
+  display:block;
+  margin-bottom:7px;
+  font-size:18px;
+}
+
+body.project-australian-light .al-flow-card-meta p{
+  max-width:560px;
+  margin:0;
+  color:#aaa49a;
+  line-height:1.45;
+}
+
+
+/* =========================================================
+   06 — FIGMA → CODE
+   ========================================================= */
+
+body.project-australian-light .al-code-grid{
+  display:grid;
+  grid-template-columns:.9fr 1.1fr;
+  gap:clamp(50px,8vw,130px);
+}
+
+body.project-australian-light .al-code-lead{
+  font-size:clamp(44px,5vw,82px);
+  line-height:.95;
+  letter-spacing:-.065em;
+}
+
+body.project-australian-light .al-capabilities{
+  border-top:1px solid var(--al-line);
+}
+
+body.project-australian-light .al-capability{
+  display:grid;
+  grid-template-columns:130px 1fr;
+  gap:30px;
+  padding:28px 0 34px;
+  border-bottom:1px solid var(--al-line);
+}
+
+body.project-australian-light .al-capability span{
+  font:600 10px/1.2 var(--mono,monospace);
+  letter-spacing:.12em;
+  color:var(--al-gold);
+}
+
+body.project-australian-light .al-capability h3{
+  margin:0 0 12px;
+  font-size:clamp(24px,2vw,34px);
+  font-weight:500;
+  letter-spacing:-.04em;
+}
+
+body.project-australian-light .al-capability p{
+  margin:0;
+  color:#69645d;
+  line-height:1.5;
+}
+
+
+/* =========================================================
+   07 — LIVE WEBSITE
+   ========================================================= */
+
+body.project-australian-light .al-live{
+  background:#c3aa88;
+  color:#11110f;
+}
+
+body.project-australian-light .al-live-intro{
+  display:grid;
+  grid-template-columns:1.15fr .85fr;
+  gap:60px;
+  align-items:end;
+}
+
+body.project-australian-light .al-live-intro p{
+  max-width:510px;
+  margin:0 0 5px auto;
+  line-height:1.55;
+}
+
+body.project-australian-light .al-laptop-wrap{
+  margin-top:clamp(60px,7vw,110px);
+  perspective:1600px;
+}
+
+body.project-australian-light .al-laptop{
+  width:min(92vw,1280px);
+  margin:0 auto;
+}
+
+body.project-australian-light .al-laptop-screen{
+  position:relative;
+  width:92%;
+  margin:0 auto;
+  padding:12px 12px 0;
+  border-radius:22px 22px 8px 8px;
+  background:#171717;
+  box-shadow:0 26px 70px rgba(0,0,0,.22);
+}
+
+body.project-australian-light .al-browser{
+  position:relative;
+  height:min(68vh,720px);
+  min-height:500px;
+  overflow:hidden;
+  border-radius:10px 10px 0 0;
+  background:#111;
+}
+
+body.project-australian-light .al-browser-bar{
+  height:34px;
+  display:grid;
+  grid-template-columns:auto 1fr auto;
+  align-items:center;
+  gap:16px;
+  padding:0 13px;
+  background:#272727;
+  color:#bcbcbc;
+}
+
+body.project-australian-light .al-browser-dots{
+  display:flex;
+  gap:6px;
+}
+
+body.project-australian-light .al-browser-dots i{
+  width:8px;
+  height:8px;
+  border-radius:50%;
+  display:block;
+  background:#727272;
+}
+
+body.project-australian-light .al-browser-address{
+  width:min(480px,70%);
+  height:18px;
+  margin:auto;
+  border-radius:10px;
+  background:#1b1b1b;
+  font:500 9px/18px var(--mono,monospace);
+  text-align:center;
+  color:#878787;
+}
+
+body.project-australian-light .al-browser iframe{
+  width:100%;
+  height:calc(100% - 34px);
+  display:block;
+  border:0;
+  background:#111;
+}
+
+body.project-australian-light .al-laptop-base{
+  position:relative;
+  width:100%;
+  height:24px;
+  border-radius:2px 2px 16px 16px;
+  background:linear-gradient(#cfcfcf,#878787);
+  box-shadow:0 18px 35px rgba(0,0,0,.18);
+}
+
+body.project-australian-light .al-laptop-base::after{
+  content:"";
+  position:absolute;
+  top:0;
+  left:50%;
+  width:130px;
+  height:6px;
+  transform:translateX(-50%);
+  border-radius:0 0 8px 8px;
+  background:#777;
+}
+
+body.project-australian-light .al-live-links{
+  display:flex;
+  justify-content:center;
+  gap:16px;
+  margin-top:42px;
+}
+
+body.project-australian-light .al-live-links a{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  padding:13px 18px;
+  border:1px solid rgba(17,17,15,.45);
+  color:inherit;
+  text-decoration:none;
+  font-size:13px;
+}
+
+body.project-australian-light .al-live-links a:hover{
+  background:#111;
+  color:#f7f4ec;
+}
+
+
+/* =========================================================
+   PLACEHOLDERS
+   ========================================================= */
+
+body.project-australian-light .al-placeholder{
+  display:grid;
+  place-items:center;
+  min-height:360px;
+  border:1px solid var(--al-line);
+  color:#8a857d;
+  font:500 10px/1.4 var(--mono,monospace);
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  background:rgba(255,255,255,.16);
+}
+
+
+/* =========================================================
+   REAL PROJECT MEDIA
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   Original site audit
+   --------------------------------------------------------- */
+
+body.project-australian-light .al-audit{
+  margin-top:clamp(84px,9vw,150px);
+}
+
+body.project-australian-light .al-audit-head{
+  display:grid;
+  grid-template-columns:1fr minmax(300px,480px);
+  gap:50px;
+  align-items:start;
+
+  margin-bottom:34px;
+}
+
+body.project-australian-light .al-audit-head p{
+  margin:0;
+  color:#aaa49a;
+  line-height:1.5;
+}
+
+body.project-australian-light .al-audit-grid{
+  display:grid;
+  grid-template-columns:1.3fr .7fr .7fr;
+  gap:14px;
+  align-items:start;
+}
+
+body.project-australian-light .al-audit-grid figure{
+  margin:0;
+  min-width:0;
+}
+
+body.project-australian-light .al-audit-grid .al-audit-main{
+  grid-row:span 2;
+}
+
+body.project-australian-light .al-audit-grid img{
+  display:block;
+  width:100%;
+  height:auto;
+  background:#1a1917;
+}
+
+body.project-australian-light .al-audit-grid figcaption{
+  display:flex;
+  justify-content:space-between;
+  gap:20px;
+
+  padding-top:10px;
+
+  color:#aaa49a;
+
+  font:500 9px/1.2 var(--mono,monospace);
+  letter-spacing:.12em;
+}
+
+
+/* ---------------------------------------------------------
+   Process
+   --------------------------------------------------------- */
+
+body.project-australian-light .al-process-media{
+  align-items:start;
+}
+
+body.project-australian-light .al-process-media figure{
+  margin:0;
+}
+
+body.project-australian-light .al-process-sketch{
+  position:relative;
+}
+
+body.project-australian-light .al-process-sketch img{
+  width:100%;
+  height:auto;
+  display:block;
+}
+
+body.project-australian-light .al-process-sketch figcaption{
+  display:flex;
+  justify-content:space-between;
+
+  padding-top:11px;
+
+  font:500 9px/1.2 var(--mono,monospace);
+  letter-spacing:.12em;
+  color:#6f6a63;
+}
+
+body.project-australian-light .al-lowfi-stack{
+  display:grid;
+  gap:14px;
+}
+
+body.project-australian-light .al-lowfi-stack figure{
+  overflow:hidden;
+  background:#f5f2ea;
+}
+
+body.project-australian-light .al-lowfi-stack img{
+  display:block;
+  width:100%;
+  height:auto;
+}
+
+body.project-australian-light .al-lowfi-stack figcaption{
+  padding-top:9px;
+  background:#e9e5db;
+
+  font:500 9px/1.2 var(--mono,monospace);
+  letter-spacing:.12em;
+  color:#6f6a63;
+}
+
+
+/* ---------------------------------------------------------
+   Direction
+   --------------------------------------------------------- */
+
+body.project-australian-light .al-direction-media figure{
+  position:relative;
+}
+
+body.project-australian-light .al-direction-main img{
+  width:100%;
+  height:auto;
+  display:block;
+}
+
+
+/* ---------------------------------------------------------
+   Final shopping flow
+   --------------------------------------------------------- */
+
+body.project-australian-light .al-flow-card figure{
+  background:#181715;
+}
+
+body.project-australian-light .al-flow-card img{
+  object-fit:contain;
+  object-position:center;
+
+  background:#f3f0e8;
+}
+
+
+/* ---------------------------------------------------------
+   Hero — final screenshot
+   --------------------------------------------------------- */
+
+body.project-australian-light .al-hero-frame{
+  aspect-ratio:16 / 10;
+}
+
+body.project-australian-light .al-hero-frame img{
+  object-position:center top;
+}
+
+
+/* ---------------------------------------------------------
+   Responsive media
+   --------------------------------------------------------- */
+
+@media(max-width:900px){
+
+  body.project-australian-light .al-audit-head{
+    grid-template-columns:1fr;
+  }
+
+  body.project-australian-light .al-audit-grid{
+    grid-template-columns:1fr 1fr;
+  }
+
+  body.project-australian-light .al-audit-grid .al-audit-main{
+    grid-column:1 / -1;
+    grid-row:auto;
+  }
+
+}
+
+
+@media(max-width:640px){
+
+  body.project-australian-light .al-audit-grid{
+    grid-template-columns:1fr;
+  }
+
+  body.project-australian-light .al-audit-grid .al-audit-main{
+    grid-column:auto;
+  }
+
+  body.project-australian-light .al-iteration-compare{
+    grid-template-columns:1fr;
+  }
+
+}
+
+  body.project-australian-light .al-audit-grid{
+    grid-template-columns:1fr;
+  }
+
+  body.project-australian-light .al-audit-grid .al-audit-main{
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width:900px){
+
+  body.project-australian-light .al-hero{
+    min-height:auto;
+  }
+
+  body.project-australian-light .al-hero-inner{
+    grid-template-columns:1fr;
+    padding-top:130px;
+  }
+
+  body.project-australian-light .al-hero-visual{}
+
+  body.project-australian-light .al-meta{
+    grid-template-columns:1fr 1fr;
+  }
+
+  body.project-australian-light .al-meta > div:nth-child(2){
+    border-right:0;
+  }
+
+  body.project-australian-light .al-problem-intro,
+  body.project-australian-light .al-research-grid,
+  body.project-australian-light .al-direction-layout,
+  body.project-australian-light .al-code-grid,
+  body.project-australian-light .al-live-intro{
+    grid-template-columns:1fr;
+  }
+
+  body.project-australian-light .al-issues,
+  body.project-australian-light .al-iteration-grid{
+    grid-template-columns:1fr;
+  }
+
+  body.project-australian-light .al-issue,
+  body.project-australian-light .al-issue + .al-issue,
+  body.project-australian-light .al-iteration-item,
+  body.project-australian-light .al-iteration-item + .al-iteration-item{
+    padding-left:0;
+    border-right:0;
+    border-bottom:1px solid currentColor;
+  }
+
+  body.project-australian-light .al-process-media,
+  body.project-australian-light .al-direction-media{
+    grid-template-columns:1fr;
+  }
+
+  body.project-australian-light .al-process-track{
+    grid-template-columns:1fr 1fr;
+  }
+}
+
+  body.project-australian-light .al-hero{
+    min-height:auto;
+  }
+
+  body.project-australian-light .al-hero-inner{
+    grid-template-columns:1fr;
+    padding-top:130px;
+  }
+
+  body.project-australian-light .al-hero-visual{}
+
+  body.project-australian-light .al-meta{
+    grid-template-columns:1fr 1fr;
+  }
+
+  body.project-australian-light .al-meta > div:nth-child(2){
+    border-right:0;
+  }
+
+  body.project-australian-light .al-problem-intro,
+  body.project-australian-light .al-research-grid,
+  body.project-australian-light .al-direction-layout,
+  body.project-australian-light .al-code-grid,
+  body.project-australian-light .al-live-intro{
+
+  body.project-australian-light .al-process-media,
+  body.project-australian-light .al-direction-media{
+    grid-template-columns:1fr;
+  }
+
+  body.project-australian-light .al-process-track{
+    grid-template-columns:1fr 1fr;
+  }
+}
+
+@media (max-width:640px){
+
+  body.project-australian-light .al-section{
+    padding-block:72px;
+  }
+
+  body.project-australian-light .al-section-head{
+    grid-template-columns:30px 1fr;
+    gap:12px;
+  }
+
+  body.project-australian-light .al-meta{
+    grid-template-columns:1fr;
+  }
+
+  body.project-australian-light .al-meta > div{
+    border-right:0;
+    border-bottom:1px solid var(--al-line);
+    padding-left:0;
+  }
+
+  body.project-australian-light .al-meta > div:last-child{
+    border-bottom:0;
+  }
+
+  body.project-australian-light .al-finding,
+  body.project-australian-light .al-capability{
+    grid-template-columns:1fr;
+  }
+
+  body.project-australian-light .al-flow-card{
+    flex-basis:88vw;
+  }
+
+  body.project-australian-light .al-browser{
+    min-height:420px;
+    height:62vh;
+  }
+}
+
+
+/* Australian Light — sketch exploration strip */
+
+body.project-australian-light .al-sketch-strip{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:6px;
+
+  margin-top:18px;
+}
+
+body.project-australian-light .al-sketch-strip img{
+  display:block;
+
+  width:100%;
+  aspect-ratio:1 / 1;
+
+  object-fit:cover;
+  object-position:center;
+
+  opacity:.72;
+
+  transition:
+    opacity .25s ease,
+    transform .25s ease;
+}
+
+body.project-australian-light .al-sketch-strip img:hover{
+  opacity:1;
+  transform:translateY(-3px);
+}
+
+
+/* ===== AUSTRALIAN LIGHT — REFINE PASS 02 ===== */
+
+
+/* =========================================================
+   GLOBAL RHYTHM
+   Keep the strong sections, tighten the overall case study.
+   ========================================================= */
+
+body.project-australian-light .al-section{
+  padding-top:clamp(82px,7vw,118px);
+  padding-bottom:clamp(82px,7vw,118px);
+}
+
+body.project-australian-light .al-rule{
+  margin-top:28px;
+  margin-bottom:40px;
+}
+
+
+/* =========================================================
+   03 — PROCESS
+
+   Current problem:
+   large sketch left + extremely tall low-fi column right
+   creates a huge empty field.
+
+   New hierarchy:
+   1 large sketch
+   3 low-fi frames in one horizontal sequence.
+   ========================================================= */
+
+body.project-australian-light .al-process{
+  padding-bottom:clamp(90px,7vw,120px);
+}
+
+body.project-australian-light .al-process-track{
+  margin-bottom:clamp(42px,4vw,62px);
+}
+
+body.project-australian-light .al-process-media{
+  display:grid !important;
+  grid-template-columns:1fr !important;
+  gap:clamp(34px,4vw,58px) !important;
+  align-items:start !important;
+}
+
+body.project-australian-light .al-process-sketch{
+  width:100%;
+  max-width:none;
+}
+
+body.project-australian-light .al-process-sketch > img{
+  width:100%;
+  max-height:620px;
+  object-fit:contain;
+  object-position:left center;
+
+  background:#f4f1e9;
+}
+
+body.project-australian-light .al-sketch-strip{
+  max-width:100%;
+  grid-template-columns:repeat(4,1fr);
+  gap:8px;
+
+  margin-top:14px;
+}
+
+body.project-australian-light .al-sketch-strip img{
+  aspect-ratio:16 / 10;
+  object-fit:cover;
+  object-position:center;
+}
+
+
+/* Low-fi becomes a clear 3-frame sequence */
+
+body.project-australian-light .al-lowfi-stack{
+  display:grid !important;
+  grid-template-columns:repeat(3,minmax(0,1fr)) !important;
+  gap:clamp(12px,1.3vw,20px) !important;
+  align-items:start;
+}
+
+body.project-australian-light .al-lowfi-stack figure{
+  min-width:0;
+  margin:0;
+  background:#f5f2ea;
+}
+
+body.project-australian-light .al-lowfi-stack img{
+  display:block;
+
+  width:100%;
+  height:clamp(360px,36vw,590px);
+
+  object-fit:cover;
+  object-position:top center;
+
+  background:#f5f2ea;
+}
+
+body.project-australian-light .al-lowfi-stack figcaption{
+  padding-top:10px;
+  background:transparent;
+}
+
+
+/* =========================================================
+   04 — SIGNATURE VISUAL SYSTEM
+
+   Current problem:
+   the selected direction continues for several viewport
+   heights and makes the middle of the case study feel much
+   longer than every other chapter.
+
+   Treat final interfaces as editorial crops instead.
+   ========================================================= */
+
+
+body.project-australian-light .al-direction-media{
+  display:grid !important;
+  grid-template-columns:minmax(0,1.3fr) minmax(220px,.7fr) !important;
+  gap:clamp(12px,1.4vw,22px) !important;
+  align-items:start !important;
+}
+
+
+/* selected desktop / direction preview */
+
+body.project-australian-light .al-direction-main{
+  position:relative;
+
+  height:clamp(620px,63vw,900px);
+
+  margin:0;
+  overflow:hidden;
+
+  background:#111;
+}
+
+body.project-australian-light .al-direction-main img{
+  display:block !important;
+
+  width:100% !important;
+  height:100% !important;
+
+  object-fit:cover !important;
+  object-position:top center !important;
+}
+
+
+/* subtle bottom fade communicates that the design continues */
+
+body.project-australian-light .al-direction-main::after{
+  content:"";
+
+  position:absolute;
+  z-index:2;
+
+  left:0;
+  right:0;
+  bottom:0;
+
+  height:110px;
+
+  pointer-events:none;
+
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(17,17,17,0),
+      rgba(17,17,17,.52)
+    );
+}
+
+
+/* mobile adaptation */
+
+
+/* captions should sit outside the visual frame */
+
+
+/* =========================================================
+   05 — SHOPPING FLOW
+
+   Make it feel like an interaction sequence rather than
+   several screenshots sitting beside each other.
+   ========================================================= */
+
+body.project-australian-light .al-flow{
+  padding-bottom:clamp(90px,8vw,130px);
+}
+
+body.project-australian-light .al-flow-rail{
+  gap:clamp(18px,2vw,30px);
+
+  padding-right:var(--al-pad);
+  padding-bottom:24px;
+
+  scroll-padding-left:0;
+}
+
+body.project-australian-light .al-flow-card{
+  flex:0 0 min(74vw,1080px) !important;
+}
+
+body.project-australian-light .al-flow-card figure{
+  position:relative;
+
+  width:100%;
+  aspect-ratio:16 / 9 !important;
+
+  overflow:hidden;
+
+  background:#171614;
+}
+
+body.project-australian-light .al-flow-card img{
+  width:100%;
+  height:100%;
+
+  object-fit:contain !important;
+  object-position:center !important;
+
+  background:#f1eee6;
+}
+
+body.project-australian-light .al-flow-card-meta{
+  grid-template-columns:54px minmax(0,1fr);
+
+  padding-top:18px;
+}
+
+body.project-australian-light .al-flow-card-meta strong{
+  font-size:clamp(18px,1.5vw,23px);
+}
+
+
+/* Give next frame a deliberate visible edge */
+
+body.project-australian-light .al-flow-rail::after{
+  content:"";
+
+  flex:0 0 var(--al-pad);
+}
+
+
+/* =========================================================
+   06 — DESIGN BECOMES SYSTEM
+
+   Existing composition is good; only make it slightly more
+   compact so it acts as a bridge into the live prototype.
+   ========================================================= */
+
+body.project-australian-light .al-code-grid{
+  gap:clamp(50px,6vw,100px);
+}
+
+body.project-australian-light .al-capability{
+  padding-top:24px;
+  padding-bottom:28px;
+}
+
+
+/* =========================================================
+   07 — LIVE PROTOTYPE
+
+   Keep this as the climax, but make laptop occupy more of
+   the visible stage and remove excess air.
+   ========================================================= */
+
+body.project-australian-light .al-live{
+  padding-bottom:clamp(78px,7vw,110px);
+}
+
+body.project-australian-light .al-laptop-wrap{
+  margin-top:clamp(46px,5vw,76px);
+}
+
+body.project-australian-light .al-laptop{
+  width:min(94vw,1320px);
+}
+
+body.project-australian-light .al-browser{
+  height:min(64vh,690px);
+}
+
+
+/* =========================================================
+   REVEAL MOTION
+   ========================================================= */
+
+body.project-australian-light .al-reveal{
+  opacity:0;
+  transform:translateY(28px);
+
+  transition:
+    opacity .75s cubic-bezier(.2,.7,.2,1),
+    transform .75s cubic-bezier(.2,.7,.2,1);
+}
+
+body.project-australian-light .al-reveal.is-visible{
+  opacity:1;
+  transform:translateY(0);
+}
+
+body.project-australian-light .al-reveal[data-al-delay="1"]{
+  transition-delay:.08s;
+}
+
+body.project-australian-light .al-reveal[data-al-delay="2"]{
+  transition-delay:.16s;
+}
+
+body.project-australian-light .al-reveal[data-al-delay="3"]{
+  transition-delay:.24s;
+}
+
+
+/* Accessibility */
+
+@media (prefers-reduced-motion:reduce){
+
+  body.project-australian-light .al-reveal{
+    opacity:1 !important;
+    transform:none !important;
+    transition:none !important;
+  }
+
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media(max-width:900px){
+
+  body.project-australian-light .al-lowfi-stack{
+    grid-template-columns:repeat(2,minmax(0,1fr)) !important;
+  }
+
+  
+
+  body.project-australian-light .al-direction-media{
+    grid-template-columns:1.2fr .8fr !important;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media(max-width:640px){
+
+  body.project-australian-light .al-process-sketch > img{
+    max-height:none;
+  }
+
+  body.project-australian-light .al-sketch-strip{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  body.project-australian-light .al-lowfi-stack{
+    grid-template-columns:1fr !important;
+  }
+
+  body.project-australian-light .al-lowfi-stack img{
+    height:auto;
+    max-height:none;
+    object-fit:contain;
+  }
+
+  body.project-australian-light .al-direction-media{
+    grid-template-columns:1fr !important;
+  }
+
+  body.project-australian-light .al-direction-main{
+    height:560px;
+  }
+
+  
+
+  body.project-australian-light .al-flow-card{
+    flex-basis:88vw !important;
+  }
+
+}
+
+
+/* ===== END AUSTRALIAN LIGHT — REFINE PASS 02 ===== */
+
+
+/* ===== AUSTRALIAN LIGHT — REFINE PASS 03 ===== */
+
+
+/* =========================================================
+   03 — PROCESS
+   Slightly reduce low-fi height.
+   ========================================================= */
+
+body.project-australian-light .al-lowfi-stack img{
+  height:clamp(330px,31vw,500px) !important;
+}
+
+
+/* =========================================================
+   05 — SHOPPING FLOW
+
+   Current tall/narrow screenshots look like blank columns
+   inside the wide frame. Crop them intentionally instead.
+   ========================================================= */
+
+body.project-australian-light .al-flow-rail{
+  gap:clamp(16px,1.8vw,26px) !important;
+}
+
+body.project-australian-light .al-flow-card{
+  flex:0 0 min(64vw,980px) !important;
+}
+
+body.project-australian-light .al-flow-card figure{
+  width:100% !important;
+
+  aspect-ratio:16 / 10 !important;
+
+  margin:0 !important;
+
+  overflow:hidden !important;
+
+  background:#171614 !important;
+}
+
+body.project-australian-light .al-flow-card img{
+  display:block !important;
+
+  width:100% !important;
+  height:100% !important;
+
+  object-fit:cover !important;
+  object-position:top center !important;
+
+  background:#171614 !important;
+}
+
+body.project-australian-light .al-flow-card-meta{
+  min-height:88px;
+
+  padding-top:16px !important;
+}
+
+body.project-australian-light .al-flow-card-meta p{
+  max-width:420px;
+}
+
+
+/* =========================================================
+   06 — DESIGN BECOMES SYSTEM
+
+   Fix clipped lead text seen in current capture.
+   ========================================================= */
+
+body.project-australian-light .al-code,
+body.project-australian-light .al-code-grid,
+body.project-australian-light .al-code-lead{
+  overflow:visible !important;
+}
+
+body.project-australian-light .al-code{
+  padding-top:clamp(82px,7vw,112px) !important;
+  padding-bottom:clamp(86px,7vw,116px) !important;
+}
+
+body.project-australian-light .al-code-grid{
+  align-items:start !important;
+
+  margin-top:clamp(44px,4.5vw,68px) !important;
+}
+
+body.project-australian-light .al-code-lead{
+  margin:0 !important;
+
+  padding-top:4px !important;
+
+  transform:none !important;
+  clip-path:none !important;
+}
+
+body.project-australian-light .al-capability:first-child{
+  margin-top:0 !important;
+}
+
+
+/* =========================================================
+   07 — LIVE PROTOTYPE
+
+   Give heading proper breathing space.
+   ========================================================= */
+
+body.project-australian-light .al-live{
+  padding-top:clamp(86px,7vw,116px) !important;
+  padding-bottom:clamp(90px,7.5vw,122px) !important;
+}
+
+body.project-australian-light .al-live .al-section-head{
+  margin-bottom:0 !important;
+
+  overflow:visible !important;
+}
+
+body.project-australian-light .al-live-intro{
+  margin-top:clamp(38px,4vw,58px) !important;
+}
+
+body.project-australian-light .al-laptop-wrap{
+  margin-top:clamp(42px,4.5vw,66px) !important;
+}
+
+
+/* =========================================================
+   REVEAL MOTION FIX
+
+   Do NOT animate structural headings.
+   Headings must always have stable geometry.
+
+   Reveal only content/media.
+   ========================================================= */
+
+body.project-australian-light .al-section-head.al-reveal,
+body.project-australian-light .al-code-lead.al-reveal{
+  opacity:1 !important;
+
+  transform:none !important;
+
+  transition:none !important;
+}
+
+
+/* Prevent translated content from being clipped */
+
+body.project-australian-light .al-section,
+body.project-australian-light section{
+  overflow-x:clip;
+  overflow-y:visible;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media(max-width:900px){
+
+  body.project-australian-light .al-flow-card{
+    flex-basis:76vw !important;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media(max-width:640px){
+
+  body.project-australian-light .al-flow-card{
+    flex-basis:88vw !important;
+  }
+
+  body.project-australian-light .al-flow-card figure{
+    aspect-ratio:4 / 3 !important;
+  }
+
+  body.project-australian-light .al-lowfi-stack img{
+    height:auto !important;
+  }
+
+}
+
+
+/* ===== END AUSTRALIAN LIGHT — REFINE PASS 03 ===== */
+
+
+/* Australian Light — shopping flow scroll progress */
+
+body.project-australian-light .al-flow-progress{
+  position:relative;
+
+  width:calc(100% - (var(--al-pad) * 2));
+  height:1px;
+
+  margin:
+    clamp(26px,3vw,42px)
+    auto
+    0;
+
+  overflow:hidden;
+
+  background:rgba(245,242,234,.18);
+}
+
+body.project-australian-light .al-flow-progress span{
+  position:absolute;
+
+  left:0;
+  top:0;
+
+  width:22%;
+  height:100%;
+
+  background:#f5f2ea;
+
+  transform:translateX(0);
+
+  transform-origin:left center;
+}
+
+
+/* ===== AUSTRALIAN LIGHT — REFINE PASS 04 ===== */
+
+
+/* =========================================================
+   HERO — DARK EDITORIAL INTRO
+   ========================================================= */
+
+body.project-australian-light .al-hero{
+  min-height:100svh !important;
+
+  background:
+    radial-gradient(
+      circle at 78% 42%,
+      rgba(164,143,110,.17),
+      transparent 38%
+    ),
+    #10100f !important;
+
+  color:#f6f2e9 !important;
+}
+
+body.project-australian-light .al-hero-kicker{
+  color:#b9a17f !important;
+}
+
+body.project-australian-light .al-hero-lead{
+  color:rgba(246,242,233,.68) !important;
+}
+
+body.project-australian-light .al-hero-frame{
+  background:#0a0a09 !important;
+
+  box-shadow:
+    0 42px 100px rgba(0,0,0,.42),
+    0 0 0 1px rgba(255,255,255,.08) !important;
+}
+
+body.project-australian-light .al-meta{
+  border-top-color:rgba(246,242,233,.19) !important;
+  border-bottom-color:rgba(246,242,233,.19) !important;
+}
+
+body.project-australian-light .al-meta > div{
+  border-right-color:rgba(246,242,233,.15) !important;
+}
+
+body.project-australian-light .al-meta b{
+  color:#f6f2e9 !important;
+}
+
+body.project-australian-light .al-meta span{
+  color:rgba(246,242,233,.58) !important;
+}
+
+
+/* =========================================================
+   01 — AUDIT VIEWER
+   ========================================================= */
+
+body.project-australian-light .al-audit{
+  margin-top:clamp(76px,7vw,118px) !important;
+}
+
+body.project-australian-light .al-audit-grid{
+  display:none !important;
+}
+
+body.project-australian-light .al-audit-viewer{
+  display:grid;
+  grid-template-columns:minmax(170px,.24fr) minmax(0,.76fr);
+
+  gap:clamp(28px,4vw,64px);
+
+  align-items:start;
+}
+
+body.project-australian-light .al-audit-tabs{
+  display:flex;
+  flex-direction:column;
+
+  border-top:1px solid rgba(247,244,236,.20);
+}
+
+body.project-australian-light .al-audit-tab{
+  appearance:none;
+
+  display:grid;
+  grid-template-columns:30px 1fr;
+  gap:12px;
+
+  width:100%;
+
+  padding:18px 0;
+
+  border:0;
+  border-bottom:1px solid rgba(247,244,236,.20);
+
+  background:none;
+
+  color:rgba(247,244,236,.48);
+
+  text-align:left;
+  cursor:pointer;
+
+  transition:
+    color .2s ease,
+    padding-left .2s ease;
+}
+
+body.project-australian-light .al-audit-tab span:first-child{
+  font:500 9px/1 var(--mono,monospace);
+}
+
+body.project-australian-light .al-audit-tab span:last-child{
+  font-size:13px;
+}
+
+body.project-australian-light .al-audit-tab:hover,
+body.project-australian-light .al-audit-tab.is-active{
+  color:#f7f4ec;
+  padding-left:8px;
+}
+
+body.project-australian-light .al-audit-stage{
+  position:relative;
+
+  min-height:620px;
+  max-height:78vh;
+
+  overflow-y:auto;
+  overflow-x:hidden;
+
+  background:#171614;
+
+  scrollbar-width:thin;
+  scrollbar-color:#777 #222;
+}
+
+body.project-australian-light .al-audit-stage img{
+  display:block;
+
+  width:100%;
+  height:auto;
+
+  margin:0;
+}
+
+body.project-australian-light .al-audit-stage-label{
+  position:sticky;
+
+  left:0;
+  bottom:0;
+  z-index:5;
+
+  display:flex;
+  justify-content:space-between;
+
+  padding:12px 14px;
+
+  background:rgba(10,10,9,.88);
+
+  backdrop-filter:blur(12px);
+
+  color:#f7f4ec;
+
+  font:500 9px/1 var(--mono,monospace);
+  letter-spacing:.12em;
+}
+
+
+/* =========================================================
+   03 — PROCESS / WORKING INTERACTIVE UI
+   ========================================================= */
+
+body.project-australian-light .al-process-media{
+  display:block !important;
+}
+
+body.project-australian-light .al-process-sketch{
+  display:none !important;
+}
+
+body.project-australian-light .al-lowfi-stack{
+  display:none !important;
+}
+
+body.project-australian-light .al-process-ui{
+  display:grid;
+
+  grid-template-columns:minmax(180px,.23fr) minmax(0,.77fr);
+
+  gap:clamp(26px,4vw,62px);
+
+  align-items:start;
+}
+
+body.project-australian-light .al-process-nav{
+  position:sticky;
+
+  top:100px;
+
+  display:flex;
+  flex-direction:column;
+
+  border-top:1px solid var(--al-line);
+}
+
+body.project-australian-light .al-process-button{
+  appearance:none;
+
+  display:grid;
+  grid-template-columns:34px 1fr;
+  gap:12px;
+
+  width:100%;
+
+  padding:17px 0;
+
+  border:0;
+  border-bottom:1px solid var(--al-line);
+
+  background:transparent;
+
+  color:#777169;
+
+  text-align:left;
+  cursor:pointer;
+
+  transition:
+    color .2s ease,
+    padding-left .2s ease;
+}
+
+body.project-australian-light .al-process-button:hover,
+body.project-australian-light .al-process-button.is-active{
+  color:#11110f;
+  padding-left:8px;
+}
+
+body.project-australian-light .al-process-button small{
+  font:500 9px/1 var(--mono,monospace);
+}
+
+body.project-australian-light .al-process-button span{
+  font-size:13px;
+}
+
+body.project-australian-light .al-process-stage-wrap{
+  min-width:0;
+}
+
+body.project-australian-light .al-process-stage-meta{
+  display:flex;
+  justify-content:space-between;
+  gap:30px;
+
+  margin-bottom:12px;
+
+  font:500 9px/1 var(--mono,monospace);
+  letter-spacing:.11em;
+
+  color:#746e66;
+}
+
+body.project-australian-light .al-process-stage{
+  position:relative;
+
+  width:100%;
+
+  min-height:min(72vh,820px);
+
+  padding:clamp(18px,2vw,34px);
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  overflow:hidden;
+
+  background:#f7f5ef;
+
+  border:1px solid rgba(17,17,15,.10);
+}
+
+body.project-australian-light .al-process-stage img{
+  display:block;
+
+  max-width:100%;
+  max-height:min(68vh,780px);
+
+  width:auto;
+  height:auto;
+
+  object-fit:contain !important;
+
+  box-shadow:none !important;
+}
+
+body.project-australian-light .al-process-thumbs{
+  display:grid;
+  grid-template-columns:repeat(6,1fr);
+
+  gap:7px;
+
+  margin-top:12px;
+}
+
+body.project-australian-light .al-process-thumb{
+  appearance:none;
+
+  position:relative;
+
+  aspect-ratio:4 / 3;
+
+  padding:0;
+
+  overflow:hidden;
+
+  border:1px solid transparent;
+
+  background:#efebe2;
+
+  cursor:pointer;
+}
+
+body.project-australian-light .al-process-thumb img{
+  width:100%;
+  height:100%;
+
+  object-fit:contain;
+
+  background:#f7f5ef;
+
+  opacity:.48;
+
+  transition:opacity .2s ease;
+}
+
+body.project-australian-light .al-process-thumb:hover img,
+body.project-australian-light .al-process-thumb.is-active img{
+  opacity:1;
+}
+
+body.project-australian-light .al-process-thumb.is-active{
+  border-color:#11110f;
+}
+
+
+/* =========================================================
+   04 — VISUAL SYSTEM REDESIGN
+   ========================================================= */
+
+
+body.project-australian-light .al-direction-media{
+  display:contents !important;
+}
+
+body.project-australian-light .al-direction-main{
+  position:relative !important;
+
+  width:100% !important;
+  height:auto !important;
+
+  margin:0 !important;
+
+  overflow:visible !important;
+
+  background:none !important;
+}
+
+body.project-australian-light .al-direction-main::after{
+  content:none !important;
+}
+
+body.project-australian-light .al-direction-main img{
+  display:block !important;
+
+  width:100% !important;
+  height:auto !important;
+
+  object-fit:contain !important;
+}
+
+body.project-australian-light .al-direction-main figcaption{
+  position:static !important;
+
+  display:block;
+
+  margin-top:10px;
+  padding:0 !important;
+
+  background:none !important;
+
+  color:#736e67 !important;
+
+  backdrop-filter:none !important;
+}
+
+
+/* phone mockup */
+
+
+body.project-australian-light .al-direction-mobile::before{
+  content:"";
+
+  position:absolute;
+
+  z-index:6;
+
+  left:50%;
+  top:16px;
+
+  width:82px;
+  height:22px;
+
+  transform:translateX(-50%);
+
+  border-radius:20px;
+
+  background:#080808;
+
+  pointer-events:none;
+}
+
+
+body.project-australian-light .al-direction-phone-screen::-webkit-scrollbar{
+  display:none;
+}
+
+body.project-australian-light .al-direction-phone-screen img{
+  display:block !important;
+
+  width:100% !important;
+  height:auto !important;
+
+  max-width:none !important;
+
+  object-fit:initial !important;
+}
+
+
+/* =========================================================
+   05 — FLOW CONTRAST
+   ========================================================= */
+
+body.project-australian-light .al-flow{
+  background:#d9d5cc !important;
+  color:#11110f !important;
+}
+
+body.project-australian-light .al-flow .al-rule{
+  background:rgba(17,17,15,.18) !important;
+}
+
+body.project-australian-light .al-flow-card figure{
+  background:#f6f3eb !important;
+
+  box-shadow:
+    0 22px 54px rgba(17,17,15,.10);
+}
+
+body.project-australian-light .al-flow-card img{
+  background:#f6f3eb !important;
+}
+
+body.project-australian-light .al-flow-card-meta span{
+  color:#857050 !important;
+}
+
+body.project-australian-light .al-flow-card-meta p{
+  color:#5e5952 !important;
+}
+
+body.project-australian-light .al-flow-progress{
+  background:rgba(17,17,15,.15) !important;
+}
+
+body.project-australian-light .al-flow-progress span{
+  background:#11110f !important;
+}
+
+
+/* controls */
+
+body.project-australian-light .al-flow-controls{
+  display:flex;
+
+  justify-content:flex-end;
+  align-items:center;
+
+  gap:9px;
+
+  margin-top:22px;
+}
+
+body.project-australian-light .al-flow-control{
+  appearance:none;
+
+  display:grid;
+  place-items:center;
+
+  width:46px;
+  height:46px;
+
+  padding:0;
+
+  border:1px solid rgba(17,17,15,.30);
+  border-radius:50%;
+
+  background:transparent;
+
+  color:#111;
+
+  font-size:21px;
+
+  cursor:pointer;
+
+  transition:
+    background .2s ease,
+    color .2s ease;
+}
+
+body.project-australian-light .al-flow-control:hover{
+  background:#111;
+  color:#f6f3eb;
+}
+
+body.project-australian-light .al-flow-counter{
+  min-width:66px;
+
+  text-align:center;
+
+  font:500 10px/1 var(--mono,monospace);
+  letter-spacing:.1em;
+}
+
+
+/* =========================================================
+   07 — NORMAL LAPTOP RATIO
+   ========================================================= */
+
+body.project-australian-light .al-laptop{
+  width:min(96vw,1380px) !important;
+}
+
+body.project-australian-light .al-laptop-screen{
+  width:94% !important;
+
+  padding:11px 11px 0 !important;
+
+  border-radius:21px 21px 7px 7px !important;
+}
+
+body.project-australian-light .al-browser{
+  width:100% !important;
+
+  height:auto !important;
+  min-height:0 !important;
+
+  aspect-ratio:16 / 10 !important;
+
+  border-radius:10px 10px 0 0 !important;
+}
+
+body.project-australian-light .al-browser-bar{
+  height:36px !important;
+}
+
+body.project-australian-light .al-browser iframe{
+  width:100% !important;
+
+  height:calc(100% - 36px) !important;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media(max-width:900px){
+
+  body.project-australian-light .al-audit-viewer,
+  body.project-australian-light .al-process-ui{
+    grid-template-columns:1fr;
+  }
+
+  body.project-australian-light .al-process-nav{
+    position:static;
+
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+  }
+
+  
+
+  body.project-australian-light .al-direction-layout > div:first-child{
+    grid-column:1 / -1;
+  }
+
+}
+
+@media(max-width:640px){
+
+  
+
+  body.project-australian-light .al-direction-layout > div:first-child{
+    grid-column:auto;
+  }
+
+  
+
+  body.project-australian-light .al-process-thumbs{
+    grid-template-columns:repeat(3,1fr);
+  }
+
+}
+
+
+/* ===== END AUSTRALIAN LIGHT — REFINE PASS 04 ===== */
+
+
+/* Australian Light — next project */
+
+body.project-australian-light .al-next-project{
+  grid-auto-flow:column;
+}
+
+body.project-australian-light .al-next-project .meta-mono{
+  display:block;
+
+  margin-bottom:clamp(12px,1vw,17px);
+}
+
+body.project-australian-light .al-next-title{
+  display:block;
+}
+
+
+/* =========================================================
+   AUSTRALIAN LIGHT — REFINE 05
+   03 / PROCESS VIEWER
+   ========================================================= */
+
+body.project-australian-light .al-process-ui{
+  grid-template-columns:
+    minmax(190px, .22fr)
+    minmax(0, .78fr) !important;
+
+  gap:clamp(34px,4vw,64px) !important;
+}
+
+body.project-australian-light .al-process-nav{
+  top:92px !important;
+}
+
+body.project-australian-light .al-process-button{
+  padding:14px 0 !important;
+
+  grid-template-columns:30px 1fr !important;
+}
+
+body.project-australian-light .al-process-button small{
+  opacity:.65;
+}
+
+body.project-australian-light .al-process-button.is-active{
+  padding-left:10px !important;
+}
+
+body.project-australian-light .al-process-button.is-active::before{
+  content:"";
+
+  position:absolute;
+
+  left:0;
+
+  width:2px;
+  height:18px;
+
+  background:#11110f;
+}
+
+body.project-australian-light .al-process-button{
+  position:relative;
+}
+
+
+body.project-australian-light .al-process-stage-wrap{
+  min-width:0;
+}
+
+body.project-australian-light .al-process-stage-meta{
+  margin-bottom:14px !important;
+
+  padding-bottom:11px;
+
+  border-bottom:1px solid rgba(17,17,15,.12);
+}
+
+
+/*
+  The stage is deliberately finite.
+  Images remain fully visible with object-fit:contain.
+*/
+
+body.project-australian-light .al-process-stage{
+  min-height:0 !important;
+  height:clamp(460px,52vw,720px) !important;
+
+  padding:clamp(28px,3.5vw,58px) !important;
+
+  background:#f5f2ea !important;
+
+  border:1px solid rgba(17,17,15,.10) !important;
+}
+
+body.project-australian-light .al-process-stage img{
+  display:block;
+
+  width:auto !important;
+  height:auto !important;
+
+  max-width:100% !important;
+  max-height:100% !important;
+
+  object-fit:contain !important;
+
+  margin:auto;
+}
+
+
+/* thumbnails become readable navigation */
+
+body.project-australian-light .al-process-thumbs{
+  grid-template-columns:repeat(6,minmax(0,1fr)) !important;
+
+  gap:8px !important;
+
+  margin-top:14px !important;
+}
+
+body.project-australian-light .al-process-thumb{
+  aspect-ratio:16 / 10 !important;
+
+  border:1px solid rgba(17,17,15,.10) !important;
+
+  background:#f5f2ea !important;
+}
+
+body.project-australian-light .al-process-thumb img{
+  padding:5px;
+
+  object-fit:contain !important;
+
+  opacity:.58 !important;
+}
+
+body.project-australian-light .al-process-thumb:hover img,
+body.project-australian-light .al-process-thumb.is-active img{
+  opacity:1 !important;
+}
+
+body.project-australian-light .al-process-thumb.is-active{
+  border-color:#11110f !important;
+}
+
+
+/* =========================================================
+   04 — SIGNATURE VISUAL SYSTEM / DEVICE VIEWERS
+   ========================================================= */
+
+body.project-australian-light .al-direction{
+  padding-bottom:clamp(96px,8vw,138px) !important;
+}
+
+
+/* media wrappers */
+
+body.project-australian-light .al-direction-media{
+  display:contents !important;
+}
+
+
+/* ---------------------------------------------------------
+   DESKTOP BROWSER
+   --------------------------------------------------------- */
+
+
+body.project-australian-light .al-device-browser{
+  overflow:hidden;
+
+  width:100%;
+
+  border-radius:10px;
+
+  border:1px solid rgba(17,17,15,.16);
+
+  background:#151412;
+
+  box-shadow:
+    0 28px 70px rgba(17,17,15,.16);
+}
+
+body.project-australian-light .al-device-browser-bar{
+  display:grid;
+
+  grid-template-columns:
+    9px
+    9px
+    9px
+    1fr;
+
+  align-items:center;
+
+  gap:6px;
+
+  height:35px;
+
+  padding:0 11px;
+
+  background:#242321;
+}
+
+body.project-australian-light .al-device-browser-bar > span{
+  width:7px;
+  height:7px;
+
+  border-radius:50%;
+
+  background:#77736d;
+}
+
+body.project-australian-light .al-device-browser-bar > div{
+  justify-self:center;
+
+  width:min(56%,310px);
+
+  padding:5px 12px;
+
+  border-radius:12px;
+
+  background:#1b1a18;
+
+  color:#77736d;
+
+  text-align:center;
+
+  font:500 8px/1 var(--mono,monospace);
+
+  letter-spacing:.05em;
+}
+
+
+/*
+  Fixed browser viewport.
+  User scrolls screenshot inside it.
+*/
+
+body.project-australian-light .al-device-browser-scroll{
+  width:100%;
+
+  aspect-ratio:16 / 10;
+
+  overflow-y:auto;
+  overflow-x:hidden;
+
+  background:#111;
+
+  scrollbar-width:thin;
+
+  scrollbar-color:
+    rgba(255,255,255,.3)
+    transparent;
+}
+
+body.project-australian-light .al-device-browser-scroll img{
+  display:block;
+
+  width:100% !important;
+  height:auto !important;
+
+  max-width:none !important;
+
+  object-fit:initial !important;
+}
+
+
+/* ---------------------------------------------------------
+   PHONE
+   --------------------------------------------------------- */
+
+
+body.project-australian-light .al-direction-mobile::before{
+  content:"";
+
+  position:absolute;
+
+  z-index:5;
+
+  left:50%;
+  top:16px;
+
+  width:75px;
+  height:21px;
+
+  transform:translateX(-50%);
+
+  border-radius:999px;
+
+  background:#070707;
+}
+
+
+body.project-australian-light
+.al-direction-phone-screen::-webkit-scrollbar{
+  display:none;
+}
+
+body.project-australian-light
+.al-direction-phone-screen img{
+  display:block !important;
+
+  width:100% !important;
+  height:auto !important;
+
+  max-width:none !important;
+
+  object-fit:initial !important;
+}
+
+
+/* captions */
+
+
+/* remove previous direction image behaviour */
+
+body.project-australian-light
+.al-direction-main{
+  display:none !important;
+}
+
+
+/* =========================================================
+   05 — SHOPPING FLOW / EDITORIAL SWIPE
+   ========================================================= */
+
+body.project-australian-light .al-flow{
+  background:#d3cec4 !important;
+}
+
+body.project-australian-light .al-flow-rail{
+  display:flex !important;
+
+  gap:clamp(18px,2vw,30px) !important;
+
+  overflow-x:auto !important;
+  overflow-y:hidden !important;
+
+  scroll-snap-type:x mandatory;
+
+  overscroll-behavior-inline:contain;
+
+  padding:
+    0
+    var(--al-pad)
+    18px
+    !important;
+
+  margin-left:calc(var(--al-pad) * -1);
+  margin-right:calc(var(--al-pad) * -1);
+
+  scrollbar-width:none;
+}
+
+body.project-australian-light
+.al-flow-rail::-webkit-scrollbar{
+  display:none;
+}
+
+body.project-australian-light .al-flow-card{
+  flex:
+    0
+    0
+    min(76vw,1120px)
+    !important;
+
+  scroll-snap-align:start;
+  scroll-snap-stop:always;
+}
+
+body.project-australian-light .al-flow-card figure{
+  aspect-ratio:16 / 9 !important;
+
+  background:#ece8df !important;
+
+  box-shadow:
+    0 24px 65px rgba(30,27,22,.11);
+}
+
+body.project-australian-light .al-flow-card img{
+  display:block;
+
+  width:100% !important;
+  height:100% !important;
+
+  object-fit:contain !important;
+
+  background:#ece8df !important;
+}
+
+
+/* metadata more editorial */
+
+body.project-australian-light .al-flow-card-meta{
+  display:grid;
+
+  grid-template-columns:50px minmax(0,1fr);
+
+  gap:18px;
+
+  padding-top:17px !important;
+}
+
+body.project-australian-light
+.al-flow-card-meta strong{
+  display:block;
+
+  margin-bottom:6px;
+
+  font-size:clamp(17px,1.35vw,22px);
+}
+
+body.project-australian-light
+.al-flow-card-meta p{
+  margin:0;
+
+  color:#635e56 !important;
+}
+
+
+/* progress */
+
+body.project-australian-light .al-flow-progress{
+  height:2px !important;
+
+  margin-top:30px !important;
+
+  background:rgba(17,17,15,.13) !important;
+}
+
+body.project-australian-light
+.al-flow-progress span{
+  width:100% !important;
+
+  transform-origin:left center !important;
+
+  background:#11110f !important;
+}
+
+
+/* =========================================================
+   07 — LIVE PRODUCT / LAPTOP POLISH
+   ========================================================= */
+
+body.project-australian-light .al-live{
+  padding-top:clamp(90px,7vw,118px) !important;
+  padding-bottom:clamp(96px,8vw,130px) !important;
+}
+
+body.project-australian-light .al-laptop-wrap{
+  margin-top:clamp(48px,4.5vw,70px) !important;
+}
+
+body.project-australian-light .al-laptop{
+  width:min(92vw,1360px) !important;
+
+  margin-inline:auto;
+}
+
+body.project-australian-light .al-laptop-screen{
+  width:92% !important;
+
+  margin:auto;
+
+  padding:
+    12px
+    12px
+    0
+    !important;
+
+  border-radius:
+    20px
+    20px
+    7px
+    7px
+    !important;
+
+  background:#191919;
+
+  box-shadow:
+    0 30px 70px rgba(37,27,13,.21);
+}
+
+
+/*
+  16:10 standard laptop display
+*/
+
+body.project-australian-light .al-browser{
+  position:relative;
+
+  width:100% !important;
+
+  aspect-ratio:16 / 10 !important;
+
+  height:auto !important;
+
+  min-height:0 !important;
+
+  overflow:hidden;
+
+  border-radius:
+    9px
+    9px
+    2px
+    2px
+    !important;
+
+  background:#111;
+}
+
+body.project-australian-light .al-browser-bar{
+  display:grid !important;
+
+  grid-template-columns:
+    42px
+    1fr
+    42px;
+
+  align-items:center;
+
+  height:42px !important;
+
+  padding-inline:13px;
+
+  background:#242424 !important;
+}
+
+
+/* fake browser traffic-light dots */
+
+body.project-australian-light
+.al-browser-bar::before{
+  content:"•••";
+
+  color:#777;
+
+  font-size:12px;
+
+  letter-spacing:3px;
+}
+
+
+/* URL pill */
+
+body.project-australian-light
+.al-browser-bar::after{
+  content:"australianlight";
+
+  justify-self:center;
+
+  grid-column:2;
+
+  width:min(58%,430px);
+
+  padding:6px 14px;
+
+  border-radius:999px;
+
+  background:#1c1c1c;
+
+  color:#727272;
+
+  text-align:center;
+
+  font:500 8px/1 var(--mono,monospace);
+
+  letter-spacing:.05em;
+}
+
+
+/* actual site */
+
+body.project-australian-light .al-browser iframe{
+  display:block;
+
+  width:100% !important;
+
+  height:calc(100% - 42px) !important;
+
+  border:0;
+}
+
+
+/* =========================================================
+   AUSTRALIAN LIGHT — CHAPTER RAIL POLISH
+   ========================================================= */
+
+body.project-australian-light
+.al-chapter-rail{
+  right:20px;
+}
+
+body.project-australian-light
+.al-chapter-rail a::before{
+  width:14px;
+
+  opacity:.28;
+
+  transition:
+    width .2s ease,
+    opacity .2s ease;
+}
+
+body.project-australian-light
+.al-chapter-rail a:hover::before,
+body.project-australian-light
+.al-chapter-rail a.is-active::before{
+  width:30px;
+
+  opacity:1;
+}
+
+
+/* ===== AUSTRALIAN LIGHT — REFINE PASS 06 ===== */
+
+
+/* =========================================================
+   01 — ORIGINAL WEBSITE / AUDIT
+   ========================================================= */
+
+body.project-australian-light .al-audit-tabs{
+  position:relative;
+  z-index:5;
+}
+
+body.project-australian-light .al-audit-tab{
+  position:relative;
+  z-index:6;
+
+  pointer-events:auto !important;
+  cursor:pointer !important;
+}
+
+body.project-australian-light .al-audit-tab::after{
+  content:"";
+
+  position:absolute;
+
+  left:0;
+  bottom:-1px;
+
+  width:0;
+  height:1px;
+
+  background:#f5f1e8;
+
+  transition:width .25s ease;
+}
+
+body.project-australian-light .al-audit-tab:hover::after,
+body.project-australian-light .al-audit-tab.is-active::after{
+  width:100%;
+}
+
+body.project-australian-light .al-audit-stage{
+  max-height:72vh !important;
+}
+
+
+/* =========================================================
+   03 — PROCESS
+
+   Sketch and Low-Fi are now visually separate systems.
+   ========================================================= */
+
+body.project-australian-light .al-process-ui{
+  display:grid !important;
+
+  grid-template-columns:
+    minmax(250px,.28fr)
+    minmax(0,.72fr)
+    !important;
+
+  gap:clamp(36px,4vw,68px) !important;
+
+  align-items:start !important;
+}
+
+
+/* left controller */
+
+body.project-australian-light .al-process-nav{
+  position:sticky !important;
+
+  top:92px !important;
+
+  display:block !important;
+
+  border:0 !important;
+}
+
+
+/* runtime-created groups */
+
+body.project-australian-light .al-process-group{
+  margin:0 0 34px;
+}
+
+body.project-australian-light .al-process-group:last-child{
+  margin-bottom:0;
+}
+
+body.project-australian-light .al-process-group-title{
+  display:flex;
+
+  justify-content:space-between;
+  align-items:center;
+
+  margin:0 0 10px;
+
+  padding:0 0 10px;
+
+  border-bottom:1px solid rgba(17,17,15,.20);
+
+  font:600 9px/1 var(--mono,monospace);
+
+  letter-spacing:.14em;
+  text-transform:uppercase;
+}
+
+body.project-australian-light
+.al-process-group-title span:last-child{
+  opacity:.42;
+}
+
+
+/* Sketch = compact 2 × 2 */
+
+body.project-australian-light
+.al-process-group[data-process-group="sketch"]
+.al-process-group-buttons{
+  display:grid;
+
+  grid-template-columns:1fr 1fr;
+
+  gap:0 14px;
+}
+
+
+/* Low-Fi = compact two-column index */
+
+body.project-australian-light
+.al-process-group[data-process-group="lowfi"]
+.al-process-group-buttons{
+  display:grid;
+
+  grid-template-columns:1fr 1fr;
+
+  gap:0 14px;
+}
+
+
+body.project-australian-light .al-process-button{
+  position:relative !important;
+
+  display:grid !important;
+
+  grid-template-columns:26px minmax(0,1fr) !important;
+
+  gap:8px !important;
+
+  min-height:44px;
+
+  padding:12px 0 !important;
+
+  border:0 !important;
+  border-bottom:1px solid rgba(17,17,15,.13) !important;
+
+  background:transparent !important;
+
+  pointer-events:auto !important;
+  cursor:pointer !important;
+
+  color:#777168 !important;
+}
+
+body.project-australian-light .al-process-button::before{
+  content:"";
+
+  position:absolute;
+
+  left:0;
+  top:50%;
+
+  width:2px;
+  height:0;
+
+  transform:translateY(-50%);
+
+  background:#11110f;
+
+  transition:height .2s ease;
+}
+
+body.project-australian-light .al-process-button:hover,
+body.project-australian-light .al-process-button.is-active{
+  padding-left:8px !important;
+
+  color:#11110f !important;
+}
+
+body.project-australian-light
+.al-process-button.is-active::before{
+  height:18px;
+}
+
+body.project-australian-light .al-process-button small{
+  font-size:8px;
+}
+
+body.project-australian-light .al-process-button span{
+  min-width:0;
+
+  overflow:hidden;
+
+  text-overflow:ellipsis;
+  white-space:nowrap;
+
+  font-size:11px !important;
+}
+
+
+/* viewer */
+
+body.project-australian-light .al-process-stage-meta{
+  margin-bottom:12px !important;
+
+  padding-bottom:12px !important;
+
+  border-bottom:1px solid rgba(17,17,15,.14);
+}
+
+body.project-australian-light .al-process-stage{
+  width:100% !important;
+
+  height:clamp(470px,52vw,700px) !important;
+  min-height:0 !important;
+
+  padding:clamp(28px,3.5vw,54px) !important;
+
+  overflow:hidden !important;
+
+  background:#f6f3eb !important;
+
+  border:1px solid rgba(17,17,15,.11) !important;
+}
+
+body.project-australian-light .al-process-stage img{
+  display:block !important;
+
+  width:auto !important;
+  height:auto !important;
+
+  max-width:100% !important;
+  max-height:100% !important;
+
+  margin:auto !important;
+
+  object-fit:contain !important;
+}
+
+
+/* thumbnails are secondary navigation only */
+
+body.project-australian-light .al-process-thumbs{
+  grid-template-columns:repeat(6,minmax(0,1fr)) !important;
+
+  gap:7px !important;
+
+  margin-top:12px !important;
+}
+
+body.project-australian-light .al-process-thumb{
+  aspect-ratio:16 / 9 !important;
+
+  background:#f6f3eb !important;
+
+  pointer-events:auto !important;
+  cursor:pointer !important;
+}
+
+body.project-australian-light .al-process-thumb img{
+  padding:4px;
+
+  object-fit:contain !important;
+}
+
+
+/* =========================================================
+   04 — SIGNATURE VISUAL SYSTEM
+   ONE HEIGHT SYSTEM
+   ========================================================= */
+
+body.project-australian-light .al-direction{
+  --al-direction-device-h:
+    clamp(500px,46vw,650px);
+}
+
+
+/* left system column */
+
+body.project-australian-light
+.al-direction-layout > :first-child{
+  min-height:var(--al-direction-device-h);
+
+  display:flex;
+  flex-direction:column;
+}
+
+body.project-australian-light
+.al-direction-layout > :first-child
+.al-type{
+  margin-top:auto;
+}
+
+
+/* Desktop browser */
+
+
+body.project-australian-light .al-device-browser{
+  display:flex;
+
+  flex-direction:column;
+
+  width:100% !important;
+  height:var(--al-direction-device-h) !important;
+
+  overflow:hidden;
+
+  border-radius:11px !important;
+
+  background:#111 !important;
+}
+
+body.project-australian-light .al-device-browser-bar{
+  flex:0 0 38px;
+
+  height:38px !important;
+}
+
+body.project-australian-light .al-device-browser-scroll{
+  flex:1 1 auto;
+
+  width:100% !important;
+  height:auto !important;
+
+  min-height:0;
+
+  aspect-ratio:auto !important;
+
+  overflow-y:auto !important;
+  overflow-x:hidden !important;
+
+  overscroll-behavior:contain;
+
+  background:#111 !important;
+}
+
+body.project-australian-light
+.al-device-browser-scroll img{
+  display:block;
+
+  width:100% !important;
+  height:auto !important;
+
+  max-width:none !important;
+}
+
+
+/* Phone uses EXACT same outer height */
+
+
+/* matching caption baseline */
+
+
+/* Phone caption should NOT distort phone height */
+
+
+/* =========================================================
+   05 — SHOPPING FLOW
+
+   All cards have:
+   - same width
+   - same viewport height
+   - NO contain-letterboxing
+   - long screenshots scroll vertically
+   ========================================================= */
+
+body.project-australian-light .al-flow{
+  background:#d2cdc3 !important;
+}
+
+body.project-australian-light .al-flow-rail{
+  gap:clamp(18px,1.7vw,26px) !important;
+
+  align-items:flex-start !important;
+
+  padding-top:4px !important;
+}
+
+
+/* significantly smaller than previous version */
+
+body.project-australian-light .al-flow-card{
+  flex:
+    0
+    0
+    min(54vw,780px)
+    !important;
+
+  width:min(54vw,780px) !important;
+
+  scroll-snap-align:start !important;
+}
+
+
+/*
+  figure itself is a browser viewport.
+  Every card gets exactly the same physical dimensions.
+*/
+
+body.project-australian-light .al-flow-card figure{
+  position:relative;
+
+  display:block;
+
+  width:100% !important;
+
+  height:clamp(390px,38vw,540px) !important;
+
+  aspect-ratio:auto !important;
+
+  margin:0 !important;
+
+  padding:0 !important;
+
+  overflow-x:hidden !important;
+  overflow-y:auto !important;
+
+  overscroll-behavior:contain;
+
+  background:#111 !important;
+
+  box-shadow:
+    0 20px 48px rgba(30,27,22,.10);
+
+  scrollbar-width:thin;
+
+  scrollbar-color:
+    rgba(255,255,255,.25)
+    rgba(255,255,255,.04);
+}
+
+
+/* Critical:
+   remove object-fit:contain → removes white bands.
+*/
+
+body.project-australian-light
+.al-flow-card figure img{
+  display:block !important;
+
+  width:100% !important;
+  height:auto !important;
+
+  min-width:100% !important;
+  max-width:none !important;
+  max-height:none !important;
+
+  margin:0 !important;
+  padding:0 !important;
+
+  object-fit:initial !important;
+  object-position:initial !important;
+
+  background:#111 !important;
+}
+
+
+/* same metadata rhythm underneath every frame */
+
+body.project-australian-light .al-flow-card-meta{
+  display:grid !important;
+
+  grid-template-columns:40px minmax(0,1fr) !important;
+
+  column-gap:14px !important;
+
+  min-height:102px;
+
+  padding-top:15px !important;
+}
+
+body.project-australian-light
+.al-flow-card-meta strong{
+  display:block;
+
+  margin:0 0 5px !important;
+
+  font-size:clamp(17px,1.3vw,21px) !important;
+
+  line-height:1 !important;
+}
+
+body.project-australian-light
+.al-flow-card-meta p{
+  margin:0 !important;
+
+  max-width:360px;
+
+  font-size:12px;
+  line-height:1.4;
+}
+
+
+/* subtle scroll hint on long pages */
+
+body.project-australian-light
+.al-flow-card figure::after{
+  content:"SCROLL";
+
+  position:sticky;
+
+  display:block;
+
+  left:100%;
+  bottom:8px;
+
+  width:max-content;
+
+  margin:
+    -22px
+    8px
+    8px
+    auto;
+
+  padding:5px 7px;
+
+  background:rgba(17,17,15,.72);
+
+  color:#d8d2c7;
+
+  font:500 7px/1 var(--mono,monospace);
+
+  letter-spacing:.12em;
+
+  pointer-events:none;
+}
+
+
+/* controls sit closer to the rail */
+
+body.project-australian-light .al-flow-controls{
+  margin-top:16px !important;
+}
+
+body.project-australian-light .al-flow-progress{
+  margin-top:22px !important;
+}
+
+
+/* =========================================================
+   07 — LIVE PROTOTYPE / SMALLER LAPTOP
+   ========================================================= */
+
+body.project-australian-light .al-laptop{
+  width:min(82vw,1160px) !important;
+
+  margin-inline:auto !important;
+}
+
+body.project-australian-light .al-laptop-screen{
+  width:91% !important;
+
+  padding:
+    9px
+    9px
+    0
+    !important;
+
+  border-radius:
+    18px
+    18px
+    5px
+    5px
+    !important;
+
+  background:#191919 !important;
+}
+
+body.project-australian-light .al-browser{
+  aspect-ratio:16 / 10 !important;
+
+  border-radius:
+    8px
+    8px
+    2px
+    2px
+    !important;
+}
+
+
+/* compact real-browser style header */
+
+body.project-australian-light .al-browser-bar{
+  position:relative;
+
+  display:flex !important;
+
+  align-items:center;
+  justify-content:center;
+
+  height:34px !important;
+
+  padding:0 56px !important;
+
+  background:#242424 !important;
+}
+
+body.project-australian-light
+.al-browser-bar::before{
+  content:"";
+
+  position:absolute;
+
+  left:13px;
+  top:50%;
+
+  width:7px;
+  height:7px;
+
+  transform:translateY(-50%);
+
+  border-radius:50%;
+
+  background:#666;
+
+  box-shadow:
+    13px 0 #666,
+    26px 0 #666;
+}
+
+body.project-australian-light
+.al-browser-bar::after{
+  content:"australianlight";
+
+  display:block;
+
+  width:min(54%,390px);
+
+  padding:5px 13px;
+
+  border-radius:999px;
+
+  background:#1b1b1b;
+
+  color:#6c6c6c;
+
+  text-align:center;
+
+  font:500 7px/1 var(--mono,monospace);
+
+  letter-spacing:.05em;
+}
+
+body.project-australian-light
+.al-browser iframe{
+  height:calc(100% - 34px) !important;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media(max-width:960px){
+
+  body.project-australian-light .al-process-ui{
+    grid-template-columns:1fr !important;
+  }
+
+  body.project-australian-light .al-process-nav{
+    position:static !important;
+  }
+
+  
+
+  body.project-australian-light
+  .al-direction-layout > :first-child{
+    grid-column:1 / -1;
+
+    min-height:0;
+  }
+
+  body.project-australian-light .al-flow-card{
+    flex-basis:72vw !important;
+    width:72vw !important;
+  }
+
+}
+
+
+@media(max-width:640px){
+
+  body.project-australian-light
+  .al-process-group[data-process-group="sketch"]
+  .al-process-group-buttons,
+  body.project-australian-light
+  .al-process-group[data-process-group="lowfi"]
+  .al-process-group-buttons{
+    grid-template-columns:1fr;
+  }
+
+  body.project-australian-light .al-direction{
+    --al-direction-device-h:540px;
+  }
+
+  
+
+  body.project-australian-light .al-direction-mobile{
+    justify-self:center;
+  }
+
+  body.project-australian-light .al-flow-card{
+    flex-basis:86vw !important;
+    width:86vw !important;
+  }
+
+  body.project-australian-light .al-iteration-grid{
+    grid-template-columns:1fr !important;
+  }
+
+  body.project-australian-light
+  .al-iteration-item{
+    padding:
+      30px
+      0
+      !important;
+  }
+
+  body.project-australian-light
+  .al-iteration-item + .al-iteration-item{
+    border-left:0 !important;
+
+    border-top:
+      1px solid rgba(17,17,15,.14);
+  }
+
+}
+
+  body.project-australian-light
+  .al-process-group[data-process-group="sketch"]
+  .al-process-group-buttons,
+  body.project-australian-light
+  .al-process-group[data-process-group="lowfi"]
+  .al-process-group-buttons{
+    grid-template-columns:1fr;
+  }
+
+  body.project-australian-light .al-direction{
+    --al-direction-device-h:540px;
+  }
+
+  
+
+  
+
+  body.project-australian-light .al-flow-card{
+
+}
+
+
+/* ===== END AUSTRALIAN LIGHT — REFINE PASS 06 ===== */
+
+
+/* Australian Light — nested scroll behaviour */
+
+body.project-australian-light .al-flow-card figure{
+  touch-action:pan-y;
+  cursor:ns-resize;
+}
+
+body.project-australian-light .al-flow-rail{
+  touch-action:pan-x;
+}
+
+
+body.project-australian-light
+.al-browser-bar{
+  color:transparent !important;
+
+  font-size:0 !important;
+}
+
+body.project-australian-light
+.al-browser-bar > *{
+  opacity:0 !important;
+
+  pointer-events:none;
+}
+
+
+/* =========================================================
+   AUSTRALIAN LIGHT — HERO = VIEWPORT HEIGHT
+   ========================================================= */
+
+body.project-australian-light .al-hero{
+  height:100svh !important;
+  min-height:100svh !important;
+  max-height:100svh !important;
+
+  overflow:hidden !important;
+
+  box-sizing:border-box !important;
+}
+
+body.project-australian-light .al-hero > .al-shell,
+body.project-australian-light .al-hero-grid{
+  height:100% !important;
+  min-height:0 !important;
+
+  box-sizing:border-box !important;
+}
+
+
+/* keep hero content inside the viewport */
+
+body.project-australian-light .al-hero-grid{
+  align-content:center !important;
+}
+
+
+/* prevent media from pushing hero beyond 100svh */
+
+body.project-australian-light .al-hero-frame,
+body.project-australian-light .al-hero-media{
+  max-height:calc(100svh - 190px) !important;
+}
+
+body.project-australian-light .al-hero-frame img,
+body.project-australian-light .al-hero-media img{
+  max-height:100% !important;
+  object-fit:contain !important;
+}
+
+
+/* metadata stays inside the hero rather than increasing height */
+
+body.project-australian-light .al-hero .al-meta{
+  flex-shrink:0 !important;
+}
+
+
+/* mobile can grow naturally if content no longer fits */
+
+@media(max-width:640px){
+
+  body.project-australian-light .al-hero{
+    height:auto !important;
+    min-height:100svh !important;
+    max-height:none !important;
+
+    overflow:visible !important;
+  }
+
+}
+
+
+
+
+/* =========================================================
+   EDITORIAL TYPOGRAPHY
+   Georgia = display/editorial voice
+   Sans = interface / utility voice
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   HERO TITLE
+   --------------------------------------------------------- */
+
+body.project-australian-light .al-hero h1{
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif !important;
+
+  font-weight:700 !important;
+  font-style:normal !important;
+
+  letter-spacing:-.035em !important;
+  line-height:.91 !important;
+}
+
+
+/* ---------------------------------------------------------
+   MAJOR SECTION HEADINGS
+   01 → 08
+   --------------------------------------------------------- */
+
+body.project-australian-light .al-section-head h2{
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif !important;
+
+  font-weight:700 !important;
+  font-style:normal !important;
+
+  letter-spacing:-.025em !important;
+  line-height:.96 !important;
+}
+
+
+/* ---------------------------------------------------------
+   VISUAL SYSTEM / EDITORIAL TYPE
+   --------------------------------------------------------- */
+
+body.project-australian-light .al-type-display{
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif !important;
+
+  font-weight:400 !important;
+  font-style:normal !important;
+}
+
+
+/* ---------------------------------------------------------
+   KEEP FUNCTIONAL UI TYPOGRAPHY SANS
+   --------------------------------------------------------- */
+
+body.project-australian-light .al-hero-kicker,
+body.project-australian-light .al-meta,
+body.project-australian-light .al-section-no,
+body.project-australian-light .al-eyebrow,
+body.project-australian-light .al-audit-tab,
+body.project-australian-light .al-process-button,
+body.project-australian-light .al-process-group-title,
+body.project-australian-light .al-process-stage-meta,
+body.project-australian-light .al-flow-card-meta,
+body.project-australian-light .al-flow-counter,
+body.project-australian-light figcaption,
+body.project-australian-light button{
+  font-family:inherit;
+}
+
+
+/* ===== END AUSTRALIAN LIGHT — CANELA TYPOGRAPHY ===== */
+
+
+/* ===== AUSTRALIAN LIGHT — TYPE / SPACING REFINE ===== */
+
+/* Smaller section H2 */
+body.project-australian-light .al-section-head h2{
+  font-size:clamp(38px,4.2vw,68px) !important;
+  line-height:.98 !important;
+}
+
+
+/* Less top spacing for issues section */
+body.project-australian-light .al-issues{
+  margin-top:clamp(28px,3vw,48px) !important;
+}
+
+
+/* ===== END AUSTRALIAN LIGHT — TYPE / SPACING REFINE ===== */
+
+
+/* ===== AUSTRALIAN LIGHT — SECTION 03 REDESIGN ===== */
+
+
+/* ---------------------------------------------------------
+   Reset the old interactive viewer
+   --------------------------------------------------------- */
+
+body.project-australian-light .al-process-ui{
+  display:block !important;
+  grid-template-columns:none !important;
+  gap:0 !important;
+
+  margin-top:clamp(52px,6vw,92px);
+}
+
+body.project-australian-light .al-process-editorial{
+  width:100%;
+}
+
+
+/* ---------------------------------------------------------
+   Shared chapter structure
+   --------------------------------------------------------- */
+
+body.project-australian-light .al-process-chapter{
+  border-top:1px solid rgba(20,20,18,.17);
+  padding-top:18px;
+}
+
+body.project-australian-light .al-process-chapter + .al-process-chapter{
+  margin-top:clamp(100px,10vw,170px);
+}
+
+body.project-australian-light .al-process-chapter-head{
+  display:grid;
+  grid-template-columns:
+    72px
+    minmax(260px,.8fr)
+    minmax(280px,.7fr);
+
+  gap:clamp(28px,4vw,72px);
+  align-items:start;
+
+  margin-bottom:clamp(42px,5vw,76px);
+}
+
+body.project-australian-light .al-process-chapter-index{
+  font-family:inherit;
+  font-size:10px;
+  line-height:1;
+  letter-spacing:.15em;
+
+  color:rgba(20,20,18,.46);
+
+  padding-top:5px;
+}
+
+body.project-australian-light .al-process-chapter-title span{
+  display:block;
+
+  margin-bottom:10px;
+
+  font-size:10px;
+  font-weight:700;
+  line-height:1;
+  letter-spacing:.18em;
+}
+
+body.project-australian-light .al-process-chapter-title h3{
+  margin:0;
+
+  max-width:620px;
+
+  font-family: Georgia, serif;
+  font-size:clamp(32px,3.2vw,52px);
+  font-weight:700;
+  line-height:.98;
+  letter-spacing:-.027em;
+}
+
+body.project-australian-light .al-process-chapter-head > p{
+  max-width:480px;
+  margin:2px 0 0;
+
+  font-size:clamp(13px,1.02vw,16px);
+  line-height:1.6;
+
+  color:rgba(20,20,18,.62);
+}
+
+
+/* =========================================================
+   SKETCH
+   ========================================================= */
+
+body.project-australian-light .al-sketch-grid{
+  display:grid;
+
+  grid-template-columns:
+    minmax(0,1.35fr)
+    minmax(0,.65fr);
+
+  grid-template-rows:repeat(3,minmax(170px,auto));
+
+  gap:12px;
+}
+
+body.project-australian-light .al-sketch-card{
+  margin:0;
+
+  display:grid;
+  grid-template-rows:1fr auto;
+
+  min-width:0;
+
+  border-top:1px solid rgba(20,20,18,.16);
+}
+
+body.project-australian-light .al-sketch-card--large{
+  grid-row:span 3;
+}
+
+body.project-australian-light .al-sketch-card .al-process-image{
+  min-height:0;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  overflow:hidden;
+
+  background:#dedbd1;
+}
+
+body.project-australian-light .al-sketch-card--large .al-process-image{
+  min-height:clamp(560px,55vw,820px);
+}
+
+body.project-australian-light .al-sketch-card:not(.al-sketch-card--large) .al-process-image{
+  min-height:clamp(170px,17vw,245px);
+}
+
+body.project-australian-light .al-sketch-card img{
+  width:100%;
+  height:100%;
+
+  display:block;
+
+  object-fit:contain;
+
+  padding:clamp(14px,1.8vw,28px);
+
+  box-sizing:border-box;
+}
+
+body.project-australian-light .al-sketch-card figcaption{
+  display:grid;
+  grid-template-columns:36px 1fr;
+
+  align-items:center;
+
+  min-height:47px;
+
+  border-top:1px solid rgba(20,20,18,.14);
+
+  font-size:10px;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+
+body.project-australian-light .al-sketch-card figcaption span{
+  color:rgba(20,20,18,.42);
+}
+
+body.project-australian-light .al-sketch-card figcaption strong{
+  font-size:10px;
+  font-weight:500;
+}
+
+
+/* =========================================================
+   LOW-FI
+   This is a FLOW, not an image selector.
+   ========================================================= */
+
+body.project-australian-light .al-lowfi-flow{
+  display:flex;
+  flex-direction:column;
+
+  gap:clamp(74px,8vw,128px);
+}
+
+
+/* stage heading */
+
+body.project-australian-light .al-lowfi-group{
+  display:grid;
+
+  grid-template-columns:
+    minmax(160px,.24fr)
+    minmax(0,1fr);
+
+  gap:clamp(28px,5vw,82px);
+
+  align-items:start;
+}
+
+body.project-australian-light .al-lowfi-group-head{
+  position:sticky;
+  top:110px;
+
+  padding-top:13px;
+
+  border-top:1px solid rgba(20,20,18,.18);
+}
+
+body.project-australian-light .al-lowfi-group-head > span{
+  display:block;
+
+  margin-bottom:26px;
+
+  font-size:10px;
+  letter-spacing:.14em;
+
+  color:rgba(20,20,18,.42);
+}
+
+body.project-australian-light .al-lowfi-group-head h4{
+  margin:0 0 9px;
+
+  font-size:clamp(18px,1.45vw,24px);
+  font-weight:600;
+  letter-spacing:-.025em;
+}
+
+body.project-australian-light .al-lowfi-group-head p{
+  max-width:180px;
+
+  margin:0;
+
+  font-size:12px;
+  line-height:1.5;
+
+  color:rgba(20,20,18,.52);
+}
+
+
+/* screen collections */
+
+body.project-australian-light .al-lowfi-grid{
+  display:grid;
+  gap:12px;
+
+  min-width:0;
+}
+
+body.project-australian-light .al-lowfi-grid--discover{
+  grid-template-columns:repeat(4,minmax(0,1fr));
+}
+
+body.project-australian-light .al-lowfi-grid--browse{
+  grid-template-columns:repeat(2,minmax(0,1fr));
+}
+
+body.project-australian-light .al-lowfi-grid--purchase{
+  grid-template-columns:repeat(3,minmax(0,1fr));
+}
+
+body.project-australian-light .al-lowfi-grid figure{
+  min-width:0;
+  margin:0;
+}
+
+body.project-australian-light .al-lowfi-frame{
+  display:flex;
+  align-items:flex-start;
+  justify-content:center;
+
+  width:100%;
+  height:clamp(370px,37vw,590px);
+
+  overflow:hidden;
+
+  box-sizing:border-box;
+
+  padding:
+    clamp(18px,2.2vw,34px)
+    clamp(10px,1.5vw,24px);
+
+  background:#dedbd1;
+
+  border:1px solid rgba(20,20,18,.08);
+}
+
+body.project-australian-light .al-lowfi-frame img{
+  display:block;
+
+  width:100%;
+  height:100%;
+
+  object-fit:contain;
+  object-position:top center;
+}
+
+body.project-australian-light .al-lowfi-grid figcaption{
+  min-height:38px;
+
+  display:flex;
+  align-items:center;
+
+  margin:0;
+
+  border-top:1px solid rgba(20,20,18,.14);
+
+  font-size:9px;
+  line-height:1;
+  letter-spacing:.11em;
+  text-transform:uppercase;
+
+  color:rgba(20,20,18,.58);
+}
+
+
+/* Browse screens need a little more visual room */
+
+body.project-australian-light .al-lowfi-grid--browse .al-lowfi-frame{
+  height:clamp(450px,46vw,700px);
+}
+
+
+/* ---------------------------------------------------------
+   Remove remnants from previous viewer
+   --------------------------------------------------------- */
+
+body.project-australian-light .al-process-nav,
+body.project-australian-light .al-process-stage-meta,
+body.project-australian-light .al-process-stage,
+body.project-australian-light .al-process-thumbs,
+body.project-australian-light .al-process-group,
+body.project-australian-light .al-process-button,
+body.project-australian-light .al-process-thumb{
+  display:none !important;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media(max-width:960px){
+
+  body.project-australian-light .al-process-chapter-head{
+    grid-template-columns:55px 1fr;
+  }
+
+  body.project-australian-light .al-process-chapter-head > p{
+    grid-column:2;
+  }
+
+
+  body.project-australian-light .al-sketch-grid{
+    grid-template-columns:1fr 1fr;
+    grid-template-rows:auto;
+  }
+
+  body.project-australian-light .al-sketch-card--large{
+    grid-column:span 2;
+    grid-row:auto;
+  }
+
+  body.project-australian-light .al-sketch-card--large .al-process-image{
+    min-height:520px;
+  }
+
+
+  body.project-australian-light .al-lowfi-group{
+    grid-template-columns:1fr;
+  }
+
+  body.project-australian-light .al-lowfi-group-head{
+    position:static;
+
+    display:grid;
+    grid-template-columns:42px auto 1fr;
+
+    gap:16px;
+    align-items:baseline;
+  }
+
+  body.project-australian-light .al-lowfi-group-head > span{
+    margin:0;
+  }
+
+  body.project-australian-light .al-lowfi-group-head h4{
+    margin:0;
+  }
+
+  body.project-australian-light .al-lowfi-group-head p{
+    max-width:none;
+  }
+
+
+  body.project-australian-light .al-lowfi-grid--discover{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+  }
+
+}
+
+
+@media(max-width:640px){
+
+  body.project-australian-light .al-process-ui{
+    margin-top:44px;
+  }
+
+  body.project-australian-light .al-process-chapter + .al-process-chapter{
+    margin-top:90px;
+  }
+
+  body.project-australian-light .al-process-chapter-head{
+    grid-template-columns:1fr;
+    gap:12px;
+
+    margin-bottom:36px;
+  }
+
+  body.project-australian-light .al-process-chapter-index,
+  body.project-australian-light .al-process-chapter-head > p{
+    grid-column:auto;
+  }
+
+
+  body.project-australian-light .al-sketch-grid{
+    grid-template-columns:1fr;
+  }
+
+  body.project-australian-light .al-sketch-card--large{
+    grid-column:auto;
+  }
+
+  body.project-australian-light .al-sketch-card--large .al-process-image,
+  body.project-australian-light .al-sketch-card:not(.al-sketch-card--large) .al-process-image{
+    min-height:320px;
+  }
+
+
+  body.project-australian-light .al-lowfi-group-head{
+    grid-template-columns:36px 1fr;
+  }
+
+  body.project-australian-light .al-lowfi-group-head p{
+    grid-column:2;
+  }
+
+
+  body.project-australian-light .al-lowfi-grid--discover,
+  body.project-australian-light .al-lowfi-grid--browse,
+  body.project-australian-light .al-lowfi-grid--purchase{
+    grid-template-columns:1fr 1fr;
+  }
+
+  body.project-australian-light .al-lowfi-frame,
+  body.project-australian-light .al-lowfi-grid--browse .al-lowfi-frame{
+    height:400px;
+  }
+
+}
+
+
+/* ===== END AUSTRALIAN LIGHT — SECTION 03 REDESIGN ===== */
+
+
+/* ===== AUSTRALIAN LIGHT — SECTION 03 COMPACT PASS ===== */
+
+
+/* =========================================================
+   SECTION 03 HEADER
+   ========================================================= */
+
+/*
+  Reduce the oversized gap before the process content.
+*/
+
+body.project-australian-light .al-process-ui{
+  margin-top:clamp(38px,4vw,62px) !important;
+}
+
+
+/*
+  Keep the major Section 03 heading more compact.
+*/
+
+body.project-australian-light .al-process .al-section-head,
+body.project-australian-light section:has(.al-process-ui) .al-section-head{
+  padding-bottom:clamp(30px,3.5vw,48px);
+}
+
+
+/*
+  Compact the four-stage process overview.
+*/
+
+body.project-australian-light .al-process-steps,
+body.project-australian-light .al-process-overview{
+  margin-top:0 !important;
+  padding-block:clamp(22px,2.6vw,34px) !important;
+}
+
+
+/* =========================================================
+   03.1 HEADER
+   ========================================================= */
+
+body.project-australian-light .al-process-chapter{
+  border-top:0 !important;
+  padding-top:0 !important;
+}
+
+
+body.project-australian-light .al-process-chapter-head{
+  grid-template-columns:
+    72px
+    minmax(320px,.95fr)
+    minmax(280px,.65fr) !important;
+
+  gap:clamp(24px,3.5vw,60px) !important;
+
+  align-items:start;
+
+  margin-bottom:clamp(28px,3vw,46px) !important;
+
+  padding-top:clamp(22px,2.2vw,32px);
+
+  border-top:1px solid rgba(20,20,18,.18);
+}
+
+
+body.project-australian-light .al-process-chapter-title span{
+  margin-bottom:7px !important;
+}
+
+
+body.project-australian-light .al-process-chapter-title h3{
+  font-size:clamp(32px,3vw,48px) !important;
+  line-height:.94 !important;
+  letter-spacing:-.03em !important;
+}
+
+
+body.project-australian-light .al-process-chapter-head > p{
+  margin-top:0 !important;
+
+  max-width:430px;
+
+  font-size:14px !important;
+  line-height:1.5 !important;
+}
+
+
+/*
+  Less vertical space between Sketch and Low-Fi.
+*/
+
+body.project-australian-light .al-process-chapter +
+.al-process-chapter{
+  margin-top:clamp(72px,7vw,108px) !important;
+}
+
+
+/* =========================================================
+   REMOVE OLD SKETCH GRID VISUAL RULES
+   ========================================================= */
+
+body.project-australian-light .al-sketch-grid{
+  display:block !important;
+  grid-template-columns:none !important;
+  grid-template-rows:none !important;
+  gap:0 !important;
+}
+
+
+/* =========================================================
+   COMPACT INTERACTIVE SKETCH VIEWER
+   ========================================================= */
+
+body.project-australian-light .al-sketch-viewer{
+  display:grid;
+
+  grid-template-columns:
+    minmax(170px,.24fr)
+    minmax(420px,1fr)
+    minmax(210px,.30fr);
+
+  gap:clamp(18px,2.4vw,38px);
+
+  align-items:stretch;
+
+  min-height:clamp(430px,45vw,610px);
+
+  padding-top:18px;
+
+  border-top:1px solid rgba(20,20,18,.18);
+}
+
+
+/* ---------------------------------------------------------
+   LEFT — selector
+   --------------------------------------------------------- */
+
+body.project-australian-light .al-sketch-nav{
+  display:flex;
+  flex-direction:column;
+
+  align-self:start;
+}
+
+
+body.project-australian-light .al-sketch-nav-item{
+  appearance:none;
+
+  display:grid;
+
+  grid-template-columns:34px 1fr;
+
+  align-items:center;
+
+  gap:6px;
+
+  width:100%;
+
+  min-height:54px;
+
+  margin:0;
+
+  padding:0;
+
+  border:0;
+  border-bottom:0 !important;
+
+  background:transparent;
+
+  color:rgba(20,20,18,.48);
+
+  text-align:left;
+
+  cursor:pointer;
+
+  transition:
+    color .2s ease,
+    opacity .2s ease;
+}
+
+
+body.project-australian-light .al-sketch-nav-item:hover{
+  color:#111;
+}
+
+
+body.project-australian-light .al-sketch-nav-item.is-active{
+  color:#111;
+}
+
+
+body.project-australian-light .al-sketch-nav-item.is-active::before{
+  content:"";
+
+  width:2px;
+  height:30px;
+
+  position:absolute;
+
+  background:#111;
+}
+
+
+body.project-australian-light .al-sketch-nav-item{
+  position:relative;
+}
+
+
+body.project-australian-light .al-sketch-nav-no{
+  padding-left:10px;
+
+  font-size:9px;
+  letter-spacing:.08em;
+
+  color:inherit;
+}
+
+
+body.project-australian-light .al-sketch-nav-title{
+  font-size:11px;
+  font-weight:500;
+
+  line-height:1.2;
+
+  text-transform:uppercase;
+  letter-spacing:.06em;
+}
+
+
+/* ---------------------------------------------------------
+   CENTRE — main sketch
+   --------------------------------------------------------- */
+
+body.project-australian-light .al-sketch-stage{
+  margin:0;
+
+  min-width:0;
+
+  display:block;
+}
+
+
+body.project-australian-light .al-sketch-stage-media{
+  width:100%;
+  height:clamp(400px,42vw,570px);
+
+  display:flex;
+
+  align-items:center;
+  justify-content:center;
+
+  overflow:hidden;
+
+  padding:clamp(18px,2vw,30px);
+
+  box-sizing:border-box;
+
+  background:#dedbd1;
+}
+
+
+body.project-australian-light .al-sketch-stage-media img{
+  display:block;
+
+  width:100%;
+  height:100%;
+
+  object-fit:contain;
+
+  transition:
+    opacity .18s ease,
+    transform .25s ease;
+}
+
+
+body.project-australian-light
+.al-sketch-stage-media img.is-changing{
+  opacity:.25;
+  transform:translateY(3px);
+}
+
+
+/* ---------------------------------------------------------
+   RIGHT — information
+   --------------------------------------------------------- */
+
+body.project-australian-light .al-sketch-detail{
+  min-width:0;
+
+  display:grid;
+
+  grid-template-rows:auto 1fr auto;
+
+  padding-top:2px;
+}
+
+
+body.project-australian-light .al-sketch-detail-count{
+  display:flex;
+
+  gap:6px;
+
+  font-size:10px;
+  line-height:1;
+
+  letter-spacing:.08em;
+
+  color:rgba(20,20,18,.44);
+}
+
+
+body.project-australian-light .al-sketch-detail-copy{
+  align-self:center;
+
+  max-width:260px;
+}
+
+
+body.project-australian-light .al-sketch-detail-index{
+  display:block;
+
+  margin-bottom:14px;
+
+  font-size:9px;
+  letter-spacing:.12em;
+
+  color:rgba(20,20,18,.42);
+}
+
+
+body.project-australian-light .al-sketch-detail-copy h4{
+  margin:0 0 16px;
+
+  font-family:Georgia,serif;
+
+  font-size:clamp(25px,2.2vw,36px);
+
+  font-weight:700;
+
+  line-height:.98;
+
+  letter-spacing:-.025em;
+}
+
+
+body.project-australian-light .al-sketch-detail-copy p{
+  margin:0;
+
+  font-size:13px;
+  line-height:1.55;
+
+  color:rgba(20,20,18,.58);
+}
+
+
+/* arrows */
+
+body.project-australian-light .al-sketch-arrows{
+  display:flex;
+
+  gap:8px;
+}
+
+
+body.project-australian-light .al-sketch-arrows button{
+  width:38px;
+  height:38px;
+
+  display:flex;
+
+  align-items:center;
+  justify-content:center;
+
+  padding:0;
+
+  border:1px solid rgba(20,20,18,.24);
+
+  border-radius:50%;
+
+  background:transparent;
+
+  font-size:16px;
+
+  cursor:pointer;
+
+  transition:
+    background .2s ease,
+    color .2s ease,
+    border-color .2s ease;
+}
+
+
+body.project-australian-light .al-sketch-arrows button:hover{
+  background:#111;
+  color:#f0ede4;
+
+  border-color:#111;
+}
+
+
+/* =========================================================
+   DIVIDER CLEANUP
+   Only major structural dividers remain.
+   ========================================================= */
+
+body.project-australian-light .al-sketch-viewer figure,
+body.project-australian-light .al-sketch-viewer figcaption,
+body.project-australian-light .al-sketch-nav-item,
+body.project-australian-light .al-sketch-detail{
+  border-top:0 !important;
+  border-bottom:0 !important;
+}
+
+
+/*
+  03.2 gets one divider separating it from 03.1.
+*/
+
+body.project-australian-light .al-process-lowfi{
+  padding-top:clamp(24px,2.8vw,38px) !important;
+
+  border-top:1px solid rgba(20,20,18,.18) !important;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media(max-width:1000px){
+
+  body.project-australian-light .al-sketch-viewer{
+    grid-template-columns:
+      150px
+      minmax(0,1fr);
+
+    min-height:0;
+  }
+
+  body.project-australian-light .al-sketch-detail{
+    grid-column:2;
+
+    grid-template-columns:1fr auto;
+    grid-template-rows:auto auto;
+
+    gap:20px;
+
+    padding-top:4px;
+  }
+
+  body.project-australian-light .al-sketch-detail-copy{
+    align-self:start;
+  }
+
+  body.project-australian-light .al-sketch-arrows{
+    align-self:end;
+  }
+
+}
+
+
+@media(max-width:700px){
+
+  body.project-australian-light .al-process-chapter-head{
+    grid-template-columns:1fr !important;
+    gap:10px !important;
+  }
+
+  body.project-australian-light .al-sketch-viewer{
+    grid-template-columns:1fr;
+  }
+
+  body.project-australian-light .al-sketch-nav{
+    display:grid;
+
+    grid-template-columns:repeat(2,minmax(0,1fr));
+
+    gap:6px 16px;
+  }
+
+  body.project-australian-light .al-sketch-stage{
+    grid-column:1;
+  }
+
+  body.project-australian-light .al-sketch-stage-media{
+    height:380px;
+  }
+
+  body.project-australian-light .al-sketch-detail{
+    grid-column:1;
+  }
+
+}
+
+
+/* ===== END AUSTRALIAN LIGHT — SECTION 03 COMPACT PASS ===== */
+
+
+/* ===== AUSTRALIAN LIGHT — LOWFI FLOW TABS ===== */
+
+
+/* ---------------------------------------------------------
+   overall
+   --------------------------------------------------------- */
+
+body.project-australian-light .al-lowfi-flow{
+  display:block !important;
+}
+
+
+body.project-australian-light .al-lowfi-tabs{
+  display:grid;
+
+  grid-template-columns:
+    minmax(190px,.26fr)
+    minmax(0,1fr);
+
+  gap:clamp(24px,3vw,48px);
+
+  align-items:start;
+
+  padding-top:18px;
+
+  border-top:1px solid rgba(20,20,18,.18);
+}
+
+
+/* ---------------------------------------------------------
+   CTA tabs
+   --------------------------------------------------------- */
+
+body.project-australian-light .al-lowfi-tablist{
+  display:flex;
+  flex-direction:column;
+}
+
+
+body.project-australian-light .al-lowfi-tab{
+  appearance:none;
+
+  position:relative;
+
+  display:grid;
+
+  grid-template-columns:34px 1fr;
+
+  gap:8px;
+
+  align-items:center;
+
+  width:100%;
+
+  min-height:58px;
+
+  padding:0 8px 0 10px;
+
+  border:0;
+
+  background:transparent;
+
+  text-align:left;
+
+  cursor:pointer;
+
+  color:rgba(20,20,18,.46);
+
+  transition:
+    color .2s ease,
+    background .2s ease;
+}
+
+
+body.project-australian-light .al-lowfi-tab:hover{
+  color:#111;
+}
+
+
+body.project-australian-light .al-lowfi-tab.is-active{
+  color:#111;
+}
+
+
+body.project-australian-light .al-lowfi-tab.is-active::before{
+  content:"";
+
+  position:absolute;
+
+  left:0;
+  top:14px;
+
+  width:2px;
+  height:30px;
+
+  background:#111;
+}
+
+
+body.project-australian-light .al-lowfi-tab span{
+  font-size:9px;
+
+  letter-spacing:.10em;
+
+  color:inherit;
+}
+
+
+body.project-australian-light .al-lowfi-tab strong{
+  font-size:12px;
+
+  font-weight:600;
+
+  letter-spacing:.01em;
+}
+
+
+/* ---------------------------------------------------------
+   active flow
+   --------------------------------------------------------- */
+
+body.project-australian-light .al-lowfi-active{
+  min-width:0;
+}
+
+
+body.project-australian-light .al-lowfi-active-meta{
+  display:grid;
+
+  grid-template-columns:
+    minmax(200px,.55fr)
+    minmax(260px,.45fr);
+
+  gap:clamp(24px,3vw,48px);
+
+  align-items:start;
+
+  margin-bottom:24px;
+}
+
+
+body.project-australian-light .al-lowfi-active-number{
+  display:block;
+
+  margin-bottom:8px;
+
+  font-size:9px;
+
+  letter-spacing:.12em;
+
+  color:rgba(20,20,18,.42);
+}
+
+
+body.project-australian-light .al-lowfi-active-meta h4{
+  margin:0;
+
+  font-family:
+    Georgia,
+    serif;
+
+  font-size:clamp(26px,2.2vw,36px);
+
+  font-weight:700;
+
+  line-height:1;
+
+  letter-spacing:-.025em;
+}
+
+
+body.project-australian-light .al-lowfi-active-meta p{
+  max-width:390px;
+
+  margin:0;
+
+  font-size:13px;
+
+  line-height:1.55;
+
+  color:rgba(20,20,18,.58);
+}
+
+
+/* ---------------------------------------------------------
+   stage
+   --------------------------------------------------------- */
+
+body.project-australian-light .al-lowfi-active-stage{
+  min-width:0;
+
+  transition:
+    opacity .18s ease,
+    transform .22s ease;
+}
+
+
+body.project-australian-light .al-lowfi-active-stage.is-changing{
+  opacity:.25;
+  transform:translateY(3px);
+}
+
+
+/*
+  Override old 3.2 group structure.
+*/
+
+body.project-australian-light
+.al-lowfi-active-stage
+.al-lowfi-grid{
+  display:grid !important;
+
+  gap:12px !important;
+}
+
+
+/*
+  Equal compact screen cards.
+*/
+
+body.project-australian-light
+.al-lowfi-active-stage
+.al-lowfi-grid--discover{
+  grid-template-columns:
+    repeat(4,minmax(0,1fr)) !important;
+}
+
+
+body.project-australian-light
+.al-lowfi-active-stage
+.al-lowfi-grid--browse{
+  grid-template-columns:
+    repeat(2,minmax(0,1fr)) !important;
+}
+
+
+body.project-australian-light
+.al-lowfi-active-stage
+.al-lowfi-grid--purchase{
+  grid-template-columns:
+    repeat(3,minmax(0,1fr)) !important;
+}
+
+
+body.project-australian-light
+.al-lowfi-active-stage
+.al-lowfi-frame{
+  height:clamp(330px,31vw,470px) !important;
+
+  padding:
+    clamp(14px,1.5vw,22px)
+    clamp(8px,1vw,16px) !important;
+
+  background:#dedbd1;
+}
+
+
+body.project-australian-light
+.al-lowfi-active-stage
+.al-lowfi-grid--browse
+.al-lowfi-frame{
+  height:clamp(350px,33vw,500px) !important;
+}
+
+
+body.project-australian-light
+.al-lowfi-active-stage
+figcaption{
+  min-height:34px !important;
+
+  border-top:0 !important;
+
+  font-size:9px !important;
+}
+
+
+/* ---------------------------------------------------------
+   remove legacy sticky group headers
+   --------------------------------------------------------- */
+
+body.project-australian-light
+.al-lowfi-active-stage
+.al-lowfi-group-head{
+  display:none !important;
+}
+
+
+/* ---------------------------------------------------------
+   responsive
+   --------------------------------------------------------- */
+
+@media(max-width:960px){
+
+  body.project-australian-light .al-lowfi-tabs{
+    grid-template-columns:1fr;
+  }
+
+  body.project-australian-light .al-lowfi-tablist{
+    display:grid;
+
+    grid-template-columns:
+      repeat(3,minmax(0,1fr));
+
+    gap:8px;
+  }
+
+  body.project-australian-light .al-lowfi-tab{
+    min-height:50px;
+  }
+
+  body.project-australian-light .al-lowfi-active-meta{
+    grid-template-columns:1fr 1fr;
+  }
+
+}
+
+
+@media(max-width:700px){
+
+  body.project-australian-light .al-lowfi-tablist{
+    grid-template-columns:1fr;
+  }
+
+  body.project-australian-light .al-lowfi-active-meta{
+    grid-template-columns:1fr;
+    gap:12px;
+  }
+
+  body.project-australian-light
+  .al-lowfi-active-stage
+  .al-lowfi-grid--discover,
+  body.project-australian-light
+  .al-lowfi-active-stage
+  .al-lowfi-grid--browse,
+  body.project-australian-light
+  .al-lowfi-active-stage
+  .al-lowfi-grid--purchase{
+    grid-template-columns:
+      repeat(2,minmax(0,1fr)) !important;
+  }
+
+  body.project-australian-light
+  .al-lowfi-active-stage
+  .al-lowfi-frame{
+    height:360px !important;
+  }
+
+}
+
+
+/* ===== END AUSTRALIAN LIGHT — LOWFI FLOW TABS ===== */
+
+
+/* ===== AUSTRALIAN LIGHT — 03.1 PNG STUDIES REFINE ===== */
+
+body.project-australian-light .al-sketch-viewer{
+  grid-template-columns:
+    minmax(150px,.20fr)
+    minmax(0,1fr)
+    minmax(210px,.27fr) !important;
+
+  gap:clamp(20px,2.6vw,40px) !important;
+
+  min-height:0 !important;
+}
+
+
+body.project-australian-light .al-sketch-stage-media{
+  height:clamp(360px,38vw,520px) !important;
+
+  padding:clamp(16px,1.8vw,26px) !important;
+}
+
+
+body.project-australian-light .al-sketch-stage-media img{
+  width:100% !important;
+  height:100% !important;
+
+  object-fit:contain !important;
+  object-position:center !important;
+}
+
+
+/* make CTA selector tighter */
+
+body.project-australian-light .al-sketch-nav-item{
+  min-height:48px !important;
+}
+
+
+body.project-australian-light .al-sketch-nav-title{
+  font-size:10px !important;
+}
+
+
+/* keep detail aligned vertically with image */
+
+body.project-australian-light .al-sketch-detail{
+  padding-block:4px !important;
+}
+
+
+body.project-australian-light .al-sketch-detail-copy h4{
+  font-size:clamp(24px,2vw,32px) !important;
+}
+
+
+/* ===== END AUSTRALIAN LIGHT — 03.1 PNG STUDIES REFINE ===== */
+
+
+/* ===== AUSTRALIAN LIGHT — SECTION 03 DIVIDER CLEANUP ===== */
+
+
+/* =========================================================
+   SECTION 03
+   Keep only structural dividers.
+   Remove decorative/repeated rules inside the same content block.
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   1. Header area
+   Keep ONE divider below the 4-stage overview.
+   --------------------------------------------------------- */
+
+body.project-australian-light
+section:has(.al-process-ui)
+.al-section-head{
+  border-bottom:0 !important;
+}
+
+
+body.project-australian-light
+section:has(.al-process-ui)
+.al-process-overview,
+
+body.project-australian-light
+section:has(.al-process-ui)
+.al-process-steps{
+  border-top:0 !important;
+  border-bottom:1px solid rgba(20,20,18,.16) !important;
+}
+
+
+/* remove any borders from individual overview cells */
+
+body.project-australian-light
+section:has(.al-process-ui)
+.al-process-overview > *,
+
+body.project-australian-light
+section:has(.al-process-ui)
+.al-process-steps > *{
+  border-top:0 !important;
+  border-bottom:0 !important;
+}
+
+
+/* ---------------------------------------------------------
+   2. 03.1 header
+   Do NOT add another divider above it.
+   --------------------------------------------------------- */
+
+body.project-australian-light
+.al-process-sketches
+.al-process-chapter-head{
+  border-top:0 !important;
+  border-bottom:0 !important;
+}
+
+
+/* ---------------------------------------------------------
+   3. Sketch viewer
+   Keep ONE divider between header and viewer.
+   --------------------------------------------------------- */
+
+body.project-australian-light
+.al-process-sketches
+.al-sketch-viewer{
+  border-top:1px solid rgba(20,20,18,.16) !important;
+  border-bottom:0 !important;
+}
+
+
+/* selector rows should not each have horizontal rules */
+
+body.project-australian-light
+.al-sketch-nav{
+  border:0 !important;
+}
+
+
+body.project-australian-light
+.al-sketch-nav-item{
+  border-top:0 !important;
+  border-bottom:0 !important;
+}
+
+
+/* active state uses vertical indicator only */
+
+body.project-australian-light
+.al-sketch-nav-item.is-active{
+  border:0 !important;
+}
+
+
+/* no rules around stage/detail */
+
+body.project-australian-light
+.al-sketch-stage,
+
+body.project-australian-light
+.al-sketch-stage-media,
+
+body.project-australian-light
+.al-sketch-detail,
+
+body.project-australian-light
+.al-sketch-detail-copy,
+
+body.project-australian-light
+.al-sketch-arrows{
+  border-top:0 !important;
+  border-bottom:0 !important;
+}
+
+
+/* ---------------------------------------------------------
+   4. Between 03.1 and 03.2
+   Keep ONE divider only.
+   --------------------------------------------------------- */
+
+body.project-australian-light
+.al-process-lowfi{
+  border-top:1px solid rgba(20,20,18,.16) !important;
+  border-bottom:0 !important;
+
+  padding-top:clamp(28px,3vw,42px) !important;
+}
+
+
+body.project-australian-light
+.al-process-lowfi
+.al-process-chapter-head{
+  border-top:0 !important;
+  border-bottom:0 !important;
+}
+
+
+/* ---------------------------------------------------------
+   5. 03.2 viewer
+   Remove duplicate line above CTA + stage.
+   --------------------------------------------------------- */
+
+body.project-australian-light
+.al-lowfi-tabs{
+  border-top:0 !important;
+  border-bottom:0 !important;
+}
+
+
+/* CTA rows: no repeated horizontal dividers */
+
+body.project-australian-light
+.al-lowfi-tablist{
+  border:0 !important;
+}
+
+
+body.project-australian-light
+.al-lowfi-tab{
+  border-top:0 !important;
+  border-bottom:0 !important;
+}
+
+
+/* active CTA uses vertical marker only */
+
+body.project-australian-light
+.al-lowfi-tab.is-active{
+  border:0 !important;
+}
+
+
+/* ---------------------------------------------------------
+   6. Flow content
+   No extra internal rules.
+   --------------------------------------------------------- */
+
+body.project-australian-light
+.al-lowfi-active,
+
+body.project-australian-light
+.al-lowfi-active-meta,
+
+body.project-australian-light
+.al-lowfi-active-stage,
+
+body.project-australian-light
+.al-lowfi-grid,
+
+body.project-australian-light
+.al-lowfi-grid figure,
+
+body.project-australian-light
+.al-lowfi-frame,
+
+body.project-australian-light
+.al-lowfi-grid figcaption{
+  border-top:0 !important;
+  border-bottom:0 !important;
+}
+
+
+/* ---------------------------------------------------------
+   Final visual rhythm:
+   only these dividers remain:
+
+   1) below 4-stage overview
+   2) above sketch viewer
+   3) between 03.1 and 03.2
+   --------------------------------------------------------- */
+
+
+/* ===== END AUSTRALIAN LIGHT — SECTION 03 DIVIDER CLEANUP ===== */
+
+
+/* ===== AUSTRALIAN LIGHT — SECTION 03 LINE + CTA ALIGNMENT ===== */
+
+
+/* =========================================================
+   DIVISION LINE CLEANUP
+   Keep only the meaningful structural separators.
+   ========================================================= */
+
+
+/* remove duplicate line directly under main section heading */
+
+body.project-australian-light
+section:has(.al-process-ui)
+.al-section-head{
+  border-bottom:0 !important;
+}
+
+
+/* four-stage overview:
+   keep only ONE line below the whole overview */
+
+body.project-australian-light
+section:has(.al-process-ui)
+.al-process-overview,
+
+body.project-australian-light
+section:has(.al-process-ui)
+.al-process-steps{
+  border-top:0 !important;
+  border-bottom:1px solid rgba(20,20,18,.16) !important;
+}
+
+
+/* no individual cell dividers */
+
+body.project-australian-light
+section:has(.al-process-ui)
+.al-process-overview > *,
+
+body.project-australian-light
+section:has(.al-process-ui)
+.al-process-steps > *{
+  border-top:0 !important;
+  border-bottom:0 !important;
+}
+
+
+/* 03.1 heading itself: no extra rule */
+
+body.project-australian-light
+.al-process-sketches
+.al-process-chapter-head{
+  border-top:0 !important;
+  border-bottom:0 !important;
+}
+
+
+/* one line before the actual 03.1 interactive area */
+
+body.project-australian-light
+.al-sketch-viewer{
+  border-top:1px solid rgba(20,20,18,.16) !important;
+  border-bottom:0 !important;
+}
+
+
+/* remove all unnecessary internal sketch borders */
+
+body.project-australian-light
+.al-sketch-nav,
+
+body.project-australian-light
+.al-sketch-nav-item,
+
+body.project-australian-light
+.al-sketch-stage,
+
+body.project-australian-light
+.al-sketch-stage-media,
+
+body.project-australian-light
+.al-sketch-detail,
+
+body.project-australian-light
+.al-sketch-detail-copy{
+  border-top:0 !important;
+  border-bottom:0 !important;
+}
+
+
+/* one line separating 03.1 and 03.2 */
+
+body.project-australian-light
+.al-process-lowfi{
+  border-top:1px solid rgba(20,20,18,.16) !important;
+  border-bottom:0 !important;
+
+  padding-top:clamp(28px,3vw,40px) !important;
+}
+
+
+/* no extra line inside 03.2 heading */
+
+body.project-australian-light
+.al-process-lowfi
+.al-process-chapter-head{
+  border-top:0 !important;
+  border-bottom:0 !important;
+}
+
+
+/* remove duplicate rule above low-fi interactive content */
+
+body.project-australian-light
+.al-lowfi-tabs{
+  border-top:0 !important;
+  border-bottom:0 !important;
+}
+
+
+/* remove low-fi internal horizontal rules */
+
+body.project-australian-light
+.al-lowfi-tablist,
+
+body.project-australian-light
+.al-lowfi-tab,
+
+body.project-australian-light
+.al-lowfi-active,
+
+body.project-australian-light
+.al-lowfi-active-meta,
+
+body.project-australian-light
+.al-lowfi-active-stage,
+
+body.project-australian-light
+.al-lowfi-grid,
+
+body.project-australian-light
+.al-lowfi-grid figure,
+
+body.project-australian-light
+.al-lowfi-frame,
+
+body.project-australian-light
+.al-lowfi-grid figcaption{
+  border-top:0 !important;
+  border-bottom:0 !important;
+}
+
+
+/* =========================================================
+   SHARED LEFT CTA SYSTEM
+   03.1 + 03.2 use the same structure
+   ========================================================= */
+
+
+/* same left column width */
+
+body.project-australian-light
+.al-sketch-nav,
+
+body.project-australian-light
+.al-lowfi-tablist{
+  width:100%;
+  max-width:220px;
+
+  display:flex !important;
+  flex-direction:column !important;
+
+  gap:0 !important;
+
+  align-self:start;
+}
+
+
+/* same button dimensions */
+
+body.project-australian-light
+.al-sketch-nav-item,
+
+body.project-australian-light
+.al-lowfi-tab{
+  appearance:none;
+
+  position:relative;
+
+  display:grid !important;
+
+  grid-template-columns:34px 1fr !important;
+
+  align-items:center !important;
+
+  gap:8px !important;
+
+  width:100% !important;
+  min-height:52px !important;
+
+  padding:0 8px 0 10px !important;
+  margin:0 !important;
+
+  border:0 !important;
+
+  background:transparent !important;
+
+  text-align:left !important;
+
+  cursor:pointer;
+
+  color:rgba(20,20,18,.45) !important;
+
+  transition:
+    color .18s ease,
+    opacity .18s ease;
+}
+
+
+/* same hover */
+
+body.project-australian-light
+.al-sketch-nav-item:hover,
+
+body.project-australian-light
+.al-lowfi-tab:hover{
+  color:#111 !important;
+}
+
+
+/* same active state */
+
+body.project-australian-light
+.al-sketch-nav-item.is-active,
+
+body.project-australian-light
+.al-lowfi-tab.is-active{
+  color:#111 !important;
+}
+
+
+/* same vertical indicator */
+
+body.project-australian-light
+.al-sketch-nav-item.is-active::before,
+
+body.project-australian-light
+.al-lowfi-tab.is-active::before{
+  content:"";
+
+  position:absolute;
+
+  left:0;
+  top:11px;
+
+  width:2px;
+  height:30px;
+
+  background:#111;
+}
+
+
+/* same numbering */
+
+body.project-australian-light
+.al-sketch-nav-no,
+
+body.project-australian-light
+.al-lowfi-tab span{
+  padding:0 !important;
+
+  font-size:9px !important;
+  line-height:1 !important;
+
+  letter-spacing:.10em !important;
+
+  color:inherit !important;
+}
+
+
+/* same CTA label */
+
+body.project-australian-light
+.al-sketch-nav-title,
+
+body.project-australian-light
+.al-lowfi-tab strong{
+  font-size:10px !important;
+  line-height:1.2 !important;
+
+  font-weight:600 !important;
+
+  letter-spacing:.06em !important;
+
+  text-transform:uppercase !important;
+
+  color:inherit !important;
+}
+
+
+/* make disabled/inactive CTA opacity consistent */
+
+body.project-australian-light
+.al-sketch-nav-item:not(.is-active),
+
+body.project-australian-light
+.al-lowfi-tab:not(.is-active){
+  opacity:.78;
+}
+
+
+/* =========================================================
+   KEEP EXISTING DESCRIPTION POSITIONS
+   Do not alter metadata / copy layout.
+   ========================================================= */
+
+body.project-australian-light
+.al-sketch-detail,
+
+body.project-australian-light
+.al-lowfi-active-meta{
+  /* intentionally no layout override here */
+}
+
+
+/* =========================================================
+   RESPONSIVE CTA ALIGNMENT
+   ========================================================= */
+
+@media(max-width:700px){
+
+  body.project-australian-light
+  .al-sketch-nav,
+
+  body.project-australian-light
+  .al-lowfi-tablist{
+    max-width:none;
+
+    display:grid !important;
+
+    grid-template-columns:
+      repeat(2,minmax(0,1fr)) !important;
+
+    gap:4px 12px !important;
+  }
+
+}
+
+
+/* ===== END AUSTRALIAN LIGHT — SECTION 03 LINE + CTA ALIGNMENT ===== */
+
+
+/* ===== AUSTRALIAN LIGHT — PROCESS STEP BORDER FIX ===== */
+
+/*
+  Remove the four individual top rules:
+  Sketch / Low fidelity / Art direction / High fidelity
+*/
+
+body.project-australian-light .al-process-step{
+  border-top:0 !important;
+}
+
+/* ===== END AUSTRALIAN LIGHT — PROCESS STEP BORDER FIX ===== */
+
+
+/* ===== AUSTRALIAN LIGHT — SECTION 03 HEADER DIVIDER ALIGNMENT ===== */
+
+
+/* =========================================================
+   03.1 + 03.2
+   Use the same divider logic:
+   NO line above heading
+   ONE line below heading
+   ========================================================= */
+
+
+/* remove subsection top borders */
+
+body.project-australian-light .al-process-sketches,
+body.project-australian-light .al-process-lowfi{
+  border-top:0 !important;
+}
+
+
+/* chapter heading itself has no top border */
+
+body.project-australian-light
+.al-process-sketches
+.al-process-chapter-head,
+
+body.project-australian-light
+.al-process-lowfi
+.al-process-chapter-head{
+  border-top:0 !important;
+
+  border-bottom:1px solid rgba(20,20,18,.16) !important;
+
+  padding-bottom:clamp(26px,2.6vw,38px) !important;
+  margin-bottom:0 !important;
+}
+
+
+/* remove duplicate border from 03.1 viewer */
+
+body.project-australian-light
+.al-process-sketches
+.al-sketch-viewer{
+  border-top:0 !important;
+
+  padding-top:clamp(18px,2vw,28px) !important;
+}
+
+
+/* remove duplicate border from 03.2 viewer */
+
+body.project-australian-light
+.al-process-lowfi
+.al-lowfi-tabs{
+  border-top:0 !important;
+
+  padding-top:clamp(18px,2vw,28px) !important;
+}
+
+
+/* keep spacing between 03.1 and 03.2 without adding a line above 03.2 */
+
+body.project-australian-light
+.al-process-lowfi{
+  margin-top:clamp(72px,6vw,96px) !important;
+  padding-top:0 !important;
+
+  border-top:0 !important;
+}
+
+
+/* ===== END AUSTRALIAN LIGHT — SECTION 03 HEADER DIVIDER ALIGNMENT ===== */
+
+
+/* Australian Light — Section 03 head spacing */
+body.project-australian-light .al-process .al-section-head,
+body.project-australian-light section:has(.al-process-ui) .al-section-head{
+  padding-bottom:0 !important;
+}
+
+
+/* ===== AUSTRALIAN LIGHT — 03.2 BROWSE FLOW REFINE ===== */
+
+/*
+  Browse:
+  Product List → Product List Filter → Product Detail
+*/
+
+body.project-australian-light
+.al-lowfi-active-stage
+.al-lowfi-grid--browse{
+  grid-template-columns:
+    repeat(3,minmax(0,1fr)) !important;
+}
+
+
+/*
+  Same visual height as the other 03.2 flows.
+*/
+
+body.project-australian-light
+.al-lowfi-active-stage
+.al-lowfi-grid--browse
+.al-lowfi-frame{
+  height:clamp(360px,38vw,520px) !important;
+}
+
+
+/*
+  Consistent caption treatment.
+*/
+
+body.project-australian-light
+.al-lowfi-active-stage
+.al-lowfi-grid--browse
+figcaption{
+  min-height:30px !important;
+  border:0 !important;
+}
+
+
+/* ===== END AUSTRALIAN LIGHT — 03.2 BROWSE FLOW REFINE ===== */
+
+
+/* ===== AUSTRALIAN LIGHT — 03.2 PANEL SIZE UNIFY ===== */
+
+
+/* =========================================================
+   03.2 — UNIFIED PANEL SYSTEM
+   Discover / Browse / Purchase use the same card dimensions
+   ========================================================= */
+
+
+/* same overall stage width */
+
+body.project-australian-light
+.al-lowfi-active-stage{
+  width:100% !important;
+  min-width:0 !important;
+}
+
+
+/* same gap between every panel */
+
+body.project-australian-light
+.al-lowfi-active-stage
+.al-lowfi-grid{
+  width:100% !important;
+
+  gap:12px !important;
+
+  align-items:stretch !important;
+}
+
+
+/* Discover = 4 equal panels */
+
+body.project-australian-light
+.al-lowfi-active-stage
+.al-lowfi-grid--discover{
+  grid-template-columns:
+    repeat(4,minmax(0,1fr)) !important;
+}
+
+
+/* Browse = 3 equal panels */
+
+body.project-australian-light
+.al-lowfi-active-stage
+.al-lowfi-grid--browse{
+  grid-template-columns:
+    repeat(3,minmax(0,1fr)) !important;
+}
+
+
+/* Purchase = 3 equal panels */
+
+body.project-australian-light
+.al-lowfi-active-stage
+.al-lowfi-grid--purchase{
+  grid-template-columns:
+    repeat(3,minmax(0,1fr)) !important;
+}
+
+
+/* ---------------------------------------------------------
+   Every panel uses exactly the same height system
+   --------------------------------------------------------- */
+
+body.project-australian-light
+.al-lowfi-active-stage
+.al-lowfi-grid--discover
+.al-lowfi-frame,
+
+body.project-australian-light
+.al-lowfi-active-stage
+.al-lowfi-grid--browse
+.al-lowfi-frame,
+
+body.project-australian-light
+.al-lowfi-active-stage
+.al-lowfi-grid--purchase
+.al-lowfi-frame{
+  width:100% !important;
+
+  height:clamp(360px,38vw,520px) !important;
+
+  min-height:0 !important;
+  max-height:none !important;
+
+  box-sizing:border-box !important;
+
+  padding:
+    clamp(14px,1.5vw,22px)
+    clamp(8px,1vw,16px) !important;
+
+  background:#dedbd1 !important;
+}
+
+
+/* image fills the same visual box */
+
+body.project-australian-light
+.al-lowfi-active-stage
+.al-lowfi-frame img{
+  display:block;
+
+  width:100% !important;
+  height:100% !important;
+
+  max-width:100% !important;
+  max-height:100% !important;
+
+  object-fit:contain !important;
+  object-position:top center !important;
+}
+
+
+/* same caption height across all three flows */
+
+body.project-australian-light
+.al-lowfi-active-stage
+.al-lowfi-grid
+figcaption{
+  min-height:30px !important;
+
+  padding-top:8px !important;
+
+  margin:0 !important;
+
+  border:0 !important;
+
+  display:flex;
+  align-items:flex-start;
+
+  font-size:8px !important;
+  line-height:1.2 !important;
+
+  letter-spacing:.12em !important;
+}
+
+
+/* remove old Browse-specific oversized rule */
+
+body.project-australian-light
+.al-lowfi-active-stage
+.al-lowfi-grid--browse
+.al-lowfi-frame{
+  height:clamp(360px,38vw,520px) !important;
+}
+
+
+/* =========================================================
+   TABLET / MOBILE
+   ========================================================= */
+
+@media(max-width:960px){
+
+  body.project-australian-light
+  .al-lowfi-active-stage
+  .al-lowfi-grid--discover{
+    grid-template-columns:
+      repeat(2,minmax(0,1fr)) !important;
+  }
+
+  body.project-australian-light
+  .al-lowfi-active-stage
+  .al-lowfi-grid--browse,
+
+  body.project-australian-light
+  .al-lowfi-active-stage
+  .al-lowfi-grid--purchase{
+    grid-template-columns:
+      repeat(2,minmax(0,1fr)) !important;
+  }
+
+}
+
+
+@media(max-width:640px){
+
+  body.project-australian-light
+  .al-lowfi-active-stage
+  .al-lowfi-grid--discover,
+
+  body.project-australian-light
+  .al-lowfi-active-stage
+  .al-lowfi-grid--browse,
+
+  body.project-australian-light
+  .al-lowfi-active-stage
+  .al-lowfi-grid--purchase{
+    grid-template-columns:1fr !important;
+  }
+
+  body.project-australian-light
+  .al-lowfi-active-stage
+  .al-lowfi-frame{
+    height:400px !important;
+  }
+
+}
+
+
+/* ===== END AUSTRALIAN LIGHT — 03.2 PANEL SIZE UNIFY ===== */
+
+
+/* ===== AUSTRALIAN LIGHT — 03.2 THREE-PANEL FLOWS ===== */
+
+body.project-australian-light
+.al-lowfi-active-stage
+.al-lowfi-grid--discover,
+
+body.project-australian-light
+.al-lowfi-active-stage
+.al-lowfi-grid--browse,
+
+body.project-australian-light
+.al-lowfi-active-stage
+.al-lowfi-grid--purchase{
+  grid-template-columns:
+    repeat(3,minmax(0,1fr)) !important;
+}
+
+/* ===== END AUSTRALIAN LIGHT — 03.2 THREE-PANEL FLOWS ===== */
+
+
+/* Australian Light — 03.2 Discover final 3-panel layout */
+body.project-australian-light
+.al-lowfi-active-stage
+.al-lowfi-grid--discover{
+  grid-template-columns:repeat(3,minmax(0,1fr)) !important;
+}
+
+
+/* Section 04 — hide legacy standalone font label */
+body.project-australian-light
+.al-direction-layout > :first-child
+.al-type-display + p{
+  display:none !important;
+}
+
+/* ===== AUSTRALIAN LIGHT — SECTION 04 CANONICAL ===== */
+body.project-australian-light .al-direction{
+  --al-direction-device-h:clamp(470px,40vw,570px);
+}
+
+
+
+
+/* =========================================================
+   04 — SIGNATURE VISUAL SYSTEM
+
+   Structure:
+   .al-direction-layout
+     ├── left content
+     └── .al-direction-media
+           ├── .al-direction-mobile
+           └── .al-direction-mobile-caption
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   Remove obsolete media
+   --------------------------------------------------------- */
+
+
+
+
+/* =========================================================
+   MAIN LAYOUT
+   ========================================================= */
+
+body.project-australian-light .al-direction-layout{
+  display:grid;
+
+  grid-template-columns:
+    minmax(0,1fr)
+    minmax(290px,32%);
+
+  gap:clamp(48px,4.5vw,76px);
+
+  align-items:stretch;
+
+  width:100%;
+
+  margin:0;
+}
+
+
+/*
+  Both principal columns stretch to exactly the same row height.
+*/
+
+body.project-australian-light
+.al-direction-layout > :first-child,
+
+body.project-australian-light
+.al-direction-media{
+  display:flex !important;
+  flex-direction:column !important;
+
+  align-items:center !important;
+  justify-content:flex-start !important;
+
+  gap:10px !important;
+
+  width:100% !important;
+  min-width:0 !important;
+  min-height:0 !important;
+
+  height:100% !important;
+
+  margin:0 !important;
+  padding:0 !important;
+}
+
+
+/* =========================================================
+   LEFT — VISUAL SYSTEM
+   ========================================================= */
+
+body.project-australian-light
+.al-direction-layout > :first-child{
+  display:flex;
+  flex-direction:column;
+
+  align-items:stretch;
+
+  width:100%;
+  min-width:0;
+  min-height:0;
+
+  height:100%;
+
+  margin:0;
+  padding:0;
+
+  text-align:left;
+}
+
+
+body.project-australian-light
+.al-direction-layout > :first-child > *{
+  margin-left:0 !important;
+  margin-right:0 !important;
+
+  text-align:left !important;
+}
+
+body.project-australian-light
+.al-direction-layout > :first-child
+.al-direction-kicker,
+body.project-australian-light
+.al-direction-layout > :first-child
+.al-eyebrow,
+body.project-australian-light
+.al-direction-layout > :first-child
+[class*="selected-direction"]{
+  align-self:flex-start !important;
+
+  width:100%;
+
+  margin-left:0 !important;
+
+  text-align:left !important;
+}
+
+
+
+/* intro */
+
+body.project-australian-light
+.al-direction-layout > :first-child > p:first-of-type{
+  width:100%;
+  max-width:720px;
+
+  margin:0 0 28px;
+
+  font-size:clamp(16px,1.2vw,19px);
+  line-height:1.5;
+}
+
+
+/* ---------------------------------------------------------
+   Palette
+   --------------------------------------------------------- */
+
+body.project-australian-light .al-palette{
+  display:grid;
+
+  grid-template-columns:
+    repeat(2,minmax(0,1fr));
+
+  gap:10px;
+
+  width:100%;
+  max-width:none;
+
+  margin:0 0 28px;
+  padding:0;
+
+  border:0;
+}
+
+
+body.project-australian-light .al-palette > *,
+body.project-australian-light .al-swatch{
+  display:flex;
+
+  align-items:flex-end;
+
+  width:100%;
+  min-width:0;
+
+  height:72px;
+  min-height:72px;
+
+  box-sizing:border-box;
+
+  margin:0;
+  padding:11px 13px;
+
+  border:0;
+  border-radius:6px;
+}
+
+
+/* lightest swatch */
+
+body.project-australian-light
+.al-palette > :first-child,
+body.project-australian-light
+.al-swatch:first-child{
+  border:1px solid rgba(20,20,18,.14);
+}
+
+
+/* ---------------------------------------------------------
+   Typeface
+   --------------------------------------------------------- */
+
+body.project-australian-light .al-type,
+body.project-australian-light .al-type-system,
+body.project-australian-light .al-type-sample{
+  width:100%;
+
+  margin:0;
+  padding:0;
+
+  border:0;
+}
+
+
+/* explicitly remove old duplicate top border */
+
+body.project-australian-light .al-type-sample{
+  border-top:0 !important;
+}
+
+
+/*
+  Exactly one divider at a time.
+*/
+
+body.project-australian-light .al-type-row{
+  display:grid;
+
+  grid-template-columns:
+    90px
+    minmax(0,1fr)
+    90px;
+
+  gap:20px;
+
+  align-items:center;
+
+  min-height:64px;
+
+  box-sizing:border-box;
+
+  margin:0;
+  padding:0;
+
+  border:0;
+  border-bottom:1px solid rgba(20,20,18,.15);
+}
+
+
+body.project-australian-light
+.al-type-row:first-child{
+  border-top:1px solid rgba(20,20,18,.15);
+}
+
+
+body.project-australian-light
+.al-type-row-sample--headline{
+  font-family:
+    Georgia,
+    serif;
+
+  font-size:clamp(24px,2vw,32px);
+
+  font-weight:700;
+
+  line-height:.95;
+
+  letter-spacing:-.025em;
+}
+
+
+body.project-australian-light
+.al-type-row-sample--body{
+  font-size:14px;
+  line-height:1.35;
+}
+
+
+body.project-australian-light
+.al-type-row-label{
+  font-size:11px;
+
+  color:rgba(20,20,18,.46);
+}
+
+
+body.project-australian-light
+.al-type-row-family{
+  justify-self:end;
+
+  font-size:11px;
+  font-weight:500;
+
+  white-space:nowrap;
+}
+
+
+/* ---------------------------------------------------------
+   Rationale
+   --------------------------------------------------------- */
+
+body.project-australian-light
+.al-direction-rationale{
+  display:grid;
+
+  grid-template-columns:
+    repeat(2,minmax(0,1fr));
+
+  gap:clamp(28px,3vw,48px);
+
+  width:100%;
+
+  margin:38px 0 0;
+  padding:0;
+
+  border:0;
+}
+
+
+body.project-australian-light
+.al-direction-rationale-item{
+  width:100%;
+  max-width:none;
+}
+
+
+body.project-australian-light
+.al-direction-rationale-item p{
+  margin:0;
+}
+
+
+/* =========================================================
+   RIGHT — DIRECTION MEDIA
+   ========================================================= */
+
+body.project-australian-light
+.al-direction-media{
+  display:flex;
+
+  flex-direction:column;
+
+  align-items:center;
+  justify-content:flex-start;
+
+  width:100%;
+
+  margin:0;
+  padding:0;
+}
+
+
+/* =========================================================
+   PHONE
+   ========================================================= */
+
+body.project-australian-light .al-direction-mobile{
+  position:relative !important;
+
+  display:block !important;
+
+  flex:0 0 auto !important;
+
+  width:min(100%,272px) !important;
+  height:var(--al-direction-device-h) !important;
+
+  margin:0 auto !important;
+  padding:0 !important;
+
+  align-self:center !important;
+}
+
+
+/*
+  One uniform thin device border.
+  All four sides are identical.
+*/
+
+body.project-australian-light .al-direction-phone-screen{
+  display:flex !important;
+  flex-direction:column !important;
+
+  width:100% !important;
+  height:100% !important;
+
+  min-height:0 !important;
+
+  box-sizing:border-box !important;
+
+  margin:0 !important;
+  padding:5px !important;
+
+  overflow:hidden !important;
+
+  aspect-ratio:auto !important;
+
+  border:1px solid rgba(0,0,0,.42) !important;
+  border-radius:32px !important;
+
+  background:#0b0b0b !important;
+}
+
+
+/*
+  No generated notch / banner / island.
+*/
+
+body.project-australian-light
+.al-direction-phone-screen::before,
+
+body.project-australian-light
+.al-direction-phone-screen::after{
+  display:none;
+
+  content:none;
+}
+
+
+/* =========================================================
+   MOBILE BROWSER CHROME
+   ========================================================= */
+
+body.project-australian-light
+.al-mobile-browser-bar{
+  position:relative;
+
+  flex:0 0 34px;
+
+  display:grid;
+
+  grid-template-columns:
+    48px
+    minmax(0,1fr)
+    34px;
+
+  align-items:center;
+
+  gap:6px;
+
+  width:100%;
+  height:34px;
+
+  box-sizing:border-box;
+
+  padding:0 8px;
+
+  border-radius:26px 26px 0 0;
+
+  background:#1c1c1c;
+
+  color:rgba(255,255,255,.55);
+}
+
+
+body.project-australian-light
+.al-mobile-browser-controls{
+  display:flex;
+
+  gap:4px;
+}
+
+
+body.project-australian-light
+.al-mobile-browser-controls span{
+  display:block;
+
+  width:5px;
+  height:5px;
+
+  border-radius:50%;
+
+  background:rgba(255,255,255,.30);
+}
+
+
+body.project-australian-light
+.al-mobile-browser-url{
+  overflow:hidden;
+
+  padding:5px 10px;
+
+  border-radius:999px;
+
+  background:rgba(0,0,0,.32);
+
+  font-size:7px;
+  line-height:1;
+
+  letter-spacing:.10em;
+
+  text-align:center;
+
+  text-overflow:ellipsis;
+  white-space:nowrap;
+
+  color:rgba(255,255,255,.45);
+}
+
+
+body.project-australian-light
+.al-mobile-browser-menu{
+  font-size:12px;
+
+  text-align:center;
+
+  color:rgba(255,255,255,.42);
+}
+
+
+/* =========================================================
+   HOMEPAGE SCROLL AREA
+   ========================================================= */
+
+body.project-australian-light
+.al-mobile-scroll{
+  flex:1 1 auto;
+
+  min-height:0;
+
+  overflow-y:auto;
+  overflow-x:hidden;
+
+  border-radius:0 0 26px 26px;
+
+  background:#111;
+
+  scrollbar-width:none;
+
+  overscroll-behavior:contain;
+}
+
+
+body.project-australian-light
+.al-mobile-scroll::-webkit-scrollbar{
+  display:none;
+}
+
+
+body.project-australian-light
+.al-mobile-scroll img{
+  display:block;
+
+  width:100%;
+  height:auto;
+
+  max-width:none;
+  max-height:none;
+
+  margin:0;
+  padding:0;
+
+  object-fit:initial;
+}
+
+
+/* =========================================================
+   CAPTION
+   ========================================================= */
+
+body.project-australian-light
+.al-direction-mobile-caption{
+  display:block;
+
+  width:min(100%,272px);
+
+  margin:10px auto 0;
+  padding:0;
+
+  font-size:8px;
+  line-height:1.2;
+
+  letter-spacing:.14em;
+
+  text-align:left;
+  text-transform:uppercase;
+
+  color:rgba(20,20,18,.42);
+}
+
+
+/* =========================================================
+   REMOVE LEGACY SECTION 04 SPACERS / RULES
+   ========================================================= */
+
+body.project-australian-light
+.al-direction-layout > :first-child > hr{
+  display:none;
+}
+
+
+body.project-australian-light
+.al-direction,
+body.project-australian-light
+.al-direction-layout,
+body.project-australian-light
+.al-direction-media,
+body.project-australian-light
+.al-direction-mobile{
+  min-height:0;
+  max-height:none;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media(max-width:900px){
+
+  body.project-australian-light
+  .al-direction-layout{
+    grid-template-columns:
+      minmax(0,1fr)
+      minmax(230px,31%);
+
+    gap:36px;
+  }
+
+
+  body.project-australian-light
+  .al-direction-mobile,
+
+  body.project-australian-light
+  .al-direction-mobile-caption{
+    width:min(100%,235px);
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media(max-width:700px){
+
+  body.project-australian-light
+  .al-direction-layout{
+    grid-template-columns:1fr;
+
+    gap:38px;
+  }
+
+
+  body.project-australian-light
+  .al-direction-media{
+    align-items:flex-start;
+  }
+
+
+  body.project-australian-light
+  .al-direction-mobile,
+
+  body.project-australian-light
+  .al-direction-mobile-caption{
+    width:min(72vw,270px);
+
+    margin-left:0;
+  }
+
+
+  body.project-australian-light
+  .al-direction-rationale{
+    grid-template-columns:1fr;
+
+    gap:18px;
+  }
+
+}
+
+
+/* ===== END AUSTRALIAN LIGHT — SECTION 04 CANONICAL ===== */
+
+/* ===== SECTION 04 — MICRO SUBHEADINGS ===== */
+
+/*
+  Colour / Typography are supporting annotations,
+  not body-size headings.
+*/
+
+body.project-australian-light
+.al-direction-notes h3,
+body.project-australian-light
+.al-direction-note h3,
+body.project-australian-light
+.al-direction-copy h3{
+  margin:0 0 7px;
+
+  font-size:11px;
+  line-height:1;
+
+  font-weight:600;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+
+  color:rgba(20,20,18,.48);
+}
+
+/* If the current markup uses headings directly in the note row */
+body.project-australian-light
+.al-direction-notes h4,
+body.project-australian-light
+.al-direction-note h4{
+  margin:0 0 7px;
+
+  font-size:11px;
+  line-height:1;
+
+  font-weight:600;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+
+  color:rgba(20,20,18,.48);
+}
+
+/* ===== END SECTION 04 — MICRO SUBHEADINGS ===== */
+
+
+/* ===== SECTION 04 — LEFT CONTENT FINAL ===== */
+
+
+/* =========================================================
+   LEFT COLUMN — ONE SHARED LEFT EDGE
+   ========================================================= */
+
+body.project-australian-light
+.al-direction-layout > :first-child{
+  text-align:left !important;
+}
+
+
+/*
+  Everything in the visual-system column begins from
+  exactly the same x position.
+*/
+
+body.project-australian-light
+.al-direction-layout > :first-child > *{
+  margin-left:0 !important;
+  margin-right:0 !important;
+
+  padding-left:0 !important;
+
+  text-align:left !important;
+}
+
+
+/* selected direction label */
+
+body.project-australian-light
+.al-direction-layout > :first-child
+.al-direction-kicker,
+
+body.project-australian-light
+.al-direction-layout > :first-child
+.al-eyebrow,
+
+body.project-australian-light
+.al-direction-layout > :first-child
+[class*="selected-direction"]{
+  width:100% !important;
+
+  margin-left:0 !important;
+  padding-left:0 !important;
+
+  text-align:left !important;
+}
+
+
+/* Intro paragraph — remove current indentation */
+
+body.project-australian-light
+.al-direction-layout > :first-child > p:first-of-type{
+  width:100% !important;
+  max-width:760px !important;
+
+  margin-left:0 !important;
+  margin-right:0 !important;
+
+  padding-left:0 !important;
+
+  text-align:left !important;
+}
+
+
+/* Palette aligns to exact same left edge */
+
+body.project-australian-light
+.al-direction-layout > :first-child
+.al-palette{
+  margin-left:0 !important;
+  margin-right:0 !important;
+}
+
+
+/* Typeface aligns to exact same left edge */
+
+body.project-australian-light
+.al-direction-layout > :first-child
+.al-type,
+
+body.project-australian-light
+.al-direction-layout > :first-child
+.al-type-system{
+  margin-left:0 !important;
+  margin-right:0 !important;
+}
+
+
+/* Rationale aligns with palette/typeface */
+
+body.project-australian-light
+.al-direction-layout > :first-child
+.al-direction-rationale{
+  margin-left:0 !important;
+  margin-right:0 !important;
+}
+
+
+/* =========================================================
+   COLOUR / TYPOGRAPHY — SUBHEADINGS
+   ========================================================= */
+
+body.project-australian-light
+.al-direction-rationale-item > span{
+  display:block !important;
+
+  margin:0 0 8px !important;
+
+  font-size:13px !important;
+  line-height:1.1 !important;
+
+  font-weight:600 !important;
+
+  letter-spacing:-.01em !important;
+  text-transform:none !important;
+
+  color:#171715 !important;
+}
+
+
+/* Supporting copy remains secondary */
+
+body.project-australian-light
+.al-direction-rationale-item > p{
+  margin:0 !important;
+
+  max-width:340px !important;
+
+  font-size:12px !important;
+  line-height:1.5 !important;
+
+  font-weight:400 !important;
+
+  color:rgba(20,20,18,.58) !important;
+}
+
+
+/* ===== END SECTION 04 — LEFT CONTENT FINAL ===== */
+
+
+/* ===== SECTION 04 — LEFT TYPOGRAPHY POLISH ===== */
+
+
+/* ---------------------------------------------------------
+   Selected-direction description:
+   align with the exact left edge of palette/type system
+   --------------------------------------------------------- */
+
+body.project-australian-light
+.al-direction-layout > :first-child > p:first-of-type{
+  display:block !important;
+
+  align-self:flex-start !important;
+
+  width:100% !important;
+  max-width:760px !important;
+
+  margin:
+    0
+    0
+    28px
+    0 !important;
+
+  padding:0 !important;
+
+  text-align:left !important;
+
+  font-size:clamp(16px,1.25vw,19px) !important;
+  line-height:1.5 !important;
+}
+
+
+/* ---------------------------------------------------------
+   Colour / Typography:
+   clearer subheading hierarchy
+   --------------------------------------------------------- */
+
+body.project-australian-light
+.al-direction-rationale-item > span{
+  display:block !important;
+
+  margin:0 0 12px !important;
+
+  font-size:16px !important;
+  line-height:1.15 !important;
+
+  font-weight:600 !important;
+
+  letter-spacing:-.015em !important;
+  text-transform:none !important;
+
+  color:#171715 !important;
+}
+
+
+/* supporting copy larger and easier to read */
+
+body.project-australian-light
+.al-direction-rationale-item > p{
+  max-width:360px !important;
+
+  margin:0 !important;
+
+  font-size:14px !important;
+  line-height:1.55 !important;
+
+  font-weight:400 !important;
+
+  color:rgba(20,20,18,.58) !important;
+
+  text-align:left !important;
+}
+
+
+/* both rationale columns start from their own left edge */
+
+body.project-australian-light
+.al-direction-rationale-item{
+  text-align:left !important;
+}
+
+
+/* ===== END SECTION 04 — LEFT TYPOGRAPHY POLISH ===== */
+
+
+/* ===== AUSTRALIAN LIGHT — SECTION 05 FLOW NAVIGATION ===== */
+
+
+/* =========================================================
+   SECTION 05 — HORIZONTAL FLOW
+   ========================================================= */
+
+body.project-australian-light .al-flow{
+  overflow:hidden;
+}
+
+
+/*
+  Controls stay aligned to normal page margins.
+*/
+
+body.project-australian-light .al-flow-nav{
+  display:flex;
+
+  align-items:center;
+  justify-content:space-between;
+
+  gap:20px;
+
+  width:100%;
+
+  box-sizing:border-box;
+
+  margin:0 0 18px;
+}
+
+
+body.project-australian-light .al-flow-counter{
+  font-size:10px;
+  line-height:1;
+
+  letter-spacing:.12em;
+
+  color:rgba(20,20,18,.48);
+}
+
+
+/* CTA group */
+
+body.project-australian-light .al-flow-nav-buttons{
+  display:flex;
+
+  align-items:center;
+
+  gap:8px;
+}
+
+
+/* Previous / Next */
+
+body.project-australian-light .al-flow-nav-button{
+  appearance:none;
+
+  display:flex;
+
+  align-items:center;
+  justify-content:center;
+
+  min-width:44px;
+  height:44px;
+
+  box-sizing:border-box;
+
+  margin:0;
+  padding:0 16px;
+
+  border:1px solid rgba(20,20,18,.22);
+  border-radius:999px;
+
+  background:transparent;
+
+  color:#111;
+
+  font:inherit;
+
+  font-size:12px;
+  line-height:1;
+
+  cursor:pointer;
+
+  transition:
+    background .18s ease,
+    color .18s ease,
+    border-color .18s ease,
+    opacity .18s ease;
+}
+
+
+body.project-australian-light
+.al-flow-nav-button:hover:not(:disabled){
+  background:#111;
+  border-color:#111;
+
+  color:#f8f6f0;
+}
+
+
+body.project-australian-light
+.al-flow-nav-button:disabled{
+  opacity:.28;
+
+  cursor:default;
+}
+
+
+/* =========================================================
+   RAIL
+   Start from normal content margin rather than screen edge
+   ========================================================= */
+
+body.project-australian-light .al-flow-rail{
+  display:flex;
+
+  gap:clamp(18px,2vw,28px);
+box-sizing:border-box;
+padding-left:var(--pad) !important;
+  padding-right:var(--pad) !important;
+  padding-bottom:18px;
+
+  overflow-x:auto;
+  overflow-y:hidden;
+
+  scroll-snap-type:x mandatory;
+  scroll-padding-left:var(--pad);
+
+  overscroll-behavior-x:contain;
+
+  touch-action:pan-x;
+
+  scrollbar-width:none;
+}
+
+
+body.project-australian-light
+.al-flow-rail::-webkit-scrollbar{
+  display:none;
+}
+
+
+/* =========================================================
+   CARDS
+   ========================================================= */
+
+body.project-australian-light .al-flow-card{
+  flex:
+    0
+    0
+    min(54vw,760px) !important;
+
+  width:min(54vw,760px) !important;
+
+  min-width:0;
+
+  scroll-snap-align:start;
+  scroll-snap-stop:always;
+}
+
+
+/*
+  Vertical screenshot scrolling stays independent.
+*/
+
+body.project-australian-light
+.al-flow-card figure{
+  overflow-y:auto !important;
+  overflow-x:hidden !important;
+
+  overscroll-behavior-y:contain;
+
+  touch-action:pan-y;
+
+  scrollbar-width:thin;
+}
+
+
+body.project-australian-light
+.al-flow-card figure img{
+  display:block;
+
+  width:100% !important;
+  height:auto !important;
+
+  max-width:none !important;
+  max-height:none !important;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media(max-width:900px){
+
+  body.project-australian-light .al-flow-card{
+    flex-basis:72vw !important;
+    width:72vw !important;
+  }
+
+}
+
+
+@media(max-width:640px){
+
+  body.project-australian-light .al-flow-nav{}
+
+  body.project-australian-light .al-flow-card{
+    flex-basis:86vw !important;
+    width:86vw !important;
+  }
+
+}
+
+
+/* ===== END AUSTRALIAN LIGHT — SECTION 05 FLOW NAVIGATION ===== */
+
+
+/* ===== AUSTRALIAN LIGHT — SECTION 07 BACKGROUND ===== */
+
+/* Match Section 07 to Section 01 */
+body.project-australian-light #al-section-7,
+body.project-australian-light .al-live{
+  background:#111112 !important;
+}
+
+/* ===== END AUSTRALIAN LIGHT — SECTION 07 BACKGROUND ===== */
+
+
+/* ===== AUSTRALIAN LIGHT — SECTION 07 DARK THEME ===== */
+
+
+/* ---------------------------------------------------------
+   Background
+   --------------------------------------------------------- */
+
+body.project-australian-light #al-section-7,
+body.project-australian-light .al-live{
+  background:#111112 !important;
+  color:#f6f2e9 !important;
+}
+
+
+/* ---------------------------------------------------------
+   Main heading
+   --------------------------------------------------------- */
+
+body.project-australian-light
+#al-section-7 .al-section-head h2,
+
+body.project-australian-light
+.al-live .al-section-head h2{
+  color:#f6f2e9 !important;
+}
+
+
+/* Section number / eyebrow */
+
+body.project-australian-light
+#al-section-7 .al-section-no,
+
+body.project-australian-light
+#al-section-7 .al-eyebrow,
+
+body.project-australian-light
+.al-live .al-section-no,
+
+body.project-australian-light
+.al-live .al-eyebrow{
+  color:rgba(246,242,233,.55) !important;
+}
+
+
+/* ---------------------------------------------------------
+   Description / supporting copy
+   --------------------------------------------------------- */
+
+body.project-australian-light
+#al-section-7 p,
+
+body.project-australian-light
+.al-live p{
+  color:rgba(246,242,233,.68) !important;
+}
+
+
+/* ---------------------------------------------------------
+   Divider / rules
+   --------------------------------------------------------- */
+
+body.project-australian-light
+#al-section-7 .al-rule,
+
+body.project-australian-light
+.al-live .al-rule{
+  background:rgba(246,242,233,.18) !important;
+}
+
+
+body.project-australian-light
+#al-section-7 hr,
+
+body.project-australian-light
+.al-live hr{
+  border-color:rgba(246,242,233,.18) !important;
+}
+
+
+/* ---------------------------------------------------------
+   Laptop shell
+   --------------------------------------------------------- */
+
+body.project-australian-light
+#al-section-7 .al-laptop,
+
+body.project-australian-light
+.al-live .al-laptop{border-color:rgba(255,255,255,.14) !important;
+}
+
+
+/* ---------------------------------------------------------
+   Browser chrome
+   --------------------------------------------------------- */
+
+body.project-australian-light
+#al-section-7 .al-browser-bar,
+
+body.project-australian-light
+.al-live .al-browser-bar{border-bottom:
+    1px solid rgba(255,255,255,.08)
+    !important;
+
+  color:rgba(255,255,255,.56) !important;
+}
+
+
+/* URL / chrome text */
+
+body.project-australian-light
+#al-section-7 .al-browser-bar *,
+body.project-australian-light
+.al-live .al-browser-bar *{
+  color:rgba(255,255,255,.56) !important;
+}
+
+
+/* ---------------------------------------------------------
+   Laptop / live prototype caption
+   --------------------------------------------------------- */
+
+body.project-australian-light
+#al-section-7 figcaption,
+
+body.project-australian-light
+.al-live figcaption{
+  color:rgba(246,242,233,.48) !important;
+}
+
+
+/* ---------------------------------------------------------
+   Links / CTAs inside Section 07
+   --------------------------------------------------------- */
+
+body.project-australian-light
+#al-section-7 a,
+
+body.project-australian-light
+.al-live a{
+  color:#f6f2e9;
+}
+
+
+body.project-australian-light
+#al-section-7 a:hover,
+
+body.project-australian-light
+.al-live a:hover{
+  color:#fff;
+}
+
+
+/* ===== END AUSTRALIAN LIGHT — SECTION 07 DARK THEME ===== */
+
+
+/* ===== AUSTRALIAN LIGHT — SECTION 07 BROWSER FIXES ===== */
+
+
+/* ---------------------------------------------------------
+   Browser chrome
+   --------------------------------------------------------- */
+
+body.project-australian-light
+#al-section-7 .al-browser-bar,
+
+body.project-australian-light
+.al-live .al-browser-bar{
+  position:relative !important;
+
+  display:flex !important;
+  align-items:center !important;
+
+  min-height:34px;
+
+  padding-inline:12px !important;
+
+  box-sizing:border-box;
+}
+
+
+/*
+  Keep the URL/address exactly centered in the browser,
+  independent of left/right browser controls.
+*/
+
+body.project-australian-light
+#al-section-7 .al-browser-address,
+
+body.project-australian-light
+#al-section-7 .al-browser-url,
+
+body.project-australian-light
+.al-live .al-browser-address,
+
+body.project-australian-light
+.al-live .al-browser-url{
+  position:absolute !important;
+
+  left:50% !important;
+  top:50% !important;
+
+  transform:
+    translate(-50%,-50%)
+    !important;
+
+  display:flex !important;
+
+  align-items:center;
+  justify-content:center;
+
+  width:
+    min(
+      58%,
+      520px
+    );
+
+  max-width:
+    calc(100% - 150px);
+
+  margin:0 !important;
+
+  text-align:center !important;
+
+  white-space:nowrap;
+
+  overflow:hidden;
+
+  text-overflow:ellipsis;
+}
+
+
+/* Browser controls stay above centered address */
+
+body.project-australian-light
+#al-section-7 .al-browser-bar > *:not(.al-browser-address):not(.al-browser-url),
+
+body.project-australian-light
+.al-live .al-browser-bar > *:not(.al-browser-address):not(.al-browser-url){
+  position:relative;
+
+  z-index:2;
+}
+
+
+/* ---------------------------------------------------------
+   Interactive website scrollbar
+   Hide scrollbar visually, keep scrolling functional
+   --------------------------------------------------------- */
+
+body.project-australian-light
+#al-section-7 iframe,
+
+body.project-australian-light
+.al-live iframe{
+  scrollbar-width:none !important;
+  -ms-overflow-style:none !important;
+}
+
+
+/*
+  Useful for same-origin scroll containers inside
+  the laptop/browser shell.
+*/
+
+body.project-australian-light
+#al-section-7 .al-browser-viewport,
+
+body.project-australian-light
+#al-section-7 .al-live-frame,
+
+body.project-australian-light
+.al-live .al-browser-viewport,
+
+body.project-australian-light
+.al-live .al-live-frame{
+  scrollbar-width:none !important;
+  -ms-overflow-style:none !important;
+}
+
+
+body.project-australian-light
+#al-section-7 .al-browser-viewport::-webkit-scrollbar,
+
+body.project-australian-light
+#al-section-7 .al-live-frame::-webkit-scrollbar,
+
+body.project-australian-light
+.al-live .al-browser-viewport::-webkit-scrollbar,
+
+body.project-australian-light
+.al-live .al-live-frame::-webkit-scrollbar{
+  width:0 !important;
+  height:0 !important;
+
+  display:none !important;
+}
+
+
+/* ===== END AUSTRALIAN LIGHT — SECTION 07 BROWSER FIXES ===== */
+
+
+/* ===== AUSTRALIAN LIGHT — SECTION 07 TOP ALIGN ===== */
+
+body.project-australian-light
+#al-section-7 .al-section-head,
+body.project-australian-light
+.al-live .al-section-head{
+  align-items:start !important;
+}
+
+body.project-australian-light
+#al-section-7 .al-section-head > *,
+body.project-australian-light
+.al-live .al-section-head > *{
+  align-self:start !important;
+  margin-top:0 !important;
+}
+
+/* ===== END AUSTRALIAN LIGHT — SECTION 07 TOP ALIGN ===== */
+
+/* =========================================================
+   AUSTRALIAN LIGHT — HERO CANONICAL
+   ========================================================= */
+
+@media (min-width:901px){
+
+  body.project-australian-light .al-hero{
+    height:auto !important;
+    min-height:100svh !important;
+    max-height:none !important;
+    overflow:visible !important;
+  }
+
+  body.project-australian-light .al-hero > .al-hero-inner{
+    height:auto !important;
+    min-height:0 !important;
+
+    grid-template-columns:
+      minmax(0,.92fr)
+      minmax(420px,1.08fr) !important;
+
+    align-items:center !important;
+
+    padding-top:clamp(140px,14vh,190px) !important;
+    padding-bottom:36px !important;
+  }
+
+  body.project-australian-light .al-hero-visual{
+    min-width:0;
+  }
+
+  body.project-australian-light .al-hero-frame{
+    width:min(100%,780px) !important;
+    height:auto !important;
+    max-height:none !important;
+    aspect-ratio:16 / 10 !important;
+  }
+
+  body.project-australian-light .al-hero-frame img{
+    width:100% !important;
+    height:100% !important;
+    max-height:none !important;
+    object-fit:cover !important;
+    object-position:center top !important;
+  }
+
+  body.project-australian-light .al-hero h1{
+    max-width:100% !important;
+    font-size:clamp(68px,7.25vw,132px) !important;
+    line-height:.80 !important;
+    letter-spacing:-.07em !important;
+  }
+
+  body.project-australian-light .al-hero .al-meta{
+    grid-template-columns:
+      1fr
+      2.1fr
+      1fr
+      .55fr !important;
+  }
+
+  body.project-australian-light .al-hero .al-meta > div{
+    border-right:1px solid rgba(246,242,233,.15) !important;
+    border-bottom:0 !important;
+  }
+
+  body.project-australian-light .al-hero .al-meta > div:last-child{
+    border-right:0 !important;
+  }
+
+}
+
+/* ===== END AUSTRALIAN LIGHT — HERO CANONICAL ===== */
+

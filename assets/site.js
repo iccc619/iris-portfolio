@@ -7220,6 +7220,780 @@ function ensureStepMotionEndMatter(p, projects){
 }
 
 
+
+/* =========================================================
+   AUSTRALIAN LIGHT
+   ========================================================= */
+
+function renderAustralianLight(project){
+
+  const base = "/public/projects/australian-light";
+
+  return `
+    <article class="al-page">
+
+      <!-- HERO -->
+      <section class="al-hero" id="al-hero">
+        <div class="al-shell al-hero-inner">
+
+          <div class="al-hero-copy">
+            <div class="al-hero-kicker">
+              UI/UX · E-COMMERCE · FRONT-END · 2026
+            </div>
+
+            <h1>
+              AUSTRALIAN<br>
+              LIGHT
+            </h1>
+
+            <p class="al-hero-lead">
+              Transforming a static Australian landscape photography gallery
+              into a responsive, structured and functional e-commerce experience.
+            </p>
+          </div>
+
+          <div class="al-hero-visual">
+            <div class="al-hero-frame">
+              <img
+                src="${base}/hero/hero-desktop.png"
+                alt="Australian Light final website homepage"
+              >
+            </div>
+          </div>
+
+        </div>
+
+        <div class="al-meta">
+          <div>
+            <b>Context</b>
+            <span>Academic · UI Development</span>
+          </div>
+
+          <div>
+            <b>Role</b>
+            <span>UX research · UI design · prototyping · front-end implementation</span>
+          </div>
+
+          <div>
+            <b>Tools</b>
+            <span>Figma · HTML · CSS · JavaScript</span>
+          </div>
+
+          <div>
+            <b>Year</b>
+            <span>2026</span>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- 01 PROBLEM -->
+      <section class="al-section al-problem" id="al-section-1">
+        <div class="al-shell">
+
+          <div class="al-section-head">
+            <span class="al-section-no">01</span>
+            <h2>FROM GALLERY<br>TO COMMERCE</h2>
+          </div>
+
+          <div class="al-rule"></div>
+
+          <div class="al-problem-intro">
+            <p class="al-copy">
+              Strong photography was already present.
+              The missing layer was a clear path from
+              discovery to purchase.
+            </p>
+
+            <p>
+              The original Australian Light website behaved primarily
+              as a static photography gallery. The redesign reframed it
+              as a responsive commerce experience without losing the
+              atmosphere of the photographic work.
+            </p>
+          </div>
+
+          <div class="al-issues">
+
+            <article class="al-issue">
+              <span>01 / DISCOVERY</span>
+              <h3>Fragmented browsing</h3>
+              <p>
+                Limited search, filtering and category guidance made it
+                difficult to move efficiently through the photography archive.
+              </p>
+            </article>
+
+            <article class="al-issue">
+              <span>02 / PRODUCT</span>
+              <h3>Hidden purchase intent</h3>
+              <p>
+                Product information and primary actions lacked a clear
+                hierarchy, weakening the transition from viewing to buying.
+              </p>
+            </article>
+
+            <article class="al-issue">
+              <span>03 / RESPONSIVE</span>
+              <h3>Desktop-first structure</h3>
+              <p>
+                Smaller screens inherited rigid desktop layouts, creating
+                cropping, overflow and inconsistent reading order.
+              </p>
+            </article>
+
+          </div>
+
+          <div class="al-audit">
+            <div class="al-audit-head">
+              <span class="al-eyebrow">ORIGINAL WEBSITE / AUDIT</span>
+
+              <p>
+                The visual material was strong, but the interface offered
+                limited support for product discovery, comparison and purchase.
+              </p>
+            </div>
+
+            <div class="al-audit-viewer" data-al-audit>
+
+              <div class="al-audit-tabs">
+
+                ${[
+                  ["01","HOMEPAGE",
+                    "research/screencapture-australianlight-au-2026-03-11-13_15_47.png"],
+
+                  ["02","PRODUCT DISCOVERY",
+                    "research/screencapture-australianlight-au-galleries-latest-releases-2026-03-11-13_16_52.png"],
+
+                  ["03","PRODUCT DETAIL",
+                    "research/screencapture-australianlight-au-galleries-latest-releases-fire-and-rain-2026-03-11-13_17_16.png"],
+
+                  ["04","CART",
+                    "research/screencapture-australianlight-au-cart-2026-03-11-13_18_26.png"]
+                ].map((item,index)=>`
+                  <button
+                    class="al-audit-tab ${index===0 ? "is-active" : ""}"
+                    type="button"
+                    data-al-audit-src="${base}/${item[2]}"
+                    data-al-audit-number="${item[0]}"
+                    data-al-audit-label="${item[1]}">
+
+                    <span>${item[0]}</span>
+                    <span>${item[1]}</span>
+
+                  </button>
+                `).join("")}
+
+              </div>
+
+              <div
+                class="al-audit-stage"
+                data-al-audit-stage>
+
+                <img
+                  src="${base}/research/screencapture-australianlight-au-2026-03-11-13_15_47.png"
+                  alt="Original Australian Light website"
+                  data-al-audit-image
+                >
+
+                <div class="al-audit-stage-label">
+                  <span data-al-audit-number>01</span>
+                  <span data-al-audit-label>HOMEPAGE</span>
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+
+      <!-- 02 RESEARCH -->
+      <section class="al-section al-research" id="al-section-2">
+        <div class="al-shell">
+
+          <div class="al-section-head">
+            <span class="al-section-no">02</span>
+            <h2>RESEARCH<br>SETS THE SYSTEM</h2>
+          </div>
+
+          <div class="al-rule"></div>
+
+          <div class="al-research-grid">
+
+            <p class="al-research-statement">
+              Competitor analysis shifted the project from
+              “make it more beautiful” to “make every action clearer”.
+            </p>
+
+            <div class="al-findings">
+
+              <div class="al-finding">
+                <b>Navigation</b>
+                <span>Persistent pathways and visible hierarchy reduce uncertainty.</span>
+              </div>
+
+              <div class="al-finding">
+                <b>Discovery</b>
+                <span>Search, category, filter and sort controls need to work together.</span>
+              </div>
+
+              <div class="al-finding">
+                <b>Product</b>
+                <span>Photography stays dominant while price, format and CTA remain immediately legible.</span>
+              </div>
+
+              <div class="al-finding">
+                <b>Responsive</b>
+                <span>Content should recompose rather than simply shrink.</span>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+
+      <!-- 03 PROCESS -->
+      <section class="al-section al-process" id="al-section-3">
+        <div class="al-shell">
+
+          <div class="al-section-head">
+            <span class="al-section-no">03</span>
+            <h2>FROM SKETCH<br>TO INTERFACE</h2>
+          </div>
+
+          <div class="al-rule"></div>
+
+          <div class="al-process-track">
+            <div class="al-process-step">
+              <strong>Sketch</strong>
+              <span>01 / divergent layouts</span>
+            </div>
+
+            <div class="al-process-step">
+              <strong>Low fidelity</strong>
+              <span>02 / structure + flow</span>
+            </div>
+
+            <div class="al-process-step">
+              <strong>Art direction</strong>
+              <span>03 / visual identity</span>
+            </div>
+
+            <div class="al-process-step">
+              <strong>High fidelity</strong>
+              <span>04 / responsive product</span>
+            </div>
+          </div>
+
+          <div class="al-process-ui" data-al-process>
+
+            <div class="al-process-nav">
+
+              ${[
+                ["01","SKETCH / HOMEPAGE","process/sketch_1.PNG"],
+                ["02","SKETCH / SEARCH","process/sketch_2.PNG"],
+                ["03","SKETCH / PRODUCT","process/sketch_3.PNG"],
+                ["04","SKETCH / CHECKOUT","process/sketch_4.PNG"],
+
+                ["05","LOW-FI / HOMEPAGE","process/lowfi-Homepage.svg"],
+                ["06","LOW-FI / SIDE NAV","process/lowfi-Homepage_Side Navigation.svg"],
+                ["07","LOW-FI / SEARCH","process/lowfi-Search Engine.svg"],
+                ["08","LOW-FI / RESULTS","process/lowfi-Search Result.svg"],
+                ["09","LOW-FI / PRODUCT LIST","process/lowfi-Product List_Filter.svg"],
+                ["10","LOW-FI / PRODUCT DETAIL","process/lowfi-Product Detail.svg"],
+                ["11","LOW-FI / CART","process/lowfi-Cart.svg"],
+                ["12","LOW-FI / CHECKOUT","process/lowfi-Cart_Info.svg"],
+                ["13","LOW-FI / PAYMENT","process/lowfi-Cart_Pay_01.svg"]
+              ].map((item,index)=>`
+                <button
+                  type="button"
+                  class="al-process-button ${index===0 ? "is-active" : ""}"
+                  data-al-process-src="${base}/${item[2]}"
+                  data-al-process-index="${item[0]}"
+                  data-al-process-label="${item[1]}">
+
+                  <small>${item[0]}</small>
+                  <span>${item[1]}</span>
+
+                </button>
+              `).join("")}
+
+            </div>
+
+            <div class="al-process-stage-wrap">
+
+              <div class="al-process-stage-meta">
+                <span data-al-process-index>01</span>
+                <span data-al-process-label>SKETCH / HOMEPAGE</span>
+              </div>
+
+              <div class="al-process-stage">
+
+                <img
+                  src="${base}/process/sketch_1.PNG"
+                  alt="Australian Light design process"
+                  data-al-process-image
+                >
+
+              </div>
+
+              <div class="al-process-thumbs">
+
+                ${[
+                  ["01","process/sketch_1.PNG"],
+                  ["02","process/sketch_2.PNG"],
+                  ["03","process/sketch_3.PNG"],
+                  ["04","process/sketch_4.PNG"],
+                  ["05","process/lowfi-Homepage.svg"],
+                  ["06","process/lowfi-Search Engine.svg"]
+                ].map((item,index)=>`
+                  <button
+                    type="button"
+                    class="al-process-thumb ${index===0 ? "is-active" : ""}"
+                    data-al-process-thumb="${item[0]}">
+
+                    <img
+                      src="${base}/${item[1]}"
+                      alt=""
+                    >
+
+                  </button>
+                `).join("")}
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+
+      <!-- 04 DIRECTION -->
+      <section class="al-section al-direction" id="al-section-4">
+        <div class="al-shell">
+
+          <div class="al-section-head">
+            <span class="al-section-no">04</span>
+            <h2>SIGNATURE<br>VISUAL SYSTEM</h2>
+          </div>
+
+          <div class="al-rule"></div>
+
+          <div class="al-direction-layout">
+
+            <div>
+              <span class="al-eyebrow">
+                SELECTED DIRECTION / FINAL
+              </span>
+
+              <p class="al-copy">
+                A restrained black, warm-white and muted-gold palette
+                gives the photography visual authority while creating
+                a premium e-commerce atmosphere.
+              </p>
+
+              <div class="al-palette">
+                <div class="al-swatch" style="background:#F8F6F0">#F8F6F0</div>
+                <div class="al-swatch" style="background:#A48F6E;color:white">#A48F6E</div>
+                <div class="al-swatch" style="background:#2C2C2C;color:white">#2C2C2C</div>
+                <div class="al-swatch" style="background:#111112;color:white">#111112</div>
+              </div>
+
+              <div class="al-type-sample">
+                <p class="al-type-display">Australian Light</p>
+                <p class="al-type-body">Canela + Avenir</p>
+              </div>
+            </div>
+
+            <div class="al-direction-media">
+
+
+
+            
+            <figure class="al-direction-mobile">
+
+              <div class="al-direction-phone-screen">
+
+                <div
+                  class="al-mobile-browser-bar"
+                  aria-hidden="true"
+                >
+                  <div class="al-mobile-browser-controls">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                  </div>
+
+                  <div class="al-mobile-browser-url">
+                    australianlight
+                  </div>
+
+                  <div class="al-mobile-browser-menu">
+                    ⋯
+                  </div>
+                </div>
+
+                <div class="al-mobile-scroll">
+                  <img
+                    src="${base}/final/Mobile - Homepage_01.png"
+                  alt="Scrollable Australian Light mobile homepage"
+                  >
+                </div>
+
+              </div>
+
+            </figure>
+
+            <figcaption class="al-direction-mobile-caption">
+              MOBILE HOMEPAGE · SCROLL TO EXPLORE
+            </figcaption>
+
+
+          </div>
+
+        </div>
+      </section>
+
+
+      <!-- 05 FLOW -->
+      <section class="al-section al-flow" id="al-section-5">
+        <div class="al-shell">
+
+          <div class="al-section-head">
+            <span class="al-section-no">05</span>
+            <h2>ONE CONTINUOUS<br>SHOPPING FLOW</h2>
+          </div>
+
+          <div class="al-rule"></div>
+
+          <div class="al-flow-rail">
+
+            ${[
+              [
+                "01",
+                "SEARCH",
+                "Search history + suggested products",
+                "final/Desktop - Search_02.png"
+              ],
+              [
+                "02",
+                "DISCOVER",
+                "Filtering, sorting and responsive product grids",
+                "final/Desktop - Product List_02.png"
+              ],
+              [
+                "03",
+                "SELECT",
+                "Style, size, pricing and product information",
+                "final/Desktop - Product Detail_02.png"
+              ],
+              [
+                "04",
+                "CART",
+                "Persistent products and editable quantity",
+                "final/Desktop - Cart.png"
+              ],
+              [
+                "05",
+                "CHECKOUT",
+                "Validated contact, shipping and payment progression",
+                "final/Desktop - Cart_Pay.png"
+              ],
+              [
+                "06",
+                "CONFIRM",
+                "Order number, arrival information and purchase summary",
+                "final/Desktop - Cart_Confirmation.png"
+              ]
+            ].map(item => `
+              <article class="al-flow-card">
+
+                <figure>
+                  <img
+                    src="${base}/${item[3]}"
+                    alt="Australian Light ${item[1].toLowerCase()} interface"
+                    loading="lazy"
+                  >
+                </figure>
+
+                <div class="al-flow-card-meta">
+                  <span>${item[0]}</span>
+
+                  <div>
+                    <strong>${item[1]}</strong>
+                    <p>${item[2]}</p>
+                  </div>
+                </div>
+
+              </article>
+            `).join("")}
+
+          </div>
+
+        </div>
+      </section>
+
+
+      <!-- 06 CODE -->
+      <section class="al-section al-code" id="al-section-6">
+        <div class="al-shell">
+
+          <div class="al-section-head">
+            <span class="al-section-no">06</span>
+            <h2>DESIGN<br>BECOMES SYSTEM</h2>
+          </div>
+
+          <div class="al-rule"></div>
+
+          <div class="al-code-grid">
+
+            <p class="al-code-lead">
+              The coded product goes beyond the Figma prototype.
+            </p>
+
+            <div class="al-capabilities">
+
+              <article class="al-capability">
+                <span>CSS</span>
+                <div>
+                  <h3>Responsive overlay architecture</h3>
+                  <p>
+                    Search and cart panels adapt to viewport height
+                    rather than relying on fixed prototype dimensions.
+                  </p>
+                </div>
+              </article>
+
+              <article class="al-capability">
+                <span>JAVASCRIPT</span>
+                <div>
+                  <h3>Persistent shopping cart</h3>
+                  <p>
+                    localStorage preserves product, style, size,
+                    price and quantity while users navigate between pages.
+                  </p>
+                </div>
+              </article>
+
+              <article class="al-capability">
+                <span>FORM LOGIC</span>
+                <div>
+                  <h3>Validated checkout progression</h3>
+                  <p>
+                    Required information is checked before progression
+                    while order totals, shipping and confirmation data
+                    are carried across the flow.
+                  </p>
+                </div>
+              </article>
+
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+
+      <!-- 07 LIVE PRODUCT -->
+      <section class="al-section al-live" id="al-section-7">
+        <div class="al-shell">
+
+          <div class="al-section-head">
+            <span class="al-section-no">07</span>
+            <h2>DON'T JUST<br>LOOK AT IT. USE IT.</h2>
+          </div>
+
+          <div class="al-rule"></div>
+
+          <div class="al-live-intro">
+            <span class="al-eyebrow">
+              LIVE FRONT-END PROTOTYPE
+            </span>
+
+            <p>
+              The final interface is embedded directly into the case study.
+              Browse collections, open product pages, add an item to the cart
+              and move through the checkout experience.
+            </p>
+          </div>
+
+          <div class="al-laptop-wrap">
+            <div class="al-laptop">
+
+              <div class="al-laptop-screen">
+
+                <div class="al-browser">
+
+                  <div class="al-browser-bar">
+                    <span class="al-browser-dots">
+                      <i></i><i></i><i></i>
+                    </span>
+
+                    <span class="al-browser-address">
+                      australianlight
+                    </span>
+
+                    <span></span>
+                  </div>
+
+                  <iframe
+                    src="https://iccc619.github.io/UI-Implementation/"
+                    title="Australian Light interactive website"
+                    loading="lazy">
+                  </iframe>
+
+                </div>
+
+              </div>
+
+              <div class="al-laptop-base"></div>
+
+            </div>
+          </div>
+
+          <div class="al-live-links">
+            <a
+              href="https://iccc619.github.io/UI-Implementation/"
+              target="_blank"
+              rel="noopener">
+              Open live site ↗
+            </a>
+
+            <a
+              href="https://github.com/iccc619/UI-Implementation"
+              target="_blank"
+              rel="noopener">
+              View repository ↗
+            </a>
+          </div>
+
+        </div>
+      </section>
+
+
+      <!-- 08 ITERATION -->
+      <section class="al-section al-iteration" id="al-section-8">
+        <div class="al-shell">
+
+          <div class="al-section-head">
+            <span class="al-section-no">08</span>
+            <h2>TEST.<br>REFINE. REPEAT.</h2>
+          </div>
+
+          <div class="al-rule"></div>
+
+          <div class="al-iteration-grid">
+
+            <article class="al-iteration-item">
+
+              <div class="al-iteration-compare">
+                <figure>
+                  <img
+                    src="${base}/iteration/hero-before.png"
+                    alt="Australian Light hero before iteration"
+                    loading="lazy"
+                  >
+                  <figcaption>BEFORE</figcaption>
+                </figure>
+
+                <figure>
+                  <img
+                    src="${base}/iteration/hero-after.png"
+                    alt="Australian Light hero after iteration"
+                    loading="lazy"
+                  >
+                  <figcaption>AFTER</figcaption>
+                </figure>
+              </div>
+
+              <span>01</span>
+              <h3>Clearer first impression</h3>
+              <p>
+                Hero copy was refined so the purpose of the photography
+                platform becomes easier to understand immediately.
+              </p>
+            </article>
+
+            <article class="al-iteration-item">
+
+              <div class="al-iteration-compare">
+                <figure>
+                  <img
+                    src="${base}/iteration/checkout-before.png"
+                    alt="Australian Light checkout before iteration"
+                    loading="lazy"
+                  >
+                  <figcaption>BEFORE</figcaption>
+                </figure>
+
+                <figure>
+                  <img
+                    src="${base}/iteration/checkout-after.png"
+                    alt="Australian Light checkout after iteration"
+                    loading="lazy"
+                  >
+                  <figcaption>AFTER</figcaption>
+                </figure>
+              </div>
+
+              <span>02</span>
+              <h3>Checkout validation</h3>
+              <p>
+                Required inputs now control CTA availability so users
+                cannot progress through an incomplete checkout.
+              </p>
+            </article>
+
+            <article class="al-iteration-item">
+
+              <div class="al-iteration-compare">
+                <figure>
+                  <img
+                    src="${base}/iteration/recommendation-before.png"
+                    alt="Australian Light recommendations before iteration"
+                    loading="lazy"
+                  >
+                  <figcaption>BEFORE</figcaption>
+                </figure>
+
+                <figure>
+                  <img
+                    src="${base}/iteration/recommendation-after.png"
+                    alt="Australian Light recommendations after iteration"
+                    loading="lazy"
+                  >
+                  <figcaption>AFTER</figcaption>
+                </figure>
+              </div>
+
+              <span>03</span>
+              <h3>Contextual recommendations</h3>
+              <p>
+                Recommendation content was corrected to respond more
+                appropriately to the selected photography product.
+              </p>
+            </article>
+
+          </div>
+
+        </div>
+      </section>
+
+    </article>
+  `;
+}
+
+
 async function renderProject(){
   const projects=await getProjects();
   const slug=location.pathname.split("/").filter(Boolean).pop();
@@ -7232,6 +8006,23 @@ async function renderProject(){
   if(p.slug==="60-bpm"){ render60BPM(p,projects); return; }
   if(p.slug==="ethereal-realm"){
     document.body.classList.add("project-ethereal-realm"); renderEtherealRealm(p,projects); return; }
+  if(p.slug==="australian-light"){
+    document.body.classList.add("project-australian-light");
+    document.title=`${p.title} — Iris Wang`;
+
+    document.body.insertAdjacentHTML("afterbegin",header());
+
+    document.querySelector("#project-root").innerHTML=
+      renderAustralianLight(p);
+
+    requestAnimationFrame(()=>{
+      initAustralianLightMotion();
+      initAustralianLightFlowProgress();
+    });
+
+    return;
+  }
+
   if(p.slug==="green-grid"){ renderGreenGridV1(p,projects); return; }
   if(p.slug==="n-exhibition"){ renderNExhibitionV1(p,projects); return; }
   
@@ -8477,4 +9268,2680 @@ requestAnimationFrame(syncStepMotionSectionHeader);
     subtree: true
   });
 })();
+
+
+
+/* =========================================================
+   AUSTRALIAN LIGHT — REVEAL MOTION
+   ========================================================= */
+
+function initAustralianLightMotion(){
+
+  if(!document.body.classList.contains("project-australian-light")){
+    return;
+  }
+
+  const groups = [
+    ".al-problem-intro",
+    ".al-issues",
+    ".al-audit-head",
+    ".al-audit-grid",
+    ".al-research-grid",
+    ".al-process-track",
+    ".al-process-sketch",
+    ".al-lowfi-stack",
+    ".al-direction-layout",
+    ".al-flow-rail",
+    ".al-code-grid",
+    ".al-live-intro",
+    ".al-laptop-wrap",
+    ".al-iteration-grid"
+  ];
+
+  const items = [
+    ...document.querySelectorAll(groups.join(","))
+  ];
+
+  if(!items.length) return;
+
+  items.forEach((el,index)=>{
+
+    if(el.dataset.alRevealReady === "1") return;
+
+    el.dataset.alRevealReady = "1";
+
+    el.classList.add("al-reveal");
+
+    if(index % 4){
+      el.dataset.alDelay = String(index % 4);
+    }
+
+  });
+
+
+  if(
+    window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    ).matches
+  ){
+    items.forEach(el=>el.classList.add("is-visible"));
+    return;
+  }
+
+
+  const observer = new IntersectionObserver(
+    entries=>{
+
+      entries.forEach(entry=>{
+
+        if(!entry.isIntersecting) return;
+
+        entry.target.classList.add("is-visible");
+
+        observer.unobserve(entry.target);
+
+      });
+
+    },
+    {
+      threshold:.12,
+      rootMargin:"0px 0px -6% 0px"
+    }
+  );
+
+
+  items.forEach(el=>observer.observe(el));
+
+}
+
+
+/* =========================================================
+   AUSTRALIAN LIGHT — FLOW PROGRESS
+   ========================================================= */
+
+function initAustralianLightFlowProgress(){
+
+  if(!document.body.classList.contains("project-australian-light")){
+    return;
+  }
+
+  const rail =
+    document.querySelector(".al-flow-rail");
+
+  const bar =
+    document.querySelector(".al-flow-progress span");
+
+  if(!rail || !bar) return;
+
+  if(rail.dataset.progressReady === "1") return;
+
+  rail.dataset.progressReady = "1";
+
+
+  const update = ()=>{
+
+    const max =
+      rail.scrollWidth - rail.clientWidth;
+
+    const ratio =
+      max > 0
+        ? rail.scrollLeft / max
+        : 0;
+
+    const available = 78;
+
+    bar.style.transform =
+      `translateX(${ratio * available * 4.545}%)`;
+
+  };
+
+
+  rail.addEventListener(
+    "scroll",
+    update,
+    {passive:true}
+  );
+
+  window.addEventListener(
+    "resize",
+    update,
+    {passive:true}
+  );
+
+  update();
+
+}
+
+
+/* =========================================================
+   AUSTRALIAN LIGHT — INTERACTION SYSTEM
+   ========================================================= */
+
+function initAustralianLightInteractions(){
+
+  if(!document.body.classList.contains(
+    "project-australian-light"
+  )){
+    return;
+  }
+
+
+  /* =======================================================
+     01 — ORIGINAL SITE AUDIT
+     ======================================================= */
+
+  const audit =
+    document.querySelector("[data-al-audit]");
+
+  if(audit && audit.dataset.ready !== "1"){
+
+    audit.dataset.ready = "1";
+
+    const tabs =
+      [...audit.querySelectorAll(".al-audit-tab")];
+
+    const image =
+      audit.querySelector("[data-al-audit-image]");
+
+    const number =
+      audit.querySelector("[data-al-audit-number]");
+
+    const label =
+      audit.querySelector("[data-al-audit-label]");
+
+    const stage =
+      audit.querySelector("[data-al-audit-stage]");
+
+
+    tabs.forEach(tab=>{
+
+      tab.addEventListener("click",()=>{
+
+        tabs.forEach(item=>
+          item.classList.remove("is-active")
+        );
+
+        tab.classList.add("is-active");
+
+        image.src =
+          tab.dataset.alAuditSrc;
+
+        number.textContent =
+          tab.dataset.alAuditNumber;
+
+        label.textContent =
+          tab.dataset.alAuditLabel;
+
+        stage.scrollTop = 0;
+
+      });
+
+    });
+
+  }
+
+
+  /* =======================================================
+     03 — PROCESS VIEWER
+     ======================================================= */
+
+  const process =
+    document.querySelector("[data-al-process]");
+
+  if(process && process.dataset.ready !== "1"){
+
+    process.dataset.ready = "1";
+
+    const buttons =
+      [...process.querySelectorAll(
+        ".al-process-button"
+      )];
+
+    const thumbs =
+      [...process.querySelectorAll(
+        ".al-process-thumb"
+      )];
+
+    const image =
+      process.querySelector(
+        "[data-al-process-image]"
+      );
+
+    const number =
+      process.querySelector(
+        "[data-al-process-index]"
+      );
+
+    const label =
+      process.querySelector(
+        "[data-al-process-label]"
+      );
+
+
+    const activate = button=>{
+
+      if(!button) return;
+
+      buttons.forEach(item=>
+        item.classList.remove("is-active")
+      );
+
+      button.classList.add("is-active");
+
+      image.src =
+        button.dataset.alProcessSrc;
+
+      number.textContent =
+        button.dataset.alProcessIndex;
+
+      label.textContent =
+        button.dataset.alProcessLabel;
+
+      thumbs.forEach(thumb=>{
+        thumb.classList.toggle(
+          "is-active",
+          thumb.dataset.alProcessThumb ===
+          button.dataset.alProcessIndex
+        );
+      });
+
+    };
+
+
+    buttons.forEach(button=>{
+
+      button.addEventListener(
+        "click",
+        ()=>activate(button)
+      );
+
+    });
+
+
+    thumbs.forEach(thumb=>{
+
+      thumb.addEventListener("click",()=>{
+
+        const target =
+          buttons.find(
+            button =>
+              button.dataset.alProcessIndex ===
+              thumb.dataset.alProcessThumb
+          );
+
+        activate(target);
+
+      });
+
+    });
+
+  }
+
+
+  /* =======================================================
+     05 — SHOPPING FLOW
+     ======================================================= */
+
+  const rail =
+    document.querySelector(".al-flow-rail");
+
+  if(rail && rail.dataset.flowReady !== "1"){
+
+    rail.dataset.flowReady = "1";
+
+    const cards =
+      [...rail.querySelectorAll(".al-flow-card")];
+
+    const prev =
+      document.querySelector("[data-al-flow-prev]");
+
+    const next =
+      document.querySelector("[data-al-flow-next]");
+
+    const current =
+      document.querySelector("[data-al-flow-current]");
+
+    const progress =
+      document.querySelector(".al-flow-progress span");
+
+    let active = 0;
+
+
+    const update = ()=>{
+
+      const railBox =
+        rail.getBoundingClientRect();
+
+      const centre =
+        railBox.left + railBox.width / 2;
+
+      let closestIndex = 0;
+      let closestDistance = Infinity;
+
+
+      cards.forEach((card,index)=>{
+
+        const box =
+          card.getBoundingClientRect();
+
+        const cardCentre =
+          box.left + box.width / 2;
+
+        const distance =
+          Math.abs(cardCentre - centre);
+
+        if(distance < closestDistance){
+
+          closestDistance = distance;
+          closestIndex = index;
+
+        }
+
+      });
+
+
+      active = closestIndex;
+
+
+      if(current){
+
+        current.textContent =
+          String(active + 1).padStart(2,"0");
+
+      }
+
+
+      if(progress){
+
+        const max =
+          rail.scrollWidth -
+          rail.clientWidth;
+
+        const ratio =
+          max > 0
+            ? rail.scrollLeft / max
+            : 0;
+
+        progress.style.transform =
+          `scaleX(${Math.max(.04, ratio)})`;
+
+      }
+
+    };
+
+
+    const goTo = index=>{
+
+      active =
+        Math.max(
+          0,
+          Math.min(cards.length - 1,index)
+        );
+
+      cards[active].scrollIntoView({
+        behavior:"smooth",
+        block:"nearest",
+        inline:"start"
+      });
+
+    };
+
+
+    prev?.addEventListener(
+      "click",
+      ()=>goTo(active - 1)
+    );
+
+    next?.addEventListener(
+      "click",
+      ()=>goTo(active + 1)
+    );
+
+
+    rail.addEventListener(
+      "scroll",
+      update,
+      {passive:true}
+    );
+
+
+    /* mouse drag */
+
+    let dragging = false;
+    let startX = 0;
+    let startScroll = 0;
+
+
+    rail.addEventListener(
+      "pointerdown",
+      event=>{
+
+        dragging = true;
+
+        startX = event.clientX;
+        startScroll = rail.scrollLeft;
+
+        rail.setPointerCapture(
+          event.pointerId
+        );
+
+        rail.style.cursor =
+          "grabbing";
+
+      }
+    );
+
+
+    rail.addEventListener(
+      "pointermove",
+      event=>{
+
+        if(!dragging) return;
+
+        const delta =
+          event.clientX - startX;
+
+        rail.scrollLeft =
+          startScroll - delta;
+
+      }
+    );
+
+
+    const release = ()=>{
+
+      dragging = false;
+
+      rail.style.cursor =
+        "grab";
+
+    };
+
+
+    rail.addEventListener(
+      "pointerup",
+      release
+    );
+
+    rail.addEventListener(
+      "pointercancel",
+      release
+    );
+
+
+    rail.style.cursor =
+      "grab";
+
+    update();
+
+  }
+
+}
+
+
+/* =========================================================
+   AUSTRALIAN LIGHT — SHARED PROJECT CHROME
+   ========================================================= */
+
+function initAustralianLightChrome(project,projects){
+
+  const article =
+    document.querySelector(".al-page");
+
+  if(!article) return;
+
+
+  const chapters = [
+    ["al-section-1","FROM GALLERY TO COMMERCE"],
+    ["al-section-2","RESEARCH"],
+    ["al-section-3","PROCESS"],
+    ["al-section-4","VISUAL SYSTEM"],
+    ["al-section-5","SHOPPING FLOW"],
+    ["al-section-6","FIGMA TO CODE"],
+    ["al-section-7","LIVE PRODUCT"],
+    ["al-section-8","ITERATION"]
+  ];
+
+
+  if(!article.querySelector(".chapter-rail")){
+
+    article.insertAdjacentHTML(
+      "beforeend",
+      `
+      <nav
+        class="chapter-rail al-chapter-rail"
+        aria-label="Australian Light sections">
+
+        ${chapters.map(([id,label])=>`
+          <a
+            href="#${id}"
+            data-label="${label}"
+            aria-label="${label}">
+          </a>
+        `).join("")}
+
+      </nav>
+
+      <div
+        class="chapter-tip"
+        id="al-chapter-tip">
+      </div>
+      `
+    );
+
+  }
+
+
+  /* next project */
+
+  if(!article.querySelector(
+    ".al-next-project"
+  )){
+
+    const index =
+      projects.findIndex(
+        item =>
+          item.slug === project.slug
+      );
+
+    const next =
+      projects[
+        (index + 1) %
+        projects.length
+      ];
+
+
+    if(next){
+
+      article.insertAdjacentHTML(
+        "beforeend",
+        `
+        <a
+          class="next-project al-next-project"
+          href="/work/${next.slug}/">
+
+          <span class="meta-mono">
+            NEXT PROJECT
+          </span>
+
+          <span class="al-next-title">
+            ${esc(next.title)} →
+          </span>
+
+        </a>
+        `
+      );
+
+    }
+
+  }
+
+
+  /* shared footer */
+
+  const hasFooter =
+    document.querySelector(
+      "body > footer, body > .site-footer"
+    );
+
+  if(
+    !hasFooter &&
+    typeof footer === "function"
+  ){
+
+    document.body.insertAdjacentHTML(
+      "beforeend",
+      footer()
+    );
+
+  }
+
+
+  if(typeof setupChapterRail === "function"){
+    setupChapterRail();
+  }
+
+}
+
+
+/* =========================================================
+   AUSTRALIAN LIGHT — ROBUST INTERACTION PATCH 06
+   Delegated events survive async project rendering.
+   ========================================================= */
+
+(function(){
+
+  if(window.__alRefine06Bound) return;
+
+  window.__alRefine06Bound = true;
+
+
+  /* -------------------------------------------------------
+     CLICK DELEGATION
+     ------------------------------------------------------- */
+
+  document.addEventListener("click", event=>{
+
+    if(
+      !document.body.classList.contains(
+        "project-australian-light"
+      )
+    ){
+      return;
+    }
+
+
+    /* =====================================================
+       01 — AUDIT
+       ===================================================== */
+
+    const auditButton =
+      event.target.closest(
+        ".al-audit-tab[data-al-audit-src]"
+      );
+
+    if(auditButton){
+
+      event.preventDefault();
+
+      const audit =
+        auditButton.closest("[data-al-audit]");
+
+      if(!audit) return;
+
+
+      const tabs =
+        [...audit.querySelectorAll(
+          ".al-audit-tab"
+        )];
+
+      const image =
+        audit.querySelector(
+          "[data-al-audit-image]"
+        );
+
+      const number =
+        audit.querySelector(
+          ".al-audit-stage-label " +
+          "[data-al-audit-number]"
+        );
+
+      const label =
+        audit.querySelector(
+          ".al-audit-stage-label " +
+          "[data-al-audit-label]"
+        );
+
+      const stage =
+        audit.querySelector(
+          "[data-al-audit-stage]"
+        );
+
+
+      tabs.forEach(item=>
+        item.classList.remove("is-active")
+      );
+
+      auditButton.classList.add(
+        "is-active"
+      );
+
+
+      if(image){
+
+        image.src =
+          auditButton.dataset.alAuditSrc;
+
+      }
+
+
+      if(number){
+
+        number.textContent =
+          auditButton.dataset.alAuditNumber ||
+          "";
+
+      }
+
+
+      if(label){
+
+        label.textContent =
+          auditButton.dataset.alAuditLabel ||
+          "";
+
+      }
+
+
+      if(stage){
+
+        stage.scrollTo({
+          top:0,
+          behavior:"smooth"
+        });
+
+      }
+
+      return;
+    }
+
+
+    /* =====================================================
+       03 — PROCESS MAIN CTA
+       ===================================================== */
+
+    const processButton =
+      event.target.closest(
+        ".al-process-button[data-al-process-src]"
+      );
+
+    if(processButton){
+
+      event.preventDefault();
+
+      const process =
+        processButton.closest(
+          "[data-al-process]"
+        );
+
+      if(!process) return;
+
+
+      const buttons =
+        [...process.querySelectorAll(
+          ".al-process-button"
+        )];
+
+      const image =
+        process.querySelector(
+          "[data-al-process-image]"
+        );
+
+
+      /*
+        Use stage-meta specifically.
+        Avoid accidentally selecting the button itself,
+        because buttons also carry data-al-process-index.
+      */
+
+      const stageMeta =
+        process.querySelector(
+          ".al-process-stage-meta"
+        );
+
+      const number =
+        stageMeta?.querySelector(
+          "[data-al-process-index]"
+        );
+
+      const label =
+        stageMeta?.querySelector(
+          "[data-al-process-label]"
+        );
+
+
+      buttons.forEach(item=>
+        item.classList.remove("is-active")
+      );
+
+      processButton.classList.add(
+        "is-active"
+      );
+
+
+      if(image){
+
+        image.src =
+          processButton.dataset.alProcessSrc;
+
+        image.alt =
+          processButton.dataset.alProcessLabel ||
+          "Australian Light design process";
+
+      }
+
+
+      if(number){
+
+        number.textContent =
+          processButton.dataset.alProcessIndex ||
+          "";
+
+      }
+
+
+      if(label){
+
+        label.textContent =
+          processButton.dataset.alProcessLabel ||
+          "";
+
+      }
+
+
+      process
+        .querySelectorAll(
+          ".al-process-thumb"
+        )
+        .forEach(thumb=>{
+
+          thumb.classList.toggle(
+            "is-active",
+            thumb.dataset.alProcessThumb ===
+              processButton.dataset.alProcessIndex
+          );
+
+        });
+
+
+      return;
+    }
+
+
+    /* =====================================================
+       03 — PROCESS THUMB
+       ===================================================== */
+
+    const processThumb =
+      event.target.closest(
+        ".al-process-thumb[data-al-process-thumb]"
+      );
+
+    if(processThumb){
+
+      event.preventDefault();
+
+      const process =
+        processThumb.closest(
+          "[data-al-process]"
+        );
+
+      if(!process) return;
+
+
+      const index =
+        processThumb.dataset.alProcessThumb;
+
+
+      const target =
+        [...process.querySelectorAll(
+          ".al-process-button"
+        )].find(
+          button =>
+            button.dataset.alProcessIndex ===
+            index
+        );
+
+
+      if(target){
+
+        target.click();
+
+      }
+
+    }
+
+  });
+
+
+  /* -------------------------------------------------------
+     PROCESS NAV GROUPING
+     Sketch ≠ Low-Fi
+     ------------------------------------------------------- */
+
+  const organiseProcess = root=>{
+
+    const process =
+      root.querySelector?.(
+        "[data-al-process]"
+      );
+
+    if(!process) return;
+
+
+    const nav =
+      process.querySelector(
+        ".al-process-nav"
+      );
+
+    if(
+      !nav ||
+      nav.dataset.alGrouped === "1"
+    ){
+      return;
+    }
+
+
+    const buttons =
+      [...nav.querySelectorAll(
+        ":scope > .al-process-button"
+      )];
+
+
+    if(!buttons.length) return;
+
+
+    nav.dataset.alGrouped = "1";
+
+
+    const sketchButtons =
+      buttons.filter(button=>
+        (
+          button.dataset.alProcessLabel ||
+          ""
+        )
+        .toUpperCase()
+        .startsWith("SKETCH")
+      );
+
+
+    const lowfiButtons =
+      buttons.filter(button=>
+        (
+          button.dataset.alProcessLabel ||
+          ""
+        )
+        .toUpperCase()
+        .startsWith("LOW-FI")
+      );
+
+
+    const createGroup = (
+      name,
+      countLabel,
+      buttonsToMove
+    )=>{
+
+      if(!buttonsToMove.length){
+        return;
+      }
+
+
+      const group =
+        document.createElement("div");
+
+
+      group.className =
+        "al-process-group";
+
+
+      group.dataset.processGroup =
+        name.toLowerCase();
+
+
+      group.innerHTML = `
+        <div class="al-process-group-title">
+          <span>${name}</span>
+          <span>${countLabel}</span>
+        </div>
+
+        <div class="al-process-group-buttons">
+        </div>
+      `;
+
+
+      const holder =
+        group.querySelector(
+          ".al-process-group-buttons"
+        );
+
+
+      buttonsToMove.forEach(button=>
+        holder.appendChild(button)
+      );
+
+
+      nav.appendChild(group);
+
+    };
+
+
+    createGroup(
+      "SKETCH",
+      `${sketchButtons.length} STUDIES`,
+      sketchButtons
+    );
+
+
+    createGroup(
+      "LOW-FI",
+      `${lowfiButtons.length} SCREENS`,
+      lowfiButtons
+    );
+
+  };
+
+
+  /* -------------------------------------------------------
+     Boot now + after async project render
+     ------------------------------------------------------- */
+
+  const boot = ()=>{
+
+    if(
+      !document.body.classList.contains(
+        "project-australian-light"
+      )
+    ){
+      return;
+    }
+
+    organiseProcess(document);
+
+  };
+
+
+  boot();
+
+
+  const observer =
+    new MutationObserver(()=>{
+
+      boot();
+
+    });
+
+
+  observer.observe(
+    document.body,
+    {
+      childList:true,
+      subtree:true
+    }
+  );
+
+})();
+
+
+/* Australian Light — prevent nested screenshot wheel from
+   immediately escaping into the portfolio page */
+
+document.addEventListener(
+  "wheel",
+  event=>{
+
+    if(
+      !document.body.classList.contains(
+        "project-australian-light"
+      )
+    ){
+      return;
+    }
+
+
+    const frame =
+      event.target.closest(
+        ".al-flow-card figure"
+      );
+
+
+    if(!frame) return;
+
+
+    const max =
+      frame.scrollHeight -
+      frame.clientHeight;
+
+
+    if(max <= 2){
+      return;
+    }
+
+
+    const goingDown =
+      event.deltaY > 0;
+
+
+    const atTop =
+      frame.scrollTop <= 0;
+
+
+    const atBottom =
+      frame.scrollTop >= max - 1;
+
+
+    if(
+      (goingDown && !atBottom) ||
+      (!goingDown && !atTop)
+    ){
+      event.stopPropagation();
+    }
+
+  },
+  {
+    passive:true
+  }
+);
+
+
+/* ===== AUSTRALIAN LIGHT — SECTION 03 EDITORIAL PROCESS ===== */
+
+function rebuildAustralianLightProcess(){
+  if(!document.body.classList.contains("project-australian-light")) return;
+
+  const process = document.querySelector(".al-process-ui");
+  if(!process || process.dataset.editorialProcess === "true") return;
+
+  process.dataset.editorialProcess = "true";
+
+  process.innerHTML = `
+    <div class="al-process-editorial">
+
+      <!-- SKETCHES -->
+      <section class="al-process-chapter al-process-sketches">
+
+        <header class="al-process-chapter-head">
+          <div class="al-process-chapter-index">03.1</div>
+
+          <div class="al-process-chapter-title">
+            <span>SKETCH</span>
+            <h3>Divergent exploration</h3>
+          </div>
+
+          <p>
+            Four early directions tested different relationships between
+            imagery, navigation and commerce before committing to a
+            digital structure.
+          </p>
+        </header>
+
+        <div class="al-sketch-grid">
+
+          <figure class="al-sketch-card al-sketch-card--large">
+            <div class="al-process-image">
+              <img
+                src="/public/projects/australian-light/process/homepage.png"
+                alt="Australian Light early homepage sketch"
+                loading="lazy"
+              >
+            </div>
+            <figcaption>
+              <span>01</span>
+              <strong>Homepage</strong>
+            </figcaption>
+          </figure>
+
+          <figure class="al-sketch-card">
+            <div class="al-process-image">
+              <img
+                src="/public/projects/australian-light/process/search.png"
+                alt="Australian Light search interface sketch"
+                loading="lazy"
+              >
+            </div>
+            <figcaption>
+              <span>02</span>
+              <strong>Search</strong>
+            </figcaption>
+          </figure>
+
+          <figure class="al-sketch-card">
+            <div class="al-process-image">
+              <img
+                src="/public/projects/australian-light/process/product.png"
+                alt="Australian Light product interface sketch"
+                loading="lazy"
+              >
+            </div>
+            <figcaption>
+              <span>03</span>
+              <strong>Product</strong>
+            </figcaption>
+          </figure>
+
+          <figure class="al-sketch-card">
+            <div class="al-process-image">
+              <img
+                src="/public/projects/australian-light/process/purchase.png"
+                alt="Australian Light checkout interface sketch"
+                loading="lazy"
+              >
+            </div>
+            <figcaption>
+              <span>04</span>
+              <strong>Purchase</strong>
+            </figcaption>
+          </figure>
+
+        </div>
+      </section>
+
+
+      <!-- LOW-FIDELITY -->
+      <section class="al-process-chapter al-process-lowfi">
+
+        <header class="al-process-chapter-head">
+          <div class="al-process-chapter-index">03.2</div>
+
+          <div class="al-process-chapter-title">
+            <span>LOW-FIDELITY</span>
+            <h3>One continuous mobile flow</h3>
+          </div>
+
+          <p>
+            The selected direction was translated into a complete
+            wireframe journey. At this stage the focus shifted from
+            visual styling to navigation, hierarchy and purchase logic.
+          </p>
+        </header>
+
+
+        <div class="al-lowfi-flow">
+
+          <!-- DISCOVER -->
+          <section class="al-lowfi-group">
+
+            <div class="al-lowfi-group-head">
+              <span>01</span>
+              <h4>Discover</h4>
+              <p>Home, navigation and search.</p>
+            </div>
+
+            <div class="al-lowfi-grid al-lowfi-grid--discover">
+
+              <figure>
+                <div class="al-lowfi-frame">
+                  <img
+                    src="/public/projects/australian-light/process/lowfi-Homepage.svg"
+                    alt="Low fidelity homepage"
+                    loading="lazy"
+                  >
+                </div>
+                <figcaption>Homepage</figcaption>
+              </figure>
+
+              <figure>
+                <div class="al-lowfi-frame">
+                  <img
+                    src="/public/projects/australian-light/process/lowfi-Homepage_Side Navigation.svg"
+                    alt="Low fidelity side navigation"
+                    loading="lazy"
+                  >
+                </div>
+                <figcaption>Side Navigation</figcaption>
+              </figure>
+
+              <figure>
+                <div class="al-lowfi-frame">
+                  <img
+                    src="/public/projects/australian-light/process/lowfi-Search Result.svg"
+                    alt="Low fidelity search results"
+                    loading="lazy"
+                  >
+                </div>
+                <figcaption>Search Results</figcaption>
+              </figure>
+
+            </div>
+          </section>
+
+
+          <!-- BROWSE -->
+          <section class="al-lowfi-group">
+
+            <div class="al-lowfi-group-head">
+              <span>02</span>
+              <h4>Browse</h4>
+              <p>Filter, compare and inspect a print.</p>
+            </div>
+
+            
+<div class="al-lowfi-grid al-lowfi-grid--browse">
+
+  <figure>
+    <div class="al-lowfi-frame">
+      <img
+        src="/public/projects/australian-light/process/lowfi-Product List.svg"
+        alt="Low fidelity product list"
+        loading="lazy"
+      >
+    </div>
+    <figcaption>Product list</figcaption>
+  </figure>
+
+  <figure>
+    <div class="al-lowfi-frame">
+      <img
+        src="/public/projects/australian-light/process/lowfi-Product List_Filter.svg"
+        alt="Low fidelity product list filter"
+        loading="lazy"
+      >
+    </div>
+    <figcaption>Product list filter</figcaption>
+  </figure>
+
+  <figure>
+    <div class="al-lowfi-frame">
+      <img
+        src="/public/projects/australian-light/process/lowfi-Product Detail.svg"
+        alt="Low fidelity product detail"
+        loading="lazy"
+      >
+    </div>
+    <figcaption>Product detail</figcaption>
+  </figure>
+
+</div>
+</section>
+
+
+
+          <!-- PURCHASE -->
+          <section class="al-lowfi-group">
+
+            <div class="al-lowfi-group-head">
+              <span>03</span>
+              <h4>Purchase</h4>
+              <p>Cart, delivery information and payment.</p>
+            </div>
+
+            <div class="al-lowfi-grid al-lowfi-grid--purchase">
+
+              <figure>
+                <div class="al-lowfi-frame">
+                  <img
+                    src="/public/projects/australian-light/process/lowfi-Cart.svg"
+                    alt="Low fidelity shopping cart"
+                    loading="lazy"
+                  >
+                </div>
+                <figcaption>Cart</figcaption>
+              </figure>
+
+              <figure>
+                <div class="al-lowfi-frame">
+                  <img
+                    src="/public/projects/australian-light/process/lowfi-Cart_Info.svg"
+                    alt="Low fidelity checkout information"
+                    loading="lazy"
+                  >
+                </div>
+                <figcaption>Information</figcaption>
+              </figure>
+
+              <figure>
+                <div class="al-lowfi-frame">
+                  <img
+                    src="/public/projects/australian-light/process/lowfi-Cart_Pay_01.svg"
+                    alt="Low fidelity payment interface"
+                    loading="lazy"
+                  >
+                </div>
+                <figcaption>Payment</figcaption>
+              </figure>
+
+            </div>
+          </section>
+
+        </div>
+      </section>
+
+    </div>
+  `;
+}
+
+
+/*
+  renderAustralianLight() may insert its content after this file loads,
+  so run once immediately and once after DOM mutations.
+*/
+
+rebuildAustralianLightProcess();
+
+const alProcessObserver = new MutationObserver(() => {
+  rebuildAustralianLightProcess();
+});
+
+alProcessObserver.observe(document.documentElement, {
+  childList:true,
+  subtree:true
+});
+
+/* ===== END AUSTRALIAN LIGHT — SECTION 03 EDITORIAL PROCESS ===== */
+
+
+/* ===== AUSTRALIAN LIGHT — COMPACT SKETCH VIEWER ===== */
+
+(()=>{
+  const sketchDescriptions = [
+    "Exploring the homepage hierarchy, image-led entry point and how collections and editorial content are introduced.",
+    "Testing search, discovery and filtering so users can move from browsing to relevant photography more efficiently.",
+    "Exploring how products are grouped, compared and understood before moving into a detailed product view.",
+    "Testing the transition from product selection into cart and purchase, with a clearer path toward checkout."
+  ];
+
+  const enhanceSketchViewer = ()=>{
+    if(
+      !document.body.classList.contains("project-australian-light")
+    ){
+      return false;
+    }
+
+    const grid = document.querySelector(".al-sketch-grid");
+
+    if(
+      !grid ||
+      grid.dataset.compactViewer === "1"
+    ){
+      return !!grid;
+    }
+
+    const cards = [...grid.querySelectorAll(".al-sketch-card")];
+
+    if(cards.length < 2){
+      return false;
+    }
+
+    const items = cards.map((card,index)=>{
+      const img = card.querySelector("img");
+      const title =
+        card.querySelector("figcaption strong")?.textContent?.trim() ||
+        `Sketch ${index + 1}`;
+
+      return {
+        src:img?.getAttribute("src") || "",
+        alt:img?.getAttribute("alt") || title,
+        title,
+        description:
+          sketchDescriptions[index] ||
+          "Early interface exploration for Australian Light."
+      };
+    });
+
+    grid.dataset.compactViewer = "1";
+
+    grid.innerHTML = `
+      <div class="al-sketch-viewer">
+
+        <nav
+          class="al-sketch-nav"
+          aria-label="Sketch studies"
+        >
+          ${items.map((item,index)=>`
+            <button
+              class="al-sketch-nav-item ${index === 0 ? "is-active" : ""}"
+              type="button"
+              data-al-sketch-index="${index}"
+            >
+              <span class="al-sketch-nav-no">
+                ${String(index + 1).padStart(2,"0")}
+              </span>
+
+              <span class="al-sketch-nav-title">
+                ${item.title}
+              </span>
+            </button>
+          `).join("")}
+        </nav>
+
+
+        <figure class="al-sketch-stage">
+
+          <div class="al-sketch-stage-media">
+            <img
+              src="${items[0].src}"
+              alt="${items[0].alt}"
+              data-al-sketch-main-image
+            >
+          </div>
+
+        </figure>
+
+
+        <aside class="al-sketch-detail">
+
+          <div class="al-sketch-detail-count">
+            <span data-al-sketch-current>01</span>
+            <span>/</span>
+            <span>${String(items.length).padStart(2,"0")}</span>
+          </div>
+
+          <div class="al-sketch-detail-copy">
+            <span
+              class="al-sketch-detail-index"
+              data-al-sketch-detail-index
+            >
+              01
+            </span>
+
+            <h4 data-al-sketch-title>
+              ${items[0].title}
+            </h4>
+
+            <p data-al-sketch-description>
+              ${items[0].description}
+            </p>
+          </div>
+
+          <div class="al-sketch-arrows">
+
+            <button
+              type="button"
+              aria-label="Previous sketch"
+              data-al-sketch-prev
+            >
+              ←
+            </button>
+
+            <button
+              type="button"
+              aria-label="Next sketch"
+              data-al-sketch-next
+            >
+              →
+            </button>
+
+          </div>
+
+        </aside>
+
+      </div>
+    `;
+
+
+    let activeIndex = 0;
+
+    const image =
+      grid.querySelector("[data-al-sketch-main-image]");
+
+    const current =
+      grid.querySelector("[data-al-sketch-current]");
+
+    const detailIndex =
+      grid.querySelector("[data-al-sketch-detail-index]");
+
+    const title =
+      grid.querySelector("[data-al-sketch-title]");
+
+    const description =
+      grid.querySelector("[data-al-sketch-description]");
+
+    const buttons =
+      [...grid.querySelectorAll("[data-al-sketch-index]")];
+
+
+    const activate = index=>{
+
+      activeIndex =
+        (index + items.length) %
+        items.length;
+
+      const item =
+        items[activeIndex];
+
+      buttons.forEach((button,i)=>{
+        button.classList.toggle(
+          "is-active",
+          i === activeIndex
+        );
+      });
+
+      image.classList.add("is-changing");
+
+      window.setTimeout(()=>{
+        image.src = item.src;
+        image.alt = item.alt;
+
+        current.textContent =
+          String(activeIndex + 1).padStart(2,"0");
+
+        detailIndex.textContent =
+          String(activeIndex + 1).padStart(2,"0");
+
+        title.textContent =
+          item.title;
+
+        description.textContent =
+          item.description;
+
+        image.classList.remove("is-changing");
+      },120);
+
+    };
+
+
+    buttons.forEach(button=>{
+
+      button.addEventListener("click",()=>{
+
+        activate(
+          Number(button.dataset.alSketchIndex)
+        );
+
+      });
+
+    });
+
+
+    grid
+      .querySelector("[data-al-sketch-prev]")
+      ?.addEventListener(
+        "click",
+        ()=>activate(activeIndex - 1)
+      );
+
+
+    grid
+      .querySelector("[data-al-sketch-next]")
+      ?.addEventListener(
+        "click",
+        ()=>activate(activeIndex + 1)
+      );
+
+
+    return true;
+  };
+
+
+  if(!enhanceSketchViewer()){
+
+    const observer =
+      new MutationObserver(()=>{
+
+        if(enhanceSketchViewer()){
+          observer.disconnect();
+        }
+
+      });
+
+    observer.observe(
+      document.body,
+      {
+        childList:true,
+        subtree:true
+      }
+    );
+
+  }
+
+})();
+
+/* ===== END AUSTRALIAN LIGHT — COMPACT SKETCH VIEWER ===== */
+
+
+/* ===== AUSTRALIAN LIGHT — LOWFI FLOW TABS ===== */
+
+(()=>{
+  const enhanceLowfiFlow = ()=>{
+
+    if(
+      !document.body.classList.contains(
+        "project-australian-light"
+      )
+    ){
+      return false;
+    }
+
+    const section =
+      document.querySelector(".al-process-lowfi");
+
+    const flow =
+      section?.querySelector(".al-lowfi-flow");
+
+    if(
+      !section ||
+      !flow ||
+      flow.dataset.flowTabs === "1"
+    ){
+      return !!flow;
+    }
+
+    const groups =
+      [...flow.querySelectorAll(".al-lowfi-group")];
+
+    if(!groups.length){
+      return false;
+    }
+
+    flow.dataset.flowTabs = "1";
+
+
+    const items = groups.map((group,index)=>{
+
+      const title =
+        group.querySelector(
+          ".al-lowfi-group-head h4"
+        )?.textContent?.trim()
+        || `Flow ${index + 1}`;
+
+      const description =
+        group.querySelector(
+          ".al-lowfi-group-head p"
+        )?.textContent?.trim()
+        || "";
+
+      const grid =
+        group.querySelector(".al-lowfi-grid");
+
+      return {
+        title,
+        description,
+        html:grid?.outerHTML || ""
+      };
+
+    });
+
+
+    flow.innerHTML = `
+      <div class="al-lowfi-tabs">
+
+        <div
+          class="al-lowfi-tablist"
+          role="tablist"
+          aria-label="Low fidelity flows"
+        >
+          ${items.map((item,index)=>`
+            <button
+              type="button"
+              role="tab"
+              class="al-lowfi-tab ${index === 0 ? "is-active" : ""}"
+              aria-selected="${index === 0 ? "true" : "false"}"
+              data-al-lowfi-tab="${index}"
+            >
+              <span>
+                ${String(index + 1).padStart(2,"0")}
+              </span>
+
+              <strong>
+                ${item.title}
+              </strong>
+            </button>
+          `).join("")}
+        </div>
+
+
+        <div class="al-lowfi-active">
+
+          <div class="al-lowfi-active-meta">
+
+            <div>
+              <span
+                class="al-lowfi-active-number"
+                data-al-lowfi-number
+              >
+                01
+              </span>
+
+              <h4 data-al-lowfi-title>
+                ${items[0].title}
+              </h4>
+            </div>
+
+            <p data-al-lowfi-description>
+              ${items[0].description}
+            </p>
+
+          </div>
+
+
+          <div
+            class="al-lowfi-active-stage"
+            data-al-lowfi-stage
+          >
+            ${items[0].html}
+          </div>
+
+        </div>
+
+      </div>
+    `;
+
+
+    const tabs =
+      [...flow.querySelectorAll(
+        "[data-al-lowfi-tab]"
+      )];
+
+    const number =
+      flow.querySelector(
+        "[data-al-lowfi-number]"
+      );
+
+    const title =
+      flow.querySelector(
+        "[data-al-lowfi-title]"
+      );
+
+    const description =
+      flow.querySelector(
+        "[data-al-lowfi-description]"
+      );
+
+    const stage =
+      flow.querySelector(
+        "[data-al-lowfi-stage]"
+      );
+
+
+    const activate = index=>{
+
+      const item = items[index];
+
+      if(!item) return;
+
+      tabs.forEach((tab,i)=>{
+
+        const active =
+          i === index;
+
+        tab.classList.toggle(
+          "is-active",
+          active
+        );
+
+        tab.setAttribute(
+          "aria-selected",
+          String(active)
+        );
+
+      });
+
+      number.textContent =
+        String(index + 1).padStart(2,"0");
+
+      title.textContent =
+        item.title;
+
+      description.textContent =
+        item.description;
+
+      stage.classList.add("is-changing");
+
+      window.setTimeout(()=>{
+
+        stage.innerHTML =
+          item.html;
+
+        stage.classList.remove(
+          "is-changing"
+        );
+
+      },120);
+
+    };
+
+
+    tabs.forEach(tab=>{
+
+      tab.addEventListener(
+        "click",
+        ()=>{
+
+          activate(
+            Number(
+              tab.dataset.alLowfiTab
+            )
+          );
+
+        }
+      );
+
+    });
+
+
+    return true;
+
+  };
+
+
+  if(!enhanceLowfiFlow()){
+
+    const observer =
+      new MutationObserver(()=>{
+
+        if(enhanceLowfiFlow()){
+          observer.disconnect();
+        }
+
+      });
+
+    observer.observe(
+      document.body,
+      {
+        childList:true,
+        subtree:true
+      }
+    );
+
+  }
+
+})();
+
+/* ===== END AUSTRALIAN LIGHT — LOWFI FLOW TABS ===== */
+
+
+/* ===== AUSTRALIAN LIGHT — SECTION 04 TYPE SYSTEM ===== */
+
+(()=>{
+  const enhanceDirectionType = ()=>{
+
+    if(
+      !document.body.classList.contains(
+        "project-australian-light"
+      )
+    ){
+      return false;
+    }
+
+    const direction =
+      document.querySelector(".al-direction");
+
+    const left =
+      direction?.querySelector(
+        ".al-direction-layout > :first-child"
+      );
+
+    if(
+      !left ||
+      left.dataset.typeSystemReady === "1"
+    ){
+      return !!left;
+    }
+
+    const palette =
+      left.querySelector(".al-palette");
+
+    if(!palette){
+      return false;
+    }
+
+    left.dataset.typeSystemReady = "1";
+
+
+    /*
+      Keep existing intro copy and palette.
+      Replace only the old oversized type specimen.
+    */
+
+    const oldType =
+      left.querySelector(".al-type");
+
+    const oldDisplay =
+      left.querySelector(".al-type-display");
+
+
+    const typeSystem =
+      document.createElement("div");
+
+    typeSystem.className =
+      "al-type al-type-system";
+
+    typeSystem.innerHTML = `
+      <div class="al-type-row">
+        <span class="al-type-row-label">
+          Headline
+        </span>
+
+        <span class="
+          al-type-row-sample
+          al-type-row-sample--headline
+        ">
+          AUSTRALIAN LIGHT
+        </span>
+
+        <span class="al-type-row-family">
+          Canela Text
+        </span>
+      </div>
+
+      <div class="al-type-row">
+        <span class="al-type-row-label">
+          Body
+        </span>
+
+        <span class="
+          al-type-row-sample
+          al-type-row-sample--body
+        ">
+          Welcome to AustralianLight Landscape Photography
+        </span>
+
+        <span class="al-type-row-family">
+          Avenir
+        </span>
+      </div>
+    `;
+
+
+    if(oldType){
+
+      oldType.replaceWith(typeSystem);
+
+    }else if(oldDisplay){
+
+      oldDisplay.replaceWith(typeSystem);
+
+    }else{
+
+      palette.insertAdjacentElement(
+        "afterend",
+        typeSystem
+      );
+
+    }
+
+
+    return true;
+
+  };
+
+
+  if(!enhanceDirectionType()){
+
+    const observer =
+      new MutationObserver(()=>{
+
+        if(enhanceDirectionType()){
+          observer.disconnect();
+        }
+
+      });
+
+    observer.observe(
+      document.body,
+      {
+        childList:true,
+        subtree:true
+      }
+    );
+
+  }
+
+})();
+
+/* ===== END AUSTRALIAN LIGHT — SECTION 04 TYPE SYSTEM ===== */
+
+
+/* ===== AUSTRALIAN LIGHT — SECTION 04 LEGACY LABEL CLEANUP ===== */
+
+(()=>{
+  const cleanupDirectionTypeLabel = ()=>{
+
+    const left =
+      document.querySelector(
+        ".project-australian-light .al-direction-layout > :first-child"
+      );
+
+    if(!left) return false;
+
+    [...left.children].forEach(el=>{
+
+      const text =
+        el.textContent
+          ?.replace(/\s+/g," ")
+          .trim();
+
+      if(
+        text === "Canela + Avenir" ||
+        text === "Canela + Avenir."
+      ){
+        el.remove();
+      }
+
+    });
+
+    return true;
+
+  };
+
+
+  if(!cleanupDirectionTypeLabel()){
+
+    const observer =
+      new MutationObserver(()=>{
+
+        if(cleanupDirectionTypeLabel()){
+          observer.disconnect();
+        }
+
+      });
+
+    observer.observe(
+      document.body,
+      {
+        childList:true,
+        subtree:true
+      }
+    );
+
+  }
+
+})();
+
+/* ===== END AUSTRALIAN LIGHT — SECTION 04 LEGACY LABEL CLEANUP ===== */
+
+
+/* ===== AUSTRALIAN LIGHT — REMOVE LEGACY TYPE LABEL ===== */
+
+(()=>{
+  const removeLegacyDirectionLabel = ()=>{
+
+    const left =
+      document.querySelector(
+        "body.project-australian-light .al-direction-layout > :first-child"
+      );
+
+    if(!left){
+      return false;
+    }
+
+    const nodes =
+      [...left.querySelectorAll("*")];
+
+    nodes
+      .filter(el=>{
+
+        const text =
+          el.textContent
+            ?.replace(/\s+/g," ")
+            .trim();
+
+        if(text !== "Canela + Avenir"){
+          return false;
+        }
+
+        /* remove deepest matching node only */
+        return ![...el.children].some(child=>
+          child.textContent
+            ?.replace(/\s+/g," ")
+            .trim() === "Canela + Avenir"
+        );
+
+      })
+      .forEach(el=>el.remove());
+
+    return true;
+  };
+
+
+  if(!removeLegacyDirectionLabel()){
+
+    const observer =
+      new MutationObserver(()=>{
+
+        if(removeLegacyDirectionLabel()){
+          observer.disconnect();
+        }
+
+      });
+
+    observer.observe(
+      document.body,
+      {
+        childList:true,
+        subtree:true
+      }
+    );
+
+  }
+
+})();
+
+/* ===== END AUSTRALIAN LIGHT — REMOVE LEGACY TYPE LABEL ===== */
+
+
+/* ===== AUSTRALIAN LIGHT — SECTION 04 RATIONALE ===== */
+
+(()=>{
+  const enhanceDirectionRationale = ()=>{
+
+    const left =
+      document.querySelector(
+        "body.project-australian-light .al-direction-layout > :first-child"
+      );
+
+    if(!left){
+      return false;
+    }
+
+    if(left.querySelector(".al-direction-rationale")){
+      return true;
+    }
+
+    const typeSystem =
+      left.querySelector(
+        ".al-type-system, .al-type"
+      );
+
+    if(!typeSystem){
+      return false;
+    }
+
+
+    const rationale =
+      document.createElement("div");
+
+    rationale.className =
+      "al-direction-rationale";
+
+    rationale.innerHTML = `
+      <div class="al-direction-rationale-item">
+        <span>Colour</span>
+        <p>
+          Warm neutrals keep the interface restrained,
+          allowing the photography to remain the focus.
+        </p>
+      </div>
+
+      <div class="al-direction-rationale-item">
+        <span>Typography</span>
+        <p>
+          Canela Text adds an editorial tone, while Avenir
+          keeps interface content clear and functional.
+        </p>
+      </div>
+    `;
+
+    typeSystem.insertAdjacentElement(
+      "afterend",
+      rationale
+    );
+
+    return true;
+
+  };
+
+
+  if(!enhanceDirectionRationale()){
+
+    const observer =
+      new MutationObserver(()=>{
+
+        if(enhanceDirectionRationale()){
+          observer.disconnect();
+        }
+
+      });
+
+    observer.observe(
+      document.body,
+      {
+        childList:true,
+        subtree:true
+      }
+    );
+
+  }
+
+})();
+
+/* ===== END AUSTRALIAN LIGHT — SECTION 04 RATIONALE ===== */
+
+
+/* ===== AUSTRALIAN LIGHT — SECTION 05 FLOW CONTROLS ===== */
+
+(()=>{
+  const initAustralianLightFlow = ()=>{
+
+    if(
+      !document.body.classList.contains(
+        "project-australian-light"
+      )
+    ){
+      return false;
+    }
+
+
+    const flow =
+      document.querySelector(
+        ".al-flow"
+      );
+
+    const rail =
+      flow?.querySelector(
+        ".al-flow-rail"
+      );
+
+    if(!flow || !rail){
+      return false;
+    }
+
+
+    if(flow.dataset.flowNavReady === "1"){
+      return true;
+    }
+
+
+    const cards =
+      [...rail.querySelectorAll(
+        ".al-flow-card"
+      )];
+
+    if(!cards.length){
+      return false;
+    }
+
+
+    flow.dataset.flowNavReady = "1";
+
+
+    /* -----------------------------------------------
+       Create controls
+       ----------------------------------------------- */
+
+    const nav =
+      document.createElement("div");
+
+    nav.className =
+      "al-flow-nav";
+
+    nav.innerHTML = `
+      <div class="al-flow-counter">
+        <span data-flow-current>01</span>
+        <span> / </span>
+        <span data-flow-total>
+          ${String(cards.length).padStart(2,"0")}
+        </span>
+      </div>
+
+      <div class="al-flow-nav-buttons">
+        <button
+          class="al-flow-nav-button"
+          type="button"
+          data-flow-prev
+          aria-label="Previous shopping flow stage"
+        >
+          ←
+        </button>
+
+        <button
+          class="al-flow-nav-button"
+          type="button"
+          data-flow-next
+          aria-label="Next shopping flow stage"
+        >
+          →
+        </button>
+      </div>
+    `;
+
+
+    rail.insertAdjacentElement(
+      "beforebegin",
+      nav
+    );
+
+
+    const prev =
+      nav.querySelector(
+        "[data-flow-prev]"
+      );
+
+    const next =
+      nav.querySelector(
+        "[data-flow-next]"
+      );
+
+    const current =
+      nav.querySelector(
+        "[data-flow-current]"
+      );
+
+
+    let activeIndex = 0;
+
+
+    /* -----------------------------------------------
+       Calculate the exact card position.
+
+       We use rail.scrollLeft rather than
+       scrollIntoView() so the main webpage does not
+       move vertically.
+       ----------------------------------------------- */
+
+    const scrollToCard = index=>{
+
+      activeIndex =
+        Math.max(
+          0,
+          Math.min(
+            cards.length - 1,
+            index
+          )
+        );
+
+
+      const card =
+        cards[activeIndex];
+
+
+      const railStyle =
+        getComputedStyle(rail);
+
+
+      const leftPadding =
+        parseFloat(
+          railStyle.paddingLeft
+        ) || 0;
+
+
+      rail.scrollTo({
+        left:
+          card.offsetLeft -
+          leftPadding,
+
+        behavior:"smooth"
+      });
+
+
+      updateControls();
+
+    };
+
+
+    const updateControls = ()=>{
+
+      current.textContent =
+        String(
+          activeIndex + 1
+        ).padStart(2,"0");
+
+
+      prev.disabled =
+        activeIndex === 0;
+
+
+      next.disabled =
+        activeIndex ===
+        cards.length - 1;
+
+    };
+
+
+    prev.addEventListener(
+      "click",
+      ()=>scrollToCard(
+        activeIndex - 1
+      )
+    );
+
+
+    next.addEventListener(
+      "click",
+      ()=>scrollToCard(
+        activeIndex + 1
+      )
+    );
+
+
+    /* -----------------------------------------------
+       Keep counter synced when user swipes manually.
+       ----------------------------------------------- */
+
+    let ticking = false;
+
+
+    rail.addEventListener(
+      "scroll",
+      ()=>{
+
+        if(ticking){
+          return;
+        }
+
+
+        ticking = true;
+
+
+        requestAnimationFrame(()=>{
+
+          const railRect =
+            rail.getBoundingClientRect();
+
+
+          const railStyle =
+            getComputedStyle(rail);
+
+
+          const padding =
+            parseFloat(
+              railStyle.paddingLeft
+            ) || 0;
+
+
+          const targetX =
+            railRect.left +
+            padding;
+
+
+          let nearest = 0;
+          let nearestDistance =
+            Infinity;
+
+
+          cards.forEach(
+            (card,index)=>{
+
+              const rect =
+                card.getBoundingClientRect();
+
+
+              const distance =
+                Math.abs(
+                  rect.left -
+                  targetX
+                );
+
+
+              if(
+                distance <
+                nearestDistance
+              ){
+                nearestDistance =
+                  distance;
+
+                nearest =
+                  index;
+              }
+
+            }
+          );
+
+
+          if(
+            nearest !==
+            activeIndex
+          ){
+            activeIndex =
+              nearest;
+
+            updateControls();
+          }
+
+
+          ticking = false;
+
+        });
+
+      },
+      {
+        passive:true
+      }
+    );
+
+
+    /* -----------------------------------------------
+       Keyboard support when rail is focused.
+       ----------------------------------------------- */
+
+    rail.tabIndex = 0;
+
+
+    rail.addEventListener(
+      "keydown",
+      event=>{
+
+        if(
+          event.key ===
+          "ArrowRight"
+        ){
+          event.preventDefault();
+
+          scrollToCard(
+            activeIndex + 1
+          );
+        }
+
+
+        if(
+          event.key ===
+          "ArrowLeft"
+        ){
+          event.preventDefault();
+
+          scrollToCard(
+            activeIndex - 1
+          );
+        }
+
+      }
+    );
+
+
+    updateControls();
+
+
+    /*
+      Ensure initial state really starts from the
+      content margin rather than a previously retained
+      horizontal scroll position.
+    */
+
+    requestAnimationFrame(()=>{
+
+      rail.scrollLeft = 0;
+
+    });
+
+
+    return true;
+
+  };
+
+
+  if(!initAustralianLightFlow()){
+
+    const observer =
+      new MutationObserver(()=>{
+
+        if(initAustralianLightFlow()){
+          observer.disconnect();
+        }
+
+      });
+
+
+    observer.observe(
+      document.body,
+      {
+        childList:true,
+        subtree:true
+      }
+    );
+
+  }
+
+})();
+
+/* ===== END AUSTRALIAN LIGHT — SECTION 05 FLOW CONTROLS ===== */
 
