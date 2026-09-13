@@ -1084,7 +1084,7 @@ function renderEtherealRealm(p,projects){
     <section class="er2-hero" id="er2-1">
       <video
         class="er2-hero-art er2-hero-video"
-        src="${sitePath(\"/public/projects/ethereal-realm/hero.mp4\")}"
+        src="${sitePath("/public/projects/ethereal-realm/hero.mp4")}"
         autoplay
         muted
         loop
@@ -11031,7 +11031,7 @@ function rebuildAustralianLightProcess(){
           <figure class="al-sketch-card al-sketch-card--large">
             <div class="al-process-image">
               <img
-                src="${sitePath(\"/public/projects/australian-light/process/homepage.png\")}"
+                src="${sitePath("/public/projects/australian-light/process/homepage.png")}"
                 alt="Australian Light early homepage sketch"
                 loading="lazy"
               >
@@ -11045,7 +11045,7 @@ function rebuildAustralianLightProcess(){
           <figure class="al-sketch-card">
             <div class="al-process-image">
               <img
-                src="${sitePath(\"/public/projects/australian-light/process/search.png\")}"
+                src="${sitePath("/public/projects/australian-light/process/search.png")}"
                 alt="Australian Light search interface sketch"
                 loading="lazy"
               >
@@ -11059,7 +11059,7 @@ function rebuildAustralianLightProcess(){
           <figure class="al-sketch-card">
             <div class="al-process-image">
               <img
-                src="${sitePath(\"/public/projects/australian-light/process/product.png\")}"
+                src="${sitePath("/public/projects/australian-light/process/product.png")}"
                 alt="Australian Light product interface sketch"
                 loading="lazy"
               >
@@ -11073,7 +11073,7 @@ function rebuildAustralianLightProcess(){
           <figure class="al-sketch-card">
             <div class="al-process-image">
               <img
-                src="${sitePath(\"/public/projects/australian-light/process/purchase.png\")}"
+                src="${sitePath("/public/projects/australian-light/process/purchase.png")}"
                 alt="Australian Light checkout interface sketch"
                 loading="lazy"
               >
@@ -11123,7 +11123,7 @@ function rebuildAustralianLightProcess(){
               <figure>
                 <div class="al-lowfi-frame">
                   <img
-                    src="${sitePath(\"/public/projects/australian-light/process/lowfi-Homepage.svg\")}"
+                    src="${sitePath("/public/projects/australian-light/process/lowfi-Homepage.svg")}"
                     alt="Low fidelity homepage"
                     loading="lazy"
                   >
@@ -11134,7 +11134,7 @@ function rebuildAustralianLightProcess(){
               <figure>
                 <div class="al-lowfi-frame">
                   <img
-                    src="${sitePath(\"/public/projects/australian-light/process/lowfi-Homepage_Side Navigation.svg\")}"
+                    src="${sitePath("/public/projects/australian-light/process/lowfi-Homepage_Side Navigation.svg")}"
                     alt="Low fidelity side navigation"
                     loading="lazy"
                   >
@@ -11145,7 +11145,7 @@ function rebuildAustralianLightProcess(){
               <figure>
                 <div class="al-lowfi-frame">
                   <img
-                    src="${sitePath(\"/public/projects/australian-light/process/lowfi-Search Result.svg\")}"
+                    src="${sitePath("/public/projects/australian-light/process/lowfi-Search Result.svg")}"
                     alt="Low fidelity search results"
                     loading="lazy"
                   >
@@ -11172,7 +11172,7 @@ function rebuildAustralianLightProcess(){
   <figure>
     <div class="al-lowfi-frame">
       <img
-        src="${sitePath(\"/public/projects/australian-light/process/lowfi-Product List.svg\")}"
+        src="${sitePath("/public/projects/australian-light/process/lowfi-Product List.svg")}"
         alt="Low fidelity product list"
         loading="lazy"
       >
@@ -11183,7 +11183,7 @@ function rebuildAustralianLightProcess(){
   <figure>
     <div class="al-lowfi-frame">
       <img
-        src="${sitePath(\"/public/projects/australian-light/process/lowfi-Product List_Filter.svg\")}"
+        src="${sitePath("/public/projects/australian-light/process/lowfi-Product List_Filter.svg")}"
         alt="Low fidelity product list filter"
         loading="lazy"
       >
@@ -11194,7 +11194,7 @@ function rebuildAustralianLightProcess(){
   <figure>
     <div class="al-lowfi-frame">
       <img
-        src="${sitePath(\"/public/projects/australian-light/process/lowfi-Product Detail.svg\")}"
+        src="${sitePath("/public/projects/australian-light/process/lowfi-Product Detail.svg")}"
         alt="Low fidelity product detail"
         loading="lazy"
       >
@@ -11221,7 +11221,7 @@ function rebuildAustralianLightProcess(){
               <figure>
                 <div class="al-lowfi-frame">
                   <img
-                    src="${sitePath(\"/public/projects/australian-light/process/lowfi-Cart.svg\")}"
+                    src="${sitePath("/public/projects/australian-light/process/lowfi-Cart.svg")}"
                     alt="Low fidelity shopping cart"
                     loading="lazy"
                   >
@@ -11232,7 +11232,7 @@ function rebuildAustralianLightProcess(){
               <figure>
                 <div class="al-lowfi-frame">
                   <img
-                    src="${sitePath(\"/public/projects/australian-light/process/lowfi-Cart_Info.svg\")}"
+                    src="${sitePath("/public/projects/australian-light/process/lowfi-Cart_Info.svg")}"
                     alt="Low fidelity checkout information"
                     loading="lazy"
                   >
@@ -11243,7 +11243,7 @@ function rebuildAustralianLightProcess(){
               <figure>
                 <div class="al-lowfi-frame">
                   <img
-                    src="${sitePath(\"/public/projects/australian-light/process/lowfi-Cart_Pay_01.svg\")}"
+                    src="${sitePath("/public/projects/australian-light/process/lowfi-Cart_Pay_01.svg")}"
                     alt="Low fidelity payment interface"
                     loading="lazy"
                   >
