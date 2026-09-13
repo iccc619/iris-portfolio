@@ -1,16 +1,28 @@
-const BASE_PATH = (() => {
-  const script =
+const SCRIPT_URL = (() => {
+  const current =
     document.currentScript ||
-    [...document.scripts].find(s =>
-      /\/assets\/site\.js(?:\?|$)/.test(s.src)
+    [...document.scripts].find(
+      script =>
+        /\/assets\/site\.js(?:\?|$)/.test(script.src)
     );
 
-  if(!script) return "";
+  return new URL(
+    current?.src || "assets/site.js",
+    location.href
+  );
+})();
 
-  const path = new URL(script.src).pathname;
-  return path
-    .replace(/\/assets\/site\.js$/, "")
-    .replace(/\/$/, "");
+const BASE_PATH = (() => {
+  const pathname = SCRIPT_URL.pathname;
+
+  const base = pathname.replace(
+    /\/assets\/site\.js$/,
+    ""
+  );
+
+  if(base === "/") return "";
+
+  return base.replace(/\/$/, "");
 })();
 
 const sitePath = (path="") => {
@@ -22,6 +34,10 @@ const sitePath = (path="") => {
     return path;
   }
 
+  /*
+    Already normalized:
+    /iris-portfolio/public/...
+  */
   if(
     BASE_PATH &&
     (
@@ -32,13 +48,19 @@ const sitePath = (path="") => {
     return path;
   }
 
-  if(path.startsWith("/")){
-    return `${BASE_PATH}${path}`;
+  const clean =
+    String(path).replace(/^\/+/, "");
+
+  if(!clean){
+    return BASE_PATH
+      ? `${BASE_PATH}/`
+      : "/";
   }
 
-  return path;
+  return BASE_PATH
+    ? `${BASE_PATH}/${clean}`
+    : `/${clean}`;
 };
-
 
 const DATA_URL = sitePath("/data/projects.json");
 const esc = (s="") => String(s).replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[m]));
@@ -7671,7 +7693,7 @@ function ensureStepMotionEndMatter(p, projects){
         `
         <a
           class="next-project sm-next-project"
-          href="/work/${nextProject.slug}/">
+          href="${sitePath(`/work/${nextProject.slug}/`)}">
 
           <span class="meta-mono next-project-label">
             NEXT PROJECT
@@ -8378,7 +8400,7 @@ async function renderProject(){
   const slug=location.pathname.split("/").filter(Boolean).pop();
   const p=projects.find(x=>x.slug===slug);
   if(!p){
-    document.body.innerHTML="<main class='shell section'><h1>Project not found.</h1><a href='/work/'>Back to work</a></main>";
+    document.body.innerHTML=`<main class="shell section"><h1>Project not found.</h1><a href="${sitePath("/work/")}">Back to work</a></main>`;
     return;
   }
 
@@ -8410,7 +8432,7 @@ async function renderProject(){
         `
         <a
           class="next-project"
-          href="/work/${nextProject.slug}/"
+          href="${sitePath(`/work/${nextProject.slug}/`)}"
           aria-label="Next project: ${esc(nextProject.title)}">
           <span class="meta-mono next-project-label">
             NEXT PROJECT
