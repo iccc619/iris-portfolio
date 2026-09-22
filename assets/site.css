@@ -42219,7 +42219,7 @@ span:first-child{
 /* use homepage-thumbnail.png as the entire thumbnail */
 .project-card[data-project="bayer-china"] .bayer-card-art{
   background:
-    url("/public/projects/bayer-china/other/homepage-thumbnail.png")
+    url("../public/projects/bayer-china/other/homepage-thumbnail.png")
     no-repeat center center / cover !important;
 }
 
