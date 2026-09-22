@@ -84,253 +84,6 @@ function shortStatus(s=""){
 
 function projectCardMedia(p){
 
-  /* BAYER HOMEPAGE LIVE VECTOR THUMBNAIL */
-  if(p.slug==="bayer-china"){
-
-    const bayerBase=
-      "/public/projects/bayer-china";
-
-    return `
-
-      <div
-        class="bayer-card-art"
-        aria-hidden="true">
-
-        <svg
-          class="bayer-card-vector"
-          viewBox="0 0 1200 760"
-          preserveAspectRatio="xMidYMid slice">
-
-          <defs>
-
-            <radialGradient
-              id="bayer-card-glow-a"
-              cx="50%"
-              cy="50%"
-              r="50%">
-
-              <stop
-                offset="0%"
-                stop-color="#ffffff"
-                stop-opacity=".96"/>
-
-              <stop
-                offset="28%"
-                stop-color="#D8EEF3"
-                stop-opacity=".86"/>
-
-              <stop
-                offset="68%"
-                stop-color="#2AAFD0"
-                stop-opacity=".42"/>
-
-              <stop
-                offset="100%"
-                stop-color="#2AAFD0"
-                stop-opacity="0"/>
-
-            </radialGradient>
-
-
-            <radialGradient
-              id="bayer-card-glow-b"
-              cx="50%"
-              cy="50%"
-              r="50%">
-
-              <stop
-                offset="0%"
-                stop-color="#7ECF4B"
-                stop-opacity=".42"/>
-
-              <stop
-                offset="58%"
-                stop-color="#2AAFD0"
-                stop-opacity=".16"/>
-
-              <stop
-                offset="100%"
-                stop-color="#2AAFD0"
-                stop-opacity="0"/>
-
-            </radialGradient>
-
-
-            <linearGradient
-              id="bayer-card-line"
-              x1="0"
-              y1="0"
-              x2="1"
-              y2="0">
-
-              <stop
-                offset="0%"
-                stop-color="#0D536A"/>
-
-              <stop
-                offset="56%"
-                stop-color="#2AAFD0"/>
-
-              <stop
-                offset="100%"
-                stop-color="#7ECF4B"/>
-
-            </linearGradient>
-
-          </defs>
-
-
-          <circle
-            cx="785"
-            cy="310"
-            r="320"
-            fill="url(#bayer-card-glow-a)"/>
-
-
-          <ellipse
-            cx="950"
-            cy="545"
-            rx="265"
-            ry="170"
-            fill="url(#bayer-card-glow-b)"
-            transform="rotate(-16 950 545)"/>
-
-
-          <ellipse
-            cx="790"
-            cy="355"
-            rx="305"
-            ry="146"
-            fill="none"
-            stroke="#0D536A"
-            stroke-opacity=".24"
-            stroke-width="2"
-            transform="rotate(-15 790 355)"/>
-
-
-          <ellipse
-            cx="825"
-            cy="350"
-            rx="182"
-            ry="330"
-            fill="none"
-            stroke="#2AAFD0"
-            stroke-opacity=".20"
-            stroke-width="2"
-            transform="rotate(27 825 350)"/>
-
-
-          <circle
-            cx="820"
-            cy="345"
-            r="123"
-            fill="#2AAFD0"
-            fill-opacity=".22"
-            stroke="#2AAFD0"
-            stroke-opacity=".25"/>
-
-
-          <path
-            d="M84 592 H335"
-            stroke="url(#bayer-card-line)"
-            stroke-width="5"
-            stroke-linecap="round"/>
-
-          <path
-            d="M84 618 H275"
-            stroke="url(#bayer-card-line)"
-            stroke-width="5"
-            stroke-linecap="round"/>
-
-          <path
-            d="M84 644 H220"
-            stroke="url(#bayer-card-line)"
-            stroke-width="5"
-            stroke-linecap="round"/>
-
-
-          <path
-            d="M1025 76 V160 H1110"
-            fill="none"
-            stroke="#0D536A"
-            stroke-opacity=".25"
-            stroke-width="2"/>
-
-
-          <path
-            d="M70 100 H180 V205"
-            fill="none"
-            stroke="#2AAFD0"
-            stroke-opacity=".22"
-            stroke-width="2"/>
-
-        </svg>
-
-
-        <div class="bayer-card-label">
-
-          <span>
-            BAYER CHINA
-          </span>
-
-          <span>
-            COMMUNICATIONS / WECHAT
-          </span>
-
-        </div>
-
-
-        <div
-          class="bayer-card-work
-                 bayer-card-work-01">
-
-          <img
-            src="${sitePath(`${bayerBase}/wechat/01.png`)}"
-            alt=""
-            loading="lazy"
-            decoding="async">
-
-        </div>
-
-
-        <div
-          class="bayer-card-work
-                 bayer-card-work-02">
-
-          <img
-            src="${sitePath(`${bayerBase}/wechat/02.JPG`)}"
-            alt=""
-            loading="lazy"
-            decoding="async">
-
-        </div>
-
-
-        <div
-          class="bayer-card-work
-                 bayer-card-work-03">
-
-          <img
-            src="${sitePath(`${bayerBase}/wechat/03.JPG`)}"
-            alt=""
-            loading="lazy"
-            decoding="async">
-
-        </div>
-
-
-        <div class="bayer-card-index meta-mono">
-          01 / 03
-        </div>
-
-      </div>
-
-    `;
-
-  }
-
-
-
   if(!p.thumbnail){
     return media(
       p,
@@ -8691,12 +8444,12 @@ function renderBayerChina(p, projects) {
     },
 
     {
-      src:`${base}/wechat/02.JPG`,
+      src:`${base}/wechat/02.png`,
       title:"WeChat Article 02"
     },
 
     {
-      src:`${base}/wechat/03.JPG`,
+      src:`${base}/wechat/03.png`,
       title:"WeChat Article 03"
     }
 
@@ -8749,118 +8502,117 @@ function renderBayerChina(p, projects) {
            ========================================= -->
 
       <header
-        class="bayer-hero"
+        class="bayer-hero shell"
         id="bayer-overview">
 
-        <div class="shell bayer-hero-grid">
+        <div class="bayer-kicker meta-mono">
 
-          <div class="bayer-hero-copy">
+          <span>
+            PROFESSIONAL EXPERIENCE /
+            BAYER CHINA
+          </span>
 
-            <div class="bayer-hero-kicker">
+          <span>
+            NOV 2025 — JAN 2026
+          </span>
 
-              <span>
-                CORPORATE COMMUNICATIONS · DIGITAL CONTENT · WECHAT · 2025–2026
+        </div>
+
+
+        <h1 class="bayer-title">
+
+          <span>
+            Bayer China —
+          </span>
+
+          <span>
+            Communications &
+          </span>
+
+          <span>
+            WeChat Content
+          </span>
+
+        </h1>
+
+
+        <div class="bayer-intro">
+
+          <p class="bayer-lede">
+
+            During my Communications Internship
+            at Bayer China, I contributed to the
+            production and publication of digital
+            and visual communication materials
+            across internal and external corporate
+            channels.
+
+          </p>
+
+
+          <div class="bayer-meta">
+
+            <div>
+
+              <span class="meta-mono">
+                CONTEXT
               </span>
 
+              <p>
+                Professional Experience
+              </p>
+
             </div>
 
-            <h1>
-              BAYER<br>
-              CHINA
-            </h1>
 
-            <p class="bayer-lead">
+            <div>
 
-              During my Communications Internship at Bayer China,
-              I contributed to the production and publication of
-              digital and visual communication materials across
-              internal and external corporate channels.
+              <span class="meta-mono">
+                ROLE
+              </span>
 
-            </p>
+              <p>
+                Communications Intern
+              </p>
 
-          </div>
-
-
-          <div
-            class="bayer-hero-art"
-            aria-hidden="true">
-      <img
-        class="bayer-hero-mockup"
-        src="${sitePath("/public/projects/bayer-china/other/hero-mockup.png")}"
-        alt=""
-        aria-hidden="true">
-
-
-            <div class="bayer-art-orb"></div>
-
-            <div class="bayer-art-card bayer-art-card-a">
-              <i></i><i></i><i></i>
             </div>
 
-            <div class="bayer-art-card bayer-art-card-b">
-              <i></i><i></i>
+
+            <div>
+
+              <span class="meta-mono">
+                FOCUS
+              </span>
+
+              <p>
+                Corporate Communications<br>
+                Digital Content<br>
+                WeChat
+              </p>
+
             </div>
 
-            <div class="bayer-art-lines">
-              <span></span>
-              <span></span>
-              <span></span>
-            </div>
 
-            <div class="bayer-art-frame bayer-art-frame-a"></div>
-            <div class="bayer-art-frame bayer-art-frame-b"></div>
+            <div>
+
+              <span class="meta-mono">
+                TOOLS
+              </span>
+
+              <p>
+                Xiumi<br>
+                Adobe Creative Cloud<br>
+                WeChat Official Accounts
+              </p>
+
+            </div>
 
           </div>
 
         </div>
 
 
-        <div class="shell bayer-meta">
 
-          <div>
-
-            <b>Context</b>
-
-            <span>
-              Professional Experience
-            </span>
-
-          </div>
-
-
-          <div>
-
-            <b>Role</b>
-
-            <span>
-              Communications Intern
-            </span>
-
-          </div>
-
-
-          <div>
-
-            <b>Focus</b>
-
-            <span>
-              Corporate Communications · Digital Content · WeChat
-            </span>
-
-          </div>
-
-
-          <div>
-
-            <b>Tools</b>
-
-            <span>
-              Xiumi · Adobe Creative Cloud · WeChat Official Accounts
-            </span>
-
-          </div>
-
-        </div>
 
       </header>
 

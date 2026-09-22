@@ -84,253 +84,6 @@ function shortStatus(s=""){
 
 function projectCardMedia(p){
 
-  /* BAYER HOMEPAGE LIVE VECTOR THUMBNAIL */
-  if(p.slug==="bayer-china"){
-
-    const bayerBase=
-      "/public/projects/bayer-china";
-
-    return `
-
-      <div
-        class="bayer-card-art"
-        aria-hidden="true">
-
-        <svg
-          class="bayer-card-vector"
-          viewBox="0 0 1200 760"
-          preserveAspectRatio="xMidYMid slice">
-
-          <defs>
-
-            <radialGradient
-              id="bayer-card-glow-a"
-              cx="50%"
-              cy="50%"
-              r="50%">
-
-              <stop
-                offset="0%"
-                stop-color="#ffffff"
-                stop-opacity=".96"/>
-
-              <stop
-                offset="28%"
-                stop-color="#D8EEF3"
-                stop-opacity=".86"/>
-
-              <stop
-                offset="68%"
-                stop-color="#2AAFD0"
-                stop-opacity=".42"/>
-
-              <stop
-                offset="100%"
-                stop-color="#2AAFD0"
-                stop-opacity="0"/>
-
-            </radialGradient>
-
-
-            <radialGradient
-              id="bayer-card-glow-b"
-              cx="50%"
-              cy="50%"
-              r="50%">
-
-              <stop
-                offset="0%"
-                stop-color="#7ECF4B"
-                stop-opacity=".42"/>
-
-              <stop
-                offset="58%"
-                stop-color="#2AAFD0"
-                stop-opacity=".16"/>
-
-              <stop
-                offset="100%"
-                stop-color="#2AAFD0"
-                stop-opacity="0"/>
-
-            </radialGradient>
-
-
-            <linearGradient
-              id="bayer-card-line"
-              x1="0"
-              y1="0"
-              x2="1"
-              y2="0">
-
-              <stop
-                offset="0%"
-                stop-color="#0D536A"/>
-
-              <stop
-                offset="56%"
-                stop-color="#2AAFD0"/>
-
-              <stop
-                offset="100%"
-                stop-color="#7ECF4B"/>
-
-            </linearGradient>
-
-          </defs>
-
-
-          <circle
-            cx="785"
-            cy="310"
-            r="320"
-            fill="url(#bayer-card-glow-a)"/>
-
-
-          <ellipse
-            cx="950"
-            cy="545"
-            rx="265"
-            ry="170"
-            fill="url(#bayer-card-glow-b)"
-            transform="rotate(-16 950 545)"/>
-
-
-          <ellipse
-            cx="790"
-            cy="355"
-            rx="305"
-            ry="146"
-            fill="none"
-            stroke="#0D536A"
-            stroke-opacity=".24"
-            stroke-width="2"
-            transform="rotate(-15 790 355)"/>
-
-
-          <ellipse
-            cx="825"
-            cy="350"
-            rx="182"
-            ry="330"
-            fill="none"
-            stroke="#2AAFD0"
-            stroke-opacity=".20"
-            stroke-width="2"
-            transform="rotate(27 825 350)"/>
-
-
-          <circle
-            cx="820"
-            cy="345"
-            r="123"
-            fill="#2AAFD0"
-            fill-opacity=".22"
-            stroke="#2AAFD0"
-            stroke-opacity=".25"/>
-
-
-          <path
-            d="M84 592 H335"
-            stroke="url(#bayer-card-line)"
-            stroke-width="5"
-            stroke-linecap="round"/>
-
-          <path
-            d="M84 618 H275"
-            stroke="url(#bayer-card-line)"
-            stroke-width="5"
-            stroke-linecap="round"/>
-
-          <path
-            d="M84 644 H220"
-            stroke="url(#bayer-card-line)"
-            stroke-width="5"
-            stroke-linecap="round"/>
-
-
-          <path
-            d="M1025 76 V160 H1110"
-            fill="none"
-            stroke="#0D536A"
-            stroke-opacity=".25"
-            stroke-width="2"/>
-
-
-          <path
-            d="M70 100 H180 V205"
-            fill="none"
-            stroke="#2AAFD0"
-            stroke-opacity=".22"
-            stroke-width="2"/>
-
-        </svg>
-
-
-        <div class="bayer-card-label">
-
-          <span>
-            BAYER CHINA
-          </span>
-
-          <span>
-            COMMUNICATIONS / WECHAT
-          </span>
-
-        </div>
-
-
-        <div
-          class="bayer-card-work
-                 bayer-card-work-01">
-
-          <img
-            src="${sitePath(`${bayerBase}/wechat/01.png`)}"
-            alt=""
-            loading="lazy"
-            decoding="async">
-
-        </div>
-
-
-        <div
-          class="bayer-card-work
-                 bayer-card-work-02">
-
-          <img
-            src="${sitePath(`${bayerBase}/wechat/02.JPG`)}"
-            alt=""
-            loading="lazy"
-            decoding="async">
-
-        </div>
-
-
-        <div
-          class="bayer-card-work
-                 bayer-card-work-03">
-
-          <img
-            src="${sitePath(`${bayerBase}/wechat/03.JPG`)}"
-            alt=""
-            loading="lazy"
-            decoding="async">
-
-        </div>
-
-
-        <div class="bayer-card-index meta-mono">
-          01 / 03
-        </div>
-
-      </div>
-
-    `;
-
-  }
-
-
-
   if(!p.thumbnail){
     return media(
       p,
@@ -8537,465 +8290,192 @@ function renderAustralianLight(project){
 
 
 
-
-function initBayerRail(){
-
-  const rail=[
-    ...document.querySelectorAll(".bayer-rail a")
-  ];
-
-  if(!rail.length) return;
-
-  const sections=rail.map(a=>
-    document.querySelector(
-      a.getAttribute("href")
-    )
-  );
-
-  const tip=
-    document.querySelector("#bayer-tip");
-
-  rail.forEach(a=>{
-
-    const showTip=()=>{
-      if(!tip) return;
-
-      tip.textContent=
-        a.dataset.label || "";
-
-      tip.classList.add("visible");
-    };
-
-    const hideTip=()=>{
-      if(!tip) return;
-
-      tip.classList.remove("visible");
-    };
-
-    a.addEventListener(
-      "mouseenter",
-      showTip
-    );
-
-    a.addEventListener(
-      "mouseleave",
-      hideTip
-    );
-
-    a.addEventListener(
-      "focus",
-      showTip
-    );
-
-    a.addEventListener(
-      "blur",
-      hideTip
-    );
-
-  });
-
-
-  const observer=
-    new IntersectionObserver(
-
-      entries=>{
-
-        entries.forEach(entry=>{
-
-          if(!entry.isIntersecting) return;
-
-          const i=
-            sections.indexOf(
-              entry.target
-            );
-
-          rail.forEach(
-            (a,j)=>
-              a.classList.toggle(
-                "active",
-                i===j
-              )
-          );
-
-        });
-
-      },
-
-      {
-        rootMargin:
-          "-38% 0px -52% 0px",
-
-        threshold:0
-      }
-
-    );
-
-
-  sections.forEach(section=>{
-
-    if(section){
-      observer.observe(section);
-    }
-
-  });
-
-}
-
-
-
 function renderBayerChina(p, projects) {
+  document.body.classList.add("project-bayer-china");
 
-  document.body.classList.add(
-    "project-bayer-china"
+  document.documentElement.style.setProperty(
+    "--project-accent",
+    p.accent
   );
 
-  document.documentElement
-    .style
-    .setProperty(
-      "--project-accent",
-      p.accent
-    );
+  document.documentElement.style.setProperty(
+    "--project-secondary",
+    p.secondary
+  );
 
-  document.documentElement
-    .style
-    .setProperty(
-      "--project-secondary",
-      p.secondary
-    );
-
-  document.title=
-    `${p.title} — Iris Wang`;
+  document.title = `${p.title} — Iris Wang`;
 
   document.body.insertAdjacentHTML(
     "afterbegin",
     header()
   );
 
+  const next =
+    projects[(projects.indexOf(p) + 1) % projects.length];
 
-  const next=
-    projects[
-      (projects.indexOf(p)+1)
-      % projects.length
-    ];
-
-
-  const base=
-    "/public/projects/bayer-china";
-
-
-  const articles=[
-
-    {
-      src:`${base}/wechat/01.png`,
-      title:"WeChat Article 01"
-    },
-
-    {
-      src:`${base}/wechat/02.JPG`,
-      title:"WeChat Article 02"
-    },
-
-    {
-      src:`${base}/wechat/03.JPG`,
-      title:"WeChat Article 03"
-    }
-
-  ];
-
-
-  const roles=[
-
+  const roles = [
     "WeChat article layout & formatting",
-
     "Xiumi-based long-form content production",
-
     "Visual hierarchy & information structuring",
-
     "Image placement & content organisation",
-
     "Publication preparation",
-
-    "Social / digital communication graphics"
-
+    "Selected section-heading development",
+    "Social media graphic production",
+    "Video editing & subtitle production"
   ];
 
-
-  const workflow=[
-
+  const workflow = [
     "Supplied content / communication objective",
-
     "Content hierarchy",
-
     "Section structure",
-
     "Xiumi layout",
-
     "Image & graphic placement",
-
-    "Mobile-format refinement & publication"
-
+    "Mobile-format refinement",
+    "Final publication"
   ];
 
+  const articles = [
+    "Published WeChat Article 01",
+    "Published WeChat Article 02",
+    "Published WeChat Article 03"
+  ];
 
-  document
-    .querySelector("#project-root")
-    .innerHTML=`
-
+  document.querySelector("#project-root").innerHTML = `
     <article class="bayer-page">
 
+      <header class="bayer-hero shell">
 
-      <!-- =========================================
-           OVERVIEW
-           ========================================= -->
+        <div class="bayer-kicker meta-mono">
+          <span>01 / PROFESSIONAL EXPERIENCE</span>
+          <span>NOV 2025 — JAN 2026</span>
+        </div>
 
-      <header
-        class="bayer-hero"
-        id="bayer-overview">
+        <h1 class="bayer-title">
+          <span>Bayer China —</span>
+          <span>Communications &</span>
+          <span>WeChat Content</span>
+        </h1>
 
-        <div class="shell bayer-hero-grid">
+        <div class="bayer-intro">
 
-          <div class="bayer-hero-copy">
+          <p class="bayer-lede">
+            During my Communications Internship at Bayer China,
+            I contributed to the production and publication of
+            digital and visual communication materials across
+            internal and external corporate channels.
+          </p>
 
-            <div class="bayer-hero-kicker">
+          <div class="bayer-meta">
 
-              <span>
-                CORPORATE COMMUNICATIONS · DIGITAL CONTENT · WECHAT · 2025–2026
-              </span>
-
+            <div>
+              <span class="meta-mono">CONTEXT</span>
+              <p>Professional Experience</p>
             </div>
 
-            <h1>
-              BAYER<br>
-              CHINA
-            </h1>
-
-            <p class="bayer-lead">
-
-              During my Communications Internship at Bayer China,
-              I contributed to the production and publication of
-              digital and visual communication materials across
-              internal and external corporate channels.
-
-            </p>
-
-          </div>
-
-
-          <div
-            class="bayer-hero-art"
-            aria-hidden="true">
-      <img
-        class="bayer-hero-mockup"
-        src="${sitePath("/public/projects/bayer-china/other/hero-mockup.png")}"
-        alt=""
-        aria-hidden="true">
-
-
-            <div class="bayer-art-orb"></div>
-
-            <div class="bayer-art-card bayer-art-card-a">
-              <i></i><i></i><i></i>
+            <div>
+              <span class="meta-mono">ROLE</span>
+              <p>Communications Intern</p>
             </div>
 
-            <div class="bayer-art-card bayer-art-card-b">
-              <i></i><i></i>
+            <div>
+              <span class="meta-mono">DISCIPLINES</span>
+              <p>
+                Corporate Communications<br>
+                Digital Content<br>
+                Visual Communication
+              </p>
             </div>
 
-            <div class="bayer-art-lines">
-              <span></span>
-              <span></span>
-              <span></span>
+            <div>
+              <span class="meta-mono">TOOLS</span>
+              <p>
+                Xiumi<br>
+                Adobe Creative Cloud<br>
+                WeChat Official Accounts
+              </p>
             </div>
-
-            <div class="bayer-art-frame bayer-art-frame-a"></div>
-            <div class="bayer-art-frame bayer-art-frame-b"></div>
 
           </div>
 
         </div>
 
+        <div class="bayer-hero-placeholder">
 
-        <div class="shell bayer-meta">
+          ${["01","02","03"].map((n) => `
+            <div class="bayer-mini-page">
+              <span class="bayer-mini-top"></span>
+              <span class="bayer-mini-heading"></span>
+              <span class="bayer-mini-line"></span>
+              <span class="bayer-mini-line short"></span>
+              <span class="bayer-mini-image"></span>
+              <span class="bayer-mini-line"></span>
+              <span class="bayer-mini-line medium"></span>
 
-          <div>
-
-            <b>Context</b>
-
-            <span>
-              Professional Experience
-            </span>
-
-          </div>
-
-
-          <div>
-
-            <b>Role</b>
-
-            <span>
-              Communications Intern
-            </span>
-
-          </div>
-
-
-          <div>
-
-            <b>Focus</b>
-
-            <span>
-              Corporate Communications · Digital Content · WeChat
-            </span>
-
-          </div>
-
-
-          <div>
-
-            <b>Tools</b>
-
-            <span>
-              Xiumi · Adobe Creative Cloud · WeChat Official Accounts
-            </span>
-
-          </div>
+              <small class="meta-mono">
+                WECHAT ${n}
+              </small>
+            </div>
+          `).join("")}
 
         </div>
 
       </header>
 
 
-
-      <!-- =========================================
-           MY ROLE
-           ========================================= -->
-
-      <section
-        class="bayer-section shell"
-        id="bayer-role">
+      <section class="bayer-section shell">
 
         <div class="bayer-heading-row">
-
           <span class="meta-mono">
             01 / MY ROLE
           </span>
 
           <h2>
-
-            Structuring long-form
-            digital content for clear
-            mobile communication.
-
+            Producing clear digital communication
+            within an established brand system.
           </h2>
-
         </div>
 
-
         <div class="bayer-role-grid">
-
-          ${roles.map(
-            (role,i)=>`
-
+          ${roles.map((role, i) => `
             <div class="bayer-role">
-
               <span class="meta-mono">
-
-                ${String(i+1)
-                  .padStart(2,"0")}
-
+                ${String(i + 1).padStart(2,"0")}
               </span>
-
-              <p>
-                ${role}
-              </p>
-
+              <p>${role}</p>
             </div>
-
-          `
-          ).join("")}
-
+          `).join("")}
         </div>
 
       </section>
 
 
-
-      <!-- =========================================
-           WORKFLOW
-           ========================================= -->
-
-      <section
-        class="bayer-workflow"
-        id="bayer-workflow">
+      <section class="bayer-workflow">
 
         <div class="shell">
 
           <div class="bayer-heading-row">
-
             <span class="meta-mono">
-              02 / WECHAT WORKFLOW
+              02 / WECHAT CONTENT WORKFLOW
             </span>
 
             <h2>
-
               From supplied information
               to publication-ready content.
-
             </h2>
-
           </div>
-
 
           <div class="bayer-workflow-grid">
+            ${workflow.map((step, i) => `
+              <div class="bayer-workflow-step">
 
-            ${workflow.map(
-              (step,i)=>`
-
-              <div
-                class="bayer-workflow-step">
-
-                <span
-                  class="bayer-step-number">
-
-                  ${String(i+1)
-                    .padStart(2,"0")}
-
+                <span class="meta-mono">
+                  ${String(i + 1).padStart(2,"0")}
                 </span>
 
-                <p>
-                  ${step}
-                </p>
+                <p>${step}</p>
 
               </div>
-
-            `
-            ).join("")}
-
-          </div>
-
-
-          <div
-            class="bayer-workflow-note">
-
-            <span class="meta-mono">
-
-              CONTENT RESPONSIBILITY
-
-            </span>
-
-
-            <p>
-
-              My primary responsibility was
-              visual and editorial layout rather
-              than writing full campaign copy.
-              I also contributed to content
-              structuring and selected section
-              headings, helping improve clarity,
-              flow and readability.
-
-            </p>
-
+            `).join("")}
           </div>
 
         </div>
@@ -9003,199 +8483,33 @@ function renderBayerChina(p, projects) {
       </section>
 
 
-
-      <!-- =========================================
-           PUBLISHED WECHAT
-           ========================================= -->
-
-      <section
-        class="bayer-section shell"
-        id="bayer-wechat">
+      <section class="bayer-section shell">
 
         <div class="bayer-heading-row">
 
           <span class="meta-mono">
-
-            03 / PUBLISHED WECHAT
-
+            03 / CONTENT STRUCTURING
           </span>
 
-
           <h2>
-
-            Three long-form layouts
-            designed for mobile reading.
-
+            Layout was part of making
+            information understandable.
           </h2>
 
         </div>
 
-
-        <div
-          class="bayer-real-articles">
-
-          ${articles.map(
-            (article,i)=>`
-
-            <figure
-              class="bayer-real-article">
-
-              <div
-                class="bayer-article-scroll"
-                tabindex="0"
-                aria-label="Scrollable preview of ${esc(article.title)}">
-
-                <img
-                  src="${sitePath(article.src)}"
-                  alt="${esc(article.title)} full long-form WeChat layout"
-                  loading="lazy">
-
-              </div>
-
-
-              <figcaption>
-
-                <span class="meta-mono">
-
-                  0${i+1}
-
-                </span>
-
-
-                <div>
-
-                  <p>
-                    ${esc(article.title)}
-                  </p>
-
-                  <small class="meta-mono">
-
-                    SCROLL TO VIEW FULL ARTICLE
-
-                  </small>
-
-                </div>
-
-              </figcaption>
-
-            </figure>
-
-          `
-          ).join("")}
-
-        </div>
-
-      </section>
-
-
-
-      <!-- =========================================
-           DIGITAL COMMUNICATION POSTER
-           ========================================= -->
-
-      <section
-        class="bayer-poster-section"
-        id="bayer-poster">
-
-        <div
-          class="shell
-                 bayer-poster-layout">
-
-
-          <div
-            class="bayer-poster-copy">
-
-            <span class="meta-mono">
-
-              04 /
-              DIGITAL COMMUNICATION
-
-            </span>
-
-
-            <h2>
-
-              Supporting information
-              with a clear visual hierarchy.
-
-            </h2>
-
-
-            <p>
-
-              Alongside long-form WeChat
-              production, I also worked on
-              supporting visual communication.
-
-              This Chinese-language graphic
-              communicates a font-licensing
-              reminder through numbered guidance,
-              colour-coded information blocks and
-              concise supporting text.
-
-            </p>
-
-          </div>
-
-
-          <figure
-            class="bayer-poster">
-
-            <img
-
-              src="${sitePath(
-                `${base}/social/post.png`
-              )}"
-
-              alt="Bayer China font licensing reminder graphic"
-
-              loading="lazy">
-
-            <figcaption
-              class="meta-mono">
-
-              DIGITAL COMMUNICATION
-              / FONT LICENSING GUIDANCE
-
-            </figcaption>
-
-          </figure>
-
-        </div>
-
-      </section>
-
-
-
-      <!-- =========================================
-           REFLECTION
-           ========================================= -->
-
-      <section
-        class="bayer-reflection"
-        id="bayer-reflection">
-
-        <div
-          class="shell
-                 bayer-reflection-inner">
-
-          <span class="meta-mono">
-
-            05 / REFLECTION
-
-          </span>
-
+        <div class="bayer-copy-pair">
 
           <p>
+            My primary responsibility was visual and editorial
+            layout rather than writing full campaign copy.
+          </p>
 
-            This experience strengthened my
-            ability to work within an established
-            corporate identity while adapting
-            information for digital communication,
-            preparing publication-ready assets
-            and balancing visual clarity with
-            corporate communication requirements.
-
+          <p>
+            I also contributed to content structuring and selected
+            section headings, helping improve clarity, flow and
+            readability while maintaining Bayer’s established
+            brand identity.
           </p>
 
         </div>
@@ -9203,120 +8517,186 @@ function renderBayerChina(p, projects) {
       </section>
 
 
+      <section class="bayer-section shell">
 
-      <!-- =========================================
-           CHAPTER RAIL
-           ========================================= -->
+        <div class="bayer-heading-row">
 
-      <nav
-        class="chapter-rail bayer-rail"
-        aria-label="Bayer project sections">
+          <span class="meta-mono">
+            04 / PUBLISHED WORK
+          </span>
+
+          <h2>
+            Long-form WeChat content
+            designed for mobile reading.
+          </h2>
+
+        </div>
+
+        <div class="bayer-articles">
+
+          ${articles.map((label, i) => `
+            <figure class="bayer-article">
+
+              <div class="bayer-article-sheet">
+
+                <span class="bayer-sheet-heading"></span>
+
+                <span class="bayer-sheet-line"></span>
+                <span class="bayer-sheet-line short"></span>
+
+                <div class="bayer-sheet-image">
+                  <span class="meta-mono">
+                    ARTICLE IMAGE
+                  </span>
+                </div>
+
+                <span class="bayer-sheet-line"></span>
+                <span class="bayer-sheet-line medium"></span>
+                <span class="bayer-sheet-line"></span>
+
+                <div class="bayer-sheet-block"></div>
+
+                <span class="bayer-sheet-line"></span>
+                <span class="bayer-sheet-line short"></span>
+
+                <div class="bayer-sheet-image small">
+                  <span class="meta-mono">
+                    CONTENT
+                  </span>
+                </div>
+
+                <span class="bayer-sheet-line medium"></span>
+                <span class="bayer-sheet-line"></span>
+
+              </div>
+
+              <figcaption>
+                <span class="meta-mono">
+                  0${i + 1}
+                </span>
+
+                <p>${label}</p>
+
+                <small class="meta-mono">
+                  LIVE ARTICLE LINK TO BE ADDED
+                </small>
+              </figcaption>
+
+            </figure>
+          `).join("")}
+
+        </div>
+
+      </section>
 
 
-        <a
-          href="#bayer-overview"
-          data-label="OVERVIEW"
-          aria-label="Overview">
-        </a>
+      <section class="bayer-section shell">
+
+        <div class="bayer-heading-row">
+
+          <span class="meta-mono">
+            05 / OTHER COMMUNICATION MATERIALS
+          </span>
+
+          <h2>
+            Supporting communication across
+            social, promotional and internal channels.
+          </h2>
+
+        </div>
+
+        <div class="bayer-materials">
+
+          <figure class="bayer-material wide">
+            <div>
+              <span class="meta-mono">
+                BAYER-SOCIAL-01
+              </span>
+            </div>
+
+            <figcaption>
+              Social / Digital Graphics
+            </figcaption>
+          </figure>
+
+          <figure class="bayer-material">
+            <div>
+              <span class="meta-mono">
+                PROMOTIONAL MATERIAL
+              </span>
+            </div>
+
+            <figcaption>
+              Promotional & Event Communication
+            </figcaption>
+          </figure>
+
+          <figure class="bayer-material">
+            <div>
+              <span class="meta-mono">
+                BAYER-VIDEO-01
+              </span>
+            </div>
+
+            <figcaption>
+              Video Editing / Subtitle Production
+            </figcaption>
+          </figure>
+
+        </div>
+
+      </section>
 
 
-        <a
-          href="#bayer-role"
-          data-label="MY ROLE"
-          aria-label="My role">
-        </a>
+      <section class="bayer-reflection">
 
+        <div class="shell bayer-reflection-inner">
 
-        <a
-          href="#bayer-workflow"
-          data-label="WORKFLOW"
-          aria-label="Workflow">
-        </a>
+          <span class="meta-mono">
+            06 / REFLECTION
+          </span>
 
+          <p>
+            This experience strengthened my ability to work
+            within an established corporate identity while
+            adapting information for digital communication.
+            It also gave me practical experience producing
+            content for real audiences, preparing
+            publication-ready assets and balancing visual
+            clarity with corporate communication requirements.
+          </p>
 
-        <a
-          href="#bayer-wechat"
-          data-label="PUBLISHED WECHAT"
-          aria-label="Published WeChat">
-        </a>
+        </div>
 
+      </section>
 
-        <a
-          href="#bayer-poster"
-          data-label="DIGITAL COMMUNICATION"
-          aria-label="Digital communication">
-        </a>
-
-
-        <a
-          href="#bayer-reflection"
-          data-label="REFLECTION"
-          aria-label="Reflection">
-        </a>
-
-      </nav>
-
-
-      <div
-        class="chapter-tip
-               bayer-tip"
-        id="bayer-tip">
-      </div>
-
-
-
-      <!-- =========================================
-           NEXT PROJECT
-           ========================================= -->
 
       <a
         class="next-project bayer-next"
-        href="${sitePath(
-          `/work/${next.slug}/`
-        )}">
+        href="${sitePath(`/work/${next.slug}/`)}">
 
-        <span
-          class="meta-mono
-                 next-project-label">
-
+        <span class="meta-mono next-project-label">
           NEXT PROJECT
-
         </span>
 
-        <span
-          class="next-project-title">
-
+        <span class="next-project-title">
           ${esc(next.title)}
-
         </span>
 
-        <span
-          class="next-project-arrow">
-
+        <span class="next-project-arrow">
           →
-
         </span>
 
       </a>
 
-
     </article>
-
   `;
-
 
   document.body.insertAdjacentHTML(
     "beforeend",
     footer()
   );
-
-
-  requestAnimationFrame(
-    initBayerRail
-  );
-
 }
-
 
 
 async function renderProject(){

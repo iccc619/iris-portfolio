@@ -1,116 +1,7 @@
 [
   {
-    "slug": "bayer-china",
-    "number": "01",
-    "title": "Bayer China Intern",
-    "year": "2025–2026",
-    "status": "Professional Experience · Communications Internship",
-    "disciplines": [
-      "Corporate Communications",
-      "Digital Content",
-      "Visual Communication"
-    ],
-    "summary": "Professional corporate communication work produced during a Communications Internship at Bayer China, with a focus on long-form WeChat content, digital layout and publication-ready visual communication.",
-    "role": "Communications Intern — WeChat layout, digital content production, visual hierarchy, publication preparation and supporting communication assets",
-    "tools": "Xiumi · Adobe Creative Cloud · WeChat Official Accounts",
-    "accent": "#2AAFD0",
-    "secondary": "#D8EEF3",
-    "theme": "light",
-    "featured": true,
-    "demonstrates": "Demonstrates professional experience working within an established corporate identity to produce clear, structured and publication-ready digital communication for real audiences.",
-    "sections": [
-      [
-        "Project introduction",
-        "During my Communications Internship at Bayer China, I contributed to the production and publication of digital and visual communication materials across internal and external corporate channels. A key part of my role involved producing long-form WeChat content using Xiumi, translating supplied written content and visual assets into clear, structured and publication-ready articles while maintaining Bayer’s established brand identity."
-      ],
-      [
-        "My role",
-        "My responsibilities included WeChat article layout and formatting, Xiumi-based long-form content production, visual hierarchy and information structuring, image placement, publication preparation, selected section-heading development, social media graphic production, basic video editing and subtitle production, and promotional and internal communication assets."
-      ],
-      [
-        "WeChat content workflow",
-        "Supplied content and communication objective → content hierarchy → section structure → Xiumi layout → image and graphic placement → mobile-format refinement → final publication."
-      ],
-      [
-        "Content structuring",
-        "My primary responsibility was visual and editorial layout rather than writing full campaign copy. I also contributed to content structuring and selected section headings, helping improve clarity, flow and readability."
-      ],
-      [
-        "Published work",
-        "Selected published WeChat articles will be shown here as long-form mobile screenshots. Final screenshots and live article links will be added once the publication assets are prepared for the portfolio."
-      ],
-      [
-        "Other communication materials",
-        "Additional work includes social media graphics, promotional materials, long-form digital graphics, corporate gifts, event communication materials and selected video or subtitle examples."
-      ],
-      [
-        "Reflection",
-        "This experience strengthened my ability to work within an established corporate identity while adapting information for digital communication. It also gave me practical experience producing content for real audiences, preparing publication-ready assets and balancing visual clarity with corporate communication requirements."
-      ]
-    ],
-    "filter": [
-      "communications",
-      "digital content",
-      "visual communication"
-    ],
-    "thumbnail": "/public/thumbnails/bayer-china-trail.png",
-    "thumbnailType": "image"
-  },
-  {
-    "slug": "60-bpm",
-    "number": "02",
-    "title": "60 BPM",
-    "year": "2024",
-    "status": "Academic · Individual",
-    "disciplines": [
-      "Brand identity",
-      "Packaging",
-      "Campaign"
-    ],
-    "summary": "A café identity translating a 60-BPM tempo into a calm, rechargeable brand world.",
-    "role": "Brand strategy, identity, character, packaging and campaign design",
-    "tools": "Illustrator · InDesign · Photoshop · Figma",
-    "accent": "#CFDD2C",
-    "secondary": "#E4A3C9",
-    "theme": "light",
-    "featured": true,
-    "demonstrates": "Demonstrates the ability to extend one strategic concept across identity, packaging and campaign touchpoints.",
-    "sections": [
-      [
-        "Overview",
-        "60 BPM is a speculative café identity built around calmness, restoration and recharging. The name connects sixty beats per minute with adagio: a slower tempo away from the anxiety and speed of daily life."
-      ],
-      [
-        "Concept",
-        "The central idea is rejuvenation through coffee. A logo combining a coffee bean and charger uses positive/negative charge symbolism, while the character Dagee helps carry the emotional tone into touchpoints."
-      ],
-      [
-        "Research & direction",
-        "Research covered café brands, merchandise, store atmosphere, logos, typography, menus, character design and relevant case studies. The intended audience includes students, workers, couples and families seeking a higher-quality leisure experience."
-      ],
-      [
-        "Identity system",
-        "Yorkmade and Montserrat establish the typographic contrast. Acid chartreuse, pink, black and cream create a distinctive but controlled palette, while tempo-based gradients expand the system into atmospheric campaign imagery."
-      ],
-      [
-        "Applications",
-        "The system extends across business cards, posters, coffee packaging, cups and sleeves, bags, merchandise, gift boxes and digital campaign applications."
-      ],
-      [
-        "Outcome",
-        "A complete identity presentation showing how one calm/recharge concept can remain recognisable across two-dimensional graphics and three-dimensional packaging mockups."
-      ],
-      [
-        "Transferable capabilities",
-        "Brief interpretation, concept development, identity systems, packaging, character design, campaign consistency and art direction."
-      ]
-    ],
-    "thumbnail": "/public/thumbnails/60-bpm.jpg",
-    "thumbnailType": "image"
-  },
-  {
     "slug": "australian-light",
-    "number": "03",
+    "number": "01",
     "title": "Australian Light",
     "year": "2026",
     "status": "Academic redesign · Individual",
@@ -173,56 +64,60 @@
     "thumbnailType": "image"
   },
   {
-    "slug": "step-motion",
-    "number": "04",
-    "title": "Step / Motion",
-    "year": "2026",
+    "slug": "60-bpm",
+    "number": "02",
+    "title": "60 BPM",
+    "year": "2024",
     "status": "Academic · Individual",
     "disciplines": [
-      "Motion",
-      "Filmmaking",
-      "Editorial"
+      "Brand identity",
+      "Packaging",
+      "Campaign"
     ],
-    "summary": "A film and two-volume publication translating cyclical time through stairs, repetition, motion blur and material layering.",
-    "role": "Filmmaking, sound, editorial design and bookmaking",
-    "tools": "Camera & audio · editorial / motion tools",
-    "accent": "#E6D94A",
-    "secondary": "#F5F3EE",
-    "theme": "dark",
+    "summary": "A café identity translating a 60-BPM tempo into a calm, rechargeable brand world.",
+    "role": "Brand strategy, identity, character, packaging and campaign design",
+    "tools": "Illustrator · InDesign · Photoshop · Figma",
+    "accent": "#CFDD2C",
+    "secondary": "#E4A3C9",
+    "theme": "light",
     "featured": true,
-    "demonstrates": "Demonstrates cross-media storytelling through editing, sound, motion and physical publication.",
+    "demonstrates": "Demonstrates the ability to extend one strategic concept across identity, packaging and campaign touchpoints.",
     "sections": [
       [
         "Overview",
-        "A paired exploration of translating time, tension and atmosphere between moving-image and physical editorial formats."
+        "60 BPM is a speculative café identity built around calmness, restoration and recharging. The name connects sixty beats per minute with adagio: a slower tempo away from the anxiety and speed of daily life."
       ],
       [
-        "Step — moving image",
-        "Staircases, escalators and elevators recur as motifs of movement and time. Montage, repeated actions, overlapping moments, long exposure and motion blur contrast speed with stillness."
+        "Concept",
+        "The central idea is rejuvenation through coffee. A logo combining a coffee bean and charger uses positive/negative charge symbolism, while the character Dagee helps carry the emotional tone into touchpoints."
       ],
       [
-        "Sound & sequencing",
-        "Self-produced piano, recorded wind and footsteps, retained location sound and selected free sound-library textures build a restrained soundscape. Tutor feedback led to softer transition wind effects."
+        "Research & direction",
+        "Research covered café brands, merchandise, store atmosphere, logos, typography, menus, character design and relevant case studies. The intended audience includes students, workers, couples and families seeking a higher-quality leisure experience."
       ],
       [
-        "Motion — physical publication",
-        "A 10 × 15 cm, 16-page handmade artist’s book translates cinematic darkness and tension through black paper, tracing-paper layers, high-contrast imagery, restricted red/brown accents and sewn binding."
+        "Identity system",
+        "Yorkmade and Montserrat establish the typographic contrast. Acid chartreuse, pink, black and cream create a distinctive but controlled palette, while tempo-based gradients expand the system into atmospheric campaign imagery."
+      ],
+      [
+        "Applications",
+        "The system extends across business cards, posters, coffee packaging, cups and sleeves, bags, merchandise, gift boxes and digital campaign applications."
       ],
       [
         "Outcome",
-        "Together the works demonstrate narrative interpretation, filming, editing, sound production, visual pacing, material experimentation and translation between media."
+        "A complete identity presentation showing how one calm/recharge concept can remain recognisable across two-dimensional graphics and three-dimensional packaging mockups."
       ],
       [
         "Transferable capabilities",
-        "Storyboarding, shooting, editing, sound, sequencing, material experimentation and editorial pacing."
+        "Brief interpretation, concept development, identity systems, packaging, character design, campaign consistency and art direction."
       ]
     ],
-    "thumbnail": "/public/thumbnails/step-motion.mp4",
-    "thumbnailType": "video"
+    "thumbnail": "/public/thumbnails/60-bpm.jpg",
+    "thumbnailType": "image"
   },
   {
     "slug": "green-grid",
-    "number": "05",
+    "number": "03",
     "title": "Green Grid",
     "year": "2025",
     "status": "Academic · Team of 4",
@@ -290,7 +185,7 @@
   },
   {
     "slug": "ethereal-realm",
-    "number": "06",
+    "number": "04",
     "title": "EtheReal / Realm",
     "year": "2024",
     "status": "Speculative · Individual",
@@ -333,8 +228,56 @@
     "thumbnailType": "image"
   },
   {
+    "slug": "step-motion",
+    "number": "05",
+    "title": "Step / Motion",
+    "year": "2026",
+    "status": "Academic · Individual",
+    "disciplines": [
+      "Motion",
+      "Filmmaking",
+      "Editorial"
+    ],
+    "summary": "A film and two-volume publication translating cyclical time through stairs, repetition, motion blur and material layering.",
+    "role": "Filmmaking, sound, editorial design and bookmaking",
+    "tools": "Camera & audio · editorial / motion tools",
+    "accent": "#E6D94A",
+    "secondary": "#F5F3EE",
+    "theme": "dark",
+    "featured": true,
+    "demonstrates": "Demonstrates cross-media storytelling through editing, sound, motion and physical publication.",
+    "sections": [
+      [
+        "Overview",
+        "A paired exploration of translating time, tension and atmosphere between moving-image and physical editorial formats."
+      ],
+      [
+        "Step — moving image",
+        "Staircases, escalators and elevators recur as motifs of movement and time. Montage, repeated actions, overlapping moments, long exposure and motion blur contrast speed with stillness."
+      ],
+      [
+        "Sound & sequencing",
+        "Self-produced piano, recorded wind and footsteps, retained location sound and selected free sound-library textures build a restrained soundscape. Tutor feedback led to softer transition wind effects."
+      ],
+      [
+        "Motion — physical publication",
+        "A 10 × 15 cm, 16-page handmade artist’s book translates cinematic darkness and tension through black paper, tracing-paper layers, high-contrast imagery, restricted red/brown accents and sewn binding."
+      ],
+      [
+        "Outcome",
+        "Together the works demonstrate narrative interpretation, filming, editing, sound production, visual pacing, material experimentation and translation between media."
+      ],
+      [
+        "Transferable capabilities",
+        "Storyboarding, shooting, editing, sound, sequencing, material experimentation and editorial pacing."
+      ]
+    ],
+    "thumbnail": "/public/thumbnails/step-motion.mp4",
+    "thumbnailType": "video"
+  },
+  {
     "slug": "n-exhibition",
-    "number": "07",
+    "number": "06",
     "title": "N Exhibition",
     "year": "2024",
     "status": "Speculative · Individual",
@@ -374,7 +317,7 @@
   },
   {
     "slug": "modular-typeface",
-    "number": "08",
+    "number": "09",
     "title": "Modular Typeface",
     "year": "2025",
     "status": "Academic · Individual",
