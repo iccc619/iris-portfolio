@@ -84,6 +84,19 @@ function shortStatus(s=""){
 
 function projectCardMedia(p){
 
+  if(p.slug==="sony-re-colour"){
+    return `
+      <img
+        class="project-thumb project-thumb-image"
+        src="${sitePath("/public/thumbnails/sony-re-colour.jpg")}"
+        alt="SONY RE-COLOUR project thumbnail"
+        loading="lazy"
+        decoding="async">
+    `;
+  }
+
+
+
   /* BAYER HOMEPAGE LIVE VECTOR THUMBNAIL */
   if(p.slug==="bayer-china"){
 
@@ -425,6 +438,36 @@ function filterProjects(kind){
   });
   const copy=document.querySelector("#focus-slogan");
   if(copy) copy.textContent=filterCopy[kind]||filterCopy.all;
+
+  /* FILTER GRID POSITIONING */
+  document.body.dataset.workFilter = kind;
+
+  const allCards = [
+    ...document.querySelectorAll(".project-card")
+  ];
+
+  allCards.forEach(card => {
+    [...card.classList]
+      .filter(cls => /^filter-pos-\d+$/.test(cls))
+      .forEach(cls => card.classList.remove(cls));
+
+    card.classList.remove("filter-last");
+  });
+
+  const visibleCards = allCards.filter(card =>
+    getComputedStyle(card).display !== "none"
+  );
+
+  visibleCards.forEach((card,index) => {
+    card.classList.add(`filter-pos-${index + 1}`);
+  });
+
+  if(visibleCards.length){
+    visibleCards.at(-1).classList.add("filter-last");
+  }
+
+  document.body.dataset.filterParity =
+    visibleCards.length % 2 ? "odd" : "even";
 }
 
 function homeHeroMedia(p){
@@ -9319,6 +9362,1608 @@ function renderBayerChina(p, projects) {
 
 
 
+
+function renderSonyRecolour(p,projects){
+  const A=sitePath("/public/projects/sony-re-colour");
+
+  const img=(file,alt="",cls="")=>`
+    <img
+      class="sony-asset ${cls}"
+      src="${A}/${file}"
+      alt="${esc(alt)}"
+      loading="lazy"
+      decoding="async">
+  `;
+
+  const currentIndex=projects.findIndex(x=>x.slug===p.slug);
+  const next=projects[(currentIndex+1)%projects.length];
+
+  const placeholder=(slot,cls="",label="Image placeholder")=>`
+    <figure
+      class="sony-placeholder ${cls}"
+      data-slot="${slot}"
+      aria-label="${esc(label)}">
+      <span>IMAGE TO ADD</span>
+    </figure>
+  `;
+
+  document.body.classList.add(
+    "compact-brand",
+    "project-sony-recolour"
+  );
+
+  document.documentElement.style.setProperty(
+    "--project-accent",
+    "#84B4E0"
+  );
+
+  document.documentElement.style.setProperty(
+    "--project-secondary",
+    "#DEE5F4"
+  );
+
+  document.title="SONY RE-COLOUR — Iris Wang";
+
+  document.body.insertAdjacentHTML(
+    "afterbegin",
+    header()
+  );
+
+  document.querySelector("#project-root").innerHTML=`
+    <article class="sony-case">
+
+      <!-- ================================================
+           01 HERO
+           ================================================ -->
+      <section class="sony-hero" id="sony-1">
+        <div class="shell sony-hero-grid">
+
+          <div class="sony-hero-copy">
+            <div class="sony-kicker meta-mono">
+              <span>COLOUR STRATEGY · SOUND-DRIVEN IDENTITY · HEADPHONE CAMPAIGN · 2026</span>
+            </div>
+
+            <h1>
+              SONY<br>
+              <span>RE-COLOUR</span>
+            </h1>
+
+            <p class="sony-lead">
+              A colour-led refresh of Sony’s visual identity,
+              developed around a new promotional direction for
+              a headphone series.
+            </p>
+          </div>
+
+          <div class="sony-hero-art">
+            ${img(
+              "hero/sony-hero-headphones.png",
+              "Sony headphone campaign hero",
+              "sony-hero-image"
+            )}
+          </div>
+
+        </div>
+
+
+      </section>
+
+
+      <!-- ================================================
+           02 PROJECT OVERVIEW
+           ================================================ -->
+      <section class="sony-section sony-overview" id="sony-2">
+        <div class="shell">
+
+          <div class="sony-section-head">
+            <span class="meta-mono">02 — PROJECT OVERVIEW</span>
+
+            <h2>
+              Re-colouring<br>
+              an icon.
+            </h2>
+          </div>
+
+          
+          
+          <div class="sony-overview-statement">
+
+            <p>
+              Sony Re-Colour uses colour as the main tool for
+              refreshing an established identity while preserving
+              the original wordmark. Metallic gradients and a
+              luminous “O” translate sound, light and technological
+              precision into a contemporary headphone campaign.
+            </p>
+
+          </div>
+
+          <div class="sony-facts">
+            <article>
+              <span>BRIEF</span>
+              <p>
+                Refresh the Sony brand through colour without changing
+                the existing Sony wordmark.
+              </p>
+            </article>
+
+            <article>
+              <span>CONCEPT</span>
+              <p>
+                A metallic, sound-driven colour system for a contemporary
+                headphone campaign.
+              </p>
+            </article>
+
+            <article>
+              <span>ROLE</span>
+              <p>
+                Research · Colour exploration · Brand development ·
+                Campaign · Packaging · Motion
+              </p>
+            </article>
+
+            <article>
+              <span>TOOLS</span>
+              <p>
+                Adobe Illustrator · Adobe Photoshop · Adobe After Effects
+              </p>
+            </article>
+          </div>
+
+        </div>
+      </section>
+
+
+      <!-- ================================================
+           03 COLOUR EXPLORATION
+           ================================================ -->
+      <section class="sony-section sony-colour" id="sony-3">
+
+        <div class="shell">
+
+          <div class="sony-section-head sony-section-head-split">
+            <span class="meta-mono">
+              03 — COLOUR EXPLORATION
+            </span>
+
+            <h2>
+              From colour
+              to sound.
+            </h2>
+
+            <p>
+              The visual system developed through three stages:
+              broad colour testing, metallic material refinement,
+              and the translation of the chosen direction into
+              sound-wave assets.
+            </p>
+          </div>
+
+
+          <div class="sony-colour-switcher">
+
+            <input
+              class="sony-colour-radio"
+              type="radio"
+              name="sony-colour-panel"
+              id="sony-colour-general"
+              checked>
+
+            <input
+              class="sony-colour-radio"
+              type="radio"
+              name="sony-colour-panel"
+              id="sony-colour-metallic">
+
+            <input
+              class="sony-colour-radio"
+              type="radio"
+              name="sony-colour-panel"
+              id="sony-colour-wave">
+
+
+            <!-- ==========================================
+                 PROCESS NAVIGATION
+                 ========================================== -->
+
+            <nav class="sony-colour-controls">
+
+              <label for="sony-colour-general">
+                <span>01</span>
+
+                <div>
+                  <b>GENERAL COLOUR</b>
+                  <small>Exploring visual character</small>
+                </div>
+
+                <i>→</i>
+              </label>
+
+
+              <label for="sony-colour-metallic">
+                <span>02</span>
+
+                <div>
+                  <b>METALLIC COLOUR</b>
+                  <small>Refining material direction</small>
+                </div>
+
+                <i>→</i>
+              </label>
+
+
+              <label for="sony-colour-wave">
+                <span>03</span>
+
+                <div>
+                  <b>SOUND WAVE</b>
+                  <small>Building the graphic language</small>
+                </div>
+
+                <i>→</i>
+              </label>
+
+            </nav>
+
+
+            <!-- ==========================================
+                 SWITCHABLE STAGE
+                 ========================================== -->
+
+            <div class="sony-colour-stage">
+
+
+              <!-- ========================================
+                   01 GENERAL COLOUR
+                   ======================================== -->
+
+              <article
+                class="sony-colour-panel sony-colour-panel-general">
+
+                <header class="sony-panel-head">
+
+                  <div>
+                    <span class="meta-mono">
+                      01 — GENERAL COLOUR TESTS
+                    </span>
+
+                    <h3>
+                      Testing the visual
+                      character of Sony.
+                    </h3>
+                  </div>
+
+                  <p>
+                    Initial studies compare paired colour
+                    relationships to test how foreground,
+                    background and contrast can shift the
+                    character of the unchanged Sony wordmark.
+                  </p>
+
+                </header>
+
+
+                <div class="sony-general-paired-grid">
+
+                  <!-- SET 01 -->
+                  <figure class="sony-general-set">
+
+                    <div class="sony-general-pair">
+                      ${img(
+                        "colour/colour-test-1.svg",
+                        "Sony general colour test 01",
+                        "sony-general-test"
+                      )}
+
+                      ${img(
+                        "colour/colour-test-2.svg",
+                        "Sony general colour test 02",
+                        "sony-general-test"
+                      )}
+                    </div>
+
+                    <figcaption>
+                      <span>01</span>
+                      <b>COLOUR PAIR</b>
+                    </figcaption>
+
+                  </figure>
+
+
+                  <!-- SET 02 -->
+                  
+
+
+                  <!-- SET 03 -->
+                  <figure class="sony-general-set">
+
+                    <div class="sony-general-pair">
+                      ${img(
+                        "colour/colour-test-5.svg",
+                        "Sony general colour test 05",
+                        "sony-general-test"
+                      )}
+
+                      ${img(
+                        "colour/colour-test-6.svg",
+                        "Sony general colour test 06",
+                        "sony-general-test"
+                      )}
+                    </div>
+
+                    <figcaption>
+                      <span>02</span>
+                      <b>COLOUR PAIR</b>
+                    </figcaption>
+
+                  </figure>
+
+
+                  <!-- SET 04 -->
+                  <figure class="sony-general-set">
+
+                    <div class="sony-general-pair">
+                      ${img(
+                        "colour/colour-test-7.svg",
+                        "Sony general colour test 07",
+                        "sony-general-test"
+                      )}
+
+                      ${img(
+                        "colour/colour-test-8.svg",
+                        "Sony general colour test 08",
+                        "sony-general-test"
+                      )}
+                    </div>
+
+                    <figcaption>
+                      <span>03</span>
+                      <b>COLOUR PAIR</b>
+                    </figcaption>
+
+                  </figure>
+
+
+                  <!-- SET 05 -->
+                  
+
+
+                  <!-- SET 06 -->
+                  <figure class="sony-general-set">
+
+                    <div class="sony-general-pair">
+                      ${img(
+                        "colour/colour-test-11.svg",
+                        "Sony general colour test 11",
+                        "sony-general-test"
+                      )}
+
+                      ${img(
+                        "colour/colour-test-12.svg",
+                        "Sony general colour test 12",
+                        "sony-general-test"
+                      )}
+                    </div>
+
+                    <figcaption>
+                      <span>04</span>
+                      <b>COLOUR PAIR</b>
+                    </figcaption>
+
+                  </figure>
+
+                </div>
+
+              </article>
+
+
+
+              <!-- ========================================
+                   02 METALLIC COLOUR
+                   ======================================== -->
+
+              <article
+                class="sony-colour-panel
+                       sony-colour-panel-metallic">
+
+                <header class="sony-panel-head">
+
+                  <div>
+                    <span class="meta-mono">
+                      02 — METALLIC COLOUR TESTS
+                    </span>
+
+                    <h3>
+                      Colour becomes
+                      material.
+                    </h3>
+                  </div>
+
+                  <p>
+                    Metallic experiments narrow the broad colour
+                    exploration into a more product-driven system.
+                    Warm metals are tested against cooler blue and
+                    silver finishes before the final direction is
+                    established.
+                  </p>
+
+                </header>
+
+
+                <div class="sony-metal-process">
+
+                  <div class="sony-metal-process-group">
+
+                    <div class="sony-process-group-label">
+                      <span class="meta-mono">
+                        WARM METALS
+                      </span>
+
+                      <p>
+                        Early material direction
+                      </p>
+                    </div>
+
+
+                    <div class="sony-metal-process-grid">
+
+
+
+                      <figure class="sony-metal-process-tile">
+                        ${img(
+                          "colour/metal-colour-1.svg",
+                          "Sony metallic colour test 1",
+                          "sony-process-image"
+                        )}
+
+                        <figcaption>
+                          <span>TEST 01</span>
+                        </figcaption>
+                      </figure>
+
+                      <figure class="sony-metal-process-tile">
+                        ${img(
+                          "colour/metal-colour-2.svg",
+                          "Sony metallic colour test 2",
+                          "sony-process-image"
+                        )}
+
+                        <figcaption>
+                          <span>TEST 02</span>
+                        </figcaption>
+                      </figure>
+
+                      <figure class="sony-metal-process-tile">
+                        ${img(
+                          "colour/metal-colour-3.svg",
+                          "Sony metallic colour test 3",
+                          "sony-process-image"
+                        )}
+
+                        <figcaption>
+                          <span>TEST 03</span>
+                        </figcaption>
+                      </figure>
+                    </div>
+
+                  </div>
+
+
+                  <div class="sony-metal-process-group sony-metal-selected">
+
+                    <div class="sony-process-group-label">
+                      <span class="meta-mono">
+                        COOL METALS
+                      </span>
+
+                      <p>
+                        Refined direction
+                      </p>
+                    </div>
+
+
+                    <div class="sony-metal-process-grid">
+
+                      <figure class="sony-metal-process-tile">
+                        ${img(
+                          "colour/metal-colour-6.svg",
+                          "Sony metallic colour test 6",
+                          "sony-process-image"
+                        )}
+
+                        <figcaption>
+                          <span>TEST 06</span>
+                        </figcaption>
+                      </figure>
+
+                      <figure class="sony-metal-process-tile">
+                        ${img(
+                          "colour/metal-colour-7.svg",
+                          "Sony metallic colour test 7",
+                          "sony-process-image"
+                        )}
+
+                        <figcaption>
+                          <span>TEST 07</span>
+                        </figcaption>
+                      </figure>
+
+                      <figure class="sony-metal-process-tile">
+                        ${img(
+                          "colour/metal-colour-8.svg",
+                          "Sony metallic colour test 8",
+                          "sony-process-image"
+                        )}
+
+                        <figcaption>
+                          <span>TEST 08</span>
+                        </figcaption>
+                      </figure>
+                    </div>
+
+                  </div>
+
+                </div>
+
+              </article>
+
+
+
+              <!-- ========================================
+                   03 SOUND WAVE
+                   ======================================== -->
+
+              <article
+                class="sony-colour-panel
+                       sony-colour-panel-wave">
+
+                <header class="sony-panel-head">
+
+                  <div>
+                    <span class="meta-mono">
+                      03 — SOUND WAVE DEVELOPMENT
+                    </span>
+
+                    <h3>
+                      Material becomes
+                      movement.
+                    </h3>
+                  </div>
+
+                  <p>
+                    The selected blue-silver language is transformed
+                    into a sound-wave graphic asset, connecting
+                    colour and material directly to the experience
+                    of listening.
+                  </p>
+
+                </header>
+
+
+                <div class="sony-wave-process-grid">
+
+                <figure class="sony-wave-process-tile">
+                  ${img(
+                    "o/sony-sound-wave-01.png",
+                    "Sony sound wave development 01",
+                    "sony-process-image"
+                  )}
+
+                  <figcaption>
+                    <span>01</span>
+                    <b>EXPERIMENT 01</b>
+                  </figcaption>
+                </figure>
+
+                <figure class="sony-wave-process-tile">
+                  ${img(
+                    "o/sony-sound-wave-02.png",
+                    "Sony sound wave development 02",
+                    "sony-process-image"
+                  )}
+
+                  <figcaption>
+                    <span>02</span>
+                    <b>EXPERIMENT 02</b>
+                  </figcaption>
+                </figure>
+
+                <figure class="sony-wave-process-tile">
+                  ${img(
+                    "o/sony-sound-wave-03.png",
+                    "Sony sound wave development 03",
+                    "sony-process-image"
+                  )}
+
+                  <figcaption>
+                    <span>03</span>
+                    <b>EXPERIMENT 03</b>
+                  </figcaption>
+                </figure>
+                </div>
+
+
+                <div class="sony-wave-process-note">
+
+                  <span class="meta-mono">
+                    DEVELOPMENT
+                  </span>
+
+                  <p>
+                    Distortion and radial movement progressively
+                    turn the metallic colour system into a dynamic
+                    visual language that can later extend across
+                    the campaign.
+                  </p>
+
+                  <span>→</span>
+
+                </div>
+
+              </article>
+
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+                  <!-- higher chroma -->
+
+                  
+
+
+                </div>
+
+              </article>
+
+
+
+              <!-- ========================================
+                   02 METALLIC COLOUR TESTS
+                   ======================================== -->
+
+              <article
+                class="sony-colour-panel sony-colour-panel-metallic">
+
+                <header class="sony-panel-head">
+
+                  <div>
+                    <span class="meta-mono">
+                      02 — METALLIC COLOUR TEST
+                    </span>
+
+                    <h3>
+                      From colour
+                      to material.
+                    </h3>
+                  </div>
+
+                  <p>
+                    The next stage tests colour as a physical
+                    surface. Warm metallics feel decorative,
+                    while blue and silver connect more directly
+                    to Sony’s technology and headphone materials.
+                  </p>
+
+                </header>
+
+
+                <div class="sony-metal-tests">
+
+
+                  <!-- warm -->
+
+                  <section class="sony-metal-family">
+
+                    <div class="sony-test-family-head">
+
+                      <span class="meta-mono">
+                        WARM METALS
+                      </span>
+
+                      <p>
+                        Bronze, rose and gold create a softer,
+                        more ornamental expression.
+                      </p>
+
+                    </div>
+
+
+                    <div class="sony-metal-logo-row">
+
+                      <div class="sony-metal-logo metal-bronze">
+                        <b>SONY</b>
+                        <span>BRONZE</span>
+                      </div>
+
+                      <div class="sony-metal-logo metal-rose">
+                        <b>SONY</b>
+                        <span>ROSE</span>
+                      </div>
+
+                      <div class="sony-metal-logo metal-gold">
+                        <b>SONY</b>
+                        <span>GOLD</span>
+                      </div>
+
+                    </div>
+
+                  </section>
+
+
+                  <!-- cool -->
+
+                  <section class="sony-metal-family sony-metal-family-selected">
+
+                    <div class="sony-test-family-head">
+
+                      <span class="meta-mono">
+                        COOL METALS
+                      </span>
+
+                      <p>
+                        Blue and silver create the stronger
+                        connection to technical precision and
+                        the intended product finish.
+                      </p>
+
+                    </div>
+
+
+                    <div class="sony-metal-logo-row">
+
+                      <div class="sony-metal-logo metal-steel">
+                        <b>SONY</b>
+                        <span>STEEL BLUE</span>
+                      </div>
+
+                      <div class="sony-metal-logo metal-silver">
+                        <b>SONY</b>
+                        <span>SILVER</span>
+                      </div>
+
+                      <div class="sony-metal-logo metal-blue">
+                        <b>SONY</b>
+                        <span>BLUE METAL</span>
+                      </div>
+
+                    </div>
+
+                  </section>
+
+
+                </div>
+
+              </article>
+
+
+
+              <!-- ========================================
+                   03 SOUND WAVE CONCEPT
+                   ======================================== -->
+
+              <article
+                class="sony-colour-panel sony-colour-panel-wave">
+
+                <header class="sony-panel-head">
+
+                  <div>
+                    <span class="meta-mono">
+                      03 — SOUND WAVE EXPERIMENT
+                    </span>
+
+                    <h3>
+                      Material becomes
+                      movement.
+                    </h3>
+                  </div>
+
+                  <p>
+                    The metallic colour language is then translated
+                    into a graphic sound-wave asset through radial
+                    blur, light effects and distortion.
+                  </p>
+
+                </header>
+
+
+                <div class="sony-wave-process">
+
+                  <figure>
+                    ${img(
+                      "o/sony-sound-wave-01.png",
+                      "Initial Sony sound-wave experiment"
+                    )}
+
+                    <figcaption>
+                      <span>01</span>
+                      <b>RADIAL BLUR</b>
+                    </figcaption>
+                  </figure>
+
+
+                  <figure>
+                    ${img(
+                      "o/sony-sound-wave-02.png",
+                      "Sony sound-wave distortion experiment"
+                    )}
+
+                    <figcaption>
+                      <span>02</span>
+                      <b>LIGHT + DISTORT</b>
+                    </figcaption>
+                  </figure>
+
+
+                  <figure>
+                    ${img(
+                      "o/sony-sound-wave-03.png",
+                      "Refined Sony sound-wave experiment"
+                    )}
+
+                    <figcaption>
+                      <span>03</span>
+                      <b>TWIRL DISTORT</b>
+                    </figcaption>
+                  </figure>
+
+
+                  <figure class="sony-wave-final">
+                    ${img(
+                      "o/sony-sound-wave-final.png",
+                      "Final Sony sound-wave asset"
+                    )}
+
+                    <figcaption>
+                      <span>04</span>
+                      <b>FINAL ASSET</b>
+                    </figcaption>
+                  </figure>
+
+                </div>
+
+
+                <div class="sony-wave-outcome">
+
+                  <span class="meta-mono">
+                    OUTCOME
+                  </span>
+
+                  <p>
+                    The final ring becomes a reusable campaign
+                    asset, linking the metallic colour system
+                    with sound, resonance and the headphone
+                    experience.
+                  </p>
+
+                  <span>→</span>
+
+                </div>
+
+              </article>
+
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- ================================================
+           04 THE SOUND OF O
+           ================================================ -->
+      <section class="sony-section sony-o-section" id="sony-4">
+
+        <div class="shell sony-o-intro">
+
+          <div>
+            <span class="meta-mono">04 — CORE DEVICE</span>
+
+            <h2>
+              THE SOUND
+              OF “O”
+            </h2>
+          </div>
+
+          <p>
+            The central “O” evolves from a static circular form
+            into a luminous ring. Its form references a headphone
+            ear cup, speaker diaphragm and sound radiating through
+            space, creating a visual device that can move between
+            logo, campaign and motion.
+          </p>
+
+        </div>
+
+
+        <div class="shell sony-o-vector-track">
+
+          <article class="sony-o-vector-stage">
+
+            <span class="sony-stage-number">
+              01
+            </span>
+
+            ${img(
+              "o/01.svg",
+              "Initial Sony O development",
+              "sony-o-stage-image"
+            )}
+
+            <span class="sony-stage-name">
+              STATIC FORM
+            </span>
+
+          </article>
+
+
+          <article class="sony-o-vector-stage">
+
+            <span class="sony-stage-number">
+              02
+            </span>
+
+            ${img(
+              "o/02.svg",
+              "Sony O metallic development",
+              "sony-o-stage-image"
+            )}
+
+            <span class="sony-stage-name">
+              METALLIC LIGHT
+            </span>
+
+          </article>
+
+
+          <article class="sony-o-vector-stage">
+
+            <span class="sony-stage-number">
+              03
+            </span>
+
+            ${img(
+              "o/03.svg",
+              "Sony O resonance development",
+              "sony-o-stage-image"
+            )}
+
+            <span class="sony-stage-name">
+              RESONANCE
+            </span>
+
+          </article>
+
+
+          <article class="sony-o-vector-stage sony-o-vector-final">
+
+            <span class="sony-stage-number">
+              04
+            </span>
+
+            ${img(
+              "o/04.png",
+              "Final Sony sound wave O",
+              "sony-o-stage-image"
+            )}
+
+            <span class="sony-stage-name">
+              SOUND IN A NEW LIGHT
+            </span>
+
+          </article>
+
+        </div>
+
+      </section>
+
+
+      <!-- ================================================
+           05 FINAL COLOUR SYSTEM
+           ================================================ -->
+      <section class="sony-section sony-palette" id="sony-5">
+
+        <div class="shell">
+
+          <div class="sony-section-head sony-section-head-split">
+            <span class="meta-mono">05 — FINAL COLOUR SYSTEM</span>
+
+            <h2 class="sony-palette-title">
+              <span>Two systems.</span>
+              <span>One visual language.</span>
+            </h2>
+
+            <p>
+              The metallic palette controls brand surfaces and
+              typography, while the luminous palette introduces
+              glow, resonance and movement.
+            </p>
+          </div>
+
+
+          <div class="sony-palette-system">
+
+            <article class="sony-palette-direction">
+
+              <div class="sony-palette-heading">
+                <span class="meta-mono">01</span>
+                <h3>METALLIC GRADIENT</h3>
+              </div>
+
+              <div class="sony-metallic-gradient-preview"></div>
+
+              <div class="sony-swatches">
+
+                <div class="sony-swatch" style="--swatch:#DEE5F4">
+                  <i></i>
+                  <b>MIST SILVER</b>
+                  <span>#DEE5F4</span>
+                  <small>RGB 222 229 244</small>
+                </div>
+
+                <div class="sony-swatch" style="--swatch:#F2F4F9">
+                  <i></i>
+                  <b>FROST WHITE</b>
+                  <span>#F2F4F9</span>
+                  <small>RGB 242 244 249</small>
+                </div>
+
+                <div class="sony-swatch" style="--swatch:#BACCEA">
+                  <i></i>
+                  <b>POWDER BLUE</b>
+                  <span>#BACCEA</span>
+                  <small>RGB 186 204 234</small>
+                </div>
+
+                <div class="sony-swatch" style="--swatch:#6D8EAC">
+                  <i></i>
+                  <b>STEEL BLUE</b>
+                  <span>#6D8EAC</span>
+                  <small>RGB 109 142 172</small>
+                </div>
+
+                <div class="sony-swatch" style="--swatch:#556178">
+                  <i></i>
+                  <b>SLATE INDIGO</b>
+                  <span>#556178</span>
+                  <small>RGB 85 97 120</small>
+                </div>
+
+                <div class="sony-swatch" style="--swatch:#0E1521">
+                  <i></i>
+                  <b>MIDNIGHT NAVY</b>
+                  <span>#0E1521</span>
+                  <small>RGB 14 21 33</small>
+                </div>
+
+              </div>
+
+            </article>
+
+
+            <article class="sony-palette-direction">
+
+              <div class="sony-palette-heading">
+                <span class="meta-mono">02</span>
+                <h3>LUMINOUS GRADIENT</h3>
+              </div>
+
+              <div class="sony-luminous-gradient-preview"></div>
+
+              <div class="sony-swatches sony-swatches-luminous">
+
+                <div class="sony-swatch" style="--swatch:#ADCCEB">
+                  <i></i>
+                  <b>ICE BLUE</b>
+                  <span>#ADCCEB</span>
+                  <small>RGB 173 204 235</small>
+                </div>
+
+                <div class="sony-swatch" style="--swatch:#84B4E0">
+                  <i></i>
+                  <b>RESONANCE BLUE</b>
+                  <span>#84B4E0</span>
+                  <small>RGB 133 181 225</small>
+                </div>
+
+                <div class="sony-swatch" style="--swatch:#7A89B0">
+                  <i></i>
+                  <b>PERIWINKLE METAL</b>
+                  <span>#7A89B0</span>
+                  <small>RGB 122 137 176</small>
+                </div>
+
+                <div class="sony-swatch" style="--swatch:#DEE5F4">
+                  <i></i>
+                  <b>MIST SILVER</b>
+                  <span>#DEE5F4</span>
+                  <small>RGB 222 229 244</small>
+                </div>
+
+              </div>
+
+            </article>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- ================================================
+           06 CAMPAIGN
+           ================================================ -->
+      <section class="sony-section sony-campaign" id="sony-6">
+
+        <div class="shell">
+
+          <div class="sony-section-head sony-section-head-split">
+            <span class="meta-mono">06 — CAMPAIGN / PROMOTION</span>
+
+            <h2>
+              SOUND<br>
+              IN A NEW LIGHT.
+            </h2>
+
+            <p>
+              The campaign extends the luminous “O” and metallic
+              colour system across large-scale poster and digital
+              formats, adapting the same visual language to different
+              viewing contexts.
+            </p>
+          </div>
+
+
+          <!-- ============================================
+               06A — POSTER SYSTEM
+               ============================================ -->
+
+          <div class="sony-campaign-group sony-poster-group">
+
+            <header class="sony-campaign-group-head">
+              <span class="meta-mono">06A</span>
+
+              <h3>POSTER SYSTEM</h3>
+
+              <p>
+                Portrait and landscape formats translate the same
+                headphone campaign into different public-facing
+                proportions while maintaining the luminous ring,
+                product focus and metallic visual language.
+              </p>
+            </header>
+
+
+            <div class="sony-poster-duo">
+
+              <figure class="sony-poster-card">
+
+                <div class="sony-poster-crop sony-poster-crop-portrait">
+                  ${img(
+                    "campaign/sony-poster-portrait-mockup.png",
+                    "Sony portrait campaign poster mockup"
+                  )}
+                </div>
+
+                <figcaption>
+                  <span>PORTRAIT POSTER</span>
+                  <span>01</span>
+                </figcaption>
+
+              </figure>
+
+
+              <figure class="sony-poster-card">
+
+                <div class="sony-poster-crop sony-poster-crop-landscape">
+                  ${img(
+                    "campaign/sony-poster-landscape-mockup.png",
+                    "Sony landscape campaign poster mockup"
+                  )}
+                </div>
+
+                <figcaption>
+                  <span>LANDSCAPE POSTER</span>
+                  <span>02</span>
+                </figcaption>
+
+              </figure>
+
+            </div>
+
+          </div>
+
+
+          <!-- ============================================
+               06B — SITE BANNER
+               ============================================ -->
+
+          <div class="sony-campaign-group sony-banner-group">
+
+            <header class="sony-campaign-group-head">
+              <span class="meta-mono">06B</span>
+
+              <h3>SITE BANNER</h3>
+
+              <p>
+                The same campaign can shift between dark and light
+                digital environments while retaining the same
+                product hierarchy and visual identity.
+              </p>
+            </header>
+
+
+            <div class="sony-banner-switcher">
+
+              <input
+                class="sony-banner-radio"
+                type="radio"
+                name="sony-banner-theme"
+                id="sony-banner-dark-theme"
+                checked>
+
+              <input
+                class="sony-banner-radio"
+                type="radio"
+                name="sony-banner-theme"
+                id="sony-banner-light-theme">
+
+
+              <div class="sony-banner-theme-controls">
+
+                <span class="meta-mono">
+                  DISPLAY THEME
+                </span>
+
+                <label for="sony-banner-dark-theme">
+                  <span>01</span>
+                  <b>DARK</b>
+                  <i>→</i>
+                </label>
+
+                <label for="sony-banner-light-theme">
+                  <span>02</span>
+                  <b>LIGHT</b>
+                  <i>→</i>
+                </label>
+
+              </div>
+
+
+              <!-- one browser frame -->
+              <div class="sony-single-banner-frame">
+
+                <div class="sony-browser-bar">
+                  <div class="sony-browser-dots">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                  </div>
+
+                  <small>
+                    SONY / HEADPHONES / CAMPAIGN
+                  </small>
+                </div>
+
+
+                <div class="sony-single-banner-screen">
+
+                  <div class="sony-banner-theme sony-banner-theme-dark">
+                    ${img(
+                      "campaign/sony-banner-dark.png",
+                      "Sony dark website campaign banner"
+                    )}
+                  </div>
+
+                  <div class="sony-banner-theme sony-banner-theme-light">
+                    ${img(
+                      "campaign/sony-banner-light.png",
+                      "Sony light website campaign banner"
+                    )}
+                  </div>
+
+                </div>
+
+
+                <div class="sony-single-banner-meta">
+                  <span>DIGITAL CAMPAIGN</span>
+                  <span>LIGHT / DARK SYSTEM</span>
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- ================================================
+           07 PACKAGING
+           ================================================ -->
+      <section class="sony-section sony-unboxing" id="sony-7">
+
+        <div class="shell">
+
+          <div class="sony-section-head sony-section-head-split">
+
+            <span class="meta-mono">
+              07 — PACKAGING + PRODUCT APPLICATIONS
+            </span>
+
+            <h2 class="sony-unboxing-title">
+              <span>Open the box.</span>
+              <span>Reveal the system.</span>
+            </h2>
+
+            <p>
+              The colour system moves from packaging into a wider
+              product ecosystem. Open the headphone box to reveal
+              how the identity extends across multiple applications.
+            </p>
+
+          </div>
+
+
+          <input
+            class="sony-box-toggle"
+            type="checkbox"
+            id="sony-box-toggle">
+
+
+          <div class="sony-unboxing-stage">
+
+
+            <!-- PACKAGING -->
+
+            <div class="sony-box-side">
+
+              <label
+                class="sony-box-trigger"
+                for="sony-box-toggle">
+
+                <figure class="sony-box-figure">
+
+                  ${img(
+                    "packaging/sony-packaging-mockup.png",
+                    "Sony headphone packaging mockup",
+                    "sony-unboxing-package"
+                  )}
+
+                  <figcaption>
+
+                    <div>
+                      <span class="meta-mono">
+                        PACKAGING
+                      </span>
+
+                      <strong>
+                        OPEN THE BOX
+                      </strong>
+                    </div>
+
+                    <span class="sony-open-arrow">
+                      →
+                    </span>
+
+                  </figcaption>
+
+                </figure>
+
+              </label>
+
+            </div>
+
+
+            <!-- PRODUCT REVEAL -->
+
+            <div
+              class="sony-product-reveal"
+              id="sony-8">
+
+              <header class="sony-product-reveal-head">
+
+                <div>
+                  <span class="meta-mono">
+                    PRODUCT SYSTEM
+                  </span>
+
+                  <h3>
+                    A system designed
+                    to travel.
+                  </h3>
+                </div>
+
+                <p>
+                  The same metallic visual language extends across
+                  headphones, cases and portable audio products.
+                </p>
+
+              </header>
+
+
+              <div class="sony-unboxed-products">
+
+                <figure class="sony-unboxed-product">
+                  ${img(
+                    "applications/sony-headphones.png",
+                    "Sony headphone application",
+                    "sony-unboxed-image"
+                  )}
+
+                  <figcaption>
+                    <span>01</span>
+                    <b>CARRY CASE</b>
+                  </figcaption>
+                </figure>
+
+
+                <figure class="sony-unboxed-product">
+                  ${img(
+                    "applications/sony-headphone-bag.png",
+                    "Sony headphone carry case",
+                    "sony-unboxed-image"
+                  )}
+
+                  <figcaption>
+                    <span>02</span>
+                    <b>HEADPHONES</b>
+                  </figcaption>
+                </figure>
+
+
+                <figure class="sony-unboxed-product">
+                  ${img(
+                    "applications/sony-earbuds.png",
+                    "Sony earbuds application",
+                    "sony-unboxed-image"
+                  )}
+
+                  <figcaption>
+                    <span>03</span>
+                    <b>CHARGING CASE</b>
+                  </figcaption>
+                </figure>
+
+
+                <figure class="sony-unboxed-product">
+                  ${img(
+                    "applications/sony-earbuds-case.png",
+                    "Sony earbuds charging case",
+                    "sony-unboxed-image"
+                  )}
+
+                  <figcaption>
+                    <span>04</span>
+                    <b>EARBUDS</b>
+                  </figcaption>
+                </figure>
+
+              </div>
+
+
+              <label
+                class="sony-box-close"
+                for="sony-box-toggle">
+
+                <span>CLOSE BOX</span>
+                <span>×</span>
+
+              </label>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+      <section class="sony-section sony-motion" id="sony-9">
+
+        <div class="shell sony-motion-grid">
+
+          <div class="sony-motion-copy">
+
+            <span class="meta-mono">09 — MOTION</span>
+
+            <h2 class="sony-motion-title">
+              <span>From static mark</span>
+              <span>to moving sound.</span>
+            </h2>
+
+            <p>
+              The motion direction explores gradients travelling
+              through the SONY letters, metallic colour movement,
+              and the “O” behaving like a sound-wave or resonance
+              element.
+            </p>
+
+          </div>
+
+          <div class="sony-motion-right">
+
+            <div class="sony-motion-media">
+
+              ${img(
+                "motion/sony-logo-motion-still.png",
+                "Sony logo motion experiment",
+                "sony-motion-still"
+              )}
+
+            </div>
+
+            <div class="sony-motion-link-wrap">
+
+              <a
+                class="sony-motion-link"
+                href="https://youtu.be/OUzhvSODfEw"
+                target="_blank"
+                rel="noopener noreferrer">
+
+                <span>WATCH MOTION FILM</span>
+                <span>↗</span>
+
+              </a>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- ================================================
+           10 FINAL APPLICATION / ENDING
+           ================================================ -->
+      
+
+
+      <a
+        class="next-project sony-next"
+        href="${sitePath(`/work/${next.slug}/`)}"
+        aria-label="Next project: ${esc(next.title)}">
+
+        <span class="meta-mono next-project-label">
+          NEXT PROJECT
+        </span>
+
+        <span class="next-project-title">
+          ${esc(next.title)}
+        </span>
+
+        <span class="next-project-arrow">
+          →
+        </span>
+
+      </a>
+
+    </article>
+  `;
+
+  document.body.insertAdjacentHTML(
+    "beforeend",
+    footer()
+  );
+}
+
+
+
 async function renderProject(){
   const projects=await getProjects();
   const slug=location.pathname.split("/").filter(Boolean).pop();
@@ -9328,6 +10973,11 @@ async function renderProject(){
     return;
   }
 
+  if(p.slug==="sony-re-colour"){
+    renderSonyRecolour(p,projects);
+    requestAnimationFrame(initSonyRail);
+    return;
+  }
   if(p.slug==="bayer-china"){ renderBayerChina(p,projects); return; }
 
   if(p.slug==="60-bpm"){ render60BPM(p,projects); return; }
@@ -13852,3 +15502,116 @@ if(document.readyState === "loading"){
 
 /* END STEP MOTION — CLICKABLE SIDE NAV FIX */
 
+
+
+function initSonyRail(){
+
+  if(!document.body.classList.contains("project-sony-recolour")){
+    return;
+  }
+
+  if(document.querySelector(".sony-rail")){
+    return;
+  }
+
+  const sections = [
+    ["sony-1", "HERO"],
+    ["sony-2", "OVERVIEW"],
+    ["sony-3", "COLOUR EXPLORATION"],
+    ["sony-4", "THE SOUND OF O"],
+    ["sony-5", "COLOUR SYSTEM"],
+    ["sony-6", "CAMPAIGN"],
+    ["sony-7", "PACKAGING + PRODUCT"],
+    ["sony-9", "MOTION"]
+  ].filter(([id]) => document.getElementById(id));
+
+  if(!sections.length){
+    return;
+  }
+
+  const rail = document.createElement("nav");
+
+  rail.className = "chapter-rail sony-rail";
+  rail.setAttribute(
+    "aria-label",
+    "Sony Re-Colour sections"
+  );
+
+  rail.innerHTML = sections.map(
+    ([id,label],index) => `
+      <a
+        href="#${id}"
+        data-section="${id}"
+        aria-label="${label}">
+        <span class="sony-rail-label">
+          ${String(index + 1).padStart(2,"0")} · ${label}
+        </span>
+      </a>
+    `
+  ).join("");
+
+  document.body.appendChild(rail);
+
+  const links = [...rail.querySelectorAll("a")];
+
+  const updateSonyRail = () => {
+
+    const marker =
+      window.innerHeight * .42;
+
+    let activeIndex = 0;
+
+    sections.forEach(([id],index) => {
+
+      const section =
+        document.getElementById(id);
+
+      if(
+        section &&
+        section.getBoundingClientRect().top <= marker
+      ){
+        activeIndex = index;
+      }
+
+    });
+
+    links.forEach((link,index) => {
+
+      const active =
+        index === activeIndex;
+
+      link.classList.toggle(
+        "active",
+        active
+      );
+
+      if(active){
+        link.setAttribute(
+          "aria-current",
+          "true"
+        );
+      }else{
+        link.removeAttribute(
+          "aria-current"
+        );
+      }
+
+    });
+
+  };
+
+  updateSonyRail();
+
+  window.addEventListener(
+    "scroll",
+    updateSonyRail,
+    {passive:true}
+  );
+
+  window.addEventListener(
+    "resize",
+    updateSonyRail,
+    {passive:true}
+  );
+
+}

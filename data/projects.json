@@ -57,8 +57,55 @@
     "thumbnailType": "image"
   },
   {
-    "slug": "60-bpm",
+    "slug": "sony-re-colour",
     "number": "02",
+    "title": "SONY RE-COLOUR",
+    "year": "2026",
+    "status": "Academic · Individual",
+    "disciplines": [
+      "Brand Identity",
+      "Colour Strategy",
+      "Campaign Design",
+      "Packaging"
+    ],
+    "summary": "A colour-led Sony refresh using metallic gradients and sound-wave forms for a contemporary headphone campaign.",
+    "role": "Research, colour exploration, brand development, campaign design, packaging design and motion experimentation",
+    "tools": "Adobe Illustrator · Adobe Photoshop · Adobe After Effects",
+    "accent": "#84B4E0",
+    "secondary": "#DEE5F4",
+    "theme": "dark",
+    "featured": true,
+    "demonstrates": "Explores how colour, motion and campaign applications can reposition an established identity while preserving its recognisable wordmark.",
+    "sections": [
+      [
+        "Overview",
+        "Sony Re-Colour explores how colour alone can reposition an established global brand without altering its iconic wordmark."
+      ],
+      [
+        "Concept",
+        "The project develops a metallic, sound-driven colour system for a contemporary headphone campaign."
+      ],
+      [
+        "The Sound of O",
+        "The letter O becomes a visual device for sound, resonance, movement and immersive listening."
+      ],
+      [
+        "Applications",
+        "The identity extends across campaign graphics, packaging, product applications and motion."
+      ]
+    ],
+    "filter": [
+      "brand identity",
+      "colour strategy",
+      "campaign design",
+      "packaging"
+    ],
+    "thumbnail": "/public/thumbnails/sony-re-colour.jpg",
+    "thumbnailType": "image"
+  },
+  {
+    "slug": "60-bpm",
+    "number": "03",
     "title": "60 BPM",
     "year": "2024",
     "status": "Academic · Individual",
@@ -110,7 +157,7 @@
   },
   {
     "slug": "australian-light",
-    "number": "03",
+    "number": "04",
     "title": "Australian Light",
     "year": "2026",
     "status": "Academic redesign · Individual",
@@ -174,7 +221,7 @@
   },
   {
     "slug": "step-motion",
-    "number": "04",
+    "number": "05",
     "title": "Step / Motion",
     "year": "2026",
     "status": "Academic · Individual",
@@ -222,7 +269,7 @@
   },
   {
     "slug": "green-grid",
-    "number": "05",
+    "number": "06",
     "title": "Green Grid",
     "year": "2025",
     "status": "Academic · Team of 4",
@@ -290,7 +337,7 @@
   },
   {
     "slug": "ethereal-realm",
-    "number": "06",
+    "number": "07",
     "title": "EtheReal / Realm",
     "year": "2024",
     "status": "Speculative · Individual",
@@ -334,7 +381,7 @@
   },
   {
     "slug": "n-exhibition",
-    "number": "07",
+    "number": "08",
     "title": "N Exhibition",
     "year": "2024",
     "status": "Speculative · Individual",
@@ -374,7 +421,7 @@
   },
   {
     "slug": "modular-typeface",
-    "number": "08",
+    "number": "09",
     "title": "Modular Typeface",
     "year": "2025",
     "status": "Academic · Individual",

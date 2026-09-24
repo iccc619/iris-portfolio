@@ -1,0 +1,47 @@
+SONY RE-COLOUR — EXPECTED ASSETS
+
+HERO
+hero/sony-hero.jpg
+
+COLOUR EXPLORATION
+colour/sony-colour-experiment-01.jpg
+colour/sony-colour-experiment-02.jpg
+colour/sony-gradient-study-01.jpg
+colour/sony-logo-colour-grid.jpg
+
+THE SOUND OF O
+o/sony-o-development-01.jpg
+o/sony-o-development-02.jpg
+o/sony-o-development-03.jpg
+o/sony-o-final.jpg
+
+FINAL COLOUR SYSTEM
+colour/sony-gradient-final-01.jpg
+colour/sony-gradient-final-02.jpg
+
+CAMPAIGN
+campaign/sony-poster-portrait.jpg
+campaign/sony-poster-landscape.jpg
+campaign/sony-banner.jpg
+campaign/sony-social.jpg
+campaign/sony-headphone-ad.jpg
+
+PACKAGING
+packaging/sony-packaging-front.jpg
+packaging/sony-packaging-side.jpg
+packaging/sony-box-dieline.jpg
+packaging/sony-packaging-mockup.jpg
+
+PRODUCT APPLICATIONS
+applications/sony-headphones.jpg
+applications/sony-headphone-case.jpg
+applications/sony-digital-screen.jpg
+
+MOTION
+motion/sony-logo-motion.mp4
+
+ENDING
+ending/sony-final-composition.jpg
+
+WORK PAGE THUMBNAIL — add later
+/public/thumbnails/sony-re-colour.jpg
