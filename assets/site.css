@@ -54654,3 +54654,50 @@ body[data-work-filter="ui/ux"]
 }
 
 /* END FILTERED PROJECT GRID */
+
+
+/* HOMEPAGE CUSTOM PROJECT SPANS START */
+
+/* Default / All view only */
+
+body:not([data-work-filter])
+#featured-grid
+.project-card[data-project="mario-kart"],
+body[data-work-filter="all"]
+#featured-grid
+.project-card[data-project="mario-kart"]{
+  grid-column:span 7 !important;
+}
+
+
+body:not([data-work-filter])
+#featured-grid
+.project-card[data-project="ethereal-realm"],
+body[data-work-filter="all"]
+#featured-grid
+.project-card[data-project="ethereal-realm"]{
+  grid-column:span 5 !important;
+}
+
+
+body:not([data-work-filter])
+#featured-grid
+.project-card[data-project="n-exhibition"],
+body[data-work-filter="all"]
+#featured-grid
+.project-card[data-project="n-exhibition"]{
+  grid-column:span 5 !important;
+}
+
+
+body:not([data-work-filter])
+#featured-grid
+.project-card[data-project="modular-typeface"],
+body[data-work-filter="all"]
+#featured-grid
+.project-card[data-project="modular-typeface"]{
+  grid-column:span 7 !important;
+}
+
+/* HOMEPAGE CUSTOM PROJECT SPANS END */
+

@@ -84,6 +84,20 @@ function shortStatus(s=""){
 
 function projectCardMedia(p){
 
+  /* Mario Kart uses the normal homepage image thumbnail. */
+  if(p.slug==="mario-kart"){
+    return `
+      <img
+        class="project-thumb project-thumb-image"
+        src="${p.thumbnail}"
+        alt="${esc(p.title)} project thumbnail"
+        loading="lazy"
+        decoding="async">
+    `;
+  }
+
+
+
   if(p.slug==="sony-re-colour"){
     return `
       <img
@@ -379,7 +393,6 @@ function projectCardMedia(p){
       decoding="async">
   `;
 }
-
 
 function card(p,cls=""){
   return `<a
@@ -1538,7 +1551,7 @@ function renderEtherealRealm(p,projects){
 
         <div class="er8-nav-item">
           <div class="er8-nav-icon-wrap">
-            ${img("svg/rrealm_white.svg","Realm navigation default","er8-nav-icon er8-nav-default")}
+            ${img("svg/RRealm_white.svg","Realm navigation default","er8-nav-icon er8-nav-default")}
             ${img("svg/rrealm.svg","Realm navigation hover","er8-nav-icon er8-nav-hover")}
           </div>
           <span>RRealm</span>
@@ -1546,7 +1559,7 @@ function renderEtherealRealm(p,projects){
 
         <div class="er8-nav-item">
           <div class="er8-nav-icon-wrap">
-            ${img("svg/shop_white.svg","Shop navigation default","er8-nav-icon er8-nav-default")}
+            ${img("svg/Shop_white.svg","Shop navigation default","er8-nav-icon er8-nav-default")}
             ${img("svg/shop.svg","Shop navigation hover","er8-nav-icon er8-nav-hover")}
           </div>
           <span>Shop</span>
@@ -1554,7 +1567,7 @@ function renderEtherealRealm(p,projects){
 
         <div class="er8-nav-item">
           <div class="er8-nav-icon-wrap">
-            ${img("svg/album_white.svg","Album navigation default","er8-nav-icon er8-nav-default")}
+            ${img("svg/Album_white.svg","Album navigation default","er8-nav-icon er8-nav-default")}
             ${img("svg/album.svg","Album navigation hover","er8-nav-icon er8-nav-hover")}
           </div>
           <span>Album</span>
@@ -1562,15 +1575,15 @@ function renderEtherealRealm(p,projects){
 
         <div class="er8-nav-item">
           <div class="er8-nav-icon-wrap">
-            ${img("svg/erealM_white.svg","EtheReal navigation default","er8-nav-icon er8-nav-default")}
-            ${img("svg/erealM.svg","EtheReal navigation hover","er8-nav-icon er8-nav-hover")}
+            ${img("svg/ERealm_white.svg","EtheReal navigation default","er8-nav-icon er8-nav-default")}
+            ${img("svg/erealm.svg","EtheReal navigation hover","er8-nav-icon er8-nav-hover")}
           </div>
           <span>ERealM</span>
         </div>
 
         <div class="er8-nav-item">
           <div class="er8-nav-icon-wrap">
-            ${img("svg/profile_white.svg","Profile navigation default","er8-nav-icon er8-nav-default")}
+            ${img("svg/Profile_white.svg","Profile navigation default","er8-nav-icon er8-nav-default")}
             ${img("svg/profile.svg","Profile navigation hover","er8-nav-icon er8-nav-hover")}
           </div>
           <span>Profile</span>
@@ -10972,6 +10985,21 @@ async function renderProject(){
     document.body.innerHTML=`<main class="shell section"><h1>Project not found.</h1><a href="${sitePath("/work/")}">Back to work</a></main>`;
     return;
   }
+
+  /* MARIO KART PROJECT ROUTE */
+  if(
+    p.slug==="mario-kart" &&
+    typeof window.renderMarioKart === "function"
+  ){
+    window.renderMarioKart(
+      p,
+      projects
+    );
+
+    return;
+  }
+
+
 
   if(p.slug==="sony-re-colour"){
     renderSonyRecolour(p,projects);

@@ -1,0 +1,4381 @@
+/* =========================================================
+   MARIO KART 8 DELUXE
+   Focused case study
+   ========================================================= */
+
+body.project-mario-kart{
+  --mk-black:#080808;
+  --mk-panel:#111;
+  --mk-paper:#f1efe9;
+  --mk-white:#f5f3ee;
+  --mk-yellow:#ffcc00;
+  --mk-red:#ff3434;
+  --mk-blue:#7193fa;
+  --mk-line:rgba(245,243,238,.15);
+  --mk-muted:rgba(245,243,238,.56);
+
+  background:var(--mk-black);
+  color:var(--mk-white);
+}
+
+.project-mario-kart .mk-case{
+  overflow:hidden;
+}
+
+.project-mario-kart img,
+.project-mario-kart video{
+  max-width:100%;
+  display:block;
+}
+
+.project-mario-kart figure{
+  margin:0;
+}
+
+.project-mario-kart [data-mk-section]{
+  scroll-margin-top:75px;
+}
+
+.project-mario-kart .mk-live-status{
+  display:flex;
+  align-items:center;
+  gap:9px;
+
+  font:
+    600 9px/1
+    var(--mono,monospace);
+
+  letter-spacing:.1em;
+}
+
+.project-mario-kart .mk-live-status i{
+  width:7px;
+  height:7px;
+
+  border-radius:50%;
+
+  background:var(--mk-yellow);
+
+  box-shadow:
+    0 0 0 5px
+    rgba(255,204,0,.1);
+}
+
+
+.project-mario-kart
+.mk-browser-bar > div{
+  display:flex;
+  gap:7px;
+}
+
+.project-mario-kart
+.mk-browser-bar i{
+  width:6px;
+  height:6px;
+
+  display:block;
+
+  border-radius:50%;
+
+  background:
+    rgba(245,243,238,.3);
+}
+
+.project-mario-kart
+.mk-browser-bar i:first-child{
+  background:var(--mk-yellow);
+}
+
+.project-mario-kart
+.mk-browser-bar span{
+  color:rgba(245,243,238,.43);
+}
+
+.project-mario-kart
+.mk-browser-bar a{
+  justify-self:end;
+
+  color:var(--mk-white);
+  text-decoration:none;
+
+  font:
+    600 8px/1
+    var(--mono,monospace);
+
+  letter-spacing:.1em;
+}
+
+
+/* owned roles */
+
+.project-mario-kart .mk-owned-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+
+  margin-top:25px;
+
+  border-top:1px solid var(--mk-line);
+  border-bottom:1px solid var(--mk-line);
+}
+
+.project-mario-kart .mk-owned-grid article{
+  min-height:180px;
+
+  padding:20px 28px 24px 0;
+
+  border-right:1px solid var(--mk-line);
+}
+
+.project-mario-kart
+.mk-owned-grid article:not(:first-child){
+  padding-left:28px;
+}
+
+.project-mario-kart
+.mk-owned-grid article:last-child{
+  border-right:0;
+}
+
+.project-mario-kart
+.mk-owned-grid article > span{
+  display:block;
+
+  margin-bottom:55px;
+
+  color:var(--mk-yellow);
+
+  font:
+    600 9px/1
+    var(--mono,monospace);
+}
+
+.project-mario-kart
+.mk-owned-grid b{
+  display:block;
+
+  margin-bottom:10px;
+
+  font:
+    600 10px/1
+    var(--mono,monospace);
+
+  letter-spacing:.1em;
+}
+
+.project-mario-kart
+.mk-owned-grid p{
+  margin:0;
+
+  max-width:29ch;
+
+  color:var(--mk-muted);
+
+  font-size:13px;
+  line-height:1.48;
+}
+
+
+/* scope */
+
+.project-mario-kart .mk-scope-strip{
+  display:grid;
+  grid-template-columns:2fr 8fr;
+  gap:clamp(20px,4vw,60px);
+
+  padding-top:24px;
+
+  color:rgba(245,243,238,.44);
+}
+
+.project-mario-kart .mk-scope-strip > div{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+}
+
+.project-mario-kart
+.mk-scope-strip div span{
+  padding:8px 11px;
+
+  border:1px solid rgba(245,243,238,.15);
+
+  color:rgba(245,243,238,.7);
+
+  font:
+    500 8px/1
+    var(--mono,monospace);
+
+  letter-spacing:.08em;
+}
+
+.project-mario-kart
+.mk-dark-text > span{
+  color:rgba(0,0,0,.43);
+}
+
+.project-mario-kart
+.mk-dark-text h2 span{
+  color:rgba(0,0,0,.26);
+}
+
+.project-mario-kart
+.mk-dark-text p{
+  color:rgba(0,0,0,.56);
+}
+
+
+/* =========================================================
+   HOMEPAGE
+   ========================================================= */
+
+.project-mario-kart .mk-homepage{
+  padding:
+    clamp(90px,9vw,140px)
+    0;
+
+  background:var(--mk-paper);
+  color:#090909;
+}
+
+
+/* ---------------------------------------------------------
+   Carousel
+   --------------------------------------------------------- */
+
+.project-mario-kart .mk-carousel-story{
+  display:grid;
+
+  grid-template-columns:
+    minmax(220px,3fr)
+    minmax(0,7fr);
+
+  gap:clamp(35px,6vw,95px);
+
+  align-items:start;
+
+  margin-top:
+    clamp(80px,8vw,125px);
+
+  padding-top:26px;
+
+  border-top:
+    1px solid rgba(0,0,0,.18);
+}
+
+
+.project-mario-kart
+.mk-carousel-copy > span{
+  color:rgba(0,0,0,.42);
+}
+
+
+.project-mario-kart
+.mk-carousel-copy h3{
+  margin:25px 0 18px;
+
+  max-width:9ch;
+
+  font-size:clamp(38px,4.8vw,72px);
+  line-height:.9;
+  letter-spacing:-.055em;
+}
+
+
+.project-mario-kart
+.mk-carousel-copy p{
+  margin:0;
+
+  max-width:32ch;
+
+  color:rgba(0,0,0,.56);
+
+  font-size:13px;
+  line-height:1.55;
+}
+
+
+.project-mario-kart .mk-carousel-proof{
+  overflow:hidden;
+
+  padding:
+    clamp(20px,2vw,30px);
+
+  background:#0a0a0a;
+  color:white;
+}
+
+
+.project-mario-kart .mk-carousel-track{
+  display:grid;
+
+  grid-template-columns:
+    1.35fr .825fr .825fr;
+
+  gap:10px;
+}
+
+
+.project-mario-kart
+.mk-carousel-track figure{
+  min-width:0;
+}
+
+
+.project-mario-kart
+.mk-carousel-track img{
+  width:100%;
+
+  aspect-ratio:4 / 3;
+
+  object-fit:cover;
+
+  opacity:.47;
+}
+
+
+.project-mario-kart
+.mk-carousel-track
+figure.is-active img{
+  opacity:1;
+}
+
+
+.project-mario-kart
+.mk-carousel-track figcaption{
+  padding-top:9px;
+
+  color:rgba(245,243,238,.5);
+
+  font:
+    500 8px/1
+    var(--mono,monospace);
+
+  letter-spacing:.08em;
+}
+
+
+.project-mario-kart
+.mk-carousel-track
+figure.is-active figcaption{
+  color:var(--mk-yellow);
+}
+
+
+.project-mario-kart
+.mk-carousel-controls{
+  display:flex;
+  justify-content:space-between;
+
+  margin-top:25px;
+
+  padding-top:14px;
+
+  border-top:1px solid var(--mk-line);
+
+  color:rgba(245,243,238,.52);
+
+  font:
+    500 8px/1
+    var(--mono,monospace);
+}
+
+
+.project-mario-kart
+.mk-carousel-controls div{
+  display:flex;
+  gap:18px;
+}
+
+
+.project-mario-kart
+.mk-carousel-controls i{
+  font-style:normal;
+  font-size:15px;
+}
+
+
+/* ---------------------------------------------------------
+   Contribution strip
+   --------------------------------------------------------- */
+
+.project-mario-kart .mk-home-contribution{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+
+  margin-top:
+    clamp(70px,7vw,105px);
+
+  border-top:
+    1px solid rgba(0,0,0,.18);
+
+  border-bottom:
+    1px solid rgba(0,0,0,.18);
+}
+
+
+.project-mario-kart
+.mk-home-contribution article{
+  min-height:125px;
+
+  padding:18px 22px 20px 0;
+
+  border-right:
+    1px solid rgba(0,0,0,.18);
+}
+
+
+.project-mario-kart
+.mk-home-contribution
+article:not(:first-child){
+  padding-left:22px;
+}
+
+
+.project-mario-kart
+.mk-home-contribution
+article:last-child{
+  border-right:0;
+}
+
+
+.project-mario-kart
+.mk-home-contribution span{
+  color:rgba(0,0,0,.42);
+}
+
+
+.project-mario-kart
+.mk-home-contribution p{
+  margin:35px 0 0;
+
+  max-width:27ch;
+
+  font-size:13px;
+  line-height:1.45;
+}
+
+
+/* ---------------------------------------------------------
+   Integration fixes
+   --------------------------------------------------------- */
+
+.project-mario-kart .mk-fix-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+
+  margin-top:
+    clamp(60px,6vw,90px);
+
+  border-top:
+    1px solid rgba(0,0,0,.18);
+
+  border-bottom:
+    1px solid rgba(0,0,0,.18);
+}
+
+
+.project-mario-kart
+.mk-fix-grid article{
+  min-height:220px;
+
+  padding:20px 24px 24px 0;
+
+  border-right:
+    1px solid rgba(0,0,0,.18);
+}
+
+
+.project-mario-kart
+.mk-fix-grid
+article:not(:first-child){
+  padding-left:24px;
+}
+
+
+.project-mario-kart
+.mk-fix-grid
+article:last-child{
+  border-right:0;
+}
+
+
+.project-mario-kart
+.mk-fix-grid > article > span{
+  color:var(--mk-yellow);
+
+  font:
+    600 9px/1
+    var(--mono,monospace);
+}
+
+
+.project-mario-kart
+.mk-fix-grid h3{
+  margin:55px 0 13px;
+
+  max-width:9ch;
+
+  font-size:clamp(24px,2.6vw,38px);
+  line-height:.93;
+  letter-spacing:-.045em;
+}
+
+
+.project-mario-kart
+.mk-fix-grid p{
+  margin:0;
+
+  max-width:29ch;
+
+  color:rgba(0,0,0,.55);
+
+  font-size:12px;
+  line-height:1.48;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media(max-width:1000px){
+
+  .project-mario-kart
+  .mk-carousel-story{
+    grid-template-columns:1fr;
+  }
+
+  .project-mario-kart
+  .mk-fix-grid{
+    grid-template-columns:1fr 1fr;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media(max-width:700px){
+
+  .project-mario-kart
+  .mk-home-contribution{
+    grid-template-columns:1fr;
+  }
+
+  .project-mario-kart
+  .mk-home-contribution article,
+  .project-mario-kart
+  .mk-home-contribution
+  article:not(:first-child){
+    min-height:auto;
+
+    padding:18px 0;
+
+    border-right:0;
+    border-bottom:
+      1px solid rgba(0,0,0,.18);
+  }
+
+  .project-mario-kart
+  .mk-home-contribution p{
+    margin-top:18px;
+  }
+
+  .project-mario-kart
+  .mk-carousel-track{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .project-mario-kart
+  .mk-carousel-track
+  figure:last-child{
+    display:none;
+  }
+
+  .project-mario-kart
+  .mk-fix-grid{
+    grid-template-columns:1fr;
+  }
+
+  .project-mario-kart
+  .mk-fix-grid article,
+  .project-mario-kart
+  .mk-fix-grid
+  article:not(:first-child){
+    min-height:auto;
+
+    padding:20px 0;
+
+    border-right:0;
+    border-bottom:
+      1px solid rgba(0,0,0,.18);
+  }
+
+  .project-mario-kart
+  .mk-fix-grid h3{
+    margin-top:30px;
+  }
+
+}
+
+
+/* =========================================================
+   NEXT + RAIL
+   ========================================================= */
+
+.project-mario-kart .mk-next{
+  background:var(--mk-yellow);
+  color:#090909;
+}
+
+.project-mario-kart .mk-next:hover{
+  background:var(--mk-yellow);
+}
+
+.project-mario-kart
+.mk-rail a{
+  color:rgba(245,243,238,.28);
+}
+
+.project-mario-kart
+.mk-rail a:hover,
+.project-mario-kart
+.mk-rail a.active{
+  color:var(--mk-yellow);
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media(max-width:1000px){
+
+  .project-mario-kart
+  .mk-owned-grid{
+    grid-template-columns:1fr;
+  }
+
+  .project-mario-kart
+  .mk-owned-grid article,
+  .project-mario-kart
+  .mk-owned-grid article:not(:first-child){
+    min-height:auto;
+
+    padding:20px 0;
+
+    border-right:0;
+    border-bottom:1px solid var(--mk-line);
+  }
+
+  .project-mario-kart
+  .mk-owned-grid article > span{
+    margin-bottom:20px;
+  }
+
+  .project-mario-kart
+  .mk-code-proof{
+    grid-template-columns:1fr;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media(max-width:700px){
+
+  .project-mario-kart
+  .mk-scope-strip,
+  .project-mario-kart
+  .mk-home-modules{
+    grid-template-columns:1fr;
+  }
+
+  .project-mario-kart
+  .mk-home-hero-proof{
+    min-height:390px;
+  }
+
+  .project-mario-kart
+  .mk-home-scene{
+    width:70%;
+  }
+
+  .project-mario-kart
+  .mk-home-logo{
+    width:54%;
+  }
+
+  .project-mario-kart
+  .mk-code-proof article{
+    grid-template-columns:1fr;
+  }
+
+  .project-mario-kart
+  .mk-code-media,
+  .project-mario-kart
+  .mk-result-media,
+  .project-mario-kart
+  .mk-proof-caption{
+    grid-column:1;
+  }
+
+  .project-mario-kart
+  .mk-team-pages{
+    grid-template-columns:1fr;
+  }
+
+  .project-mario-kart
+  .mk-rail{
+    display:none;
+  }
+
+}
+
+
+/* =========================================================
+   LIVE WEBSITE — SEPARATE SECTION
+   ========================================================= */
+
+body.project-mario-kart .mk-live-site{
+  padding:
+    clamp(95px,10vw,155px)
+    0;
+
+  background:#101010;
+}
+
+
+body.project-mario-kart
+.mk-live-site .mk-browser-bar{
+  min-height:42px;
+
+  display:grid;
+
+  grid-template-columns:
+    1fr auto 1fr;
+
+  align-items:center;
+
+  padding:0 14px;
+
+  border-bottom:
+    1px solid rgba(245,243,238,.13);
+}
+
+
+body.project-mario-kart
+.mk-live-site .mk-browser-bar > div{
+  display:flex;
+  gap:7px;
+}
+
+
+body.project-mario-kart
+.mk-live-site .mk-browser-bar i{
+  width:6px;
+  height:6px;
+
+  display:block;
+
+  border-radius:50%;
+
+  background:
+    rgba(245,243,238,.3);
+}
+
+
+body.project-mario-kart
+.mk-live-site
+.mk-browser-bar i:first-child{
+  background:var(--mk-yellow);
+}
+
+
+body.project-mario-kart
+.mk-live-site
+.mk-browser-bar > span{
+  color:rgba(245,243,238,.4);
+}
+
+
+body.project-mario-kart
+.mk-live-site
+.mk-browser-bar a{
+  justify-self:end;
+
+  color:var(--mk-white);
+
+  text-decoration:none;
+
+  font:
+    600 8px/1
+    var(--mono,monospace);
+
+  letter-spacing:.08em;
+}
+
+
+body.project-mario-kart
+.mk-live-site iframe{
+  display:block;
+
+  width:100%;
+  height:auto;
+
+  aspect-ratio:16 / 9;
+
+  border:0;
+
+  background:#000;
+}
+
+
+/* =========================================================
+   HERO TABLET
+   ========================================================= */
+
+@media(max-width:1000px){
+
+}
+
+
+/* =========================================================
+   HERO MOBILE
+   ========================================================= */
+
+@media(max-width:700px){
+
+  body.project-mario-kart
+  .mk-live-site iframe{
+    height:65vh;
+  }
+
+}
+
+.project-mario-kart .mk-browser-bar{
+  display:none;
+}
+
+.project-mario-kart .mk-browser-image{
+  display:block;
+  width:100%;
+  aspect-ratio:1 / 1;
+  object-fit:contain;
+  background:transparent;
+}
+
+@media (max-width: 1100px){
+}
+
+@media (max-width: 760px){
+}
+
+
+/* MARIO KART — CANONICAL HERO V6 */
+
+body.project-mario-kart .mk-hero{
+  height:100svh;
+  min-height:720px;
+
+  padding:0;
+
+  background:
+    radial-gradient(
+      circle at 78% 38%,
+      rgba(113,147,250,.07),
+      transparent 27%
+    ),
+    #080808;
+
+  color:#f5f3ee;
+}
+
+
+body.project-mario-kart .mk-hero-inner{
+  height:100%;
+
+  display:grid;
+  grid-template-rows:auto minmax(0,1fr) auto;
+
+  padding-top:clamp(108px,10vh,138px);
+  padding-bottom:clamp(25px,3vh,38px);
+}
+
+
+/* top metadata */
+
+body.project-mario-kart .mk-hero-meta{
+  padding-bottom:14px;
+
+  border-bottom:
+    1px solid rgba(245,243,238,.15);
+
+  color:rgba(245,243,238,.48);
+}
+
+
+body.project-mario-kart .mk-hero-meta span{
+  display:block;
+
+  font-size:11px;
+  line-height:1.25;
+  letter-spacing:.145em;
+
+  white-space:nowrap;
+}
+
+
+/* main hero */
+
+body.project-mario-kart .mk-hero-main{
+  min-height:0;
+
+  display:grid;
+
+  grid-template-columns:
+    minmax(0,.92fr)
+    minmax(390px,1.08fr);
+
+  gap:clamp(42px,5vw,84px);
+
+  align-items:center;
+
+  padding:
+    clamp(28px,4vh,48px)
+    0
+    clamp(22px,3vh,36px);
+}
+
+
+body.project-mario-kart .mk-hero-copy{
+  min-width:0;
+}
+
+
+body.project-mario-kart .mk-hero-copy h1{
+  margin:0;
+
+  font-size:clamp(72px,8.5vw,138px);
+
+  line-height:.79;
+
+  letter-spacing:-.075em;
+
+  font-weight:700;
+}
+
+
+body.project-mario-kart .mk-hero-copy h1 span{
+  display:block;
+}
+
+
+body.project-mario-kart
+.mk-hero-copy h1 span:first-child{
+  color:#f5f3ee;
+}
+
+
+body.project-mario-kart
+.mk-hero-copy h1 span:last-child{
+  color:#ffcc00;
+}
+
+
+body.project-mario-kart .mk-hero-intro{
+  margin:
+    clamp(30px,4vh,45px)
+    0
+    0;
+
+  max-width:31ch;
+
+  color:rgba(245,243,238,.64);
+
+  font-size:clamp(15px,1.05vw,17px);
+  line-height:1.55;
+}
+
+
+/* ---------------------------------------------------------
+   artwork
+   --------------------------------------------------------- */
+
+
+
+
+
+
+
+body.project-mario-kart .mk-hero-mario{
+  position:absolute;
+
+  z-index:1;
+
+  left:-4%;
+  bottom:-2%;
+
+  width:69%;
+  height:auto;
+  max-width:none;
+
+  object-fit:contain;
+}
+
+
+body.project-mario-kart .mk-hero-girl{
+  position:absolute;
+
+  z-index:2;
+
+  right:-3%;
+  top:1%;
+
+  width:67%;
+  height:auto;
+  max-width:none;
+
+  object-fit:contain;
+}
+
+
+body.project-mario-kart .mk-hero-logo{
+  position:absolute;
+
+  z-index:4;
+
+  left:51%;
+  top:54%;
+
+  width:40%;
+  height:auto;
+  max-width:none;
+
+  transform:
+    translate(-50%,-50%);
+}
+
+
+/* subtle fade so art integrates with portfolio */
+
+
+
+
+/* bottom information */
+
+body.project-mario-kart .mk-hero-bottom{
+  display:grid;
+
+  grid-template-columns:
+    minmax(0,1fr)
+    auto;
+
+  gap:35px;
+
+  align-items:end;
+
+  padding-top:17px;
+
+  border-top:
+    1px solid rgba(245,243,238,.15);
+}
+
+
+body.project-mario-kart .mk-hero-role{
+  display:grid;
+
+  grid-template-columns:
+    120px
+    minmax(0,1fr);
+
+  gap:22px;
+
+  align-items:start;
+}
+
+
+body.project-mario-kart .mk-hero-role > span{
+  color:rgba(245,243,238,.4);
+}
+
+
+body.project-mario-kart .mk-hero-role p{
+  margin:0;
+
+  max-width:54ch;
+
+  color:rgba(245,243,238,.72);
+
+  font-size:12px;
+  line-height:1.45;
+}
+
+
+body.project-mario-kart .mk-hero-scroll{
+  display:flex;
+
+  align-items:center;
+
+  gap:14px;
+
+  color:rgba(245,243,238,.4);
+
+  text-decoration:none;
+}
+
+
+body.project-mario-kart .mk-hero-scroll i{
+  display:block;
+
+  width:44px;
+  height:1px;
+
+  background:#ffcc00;
+}
+
+
+/* ---------------------------------------------------------
+   medium screens
+   --------------------------------------------------------- */
+
+@media(max-width:1100px){
+
+  body.project-mario-kart .mk-hero{
+    height:auto;
+    min-height:100svh;
+  }
+
+
+  body.project-mario-kart .mk-hero-inner{
+    min-height:100svh;
+  }
+
+
+  body.project-mario-kart .mk-hero-main{
+    grid-template-columns:
+      minmax(0,1fr)
+      minmax(330px,.9fr);
+  }
+
+
+  body.project-mario-kart
+  .mk-hero-copy h1{
+    font-size:
+      clamp(67px,9.6vw,108px);
+  }
+
+
+  
+
+}
+
+
+/* ---------------------------------------------------------
+   mobile
+   --------------------------------------------------------- */
+
+@media(max-width:700px){
+
+  body.project-mario-kart .mk-hero-inner{
+    padding-top:98px;
+  }
+
+
+  body.project-mario-kart .mk-hero-meta span{
+    white-space:normal;
+
+    max-width:34ch;
+  }
+
+
+  body.project-mario-kart .mk-hero-main{
+    grid-template-columns:1fr;
+
+    gap:25px;
+
+    align-items:start;
+  }
+
+
+  body.project-mario-kart
+  .mk-hero-copy h1{
+    font-size:
+      clamp(59px,18vw,90px);
+  }
+
+
+  
+
+
+  body.project-mario-kart .mk-hero-bottom{
+    grid-template-columns:1fr;
+  }
+
+
+  body.project-mario-kart .mk-hero-role{
+    grid-template-columns:1fr;
+
+    gap:8px;
+  }
+
+
+  body.project-mario-kart .mk-hero-scroll{
+    display:none;
+  }
+
+}
+
+/* END MARIO KART — CANONICAL HERO V6 */
+
+
+/* MARIO KART — STRUCTURE REFINEMENT V7 */
+
+
+/* =========================================================
+   01 LIVE WEBSITE
+   Preserve a desktop-browser proportion rather than
+   stretching across the whole portfolio shell.
+   ========================================================= */
+
+body.project-mario-kart
+.mk-live-site .mk-live-browser{
+  width:100%;
+  max-width:none;
+
+  margin-left:0;
+  margin-right:0;
+
+  border:1px solid rgba(245,243,238,.16);
+
+  background:#050505;
+}
+
+
+body.project-mario-kart
+.mk-live-site iframe{
+  display:block;
+
+  width:100%;
+  height:auto;
+
+  aspect-ratio:16 / 9;
+
+  border:0;
+
+  background:#000;
+}
+
+
+body.project-mario-kart
+.mk-live-caption{
+  width:100%;
+
+  margin:17px 0 0;
+
+  display:grid;
+
+  grid-template-columns:
+    minmax(110px,130px)
+    minmax(0,1fr)
+    minmax(260px,340px);
+
+  gap:clamp(20px,2.8vw,42px);
+}
+
+
+body.project-mario-kart
+.mk-live-caption > span{
+  color:rgba(245,243,238,.4);
+}
+
+
+body.project-mario-kart
+.mk-live-caption p{
+  margin:0;
+
+  max-width:38ch;
+
+  color:rgba(245,243,238,.63);
+
+  font-size:13px;
+  line-height:1.5;
+}
+
+
+/* =========================================================
+   03 PROCESS
+   ========================================================= */
+
+body.project-mario-kart
+.mk-process{
+  padding:
+    clamp(90px,9vw,140px)
+    0;
+
+  background:#151515;
+  color:#f5f3ee;
+}
+
+
+body.project-mario-kart
+.mk-process-grid{
+  display:grid;
+
+  grid-template-columns:
+    repeat(4,minmax(0,1fr));
+
+  border-top:
+    1px solid rgba(245,243,238,.15);
+
+  border-bottom:
+    1px solid rgba(245,243,238,.15);
+}
+
+
+body.project-mario-kart
+.mk-process-step{
+  min-height:270px;
+
+  padding:
+    20px
+    clamp(18px,2vw,28px)
+    25px;
+
+  border-right:
+    1px solid rgba(245,243,238,.15);
+}
+
+
+body.project-mario-kart
+.mk-process-step:first-child{
+  padding-left:0;
+}
+
+
+body.project-mario-kart
+.mk-process-step:last-child{
+  border-right:0;
+}
+
+
+body.project-mario-kart
+.mk-process-number{
+  display:block;
+
+  margin-bottom:
+    clamp(70px,7vw,105px);
+
+  color:#ffcc00;
+
+  font:
+    600 9px/1
+    var(--mono,monospace);
+}
+
+
+body.project-mario-kart
+.mk-process-step b{
+  display:block;
+
+  color:rgba(245,243,238,.4);
+
+  font:
+    600 8px/1
+    var(--mono,monospace);
+
+  letter-spacing:.09em;
+}
+
+
+body.project-mario-kart
+.mk-process-step h3{
+  margin:11px 0 13px;
+
+  max-width:10ch;
+
+  font-size:
+    clamp(22px,2.4vw,35px);
+
+  line-height:.94;
+
+  letter-spacing:-.04em;
+}
+
+
+body.project-mario-kart
+.mk-process-step p{
+  margin:0;
+
+  max-width:28ch;
+
+  color:rgba(245,243,238,.54);
+
+  font-size:12px;
+  line-height:1.5;
+}
+
+
+body.project-mario-kart
+.mk-process-media{
+  display:grid;
+
+  grid-template-columns:
+    minmax(0,7fr)
+    minmax(260px,3fr);
+
+  gap:18px;
+
+  align-items:end;
+
+  margin-top:
+    clamp(65px,7vw,105px);
+}
+
+
+body.project-mario-kart
+.mk-process-media img{
+  width:100%;
+  display:block;
+
+  background:#090909;
+}
+
+
+body.project-mario-kart
+.mk-process-media figure:first-child img{
+  aspect-ratio:16 / 9;
+
+  object-fit:cover;
+  object-position:top;
+}
+
+
+body.project-mario-kart
+.mk-process-media figure:last-child img{
+  aspect-ratio:1 / 1;
+
+  object-fit:cover;
+}
+
+
+body.project-mario-kart
+.mk-process-media figcaption{
+  margin-top:9px;
+
+  color:rgba(245,243,238,.4);
+}
+
+
+/* working CTA */
+
+body.project-mario-kart
+.mk-section-cta{
+  width:min(100%,470px);
+
+  min-height:54px;
+
+  margin-top:30px;
+
+  padding:0 4px;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:space-between;
+
+  border-top:
+    1px solid rgba(245,243,238,.24);
+
+  border-bottom:
+    1px solid rgba(245,243,238,.24);
+
+  color:#ffcc00;
+
+  text-decoration:none;
+
+  font:
+    600 9px/1
+    var(--mono,monospace);
+
+  letter-spacing:.09em;
+}
+
+
+body.project-mario-kart
+.mk-section-cta:hover{
+  color:#f5f3ee;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media(max-width:1000px){
+
+  body.project-mario-kart
+  .mk-live-site .mk-live-browser,
+  body.project-mario-kart
+  .mk-live-caption{
+    width:92%;
+  }
+
+
+  body.project-mario-kart
+  .mk-process-grid{
+    grid-template-columns:
+      1fr 1fr;
+  }
+
+
+  body.project-mario-kart
+  .mk-process-step:nth-child(2){
+    border-right:0;
+  }
+
+
+  body.project-mario-kart
+  .mk-process-media{
+    grid-template-columns:
+      1fr .65fr;
+  }
+
+}
+
+
+@media(max-width:700px){
+
+  body.project-mario-kart
+  .mk-live-site .mk-live-browser,
+  body.project-mario-kart
+  .mk-live-caption{
+    width:100%;
+  }
+
+
+  body.project-mario-kart
+  .mk-live-site iframe{
+    aspect-ratio:4 / 3;
+  }
+
+
+  body.project-mario-kart
+  .mk-live-caption{
+    grid-template-columns:1fr;
+  }
+
+
+  body.project-mario-kart
+  .mk-process-grid{
+    grid-template-columns:1fr;
+  }
+
+
+  body.project-mario-kart
+  .mk-process-step,
+  body.project-mario-kart
+  .mk-process-step:first-child{
+    min-height:auto;
+
+    padding:20px 0;
+
+    border-right:0;
+
+    border-bottom:
+      1px solid rgba(245,243,238,.15);
+  }
+
+
+  body.project-mario-kart
+  .mk-process-number{
+    margin-bottom:35px;
+  }
+
+
+  body.project-mario-kart
+  .mk-process-media{
+    grid-template-columns:1fr;
+  }
+
+}
+
+@media (max-width: 1080px){
+}
+
+@media (max-width: 760px){
+}
+
+
+/* MARIO KART — COMPACT SECTION HEADINGS V2 */
+
+
+/* =========================================================
+   SHARED SECTION HEADING STRUCTURE
+
+   LABEL | TITLE | SUPPORTING TEXT
+   ========================================================= */
+
+body.project-mario-kart .mk-live-head,
+body.project-mario-kart .mk-section-head,
+body.project-mario-kart .mk-process-head{
+  display:grid;
+
+  grid-template-columns:
+    minmax(105px,130px)
+    minmax(0,1fr)
+    minmax(260px,340px);
+
+  gap:
+    clamp(20px,2.8vw,42px);
+
+  align-items:end;
+
+  margin:
+    0
+    0
+    clamp(38px,4.5vw,62px);
+}
+
+
+/* The markup currently wraps h2 + p inside another div.
+   Let those children participate directly in the parent grid. */
+
+body.project-mario-kart .mk-live-head > div,
+body.project-mario-kart .mk-section-head > div,
+body.project-mario-kart .mk-process-head > div{
+  display:contents;
+}
+
+
+/* ---------------------------------------------------------
+   SECTION NUMBER / LABEL
+   --------------------------------------------------------- */
+
+body.project-mario-kart
+.mk-live-head > .meta-mono,
+body.project-mario-kart
+.mk-section-head > .meta-mono,
+body.project-mario-kart
+.mk-process-head > .meta-mono{
+  grid-column:1;
+
+  align-self:start;
+
+  margin:0;
+
+  padding-top:.65em;
+
+  color:rgba(245,243,238,.38);
+}
+
+
+/* ---------------------------------------------------------
+   LARGE TITLE
+   --------------------------------------------------------- */
+
+body.project-mario-kart .mk-live-head h2,
+body.project-mario-kart .mk-section-head h2,
+body.project-mario-kart .mk-process-head h2{
+  grid-column:2;
+
+  align-self:end;
+
+  margin:0;
+
+  max-width:11ch;
+
+  font-size:
+    clamp(43px,4.8vw,78px);
+
+  line-height:.91;
+
+  letter-spacing:-.062em;
+}
+
+
+/* yellow secondary line stays */
+body.project-mario-kart .mk-live-head h2 span,
+body.project-mario-kart .mk-section-head h2 span,
+body.project-mario-kart .mk-process-head h2 span{
+  display:block;
+
+  color:#ffcc00;
+}
+
+
+/* ---------------------------------------------------------
+   SUPPORTING TEXT — RIGHT SIDE
+   --------------------------------------------------------- */
+
+body.project-mario-kart .mk-live-head p,
+body.project-mario-kart .mk-section-head p,
+body.project-mario-kart .mk-process-head p{
+  grid-column:3;
+
+  align-self:end;
+
+  margin:0;
+
+  max-width:31ch;
+
+  color:rgba(245,243,238,.58);
+
+  font-size:
+    clamp(13px,.95vw,15px);
+
+  line-height:1.6;
+}
+
+
+/* extra explanation note also stays on right */
+
+body.project-mario-kart .mk-section-head small{
+  grid-column:3;
+
+  margin:
+    12px
+    0
+    0;
+
+  max-width:31ch;
+
+  color:rgba(245,243,238,.34);
+
+  font-size:10px;
+
+  line-height:1.55;
+}
+
+
+/* Explanation CTA also stays in the right column */
+
+body.project-mario-kart
+.mk-section-head .mk-section-cta{
+  grid-column:3;
+
+  margin-top:18px;
+}
+
+
+/* =========================================================
+   LIGHT SECTIONS
+   Homepage + Team Integration
+   ========================================================= */
+
+body.project-mario-kart
+.mk-section-head.mk-dark-text
+> .meta-mono{
+  color:rgba(0,0,0,.40);
+}
+
+
+body.project-mario-kart
+.mk-section-head.mk-dark-text h2{
+  color:#090909;
+}
+
+
+body.project-mario-kart
+.mk-section-head.mk-dark-text h2 span{
+  color:rgba(0,0,0,.26);
+}
+
+
+body.project-mario-kart
+.mk-section-head.mk-dark-text p{
+  color:rgba(0,0,0,.56);
+}
+
+
+body.project-mario-kart
+.mk-section-head.mk-dark-text small{
+  color:rgba(0,0,0,.38);
+}
+
+
+/* support older light class too */
+
+body.project-mario-kart
+.mk-section-head-light > .meta-mono{
+  color:rgba(0,0,0,.40);
+}
+
+
+body.project-mario-kart
+.mk-section-head-light h2{
+  color:#090909;
+}
+
+
+body.project-mario-kart
+.mk-section-head-light p{
+  color:rgba(0,0,0,.56);
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media(max-width:1000px){
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media(max-width:700px){
+
+}
+
+
+/* ---------------------------------------------------------
+   LEFT — actual hero composition
+   --------------------------------------------------------- */
+
+body.project-mario-kart
+.mk-home-hero-design{
+  background:#090909;
+}
+
+
+body.project-mario-kart
+.mk-home-hero-mario{
+  position:absolute;
+
+  left:-10%;
+  bottom:-1%;
+
+  width:72%;
+  height:auto;
+
+  max-width:none;
+}
+
+
+body.project-mario-kart
+.mk-home-hero-girl{
+  position:absolute;
+
+  right:-10%;
+  top:5%;
+
+  width:67%;
+  height:auto;
+
+  max-width:none;
+}
+
+
+body.project-mario-kart
+.mk-home-hero-logo{
+  position:absolute;
+
+  z-index:3;
+
+  left:51%;
+  top:50%;
+
+  width:40%;
+  height:auto;
+
+  max-width:none;
+
+  transform:
+    translate(-50%,-50%);
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media(max-width:1000px){
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media(max-width:700px){
+
+}
+
+
+/* mobile */
+
+@media(max-width:700px){
+
+}
+
+@media (max-width: 980px){
+}
+
+
+@media(max-width:700px){
+
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media(max-width:1000px){
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media(max-width:700px){
+
+}
+
+
+/* =========================================================
+   MARIO KART — RESOLVED HOMEPAGE SECTION
+   ========================================================= */
+
+body.project-mario-kart
+.mk-resolved-home{
+  padding:
+    clamp(90px,8vw,128px)
+    0
+    clamp(100px,9vw,145px);
+
+  background:#f2f0e9;
+
+  color:#0b0b0b;
+}
+
+
+/* =========================================================
+   HEADING
+   ========================================================= */
+
+body.project-mario-kart
+.mk-resolved-head{
+  display:grid;
+
+  grid-template-columns:
+    minmax(105px,130px)
+    minmax(0,1fr)
+    minmax(260px,340px);
+
+  gap:
+    clamp(20px,2.8vw,42px);
+
+  align-items:end;
+
+  margin-bottom:
+    clamp(44px,4.5vw,64px);
+}
+
+
+body.project-mario-kart
+.mk-resolved-head > span{
+  align-self:start;
+
+  padding-top:.6em;
+
+  color:
+    rgba(11,11,11,.4);
+}
+
+
+body.project-mario-kart
+.mk-resolved-head h2{
+  margin:0;
+
+  max-width:11ch;
+
+  color:#0b0b0b;
+
+  font-size:
+    clamp(44px,4.8vw,78px);
+
+  line-height:.91;
+
+  letter-spacing:-.062em;
+}
+
+
+body.project-mario-kart
+.mk-resolved-head h2 span{
+  display:block;
+
+  color:#0b0b0b;
+}
+
+
+body.project-mario-kart
+.mk-resolved-head > p{
+  margin:0;
+
+  max-width:31ch;
+
+  color:
+    rgba(11,11,11,.6);
+
+  font-size:
+    clamp(13px,.95vw,15px);
+
+  line-height:1.6;
+}
+
+
+/* =========================================================
+   TWO COLUMNS
+   ========================================================= */
+
+body.project-mario-kart
+.mk-resolved-layout{
+  display:grid;
+
+  grid-template-columns:
+    minmax(0,1.62fr)
+    minmax(280px,.70fr);
+
+  gap:
+    clamp(20px,1.9vw,30px);
+
+  align-items:start;
+}
+
+
+/* =========================================================
+   LEFT
+   ========================================================= */
+
+body.project-mario-kart
+.mk-resolved-left{
+  min-width:0;
+
+  margin:0;
+}
+
+
+/*
+  Real source:
+  1080 × 675
+
+  Bottom 15px = solid black strip.
+
+  Visible design:
+  1080 × 660
+  = 18 / 11
+*/
+
+body.project-mario-kart
+.mk-resolved-homepage{
+  position:relative;
+
+  width:100%;
+
+  aspect-ratio:1080 / 620;
+
+  overflow:hidden;
+
+  background:#080808;
+}
+
+
+body.project-mario-kart
+.mk-resolved-homepage-image{
+  position:absolute;
+
+  left:0;
+  top:0;
+
+  display:block;
+
+  width:100%;
+  height:auto;
+
+  max-width:none;
+
+  margin:0;
+}
+
+
+/* =========================================================
+   RIGHT STACK
+   JS sets this column to exactly the left figure height.
+   ========================================================= */
+
+body.project-mario-kart
+.mk-resolved-right{
+  min-width:0;
+
+  display:flex;
+
+  flex-direction:column;
+
+  gap:24px;
+}
+
+
+body.project-mario-kart
+.mk-resolved-card{
+  flex:
+    1 1 0;
+
+  min-height:0;
+
+  display:flex;
+
+  flex-direction:column;
+
+  margin:0;
+}
+
+
+body.project-mario-kart
+.mk-resolved-media{
+  position:relative;
+
+  flex:
+    1 1 auto;
+
+  min-height:0;
+
+  overflow:hidden;
+
+  background:#080808;
+}
+
+
+/* motion */
+
+body.project-mario-kart
+.mk-resolved-motion{
+  display:block;
+
+  width:100%;
+  height:100%;
+
+  object-fit:cover;
+}
+
+
+/* =========================================================
+   EQUIPMENT
+   ========================================================= */
+
+body.project-mario-kart
+.mk-resolved-equipment{
+  background:#000;
+}
+
+
+body.project-mario-kart
+.mk-resolved-equipment-image{
+  display:block;
+
+  width:100%;
+  height:100%;
+
+  padding:
+    5px
+    35px
+    22px;
+
+  object-fit:contain;
+
+  object-position:center;
+
+  background:#000;
+
+  opacity:1;
+
+  transition:
+    opacity .12s ease;
+}
+
+
+body.project-mario-kart
+.mk-resolved-equipment-image.is-changing{
+  opacity:.15;
+}
+
+
+/* arrows centered vertically */
+
+body.project-mario-kart
+.mk-resolved-arrow{
+  position:absolute;
+
+  z-index:4;
+
+  top:50%;
+
+  width:36px;
+  height:36px;
+
+  display:grid;
+
+  place-items:center;
+
+  padding:0;
+
+  transform:
+    translateY(-50%);
+
+  border:
+    1px solid
+    rgba(245,243,238,.28);
+
+  background:
+    rgba(5,5,5,.66);
+
+  color:#f5f3ee;
+
+  font-size:16px;
+
+  cursor:pointer;
+}
+
+
+body.project-mario-kart
+.mk-resolved-prev{
+  left:10px;
+}
+
+
+body.project-mario-kart
+.mk-resolved-next{
+  right:10px;
+}
+
+
+body.project-mario-kart
+.mk-resolved-arrow:hover,
+body.project-mario-kart
+.mk-resolved-arrow:focus-visible{
+  background:#ffcc00;
+
+  border-color:#ffcc00;
+
+  color:#080808;
+
+  outline:none;
+}
+
+
+/* equipment caption bottom-left */
+
+body.project-mario-kart
+.mk-resolved-equipment-label{
+  position:absolute;
+
+  z-index:4;
+
+  left:11px;
+  bottom:9px;
+
+  display:flex;
+
+  align-items:center;
+
+  gap:9px;
+
+  padding:
+    6px
+    8px;
+
+  background:
+    rgba(5,5,5,.74);
+}
+
+
+body.project-mario-kart
+.mk-resolved-count{
+  color:#ffcc00;
+}
+
+
+body.project-mario-kart
+.mk-resolved-name{
+  color:#f5f3ee;
+
+  font:
+    600 8px/1
+    var(--mono,monospace);
+
+  letter-spacing:.07em;
+}
+
+
+/* =========================================================
+   CAPTIONS
+   ========================================================= */
+
+body.project-mario-kart
+.mk-resolved-left figcaption,
+body.project-mario-kart
+.mk-resolved-card figcaption{
+  flex:0 0 auto;
+
+  padding-top:11px;
+}
+
+
+body.project-mario-kart
+.mk-resolved-left
+figcaption > span,
+body.project-mario-kart
+.mk-resolved-card
+figcaption > span{
+  color:
+    rgba(11,11,11,.4);
+}
+
+
+body.project-mario-kart
+.mk-resolved-left figcaption p,
+body.project-mario-kart
+.mk-resolved-card figcaption p{
+  margin:
+    7px
+    0
+    0;
+
+  color:
+    rgba(11,11,11,.62);
+
+  font-size:13px;
+
+  line-height:1.46;
+}
+
+
+body.project-mario-kart
+.mk-resolved-left figcaption p{
+  max-width:40ch;
+}
+
+
+body.project-mario-kart
+.mk-resolved-card figcaption p{
+  max-width:33ch;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media(max-width:700px){
+
+  body.project-mario-kart
+  .mk-resolved-head{
+    grid-template-columns:1fr;
+
+    gap:13px;
+  }
+
+
+  body.project-mario-kart
+  .mk-resolved-head > p{
+    grid-column:1;
+
+    max-width:none;
+  }
+
+
+  body.project-mario-kart
+  .mk-resolved-layout{
+    grid-template-columns:1fr;
+  }
+
+
+  body.project-mario-kart
+  .mk-resolved-right{
+    height:auto !important;
+  }
+
+
+  body.project-mario-kart
+  .mk-resolved-media{
+    flex:none;
+
+    aspect-ratio:
+      16 / 10;
+  }
+
+}
+
+
+/* MARIO KART — SECTIONS 04–06 FINAL */
+
+
+/* =========================================================
+   SHARED SECTION HEADERS
+   ========================================================= */
+
+body.project-mario-kart
+.mk-s04-head,
+body.project-mario-kart
+.mk-s05-head,
+body.project-mario-kart
+.mk-s06-head{
+  display:grid;
+
+  grid-template-columns:
+    minmax(105px,130px)
+    minmax(0,1fr)
+    minmax(250px,320px);
+
+  gap:
+    clamp(20px,2.8vw,42px);
+
+  align-items:end;
+
+  margin-bottom:
+    clamp(42px,4.5vw,62px);
+}
+
+
+body.project-mario-kart
+.mk-s04-head > .meta-mono,
+body.project-mario-kart
+.mk-s05-head > .meta-mono,
+body.project-mario-kart
+.mk-s06-head > .meta-mono{
+  align-self:start;
+
+  padding-top:.6em;
+}
+
+
+body.project-mario-kart
+.mk-s04-head h2,
+body.project-mario-kart
+.mk-s05-head h2,
+body.project-mario-kart
+.mk-s06-head h2{
+  margin:0;
+
+  max-width:11ch;
+
+  font-size:
+    clamp(44px,4.8vw,78px);
+
+  line-height:.91;
+
+  letter-spacing:-.062em;
+}
+
+
+body.project-mario-kart
+.mk-s04-head h2 span,
+body.project-mario-kart
+.mk-s05-head h2 span,
+body.project-mario-kart
+.mk-s06-head h2 span{
+  display:block;
+}
+
+
+
+/* =========================================================
+   04 — EXPLANATION
+   ========================================================= */
+
+body.project-mario-kart
+.mk-s04{
+  padding:
+    clamp(90px,8vw,128px)
+    0;
+
+  background:#0b0b0b;
+
+  color:#f5f3ee;
+}
+
+
+body.project-mario-kart
+.mk-s04-head > .meta-mono{
+  color:
+    rgba(245,243,238,.38);
+}
+
+
+body.project-mario-kart
+.mk-s04-head h2 span{
+  color:#ffcc00;
+}
+
+
+/* shorter / quieter right column */
+
+body.project-mario-kart
+.mk-s04-intro{
+  display:flex;
+
+  flex-direction:column;
+
+  align-items:flex-start;
+
+  gap:11px;
+}
+
+
+body.project-mario-kart
+.mk-s04-intro p{
+  margin:0;
+
+  max-width:29ch;
+
+  color:
+    rgba(245,243,238,.62);
+
+  font-size:13px;
+
+  line-height:1.55;
+}
+
+
+body.project-mario-kart
+.mk-s04-intro small{
+  max-width:30ch;
+
+  color:
+    rgba(245,243,238,.32);
+
+  font-size:9px;
+
+  line-height:1.45;
+}
+
+
+body.project-mario-kart
+.mk-s04-cta{
+  width:100%;
+
+  min-height:40px;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:space-between;
+
+  margin-top:3px;
+
+  border-top:
+    1px solid rgba(245,243,238,.16);
+
+  border-bottom:
+    1px solid rgba(245,243,238,.16);
+
+  color:#ffcc00;
+
+  text-decoration:none;
+
+  font:
+    600 8px/1
+    var(--mono,monospace);
+
+  letter-spacing:.08em;
+}
+
+
+/* ---------------------------------------------------------
+   Main content
+   --------------------------------------------------------- */
+
+body.project-mario-kart
+.mk-s04-layout{
+  display:grid;
+
+  grid-template-columns:
+    minmax(0,1.58fr)
+    minmax(250px,.42fr);
+
+  gap:
+    clamp(20px,2vw,30px);
+
+  align-items:stretch;
+}
+
+
+/* main feature */
+
+body.project-mario-kart
+.mk-s04-feature{
+  min-width:0;
+
+  margin:0;
+}
+
+
+body.project-mario-kart
+.mk-s04-pair{
+  display:grid;
+
+  grid-template-columns:
+    1fr 1fr;
+
+  min-height:
+    clamp(360px,36vw,530px);
+
+  border-top:
+    1px solid rgba(245,243,238,.14);
+}
+
+
+body.project-mario-kart
+.mk-s04-pair figure{
+  min-width:0;
+
+  margin:0;
+
+  display:grid;
+
+  grid-template-rows:
+    minmax(0,1fr)
+    auto;
+}
+
+
+body.project-mario-kart
+.mk-s04-pair figure:first-child{
+  border-right:
+    1px solid rgba(245,243,238,.14);
+}
+
+
+body.project-mario-kart
+.mk-s04-pair img,
+body.project-mario-kart
+.mk-s04-pair video{
+  display:block;
+
+  width:100%;
+  height:100%;
+
+  min-height:0;
+
+  object-fit:contain;
+
+  background:#151515;
+}
+
+
+body.project-mario-kart
+.mk-s04-pair figcaption{
+  padding:
+    9px 11px;
+
+  color:
+    rgba(245,243,238,.35);
+}
+
+
+/* simple one-line explanation */
+
+body.project-mario-kart
+.mk-s04-feature-caption{
+  display:grid;
+
+  grid-template-columns:
+    minmax(130px,.35fr)
+    minmax(0,.65fr);
+
+  gap:20px;
+
+  align-items:start;
+
+  padding-top:15px;
+}
+
+
+body.project-mario-kart
+.mk-s04-feature-caption > span{
+  color:
+    rgba(245,243,238,.36);
+}
+
+
+body.project-mario-kart
+.mk-s04-feature-caption p{
+  margin:0;
+
+  max-width:32ch;
+
+  color:
+    rgba(245,243,238,.55);
+
+  font-size:12px;
+
+  line-height:1.45;
+}
+
+
+/* ---------------------------------------------------------
+   Right proofs — media first, almost no typography
+   --------------------------------------------------------- */
+
+body.project-mario-kart
+.mk-s04-side{
+  min-width:0;
+
+  display:grid;
+
+  grid-template-rows:
+    1fr 1fr;
+
+  gap:22px;
+}
+
+
+body.project-mario-kart
+.mk-s04-proof{
+  min-width:0;
+
+  min-height:0;
+
+  margin:0;
+
+  display:grid;
+
+  grid-template-rows:
+    minmax(0,1fr)
+    auto;
+
+  border-top:
+    1px solid rgba(245,243,238,.14);
+}
+
+
+body.project-mario-kart
+.mk-s04-proof > div{
+  min-height:0;
+
+  overflow:hidden;
+
+  background:#151515;
+}
+
+
+body.project-mario-kart
+.mk-s04-proof video{
+  display:block;
+
+  width:100%;
+  height:100%;
+
+  object-fit:contain;
+}
+
+
+body.project-mario-kart
+.mk-s04-proof figcaption{
+  padding-top:9px;
+
+  color:
+    rgba(245,243,238,.38);
+}
+
+
+body.project-mario-kart
+.mk-s04-note{
+  max-width:54ch;
+
+  margin:
+    38px 0 0;
+
+  color:
+    rgba(245,243,238,.28);
+
+  font-size:9px;
+
+  line-height:1.5;
+}
+
+
+
+/* =========================================================
+   05 — TEAM INTEGRATION
+   ========================================================= */
+
+body.project-mario-kart
+.mk-s05{
+  padding:
+    clamp(90px,8vw,130px)
+    0;
+
+  background:#f2f0e9;
+
+  color:#0b0b0b;
+}
+
+
+body.project-mario-kart
+.mk-s05-head > .meta-mono{
+  color:
+    rgba(11,11,11,.4);
+}
+
+
+body.project-mario-kart
+.mk-s05-head h2 span{
+  color:
+    rgba(11,11,11,.28);
+}
+
+
+body.project-mario-kart
+.mk-s05-head > p{
+  margin:0;
+
+  max-width:32ch;
+
+  color:
+    rgba(11,11,11,.62);
+
+  font-size:
+    clamp(13px,.95vw,15px);
+
+  line-height:1.6;
+}
+
+
+body.project-mario-kart
+.mk-s05-pages{
+  display:grid;
+
+  grid-template-columns:
+    repeat(4,minmax(0,1fr));
+
+  gap:
+    clamp(12px,1.4vw,20px);
+
+  margin-bottom:
+    clamp(54px,6vw,86px);
+}
+
+
+body.project-mario-kart
+.mk-s05-pages figure{
+  margin:0;
+}
+
+
+body.project-mario-kart
+.mk-s05-pages img{
+  display:block;
+
+  width:100%;
+
+  aspect-ratio:
+    4 / 3;
+
+  object-fit:cover;
+
+  object-position:top;
+
+  background:#111;
+}
+
+
+body.project-mario-kart
+.mk-s05-pages figcaption{
+  display:flex;
+
+  justify-content:space-between;
+
+  align-items:center;
+
+  gap:10px;
+
+  padding-top:10px;
+}
+
+
+body.project-mario-kart
+.mk-s05-pages figcaption span{
+  color:
+    rgba(11,11,11,.4);
+}
+
+
+body.project-mario-kart
+.mk-s05-pages figcaption strong{
+  font:
+    600 9px/1
+    var(--mono,monospace);
+
+  letter-spacing:.08em;
+}
+
+
+
+/* =========================================================
+   06 — OUTCOME — SIMPLE
+   ========================================================= */
+
+body.project-mario-kart
+.mk-s06{
+  padding:
+    clamp(90px,8vw,125px)
+    0
+    clamp(100px,9vw,140px);
+
+  background:#0b0b0b;
+
+  color:#f5f3ee;
+}
+
+
+body.project-mario-kart
+.mk-s06-head{
+  margin-bottom:
+    clamp(54px,6vw,84px);
+}
+
+
+body.project-mario-kart
+.mk-s06-head > .meta-mono{
+  color:
+    rgba(245,243,238,.38);
+}
+
+
+body.project-mario-kart
+.mk-s06-head h2 span{
+  color:#ffcc00;
+}
+
+
+body.project-mario-kart
+.mk-s06-head > p{
+  margin:0;
+
+  max-width:31ch;
+
+  color:
+    rgba(245,243,238,.58);
+
+  font-size:
+    clamp(13px,.95vw,15px);
+
+  line-height:1.6;
+}
+
+
+/* no images */
+
+body.project-mario-kart
+.mk-s06-summary{
+  display:grid;
+
+  grid-template-columns:
+    minmax(0,1fr)
+    minmax(280px,420px);
+
+  gap:
+    clamp(40px,6vw,100px);
+
+  align-items:start;
+
+  padding:
+    24px 0;
+
+  border-top:
+    1px solid rgba(245,243,238,.15);
+
+  border-bottom:
+    1px solid rgba(245,243,238,.15);
+}
+
+
+body.project-mario-kart
+.mk-s06-tags{
+  display:flex;
+
+  flex-wrap:wrap;
+
+  gap:8px;
+}
+
+
+body.project-mario-kart
+.mk-s06-tags span{
+  padding:
+    8px 10px;
+
+  border:
+    1px solid rgba(245,243,238,.18);
+
+  color:
+    rgba(245,243,238,.72);
+
+  font:
+    600 8px/1
+    var(--mono,monospace);
+
+  letter-spacing:.08em;
+}
+
+
+body.project-mario-kart
+.mk-s06-reflection{
+  margin:0;
+
+  color:
+    rgba(245,243,238,.62);
+
+  font-size:
+    clamp(14px,1.15vw,17px);
+
+  line-height:1.55;
+}
+
+
+body.project-mario-kart
+.mk-s06-disclaimer{
+  display:block;
+
+  max-width:46ch;
+
+  margin-top:35px;
+
+  color:
+    rgba(245,243,238,.25);
+
+  font-size:9px;
+
+  line-height:1.5;
+}
+
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media(max-width:900px){
+
+  body.project-mario-kart
+  .mk-s04-layout{
+    grid-template-columns:1fr;
+  }
+
+
+  body.project-mario-kart
+  .mk-s04-side{
+    grid-template-columns:
+      1fr 1fr;
+
+    grid-template-rows:auto;
+  }
+
+
+  body.project-mario-kart
+  .mk-s05-pages{
+    grid-template-columns:
+      1fr 1fr;
+  }
+
+}
+
+
+@media(max-width:700px){
+
+  body.project-mario-kart
+  .mk-s04-head,
+  body.project-mario-kart
+  .mk-s05-head,
+  body.project-mario-kart
+  .mk-s06-head{
+    grid-template-columns:1fr;
+
+    gap:14px;
+  }
+
+
+  body.project-mario-kart
+  .mk-s04-pair{
+    grid-template-columns:1fr;
+  }
+
+
+  body.project-mario-kart
+  .mk-s04-pair figure:first-child{
+    border-right:0;
+  }
+
+
+  body.project-mario-kart
+  .mk-s04-side,
+  body.project-mario-kart
+  .mk-s05-pages{
+    grid-template-columns:1fr;
+  }
+
+
+  body.project-mario-kart
+  .mk-s06-summary{
+    grid-template-columns:1fr;
+  }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media(max-width:900px){
+
+}
+
+
+@media(max-width:700px){
+
+}
+
+
+/* =========================================================
+   MARIO KART — SECTION 04 EFFECT EXPLORER / CLEAN
+   ========================================================= */
+
+body.project-mario-kart .mk-s04x{
+  padding:
+    clamp(76px,7vw,108px)
+    0
+    clamp(80px,7vw,112px);
+
+  background:#0b0b0b;
+  color:#f5f3ee;
+}
+
+
+/* ---------------------------------------------------------
+   HEADING
+   --------------------------------------------------------- */
+
+body.project-mario-kart .mk-s04x-head{
+  display:grid;
+
+  grid-template-columns:
+    minmax(105px,130px)
+    minmax(0,1fr)
+    minmax(220px,285px);
+
+  gap:clamp(20px,2.8vw,42px);
+
+  align-items:end;
+
+  margin-bottom:
+    clamp(34px,3.5vw,48px);
+}
+
+
+body.project-mario-kart
+.mk-s04x-head > .meta-mono{
+  align-self:start;
+  padding-top:.6em;
+
+  color:rgba(245,243,238,.36);
+}
+
+
+body.project-mario-kart
+.mk-s04x-head h2{
+  margin:0;
+
+  max-width:10ch;
+
+  font-size:
+    clamp(42px,4.4vw,72px);
+
+  line-height:.91;
+
+  letter-spacing:-.06em;
+}
+
+
+body.project-mario-kart
+.mk-s04x-head h2 span{
+  display:block;
+  color:#ffcc00;
+}
+
+
+body.project-mario-kart
+.mk-s04x-intro{
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+
+  gap:12px;
+}
+
+
+body.project-mario-kart
+.mk-s04x-intro p{
+  margin:0;
+
+  max-width:27ch;
+
+  color:rgba(245,243,238,.58);
+
+  font-size:12px;
+  line-height:1.5;
+}
+
+
+body.project-mario-kart
+.mk-s04x-link{
+  width:100%;
+  min-height:36px;
+
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+
+  border-top:
+    1px solid rgba(245,243,238,.15);
+
+  border-bottom:
+    1px solid rgba(245,243,238,.15);
+
+  color:#ffcc00;
+
+  text-decoration:none;
+
+  font:
+    600 8px/1
+    var(--mono,monospace);
+
+  letter-spacing:.08em;
+}
+
+
+/* ---------------------------------------------------------
+   EFFECT TABS
+   --------------------------------------------------------- */
+
+body.project-mario-kart .mk-s04x-tabs{
+  display:grid;
+
+  grid-template-columns:
+    repeat(3,minmax(0,1fr));
+
+  margin-bottom:16px;
+
+  border-top:
+    1px solid rgba(245,243,238,.15);
+
+  border-bottom:
+    1px solid rgba(245,243,238,.15);
+}
+
+
+body.project-mario-kart .mk-s04x-tab{
+  min-height:44px;
+
+  display:flex;
+  align-items:center;
+
+  gap:12px;
+
+  padding:0 13px;
+
+  border:0;
+
+  border-right:
+    1px solid rgba(245,243,238,.12);
+
+  background:transparent;
+
+  color:rgba(245,243,238,.40);
+
+  text-align:left;
+
+  cursor:pointer;
+}
+
+
+body.project-mario-kart
+.mk-s04x-tab:last-child{
+  border-right:0;
+}
+
+
+body.project-mario-kart
+.mk-s04x-tab span{
+  color:#ffcc00;
+
+  font:
+    500 8px/1
+    var(--mono,monospace);
+}
+
+
+body.project-mario-kart
+.mk-s04x-tab strong{
+  font:
+    600 8px/1
+    var(--mono,monospace);
+
+  letter-spacing:.07em;
+}
+
+
+body.project-mario-kart
+.mk-s04x-tab.is-active{
+  background:#ffcc00;
+  color:#0b0b0b;
+}
+
+
+body.project-mario-kart
+.mk-s04x-tab.is-active span{
+  color:#0b0b0b;
+}
+
+
+/* ---------------------------------------------------------
+   MAIN EFFECT VIEWER
+   RESULT 70% / CODE 30%
+   --------------------------------------------------------- */
+
+body.project-mario-kart .mk-s04x-stage{
+  display:grid;
+
+  grid-template-columns:
+    minmax(0,2.25fr)
+    minmax(230px,1fr);
+
+  width:100%;
+
+  height:auto;
+  min-height:0;
+
+  align-items:start;
+
+  border-bottom:
+    1px solid rgba(245,243,238,.15);
+}
+
+
+body.project-mario-kart .mk-s04x-result,
+body.project-mario-kart .mk-s04x-code{
+  min-width:0;
+
+  margin:0;
+
+  display:grid;
+
+  grid-template-rows:
+    auto
+    40px;
+}
+
+
+body.project-mario-kart .mk-s04x-result{
+  border-right:
+    1px solid rgba(245,243,238,.15);
+}
+
+
+/* This controls the actual viewer height */
+body.project-mario-kart
+.mk-s04x-result-media,
+body.project-mario-kart
+.mk-s04x-result-media,
+body.project-mario-kart
+.mk-s04x-code-media{
+  width:100%;
+
+  height:
+    clamp(285px,24vw,370px);
+
+  min-height:0;
+
+  overflow:hidden;
+
+  background:#151515;
+}
+
+
+/* RESULT */
+
+
+
+
+/* CODE */
+
+body.project-mario-kart
+.mk-s04x-code-media{
+  display:flex;
+
+  align-items:center;
+  justify-content:center;
+}
+
+
+body.project-mario-kart
+.mk-s04x-code-image{
+  display:block;
+
+  width:100%;
+  height:100%;
+
+  padding:
+    clamp(16px,1.8vw,28px);
+
+  object-fit:contain;
+  object-position:center;
+
+  background:#181818;
+
+  opacity:1;
+
+  transition:
+    opacity .13s ease;
+}
+
+
+
+
+
+
+/* captions always sit BELOW the media */
+
+body.project-mario-kart
+.mk-s04x-result figcaption,
+body.project-mario-kart
+.mk-s04x-code figcaption{
+  position:static;
+
+  width:100%;
+  min-height:40px;
+
+  display:flex;
+
+  align-items:center;
+  justify-content:space-between;
+
+  gap:10px;
+
+  padding:0 11px;
+
+  margin:0;
+
+  color:rgba(245,243,238,.34);
+
+  background:#0b0b0b;
+}
+
+
+body.project-mario-kart
+.mk-s04x-result figcaption strong{
+  color:rgba(245,243,238,.72);
+
+  font:
+    600 8px/1
+    var(--mono,monospace);
+
+  letter-spacing:.07em;
+}
+
+
+body.project-mario-kart
+.mk-s04x-code-type{
+  font:
+    500 8px/1
+    var(--mono,monospace);
+
+  letter-spacing:.06em;
+}
+
+
+/* ---------------------------------------------------------
+   DESCRIPTION BELOW THE VIEWER
+   --------------------------------------------------------- */
+
+body.project-mario-kart .mk-s04x-caption{
+  position:static;
+
+  display:grid;
+
+  grid-template-columns:
+    minmax(105px,130px)
+    minmax(0,390px);
+
+  gap:20px;
+
+  align-items:start;
+
+  padding-top:15px;
+
+  margin:0;
+}
+
+
+body.project-mario-kart
+.mk-s04x-count{
+  position:static;
+
+  color:rgba(245,243,238,.34);
+}
+
+
+body.project-mario-kart
+.mk-s04x-caption p{
+  position:static;
+
+  margin:0;
+
+  max-width:38ch;
+
+  color:rgba(245,243,238,.54);
+
+  font-size:11px;
+  line-height:1.5;
+}
+
+
+body.project-mario-kart .mk-s04x-note{
+  position:static;
+
+  max-width:49ch;
+
+  margin:
+    clamp(27px,3vw,40px)
+    0
+    0;
+
+  color:rgba(245,243,238,.24);
+
+  font-size:9px;
+  line-height:1.45;
+}
+
+
+/* ---------------------------------------------------------
+   TABLET
+   --------------------------------------------------------- */
+
+@media(max-width:900px){
+
+  body.project-mario-kart .mk-s04x-stage{
+    grid-template-columns:
+      minmax(0,1.7fr)
+      minmax(210px,.8fr);
+  }
+
+}
+
+
+/* ---------------------------------------------------------
+   MOBILE
+   --------------------------------------------------------- */
+
+@media(max-width:700px){
+
+  body.project-mario-kart .mk-s04x-head{
+    grid-template-columns:1fr;
+
+    gap:14px;
+  }
+
+
+  body.project-mario-kart .mk-s04x-tabs{
+    grid-template-columns:1fr;
+  }
+
+
+  body.project-mario-kart .mk-s04x-tab{
+    border-right:0;
+
+    border-bottom:
+      1px solid rgba(245,243,238,.12);
+  }
+
+
+  body.project-mario-kart
+  .mk-s04x-tab:last-child{
+    border-bottom:0;
+  }
+
+
+  body.project-mario-kart .mk-s04x-stage{
+    grid-template-columns:1fr;
+  }
+
+
+  body.project-mario-kart .mk-s04x-result{
+    border-right:0;
+
+    border-bottom:
+      1px solid rgba(245,243,238,.15);
+  }
+
+
+
+
+body.project-mario-kart
+.mk-s04x-code-media{
+  width:100%;
+
+  height:
+    clamp(285px,24vw,370px);
+
+  min-height:0;
+
+  display:flex;
+
+  align-items:center;
+  justify-content:center;
+
+  overflow:hidden;
+
+  background:#181818;
+}
+
+
+
+
+  body.project-mario-kart .mk-s04x-caption{
+    grid-template-columns:1fr;
+
+    gap:7px;
+  }
+
+}
+
+
+body.project-mario-kart
+.mk-s04x-result-video{
+  display:block;
+
+  width:100%;
+  height:100%;
+
+  object-fit:contain;
+  object-position:center;
+
+  background:#080808;
+
+  opacity:1;
+
+  transition:
+    opacity .13s ease;
+}
+
+
+/* ---------------------------------------------------------
+   MOBILE
+   --------------------------------------------------------- */
+
+@media(max-width:800px){
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media(max-width:800px){
+
+}
+
+
+body.project-mario-kart ::selection{
+  color:var(--project-accent,#FFCC00);
+  background:#111;
+}
+
+body.project-mario-kart ::-moz-selection{
+  color:var(--project-accent,#FFCC00);
+  background:#111;
+}
+
+
+
+
+
+
+
+@keyframes mkHeroDriftArc{
+
+  0%{
+    opacity:0;
+
+    filter:
+      blur(12px);
+
+    transform:
+      translate3d(
+        44vw,
+        -28vh,
+        0
+      )
+      rotate(38deg)
+      scale(.56);
+  }
+
+
+  24%{
+    opacity:.68;
+
+    filter:
+      blur(5px);
+
+    transform:
+      translate3d(
+        22vw,
+        -10vh,
+        0
+      )
+      rotate(20deg)
+      scale(.72);
+  }
+
+
+  52%{
+    opacity:1;
+
+    filter:
+      blur(0);
+
+    transform:
+      translate3d(
+        4vw,
+        7vh,
+        0
+      )
+      rotate(-7deg)
+      scale(1.06);
+  }
+
+
+  76%{
+    transform:
+      translate3d(
+        -1.5vw,
+        -1.5vh,
+        0
+      )
+      rotate(2deg)
+      scale(1.025);
+  }
+
+
+  100%{
+    opacity:.96;
+
+    filter:
+      blur(0);
+
+    transform:
+      translate3d(
+        0,
+        0,
+        0
+      )
+      rotate(0)
+      scale(1);
+  }
+
+}
+
+
+@media(max-width:700px){
+
+  
+
+}
+
+
+/* Respect reduced-motion system preference */
+
+@media(prefers-reduced-motion:reduce){
+
+  
+
+}
+
+
+
+
+
+body.project-mario-kart
+.mk-hero-art,
+
+
+
+/* =========================================================
+   MARIO KART — SECTION 05 FLOW / CANONICAL
+   ========================================================= */
+
+body.project-mario-kart
+.mk-s05-flow{
+  display:grid;
+
+  grid-template-columns:
+    minmax(180px,.85fr)
+    52px
+    minmax(300px,1.35fr)
+    52px
+    minmax(180px,.85fr);
+
+  align-items:stretch;
+
+  gap:0;
+
+  margin-top:
+    clamp(36px,4vw,54px);
+
+  border-top:
+    1px solid rgba(11,11,11,.16);
+
+  border-bottom:
+    1px solid rgba(11,11,11,.16);
+}
+
+
+/* SIDE STATES */
+
+body.project-mario-kart
+.mk-s05-flow-before,
+body.project-mario-kart
+.mk-s05-flow-after{
+  min-height:185px;
+
+  display:flex;
+
+  flex-direction:column;
+
+  justify-content:space-between;
+
+  padding:
+    clamp(20px,2vw,28px);
+
+  gap:22px;
+
+  background:#f2f0e9;
+}
+
+
+body.project-mario-kart
+.mk-s05-flow-before > .meta-mono,
+body.project-mario-kart
+.mk-s05-flow-after > .meta-mono{
+  color:
+    rgba(11,11,11,.38);
+}
+
+
+body.project-mario-kart
+.mk-s05-flow-before > strong,
+body.project-mario-kart
+.mk-s05-flow-after > strong{
+  margin-top:auto;
+
+  font-size:
+    clamp(56px,6vw,88px);
+
+  line-height:.78;
+
+  letter-spacing:-.07em;
+
+  color:#0b0b0b;
+}
+
+
+body.project-mario-kart
+.mk-s05-flow-before p,
+body.project-mario-kart
+.mk-s05-flow-after p{
+  margin:0;
+
+  max-width:19ch;
+
+  color:
+    rgba(11,11,11,.55);
+
+  font-size:11px;
+
+  line-height:1.45;
+}
+
+
+/* CENTER ROLE */
+
+body.project-mario-kart
+.mk-s05-flow-role{
+  position:relative;
+
+  min-height:220px;
+
+  display:flex;
+
+  flex-direction:column;
+
+  justify-content:space-between;
+
+  padding:
+    clamp(22px,2.4vw,34px);
+
+  gap:20px;
+
+  background:#0b0b0b;
+
+  color:#f5f3ee;
+}
+
+
+body.project-mario-kart
+.mk-s05-flow-role::before{
+  content:"";
+
+  position:absolute;
+
+  left:0;
+  right:0;
+  top:0;
+
+  height:4px;
+
+  background:#ffcc00;
+}
+
+
+body.project-mario-kart
+.mk-s05-flow-role > .meta-mono{
+  color:#ffcc00;
+}
+
+
+body.project-mario-kart
+.mk-s05-flow-role > div{
+  display:flex;
+
+  gap:8px;
+
+  margin-top:auto;
+}
+
+
+body.project-mario-kart
+.mk-s05-flow-role > div strong{
+  display:inline-flex;
+
+  align-items:center;
+  justify-content:center;
+
+  min-width:46px;
+  min-height:36px;
+
+  padding:0 10px;
+
+  background:#ffcc00;
+
+  color:#0b0b0b;
+
+  font:
+    700 11px/1
+    var(--mono,monospace);
+
+  letter-spacing:.08em;
+}
+
+
+body.project-mario-kart
+.mk-s05-flow-role p{
+  margin:0;
+
+  max-width:31ch;
+
+  color:
+    rgba(245,243,238,.65);
+
+  font-size:12px;
+
+  line-height:1.5;
+}
+
+
+/* PLAIN ARROWS — NO CIRCLE */
+
+body.project-mario-kart
+.mk-s05-arrow{
+  align-self:stretch;
+
+  display:grid;
+
+  place-items:center;
+
+  align-content:center;
+
+  background:transparent;
+
+  color:#ffcc00;
+
+  font-size:
+    clamp(30px,2.5vw,40px);
+
+  font-weight:400;
+
+  line-height:1;
+}
+
+
+/* MOBILE */
+
+@media(max-width:800px){
+
+  body.project-mario-kart
+  .mk-s05-flow{
+    grid-template-columns:1fr;
+  }
+
+
+  body.project-mario-kart
+  .mk-s05-flow-before,
+  body.project-mario-kart
+  .mk-s05-flow-after,
+  body.project-mario-kart
+  .mk-s05-flow-role{
+    min-height:160px;
+  }
+
+
+  body.project-mario-kart
+  .mk-s05-arrow{
+    min-height:48px;
+
+    transform:
+      rotate(90deg);
+  }
+
+}
+
+
+/* MARIO HERO BACKGROUND LAYER START */
+
+body.project-mario-kart
+.mk-hero-inner{
+  position:relative;
+  isolation:isolate;
+}
+
+
+/* image layer across the hero */
+
+body.project-mario-kart
+.mk-hero-art{
+  position:absolute;
+  inset:0;
+
+  z-index:0;
+
+  margin:0;
+
+  overflow:hidden;
+
+  pointer-events:none;
+}
+
+
+/*
+   No height:100%;
+   No max-height:100%;
+*/
+
+body.project-mario-kart
+.mk-hero-art-stage{
+  position:absolute;
+  inset:0;
+
+  width:100%;
+
+  overflow:hidden;
+
+  display:flex;
+  justify-content:flex-end;
+  align-items:center;
+}
+
+
+/* ALL normal hero content sits over the photograph */
+
+
+
+
+/*
+   Preserve the image's aspect ratio.
+   Height is exactly 100% of the hero artwork area.
+*/
+
+body.project-mario-kart
+.mk-hero-drift{
+  display:block;
+
+  width:auto;
+  height:100%;
+
+  max-width:none;
+  max-height:100%;
+
+  object-fit:contain;
+  object-position:right center;
+
+  opacity:1;
+
+  transform-origin:58% 48%;
+
+  animation:
+    mkHeroDriftArc
+    1.35s
+    cubic-bezier(.18,.82,.2,1)
+    both;
+
+  will-change:
+    transform,
+    opacity,
+    filter;
+}
+
+
+/*
+   Gentle left-side blend so the photograph merges into
+   the black background underneath the title.
+*/
+
+
+
+/* MARIO HERO BACKGROUND LAYER END */
+
+
+/* MARIO HERO STACKING FIX */
+
+body.project-mario-kart
+.mk-hero-inner{
+  position:relative;
+  isolation:isolate;
+}
+
+
+/* Every normal hero content block sits above artwork */
+
+body.project-mario-kart
+.mk-hero-inner > *{
+  position:relative;
+  z-index:2;
+}
+
+
+/* Artwork alone becomes the background layer */
+
+body.project-mario-kart
+.mk-hero-inner > .mk-hero-art{
+  position:absolute;
+  inset:0;
+
+  z-index:0;
+
+  margin:0;
+
+  pointer-events:none;
+}
+
+
+/* Keep stage underneath the content */
+
+body.project-mario-kart
+.mk-hero-art-stage{
+  position:absolute;
+  inset:0;
+
+  z-index:0;
+
+  width:100%;
+
+  overflow:hidden;
+
+  display:flex;
+  justify-content:flex-end;
+  align-items:center;
+}
+
+
+/* Full Mario image visible */
+
+body.project-mario-kart
+.mk-hero-drift{
+  display:block;
+
+  width:auto;
+  height:100%;
+
+  max-width:none;
+  max-height:100%;
+
+  object-fit:contain;
+  object-position:right center;
+
+  opacity:1;
+}
+
+
+/* MARIO HERO FINAL CLEAN START */
+
+body.project-mario-kart
+.mk-hero{
+  position:relative;
+
+  height:100svh;
+  min-height:100svh;
+  max-height:100svh;
+
+  overflow:hidden;
+
+  background:#080808;
+}
+
+
+body.project-mario-kart
+.mk-hero-inner{
+  position:relative;
+
+  height:100%;
+
+  isolation:isolate;
+
+  background:transparent;
+}
+
+
+/* normal content stays above image */
+
+body.project-mario-kart
+.mk-hero-inner > :not(.mk-hero-art){
+  position:relative;
+
+  z-index:3;
+
+  background:transparent;
+}
+
+
+/* image becomes one full hero background layer */
+
+body.project-mario-kart
+.mk-hero-art{
+  position:absolute;
+
+  inset:0;
+
+  width:100%;
+  height:100%;
+
+  margin:0;
+
+  z-index:0;
+
+  overflow:hidden;
+
+  pointer-events:none;
+
+  background:transparent;
+}
+
+
+/*
+   Intentionally no height or max-height here.
+*/
+
+body.project-mario-kart
+.mk-hero-art-stage{
+  position:absolute;
+
+  inset:0;
+
+  width:100%;
+
+  display:flex;
+
+  align-items:center;
+  justify-content:flex-end;
+
+  overflow:hidden;
+
+  z-index:0;
+
+  background:transparent;
+}
+
+
+/* actual image */
+
+body.project-mario-kart
+.mk-hero-drift{
+  display:block;
+
+  width:auto;
+  height:100%;
+
+  max-width:none;
+  max-height:100%;
+
+  object-fit:contain;
+  object-position:right center;
+
+  opacity:1;
+
+  background:transparent;
+
+  transform-origin:58% 48%;
+
+  animation:
+    mkHeroDriftArc
+    1.35s
+    cubic-bezier(.18,.82,.2,1)
+    both;
+}
+
+
+/*
+   Kill backgrounds on the original left/grid panels.
+   These are layout only now.
+*/
+
+body.project-mario-kart
+.mk-hero-grid,
+body.project-mario-kart
+.mk-hero-main,
+body.project-mario-kart
+.mk-hero-body,
+body.project-mario-kart
+.mk-hero-copy,
+body.project-mario-kart
+.mk-hero-content{
+  background:transparent;
+}
+
+/* MARIO HERO FINAL CLEAN END */
+
+

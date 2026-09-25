@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Battles</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Rubik:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@400..900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <header>
+        <div class="top-bar">
+        <div class="left-section">
+            <div id="date-display"></div>
+        </div>
+        <nav class="center-nav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="characters.html">Characters</a></li>
+                <li><a href="courses.html">Courses</a></li>
+                <li><a href="items.html">Items</a></li>
+                <li><a href="battles.html">Battles</a></li>
+            </ul>
+        </nav>
+        <div class="right-section">
+            <a href="explanation.html" class="explanation-button">Explanation</a>
+        </div>
+        </div>
+    </header>
+  
+
+    <main>
+
+        <section class="subpage-banner">
+            <img src="Assets/battles-banner.avif" alt="the image of Mario Kart ballon battle mode">
+        </section>
+
+        <section class="courses-header">
+            <h1>Mario Kart 8 Deluxe Battles</h1>
+            <h3>Explore different play modes!</h3>
+        </section>
+
+        <section class="page gallery">
+            <img src="Assets/track 1.jpg" alt="the image of track 1">
+            <img src="Assets/track 2.jpg" alt="the image of track 2">
+            <img src="Assets/track 3.jpg" alt="the image of track 3">
+            <img src="Assets/track 4.jpg" alt="the image of track 4">
+            <img src="Assets/track 5.jpg" alt="the image of track 5">
+            <img src="Assets/track 6.jpg" alt="the image of track 6">
+            <img src="Assets/track 7.jpg" alt="the image of track 7">
+            <img src="Assets/track 8.jpg" alt="the image of track 8">
+            <img src="Assets/track 9.jpg" alt="the image of track 9">
+            <img src="Assets/track 10.jpg" alt="the image of track 10">
+            <img src="Assets/track 1.jpg" alt="the image of track 1">
+            <img src="Assets/track 2.jpg" alt="the image of track 2">
+            <img src="Assets/track 3.jpg" alt="the image of track 3">
+            <img src="Assets/track 4.jpg" alt="the image of track 4">
+            <img src="Assets/track 5.jpg" alt="the image of track 5">
+            <img src="Assets/track 6.jpg" alt="the image of track 6">
+            <img src="Assets/track 7.jpg" alt="the image of track 7">
+            <img src="Assets/track 8.jpg" alt="the image of track 8">
+            <img src="Assets/track 9.jpg" alt="the image of track 9">
+            <img src="Assets/track 10.jpg" alt="the image of track 10">
+            <img src="Assets/track 1.jpg" alt="the image of track 1">
+            <img src="Assets/track 2.jpg" alt="the image of track 2">
+            <img src="Assets/track 3.jpg" alt="the image of track 3">
+            <img src="Assets/track 4.jpg" alt="the image of track 4">
+            <img src="Assets/track 5.jpg" alt="the image of track 5">
+        </section>
+      
+        <section class="page four-selections">
+            <div class="character-spin">
+                <div class="character">
+                    <img src="Assets/King Boo riding kart.png" alt="the jumping out character">
+                </div>
+                <div class="icon">
+                    <img src="Assets/img_scene_shizue_cup.png" alt="the rotating icon of Mario Kart 8 Deluxe">
+                </div>
+            </div>
+
+            <div class="modeChoice">
+            
+                <ul class="mode-list">
+                        <li onclick="showOverlay('grandPrixOverlay')">Grand Prix</li>
+                        <li onclick="showOverlay('timeTrialOverlay')">Time Trial</li>
+                        <li onclick="showOverlay('vsRaceOverlay')">VS Race</li>
+                        <li onclick="showOverlay('battleModeOverlay')">Battle Mode</li>
+                </ul>
+            </div>
+      
+            <!--overlay-->
+            <div id="grandPrixOverlay" class="overlay">
+                <div class="mode-overlay">
+                    <img src="Assets/GrandPrix.png" alt="Grand Prix">
+                </div>
+            </div>
+      
+            <div id="timeTrialOverlay" class="overlay">
+                <div class="mode-overlay">
+                    <img src="Assets/TimeTrial.png" alt="Time Trial">
+                </div>
+            </div>
+      
+            <div id="vsRaceOverlay" class="overlay">
+                <div class="mode-overlay">
+                    <img src="Assets/VSRace.png" alt="VS Race">
+                </div>
+            </div>
+      
+            <div id="battleModeOverlay" class="overlay">
+                <div class="mode-overlay">
+                    <img src="Assets/BattleMode.png" alt="Battle Mode">
+                </div>
+            </div>
+        </section>
+
+        <section class="page battle-video">
+            <h2>Five Battle Modes</h2>
+            <p>Click to have a look at all the battle modes!</p>
+            <div class="thumbnails">
+                <video src="Assets/battle 1.mp4" muted playsinline></video>
+                <video src="Assets/battle 2.mp4" muted playsinline></video>
+                <video src="Assets/battle 3.mp4" muted playsinline></video>
+                <video src="Assets/battle 4.mp4" muted playsinline></video>
+                <video src="Assets/battle 5.mp4" muted playsinline></video>
+            </div>
+            <video id="main-video" src="Assets/battle 1.mp4" autoplay muted loop playsinline></video>
+        </section>        
+
+        <section class="faq-section">
+            <h2>Frequently Asked Questions</h2>
+            <div class="info-container">
+                <div class="info-box">
+                    <h3>How to be good at Grand Prix?</h3>
+                    <p>Try Time trials to practice</p>
+                </div>
+                <div class="info-box">
+                    <h3>Which battle games only allow single-player?</h3>
+                    <p>Time trial and VS race.</p>
+                </div>
+                <div class="info-box">
+                    <h3>How many battle modes are there?</h3>
+                    <p>Five.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="page quiz-section">
+            <div class="quiz-container">
+                <div class="chat-bubble">
+                <p>Think you're ready for the race? Take the quiz!</p>
+                <a href="quiz.html" class="quiz-link">Let's Go!</a>
+                </div>
+                <img src="Assets/img_scene_baby_rosetta.avif" alt="image of baby rosetta" class="character-img">
+            </div>
+        </section>
+        
+        <button id="backToTop" title="Back to top">⬆</button>
+
+      </main>
+  
+      <footer>
+          <p>Mario Kart 8 Deluxe, Created by Seraphina Fung, Iris Wang, Kiara Yong, Xiaoou Zhou, 2025 </p>
+      </footer>
+  
+</body>
+  
+<script src="script.js"></script>
+  
+</html>

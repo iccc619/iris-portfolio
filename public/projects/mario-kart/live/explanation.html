@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Explanation</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Rubik:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@400..900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <header>
+        <div class="top-bar">
+            <div class="left-section">
+                <div id="date-display"></div>
+            </div>
+            <nav class="center-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="characters.html">Characters</a></li>
+                    <li><a href="courses.html">Courses</a></li>
+                    <li><a href="items.html">Items</a></li>
+                    <li><a href="battles.html">Battles</a></li>
+                </ul>
+            </nav>
+            <div class="right-section">
+                <a href="explanation.html" class="explanation-button">Explanation</a>
+            </div>
+        </div>
+    </header>
+      
+    <main>
+
+        <section class="page html-explain">
+            <h2>Overall Struture</h2>
+            <p>The <code>html</code> incorporates a <code>header</code> - top navigation, a <code>main</code> - game contents, and a <code>footer</code> - credited group members. Multiple <code>sections</code> in the <code>main</code> container are included in the <code>html</code> structure with different <code>class</code> and <code>id</code>. <code>Div</code> containers are placed inside the <code>section</code> to better apply <code>CSS</code> and <code>JavaScript</code> to different levels of containers. Every page is linked together through the <code>top navigation bar</code> and the <code>quiz section</code> at the end of each page, which enables users to swap between pages easily. Among four subpages, <code>Courses</code> and <code>Battles</code> pages, and <code>Items</code> and <code>Characters</code> pages are structured in a similar way.</p>
+        </section>
+
+        <section class="page css-animation">
+            <h2>CSS Animation</h2>
+            <p>Animation including <code>transform</code> and <code>@key-frames</code> are applied in various elements to increase the dynamics of the page and user experience and interaction.</p>
+            <table class="animation-table">
+                <thead>
+                    <tr>
+                        <th><h3>Spinning Icon</h3></th>
+                        <th><h3>Ease-in Character</h3></th>
+                        <th><h3>Bouncing Effect</h3></th>
+                        <th><h3>Glowing Item</h3></th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr>
+                        <td><img src="Assets/codespinningicon.png" alt="Image of Spinning Icon Code" class="anim-img"></td>
+                        <td><img src="Assets/codecharacterease.png" alt="Image of Character Ease Code" class="anim-img"></td>
+                        <td><img src="Assets/codepulsinglist.png" alt="Image of Pulsing List Code" class="anim-img"></td>
+                        <td><img src="Assets/codeglowingitem.png" alt="Image of Glowing Item Code" class="anim-img"></td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <video id="video1" src="Assets/spinningicon.mov" autoplay muted playsinline></video>
+                            <img id="image1" src="Assets/spinningicon.jpg" alt="Spinning Icon" style="display: none;">
+                        </td>
+                        <td>
+                            <video id="video2" src="Assets/characterease.mov" autoplay muted playsinline></video>
+                            <img id="image2" src="Assets/characterease.jpg" alt="Character Ease" style="display: none;">
+                        </td>
+                        <td>
+                            <video id="video3" src="Assets/pulsinglist.mov" autoplay muted playsinline></video>
+                            <img id="image3" src="Assets/pulsinglist.jpg" alt="Pulsing List" style="display: none;">
+                        </td>
+                        <td>
+                            <video id="video4" src="Assets/glowingitem.mov" autoplay muted playsinline></video>
+                            <img id="image4" src="Assets/glowingitem.jpg" alt="Glowing Item" style="display: none;">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <p>The icon of courses cup are used as a background image to enrich the dynamic, which utilises rotate function to achieve the slowing spinning effect.</p>
+                        </td>
+                        <td>
+                            <p>There is a slidering effect in the character using <code>@keyframes showCharactrer</code> to align with the game concept as if the character drives in.</p>
+                        </td>
+                        <td>
+                            <p>The modeChoice list pulses using <code>@keyframes pulse</code>, attracting users attentions in this way and enabling them to click on in battles page for more information.</p>
+                        </td>
+                        <td>
+                            <p>The itmes and characters will glow on hover through the yellow <code>box-shadow</code> and <code>transform: scale</code>, enhancing visual interest while showcasing the name.</p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section class="page js-function">
+            <h2>Javascript Functions</h2>
+            <div class="js-homepage">
+                <h3>Javascript in Homepage</h3>
+                <div class="js-container">
+                    <img src="Assets/alert.png" alt="the image of welcome alert">
+                    <p>The welcome alert comes up when a user first goes into the website through <code>alert</code>, which checks <code>localStorage.getItem('visited')</code> in order to show the code only once, enhancing user experience to avoide repetition.</p>
+                </div>
+                <hr>
+                <div class="js-container">
+                    <img src="Assets/date.png" alt="the image of date showcased">
+                    <p>Date at the top left corner is displayed thorugh <code>const dateDisplay</code>, which changes everyday using the <code>new Date()</code> element.</p>
+                </div>
+                <hr>
+                <div class="js-container">
+                    <img src="Assets/backtotopbtn.png" alt="the image of Back to Top button">
+                    <p>The <code>backToTopBtn</code> triggers <code>window.scrollTo({ top: 0, behavior: 'smooth' })</code> by clicking the button, allowing users to go back to the top of the page effortlessly at any time,</p>
+                </div>
+                <hr>
+                <div class="js-container">
+                    <img src="Assets/prevafterbtn.png" alt="the image of prev and after button">
+                    <p>Users can browse different equipments by clicking the <code>prevBtn</code> and <code>afterBtn</code> dynamically, which will make <code>function updateEquipment</code> work to update image and content into view.</p>
+                </div>
+            </div>
+
+            <div class="js-subpages">
+                <h3>Javascript in Subpages</h3>
+                <p>Hover to see explanation of each image. </p>
+                <div class="row"> 
+                    <div class="column">
+                        <div class="column-img">
+                            <figure>
+                                <img src="Assets/gallery.jpg" alt="the image of gallery section">
+                                <figcaption class="js-caption">Auto-scrolling Gallery</figcaption>    
+                            </figure>
+                            <div class="js-overlay">
+                                <p>An automatic scrolling gallery is used in courses and battle pages. The <code>scrollSpeed</code> and <code>scrollDelay</code> is set for the <code>autoScroll</code> functioon, which allows the gallery to loop infinitely when it reaches the end.</p>
+                            </div>
+                        </div>
+
+                        <div class="column-img">
+                            <figure>
+                                <img src="Assets/course-popup.jpg" alt="the image of course popup section">
+                                <figcaption class="js-caption">Courses Popup Images</figcaption>
+                            </figure>
+                            <div class="js-overlay">
+                                <p><code>Pointers</code> added a clickable effect to all card images to show a popup with four track images, which are loaded from the <code>cupNames</code> array. Popup closes when clicking the close button in the right corner.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="column">   
+                        <div class="column-img">
+                            <figure>
+                                <img src="Assets/item-container.jpg" alt="the image of hovering over an character">
+                                <figcaption class="js-caption">Hovering Effect on Character</figcaption>
+                            </figure>
+                            <div class="js-overlay">
+                                <p>An interactive <code>hover</code> effect is applied to each item and character. The <code>mouseenter</code> shows the overlay and highlight of the hovered item and character; the <code>mousemove</code> fixes the position of the description box; the <code>mouseleave</code> stops all effects when the mouse moves away.</p>
+                            </div>
+                        </div>
+
+                        <div class="column-img">
+                            <figure>
+                                <img src="Assets/battle-popup.jpg" alt="the image of battle mode list popup section">
+                                <figcaption class="js-caption">Mode List Popup Information</figcaption>
+                            </figure>
+                            <div class="js-overlay">
+                                <p>The function <code>showOverlay(id)</code> displays the overlay image with the matching <code>id</code> while hiding others. The <code>addEventListener('click')</code> is used to make any part of the mode list clickable and trigger the popup.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <section class="page quiz-explain">
+            <h2>Quiz Javascrip Explanation</h2>
+            <p><a href=quiz.html>Click here to go to quiz.</a></p>
+            <div class="pathway-grid">
+                <div class="pathway-card">
+                    <img src="Assets/startquizbtn.png" alt="Start Quiz Button">
+                    <h3>Start Quiz Button</h3>
+                    <h4>startQuizBtn</h4>
+                    <ul>
+                        <li><strong>Role</strong>: Starts the quiz interaction.</li>
+                        <li><strong>JS Function</strong>: Listens for the click event to hide the intro <code>introPage.style.display = 'none'</code> and show the quiz <code>quizPage.style.display = 'block'</code>.</li>
+                        <li><strong>Effect</strong>: Initializes quiz state variables <code>score</code> and <code>currentQuestionIndex</code>, clears previous histories, and calls <code>showQuestion(0)</code> to display the first question.</li>
+                    </ul>
+                </div>
+                <div class="pathway-card">
+                    <video id="submitVideo" src="Assets/submitbtn.mov" autoplay muted playsinline></video>
+                    <img id="submitImage" src="Assets/submitbtn.jpeg" alt="Submit Button" style="display: none;">
+                    <h3>Submit Button</h3>
+                    <h4>startQuizBtn</h4>
+                    <ul>
+                        <li><strong>Role</strong>: Submits the current answer for checking.</li>
+                        <li><strong>JS Function</strong>: Disabled by default; enabled only after a valid input or answer selection. On click, JS validates the answer correctness, updates <code>score</code>, shows feedback, disables itself, and reveals the Next button.</li>
+                        <li><strong>Effect</strong>: Controls quiz progression step-by-step, preventing moving forward without an answer.</li>
+                    </ul>
+                </div>
+                <div class="pathway-card">
+                    <img src="Assets/nextbtn.png" alt="Next Button">
+                    <h3>Next Button</h3>
+                    <h4>startQuizBtn</h4>
+                    <ul>
+                        <li><strong>Role</strong>: Moves to the next question or finishes the quiz.</li>
+                        <li><strong>JS Function</strong>: Hidden initially, shown only after submitting an answer. On click, increments <code>currentQuestionIndex</code>, calls <code>showQuestion()</code> again, or calls <code>showResult()</code> if quiz is complete.</li>                        
+                        <li><strong>Effect</strong>: Manages quiz navigation and enforces order of questions.</li>
+                    </ul>
+                </div>
+                <div class="pathway-card">
+                    <img src="Assets/tryagainbtn.png" alt="Try Again Button">
+                    <h3>Try Again Button</h3>
+                    <h4>startQuizBtn</h4>
+                    <ul>
+                        <li><strong>Role</strong>: Resets the quiz to allow a new attempt.</li>
+                        <li><strong>JS Function</strong>: On click, resets state variables <code>score</code>, <code>currentQuestionIndex</code>, <code>userAnswers</code> and calls <code>showQuestion(0)</code> to start over.</li>                        <li><strong>Effect</strong>: Enables replayability without page reload.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div>
+                <button class="collapsible">Question Text (<code>questionTextEl</code>)</button>
+                    <div class="quiz-content">
+                        <ul>
+                            <li><strong>Role</strong>: Displays the current quiz question.</li>
+                            <li><strong>JS Function</strong>: Updated dynamically in the <code>showQuestion(index)</code> function using <code>questionTextEl.textContent = currentQ.question;</code></li>
+                            <li><strong>Effect</strong>: The question content changes smoothly as the user progresses through the quiz.</li>
+                        </ul>
+                    </div>
+
+                <button class="collapsible">Input Container (<code>inputContainer</code>)</button>
+                    <div class="quiz-content">
+                        <ul>
+                            <li><strong>Role</strong>: Holds answer input elements, like buttons or text inputs.</li>
+                            <li><strong>JS Function</strong>: Cleared and repopulated with new inputs for each question type inside <code>showQuestion()</code>.</li>
+                                <ul>
+                                    <li>For multiple-choice: Creates buttons dynamically for each answer option with event listeners to select an answer.</li>
+                                    <li>For text/number/date: Creates appropriate input fields with validation for empty input before enabling Submit.</li>
+                                </ul>
+                            <li><strong>Effect</strong>: Provides different interactive input methods tailored to each question type, all controlled dynamically by JS.</li>
+                        </ul>
+                    </div>
+
+                <button class="collapsible">Progress Bar (<code>progressBar</code>)</button>
+                    <div class="quiz-content">
+                        <ul>
+                            <li><strong>Role</strong>: Visually indicates how many questions the user has completed.</li>
+                            <li><strong>JS Function</strong>: Updated in <code>updateProgressBar()</code> by adjusting the CSS <code>width</code> property proportional to the current question index.</li>
+                            <li><strong>Effect</strong>: Gives immediate visual feedback on quiz progress.</li>
+                        </ul>
+                    </div>
+
+                <button class="collapsible">Feedback Element (<code>feedbackEl</code>)</button>
+                    <div class="quiz-content">
+                        <ul>
+                            <li><strong>Role</strong>: Displays text feedback like “Correct!” or “Incorrect” along with hints or explanations.</li>
+                            <li><strong>JS Function</strong>: Shown or hidden dynamically after each submission; content updated based on whether the answer was right or wrong. Uses <code>aria-live="assertive"</code> to notify screen readers.</li>
+                            <li><strong>Effect</strong>: Provides learning reinforcement and accessibility support.</li>
+                        </ul>
+                    </div>
+
+                <button class="collapsible">Result Element (<code>resultEl</code>)</button>
+                    <div class="quiz-content">
+                        <ul>
+                            <li><strong>Role</strong>: Shows the final quiz results and score summary.</li>
+                            <li><strong>JS Function</strong>: Displayed only after the last question is answered; presents personalized messages based on score percentage and includes a “Try Again” button.</li>
+                            <li><strong>Effect</strong>: Provides closure and motivation to retry.</li>
+                        </ul>
+                    </div>
+
+                <button class="collapsible">Answer Buttons (multiple-choice option buttons)</button>
+                    <div class="quiz-content">
+                        <ul>
+                            <li><strong>Role</strong>: Allow users to select one of several possible answers.</li>
+                            <li><strong>JS Function</strong>: Created dynamically for each multiple-choice question. When clicked, they visually highlight as “selected,” and enable the Submit button.</li>
+                            <li><strong>Effect</strong>: Offers intuitive selection and feedback with CSS style changes controlled by JS classes.</li>
+                        </ul>
+                    </div>
+
+                <button class="collapsible">Input Fields (text, number, date)</button>
+                    <div class="quiz-content">
+                        <ul>
+                            <li><strong>Role</strong>: Receive typed answers from the user.</li>
+                            <li><strong>JS Function</strong>: Input validation via event listeners to enable the Submit button only when input is non-empty or valid format.</li>
+                            <li><strong>Effect</strong>: Ensures user input is ready before submission to prevent errors.</li>
+                        </ul>
+                </div>
+
+                <button class="collapsible">Sound Elements (Audio objects <code>correctSound</code> and <code>wrongSound</code>)</button>
+                    <div class="quiz-content">
+                        <ul>
+                            <li><strong>Role</strong>: Play audio feedback sounds for correct or incorrect answers.</li>
+                            <li><strong>JS Function</strong>: JS plays these sounds programmatically using <code>.play()</code> after answer submission based on correctness.</li>
+                            <li><strong>Effect</strong>: Enhances user engagement with immediate audio cues.</li>
+                        </ul>
+                    </div>
+
+                <button class="collapsible">Console Logs</button>
+                    <div class="quiz-content">
+                        <ul>
+                            <li><strong>Role</strong>: Provide debugging and tracking information.</li>
+                            <li><strong>JS Function</strong>: After each answer submission, logs details like question, user’s answer, correctness, and score.</li>
+                            <li><strong>Effect</strong>: Helps developers monitor quiz logic and troubleshoot.</li>
+                        </ul>
+                    </div>
+            </div>
+
+        </section>
+    
+        <section class="page Bibliography">
+            <h2>Bibliography</h2>
+    
+            <div class="info-container">
+                
+                <div class="info-box">
+                    <h3>Characters & Items</h3>
+                    <ul>
+                        <li>https://mariokart8.nintendo.com</li>
+                        <li>https://www.nintendo.com/au/games/nintendo-switch/mario-kart-8-deluxe/</li>
+                        <li>https://in.pinterest.com/pin/mario-kart-8-deluxe-mario-kart-lakitu-png-clipart-2015536-pinclipart-in-2024--307792955800785572/</li>
+                        <li>https://aminoapps.com/c/mario-kart/page/item/king-boo/mjzJ_RxT0IRnjeEJx5zgeK6RqojGjqoX3E</li>
+                        <li>https://public.tableau.com/app/profile/kevin.flerlage/viz/MarioKartCharacterOptimization/LandingPage?publish=yes</li>
+                    </ul>
+                </div>
+                            
+                <div class="info-box">
+                    <h3>Equipments</h3>
+                    <ul>
+                        <li>https://castlemaineofficesupplies.com.au/products/nintendo-switch-console-neon-red-blue</li>
+                        <li>https://www.telstra.com.au/accessories/gaming-consoles/nintendo/switch-neon</li>
+                    </ul>
+                </div>
+
+                <div class="info-box">
+                    <h3>Banners</h3>
+                    <ul>
+                        <li>https://business.ranker.com/blog/what-your-favorite-super-mario-character-says-about-you</li>
+                        <li>https://www.reddit.com/r/mariokart/comments/137vy3b/here_are_all_of_the_snes_starting_banners_from/</li>
+                        <li>https://www.thegamer.com/mario-kart-8-mk8-every-battle-mode-ranked-best/</li>    
+                        <li>https://www.thegamer.com/super-mario-items-possible-added-mario-kart-9-speculation/</li>
+                    </ul>
+                </div>
+
+                <div class="info-box">
+                    <h3>Videos</h3>
+                    <ul>
+                        <li>https://www.youtube.com/watch?v=kEVBSZk51R0</li>
+                        <li>https://www.nintendo.com/au/games/nintendo-switch/mario-kart-8-deluxe/#battles</li>
+                    </ul>
+                </div>
+            
+            </div>
+        </section>
+
+        <button id="backToTop" title="Back to top">⬆</button>
+
+    </main>
+
+    <footer>
+        <p>Mario Kart 8 Deluxe, Created by Seraphina Fung, Iris Wang, Kiara Yong, Xiaoou Zhou, 2025 </p>
+    </footer>
+
+</body>
+
+<script src="script.js"></script>
+
+</html>

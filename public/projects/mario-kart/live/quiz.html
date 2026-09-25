@@ -1,0 +1,98 @@
+<!-- quiz.html (updated) -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Moo+Lah+Lah&family=Rubik+Spray+Paint&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Rubik:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@400..900&display=swap" rel="stylesheet">
+</head>
+
+<body id="quizBody">
+
+    <header>
+        <div class="top-bar">
+          <div class="left-section">
+            <div id="date-display"></div>
+          </div>
+          <nav class="center-nav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="characters.html">Characters</a></li>
+                <li><a href="courses.html">Courses</a></li>
+                <li><a href="items.html">Items</a></li>
+                <li><a href="battles.html">Battles</a></li>
+            </ul>
+          </nav>
+          <div class="right-section">
+            <a href="explanation.html" class="explanation-button">Explanation</a>
+          </div>
+        </div>
+    </header>
+
+    <main id="quizMain">
+        <div class="clouds"></div>
+
+        <h1 id="pageTitle">It's Time For Mario Quiz!</h1>
+
+        <div id="marioImageContainer">
+            <img src="Assets/mariodrift.jpg" alt="Mario Driving" id="marioImage" />
+        </div>
+
+        <div id="quizcontainer">
+
+            <!-- Intro Page -->
+            <section id="introPage" role="main" aria-label="Welcome to Mario Quiz">
+            
+                <img src="Assets/mariobanner.jpg" alt="Mario Image" id="introImage" />
+                <p>Test your knowledge about everyone's favorite plumber, Mario. <br>Are you ready to play?</p>
+                <button id="startQuizBtn">Start Quiz</button>
+            </section>
+
+            <!-- Quiz Page -->
+            <section id="quizPage" role="main" aria-label="Mario Quiz">
+            <div id="banner" aria-hidden="true">
+                <img src="Assets/NSwitch_SuperMarioParty_MarioParty_Characters_Img.png" alt="Super Mario Logo" />
+            </div>
+            <h2 id="quizTitle">Mario Quiz</h2>
+            <div id="progress" aria-label="Progress bar">
+                <div id="progressBar"></div>
+            </div>
+            <div id="question">
+                <img src="Assets/mushroom.png" alt="Mario Mushroom Icon" />
+                <span id="questionText">Question text here</span>
+            </div>
+            <div id="inputContainer">
+            </div>
+
+            <button id="submitBtn" disabled aria-disabled="true">Submit</button>
+            <button id="nextBtn" disabled aria-disabled="true" style="display:none;">Next</button>
+            <div id="result" role="alert" aria-live="assertive"></div>
+            <div id="feedback" role="alert" aria-live="assertive"></div>
+            <button id="tryAgainBtn" style="display:none; margin-top: 30px;">Try Again</button>
+            <button id="backBtn" style="display: none;">Back</button>
+
+            </section>
+
+        </div>
+    
+        <button id="backToTop" title="Back to top">⬆</button>
+
+    </main>
+
+    <footer>
+        <p>Mario Kart 8 Deluxe, Created by Seraphina Fung, Iris Wang, Kiara Yong, Xiaoou Zhou, 2025 </p>
+    </footer>
+
+</body>
+
+<script src="script.js"></script>
+
+</html>

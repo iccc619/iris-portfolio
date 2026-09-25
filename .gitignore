@@ -68,3 +68,6 @@ public/fonts/Canela_Collection/Canela Text Family/*
 
 # Keep Ethereal Realm hero video
 !public/projects/ethereal-realm/hero.mp4
+
+# Large local Mario Kart source video
+public/projects/mario-kart/live/Assets/intro-video.mov

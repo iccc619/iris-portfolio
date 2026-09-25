@@ -336,6 +336,59 @@
     "thumbnailType": "image"
   },
   {
+    "slug": "mario-kart",
+    "number": "10",
+    "title": "Mario Kart 8 Deluxe Website",
+    "year": "2025",
+    "status": "Academic · Team of 4",
+    "disciplines": [
+      "Web Design",
+      "Interaction Design",
+      "Front-End Development",
+      "Team Leadership"
+    ],
+    "summary": "A seven-page interactive website combining web design, motion and vanilla JavaScript into one connected Mario Kart experience.",
+    "role": "Team Leader — homepage and explanation page design/development, team coordination, and shared CSS/JavaScript consolidation",
+    "tools": "HTML5 · CSS3 · Vanilla JavaScript · Visual Studio Code · Google Fonts",
+    "accent": "#FFCC00",
+    "secondary": "#7193FA",
+    "theme": "dark",
+    "featured": true,
+    "demonstrates": "Demonstrates collaborative front-end development, interaction design, responsive implementation and the coordination of a multi-page website system.",
+    "sections": [
+      [
+        "Overview",
+        "A seven-page academic team website translating Mario Kart 8 Deluxe into a structured interactive web experience built with HTML, CSS and vanilla JavaScript."
+      ],
+      [
+        "Direction",
+        "A dark interface with restrained yellow, red and blue accents carries the visual energy of the game across repeated navigation, cards, content modules and motion."
+      ],
+      [
+        "Structure",
+        "Home, Characters, Courses, Items, Battles, Quiz and Explanation are connected through one shared navigation and visual system."
+      ],
+      [
+        "Interaction",
+        "The source includes auto-scrolling galleries, mouse/touch course browsing, track pop-ups, hover discovery, scroll-triggered animation, video switching and a multi-step quiz."
+      ],
+      [
+        "Implementation",
+        "The site was built without a front-end framework. Shared HTML patterns, CSS and JavaScript coordinate page structure, responsive rules, visual motion and interaction state."
+      ],
+      [
+        "Outcome",
+        "The project strengthened the relationship between visual design and working front-end behaviour, including content structure, interaction and technical constraints."
+      ]
+    ],
+    "filter": [
+      "ui/ux",
+      "ux"
+    ],
+    "thumbnail": "/public/thumbnails/mario-kart.png",
+    "thumbnailType": "image"
+  },
+  {
     "slug": "ethereal-realm",
     "number": "07",
     "title": "EtheReal / Realm",
